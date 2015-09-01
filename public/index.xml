@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MIMIC Critical Care Database</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:61896/</link>
     <description>Recent content on MIMIC Critical Care Database</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Sep 2015 14:02:13 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:61896/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>agreement</title>
-      <link>http://localhost:1313/data/agreement/</link>
+      <link>http://localhost:61896/data/agreement/</link>
       <pubDate>Tue, 01 Sep 2015 14:02:13 -0400</pubDate>
       
-      <guid>http://localhost:1313/data/agreement/</guid>
+      <guid>http://localhost:61896/data/agreement/</guid>
       <description>
 
 &lt;h1 id=&#34;data-use-agreement:7b33302e08b75b5944649d9f934b7f4b&#34;&gt;Data use agreement&lt;/h1&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>glossary</title>
-      <link>http://localhost:1313/docs/glossary/</link>
+      <link>http://localhost:61896/docs/glossary/</link>
       <pubDate>Tue, 01 Sep 2015 14:02:13 -0400</pubDate>
       
-      <guid>http://localhost:1313/docs/glossary/</guid>
+      <guid>http://localhost:61896/docs/glossary/</guid>
       <description>
 
 &lt;h1 id=&#34;glossary-of-terms:f07b73835a21496fc01afa719cfd3ba4&#34;&gt;Glossary of terms&lt;/h1&gt;
