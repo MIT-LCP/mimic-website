@@ -1,3 +1,4 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "http://mimic.physionet.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "MIMIC Critical Care Database"
+theme = "hugo-agency-theme"
