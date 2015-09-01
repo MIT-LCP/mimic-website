@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on MIMIC Critical Care Database</title>
+    <link>http://mimic.physionet.org/docs/</link>
+    <description>Recent content in Docs on MIMIC Critical Care Database</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Sep 2015 02:26:15 -0400</lastBuildDate>
+    <atom:link href="http://mimic.physionet.org/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>glossary</title>
+      <link>http://mimic.physionet.org/docs/glossary/</link>
+      <pubDate>Tue, 01 Sep 2015 02:26:15 -0400</pubDate>
+      
+      <guid>http://mimic.physionet.org/docs/glossary/</guid>
+      <description>
+
+&lt;h1 id=&#34;glossary-of-terms:f07b73835a21496fc01afa719cfd3ba4&#34;&gt;Glossary of terms&lt;/h1&gt;
+
+&lt;p&gt;Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
