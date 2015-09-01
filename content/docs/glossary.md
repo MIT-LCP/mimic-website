@@ -1,7 +1,11 @@
 +++
-date = "2015-09-01T02:26:15-04:00"
-draft = false
+date = "2015-09-01T14:02:13-04:00"
 title = "glossary"
+weight = 6
+
+[menu]
+  [menu.main]
+    parent = "x"
 
 +++
 
