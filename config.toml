@@ -1,4 +1,4 @@
 baseurl = "http://mimic.physionet.org/"
 languageCode = "en-us"
 title = "MIMIC Critical Care Database"
-theme = "agency"
+theme = "hugo-base-theme"
