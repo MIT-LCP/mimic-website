@@ -32,7 +32,7 @@ body {
     width: 100%;
     min-height: 70%;
     position: relative;
-    background: url(../img/desk.jpg) no-repeat center center fixed;
+    background: url(../img/header.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -61,7 +61,7 @@ and (orientation : portrait)
         height: 70%;
         width: 100%;
         position: relative;
-        background: url(../img/desk-mini.jpg) no-repeat;
+        background: url(../img/header-mini.jpg) no-repeat;
         background-size: 100% 100%;
         z-index: 99999;
         background-color: black;
@@ -77,7 +77,7 @@ and (orientation : landscape) {
         height: 70%;
         width: 100%;
         position: relative;
-        background: url(../img/desk-long.jpg) no-repeat;
+        background: url(../img/header-long.jpg) no-repeat;
         background-size: 100% 100%;
         z-index: 99999;
         background-color: black;
