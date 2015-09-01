@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+    <body id="page-top" class="index">
+        {{ partial "nav.html" . }}
+        {{ partial "hero.html" . }}
+        {{ partial "services.html" . }}
+        {{ partial "portfolio.html" . }}
+        {{ partial "about.html" . }}
+        {{ partial "team.html" . }}
+        {{ partial "clients.html" . }}
+        {{ partial "contact.html" . }}
+        {{ partial "footer.html" . }}
+        {{ partial "modals.html" . }}
+        {{ partial "js.html" . }}
+    </body>
+</html>
