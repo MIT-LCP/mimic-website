@@ -1,10 +1,10 @@
 baseurl = "http://mimic.physionet.org/"
 languageCode = "en-us"
 title = "MIMIC Critical Care Database"
-theme = "hugo-base-theme"
+theme = "mimic-data"
 [params]
-  description = "I <3 making web site"
-  mainIcon = "/img/hugo.png"
+
+  mainIcon = "/img/lcp_square-300x300.png"
 
 [[params.social]]
     title = "access"
