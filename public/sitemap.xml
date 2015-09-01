@@ -2,18 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:61906/</loc>
-    <lastmod>2015-09-01T14:02:13-04:00</lastmod>
+    <loc>http://localhost:63151/</loc>
+    <lastmod>2015-09-01T19:09:50-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:61906/data/agreement/</loc>
+    <loc>http://localhost:63151/community/contributing/</loc>
+    <lastmod>2015-09-01T19:09:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:63151/data/agreement/</loc>
     <lastmod>2015-09-01T14:02:13-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:61906/docs/glossary/</loc>
+    <loc>http://localhost:63151/docs/glossary/</loc>
     <lastmod>2015-09-01T14:02:13-04:00</lastmod>
   </url>
   

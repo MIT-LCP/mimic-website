@@ -1,6 +1,6 @@
 +++
 date = "2015-09-01T14:02:13-04:00"
-title = "glossary"
+title = "Glossary"
 weight = 6
 
 [menu]
