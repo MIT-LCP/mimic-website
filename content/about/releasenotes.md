@@ -3,6 +3,7 @@ date = "2015-09-01T19:33:17-04:00"
 title = "Release notes"
 linktitle = "Release notes"
 weight = 3
+toc = "true"
 
 [menu]
   [menu.main]
