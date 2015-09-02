@@ -1,6 +1,7 @@
 +++
 date = "2015-09-01T19:33:17-04:00"
 title = "Introduction"
+linktitle = "Introduction"
 weight = 5
 
 [menu]

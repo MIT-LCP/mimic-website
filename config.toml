@@ -2,19 +2,5 @@ baseurl = "http://mimic.physionet.org/"
 languageCode = "en-us"
 title = "MIMIC Critical Care Database"
 theme = "mimic-data"
-[params]
 
-  mainIcon = "/img/lcp_square-300x300.png"
 
-[[params.social]]
-    title = "access"
-    url = "http://mimic.physionet.org"
-[[params.social]]
-    title = "docs"
-    url = "http://mimic.physionet.org"
-[[params.social]]
-    title = "community"
-    url = ""
-[[params.social]]
-    title = "code"
-    url = "http://mimic.physionet.org"
