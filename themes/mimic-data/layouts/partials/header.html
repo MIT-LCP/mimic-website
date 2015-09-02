@@ -30,23 +30,26 @@
             </div>
 
             <!--logo start-->
-            <a href="/" class="logo"><img src="/img/logo-topleft.png" style="height: 40px; vertical-align: bottom;"> <span style="font-size: small; text-transform: none;">v{{ .Hugo.Version }}</span></a>
+            <a href="/" class="logo"><img src="/img/logo-topleft.png" style="height: 40px; vertical-align: bottom;"> 
+            <span style="font-size: small; text-transform: none;">MIMIC-III v1.0</span></a>
             <!--logo end-->
-            <div class="top-nav notification-row">
-                <!-- notification dropdown end-->
+
+            <!-- notification dropdown end-->
+<!--             <div class="top-nav notification-row">
+                
                 <div class="hidden-xs nav-github pull-right">
                     <span rel="show-github" data-user="spf13" data-repo="hugo" data-type="follow"></span>
                     <span rel="show-github" data-user="spf13" data-repo="hugo"></span>
                     <span rel="show-github" data-user="spf13" data-repo="hugo" data-type="fork"></span>
                 </div>
-            </div>
+            </div> -->
 
             <div class="nav title-row" id="top_menu">
                 <h1 class="nav top-menu">{{.Title}}</h1>
             </div>
       </header>
       <!--header end-->
-
+      
 {{ partial "menu.html" . }}
 
       <!--main content start-->
@@ -80,8 +83,8 @@
                           <!--<header class="panel-heading">-->
                               <!--<h3>{{.Title}}</h3>-->
                           <!--</header>-->
-<!--                     <div class="panel-body">
-                        <div class="row">
+                   <div class="panel-body">
+<!--                    <div class="row">
                             <div class="col-lg-12 cse">
                             partial "google-cse.html" . 
                             </div>
