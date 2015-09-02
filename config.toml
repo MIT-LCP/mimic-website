@@ -3,4 +3,29 @@ languageCode = "en-us"
 title = "MIMIC Critical Care Database"
 theme = "mimic-data"
 
-
+[[menu.main]]
+    name = "About"
+    pre = "<i class='fa fa-bullhorn'></i>"
+    weight = 1
+    identifier = "about"
+    url = "/about/"
+[[menu.main]]
+    name = "Getting started"
+    pre = "<i class='fa fa-road'></i>"
+    weight = 10
+    url = "/gettingstarted/"
+[[menu.main]]
+    name = "Data tables"
+    pre = "<i class='fa fa-columns'></i>"
+    weight = 20
+    url = "/datatables/"
+[[menu.main]]
+    name = "Community"
+    pre = "<i class='fa fa-group'></i>"
+    weight = 30
+    url = "/community/"
+[[menu.main]]
+    name = "Tutorials"
+    pre = "<i class='fa fa-book'></i>"
+    weight = 40
+    url = "/tutorials/"
