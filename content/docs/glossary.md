@@ -6,7 +6,7 @@ weight = 6
 
 [menu]
   [menu.main]
-    parent = "x"
+    parent = "Docs"
 
 +++
 
