@@ -7,7 +7,6 @@ theme = "mimic-data"
     name = "About"
     pre = "<i class='fa fa-bullhorn'></i>"
     weight = 1
-    identifier = "about"
     url = "/about/"
 [[menu.main]]
     name = "Getting started"
