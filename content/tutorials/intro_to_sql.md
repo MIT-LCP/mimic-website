@@ -2,7 +2,7 @@
 date = "2015-09-01T14:02:13-04:00"
 title = "Intro to SQL"
 linktitle = "Intro to SQL"
-weight = 6
+weight = 1
 
 [menu]
   [menu.main]
