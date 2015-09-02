@@ -14,10 +14,10 @@ theme = "mimic-data"
     weight = 10
     url = "/gettingstarted/"
 [[menu.main]]
-    name = "Data tables"
+    name = "MIMIC data"
     pre = "<i class='fa fa-columns'></i>"
     weight = 20
-    url = "/datatables/"
+    url = "/mimicdata/"
 [[menu.main]]
     name = "Community"
     pre = "<i class='fa fa-group'></i>"
