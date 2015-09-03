@@ -1,20 +1,24 @@
 +++
-date = "2015-09-01T07:32:25-04:00"
-draft = true
-title = "transfers"
+date = "2015-09-01T19:34:46-04:00"
+title = "ICUstayevents"
+linktitle = "ICUstayevents"
+weight = 14
+toc = "true"
 
+[menu]
+  [menu.main]
+    parent = "Table detail"
 +++
 
 
 # Overview
 
 Table source: Hospital database.
-Table purpose: Physical locations for patients throughout their hospital stay.
-Number of rows: 
+Table purpose: Defines each ICUSTAY\_ID in the database, i.e. defines a single ICU stay.
+Number of rows: 61,532
 Links to: 
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
-* ICUSTAYEVENTS on `ICUSTAY_ID`
 
 # Table columns
 
@@ -22,15 +26,13 @@ Links to:
 	HADM_ID INT, 
 	ICUSTAY_ID INT, 
 	DBSOURCE VARCHAR(20), 
-	EVENTTYPE VARCHAR(20), 
-	PREV_CAREUNIT VARCHAR(20), 
-	CURR_CAREUNIT VARCHAR(20), 
-	PREV_WARDID SMALLINT,
-	CURR_WARDID SMALLINT,
+	FIRST_CAREUNIT VARCHAR(20), 
+	LAST_CAREUNIT VARCHAR(20),
+	FIRST_WARDID SMALLINT,
+	LAST_WARDID SMALLINT,
 	INTIME TIMESTAMP(0), 
 	OUTTIME TIMESTAMP(0), 
-	LOS INT
-
+	LOS DOUBLE PRECISION
 	
 # Detailed Description
 
@@ -40,11 +42,9 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 ## `DBSOURCE`
 
-## `EVENTTYPE`
+## `FIRST_CAREUNIT`, `LAST_CAREUNIT`
 
-## `PREV_CAREUNIT`, `CURR_CAREUNIT`
-
-## `PREV_WARDID`, `CURR_WARDID`
+## `FIRST_WARDID`, `LAST_WARDID`
 
 ## `INTIME`, `OUTTIME`
 

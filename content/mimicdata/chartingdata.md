@@ -1,3 +1,15 @@
++++
+date = "2015-09-01T19:34:46-04:00"
+title = "Charting data"
+linktitle = "Charting data"
+weight = 3
+toc = "true"
+
+[menu]
+  [menu.main]
+    parent = "MIMIC data"
+
++++
 
 # How is data recorded in the database?
 

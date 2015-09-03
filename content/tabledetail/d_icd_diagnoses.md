@@ -1,7 +1,13 @@
 +++
-date = "2015-09-01T07:32:25-04:00"
-draft = true
-title = "d_icd_diagnoses"
+date = "2015-09-01T19:34:46-04:00"
+title = "D_ICD_diagnoses"
+linktitle = "D_ICD_diagnoses"
+weight = 7
+toc = "true"
+
+[menu]
+  [menu.main]
+    parent = "Table detail"
 
 +++
 

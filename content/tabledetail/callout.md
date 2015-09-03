@@ -1,7 +1,13 @@
 +++
-date = "2015-09-01T07:32:25-04:00"
-draft = true
-title = "callout"
+date = "2015-09-01T19:34:46-04:00"
+title = "Callout"
+linktitle = "Callout"
+weight = 2
+toc = "true"
+
+[menu]
+  [menu.main]
+    parent = "Table detail"
 
 +++
 
