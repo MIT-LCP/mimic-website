@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: Online sources.
-Table purpose: Definition table for ICD procedures.
-Number of rows: 3,882
-Links to: 
+**Table source:** Online sources.
+
+**Table purpose:** Definition table for ICD procedures.
+
+**Number of rows:** 3,882
+
+**Links to:** 
+
 * PROCEDURES_ICD on `CODE_ICD9`
 
 # Table columns

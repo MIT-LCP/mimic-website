@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital database.
-Table purpose: Contains current procedural terminology (CPT) codes, which facilitate billing for procedures performed on patients.
-Number of rows: 573146
-Links to: 
+**Table source:** Hospital database.
+
+**Table purpose:** Contains current procedural terminology (CPT) codes, which facilitate billing for procedures performed on patients.
+
+**Number of rows:** 573146
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 * ICUSTAYEVENTS on `ICUSTAY_ID`

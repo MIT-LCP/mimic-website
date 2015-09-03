@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital database.
-Table purpose: Contains ICD diagnoses for patients, most notably ICD-9 diagnoses.
-Number of rows: 651,047
-Links to: 
+**Table source:** Hospital database.
+
+**Table purpose:** Contains ICD diagnoses for patients, most notably ICD-9 diagnoses.
+
+**Number of rows:** 651,047
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 * ICUSTAYEVENTS on `ICUSTAY_ID`

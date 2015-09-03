@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital provider order entry database.
-Table purpose: Contains medication related order entries, i.e. prescriptions.
-Number of rows: 
-Links to: 
+**Table source:** Hospital provider order entry database.
+
+**Table purpose:** Contains medication related order entries, i.e. prescriptions.
+
+**Number of rows:**
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 * ICUSTAYEVENTS on `ICUSTAY_ID`

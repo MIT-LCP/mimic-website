@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital database.
-Table purpose: Contains diagnosis related groups (DRG) codes for patients.
-Number of rows: 125,557
-Links to: 
+**Table source:** Hospital database.
+
+**Table purpose:** Contains diagnosis related groups (DRG) codes for patients.
+
+**Number of rows:** 125,557
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 

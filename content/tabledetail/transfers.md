@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital database.
-Table purpose: Physical locations for patients throughout their hospital stay.
-Number of rows: 
-Links to: 
+**Table source:** Hospital database.
+
+**Table purpose:** Physical locations for patients throughout their hospital stay.
+
+**Number of rows:** 
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 * ICUSTAYEVENTS on `ICUSTAY_ID`

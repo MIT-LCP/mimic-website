@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital database.
-Table purpose: Contains all notes for patients.
-Number of rows: 
-Links to: 
+**Table source:** Hospital database.
+
+**Table purpose:** Contains all notes for patients.
+
+**Number of rows:**
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 * ICUSTAYEVENTS on `ICUSTAY_ID`

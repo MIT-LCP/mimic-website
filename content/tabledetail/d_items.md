@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: CareVue and Metavision ICU databases.
-Table purpose: Definition table for all items in the ICU databases.
-Number of rows: 15,492
-Links to: 
+**Table source:** CareVue and Metavision ICU databases.
+
+**Table purpose:** Definition table for all items in the ICU databases.
+
+**Number of rows:** 15,492
+
+**Links to:**
+
 * CHARTEVENTS on `ITEMID`
 * DATETIMEEVENTS on `ITEMID`
 * IOEVENTS on `ITEMID`

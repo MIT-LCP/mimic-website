@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital database.
-Table purpose: Defines each ICUSTAY\_ID in the database, i.e. defines a single ICU stay.
-Number of rows: 61,532
-Links to: 
+**Table source:** Hospital database.
+
+**Table purpose:** Defines each ICUSTAY\_ID in the database, i.e. defines a single ICU stay.
+
+**Number of rows:** 61,532
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 

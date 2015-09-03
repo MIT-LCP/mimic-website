@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: CareVue and Metavision ICU databases.
-Table purpose: Contains all charted data for all patients.
-Number of rows: 
-Links to: 
+**Table source:** CareVue and Metavision ICU databases.
+
+**Table purpose:** Contains all charted data for all patients.
+
+**Number of rows:** 
+
+**Links to:**
+
 * ADMISSIONS on `SUBJECT_ID`
 * ICUSTAYEVENTS on `SUBJECT_ID`
 

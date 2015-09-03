@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: Online sources.
-Table purpose: Definition table for ICD diagnoses.
-Number of rows: 14,567
-Links to: 
+**Table source:** Online sources.
+
+**Table purpose:** Definition table for ICD diagnoses.
+
+**Number of rows:** 14,567
+
+**Links to:**
+
 * DIAGNOSES_ICD ON `CODE_ICD9`
 
 # Table columns

@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: CareVue and Metavision ICU databases.
-Table purpose: Contains all date formatted data.
-Number of rows: 4,486,049
-Links to: 
+**Table source:** CareVue and Metavision ICU databases.
+
+**Table purpose:** Contains all date formatted data.
+
+**Number of rows:** 4,486,049
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 * ICUSTAYEVENTS on `ICUSTAY_ID`

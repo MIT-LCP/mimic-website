@@ -14,10 +14,14 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital database.
-Table purpose: Contains all laboratory measurements for a given patient, including out patient data.
-Number of rows: 27,872,575
-Links to: 
+**Table source:** Hospital database.
+
+**Table purpose:** Contains all laboratory measurements for a given patient, including out patient data.
+
+**Number of rows:** 27,872,575
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 * D_LABITEMS on `ITEMID`

@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: CareVue and Metavision ICU databases.
-Table purpose: Input/output data for patients.
-Number of rows: 
-Links to: 
+**Table source:** CareVue and Metavision ICU databases.
+
+**Table purpose:** Input/output data for patients.
+
+**Number of rows:** 
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 * ICUSTAYEVENTS on `ICUSTAY_ID`

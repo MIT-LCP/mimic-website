@@ -14,13 +14,13 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital database.
+**Table source:** Hospital database.
 
-Table purpose: Provides information when a patient was ready for discharge, and when the patient was actually discharged.
+**Table purpose:** Provides information when a patient was ready for discharge, and when the patient was actually discharged.
 
-Number of rows: 34499
+**Number of rows:** 34499
 
-Links to: 
+**Links to:** 
 
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`

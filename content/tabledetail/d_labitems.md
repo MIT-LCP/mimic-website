@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital database.
-Table purpose: Definition table for all laboratory measurements.
-Number of rows: 
-Links to: 
+**Table source:** Hospital database.
+
+**Table purpose:** Definition table for all laboratory measurements.
+
+**Number of rows:** 
+
+**Links to:** 
+
 * LABEVENTS on `ITEMID`
 
 # Table columns

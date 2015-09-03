@@ -14,10 +14,14 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital database.
-Table purpose: Contains ICD procedures for patients, most notably ICD-9 procedures.
-Number of rows: 
-Links to: 
+**Table source:** Hospital database.
+
+**Table purpose:** Contains ICD procedures for patients, most notably ICD-9 procedures.
+
+**Number of rows:**
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 * D\_ICD\_PROCEDURES on `ICD9_CODE`

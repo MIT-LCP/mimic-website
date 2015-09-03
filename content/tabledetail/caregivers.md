@@ -13,10 +13,13 @@ toc = "true"
 
 # Overview
 
-Table source: CareVue and Metavision ICU databases.
-Table purpose: Defines the role of caregivers.
-Number of rows: 8221
-Links to: 
+**Table source:** CareVue and Metavision ICU databases.
+
+**Table purpose:** Defines the role of caregivers.
+
+**Number of rows:** 8221
+
+**Links to:** 
 * CHARTEVENTS on `CGID`
 
 # Table columns

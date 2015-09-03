@@ -12,10 +12,14 @@ toc = "true"
 
 # Overview
 
-Table source: hospital database.
-Table purpose: Define a patient's hospital admission, HADM\_ID.
-Number of rows: 58976
-Links to: 
+**Table source:** hospital database.
+
+**Table purpose:** Define a patient's hospital admission, HADM\_ID.
+
+**Number of rows:** 58976
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 
 # Table columns

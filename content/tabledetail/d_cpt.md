@@ -14,10 +14,14 @@ toc = "true"
 
 # Overview
 
-Table source: Online definitions.
-Table purpose: High-level definitions for current procedural terminology (CPT) codes.
-Number of rows: 134
-Links to: 
+**Table source:** Online definitions.
+
+**Table purpose:** High-level definitions for current procedural terminology (CPT) codes.
+
+**Number of rows:** 134
+
+**Links to:**
+
 * CPTEVENTS on `CPT_CD` between `MINCODEINSUBSECTION` and `MAXCODEINSUBSECTION`
 
 # Table columns

@@ -13,10 +13,14 @@ toc = "true"
 
 # Overview
 
-Table source: Hospital database.
-Table purpose: Lists services that a patient was admitted/transferred under.
-Number of rows: 
-Links to: 
+**Table source:** Hospital database.
+
+**Table purpose:** Lists services that a patient was admitted/transferred under.
+
+**Number of rows:**
+
+**Links to:**
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 
