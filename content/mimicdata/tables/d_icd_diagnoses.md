@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T07:32:25-04:00"
 draft = true
-title = "d\_icd\_diagnoses"
+title = "d_icd_diagnoses"
 
 +++
 
@@ -11,7 +11,7 @@ Table source: Online sources.
 Table purpose: Definition table for ICD diagnoses.
 Number of rows: 14,567
 Links to: 
-* DIAGNOSES\_ICD ON `CODE_ICD9`
+* DIAGNOSES_ICD ON `CODE_ICD9`
 
 # Table columns
 

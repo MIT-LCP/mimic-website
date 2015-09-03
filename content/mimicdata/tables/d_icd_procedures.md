@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T07:32:25-04:00"
 draft = true
-title = "d\icd\_procedures"
+title = "d_icd_procedures"
 
 +++
 
@@ -11,7 +11,7 @@ Table source: Online sources.
 Table purpose: Definition table for ICD procedures.
 Number of rows: 3,882
 Links to: 
-* PROCEDURES\_ICD on `CODE_ICD9`
+* PROCEDURES_ICD on `CODE_ICD9`
 
 # Table columns
 
