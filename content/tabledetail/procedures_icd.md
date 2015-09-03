@@ -18,7 +18,7 @@ toc = "true"
 
 **Table purpose:** Contains ICD procedures for patients, most notably ICD-9 procedures.
 
-**Number of rows:**
+**Number of rows:** 240,095
 
 **Links to:**
 

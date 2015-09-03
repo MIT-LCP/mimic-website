@@ -17,7 +17,7 @@ toc = "true"
 
 **Table purpose:** Definition table for all laboratory measurements.
 
-**Number of rows:** 
+**Number of rows:** 755
 
 **Links to:** 
 

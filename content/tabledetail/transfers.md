@@ -17,7 +17,7 @@ toc = "true"
 
 **Table purpose:** Physical locations for patients throughout their hospital stay.
 
-**Number of rows:** 
+**Number of rows:** 261,897
 
 **Links to:**
 

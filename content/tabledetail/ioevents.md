@@ -17,7 +17,7 @@ toc = "true"
 
 **Table purpose:** Input/output data for patients.
 
-**Number of rows:** 
+**Number of rows:** 25,889,251
 
 **Links to:**
 
