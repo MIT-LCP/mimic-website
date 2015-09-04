@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T19:34:46-04:00"
-title = "Caregivers"
-linktitle = "Caregivers"
+title = "CAREGIVERS"
+linktitle = "CAREGIVERS"
 weight = 3
 toc = "true"
 

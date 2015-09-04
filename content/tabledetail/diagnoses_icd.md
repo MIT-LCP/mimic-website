@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T19:34:46-04:00"
-title = "Diagnoses_ICD"
-linktitle = "Diagnoses_ICD"
+title = "DIAGNOSES_ICD"
+linktitle = "DIAGNOSES_ICD"
 weight = 12
 toc = "true"
 
