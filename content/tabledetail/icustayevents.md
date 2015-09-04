@@ -56,7 +56,7 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 ## `FIRST_WARDID`, `LAST_WARDID`
 
-`FIRST_WARDID` and `LAST_WARDID` contain the first and last ICU unit in which the patient stayed. Note that the highest section grouping in the hospital database is a ward. Though in practice ICUs are not referred to as wards, the hospital database technically tracks  ICUs as "wards with an ICU cost center". As a result, each ICU is associated with a `WARDID`.
+`FIRST_WARDID` and `LAST_WARDID` contain the first and last ICU unit in which the patient stayed. Note the grouping of physical locations in the hospital database is referred to as ward. Though in practice ICUs are not referred to as wards, the hospital database technically tracks ICUs as "wards with an ICU cost center". As a result, each ICU is associated with a `WARDID`.
 
 ## `INTIME`, `OUTTIME`
 
@@ -69,3 +69,4 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 # Important considerations
 
 * `ICUSTAY_ID` is a *generated* identifier, that is it is *not* based off any raw data identifier. The hospital and ICU databases are not intrinsically linked, and so do not have any concept of an ICU encounter identifier.
+* The ICUSTAYEVENTS table is derived from the TRANSFERS table. Specifically, it groups the TRANSFERS table based on ICUSTAY\_ID, and excludes rows where no ICUSTAY\_ID is present.
