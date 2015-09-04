@@ -56,11 +56,19 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 ## `STARTTIME`, `ENDTIME`
 
+`STARTTIME` and `ENDTIME` specify the time period for which the prescription was valid.
+
 ## `DRUG_TYPE`
+
+`DRUG_TYPE` provides the type of drug prescribed.
 
 ## `DRUG`, `DRUG_NAME_POE`, `DRUG_NAME_GENERIC`
 
+These columns are various representations of the drug prescribed to the patient
+
 ## `FORMULARY_DRUG_CD`, `GSN`, `NDC`
+
+These columns provide a representation of the drug in various coding systems.
 
 ## `PROD_STRENGTH`
 
@@ -70,7 +78,7 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 ## `ROUTE`
 
-
+The route prescribed for the drug.
 
 # Important considerations
 

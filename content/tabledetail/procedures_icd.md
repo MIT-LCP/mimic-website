@@ -43,7 +43,12 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 ## `PROC_SEQ_NUM`
 
+`PROC_SEQ_NUM` provides the order in which the procedures were performed.
+
 ## `ICD9_CODE`
 
+`CODE` provides the code for the given procedure. 
 
 # Important considerations
+
+* In MIMIC III v1.0, only ICD-9 codes are used for recording procedures.

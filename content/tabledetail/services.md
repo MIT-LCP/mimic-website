@@ -28,11 +28,11 @@ toc = "true"
 
 Name | Postgres data type 
 ---- | ---- 
-SUBJECT_ID | INT
-HADM_ID | INT
+SUBJECT\_ID | INT
+HADM\_ID | INT
 TRANSFERTIME | TIMESTAMP(0)
-PREV_SERVICE | VARCHAR(20)
-CURR_SERVICE | VARCHAR(20)
+PREV\_SERVICE | VARCHAR(20)
+CURR\_SERVICE | VARCHAR(20)
 	
 # Detailed Description
 
@@ -42,7 +42,9 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 ## `TRANSFERTIME`
 
+`TRANSFERTIME` is the time at which the patient moved from the `PREV_SERVICE` (if present) to the `CURR_SERVICE`. 
+
 ## `PREV_SERVICE`, `CURR_SERVICE`
 
-
+`PREV_SERVICE` and `CURR_SERVICE` are the previous and current service that the patient resides under.
 # Important considerations

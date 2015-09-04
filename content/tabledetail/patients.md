@@ -52,7 +52,12 @@ HOSPITAL\_EXPIRE\_FLAG | VARCHAR(5)
 
 ## `DOD`, `DOD_HOSP`, `DOD_SSN`
 
+`DOD` is the date of death for the given patient. `DOD_HOSP` is the date of death as recorded in the hospital database. `DOD_SSN` is the date of death from the social security database. Note that `DOD` merged together `DOD_HOSP` and `DOD_SSN`, giving priority to `DOD_HOSP` if both were recorded. 
+
 ## `HOSPITAL_EXPIRE_FLAG`
 
+`HOSPITAL_EXPIRE_FLAG` indicates whether the patient died within the hospital. Note that if `DOD_HOSP` is present, then the last admission for the patient will have `HOSPITAL_EXPIRE_FLAG` = 'Y'.
 
 # Important considerations
+
+* `DOB` has been shifted for patients older than 89. The median age for the patients whose date of birth was shifted is 91.4.
