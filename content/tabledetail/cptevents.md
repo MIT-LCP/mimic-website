@@ -29,20 +29,21 @@ toc = "true"
 
 # Table columns
 
-ROW\_ID
+Name | Postgres data type 
+---- | ---- 
+ROW\_ID | INT
+SUBJECT\_ID | INT
+HADM\_ID | INT
+COSTCENTER | VARCHAR(10)
+CHARTDATE | TIMESTAMP(0)
+CPT\_CD | VARCHAR(10)
+CPT\_NUMBER | INT
+CPT\_SUFFIX | VARCHAR(5)
+TICKET\_ID\_SEQ | INT
+SECTIONHEADER | VARCHAR(50)
+SUBSECTIONHEADER | VARCHAR(300)
+DESCRIPTION | VARCHAR(200)
 
-	SUBJECT_ID INT, 
-	HADM_ID INT, 
-	COSTCENTER VARCHAR(10), 
-	CHARTDATE TIMESTAMP(0), 
-	CPT_CD VARCHAR(10), 
-	CPT_NUMBER INT, 
-	CPT_SUFFIX VARCHAR(5), 
-	TICKET_ID_SEQ INT, 
-	SECTIONHEADER VARCHAR(50), 
-	SUBSECTIONHEADER VARCHAR(300), 
-	DESCRIPTION VARCHAR(200)
-	
 # Detailed Description
 
 `CPTEVENTS` contains current procedural terminology (CPT) codes for patients as billed through either the ICU cost center or the respiratory cost center. Each code represents a distinct procedure performed on the patient during their ICU stay.

@@ -25,11 +25,13 @@ toc = "true"
 
 # Table columns
 
-	ITEMID INT, 
-	LABEL VARCHAR(100), 
-	FLUID VARCHAR(100), 
-	CATEGORY VARCHAR(100), 
-	LOINC_CODE VARCHAR(100)
+Name | Postgres data type 
+---- | ---- 
+ITEMID | INT
+LABEL | VARCHAR(100) 
+FLUID | VARCHAR(100)
+CATEGORY | VARCHAR(100)
+LOINC_CODE | VARCHAR(100)
 	
 # Detailed Description
 

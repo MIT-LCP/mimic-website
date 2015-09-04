@@ -29,11 +29,13 @@ toc = "true"
 
 # Table columns
 
-	SUBJECT_ID INT, 
-	HADM_ID INT, 
-	SEQUENCE INT, 
-	CODE VARCHAR(20), 
-	DESCRIPTION VARCHAR(50)
+Name | Postgres data type 
+---- | ---- 
+SUBJECT\_ID | INT
+HADM\_ID | INT
+SEQUENCE | INT
+CODE | VARCHAR(20)
+DESCRIPTION | VARCHAR(50)
 	
 # Detailed Description
 

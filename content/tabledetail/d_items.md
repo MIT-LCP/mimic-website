@@ -28,18 +28,20 @@ toc = "true"
 
 # Table columns
 
-	ITEMID INT, 
-	LABEL VARCHAR(200), 
-	ABBREVIATION VARCHAR(100), 
-	DBSOURCE VARCHAR(20), 
-	LINKSTO VARCHAR(50), 
-	CODE VARCHAR(20), 
-	CATEGORY VARCHAR(100), 
-	UNITNAME VARCHAR(100), 
-	PARAM_TYPE VARCHAR(30), 
-	LOWNORMALVALUE DOUBLE PRECISION, 
-	HIGHNORMALVALUE DOUBLE PRECISION
-	
+Name | Postgres data type 
+---- | ---- 
+ITEMID | INT
+LABEL | VARCHAR(200)
+ABBREVIATION | VARCHAR(100)
+DBSOURCE | VARCHAR(20)
+LINKSTO | VARCHAR(50)
+CODE | VARCHAR(20)
+CATEGORY | VARCHAR(100)
+UNITNAME | VARCHAR(100)
+PARAM\_TYPE | VARCHAR(30)
+LOWNORMALVALUE | DOUBLE PRECISION
+HIGHNORMALVALUE | DOUBLE PRECISION
+
 # Detailed Description
 
 The D_ITEMS table defines `ITEMID`, which represents measurements in the database. Measurements of the same type (e.g. heart rate) will have the same `ITEMID` (e.g. 211). The `ITEMID` column is an alternate primary key to this table: it is unique to each row. 

@@ -24,10 +24,12 @@ toc = "true"
 
 # Table columns
 
-ROW\_ID
-CGID
-LABEL
-DESCRIPTION
+Name | Postgres data type 
+---- | ---- 
+ROW\_ID | 
+CGID | 
+LABEL | 
+DESCRIPTION | 
 
 # Detailed Description
 

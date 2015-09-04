@@ -28,10 +28,12 @@ toc = "true"
 
 # Table columns
 
-	SUBJECT_ID INT, 
-	HADM_ID INT, 
-	PROC_SEQ_NUM INT, 
-	ICD9_CODE VARCHAR(20)
+Name | Postgres data type 
+---- | ---- 
+SUBJECT\_ID | INT
+HADM\_ID | INT
+PROC\_SEQ\_NUM | INT
+ICD9\_CODE | VARCHAR(20)
 	
 # Detailed Description
 

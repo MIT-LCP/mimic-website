@@ -25,9 +25,11 @@ toc = "true"
 
 # Table columns
 
-	CODE_ICD9 VARCHAR(10), 
-	SHORT_TITLE VARCHAR(50), 
-	LONG_TITLE VARCHAR(300)
+Name | Postgres data type 
+---- | ---- 
+CODE\_ICD9 | VARCHAR(10)
+SHORT\_TITLE | VARCHAR(50) 
+LONG\_TITLE | VARCHAR(300)
 	
 # Detailed Description
 

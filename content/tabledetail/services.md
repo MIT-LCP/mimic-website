@@ -26,11 +26,13 @@ toc = "true"
 
 # Table columns
 
-	SUBJECT_ID INT, 
-	HADM_ID INT, 
-	TRANSFERTIME TIMESTAMP(0), 
-	PREV_SERVICE VARCHAR(20), 
-	CURR_SERVICE VARCHAR(20)
+Name | Postgres data type 
+---- | ---- 
+SUBJECT_ID | INT
+HADM_ID | INT
+TRANSFERTIME | TIMESTAMP(0)
+PREV_SERVICE | VARCHAR(20)
+CURR_SERVICE | VARCHAR(20)
 	
 # Detailed Description
 
