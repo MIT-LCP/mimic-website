@@ -21,21 +21,21 @@ toc = "true"
 
 **Links to:** 
 
-* PROCEDURES_ICD on `CODE_ICD9`
+* PROCEDURES_ICD on `ICD9_CODE`
 
 # Table columns
 
 Name | Postgres data type 
 ---- | ---- 
-CODE\_ICD9 | VARCHAR(10)
+ICD9\_CODE | VARCHAR(10)
 SHORT\_TITLE | VARCHAR(50) 
 LONG\_TITLE | VARCHAR(300)
 	
 # Detailed Description
 
-## CODE_ICD9
+## ICD9_CODE
 
-`CODE_ICD9` is the International Coding Definitions Version 9 (ICD-9) code. Each code corresponds to a single procedural concept.
+`ICD9_CODE` is the International Coding Definitions Version 9 (ICD-9) code. Each code corresponds to a single procedural concept.
 
 ## `SHORT_TITLE`, `LONG_TITLE`
 
