@@ -9,25 +9,20 @@ theme = "mimic-data"
     weight = 1
     url = "/about/"
 [[menu.main]]
-    name = "MIMIC data"
-    pre = "<i class='fa fa-columns'></i>"
-    weight = 10
-    url = "/mimicdata/"
-[[menu.main]]
     name = "Getting started"
     pre = "<i class='fa fa-road'></i>"
     weight = 20
     url = "/gettingstarted/"
 [[menu.main]]
+    name = "MIMIC data"
+    pre = "<i class='fa fa-columns'></i>"
+    weight = 10
+    url = "/mimicdata/"
+[[menu.main]]
     name = "Community"
     pre = "<i class='fa fa-group'></i>"
     weight = 30
     url = "/community/"
-[[menu.main]]
-    name = "Table detail"
-    pre = "<i class='fa fa-road'></i>"
-    weight = 40
-    url = "/tabledetail/"
 [[menu.main]]
     name = "Tutorials"
     pre = "<i class='fa fa-book'></i>"
