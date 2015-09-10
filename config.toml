@@ -11,12 +11,12 @@ theme = "mimic-data"
 [[menu.main]]
     name = "Getting started"
     pre = "<i class='fa fa-road'></i>"
-    weight = 20
+    weight = 10
     url = "/gettingstarted/"
 [[menu.main]]
     name = "MIMIC data"
     pre = "<i class='fa fa-columns'></i>"
-    weight = 10
+    weight = 20
     url = "/mimicdata/"
 [[menu.main]]
     name = "Community"
