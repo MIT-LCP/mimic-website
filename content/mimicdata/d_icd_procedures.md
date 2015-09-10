@@ -39,6 +39,6 @@ LONG\_TITLE | VARCHAR(300)
 
 ## `SHORT_TITLE`, `LONG_TITLE`
 
-The title fields provide a brief definition for the given procedure code in `CODE_ICD9`.
+The title fields provide a brief definition for the given procedure code in `ICD9_CODE`.
 
 # Important considerations
