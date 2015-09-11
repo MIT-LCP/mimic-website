@@ -11,6 +11,9 @@ toc = "true"
 
 +++
 
-# Data use agreement
+The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:
 
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
+- Follow [the instructions](https://physionet.org/pnw/login) to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, [log in to it](https://physionet.org/pnw/login).
+- On your PhysioNetWorks home page, click on the link titled "MIMIC III Clinical Database", and follow the instructions to apply for access.
+
+All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information. 

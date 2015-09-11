@@ -13,4 +13,11 @@ toc = "true"
 
 # Glossary of terms
 
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
+Term | Description
+---- | -----
+BIDMC | Beth Israel Deaconess Medical Center, the hospital where the data is collected
+ICU | Intensive Care Unit
+MICU | Medical Intensive Care Unit
+SICU | Surgical Intensive Care Unit
+CVICU | Cardiovascular Intensive Care Unit
+CCU | Coronary Care Unit
