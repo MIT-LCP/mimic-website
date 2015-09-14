@@ -19,6 +19,11 @@ theme = "mimic-data"
     weight = 20
     url = "/mimicdata/"
 [[menu.main]]
+    name = "Tables in MIMIC"
+    pre = "<i class='fa fa-columns'></i>"
+    weight = 20
+    url = "/mimictables/"
+[[menu.main]]
     name = "Community"
     pre = "<i class='fa fa-group'></i>"
     weight = 30

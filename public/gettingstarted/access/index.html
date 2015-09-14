@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.14" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Database set up</title>
+    <title>Accessing MIMIC</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
 
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Database set up</h1>
+                <h1 class="nav top-menu">Accessing MIMIC</h1>
             </div>
       </header>
       
@@ -84,9 +84,9 @@
             </a>
                 <ul class="sub open">
                     
-                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    <li class="active"><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
                     
-                    <li class="active"><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
+                    <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
                     
                     <li><a href="/gettingstarted/glossary/">Glossary</a> </li>
                     
@@ -204,7 +204,7 @@
             <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
             
-              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5cdbsetup.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5caccess.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
             
         </ul>
         
@@ -247,32 +247,29 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="using-the-data:1075b96e4ab5d4d3ae2008fc44d940e6">Using the data</h1>
+<h1 id="mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</h1>
 
-<p>MIMIC is provided in flat, comma delimited files with quotes surrounding text fields where appropriate. While this format is amenable to most software packages, you may find it most convenient to work with the data using structured query language (SQL). SQL is most frequently used with relative data as it allows for fast retrieval of information when appropriately configured. Of course, other programming languages, such as Python, are equally able to handle the data, albeit in a different format. When available, we have provided information here to help users import the data into a format which they can easily utilize. Documentation is currently available for MySQL, Postgres SQL and Oracle.</p>
+<p>The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. <a href="http://127.0.0.1:1313/mimicdata/whatsnew/">See here for more detail.</a></p>
 
-<p>Note that while we aim to facilitate users in accessing and using the database, we unfortunately cannot support all the various software which could feasibly be used to analyze MIMIC. If users are successful in importing the database in a given software package, we welcome contribution of their code and methods used to accomplish this task, and we will update this page providing and provide the appropriate acknowledgements.</p>
+<h1 id="getting-access:127f171a52019ad9726e1cd032676173">Getting access</h1>
 
-<h1 id="oracle:1075b96e4ab5d4d3ae2008fc44d940e6">Oracle</h1>
+<p>The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available, see (<a href="http://physionet.org/mimic2wdb/">http://physionet.org/mimic2wdb/</a>).</p>
 
-<p>Scripts for importing the data into Postgres SQL are provided in the GitHub repository.</p>
+<p>The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:</p>
 
-<h1 id="postgres-sql:1075b96e4ab5d4d3ae2008fc44d940e6">Postgres SQL</h1>
+<ul>
+<li>Follow <a href="https://physionet.org/pnw/login">the instructions</a> to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, <a href="https://physionet.org/pnw/login">log in to it</a>.</li>
+<li>On your PhysioNetWorks home page, click on the link titled &ldquo;MIMIC III Clinical Database&rdquo;, and follow the instructions to apply for access.</li>
+</ul>
 
-<p>Scripts for importing the data into Postgres SQL are provided in the GitHub repository.</p>
-
-<h1 id="mysql:1075b96e4ab5d4d3ae2008fc44d940e6">MySQL</h1>
-
-<p>Scripts for importing the data into Postgres SQL are provided in the GitHub repository.</p>
+<p>All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information.</p>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#using-the-data:1075b96e4ab5d4d3ae2008fc44d940e6">Using the data</a></li>
-<li><a href="#oracle:1075b96e4ab5d4d3ae2008fc44d940e6">Oracle</a></li>
-<li><a href="#postgres-sql:1075b96e4ab5d4d3ae2008fc44d940e6">Postgres SQL</a></li>
-<li><a href="#mysql:1075b96e4ab5d4d3ae2008fc44d940e6">MySQL</a></li>
+<li><a href="#mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</a></li>
+<li><a href="#getting-access:127f171a52019ad9726e1cd032676173">Getting access</a></li>
 </ul>
 </nav>
 </div>
