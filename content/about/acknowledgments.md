@@ -13,32 +13,20 @@ toc = "true"
 
 # Acknowledgements
 
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
+If you use our data, code or algorithms in your work, please provide a citation to this project. Our recommended citation is currently in preparation for publication. In the interim, the older MIMIC II database can be cited as follows (BibTeX entry):
 
-## Another header
+```
+@article{MIMICII,
+        Author   = {Saeed, Mohammed and Villarroel, Mauricio and Reisner, Andrew T. and Clifford, Gari and Lehman, Li-Wei and Moody, George 
+ and Heldt, Thomas and Kyaw, Tin H. and Moody, Benjamin and Mark, Roger G.},
+        Title    = {Multiparameter Intelligent Monitoring in Intensive Care II (MIMIC-II): A public-access intensive care unit database},
+        Journal  = {Critical Care Medicine},
+        Volume   = {39},
+        Number   = {},
+        Pages    = {952-960},
+        Month    = {May},
+        Year     = {2011},
+        Howpublished = {\url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3124312/}},
+        Note     = {}}
+```
 
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
-
-## Another title
-
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
-
-## Also remember
-
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
-
-# These people too
-
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
-
-## Industry
-
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
-
-## Participants
-
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
-
-## etc...
-
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
