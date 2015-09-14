@@ -13,4 +13,5 @@ toc = "true"
 
 # Release notes
 
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
+This page will contain changes implemented in sequential updates to the MIMIC database in reverse chronological order. Due to the large number of changes between MIMIC II and MIMIC III, we have documented those updates in a separate section.
+
