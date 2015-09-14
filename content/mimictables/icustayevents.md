@@ -7,7 +7,7 @@ toc = "true"
 
 [menu]
   [menu.main]
-    parent = "MIMIC data"
+    parent = "MIMIC tables"
 +++
 
 
