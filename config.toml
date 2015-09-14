@@ -33,3 +33,8 @@ theme = "mimic-data"
     pre = "<i class='fa fa-book'></i>"
     weight = 50
     url = "/tutorials/"
+[[menu.main]]
+    name = "Glossary"
+    pre = "<i class='fa fa-book'></i>"
+    weight = 50
+    url = "/glossary/"
