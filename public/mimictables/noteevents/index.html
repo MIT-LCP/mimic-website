@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.14" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Accessing MIMIC</title>
+    <title>NOTEEVENTS</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
 
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Accessing MIMIC</h1>
+                <h1 class="nav top-menu">NOTEEVENTS</h1>
             </div>
       </header>
       
@@ -75,16 +75,16 @@
           
               
 
-            <li class="sub-menu active">
+            <li class="sub-menu">
             <a href="javascript:;" class="">
                 <i class='fa fa-road'></i>
                 
                 <span>Getting started</span>
-                <span class="menu-arrow fa fa-angle-down"></span>
+                <span class="menu-arrow fa fa-angle-right"></span>
             </a>
-                <ul class="sub open">
+                <ul class="sub">
                     
-                    <li class="active"><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
                     
                     <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
                     
@@ -96,14 +96,14 @@
           
               
 
-            <li class="sub-menu">
+            <li class="sub-menu active">
             <a href="javascript:;" class="">
                 <i class='fa fa-cog'></i>
                 
                 <span>MIMIC data</span>
-                <span class="menu-arrow fa fa-angle-right"></span>
+                <span class="menu-arrow fa fa-angle-down"></span>
             </a>
-                <ul class="sub">
+                <ul class="sub open">
                     
                     <li><a href="/mimicdata/overview/">Overview</a> </li>
                     
@@ -149,7 +149,7 @@
                     
                     <li><a href="/mimictables/microbiologyevents/">MICROBIOLOGYEVENTS</a> </li>
                     
-                    <li><a href="/mimictables/noteevents/">NOTEEVENTS</a> </li>
+                    <li class="active"><a href="/mimictables/noteevents/">NOTEEVENTS</a> </li>
                     
                     <li><a href="/mimictables/patients/">PATIENTS</a> </li>
                     
@@ -214,7 +214,7 @@
             <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
             
-              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5caccess.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/mimictables%5cnoteevents.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
             
         </ul>
         
@@ -257,29 +257,133 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</h1>
+<h1 id="overview:388d325a7ef549ed82724b13c5084065">Overview</h1>
 
-<p>The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. <a href="http://127.0.0.1:1313/mimicdata/whatsnew/">See here for more detail.</a></p>
+<p><strong>Table source:</strong> Hospital database.</p>
 
-<h1 id="getting-access:127f171a52019ad9726e1cd032676173">Getting access</h1>
+<p><strong>Table purpose:</strong> Contains all notes for patients.</p>
 
-<p>The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available, see (<a href="http://physionet.org/mimic2wdb/">http://physionet.org/mimic2wdb/</a>).</p>
+<p><strong>Number of rows:</strong></p>
 
-<p>The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:</p>
+<p><strong>Links to:</strong></p>
 
 <ul>
-<li>Follow <a href="https://physionet.org/pnw/login">the instructions</a> to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, <a href="https://physionet.org/pnw/login">log in to it</a>.</li>
-<li>On your PhysioNetWorks home page, click on the link titled &ldquo;MIMIC III Clinical Database&rdquo;, and follow the instructions to apply for access.</li>
+<li>PATIENTS on <code>SUBJECT_ID</code></li>
+<li>ADMISSIONS on <code>HADM_ID</code></li>
+<li>ICUSTAYEVENTS on <code>ICUSTAY_ID</code></li>
+<li>D_ITEMS on <code>ITEMID</code></li>
+<li>CAREGIVERS on <code>CGID</code></li>
 </ul>
 
-<p>All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information.</p>
+<h1 id="table-columns:388d325a7ef549ed82724b13c5084065">Table columns</h1>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Postgres data type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>RECORD_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>SUBJECT_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>HADM_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>CHARTDATE</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>CATEGORY</td>
+<td>VARCHAR(50)</td>
+</tr>
+
+<tr>
+<td>DESCRIPTION</td>
+<td>VARCHAR(300)</td>
+</tr>
+
+<tr>
+<td>CGID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>ISERROR</td>
+<td>CHAR(1)</td>
+</tr>
+
+<tr>
+<td>TEXT</td>
+<td>TEXT</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="detailed-description:388d325a7ef549ed82724b13c5084065">Detailed Description</h1>
+
+<h2 id="record-id:388d325a7ef549ed82724b13c5084065"><code>RECORD_ID</code></h2>
+
+<p><code>RECORD_ID</code> identifies a unique note in the database. This is almost always unique to the row. However, there are a handful of cases where the hospital admission times overlap, resulting in ambiguity regarding which admission the note is associated with. In these cases, the note is duplicated and associated with each <code>HADM_ID</code>.</p>
+
+<h2 id="subject-id-hadm-id:388d325a7ef549ed82724b13c5084065"><code>SUBJECT_ID</code>, <code>HADM_ID</code></h2>
+
+<p>Identifiers which specify the patient: <code>SUBJECT_ID</code> is unique to a patient and <code>HADM_ID</code> is unique to a patient hospital stay.</p>
+
+<h2 id="chartdate:388d325a7ef549ed82724b13c5084065"><code>CHARTDATE</code></h2>
+
+<p><code>CHARTDATE</code> records the date at which the note was charted.</p>
+
+<h2 id="category-description:388d325a7ef549ed82724b13c5084065"><code>CATEGORY</code>, <code>DESCRIPTION</code></h2>
+
+<p><code>CATEGORY</code> and <code>DESCRIPTION</code> define the type of note recorded. For example, a <code>CATEGORY</code> of &lsquo;Discharge&rsquo; indicates that the note is a discharge note, and a <code>DESCRIPTION</code> of &lsquo;Summary&rsquo; in conjunction with this indicates that the note is a discharge summary.</p>
+
+<h2 id="cgid:388d325a7ef549ed82724b13c5084065"><code>CGID</code></h2>
+
+<p><code>CGID</code> is the identifier for the caregiver who input the note.</p>
+
+<h2 id="iserror:388d325a7ef549ed82724b13c5084065"><code>ISERROR</code></h2>
+
+<h2 id="text:388d325a7ef549ed82724b13c5084065"><code>TEXT</code></h2>
+
+<p><code>TEXT</code> contains the note text.</p>
+
+<h1 id="important-considerations:388d325a7ef549ed82724b13c5084065">Important considerations</h1>
+
+<ul>
+<li><code>TEXT</code> is often large and contains many newline characters: it may be easier to read if viewed in a distinct program rather than the one performing the queries.</li>
+</ul>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</a></li>
-<li><a href="#getting-access:127f171a52019ad9726e1cd032676173">Getting access</a></li>
+<li><a href="#overview:388d325a7ef549ed82724b13c5084065">Overview</a></li>
+<li><a href="#table-columns:388d325a7ef549ed82724b13c5084065">Table columns</a></li>
+<li><a href="#detailed-description:388d325a7ef549ed82724b13c5084065">Detailed Description</a>
+<ul>
+<li><a href="#record-id:388d325a7ef549ed82724b13c5084065"><code>RECORD_ID</code></a></li>
+<li><a href="#subject-id-hadm-id:388d325a7ef549ed82724b13c5084065"><code>SUBJECT_ID</code>, <code>HADM_ID</code></a></li>
+<li><a href="#chartdate:388d325a7ef549ed82724b13c5084065"><code>CHARTDATE</code></a></li>
+<li><a href="#category-description:388d325a7ef549ed82724b13c5084065"><code>CATEGORY</code>, <code>DESCRIPTION</code></a></li>
+<li><a href="#cgid:388d325a7ef549ed82724b13c5084065"><code>CGID</code></a></li>
+<li><a href="#iserror:388d325a7ef549ed82724b13c5084065"><code>ISERROR</code></a></li>
+<li><a href="#text:388d325a7ef549ed82724b13c5084065"><code>TEXT</code></a></li>
+</ul></li>
+<li><a href="#important-considerations:388d325a7ef549ed82724b13c5084065">Important considerations</a></li>
 </ul>
 </nav>
 </div>

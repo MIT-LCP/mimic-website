@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.14" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Accessing MIMIC</title>
+    <title>D_LABITEMS</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
 
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Accessing MIMIC</h1>
+                <h1 class="nav top-menu">D_LABITEMS</h1>
             </div>
       </header>
       
@@ -75,16 +75,16 @@
           
               
 
-            <li class="sub-menu active">
+            <li class="sub-menu">
             <a href="javascript:;" class="">
                 <i class='fa fa-road'></i>
                 
                 <span>Getting started</span>
-                <span class="menu-arrow fa fa-angle-down"></span>
+                <span class="menu-arrow fa fa-angle-right"></span>
             </a>
-                <ul class="sub open">
+                <ul class="sub">
                     
-                    <li class="active"><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
                     
                     <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
                     
@@ -96,14 +96,14 @@
           
               
 
-            <li class="sub-menu">
+            <li class="sub-menu active">
             <a href="javascript:;" class="">
                 <i class='fa fa-cog'></i>
                 
                 <span>MIMIC data</span>
-                <span class="menu-arrow fa fa-angle-right"></span>
+                <span class="menu-arrow fa fa-angle-down"></span>
             </a>
-                <ul class="sub">
+                <ul class="sub open">
                     
                     <li><a href="/mimicdata/overview/">Overview</a> </li>
                     
@@ -133,7 +133,7 @@
                     
                     <li><a href="/mimictables/d_items/">D_ITEMS</a> </li>
                     
-                    <li><a href="/mimictables/d_labitems/">D_LABITEMS</a> </li>
+                    <li class="active"><a href="/mimictables/d_labitems/">D_LABITEMS</a> </li>
                     
                     <li><a href="/mimictables/datetimeevents/">DATETIMEEVENTS</a> </li>
                     
@@ -214,7 +214,7 @@
             <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
             
-              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5caccess.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/mimictables%5cd_labitems.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
             
         </ul>
         
@@ -257,29 +257,104 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</h1>
+<h1 id="overview:01a62bc400116779ac06ca82e52e8ba3">Overview</h1>
 
-<p>The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. <a href="http://127.0.0.1:1313/mimicdata/whatsnew/">See here for more detail.</a></p>
+<p><strong>Table source:</strong> Hospital database.</p>
 
-<h1 id="getting-access:127f171a52019ad9726e1cd032676173">Getting access</h1>
+<p><strong>Table purpose:</strong> Definition table for all laboratory measurements.</p>
 
-<p>The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available, see (<a href="http://physionet.org/mimic2wdb/">http://physionet.org/mimic2wdb/</a>).</p>
+<p><strong>Number of rows:</strong> 755</p>
 
-<p>The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:</p>
+<p><strong>Links to:</strong></p>
 
 <ul>
-<li>Follow <a href="https://physionet.org/pnw/login">the instructions</a> to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, <a href="https://physionet.org/pnw/login">log in to it</a>.</li>
-<li>On your PhysioNetWorks home page, click on the link titled &ldquo;MIMIC III Clinical Database&rdquo;, and follow the instructions to apply for access.</li>
+<li>LABEVENTS on <code>ITEMID</code></li>
 </ul>
 
-<p>All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information.</p>
+<h1 id="table-columns:01a62bc400116779ac06ca82e52e8ba3">Table columns</h1>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Postgres data type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ITEMID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>LABEL</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>FLUID</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>CATEGORY</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>LOINC_CODE</td>
+<td>VARCHAR(100)</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="detailed-description:01a62bc400116779ac06ca82e52e8ba3">Detailed Description</h1>
+
+<p><code>D_LABITEMS</code> contains definitions for all <code>ITEMID</code> associated with lab measurements in the MIMIC database. All data in LABEVENTS link to the D_LABITEMS table. Each unique <code>LABEL</code> in the hospital database was assigned an <code>ITEMID</code> in this table, and the use of this <code>ITEMID</code> facilitates efficient storage and querying of the data. Note that lab items are kept separate while most definitions are contained in the D_ITEMS table, and there were good reasons to keep the lab items separate. As the laboratory data is acquired from the hospital database, the data is consistent across all years in the database. Consequently, there is usually only one <code>ITEMID</code> associated with each concept in the database (e.g. only <code>ITEMID</code>, ???, is used for the Troponin-I measurement). Furthermore, the data contains information collected in departments outside the ICU. This includes both wards within the hospital and clinics outside the hospital. Most concepts in this table have been mapped to LOINC codes, an openly available ontology which provides a rich amount of information about the laboratory measurement including reference ranges, common units of measurement and other further detail regarding the measurement.</p>
+
+<h2 id="itemid:01a62bc400116779ac06ca82e52e8ba3"><code>ITEMID</code></h2>
+
+<p>As an alternate primary key to the table, <code>ITEMID</code> is unique to each row.</p>
+
+<h2 id="label:01a62bc400116779ac06ca82e52e8ba3"><code>LABEL</code></h2>
+
+<p>The <code>LABEL</code> column describes the concept which is represented by the <code>ITEMID</code>.</p>
+
+<h2 id="fluid:01a62bc400116779ac06ca82e52e8ba3"><code>FLUID</code></h2>
+
+<p><code>FLUID</code> describes the substance on which the measurement was made. For example, chemistry measurements are frequently performed on blood, which is listed in this column as &lsquo;BLOOD&rsquo;. Many of these measurements are also acquirable on other fluids, such as urine, and this column differentiates these distinct concepts.</p>
+
+<h2 id="category:01a62bc400116779ac06ca82e52e8ba3"><code>CATEGORY</code></h2>
+
+<p><code>CATEGORY</code> provides higher level information as to the type of measurement. For example, a category of &lsquo;ABG&rsquo; indicates that the measurement is an arterial blood gas.</p>
+
+<h2 id="loinc-code:01a62bc400116779ac06ca82e52e8ba3"><code>LOINC_CODE</code></h2>
+
+<p><code>LOINC_CODE</code> contains the LOINC code associated with the given <code>ITEMID</code>. LOINC is an ontology which originally specified laboratory measurements but has since expanded to cover a wide range of clinically relevant concepts. LOINC openly provide a table which contains a large amount of detail about each LOINC code. This table is freely available online or can be provided by the guardians of the database.</p>
+
+<h1 id="important-considerations:01a62bc400116779ac06ca82e52e8ba3">Important considerations</h1>
+
+<ul>
+<li>The <code>ITEMID</code> from MIMIC III v1.0 does <em>not</em> match the <code>ITEMID</code> from MIMIC II v2.6. If a mapping between the two is necessary, please contact the guardians of the database.</li>
+<li>Many of the LOINC codes were assigned during a project to standardize the ontology of lab measurements in the MIMIC database. Consequently, the codes were assigned post-hoc, and may not be present for every lab measurement. We welcome improvements to the present codes or assignment of LOINC codes to unmapped data elements from the community.</li>
+</ul>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</a></li>
-<li><a href="#getting-access:127f171a52019ad9726e1cd032676173">Getting access</a></li>
+<li><a href="#overview:01a62bc400116779ac06ca82e52e8ba3">Overview</a></li>
+<li><a href="#table-columns:01a62bc400116779ac06ca82e52e8ba3">Table columns</a></li>
+<li><a href="#detailed-description:01a62bc400116779ac06ca82e52e8ba3">Detailed Description</a>
+<ul>
+<li><a href="#itemid:01a62bc400116779ac06ca82e52e8ba3"><code>ITEMID</code></a></li>
+<li><a href="#label:01a62bc400116779ac06ca82e52e8ba3"><code>LABEL</code></a></li>
+<li><a href="#fluid:01a62bc400116779ac06ca82e52e8ba3"><code>FLUID</code></a></li>
+<li><a href="#category:01a62bc400116779ac06ca82e52e8ba3"><code>CATEGORY</code></a></li>
+<li><a href="#loinc-code:01a62bc400116779ac06ca82e52e8ba3"><code>LOINC_CODE</code></a></li>
+</ul></li>
+<li><a href="#important-considerations:01a62bc400116779ac06ca82e52e8ba3">Important considerations</a></li>
 </ul>
 </nav>
 </div>

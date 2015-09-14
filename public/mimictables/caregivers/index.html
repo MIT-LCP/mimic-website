@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.14" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Accessing MIMIC</title>
+    <title>CAREGIVERS</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
 
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Accessing MIMIC</h1>
+                <h1 class="nav top-menu">CAREGIVERS</h1>
             </div>
       </header>
       
@@ -75,16 +75,16 @@
           
               
 
-            <li class="sub-menu active">
+            <li class="sub-menu">
             <a href="javascript:;" class="">
                 <i class='fa fa-road'></i>
                 
                 <span>Getting started</span>
-                <span class="menu-arrow fa fa-angle-down"></span>
+                <span class="menu-arrow fa fa-angle-right"></span>
             </a>
-                <ul class="sub open">
+                <ul class="sub">
                     
-                    <li class="active"><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
                     
                     <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
                     
@@ -96,14 +96,14 @@
           
               
 
-            <li class="sub-menu">
+            <li class="sub-menu active">
             <a href="javascript:;" class="">
                 <i class='fa fa-cog'></i>
                 
                 <span>MIMIC data</span>
-                <span class="menu-arrow fa fa-angle-right"></span>
+                <span class="menu-arrow fa fa-angle-down"></span>
             </a>
-                <ul class="sub">
+                <ul class="sub open">
                     
                     <li><a href="/mimicdata/overview/">Overview</a> </li>
                     
@@ -119,7 +119,7 @@
                     
                     <li><a href="/mimictables/callout/">CALLOUT</a> </li>
                     
-                    <li><a href="/mimictables/caregivers/">CAREGIVERS</a> </li>
+                    <li class="active"><a href="/mimictables/caregivers/">CAREGIVERS</a> </li>
                     
                     <li><a href="/mimictables/chartevents/">CHARTEVENTS</a> </li>
                     
@@ -214,7 +214,7 @@
             <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
             
-              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5caccess.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/mimictables%5ccaregivers.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
             
         </ul>
         
@@ -257,29 +257,78 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</h1>
+<h1 id="overview:9c64d39ca048cc4ecc3c1c9b4d2c3cf8">Overview</h1>
 
-<p>The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. <a href="http://127.0.0.1:1313/mimicdata/whatsnew/">See here for more detail.</a></p>
+<p><strong>Table source:</strong> CareVue and Metavision ICU databases.</p>
 
-<h1 id="getting-access:127f171a52019ad9726e1cd032676173">Getting access</h1>
+<p><strong>Table purpose:</strong> Defines the role of caregivers.</p>
 
-<p>The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available, see (<a href="http://physionet.org/mimic2wdb/">http://physionet.org/mimic2wdb/</a>).</p>
+<p><strong>Number of rows:</strong> 8221</p>
 
-<p>The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:</p>
+<p><strong>Links to:</strong>
+* CHARTEVENTS on <code>CGID</code></p>
 
-<ul>
-<li>Follow <a href="https://physionet.org/pnw/login">the instructions</a> to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, <a href="https://physionet.org/pnw/login">log in to it</a>.</li>
-<li>On your PhysioNetWorks home page, click on the link titled &ldquo;MIMIC III Clinical Database&rdquo;, and follow the instructions to apply for access.</li>
-</ul>
+<h1 id="table-columns:9c64d39ca048cc4ecc3c1c9b4d2c3cf8">Table columns</h1>
 
-<p>All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Postgres data type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ROW_ID</td>
+<td></td>
+</tr>
+
+<tr>
+<td>CGID</td>
+<td></td>
+</tr>
+
+<tr>
+<td>LABEL</td>
+<td></td>
+</tr>
+
+<tr>
+<td>DESCRIPTION</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="detailed-description:9c64d39ca048cc4ecc3c1c9b4d2c3cf8">Detailed Description</h1>
+
+<p>The CAREGIVERS table provides information regarding the type of caregiver. Each caregiver is represented by a unique integer which maps to this table.</p>
+
+<h2 id="cgid:9c64d39ca048cc4ecc3c1c9b4d2c3cf8"><code>CGID</code></h2>
+
+<p><code>CGID</code> is a unique identifier for each distinct caregiver present in the database. <code>CGID</code> is sourced from two tables in the raw data: the CareVue and Metavision ICU databases. Due to imprecision in the storage of unique identifiers across the database, it is possible that two distinct caregivers (e.g. RN Susan Jones and RN Sarah Jones) would be considered as the same caregiver. However, this is an unlikely occurrence.</p>
+
+<h2 id="label:9c64d39ca048cc4ecc3c1c9b4d2c3cf8"><code>LABEL</code></h2>
+
+<p><code>LABEL</code> defines the type of caregiver: e.g. RN, MD, PharmD, etc. Note that <code>LABEL</code> is a free text field and as such contains many typographical errors and spelling variants of the same concept (e.g. MD, MDs, M.D.).</p>
+
+<h2 id="description:9c64d39ca048cc4ecc3c1c9b4d2c3cf8"><code>DESCRIPTION</code></h2>
+
+<p><code>DESCRIPTION</code> is less frequently present than <code>LABEL</code>, and provides additional information regarding the caregiver. This column is much more structured, and contains only 17 unique values as of MIMIC III v1.0.</p>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</a></li>
-<li><a href="#getting-access:127f171a52019ad9726e1cd032676173">Getting access</a></li>
+<li><a href="#overview:9c64d39ca048cc4ecc3c1c9b4d2c3cf8">Overview</a></li>
+<li><a href="#table-columns:9c64d39ca048cc4ecc3c1c9b4d2c3cf8">Table columns</a></li>
+<li><a href="#detailed-description:9c64d39ca048cc4ecc3c1c9b4d2c3cf8">Detailed Description</a>
+<ul>
+<li><a href="#cgid:9c64d39ca048cc4ecc3c1c9b4d2c3cf8"><code>CGID</code></a></li>
+<li><a href="#label:9c64d39ca048cc4ecc3c1c9b4d2c3cf8"><code>LABEL</code></a></li>
+<li><a href="#description:9c64d39ca048cc4ecc3c1c9b4d2c3cf8"><code>DESCRIPTION</code></a></li>
+</ul></li>
 </ul>
 </nav>
 </div>

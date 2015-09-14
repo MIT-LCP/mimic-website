@@ -1,0 +1,1944 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mimictables on MIMIC Critical Care Database</title>
+    <link>http://localhost:1313/mimictables/</link>
+    <description>Recent content in Mimictables on MIMIC Critical Care Database</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Sep 2015 19:34:46 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/mimictables/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ADMISSIONS</title>
+      <link>http://localhost:1313/mimictables/admissions/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/admissions/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:fe40d9a41d4d874ce3615ed457a95a25&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; hospital database.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Define a patient&amp;rsquo;s hospital admission, HADM_ID.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 58976&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PATIENTS on &lt;code&gt;SUBJECT_ID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:fe40d9a41d4d874ce3615ed457a95a25&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ROW_ID&lt;/td&gt;
+&lt;td&gt;BIGINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SUBJECT_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HADM_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ADMITTIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DISCHTIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DEATHTIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ADMISSION_TYPE&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ADMISSION_LOCATION&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DISCHARGE_LOCATION&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;INSURANCE&lt;/td&gt;
+&lt;td&gt;VARCHAR(255)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LANGUAGE&lt;/td&gt;
+&lt;td&gt;VARCHAR(10)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;RELIGION&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MARITAL_STATUS&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ETHNICITY&lt;/td&gt;
+&lt;td&gt;VARCHAR(200)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DIAGNOSIS&lt;/td&gt;
+&lt;td&gt;VARCHAR(300)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:fe40d9a41d4d874ce3615ed457a95a25&#34;&gt;Detailed description&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;ADMISSIONS&lt;/code&gt; table defines all &lt;code&gt;HADM_ID&lt;/code&gt; present in the database, which include all hospital admissions between June 1st, 2001 and October 10th, 2012.&lt;/p&gt;
+
+&lt;h2 id=&#34;subject-id-hadm-id:fe40d9a41d4d874ce3615ed457a95a25&#34;&gt;&lt;code&gt;SUBJECT_ID&lt;/code&gt;, &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Each row of this table contains a unique &lt;code&gt;HADM_ID&lt;/code&gt;, which represents a single patient&amp;rsquo;s admission to the hospital. &lt;code&gt;HADM_ID&lt;/code&gt; can range from 1000000 - 1999999. It is possible for this table to have duplicate &lt;code&gt;SUBJECT_ID&lt;/code&gt;, indicating that a single patient had multiple admissions to the hospital. The ADMISSIONS table can be linked to the PATIENTS table using &lt;code&gt;SUBJECT_ID&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;admittime-dischtime-deathtime:fe40d9a41d4d874ce3615ed457a95a25&#34;&gt;&lt;code&gt;ADMITTIME&lt;/code&gt;, &lt;code&gt;DISCHTIME&lt;/code&gt;, &lt;code&gt;DEATHTIME&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ADMITTIME&lt;/code&gt; provides the date and time the patient was admitted to the hospital, while &lt;code&gt;DISCHTIME&lt;/code&gt; provides the date and time the patient was discharged from the hospital. If applicable, &lt;code&gt;DEATHTIME&lt;/code&gt; provides the time of in-hospital death for the patient. Note that &lt;code&gt;DEATHTIME&lt;/code&gt; is only present if the patient died in-hospital, and is almost always the same as the patient&amp;rsquo;s &lt;code&gt;DISCHTIME&lt;/code&gt;. However, there can be some discrepancies due to typographical errors.&lt;/p&gt;
+
+&lt;h2 id=&#34;admission-type:fe40d9a41d4d874ce3615ed457a95a25&#34;&gt;&lt;code&gt;ADMISSION_TYPE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ADMISSION_TYPE&lt;/code&gt; describes the type of the admission: &amp;lsquo;ELECTIVE&amp;rsquo;, &amp;lsquo;URGENT&amp;rsquo;, &amp;lsquo;NEWBORN&amp;rsquo; or &amp;lsquo;EMERGENCY&amp;rsquo;. Emergency/urgent indicate unplanned medical care, and are often collapsed into a single category in studies. Elective indicates a previously planned hospital admission. Newborn indicates that the &lt;code&gt;HADM_ID&lt;/code&gt; pertains to the patient&amp;rsquo;s birth.&lt;/p&gt;
+
+&lt;h2 id=&#34;admission-location:fe40d9a41d4d874ce3615ed457a95a25&#34;&gt;&lt;code&gt;ADMISSION_LOCATION&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ADMISSION\_LOCATION&lt;/code&gt; provides information about the previous location of the patient prior to arriving at the hospital. There are 9 possible values:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;EMERGENCY ROOM ADMIT&lt;/li&gt;
+&lt;li&gt;TRANSFER FROM HOSP/EXTRAM&lt;/li&gt;
+&lt;li&gt;TRANSFER FROM OTHER HEALT&lt;/li&gt;
+&lt;li&gt;CLINIC REFERRAL/PREMATURE&lt;/li&gt;
+&lt;li&gt;** INFO NOT AVAILABLE **&lt;/li&gt;
+&lt;li&gt;TRANSFER FROM SKILLED NUR&lt;/li&gt;
+&lt;li&gt;TRSF WITHIN THIS FACILITY&lt;/li&gt;
+&lt;li&gt;HMO REFERRAL/SICK&lt;/li&gt;
+&lt;li&gt;PHYS REFERRAL/NORMAL DELI&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The truncated text occurs in the raw data as well.&lt;/p&gt;
+
+&lt;h2 id=&#34;insurance-language-religion-marital-status-ethnicity:fe40d9a41d4d874ce3615ed457a95a25&#34;&gt;INSURANCE, LANGUAGE, RELIGION, MARITAL_STATUS, ETHNICITY&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;INSURANCE&lt;/code&gt;, &lt;code&gt;LANGUAGE&lt;/code&gt;, &lt;code&gt;RELIGION&lt;/code&gt;, &lt;code&gt;MARITAL_STATUS&lt;/code&gt;, &lt;code&gt;ETHNICITY&lt;/code&gt; columns describe various demographic aspects about each patient&amp;rsquo;s admission. These columns occur in the ADMISSIONS table as they are originally sourced from the admission, discharge, transfers (ADT) data from the hospital database. As a result, it is possible (though infrequent) that these values change across two distinct hospital admissions (&lt;code&gt;HADM_ID&lt;/code&gt;) for a single patient (&lt;code&gt;SUBJECT_ID&lt;/code&gt;). This is reasonable for some of these columns (e.g. &lt;code&gt;MARITAL_STATUS&lt;/code&gt;, &lt;code&gt;RELIGION&lt;/code&gt;), but less reasonable for others (e.g. &lt;code&gt;ETHNICITY&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h2 id=&#34;diagnosis:fe40d9a41d4d874ce3615ed457a95a25&#34;&gt;DIAGNOSIS&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;DIAGNOSIS&lt;/code&gt; column provides the admitting diagnosis for the patient. The diagnosis does not use a systematic ontology: as of MIMIC III v1.0 there are 15,693 distinct diagnoses for 58,976 patients. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness).&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:fe40d9a41d4d874ce3615ed457a95a25&#34;&gt;Important considerations&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The data is sourced from the admission, discharge and transfer database from the hospital, frequently called ADT data.&lt;/li&gt;
+&lt;li&gt;Organ donor accounts occur sometimes for patients who died in the hospital. These are distinct hospital admissions with very short, sometimes negative lengths of stay. Furthermore, their &lt;code&gt;DEATHTIME&lt;/code&gt; is frequently the same as the original patient&amp;rsquo;s &lt;code&gt;DEATHTIME&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;All text data, except for that in the &lt;code&gt;INSURANCE&lt;/code&gt; column, is stored in upper case.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CALLOUT</title>
+      <link>http://localhost:1313/mimictables/callout/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/callout/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:12b4cce506a7dbbef4b99ba720446873&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; Hospital database.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Provides information when a patient was ready for discharge, and when the patient was actually discharged.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 34499&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PATIENTS on &lt;code&gt;SUBJECT_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ADMISSIONS on &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:12b4cce506a7dbbef4b99ba720446873&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ROW_ID&lt;/td&gt;
+&lt;td&gt;BIGINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SUBJECT_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HADM_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SUBMIT_WARDID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SUBMIT_CAREUNIT&lt;/td&gt;
+&lt;td&gt;VARCHAR(15)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CURR_WARDID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CURR_CAREUNIT&lt;/td&gt;
+&lt;td&gt;VARCHAR(15)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CALLOUT_WARDID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CALLOUT_SERVICE&lt;/td&gt;
+&lt;td&gt;VARCHAR(10)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;REQUEST_TELE&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;REQUEST_RESP&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;REQUEST_CDIFF&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;REQUEST_MRSA&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;REQUEST_VRE&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CALLOUT_STATUS&lt;/td&gt;
+&lt;td&gt;VARCHAR(20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CALLOUT_OUTCOME&lt;/td&gt;
+&lt;td&gt;VARCHAR(20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DISCHARGE_WARDID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ACKNOWLEDGE_STATUS&lt;/td&gt;
+&lt;td&gt;VARCHAR(20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CREATETIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;UPDATETIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ACKNOWLEDGETIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;OUTCOMETIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;FIRSTRESERVATIONTIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CURRENTRESERVATIONTIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:12b4cce506a7dbbef4b99ba720446873&#34;&gt;Detailed description&lt;/h1&gt;
+
+&lt;p&gt;The CALLOUT table provides information for &amp;ldquo;call out events&amp;rdquo;. A call out event occurs as follows: first, a patient is ready for discharge from the ICU. A care provider creates a call out request (occurring at &lt;code&gt;CREATETIME&lt;/code&gt;) stating the desired ward and any necessary precautions. The call out request is acknowledged, usually within a short period of time (&lt;code&gt;ACKNOWLEDGETIME&lt;/code&gt;). When the patient is actually transferred out of the ICU, the &lt;code&gt;CALLOUT_OUTCOME&lt;/code&gt; becomes &amp;lsquo;Discharged&amp;rsquo; and the &lt;code&gt;OUTCOMETIME&lt;/code&gt; column contains the time at which the patient was discharged.&lt;/p&gt;
+
+&lt;h2 id=&#34;subject-id-hadm-id:12b4cce506a7dbbef4b99ba720446873&#34;&gt;SUBJECT_ID, HADM_ID&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;SUBJECT_ID&lt;/code&gt; and &lt;code&gt;HADM_ID&lt;/code&gt; define the patient and hospital admission corresponding to the given call out event.
+? Unique&lt;/p&gt;
+
+&lt;h2 id=&#34;submit-wardid-submit-careunit:12b4cce506a7dbbef4b99ba720446873&#34;&gt;SUBMIT_WARDID, SUBMIT_CAREUNIT&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;SUBMIT_WARDID&lt;/code&gt; identifies the ward from which the request was submitted. &lt;code&gt;SUBMIT_CAREUNIT&lt;/code&gt; indicates whether the &lt;code&gt;SUBMIT_WARDID&lt;/code&gt; corresponds an ICU cost center, and if so, what type of ICU cost center.&lt;/p&gt;
+
+&lt;h2 id=&#34;curr-wardid-curr-careunit:12b4cce506a7dbbef4b99ba720446873&#34;&gt;CURR_WARDID, CURR_CAREUNIT&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CURR_WARDID&lt;/code&gt; identifies the ward in which the patient resides when called out (i.e. prior to discharge/transfer). &lt;code&gt;CURR_CAREUNIT&lt;/code&gt; indicates which ICU cost center the &lt;code&gt;CURR_WARDID&lt;/code&gt; corresponds to (note: since all patients are being discharged from an ICU, all patients should reside in an ICU cost center).&lt;/p&gt;
+
+&lt;h2 id=&#34;callout-wardid-callout-service:12b4cce506a7dbbef4b99ba720446873&#34;&gt;&lt;code&gt;CALLOUT_WARDID&lt;/code&gt;, &lt;code&gt;CALLOUT_SERVICE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CALLOUT_WARDID&lt;/code&gt; identifies the ward to which the patient should be discharged. Note that &lt;code&gt;CALLOUT_WARDID&lt;/code&gt; = 0 represents &amp;lsquo;Home&amp;rsquo; and &lt;code&gt;CALLOUT_WARDID&lt;/code&gt; = 1 represents &amp;lsquo;First available ward&amp;rsquo;. The remaining IDs correspond to distinct wards in the hospital. &lt;code&gt;CALLOUT_SERVICE&lt;/code&gt; is the service under which the patient should be discharged to.&lt;/p&gt;
+
+&lt;h2 id=&#34;request-tele-request-resp-request-cdiff-request-mrsa-request-vre:12b4cce506a7dbbef4b99ba720446873&#34;&gt;&lt;code&gt;REQUEST_TELE&lt;/code&gt;, &lt;code&gt;REQUEST_RESP&lt;/code&gt;, &lt;code&gt;REQUEST_CDIFF&lt;/code&gt;, &lt;code&gt;REQUEST_MRSA&lt;/code&gt;, &lt;code&gt;REQUEST_VRE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The request columns are binary indicators which request certain precautions for the patient in the subsequent ward where they will reside. For example, MRSA means that the patient is sensitive to MRSA, a drug resistant source of hospital acquired infections.&lt;/p&gt;
+
+&lt;h2 id=&#34;callout-status-callout-outcome:12b4cce506a7dbbef4b99ba720446873&#34;&gt;&lt;code&gt;CALLOUT_STATUS&lt;/code&gt;, &lt;code&gt;CALLOUT_OUTCOME&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CALLOUT_STATUS&lt;/code&gt; indicates whether the call out is still active or not: if a call out is answered it should be flagged as inactive. &lt;code&gt;CALLOUT_OUTCOME&lt;/code&gt; is either &amp;lsquo;Discharged&amp;rsquo; or &amp;lsquo;Cancelled&amp;rsquo;, indicating whether the patient finally called out (i.e. discharged) or not.&lt;/p&gt;
+
+&lt;h2 id=&#34;discharge-wardid:12b4cce506a7dbbef4b99ba720446873&#34;&gt;&lt;code&gt;DISCHARGE_WARDID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;DISCHARGE_WARDID&lt;/code&gt; indicates the ward to which the patient was actually discharged. &lt;code&gt;DISCHARGE_WARDID&lt;/code&gt; = 0 indicates home and other values correspond to distinct wards in the hospital.&lt;/p&gt;
+
+&lt;h2 id=&#34;acknowledge-status:12b4cce506a7dbbef4b99ba720446873&#34;&gt;&lt;code&gt;ACKNOWLEDGE_STATUS&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ACKNOWLEDGE_STATUS&lt;/code&gt; indicates the response to the callout event: &amp;lsquo;Acknowledged&amp;rsquo;, &amp;lsquo;Revised&amp;rsquo;, &amp;lsquo;Unacknowledged&amp;rsquo; or &amp;lsquo;Reactivated&amp;rsquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;createtime-updatetime-acknowledgetime-outcometime-firstreservationtime-currentreservationtime:12b4cce506a7dbbef4b99ba720446873&#34;&gt;&lt;code&gt;CREATETIME&lt;/code&gt;, &lt;code&gt;UPDATETIME&lt;/code&gt;, &lt;code&gt;ACKNOWLEDGETIME&lt;/code&gt;, &lt;code&gt;OUTCOMETIME&lt;/code&gt;, &lt;code&gt;FIRSTRESERVATIONTIME&lt;/code&gt;, &lt;code&gt;CURRENTRESERVATIONTIME&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CREATETIME&lt;/code&gt; provides the time and date that the call out was initiated. &lt;code&gt;UPDATETIME&lt;/code&gt; provides the last time at which the call out event was updated. &lt;code&gt;ACKNOWLEDGETIME&lt;/code&gt; is the time at which the call out was first acknowledged.
+&lt;code&gt;OUTCOMETIME&lt;/code&gt; is the time at which the &lt;code&gt;CALLOUT_OUTCOME&lt;/code&gt; occurred. &lt;code&gt;FIRSTRESERVATIONTIME&lt;/code&gt; and &lt;code&gt;CURRENTRESERVATIONTIME&lt;/code&gt; provide information regarding ward reservations.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:12b4cce506a7dbbef4b99ba720446873&#34;&gt;Important considerations&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Call out data is &lt;em&gt;not&lt;/em&gt; available for all adult patients, as the data only began being collected part way through the collection of the MIMIC database&lt;/li&gt;
+&lt;li&gt;Call out data is &lt;em&gt;never&lt;/em&gt; available for neonates&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CAREGIVERS</title>
+      <link>http://localhost:1313/mimictables/caregivers/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/caregivers/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:9c64d39ca048cc4ecc3c1c9b4d2c3cf8&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; CareVue and Metavision ICU databases.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Defines the role of caregivers.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 8221&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;
+* CHARTEVENTS on &lt;code&gt;CGID&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;table-columns:9c64d39ca048cc4ecc3c1c9b4d2c3cf8&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ROW_ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CGID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LABEL&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DESCRIPTION&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:9c64d39ca048cc4ecc3c1c9b4d2c3cf8&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;p&gt;The CAREGIVERS table provides information regarding the type of caregiver. Each caregiver is represented by a unique integer which maps to this table.&lt;/p&gt;
+
+&lt;h2 id=&#34;cgid:9c64d39ca048cc4ecc3c1c9b4d2c3cf8&#34;&gt;&lt;code&gt;CGID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CGID&lt;/code&gt; is a unique identifier for each distinct caregiver present in the database. &lt;code&gt;CGID&lt;/code&gt; is sourced from two tables in the raw data: the CareVue and Metavision ICU databases. Due to imprecision in the storage of unique identifiers across the database, it is possible that two distinct caregivers (e.g. RN Susan Jones and RN Sarah Jones) would be considered as the same caregiver. However, this is an unlikely occurrence.&lt;/p&gt;
+
+&lt;h2 id=&#34;label:9c64d39ca048cc4ecc3c1c9b4d2c3cf8&#34;&gt;&lt;code&gt;LABEL&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;LABEL&lt;/code&gt; defines the type of caregiver: e.g. RN, MD, PharmD, etc. Note that &lt;code&gt;LABEL&lt;/code&gt; is a free text field and as such contains many typographical errors and spelling variants of the same concept (e.g. MD, MDs, M.D.).&lt;/p&gt;
+
+&lt;h2 id=&#34;description:9c64d39ca048cc4ecc3c1c9b4d2c3cf8&#34;&gt;&lt;code&gt;DESCRIPTION&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;DESCRIPTION&lt;/code&gt; is less frequently present than &lt;code&gt;LABEL&lt;/code&gt;, and provides additional information regarding the caregiver. This column is much more structured, and contains only 17 unique values as of MIMIC III v1.0.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CHARTEVENTS</title>
+      <link>http://localhost:1313/mimictables/chartevents/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/chartevents/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; CareVue and Metavision ICU databases.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Contains all charted data for all patients.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 257,495,071&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PATIENTS on &lt;code&gt;SUBJECT_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ADMISSIONS on &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ICUSTAYEVENTS on &lt;code&gt;ICUSTAY_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;D_ITEMS on &lt;code&gt;ITEMID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;CAREGIVERS on &lt;code&gt;CGID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;th&gt;In CareVue&lt;/th&gt;
+&lt;th&gt;In Metavision&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SUBJECT_ID&lt;/td&gt;
+&lt;td&gt;NUMBER(7,0)&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HADM_ID&lt;/td&gt;
+&lt;td&gt;NUMBER(7,0)&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ICUSTAY_ID&lt;/td&gt;
+&lt;td&gt;NUMBER(7,0)&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ITEMID&lt;/td&gt;
+&lt;td&gt;NUMBER(7,0)&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CHARTTIME&lt;/td&gt;
+&lt;td&gt;DATE&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;STORETIME&lt;/td&gt;
+&lt;td&gt;DATE&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CGID&lt;/td&gt;
+&lt;td&gt;NUMBER(7,0)&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;VALUE&lt;/td&gt;
+&lt;td&gt;VARCHAR2(200 BYTE)&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;VALUENUM&lt;/td&gt;
+&lt;td&gt;NUMBER&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;UOM&lt;/td&gt;
+&lt;td&gt;VARCHAR2(20 BYTE)&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;WARNING&lt;/td&gt;
+&lt;td&gt;NUMBER(1,0)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ERROR&lt;/td&gt;
+&lt;td&gt;NUMBER(1,0)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;RESULTSTATUS&lt;/td&gt;
+&lt;td&gt;VARCHAR2(20 BYTE)&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;STOPPED&lt;/td&gt;
+&lt;td&gt;VARCHAR2(20 BYTE)&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;h2 id=&#34;subject-id-hadm-id-icustay-id:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;&lt;code&gt;SUBJECT_ID&lt;/code&gt;, &lt;code&gt;HADM_ID&lt;/code&gt;, &lt;code&gt;ICUSTAY_ID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Identifiers which specify the patient: &lt;code&gt;SUBJECT_ID&lt;/code&gt; is unique to a patient, &lt;code&gt;HADM_ID&lt;/code&gt; is unique to a patient hospital stay and &lt;code&gt;ICUSTAY_ID&lt;/code&gt; is unique to a patient ICU stay.&lt;/p&gt;
+
+&lt;h2 id=&#34;itemid:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;&lt;code&gt;ITEMID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Identifier for a single measurement type in the database. Each row associated with one &lt;code&gt;ITEMID&lt;/code&gt; (e.g. 212) corresponds to an instantiation of the same measurement (e.g. heart rate).&lt;/p&gt;
+
+&lt;h2 id=&#34;charttime-storetime:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;&lt;code&gt;CHARTTIME&lt;/code&gt;, &lt;code&gt;STORETIME&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CHARTTIME&lt;/code&gt; records the time at which an observation was charted, and is usually the closest proxy to the time the data was actually measured. &lt;code&gt;STORETIME&lt;/code&gt; records the time at which an observation was manually input or manually validated by a member of the clinical staff.&lt;/p&gt;
+
+&lt;h2 id=&#34;cgid:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;&lt;code&gt;CGID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CGID&lt;/code&gt; is the identifier for the caregiver who validated the given measurement.&lt;/p&gt;
+
+&lt;h2 id=&#34;value-valuenum:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;&lt;code&gt;VALUE&lt;/code&gt;, &lt;code&gt;VALUENUM&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;VALUE&lt;/code&gt; contains the value measured for the concept identified by the &lt;code&gt;ITEMID&lt;/code&gt;. If this value is numeric, then &lt;code&gt;VALUENUM&lt;/code&gt; contains the same data in a numeric format. If this data is not numeric, &lt;code&gt;VALUENUM&lt;/code&gt; is null. In some cases (e.g. scores like Glasgow Coma Scale, Richmond Sedation Agitation Scale and Code Status), &lt;code&gt;VALUENUM&lt;/code&gt; contains the score and &lt;code&gt;VALUE&lt;/code&gt; contains the score and text describing the meaning of the score.&lt;/p&gt;
+
+&lt;h2 id=&#34;uom:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;&lt;code&gt;UOM&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;UOM&lt;/code&gt; is the unit of measurement for the &lt;code&gt;VALUE&lt;/code&gt;, if appropriate.&lt;/p&gt;
+
+&lt;h2 id=&#34;warning-error:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;&lt;code&gt;WARNING&lt;/code&gt;, &lt;code&gt;ERROR&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;WARNING&lt;/code&gt; and &lt;code&gt;ERROR&lt;/code&gt; are Metavision specific columns which specify if a warning for the value was raised and if an error occurred during the measurement.&lt;/p&gt;
+
+&lt;p&gt;?? TODO: review metavision front end and provide more detail on the above.&lt;/p&gt;
+
+&lt;h2 id=&#34;resultstatus-stopped:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;&lt;code&gt;RESULTSTATUS&lt;/code&gt;, &lt;code&gt;STOPPED&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;RESULTSTATUS&lt;/code&gt; and &lt;code&gt;STOPPED&lt;/code&gt; are CareVue specific columns which specify the type of measurement (&lt;code&gt;RESULTSTATUS&lt;/code&gt; is &amp;lsquo;Manual&amp;rsquo; or &amp;lsquo;Automatic&amp;rsquo;) and whether the measurement was stopped.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:b2687244e8ce2ac9ff9735902607b5d7&#34;&gt;Important considerations&lt;/h1&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CPTEVENTS</title>
+      <link>http://localhost:1313/mimictables/cptevents/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/cptevents/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:88a963faa67d38cb037eda5b8d17571c&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; Hospital database.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Contains current procedural terminology (CPT) codes, which facilitate billing for procedures performed on patients.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 573146&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PATIENTS on &lt;code&gt;SUBJECT_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ADMISSIONS on &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ICUSTAYEVENTS on &lt;code&gt;ICUSTAY_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;D_ITEMS on &lt;code&gt;ITEMID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;CAREGIVERS on &lt;code&gt;CGID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:88a963faa67d38cb037eda5b8d17571c&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ROW_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SUBJECT_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HADM_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;COSTCENTER&lt;/td&gt;
+&lt;td&gt;VARCHAR(10)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CHARTDATE&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CPT_CD&lt;/td&gt;
+&lt;td&gt;VARCHAR(10)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CPT_NUMBER&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CPT_SUFFIX&lt;/td&gt;
+&lt;td&gt;VARCHAR(5)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;TICKET_ID_SEQ&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SECTIONHEADER&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SUBSECTIONHEADER&lt;/td&gt;
+&lt;td&gt;VARCHAR(300)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DESCRIPTION&lt;/td&gt;
+&lt;td&gt;VARCHAR(200)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:88a963faa67d38cb037eda5b8d17571c&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;CPTEVENTS&lt;/code&gt; contains current procedural terminology (CPT) codes for patients as billed through either the ICU cost center or the respiratory cost center. Each code represents a distinct procedure performed on the patient during their ICU stay.&lt;/p&gt;
+
+&lt;h2 id=&#34;subject-id-hadm-id:88a963faa67d38cb037eda5b8d17571c&#34;&gt;&lt;code&gt;SUBJECT_ID&lt;/code&gt;, &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Identifiers which specify the patient: &lt;code&gt;SUBJECT_ID&lt;/code&gt; is unique to a patient and &lt;code&gt;HADM_ID&lt;/code&gt; is unique to a patient hospital stay.&lt;/p&gt;
+
+&lt;h2 id=&#34;costcenter:88a963faa67d38cb037eda5b8d17571c&#34;&gt;&lt;code&gt;COSTCENTER&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;COSTCENTER&lt;/code&gt; is the cost center which billed for the corresponding CPT codes. There are two possible cost centers: &amp;lsquo;ICU&amp;rsquo; and &amp;lsquo;Resp&amp;rsquo;. &amp;lsquo;Resp&amp;rsquo; codes correspond to mechanical or non-invasive ventilation and were billed by the respiratory therapist. &amp;lsquo;ICU&amp;rsquo; codes correspond to the procedures billed for by the ICU.&lt;/p&gt;
+
+&lt;h2 id=&#34;chartdate:88a963faa67d38cb037eda5b8d17571c&#34;&gt;&lt;code&gt;CHARTDATE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The date at which the procedure occurred.&lt;/p&gt;
+
+&lt;h2 id=&#34;cpt-cd-cpt-number-cpt-suffix:88a963faa67d38cb037eda5b8d17571c&#34;&gt;&lt;code&gt;CPT_CD&lt;/code&gt;, &lt;code&gt;CPT_NUMBER&lt;/code&gt;, &lt;code&gt;CPT_SUFFIX&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CPT_CD&lt;/code&gt; contains the original CPT code. &lt;code&gt;CPT_NUMBER&lt;/code&gt; is a numeric version of the &lt;code&gt;CPT_CD&lt;/code&gt; column, which allows for easier range comparisons in querying. However, note not all &lt;code&gt;CPT_CD&lt;/code&gt; are fully numeric. The &lt;code&gt;CPT_SUFFIX&lt;/code&gt; column contains the text suffix when the &lt;code&gt;CPT_CD&lt;/code&gt; contains non-numeric characters.&lt;/p&gt;
+
+&lt;h2 id=&#34;ticket-id-seq:88a963faa67d38cb037eda5b8d17571c&#34;&gt;&lt;code&gt;TICKET_ID_SEQ&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The order of the &lt;code&gt;CPT_CD&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;sectionheader-subsectionheader:88a963faa67d38cb037eda5b8d17571c&#34;&gt;&lt;code&gt;SECTIONHEADER&lt;/code&gt;, &lt;code&gt;SUBSECTIONHEADER&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The section headers provide a category for the given CPT code. These headers were assigned using the D_CPT table.&lt;/p&gt;
+
+&lt;h2 id=&#34;description:88a963faa67d38cb037eda5b8d17571c&#34;&gt;&lt;code&gt;DESCRIPTION&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;In the case of a &lt;code&gt;CPT_CD&lt;/code&gt; corresponding to the respiratory cost center, the description provides information about the meaning of the CPT code. Otherwise, the field is null.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:88a963faa67d38cb037eda5b8d17571c&#34;&gt;Important considerations&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The respiratory cost center bills for ventilation &lt;em&gt;regardless&lt;/em&gt; of duration. That means that 30 minutes of mechanical ventilation for a single day would result in same billing code as a full 24 hours of mechanical ventilation.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>D_CPT</title>
+      <link>http://localhost:1313/mimictables/d_cpt/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/d_cpt/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:a38fab3f9619336ecaa4bd68fd8e1df9&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; Online definitions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; High-level definitions for current procedural terminology (CPT) codes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 134&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CPTEVENTS on &lt;code&gt;CPT_CD&lt;/code&gt; between &lt;code&gt;MINCODEINSUBSECTION&lt;/code&gt; and &lt;code&gt;MAXCODEINSUBSECTION&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:a38fab3f9619336ecaa4bd68fd8e1df9&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CATEGORY&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SECTIONRANGE&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SECTIONHEADER&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SUBSECTIONRANGE&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SUBSECTIONHEADER&lt;/td&gt;
+&lt;td&gt;VARCHAR(300)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CODESUFFIX&lt;/td&gt;
+&lt;td&gt;VARCHAR(5)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MINCODEINSUBSECTION&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MAXCODEINSUBSECTION&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:a38fab3f9619336ecaa4bd68fd8e1df9&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;D_CPT&lt;/code&gt; provides information about CPT codes, specifically it provides the overall purpose of the procedure and in some cases the body system related to the procedure.&lt;/p&gt;
+
+&lt;h2 id=&#34;category:a38fab3f9619336ecaa4bd68fd8e1df9&#34;&gt;CATEGORY&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CATEGORY&lt;/code&gt; is a integer which identifies the category of the CPT code.&lt;/p&gt;
+
+&lt;h2 id=&#34;sectionrange-sectionheader:a38fab3f9619336ecaa4bd68fd8e1df9&#34;&gt;&lt;code&gt;SECTIONRANGE&lt;/code&gt;, &lt;code&gt;SECTIONHEADER&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;SECTIONRANGE&lt;/code&gt; defines the range of codes for the given section, and &lt;code&gt;SECTIONHEADER&lt;/code&gt; provides the description of the given section. There are 8 possible sections:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Evaluation and management&lt;/li&gt;
+&lt;li&gt;Surgery&lt;/li&gt;
+&lt;li&gt;Radiology&lt;/li&gt;
+&lt;li&gt;Anesthesia&lt;/li&gt;
+&lt;li&gt;Emerging technology&lt;/li&gt;
+&lt;li&gt;Pathology and laboratory&lt;/li&gt;
+&lt;li&gt;Performance measurement&lt;/li&gt;
+&lt;li&gt;Medicine&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that the evaluation and management tends to represent administrative or generic costs.&lt;/p&gt;
+
+&lt;h2 id=&#34;subsectionrange-subsectionheader:a38fab3f9619336ecaa4bd68fd8e1df9&#34;&gt;&lt;code&gt;SUBSECTIONRANGE&lt;/code&gt;, &lt;code&gt;SUBSECTIONHEADER&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Similarly as for the sections, &lt;code&gt;SUBSECTIONRANGE&lt;/code&gt; defines the range of codes for the given subsection, and &lt;code&gt;SUBSECTIONHEADER&lt;/code&gt; provides the description of the given subsection. The subsection provides extra detail which can be useful, for example, when the section header is &amp;lsquo;Anesthesia&amp;rsquo; the subsection provides information on the general anatomical region for the anesthesia.&lt;/p&gt;
+
+&lt;h2 id=&#34;mincodeinsubsection-maxcodeinsubsection:a38fab3f9619336ecaa4bd68fd8e1df9&#34;&gt;&lt;code&gt;MINCODEINSUBSECTION&lt;/code&gt;, &lt;code&gt;MAXCODEINSUBSECTION&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;These columns provide numeric representations of minimum and maximum value in the &lt;code&gt;SUBSECTIONRANGE&lt;/code&gt; column. This facilitates joining the &lt;code&gt;CPTEVENTS&lt;/code&gt; table to the &lt;code&gt;D_CPT&lt;/code&gt; table on &lt;code&gt;CPT_CD&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:a38fab3f9619336ecaa4bd68fd8e1df9&#34;&gt;Important considerations&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Unlike all other definition tables, &lt;code&gt;D_CPT&lt;/code&gt; does &lt;em&gt;not&lt;/em&gt; have a one to one mapping with the corresponding &lt;code&gt;CPT_CD&lt;/code&gt; in &lt;code&gt;CPTEVENTS&lt;/code&gt;, rather each row of &lt;code&gt;D_CPT&lt;/code&gt; maps to a range of &lt;code&gt;CPT_CD&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>D_ICD_DIAGNOSES</title>
+      <link>http://localhost:1313/mimictables/d_icd_diagnoses/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/d_icd_diagnoses/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:393a34a923125a7ab85264d71c20ceb1&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; Online sources.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Definition table for ICD diagnoses.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 14,567&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;DIAGNOSES_ICD ON &lt;code&gt;ICD9_CODE&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:393a34a923125a7ab85264d71c20ceb1&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ICD9_CODE&lt;/td&gt;
+&lt;td&gt;VARCHAR(10)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SHORT_TITLE&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LONG_TITLE&lt;/td&gt;
+&lt;td&gt;VARCHAR(300)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:393a34a923125a7ab85264d71c20ceb1&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;h2 id=&#34;icd9-code:393a34a923125a7ab85264d71c20ceb1&#34;&gt;ICD9_CODE&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ICD9_CODE&lt;/code&gt; is the International Coding Definitions Version 9 (ICD-9) code. Each code corresponds to a single diagnostic concept.&lt;/p&gt;
+
+&lt;h2 id=&#34;short-title-long-title:393a34a923125a7ab85264d71c20ceb1&#34;&gt;&lt;code&gt;SHORT_TITLE&lt;/code&gt;, &lt;code&gt;LONG_TITLE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The title fields provide a brief definition for the given diagnosis code in &lt;code&gt;ICD9_CODE&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:393a34a923125a7ab85264d71c20ceb1&#34;&gt;Important considerations&lt;/h1&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>D_ICD_PROCEDURES</title>
+      <link>http://localhost:1313/mimictables/d_icd_procedures/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/d_icd_procedures/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:26206705c15ce61a375e50b2ddaf3156&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; Online sources.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Definition table for ICD procedures.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 3,882&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PROCEDURES_ICD on &lt;code&gt;ICD9_CODE&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:26206705c15ce61a375e50b2ddaf3156&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ICD9_CODE&lt;/td&gt;
+&lt;td&gt;VARCHAR(10)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SHORT_TITLE&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LONG_TITLE&lt;/td&gt;
+&lt;td&gt;VARCHAR(300)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:26206705c15ce61a375e50b2ddaf3156&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;h2 id=&#34;icd9-code:26206705c15ce61a375e50b2ddaf3156&#34;&gt;ICD9_CODE&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ICD9_CODE&lt;/code&gt; is the International Coding Definitions Version 9 (ICD-9) code. Each code corresponds to a single procedural concept.&lt;/p&gt;
+
+&lt;h2 id=&#34;short-title-long-title:26206705c15ce61a375e50b2ddaf3156&#34;&gt;&lt;code&gt;SHORT_TITLE&lt;/code&gt;, &lt;code&gt;LONG_TITLE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The title fields provide a brief definition for the given procedure code in &lt;code&gt;ICD9_CODE&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:26206705c15ce61a375e50b2ddaf3156&#34;&gt;Important considerations&lt;/h1&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>D_ITEMS</title>
+      <link>http://localhost:1313/mimictables/d_items/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/d_items/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:58b03f00686cef22962f6ca28d7fe693&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; CareVue and Metavision ICU databases.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Definition table for all items in the ICU databases.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 15,492&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CHARTEVENTS on &lt;code&gt;ITEMID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;DATETIMEEVENTS on &lt;code&gt;ITEMID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;IOEVENTS on &lt;code&gt;ITEMID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;MICROBIOLOGYEVENTS on &lt;code&gt;ITEMID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:58b03f00686cef22962f6ca28d7fe693&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ITEMID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LABEL&lt;/td&gt;
+&lt;td&gt;VARCHAR(200)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ABBREVIATION&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DBSOURCE&lt;/td&gt;
+&lt;td&gt;VARCHAR(20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LINKSTO&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CODE&lt;/td&gt;
+&lt;td&gt;VARCHAR(20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CATEGORY&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;UNITNAME&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PARAM_TYPE&lt;/td&gt;
+&lt;td&gt;VARCHAR(30)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LOWNORMALVALUE&lt;/td&gt;
+&lt;td&gt;DOUBLE PRECISION&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HIGHNORMALVALUE&lt;/td&gt;
+&lt;td&gt;DOUBLE PRECISION&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:58b03f00686cef22962f6ca28d7fe693&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;p&gt;The D_ITEMS table defines &lt;code&gt;ITEMID&lt;/code&gt;, which represents measurements in the database. Measurements of the same type (e.g. heart rate) will have the same &lt;code&gt;ITEMID&lt;/code&gt; (e.g. 211). The &lt;code&gt;ITEMID&lt;/code&gt; column is an alternate primary key to this table: it is unique to each row.&lt;/p&gt;
+
+&lt;p&gt;Note that the D_ITEMS table is sourced from two ICU databases: Metavision and CareVue. Each system had its own set of &lt;code&gt;ITEMID&lt;/code&gt; to identify concepts. As a result, there are multiple &lt;code&gt;ITEMID&lt;/code&gt; which correspond to the same concept. For CareVue data, &lt;code&gt;ITEMID&lt;/code&gt; = 211 is used to identify heart rates, whereas for Metavision data, &lt;code&gt;ITEMID&lt;/code&gt; = 220045 is used. All Metavision &lt;code&gt;ITEMID&lt;/code&gt; will have a value &amp;gt; 220000.&lt;/p&gt;
+
+&lt;p&gt;Note that the D_ITEMS table does &lt;em&gt;not&lt;/em&gt; link to the LABEVENTS table, as this data was acquired separately from the hospital database. The D_ITEMS table was acquired from the ICU databases.&lt;/p&gt;
+
+&lt;h2 id=&#34;itemid:58b03f00686cef22962f6ca28d7fe693&#34;&gt;&lt;code&gt;ITEMID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;As an alternate primary key to the table, &lt;code&gt;ITEMID&lt;/code&gt; is unique to each row.&lt;/p&gt;
+
+&lt;h2 id=&#34;label-abbreviation:58b03f00686cef22962f6ca28d7fe693&#34;&gt;&lt;code&gt;LABEL&lt;/code&gt;, &lt;code&gt;ABBREVIATION&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;LABEL&lt;/code&gt; column describes the concept which is represented by the &lt;code&gt;ITEMID&lt;/code&gt;. The &lt;code&gt;ABBREVIATION&lt;/code&gt; column, only available in Metavision, lists a common abbreviation for the label.&lt;/p&gt;
+
+&lt;h2 id=&#34;dbsource:58b03f00686cef22962f6ca28d7fe693&#34;&gt;&lt;code&gt;DBSOURCE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;DBSOURCE&lt;/code&gt; column was generated to clarify which database the given &lt;code&gt;ITEMID&lt;/code&gt; was sourced from: &amp;lsquo;carevue&amp;rsquo; indicates the &lt;code&gt;ITEMID&lt;/code&gt; was sourced from CareVue, while &amp;lsquo;metavision&amp;rsquo; indicated the &lt;code&gt;ITEMID&lt;/code&gt; was sourced from Metavision.&lt;/p&gt;
+
+&lt;h2 id=&#34;linksto:58b03f00686cef22962f6ca28d7fe693&#34;&gt;&lt;code&gt;LINKSTO&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;LINKSTO&lt;/code&gt; provides the table name which the data links to. For example, a value of &amp;lsquo;chartevents&amp;rsquo; indicates that the &lt;code&gt;ITEMID&lt;/code&gt; of the given row is contained in CHARTEVENTS. A single &lt;code&gt;ITEMID&lt;/code&gt; is only used in one event table, that is, if an &lt;code&gt;ITEMID&lt;/code&gt; is contained in CHARTEVENTS it will &lt;em&gt;not&lt;/em&gt; be contained in any other event table (e.g. IOEVENTS, CHARTEVENTS, etc).&lt;/p&gt;
+
+&lt;h2 id=&#34;code:58b03f00686cef22962f6ca28d7fe693&#34;&gt;&lt;code&gt;CODE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CODE&lt;/code&gt; is a microbiology specific column used for identifying the organism tested again.&lt;/p&gt;
+
+&lt;h2 id=&#34;category:58b03f00686cef22962f6ca28d7fe693&#34;&gt;&lt;code&gt;CATEGORY&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CATEGORY&lt;/code&gt; provides some information of the type of data the &lt;code&gt;ITEMID&lt;/code&gt; corresponds to. Examples include &amp;lsquo;ABG&amp;rsquo;, which indicates the measurement is sourced from an arterial blood gas, &amp;lsquo;IV Medication&amp;rsquo;, which indicates that the medication is administered through an intravenous line, and so on.&lt;/p&gt;
+
+&lt;h2 id=&#34;unitname:58b03f00686cef22962f6ca28d7fe693&#34;&gt;&lt;code&gt;UNITNAME&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;UNITNAME&lt;/code&gt; specifies the unit of measurement used for the &lt;code&gt;ITEMID&lt;/code&gt;. This column is not always available, and this may be because the unit of measurement varies, a unit of measurement does not make sense for the given data type, or the unit of measurement is simply missing. Note that there is sometimes additional information on the unit of measurement in the associated event table, e.g. the &lt;code&gt;UOM&lt;/code&gt; column in CHARTEVENTS.&lt;/p&gt;
+
+&lt;h2 id=&#34;param-type:58b03f00686cef22962f6ca28d7fe693&#34;&gt;&lt;code&gt;PARAM_TYPE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;PARAM_TYPE&lt;/code&gt; describes the type of data which is recorded: a date, a number or a text field.&lt;/p&gt;
+
+&lt;h2 id=&#34;lownormalvalue-highnormalvalue:58b03f00686cef22962f6ca28d7fe693&#34;&gt;&lt;code&gt;LOWNORMALVALUE&lt;/code&gt;, &lt;code&gt;HIGHNORMALVALUE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;LOWNORMALVALUE&lt;/code&gt; and &lt;code&gt;HIGHNORMALVALUE&lt;/code&gt; provide a reference range for measurements which have a known operating range.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:58b03f00686cef22962f6ca28d7fe693&#34;&gt;Important considerations&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;D_ITEMS is sourced from two &lt;em&gt;distinct&lt;/em&gt; ICU databases. The main consequence is that there are duplicate &lt;code&gt;ITEMID&lt;/code&gt; for each concept. For example, heart rate is captured both as an &lt;code&gt;ITEMID&lt;/code&gt; of 212 (CareVue) and as an &lt;code&gt;ITEMID&lt;/code&gt; of 220045 (Metavision). As a result, it is necessary to search for multiple &lt;code&gt;ITEMID&lt;/code&gt; to capture a single concept across the entire database. This can be tedious, and it is an active project to coalesce these &lt;code&gt;ITEMID&lt;/code&gt; - one which welcomes any and all help provided by the community!&lt;/li&gt;
+&lt;li&gt;Another source of duplicate &lt;code&gt;ITEMID&lt;/code&gt; is due to the free text nature of data entry in CareVue - as a result there are additional &lt;code&gt;ITEMID&lt;/code&gt; which correspond to misspellings or synonymous descriptions of a single concept. It is important to search for all possible abbreviations and descriptions of a concept to capture all associated &lt;code&gt;ITEMID&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>D_LABITEMS</title>
+      <link>http://localhost:1313/mimictables/d_labitems/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/d_labitems/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:01a62bc400116779ac06ca82e52e8ba3&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; Hospital database.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Definition table for all laboratory measurements.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 755&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;LABEVENTS on &lt;code&gt;ITEMID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:01a62bc400116779ac06ca82e52e8ba3&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ITEMID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LABEL&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;FLUID&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CATEGORY&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LOINC_CODE&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:01a62bc400116779ac06ca82e52e8ba3&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;D_LABITEMS&lt;/code&gt; contains definitions for all &lt;code&gt;ITEMID&lt;/code&gt; associated with lab measurements in the MIMIC database. All data in LABEVENTS link to the D_LABITEMS table. Each unique &lt;code&gt;LABEL&lt;/code&gt; in the hospital database was assigned an &lt;code&gt;ITEMID&lt;/code&gt; in this table, and the use of this &lt;code&gt;ITEMID&lt;/code&gt; facilitates efficient storage and querying of the data. Note that lab items are kept separate while most definitions are contained in the D_ITEMS table, and there were good reasons to keep the lab items separate. As the laboratory data is acquired from the hospital database, the data is consistent across all years in the database. Consequently, there is usually only one &lt;code&gt;ITEMID&lt;/code&gt; associated with each concept in the database (e.g. only &lt;code&gt;ITEMID&lt;/code&gt;, ???, is used for the Troponin-I measurement). Furthermore, the data contains information collected in departments outside the ICU. This includes both wards within the hospital and clinics outside the hospital. Most concepts in this table have been mapped to LOINC codes, an openly available ontology which provides a rich amount of information about the laboratory measurement including reference ranges, common units of measurement and other further detail regarding the measurement.&lt;/p&gt;
+
+&lt;h2 id=&#34;itemid:01a62bc400116779ac06ca82e52e8ba3&#34;&gt;&lt;code&gt;ITEMID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;As an alternate primary key to the table, &lt;code&gt;ITEMID&lt;/code&gt; is unique to each row.&lt;/p&gt;
+
+&lt;h2 id=&#34;label:01a62bc400116779ac06ca82e52e8ba3&#34;&gt;&lt;code&gt;LABEL&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;LABEL&lt;/code&gt; column describes the concept which is represented by the &lt;code&gt;ITEMID&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;fluid:01a62bc400116779ac06ca82e52e8ba3&#34;&gt;&lt;code&gt;FLUID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;FLUID&lt;/code&gt; describes the substance on which the measurement was made. For example, chemistry measurements are frequently performed on blood, which is listed in this column as &amp;lsquo;BLOOD&amp;rsquo;. Many of these measurements are also acquirable on other fluids, such as urine, and this column differentiates these distinct concepts.&lt;/p&gt;
+
+&lt;h2 id=&#34;category:01a62bc400116779ac06ca82e52e8ba3&#34;&gt;&lt;code&gt;CATEGORY&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CATEGORY&lt;/code&gt; provides higher level information as to the type of measurement. For example, a category of &amp;lsquo;ABG&amp;rsquo; indicates that the measurement is an arterial blood gas.&lt;/p&gt;
+
+&lt;h2 id=&#34;loinc-code:01a62bc400116779ac06ca82e52e8ba3&#34;&gt;&lt;code&gt;LOINC_CODE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;LOINC_CODE&lt;/code&gt; contains the LOINC code associated with the given &lt;code&gt;ITEMID&lt;/code&gt;. LOINC is an ontology which originally specified laboratory measurements but has since expanded to cover a wide range of clinically relevant concepts. LOINC openly provide a table which contains a large amount of detail about each LOINC code. This table is freely available online or can be provided by the guardians of the database.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:01a62bc400116779ac06ca82e52e8ba3&#34;&gt;Important considerations&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;ITEMID&lt;/code&gt; from MIMIC III v1.0 does &lt;em&gt;not&lt;/em&gt; match the &lt;code&gt;ITEMID&lt;/code&gt; from MIMIC II v2.6. If a mapping between the two is necessary, please contact the guardians of the database.&lt;/li&gt;
+&lt;li&gt;Many of the LOINC codes were assigned during a project to standardize the ontology of lab measurements in the MIMIC database. Consequently, the codes were assigned post-hoc, and may not be present for every lab measurement. We welcome improvements to the present codes or assignment of LOINC codes to unmapped data elements from the community.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DATETIMEEVENTS</title>
+      <link>http://localhost:1313/mimictables/datetimeevents/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/datetimeevents/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:130085455fc48151e67a5045269b3f20&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; CareVue and Metavision ICU databases.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Contains all date formatted data.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 4,486,049&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PATIENTS on &lt;code&gt;SUBJECT_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ADMISSIONS on &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ICUSTAYEVENTS on &lt;code&gt;ICUSTAY_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;D_ITEMS on &lt;code&gt;ITEMID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;CAREGIVERS on &lt;code&gt;CGID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:130085455fc48151e67a5045269b3f20&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SUBJECT_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HADM_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ICUSTAY_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ITEMID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CHARTTIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;STORETIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CGID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;VALUE&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;UOM&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;WARNING&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ERROR&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;RESULTSTATUS&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;STOPPED&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:130085455fc48151e67a5045269b3f20&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;p&gt;DATETIMEEVENTS contains all date measurements about a patient in the ICU. For example, the date of last dialysis would be in the DATETIMEEVENTS table, but the systolic blood pressure would not be in this table. As all dates in MIMIC III are anonymized to protect patient confidentiality, all dates in this table have been shifted. Note that the chronology for an individual patient has been unaffected however, and quantities such as the difference between two dates remain true to reality.&lt;/p&gt;
+
+&lt;h2 id=&#34;subject-id-hadm-id-icustay-id:130085455fc48151e67a5045269b3f20&#34;&gt;&lt;code&gt;SUBJECT_ID&lt;/code&gt;, &lt;code&gt;HADM_ID&lt;/code&gt;, &lt;code&gt;ICUSTAY_ID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Identifiers which specify the patient: &lt;code&gt;SUBJECT_ID&lt;/code&gt; is unique to a patient, &lt;code&gt;HADM_ID&lt;/code&gt; is unique to a patient hospital stay and &lt;code&gt;ICUSTAY_ID&lt;/code&gt; is unique to a patient ICU stay.&lt;/p&gt;
+
+&lt;h2 id=&#34;itemid:130085455fc48151e67a5045269b3f20&#34;&gt;&lt;code&gt;ITEMID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;charttime-storetime:130085455fc48151e67a5045269b3f20&#34;&gt;&lt;code&gt;CHARTTIME&lt;/code&gt;, &lt;code&gt;STORETIME&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CHARTTIME&lt;/code&gt; records the time at which an observation was charted, and is usually the closest proxy to the time the data was actually measured. &lt;code&gt;STORETIME&lt;/code&gt; records the time at which an observation was manually input or manually validated by a member of the clinical staff.&lt;/p&gt;
+
+&lt;h2 id=&#34;cgid:130085455fc48151e67a5045269b3f20&#34;&gt;&lt;code&gt;CGID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CGID&lt;/code&gt; is the identifier for the caregiver who validated the given measurement.&lt;/p&gt;
+
+&lt;h2 id=&#34;value:130085455fc48151e67a5045269b3f20&#34;&gt;&lt;code&gt;VALUE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;uom:130085455fc48151e67a5045269b3f20&#34;&gt;&lt;code&gt;UOM&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;warning-error:130085455fc48151e67a5045269b3f20&#34;&gt;&lt;code&gt;WARNING&lt;/code&gt;, &lt;code&gt;ERROR&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;resultstatus-stopped:130085455fc48151e67a5045269b3f20&#34;&gt;&lt;code&gt;RESULTSTATUS&lt;/code&gt;, &lt;code&gt;STOPPED&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h1 id=&#34;important-considerations:130085455fc48151e67a5045269b3f20&#34;&gt;Important considerations&lt;/h1&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DIAGNOSES_ICD</title>
+      <link>http://localhost:1313/mimictables/diagnoses_icd/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/diagnoses_icd/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:5cfb423d9a95fa19df4ae19b5007b948&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; Hospital database.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Contains ICD diagnoses for patients, most notably ICD-9 diagnoses.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 651,047&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PATIENTS on &lt;code&gt;SUBJECT_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ADMISSIONS on &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ICUSTAYEVENTS on &lt;code&gt;ICUSTAY_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;D_ITEMS on &lt;code&gt;ITEMID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;CAREGIVERS on &lt;code&gt;CGID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:5cfb423d9a95fa19df4ae19b5007b948&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SUBJECT_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HADM_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SEQUENCE&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ICD9_CODE&lt;/td&gt;
+&lt;td&gt;VARCHAR(20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DESCRIPTION&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:5cfb423d9a95fa19df4ae19b5007b948&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;h2 id=&#34;subject-id-hadm-id:5cfb423d9a95fa19df4ae19b5007b948&#34;&gt;&lt;code&gt;SUBJECT_ID&lt;/code&gt;, &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Identifiers which specify the patient: &lt;code&gt;SUBJECT_ID&lt;/code&gt; is unique to a patient and &lt;code&gt;HADM_ID&lt;/code&gt; is unique to a patient hospital stay.&lt;/p&gt;
+
+&lt;h2 id=&#34;sequence:5cfb423d9a95fa19df4ae19b5007b948&#34;&gt;&lt;code&gt;SEQUENCE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;SEQUENCE&lt;/code&gt; provides the order in which the ICD diagnoses relate to the patient. ICD diagnoses are ordered by priority - and the order does have an impact on the reimbursement for treatment.&lt;/p&gt;
+
+&lt;h2 id=&#34;icd9-code:5cfb423d9a95fa19df4ae19b5007b948&#34;&gt;&lt;code&gt;ICD9_CODE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ICD9_CODE&lt;/code&gt; contains the actual code corresponding to the diagnosis assigned to the patient for the given row. Note that all codes, as of MIMIC III v1.0, are ICD-9 codes.&lt;/p&gt;
+
+&lt;h2 id=&#34;description:5cfb423d9a95fa19df4ae19b5007b948&#34;&gt;&lt;code&gt;DESCRIPTION&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;DESCRIPTION&lt;/code&gt; is a brief summary of the diagnosis represented by the given code.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:5cfb423d9a95fa19df4ae19b5007b948&#34;&gt;Important considerations&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;All ICD codes in MIMIC III v1.0 are ICD-9 based. The Beth Israel Deaconess Medical Center will begin using ICD-10 codes in 2015.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DRGCODES</title>
+      <link>http://localhost:1313/mimictables/drgcodes/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/drgcodes/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:3a615327c352a5faa27402cd0142d9eb&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; Hospital database.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Contains diagnosis related groups (DRG) codes for patients.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 125,557&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PATIENTS on &lt;code&gt;SUBJECT_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ADMISSIONS on &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:3a615327c352a5faa27402cd0142d9eb&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SUBJECT_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HADM_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DRG_TYPE&lt;/td&gt;
+&lt;td&gt;VARCHAR(20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DRG_CODE&lt;/td&gt;
+&lt;td&gt;VARCHAR(20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DESCRIPTION&lt;/td&gt;
+&lt;td&gt;VARCHAR(300)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DRG_SEVERITY&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DRG_MORTALITY&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:3a615327c352a5faa27402cd0142d9eb&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;h2 id=&#34;subject-id-hadm-id:3a615327c352a5faa27402cd0142d9eb&#34;&gt;&lt;code&gt;SUBJECT_ID&lt;/code&gt;, &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Identifiers which specify the patient: &lt;code&gt;SUBJECT_ID&lt;/code&gt; is unique to a patient and &lt;code&gt;HADM_ID&lt;/code&gt; is unique to a patient hospital stay.&lt;/p&gt;
+
+&lt;h2 id=&#34;drg-type:3a615327c352a5faa27402cd0142d9eb&#34;&gt;&lt;code&gt;DRG_TYPE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;DRG_TYPE&lt;/code&gt; provides the type of DRG code in the entry. There have been multiple instantiations of DRG coding systems, all of which have different meanings for the codes (and often the range of the codes overlap, and so if the wrong version is assumed the code will be interpreted incorrectly).
+There are two types of DRG codes in the MIMIC III database: &amp;lsquo;HFCA&amp;rsquo; and &amp;lsquo;MS-DRG&amp;rsquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;drg-code:3a615327c352a5faa27402cd0142d9eb&#34;&gt;&lt;code&gt;DRG_CODE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;DRG_CODE&lt;/code&gt; contains a code which represents the diagnosis billed for by the hospital.&lt;/p&gt;
+
+&lt;h2 id=&#34;description:3a615327c352a5faa27402cd0142d9eb&#34;&gt;&lt;code&gt;DESCRIPTION&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;DESCRIPTION&lt;/code&gt; provides an human understandable summary of the meaning of the given DRG code.&lt;/p&gt;
+
+&lt;h2 id=&#34;drg-severity-drg-mortality:3a615327c352a5faa27402cd0142d9eb&#34;&gt;&lt;code&gt;DRG_SEVERITY&lt;/code&gt;, &lt;code&gt;DRG_MORTALITY&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;DRG_SEVERITY&lt;/code&gt; and &lt;code&gt;DRG_MORTALITY&lt;/code&gt; provide additional granularity to DRG codes in the HFCA system. Severity and mortality allow for higher billing costs when a diagnosis is more severe, and vice versa.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:3a615327c352a5faa27402cd0142d9eb&#34;&gt;Important considerations&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Since there are multiple versions of DRG codes, queries will need to incorporate both the type of DRG and the code when filtering for a certain diagnosis.&lt;/li&gt;
+&lt;li&gt;All patients have an MS-DRG, but not all patients have an HFCA DRG code. Note that HFCA is believed to be redundant to the MS-DRG codes.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ICUSTAYEVENTS</title>
+      <link>http://localhost:1313/mimictables/icustayevents/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/icustayevents/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:f01a86185cdfb11ce84e86b0bd369d8c&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; Hospital database.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Defines each ICUSTAY_ID in the database, i.e. defines a single ICU stay.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 61,532&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PATIENTS on &lt;code&gt;SUBJECT_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ADMISSIONS on &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:f01a86185cdfb11ce84e86b0bd369d8c&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SUBJECT_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HADM_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ICUSTAY_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DBSOURCE&lt;/td&gt;
+&lt;td&gt;VARCHAR(20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;FIRST_CAREUNIT&lt;/td&gt;
+&lt;td&gt;VARCHAR(20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LAST_CAREUNIT&lt;/td&gt;
+&lt;td&gt;VARCHAR(20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;FIRST_WARDID&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LAST_WARDID&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;INTIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;OUTTIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LOS&lt;/td&gt;
+&lt;td&gt;DOUBLE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:f01a86185cdfb11ce84e86b0bd369d8c&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;h2 id=&#34;subject-id-hadm-id-icustay-id:f01a86185cdfb11ce84e86b0bd369d8c&#34;&gt;&lt;code&gt;SUBJECT_ID&lt;/code&gt;, &lt;code&gt;HADM_ID&lt;/code&gt;, &lt;code&gt;ICUSTAY_ID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Identifiers which specify the patient: &lt;code&gt;SUBJECT_ID&lt;/code&gt; is unique to a patient, &lt;code&gt;HADM_ID&lt;/code&gt; is unique to a patient hospital stay and &lt;code&gt;ICUSTAY_ID&lt;/code&gt; is unique to a patient ICU stay.&lt;/p&gt;
+
+&lt;h2 id=&#34;dbsource:f01a86185cdfb11ce84e86b0bd369d8c&#34;&gt;&lt;code&gt;DBSOURCE&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;DBSOURCE&lt;/code&gt; contains the original ICU database the data was sourced from. Patients admitted between 2001 - 2008 had their data managed by the CareVue information system, represented in this column as &amp;lsquo;carevue&amp;rsquo;. Patients admitted between 2008 - 2012 had their data managed by the Metavision system, represented in this column as &amp;lsquo;metavision&amp;rsquo;. Knowing the database source is important as the data archiving for these two databases differs in some cases.&lt;/p&gt;
+
+&lt;h2 id=&#34;first-careunit-last-careunit:f01a86185cdfb11ce84e86b0bd369d8c&#34;&gt;&lt;code&gt;FIRST_CAREUNIT&lt;/code&gt;, &lt;code&gt;LAST_CAREUNIT&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;FIRST_CAREUNIT&lt;/code&gt; and &lt;code&gt;LAST_CAREUNIT&lt;/code&gt; contain, respectively, the first and last ICU type in which the patient was cared for. As an &lt;code&gt;ICUSTAY_ID&lt;/code&gt; groups all ICU admissions within 24 hours of each other, it is possible for a patient to be transferred from one type of ICU to another and have the same ICU ID.&lt;/p&gt;
+
+&lt;h2 id=&#34;first-wardid-last-wardid:f01a86185cdfb11ce84e86b0bd369d8c&#34;&gt;&lt;code&gt;FIRST_WARDID&lt;/code&gt;, &lt;code&gt;LAST_WARDID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;FIRST_WARDID&lt;/code&gt; and &lt;code&gt;LAST_WARDID&lt;/code&gt; contain the first and last ICU unit in which the patient stayed. Note the grouping of physical locations in the hospital database is referred to as ward. Though in practice ICUs are not referred to as wards, the hospital database technically tracks ICUs as &amp;ldquo;wards with an ICU cost center&amp;rdquo;. As a result, each ICU is associated with a &lt;code&gt;WARDID&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;intime-outtime:f01a86185cdfb11ce84e86b0bd369d8c&#34;&gt;&lt;code&gt;INTIME&lt;/code&gt;, &lt;code&gt;OUTTIME&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;INTIME&lt;/code&gt; provides the date and time the patient was transferred into the ICU. &lt;code&gt;OUTTIME&lt;/code&gt; provides the date and time the patient was transferred out of the ICU.&lt;/p&gt;
+
+&lt;h2 id=&#34;los:f01a86185cdfb11ce84e86b0bd369d8c&#34;&gt;&lt;code&gt;LOS&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;LOS&lt;/code&gt; is the length of stay for the patient for the given ICU stay, which may include one or more ICU units.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:f01a86185cdfb11ce84e86b0bd369d8c&#34;&gt;Important considerations&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ICUSTAY_ID&lt;/code&gt; is a &lt;em&gt;generated&lt;/em&gt; identifier, that is it is &lt;em&gt;not&lt;/em&gt; based off any raw data identifier. The hospital and ICU databases are not intrinsically linked, and so do not have any concept of an ICU encounter identifier.&lt;/li&gt;
+&lt;li&gt;The ICUSTAYEVENTS table is derived from the TRANSFERS table. Specifically, it groups the TRANSFERS table based on ICUSTAY_ID, and excludes rows where no ICUSTAY_ID is present.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>IOEVENTS</title>
+      <link>http://localhost:1313/mimictables/ioevents/</link>
+      <pubDate>Tue, 01 Sep 2015 19:34:46 -0400</pubDate>
+      
+      <guid>http://localhost:1313/mimictables/ioevents/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview:644ce5e8869d505c587d89cd42643dc2&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Table source:&lt;/strong&gt; CareVue and Metavision ICU databases.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table purpose:&lt;/strong&gt; Input/output data for patients.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Number of rows:&lt;/strong&gt; 25,889,251&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PATIENTS on &lt;code&gt;SUBJECT_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ADMISSIONS on &lt;code&gt;HADM_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ICUSTAYEVENTS on &lt;code&gt;ICUSTAY_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;D_ITEMS on &lt;code&gt;ITEMID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;CAREGIVERS on &lt;code&gt;CGID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;table-columns:644ce5e8869d505c587d89cd42643dc2&#34;&gt;Table columns&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Postgres data type&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SUBJECT_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HADM_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ICUSTAY_ID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;STARTTIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ENDTIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ITEMID&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;VOLUME&lt;/td&gt;
+&lt;td&gt;DOUBLE PRECISION&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;VOLUMEUOM&lt;/td&gt;
+&lt;td&gt;VARCHAR(30)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;RATE&lt;/td&gt;
+&lt;td&gt;DOUBLE PRECISION&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;RATEUOM&lt;/td&gt;
+&lt;td&gt;VARCHAR(30)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;STORETIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CGID&lt;/td&gt;
+&lt;td&gt;BIGINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ORDERID&lt;/td&gt;
+&lt;td&gt;BIGINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;LINKORDERID&lt;/td&gt;
+&lt;td&gt;BIGINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ORDERCATEGORYNAME&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SECONDARYORDERCATEGORYNAME&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ORDERCOMPONENTTYPEDESCRIPTION&lt;/td&gt;
+&lt;td&gt;VARCHAR(200)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ORDERCATEGORYDESCRIPTION&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PATIENTWEIGHT&lt;/td&gt;
+&lt;td&gt;DOUBLE PRECISION&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;TOTALVOLUME&lt;/td&gt;
+&lt;td&gt;DOUBLE PRECISION&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;TOTALVOLUMEUOM&lt;/td&gt;
+&lt;td&gt;VARCHAR(50)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;STATUSDESCRIPTION&lt;/td&gt;
+&lt;td&gt;VARCHAR(30)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;STOPPED&lt;/td&gt;
+&lt;td&gt;VARCHAR(30)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;NEWBOTTLE&lt;/td&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ISOPENBAG&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CONTINUEINNEXTDEPT&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CANCELREASON&lt;/td&gt;
+&lt;td&gt;SMALLINT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;COMMENTS_STATUS&lt;/td&gt;
+&lt;td&gt;VARCHAR(30)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;COMMENTS_TITLE&lt;/td&gt;
+&lt;td&gt;VARCHAR(100)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;COMMENTS_DATE&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ORIGINALCHARTTIME&lt;/td&gt;
+&lt;td&gt;TIMESTAMP(0)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ORIGINALAMOUNT&lt;/td&gt;
+&lt;td&gt;DOUBLE PRECISION&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ORIGINALAMOUNTUOM&lt;/td&gt;
+&lt;td&gt;VARCHAR(30)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ORIGINALROUTE&lt;/td&gt;
+&lt;td&gt;VARCHAR(30)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ORIGINALRATE&lt;/td&gt;
+&lt;td&gt;DOUBLE PRECISION&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ORIGINALRATEUOM&lt;/td&gt;
+&lt;td&gt;VARCHAR(30)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ORIGINALSITE&lt;/td&gt;
+&lt;td&gt;VARCHAR(30)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;detailed-description:644ce5e8869d505c587d89cd42643dc2&#34;&gt;Detailed Description&lt;/h1&gt;
+
+&lt;h2 id=&#34;subject-id-hadm-id-icustay-id:644ce5e8869d505c587d89cd42643dc2&#34;&gt;&lt;code&gt;SUBJECT_ID&lt;/code&gt;, &lt;code&gt;HADM_ID&lt;/code&gt;, &lt;code&gt;ICUSTAY_ID&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Identifiers which specify the patient: &lt;code&gt;SUBJECT_ID&lt;/code&gt; is unique to a patient, &lt;code&gt;HADM_ID&lt;/code&gt; is unique to a patient hospital stay and &lt;code&gt;ICUSTAY_ID&lt;/code&gt; is unique to a patient ICU stay.&lt;/p&gt;
+
+&lt;h2 id=&#34;charttime-storetime:644ce5e8869d505c587d89cd42643dc2&#34;&gt;&lt;code&gt;CHARTTIME&lt;/code&gt;, &lt;code&gt;STORETIME&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;CHARTTIME&lt;/code&gt; records the time at which an observation was charted, and is usually the closest proxy to the time the data was actually measured. &lt;code&gt;STORETIME&lt;/code&gt; records the time at which an observation was manually input or manually validated by a member of the clinical staff.&lt;/p&gt;
+
+&lt;h1 id=&#34;important-considerations:644ce5e8869d505c587d89cd42643dc2&#34;&gt;Important considerations&lt;/h1&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

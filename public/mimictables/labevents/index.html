@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.14" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Accessing MIMIC</title>
+    <title>LABEVENTS</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
 
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Accessing MIMIC</h1>
+                <h1 class="nav top-menu">LABEVENTS</h1>
             </div>
       </header>
       
@@ -75,16 +75,16 @@
           
               
 
-            <li class="sub-menu active">
+            <li class="sub-menu">
             <a href="javascript:;" class="">
                 <i class='fa fa-road'></i>
                 
                 <span>Getting started</span>
-                <span class="menu-arrow fa fa-angle-down"></span>
+                <span class="menu-arrow fa fa-angle-right"></span>
             </a>
-                <ul class="sub open">
+                <ul class="sub">
                     
-                    <li class="active"><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
                     
                     <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
                     
@@ -96,14 +96,14 @@
           
               
 
-            <li class="sub-menu">
+            <li class="sub-menu active">
             <a href="javascript:;" class="">
                 <i class='fa fa-cog'></i>
                 
                 <span>MIMIC data</span>
-                <span class="menu-arrow fa fa-angle-right"></span>
+                <span class="menu-arrow fa fa-angle-down"></span>
             </a>
-                <ul class="sub">
+                <ul class="sub open">
                     
                     <li><a href="/mimicdata/overview/">Overview</a> </li>
                     
@@ -145,7 +145,7 @@
                     
                     <li><a href="/mimictables/ioevents/">IOEVENTS</a> </li>
                     
-                    <li><a href="/mimictables/labevents/">LABEVENTS</a> </li>
+                    <li class="active"><a href="/mimictables/labevents/">LABEVENTS</a> </li>
                     
                     <li><a href="/mimictables/microbiologyevents/">MICROBIOLOGYEVENTS</a> </li>
                     
@@ -214,7 +214,7 @@
             <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
             
-              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5caccess.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/mimictables%5clabevents.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
             
         </ul>
         
@@ -257,29 +257,129 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</h1>
+<h1 id="overview:563345fe96014b523aeaf92c6368bf76">Overview</h1>
 
-<p>The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. <a href="http://127.0.0.1:1313/mimicdata/whatsnew/">See here for more detail.</a></p>
+<p><strong>Table source:</strong> Hospital database.</p>
 
-<h1 id="getting-access:127f171a52019ad9726e1cd032676173">Getting access</h1>
+<p><strong>Table purpose:</strong> Contains all laboratory measurements for a given patient, including out patient data.</p>
 
-<p>The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available, see (<a href="http://physionet.org/mimic2wdb/">http://physionet.org/mimic2wdb/</a>).</p>
+<p><strong>Number of rows:</strong> 27,872,575</p>
 
-<p>The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:</p>
+<p><strong>Links to:</strong></p>
 
 <ul>
-<li>Follow <a href="https://physionet.org/pnw/login">the instructions</a> to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, <a href="https://physionet.org/pnw/login">log in to it</a>.</li>
-<li>On your PhysioNetWorks home page, click on the link titled &ldquo;MIMIC III Clinical Database&rdquo;, and follow the instructions to apply for access.</li>
+<li>PATIENTS on <code>SUBJECT_ID</code></li>
+<li>ADMISSIONS on <code>HADM_ID</code></li>
+<li>D_LABITEMS on <code>ITEMID</code></li>
 </ul>
 
-<p>All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information.</p>
+<h1 id="table-columns:563345fe96014b523aeaf92c6368bf76">Table columns</h1>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Postgres data type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>SUBJECT_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>HADM_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>ITEMID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>CHARTTIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>VALUE</td>
+<td>VARCHAR(200)</td>
+</tr>
+
+<tr>
+<td>VALUENUM</td>
+<td>DOUBLE PRECISION</td>
+</tr>
+
+<tr>
+<td>UOM</td>
+<td>VARCHAR(20)</td>
+</tr>
+
+<tr>
+<td>FLAG</td>
+<td>VARCHAR(20)</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="detailed-description:563345fe96014b523aeaf92c6368bf76">Detailed Description</h1>
+
+<p>The <code>LABEVENTS</code> data contains information regarding laboratory based measurements. The process for acquiring a lab measurement is as follows: first, a member of the clinical staff acquires a fluid from a site in the patient&rsquo;s body (e.g. blood from an arterial line, urine from a catheter, etc). Next, the fluid is bar coded to associate it with the patient <em>and</em> timestamped to record the time of the fluid acquisition. The lab analyses the data and returns a result within 4-12 hours.</p>
+
+<h2 id="subject-id-hadm-id:563345fe96014b523aeaf92c6368bf76"><code>SUBJECT_ID</code>, <code>HADM_ID</code></h2>
+
+<p>Identifiers which specify the patient: <code>SUBJECT_ID</code> is unique to a patient and <code>HADM_ID</code> is unique to a patient hospital stay.</p>
+
+<h2 id="itemid:563345fe96014b523aeaf92c6368bf76"><code>ITEMID</code></h2>
+
+<p>Identifier for a single measurement type in the database. Each row associated with one <code>ITEMID</code> (e.g. 212) corresponds to an instantiation of the same measurement (e.g. heart rate).</p>
+
+<h2 id="charttime:563345fe96014b523aeaf92c6368bf76"><code>CHARTTIME</code></h2>
+
+<p><code>CHARTTIME</code> records the time at which an observation was charted, and is usually the closest proxy to the time the data was actually measured.
+Note that because the data is directly sourced from the laboratory database, it is <em>not</em> validated by ICU clinical staff, and as a result there is no associated <code>STORETIME</code>.</p>
+
+<h2 id="value-valuenum:563345fe96014b523aeaf92c6368bf76"><code>VALUE</code>, <code>VALUENUM</code></h2>
+
+<p><code>VALUE</code> contains the value measured for the concept identified by the <code>ITEMID</code>. If this value is numeric, then <code>VALUENUM</code> contains the same data in a numeric format. If this data is not numeric, <code>VALUENUM</code> is null. In some cases (e.g. scores like Glasgow Coma Scale, Richmond Sedation Agitation Scale and Code Status), <code>VALUENUM</code> contains the score and <code>VALUE</code> contains the score and text describing the meaning of the score.</p>
+
+<h2 id="uom:563345fe96014b523aeaf92c6368bf76"><code>UOM</code></h2>
+
+<p><code>UOM</code> is the unit of measurement for the <code>VALUE</code>, if appropriate.</p>
+
+<h2 id="flag:563345fe96014b523aeaf92c6368bf76"><code>FLAG</code></h2>
+
+<p><code>FLAG</code> indicates whether the laboratory value is considered abnormal or not, using pre-defined thresholds.</p>
+
+<h1 id="important-considerations:563345fe96014b523aeaf92c6368bf76">Important considerations</h1>
+
+<ul>
+<li>Note that the time associated with this result is the time of the fluid <em>acquisition</em>, not the time that the values were made available to the clinical staff.</li>
+<li>The labevents table contains both in-hospital laboratory measurements <em>and</em> out of hospital laboratory measurements from clinics which the patient has visited (since the patient is not &ldquo;in&rdquo; a hospital when visiting a clinic, these patients often referred to as &ldquo;out patients&rdquo; and the data is often called &ldquo;out patient&rdquo; data).</li>
+<li>In MIMIC III v1.0, there is a subset of patients for which the outpatient lab data is not available. They can be identified by checking for patients whose data <em>always</em> has an <code>HADM_ID</code>.</li>
+<li>In MIMIC III v1.0, there is a subset of patients for which text laboratory data is missing. This primarily affects the blood gas type recorded with blood gases.</li>
+</ul>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</a></li>
-<li><a href="#getting-access:127f171a52019ad9726e1cd032676173">Getting access</a></li>
+<li><a href="#overview:563345fe96014b523aeaf92c6368bf76">Overview</a></li>
+<li><a href="#table-columns:563345fe96014b523aeaf92c6368bf76">Table columns</a></li>
+<li><a href="#detailed-description:563345fe96014b523aeaf92c6368bf76">Detailed Description</a>
+<ul>
+<li><a href="#subject-id-hadm-id:563345fe96014b523aeaf92c6368bf76"><code>SUBJECT_ID</code>, <code>HADM_ID</code></a></li>
+<li><a href="#itemid:563345fe96014b523aeaf92c6368bf76"><code>ITEMID</code></a></li>
+<li><a href="#charttime:563345fe96014b523aeaf92c6368bf76"><code>CHARTTIME</code></a></li>
+<li><a href="#value-valuenum:563345fe96014b523aeaf92c6368bf76"><code>VALUE</code>, <code>VALUENUM</code></a></li>
+<li><a href="#uom:563345fe96014b523aeaf92c6368bf76"><code>UOM</code></a></li>
+<li><a href="#flag:563345fe96014b523aeaf92c6368bf76"><code>FLAG</code></a></li>
+</ul></li>
+<li><a href="#important-considerations:563345fe96014b523aeaf92c6368bf76">Important considerations</a></li>
 </ul>
 </nav>
 </div>

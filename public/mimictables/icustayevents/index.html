@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.14" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Accessing MIMIC</title>
+    <title>ICUSTAYEVENTS</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
 
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Accessing MIMIC</h1>
+                <h1 class="nav top-menu">ICUSTAYEVENTS</h1>
             </div>
       </header>
       
@@ -75,16 +75,16 @@
           
               
 
-            <li class="sub-menu active">
+            <li class="sub-menu">
             <a href="javascript:;" class="">
                 <i class='fa fa-road'></i>
                 
                 <span>Getting started</span>
-                <span class="menu-arrow fa fa-angle-down"></span>
+                <span class="menu-arrow fa fa-angle-right"></span>
             </a>
-                <ul class="sub open">
+                <ul class="sub">
                     
-                    <li class="active"><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
                     
                     <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
                     
@@ -96,14 +96,14 @@
           
               
 
-            <li class="sub-menu">
+            <li class="sub-menu active">
             <a href="javascript:;" class="">
                 <i class='fa fa-cog'></i>
                 
                 <span>MIMIC data</span>
-                <span class="menu-arrow fa fa-angle-right"></span>
+                <span class="menu-arrow fa fa-angle-down"></span>
             </a>
-                <ul class="sub">
+                <ul class="sub open">
                     
                     <li><a href="/mimicdata/overview/">Overview</a> </li>
                     
@@ -141,7 +141,7 @@
                     
                     <li><a href="/mimictables/drgcodes/">DRGCODES</a> </li>
                     
-                    <li><a href="/mimictables/icustayevents/">ICUSTAYEVENTS</a> </li>
+                    <li class="active"><a href="/mimictables/icustayevents/">ICUSTAYEVENTS</a> </li>
                     
                     <li><a href="/mimictables/ioevents/">IOEVENTS</a> </li>
                     
@@ -214,7 +214,7 @@
             <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
             
-              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5caccess.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/mimictables%5cicustayevents.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
             
         </ul>
         
@@ -257,29 +257,138 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</h1>
+<h1 id="overview:f01a86185cdfb11ce84e86b0bd369d8c">Overview</h1>
 
-<p>The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. <a href="http://127.0.0.1:1313/mimicdata/whatsnew/">See here for more detail.</a></p>
+<p><strong>Table source:</strong> Hospital database.</p>
 
-<h1 id="getting-access:127f171a52019ad9726e1cd032676173">Getting access</h1>
+<p><strong>Table purpose:</strong> Defines each ICUSTAY_ID in the database, i.e. defines a single ICU stay.</p>
 
-<p>The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available, see (<a href="http://physionet.org/mimic2wdb/">http://physionet.org/mimic2wdb/</a>).</p>
+<p><strong>Number of rows:</strong> 61,532</p>
 
-<p>The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:</p>
+<p><strong>Links to:</strong></p>
 
 <ul>
-<li>Follow <a href="https://physionet.org/pnw/login">the instructions</a> to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, <a href="https://physionet.org/pnw/login">log in to it</a>.</li>
-<li>On your PhysioNetWorks home page, click on the link titled &ldquo;MIMIC III Clinical Database&rdquo;, and follow the instructions to apply for access.</li>
+<li>PATIENTS on <code>SUBJECT_ID</code></li>
+<li>ADMISSIONS on <code>HADM_ID</code></li>
 </ul>
 
-<p>All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information.</p>
+<h1 id="table-columns:f01a86185cdfb11ce84e86b0bd369d8c">Table columns</h1>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Postgres data type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>SUBJECT_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>HADM_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>ICUSTAY_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>DBSOURCE</td>
+<td>VARCHAR(20)</td>
+</tr>
+
+<tr>
+<td>FIRST_CAREUNIT</td>
+<td>VARCHAR(20)</td>
+</tr>
+
+<tr>
+<td>LAST_CAREUNIT</td>
+<td>VARCHAR(20)</td>
+</tr>
+
+<tr>
+<td>FIRST_WARDID</td>
+<td>SMALLINT</td>
+</tr>
+
+<tr>
+<td>LAST_WARDID</td>
+<td>SMALLINT</td>
+</tr>
+
+<tr>
+<td>INTIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>OUTTIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>LOS</td>
+<td>DOUBLE</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="detailed-description:f01a86185cdfb11ce84e86b0bd369d8c">Detailed Description</h1>
+
+<h2 id="subject-id-hadm-id-icustay-id:f01a86185cdfb11ce84e86b0bd369d8c"><code>SUBJECT_ID</code>, <code>HADM_ID</code>, <code>ICUSTAY_ID</code></h2>
+
+<p>Identifiers which specify the patient: <code>SUBJECT_ID</code> is unique to a patient, <code>HADM_ID</code> is unique to a patient hospital stay and <code>ICUSTAY_ID</code> is unique to a patient ICU stay.</p>
+
+<h2 id="dbsource:f01a86185cdfb11ce84e86b0bd369d8c"><code>DBSOURCE</code></h2>
+
+<p><code>DBSOURCE</code> contains the original ICU database the data was sourced from. Patients admitted between 2001 - 2008 had their data managed by the CareVue information system, represented in this column as &lsquo;carevue&rsquo;. Patients admitted between 2008 - 2012 had their data managed by the Metavision system, represented in this column as &lsquo;metavision&rsquo;. Knowing the database source is important as the data archiving for these two databases differs in some cases.</p>
+
+<h2 id="first-careunit-last-careunit:f01a86185cdfb11ce84e86b0bd369d8c"><code>FIRST_CAREUNIT</code>, <code>LAST_CAREUNIT</code></h2>
+
+<p><code>FIRST_CAREUNIT</code> and <code>LAST_CAREUNIT</code> contain, respectively, the first and last ICU type in which the patient was cared for. As an <code>ICUSTAY_ID</code> groups all ICU admissions within 24 hours of each other, it is possible for a patient to be transferred from one type of ICU to another and have the same ICU ID.</p>
+
+<h2 id="first-wardid-last-wardid:f01a86185cdfb11ce84e86b0bd369d8c"><code>FIRST_WARDID</code>, <code>LAST_WARDID</code></h2>
+
+<p><code>FIRST_WARDID</code> and <code>LAST_WARDID</code> contain the first and last ICU unit in which the patient stayed. Note the grouping of physical locations in the hospital database is referred to as ward. Though in practice ICUs are not referred to as wards, the hospital database technically tracks ICUs as &ldquo;wards with an ICU cost center&rdquo;. As a result, each ICU is associated with a <code>WARDID</code>.</p>
+
+<h2 id="intime-outtime:f01a86185cdfb11ce84e86b0bd369d8c"><code>INTIME</code>, <code>OUTTIME</code></h2>
+
+<p><code>INTIME</code> provides the date and time the patient was transferred into the ICU. <code>OUTTIME</code> provides the date and time the patient was transferred out of the ICU.</p>
+
+<h2 id="los:f01a86185cdfb11ce84e86b0bd369d8c"><code>LOS</code></h2>
+
+<p><code>LOS</code> is the length of stay for the patient for the given ICU stay, which may include one or more ICU units.</p>
+
+<h1 id="important-considerations:f01a86185cdfb11ce84e86b0bd369d8c">Important considerations</h1>
+
+<ul>
+<li><code>ICUSTAY_ID</code> is a <em>generated</em> identifier, that is it is <em>not</em> based off any raw data identifier. The hospital and ICU databases are not intrinsically linked, and so do not have any concept of an ICU encounter identifier.</li>
+<li>The ICUSTAYEVENTS table is derived from the TRANSFERS table. Specifically, it groups the TRANSFERS table based on ICUSTAY_ID, and excludes rows where no ICUSTAY_ID is present.</li>
+</ul>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</a></li>
-<li><a href="#getting-access:127f171a52019ad9726e1cd032676173">Getting access</a></li>
+<li><a href="#overview:f01a86185cdfb11ce84e86b0bd369d8c">Overview</a></li>
+<li><a href="#table-columns:f01a86185cdfb11ce84e86b0bd369d8c">Table columns</a></li>
+<li><a href="#detailed-description:f01a86185cdfb11ce84e86b0bd369d8c">Detailed Description</a>
+<ul>
+<li><a href="#subject-id-hadm-id-icustay-id:f01a86185cdfb11ce84e86b0bd369d8c"><code>SUBJECT_ID</code>, <code>HADM_ID</code>, <code>ICUSTAY_ID</code></a></li>
+<li><a href="#dbsource:f01a86185cdfb11ce84e86b0bd369d8c"><code>DBSOURCE</code></a></li>
+<li><a href="#first-careunit-last-careunit:f01a86185cdfb11ce84e86b0bd369d8c"><code>FIRST_CAREUNIT</code>, <code>LAST_CAREUNIT</code></a></li>
+<li><a href="#first-wardid-last-wardid:f01a86185cdfb11ce84e86b0bd369d8c"><code>FIRST_WARDID</code>, <code>LAST_WARDID</code></a></li>
+<li><a href="#intime-outtime:f01a86185cdfb11ce84e86b0bd369d8c"><code>INTIME</code>, <code>OUTTIME</code></a></li>
+<li><a href="#los:f01a86185cdfb11ce84e86b0bd369d8c"><code>LOS</code></a></li>
+</ul></li>
+<li><a href="#important-considerations:f01a86185cdfb11ce84e86b0bd369d8c">Important considerations</a></li>
 </ul>
 </nav>
 </div>

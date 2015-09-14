@@ -15,7 +15,7 @@ theme = "mimic-data"
     url = "/gettingstarted/"
 [[menu.main]]
     name = "MIMIC data"
-    pre = "<i class='fa fa-columns'></i>"
+    pre = "<i class='fa fa-cog'></i>"
     weight = 20
     url = "/mimicdata/"
 [[menu.main]]

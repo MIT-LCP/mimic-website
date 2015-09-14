@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.14" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Accessing MIMIC</title>
+    <title>ADMISSIONS</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
 
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Accessing MIMIC</h1>
+                <h1 class="nav top-menu">ADMISSIONS</h1>
             </div>
       </header>
       
@@ -75,16 +75,16 @@
           
               
 
-            <li class="sub-menu active">
+            <li class="sub-menu">
             <a href="javascript:;" class="">
                 <i class='fa fa-road'></i>
                 
                 <span>Getting started</span>
-                <span class="menu-arrow fa fa-angle-down"></span>
+                <span class="menu-arrow fa fa-angle-right"></span>
             </a>
-                <ul class="sub open">
+                <ul class="sub">
                     
-                    <li class="active"><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
                     
                     <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
                     
@@ -96,14 +96,14 @@
           
               
 
-            <li class="sub-menu">
+            <li class="sub-menu active">
             <a href="javascript:;" class="">
                 <i class='fa fa-cog'></i>
                 
                 <span>MIMIC data</span>
-                <span class="menu-arrow fa fa-angle-right"></span>
+                <span class="menu-arrow fa fa-angle-down"></span>
             </a>
-                <ul class="sub">
+                <ul class="sub open">
                     
                     <li><a href="/mimicdata/overview/">Overview</a> </li>
                     
@@ -115,7 +115,7 @@
                     
                     <li><a href="/mimicdata/ioeventsmerger/">IOEVENTS creation</a> </li>
                     
-                    <li><a href="/mimictables/admissions/">ADMISSIONS</a> </li>
+                    <li class="active"><a href="/mimictables/admissions/">ADMISSIONS</a> </li>
                     
                     <li><a href="/mimictables/callout/">CALLOUT</a> </li>
                     
@@ -214,7 +214,7 @@
             <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
             
-              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5caccess.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/mimictables%5cadmissions.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
             
         </ul>
         
@@ -257,29 +257,174 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</h1>
+<h1 id="overview:fe40d9a41d4d874ce3615ed457a95a25">Overview</h1>
 
-<p>The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. <a href="http://127.0.0.1:1313/mimicdata/whatsnew/">See here for more detail.</a></p>
+<p><strong>Table source:</strong> hospital database.</p>
 
-<h1 id="getting-access:127f171a52019ad9726e1cd032676173">Getting access</h1>
+<p><strong>Table purpose:</strong> Define a patient&rsquo;s hospital admission, HADM_ID.</p>
 
-<p>The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available, see (<a href="http://physionet.org/mimic2wdb/">http://physionet.org/mimic2wdb/</a>).</p>
+<p><strong>Number of rows:</strong> 58976</p>
 
-<p>The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:</p>
+<p><strong>Links to:</strong></p>
 
 <ul>
-<li>Follow <a href="https://physionet.org/pnw/login">the instructions</a> to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, <a href="https://physionet.org/pnw/login">log in to it</a>.</li>
-<li>On your PhysioNetWorks home page, click on the link titled &ldquo;MIMIC III Clinical Database&rdquo;, and follow the instructions to apply for access.</li>
+<li>PATIENTS on <code>SUBJECT_ID</code></li>
 </ul>
 
-<p>All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information.</p>
+<h1 id="table-columns:fe40d9a41d4d874ce3615ed457a95a25">Table columns</h1>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Postgres data type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ROW_ID</td>
+<td>BIGINT</td>
+</tr>
+
+<tr>
+<td>SUBJECT_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>HADM_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>ADMITTIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>DISCHTIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>DEATHTIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>ADMISSION_TYPE</td>
+<td>VARCHAR(50)</td>
+</tr>
+
+<tr>
+<td>ADMISSION_LOCATION</td>
+<td>VARCHAR(50)</td>
+</tr>
+
+<tr>
+<td>DISCHARGE_LOCATION</td>
+<td>VARCHAR(50)</td>
+</tr>
+
+<tr>
+<td>INSURANCE</td>
+<td>VARCHAR(255)</td>
+</tr>
+
+<tr>
+<td>LANGUAGE</td>
+<td>VARCHAR(10)</td>
+</tr>
+
+<tr>
+<td>RELIGION</td>
+<td>VARCHAR(50)</td>
+</tr>
+
+<tr>
+<td>MARITAL_STATUS</td>
+<td>VARCHAR(50)</td>
+</tr>
+
+<tr>
+<td>ETHNICITY</td>
+<td>VARCHAR(200)</td>
+</tr>
+
+<tr>
+<td>DIAGNOSIS</td>
+<td>VARCHAR(300)</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="detailed-description:fe40d9a41d4d874ce3615ed457a95a25">Detailed description</h1>
+
+<p>The <code>ADMISSIONS</code> table defines all <code>HADM_ID</code> present in the database, which include all hospital admissions between June 1st, 2001 and October 10th, 2012.</p>
+
+<h2 id="subject-id-hadm-id:fe40d9a41d4d874ce3615ed457a95a25"><code>SUBJECT_ID</code>, <code>HADM_ID</code></h2>
+
+<p>Each row of this table contains a unique <code>HADM_ID</code>, which represents a single patient&rsquo;s admission to the hospital. <code>HADM_ID</code> can range from 1000000 - 1999999. It is possible for this table to have duplicate <code>SUBJECT_ID</code>, indicating that a single patient had multiple admissions to the hospital. The ADMISSIONS table can be linked to the PATIENTS table using <code>SUBJECT_ID</code>.</p>
+
+<h2 id="admittime-dischtime-deathtime:fe40d9a41d4d874ce3615ed457a95a25"><code>ADMITTIME</code>, <code>DISCHTIME</code>, <code>DEATHTIME</code></h2>
+
+<p><code>ADMITTIME</code> provides the date and time the patient was admitted to the hospital, while <code>DISCHTIME</code> provides the date and time the patient was discharged from the hospital. If applicable, <code>DEATHTIME</code> provides the time of in-hospital death for the patient. Note that <code>DEATHTIME</code> is only present if the patient died in-hospital, and is almost always the same as the patient&rsquo;s <code>DISCHTIME</code>. However, there can be some discrepancies due to typographical errors.</p>
+
+<h2 id="admission-type:fe40d9a41d4d874ce3615ed457a95a25"><code>ADMISSION_TYPE</code></h2>
+
+<p><code>ADMISSION_TYPE</code> describes the type of the admission: &lsquo;ELECTIVE&rsquo;, &lsquo;URGENT&rsquo;, &lsquo;NEWBORN&rsquo; or &lsquo;EMERGENCY&rsquo;. Emergency/urgent indicate unplanned medical care, and are often collapsed into a single category in studies. Elective indicates a previously planned hospital admission. Newborn indicates that the <code>HADM_ID</code> pertains to the patient&rsquo;s birth.</p>
+
+<h2 id="admission-location:fe40d9a41d4d874ce3615ed457a95a25"><code>ADMISSION_LOCATION</code></h2>
+
+<p><code>ADMISSION\_LOCATION</code> provides information about the previous location of the patient prior to arriving at the hospital. There are 9 possible values:</p>
+
+<ul>
+<li>EMERGENCY ROOM ADMIT</li>
+<li>TRANSFER FROM HOSP/EXTRAM</li>
+<li>TRANSFER FROM OTHER HEALT</li>
+<li>CLINIC REFERRAL/PREMATURE</li>
+<li>** INFO NOT AVAILABLE **</li>
+<li>TRANSFER FROM SKILLED NUR</li>
+<li>TRSF WITHIN THIS FACILITY</li>
+<li>HMO REFERRAL/SICK</li>
+<li>PHYS REFERRAL/NORMAL DELI</li>
+</ul>
+
+<p>The truncated text occurs in the raw data as well.</p>
+
+<h2 id="insurance-language-religion-marital-status-ethnicity:fe40d9a41d4d874ce3615ed457a95a25">INSURANCE, LANGUAGE, RELIGION, MARITAL_STATUS, ETHNICITY</h2>
+
+<p>The <code>INSURANCE</code>, <code>LANGUAGE</code>, <code>RELIGION</code>, <code>MARITAL_STATUS</code>, <code>ETHNICITY</code> columns describe various demographic aspects about each patient&rsquo;s admission. These columns occur in the ADMISSIONS table as they are originally sourced from the admission, discharge, transfers (ADT) data from the hospital database. As a result, it is possible (though infrequent) that these values change across two distinct hospital admissions (<code>HADM_ID</code>) for a single patient (<code>SUBJECT_ID</code>). This is reasonable for some of these columns (e.g. <code>MARITAL_STATUS</code>, <code>RELIGION</code>), but less reasonable for others (e.g. <code>ETHNICITY</code>).</p>
+
+<h2 id="diagnosis:fe40d9a41d4d874ce3615ed457a95a25">DIAGNOSIS</h2>
+
+<p>The <code>DIAGNOSIS</code> column provides the admitting diagnosis for the patient. The diagnosis does not use a systematic ontology: as of MIMIC III v1.0 there are 15,693 distinct diagnoses for 58,976 patients. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness).</p>
+
+<h1 id="important-considerations:fe40d9a41d4d874ce3615ed457a95a25">Important considerations</h1>
+
+<ul>
+<li>The data is sourced from the admission, discharge and transfer database from the hospital, frequently called ADT data.</li>
+<li>Organ donor accounts occur sometimes for patients who died in the hospital. These are distinct hospital admissions with very short, sometimes negative lengths of stay. Furthermore, their <code>DEATHTIME</code> is frequently the same as the original patient&rsquo;s <code>DEATHTIME</code>.</li>
+<li>All text data, except for that in the <code>INSURANCE</code> column, is stored in upper case.</li>
+</ul>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</a></li>
-<li><a href="#getting-access:127f171a52019ad9726e1cd032676173">Getting access</a></li>
+<li><a href="#overview:fe40d9a41d4d874ce3615ed457a95a25">Overview</a></li>
+<li><a href="#table-columns:fe40d9a41d4d874ce3615ed457a95a25">Table columns</a></li>
+<li><a href="#detailed-description:fe40d9a41d4d874ce3615ed457a95a25">Detailed description</a>
+<ul>
+<li><a href="#subject-id-hadm-id:fe40d9a41d4d874ce3615ed457a95a25"><code>SUBJECT_ID</code>, <code>HADM_ID</code></a></li>
+<li><a href="#admittime-dischtime-deathtime:fe40d9a41d4d874ce3615ed457a95a25"><code>ADMITTIME</code>, <code>DISCHTIME</code>, <code>DEATHTIME</code></a></li>
+<li><a href="#admission-type:fe40d9a41d4d874ce3615ed457a95a25"><code>ADMISSION_TYPE</code></a></li>
+<li><a href="#admission-location:fe40d9a41d4d874ce3615ed457a95a25"><code>ADMISSION_LOCATION</code></a></li>
+<li><a href="#insurance-language-religion-marital-status-ethnicity:fe40d9a41d4d874ce3615ed457a95a25">INSURANCE, LANGUAGE, RELIGION, MARITAL_STATUS, ETHNICITY</a></li>
+<li><a href="#diagnosis:fe40d9a41d4d874ce3615ed457a95a25">DIAGNOSIS</a></li>
+</ul></li>
+<li><a href="#important-considerations:fe40d9a41d4d874ce3615ed457a95a25">Important considerations</a></li>
 </ul>
 </nav>
 </div>

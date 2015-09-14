@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.14" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Accessing MIMIC</title>
+    <title>PRESCRIPTIONS</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
 
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Accessing MIMIC</h1>
+                <h1 class="nav top-menu">PRESCRIPTIONS</h1>
             </div>
       </header>
       
@@ -75,16 +75,16 @@
           
               
 
-            <li class="sub-menu active">
+            <li class="sub-menu">
             <a href="javascript:;" class="">
                 <i class='fa fa-road'></i>
                 
                 <span>Getting started</span>
-                <span class="menu-arrow fa fa-angle-down"></span>
+                <span class="menu-arrow fa fa-angle-right"></span>
             </a>
-                <ul class="sub open">
+                <ul class="sub">
                     
-                    <li class="active"><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
                     
                     <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
                     
@@ -96,14 +96,14 @@
           
               
 
-            <li class="sub-menu">
+            <li class="sub-menu active">
             <a href="javascript:;" class="">
                 <i class='fa fa-cog'></i>
                 
                 <span>MIMIC data</span>
-                <span class="menu-arrow fa fa-angle-right"></span>
+                <span class="menu-arrow fa fa-angle-down"></span>
             </a>
-                <ul class="sub">
+                <ul class="sub open">
                     
                     <li><a href="/mimicdata/overview/">Overview</a> </li>
                     
@@ -153,7 +153,7 @@
                     
                     <li><a href="/mimictables/patients/">PATIENTS</a> </li>
                     
-                    <li><a href="/mimictables/prescriptions/">PRESCRIPTIONS</a> </li>
+                    <li class="active"><a href="/mimictables/prescriptions/">PRESCRIPTIONS</a> </li>
                     
                     <li><a href="/mimictables/procedures_icd/">PROCEDURES_ICD</a> </li>
                     
@@ -214,7 +214,7 @@
             <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
             
-              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5caccess.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/mimictables%5cprescriptions.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
             
         </ul>
         
@@ -257,29 +257,182 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</h1>
+<h1 id="overview:779e129c54d40d798bd740d3d54c9535">Overview</h1>
 
-<p>The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. <a href="http://127.0.0.1:1313/mimicdata/whatsnew/">See here for more detail.</a></p>
+<p><strong>Table source:</strong> Hospital provider order entry database.</p>
 
-<h1 id="getting-access:127f171a52019ad9726e1cd032676173">Getting access</h1>
+<p><strong>Table purpose:</strong> Contains medication related order entries, i.e. prescriptions.</p>
 
-<p>The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available, see (<a href="http://physionet.org/mimic2wdb/">http://physionet.org/mimic2wdb/</a>).</p>
+<p><strong>Number of rows:</strong> 4,156,848</p>
 
-<p>The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:</p>
+<p><strong>Links to:</strong></p>
 
 <ul>
-<li>Follow <a href="https://physionet.org/pnw/login">the instructions</a> to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, <a href="https://physionet.org/pnw/login">log in to it</a>.</li>
-<li>On your PhysioNetWorks home page, click on the link titled &ldquo;MIMIC III Clinical Database&rdquo;, and follow the instructions to apply for access.</li>
+<li>PATIENTS on <code>SUBJECT_ID</code></li>
+<li>ADMISSIONS on <code>HADM_ID</code></li>
+<li>ICUSTAYEVENTS on <code>ICUSTAY_ID</code></li>
 </ul>
 
-<p>All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information.</p>
+<h1 id="table-columns:779e129c54d40d798bd740d3d54c9535">Table columns</h1>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Postgres data type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>SUBJECT_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>HADM_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>ICUSTAY_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>STARTTIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>ENDTIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>DRUG_TYPE</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>DRUG</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>DRUG_NAME_POE</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>DRUG_NAME_GENERIC</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>FORMULARY_DRUG_CD</td>
+<td>VARCHAR(120)</td>
+</tr>
+
+<tr>
+<td>GSN</td>
+<td>VARCHAR(200)</td>
+</tr>
+
+<tr>
+<td>NDC</td>
+<td>VARCHAR(120)</td>
+</tr>
+
+<tr>
+<td>PROD_STRENGTH</td>
+<td>VARCHAR(120)</td>
+</tr>
+
+<tr>
+<td>DOSE_VAL_RX</td>
+<td>VARCHAR(120)</td>
+</tr>
+
+<tr>
+<td>DOSE_UNIT_RX</td>
+<td>VARCHAR(120)</td>
+</tr>
+
+<tr>
+<td>FORM_VAL_DISP</td>
+<td>VARCHAR(120)</td>
+</tr>
+
+<tr>
+<td>FORM_UNIT_DISP</td>
+<td>VARCHAR(120)</td>
+</tr>
+
+<tr>
+<td>ROUTE</td>
+<td>VARCHAR(120)</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="detailed-description:779e129c54d40d798bd740d3d54c9535">Detailed Description</h1>
+
+<h2 id="subject-id-hadm-id-icustay-id:779e129c54d40d798bd740d3d54c9535"><code>SUBJECT_ID</code>, <code>HADM_ID</code>, <code>ICUSTAY_ID</code></h2>
+
+<p>Identifiers which specify the patient: <code>SUBJECT_ID</code> is unique to a patient, <code>HADM_ID</code> is unique to a patient hospital stay and <code>ICUSTAY_ID</code> is unique to a patient ICU stay.</p>
+
+<h2 id="starttime-endtime:779e129c54d40d798bd740d3d54c9535"><code>STARTTIME</code>, <code>ENDTIME</code></h2>
+
+<p><code>STARTTIME</code> and <code>ENDTIME</code> specify the time period for which the prescription was valid.</p>
+
+<h2 id="drug-type:779e129c54d40d798bd740d3d54c9535"><code>DRUG_TYPE</code></h2>
+
+<p><code>DRUG_TYPE</code> provides the type of drug prescribed.</p>
+
+<h2 id="drug-drug-name-poe-drug-name-generic:779e129c54d40d798bd740d3d54c9535"><code>DRUG</code>, <code>DRUG_NAME_POE</code>, <code>DRUG_NAME_GENERIC</code></h2>
+
+<p>These columns are various representations of the drug prescribed to the patient</p>
+
+<h2 id="formulary-drug-cd-gsn-ndc:779e129c54d40d798bd740d3d54c9535"><code>FORMULARY_DRUG_CD</code>, <code>GSN</code>, <code>NDC</code></h2>
+
+<p>These columns provide a representation of the drug in various coding systems.</p>
+
+<h2 id="prod-strength:779e129c54d40d798bd740d3d54c9535"><code>PROD_STRENGTH</code></h2>
+
+<h2 id="dose-val-rx-dose-unit-rx:779e129c54d40d798bd740d3d54c9535"><code>DOSE_VAL_RX</code>, <code>DOSE_UNIT_RX</code></h2>
+
+<h2 id="form-val-disp-form-unit-disp:779e129c54d40d798bd740d3d54c9535"><code>FORM_VAL_DISP</code>, <code>FORM_UNIT_DISP</code></h2>
+
+<h2 id="route:779e129c54d40d798bd740d3d54c9535"><code>ROUTE</code></h2>
+
+<p>The route prescribed for the drug.</p>
+
+<h1 id="important-considerations:779e129c54d40d798bd740d3d54c9535">Important considerations</h1>
+
+<ul>
+<li>The table does <em>not</em> specify if an order was later cancelled as of MIMIC III v1.0.</li>
+</ul>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</a></li>
-<li><a href="#getting-access:127f171a52019ad9726e1cd032676173">Getting access</a></li>
+<li><a href="#overview:779e129c54d40d798bd740d3d54c9535">Overview</a></li>
+<li><a href="#table-columns:779e129c54d40d798bd740d3d54c9535">Table columns</a></li>
+<li><a href="#detailed-description:779e129c54d40d798bd740d3d54c9535">Detailed Description</a>
+<ul>
+<li><a href="#subject-id-hadm-id-icustay-id:779e129c54d40d798bd740d3d54c9535"><code>SUBJECT_ID</code>, <code>HADM_ID</code>, <code>ICUSTAY_ID</code></a></li>
+<li><a href="#starttime-endtime:779e129c54d40d798bd740d3d54c9535"><code>STARTTIME</code>, <code>ENDTIME</code></a></li>
+<li><a href="#drug-type:779e129c54d40d798bd740d3d54c9535"><code>DRUG_TYPE</code></a></li>
+<li><a href="#drug-drug-name-poe-drug-name-generic:779e129c54d40d798bd740d3d54c9535"><code>DRUG</code>, <code>DRUG_NAME_POE</code>, <code>DRUG_NAME_GENERIC</code></a></li>
+<li><a href="#formulary-drug-cd-gsn-ndc:779e129c54d40d798bd740d3d54c9535"><code>FORMULARY_DRUG_CD</code>, <code>GSN</code>, <code>NDC</code></a></li>
+<li><a href="#prod-strength:779e129c54d40d798bd740d3d54c9535"><code>PROD_STRENGTH</code></a></li>
+<li><a href="#dose-val-rx-dose-unit-rx:779e129c54d40d798bd740d3d54c9535"><code>DOSE_VAL_RX</code>, <code>DOSE_UNIT_RX</code></a></li>
+<li><a href="#form-val-disp-form-unit-disp:779e129c54d40d798bd740d3d54c9535"><code>FORM_VAL_DISP</code>, <code>FORM_UNIT_DISP</code></a></li>
+<li><a href="#route:779e129c54d40d798bd740d3d54c9535"><code>ROUTE</code></a></li>
+</ul></li>
+<li><a href="#important-considerations:779e129c54d40d798bd740d3d54c9535">Important considerations</a></li>
 </ul>
 </nav>
 </div>

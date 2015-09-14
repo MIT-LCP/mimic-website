@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.14" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Accessing MIMIC</title>
+    <title>CHARTEVENTS</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
 
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Accessing MIMIC</h1>
+                <h1 class="nav top-menu">CHARTEVENTS</h1>
             </div>
       </header>
       
@@ -75,16 +75,16 @@
           
               
 
-            <li class="sub-menu active">
+            <li class="sub-menu">
             <a href="javascript:;" class="">
                 <i class='fa fa-road'></i>
                 
                 <span>Getting started</span>
-                <span class="menu-arrow fa fa-angle-down"></span>
+                <span class="menu-arrow fa fa-angle-right"></span>
             </a>
-                <ul class="sub open">
+                <ul class="sub">
                     
-                    <li class="active"><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
                     
                     <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
                     
@@ -96,14 +96,14 @@
           
               
 
-            <li class="sub-menu">
+            <li class="sub-menu active">
             <a href="javascript:;" class="">
                 <i class='fa fa-cog'></i>
                 
                 <span>MIMIC data</span>
-                <span class="menu-arrow fa fa-angle-right"></span>
+                <span class="menu-arrow fa fa-angle-down"></span>
             </a>
-                <ul class="sub">
+                <ul class="sub open">
                     
                     <li><a href="/mimicdata/overview/">Overview</a> </li>
                     
@@ -121,7 +121,7 @@
                     
                     <li><a href="/mimictables/caregivers/">CAREGIVERS</a> </li>
                     
-                    <li><a href="/mimictables/chartevents/">CHARTEVENTS</a> </li>
+                    <li class="active"><a href="/mimictables/chartevents/">CHARTEVENTS</a> </li>
                     
                     <li><a href="/mimictables/cptevents/">CPTEVENTS</a> </li>
                     
@@ -214,7 +214,7 @@
             <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
             
-              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5caccess.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/mimictables%5cchartevents.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
             
         </ul>
         
@@ -257,29 +257,193 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</h1>
+<h1 id="overview:b2687244e8ce2ac9ff9735902607b5d7">Overview</h1>
 
-<p>The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. <a href="http://127.0.0.1:1313/mimicdata/whatsnew/">See here for more detail.</a></p>
+<p><strong>Table source:</strong> CareVue and Metavision ICU databases.</p>
 
-<h1 id="getting-access:127f171a52019ad9726e1cd032676173">Getting access</h1>
+<p><strong>Table purpose:</strong> Contains all charted data for all patients.</p>
 
-<p>The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available, see (<a href="http://physionet.org/mimic2wdb/">http://physionet.org/mimic2wdb/</a>).</p>
+<p><strong>Number of rows:</strong> 257,495,071</p>
 
-<p>The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:</p>
+<p><strong>Links to:</strong></p>
 
 <ul>
-<li>Follow <a href="https://physionet.org/pnw/login">the instructions</a> to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, <a href="https://physionet.org/pnw/login">log in to it</a>.</li>
-<li>On your PhysioNetWorks home page, click on the link titled &ldquo;MIMIC III Clinical Database&rdquo;, and follow the instructions to apply for access.</li>
+<li>PATIENTS on <code>SUBJECT_ID</code></li>
+<li>ADMISSIONS on <code>HADM_ID</code></li>
+<li>ICUSTAYEVENTS on <code>ICUSTAY_ID</code></li>
+<li>D_ITEMS on <code>ITEMID</code></li>
+<li>CAREGIVERS on <code>CGID</code></li>
 </ul>
 
-<p>All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information.</p>
+<h1 id="table-columns:b2687244e8ce2ac9ff9735902607b5d7">Table columns</h1>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Postgres data type</th>
+<th>In CareVue</th>
+<th>In Metavision</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>SUBJECT_ID</td>
+<td>NUMBER(7,0)</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>HADM_ID</td>
+<td>NUMBER(7,0)</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>ICUSTAY_ID</td>
+<td>NUMBER(7,0)</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>ITEMID</td>
+<td>NUMBER(7,0)</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>CHARTTIME</td>
+<td>DATE</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>STORETIME</td>
+<td>DATE</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>CGID</td>
+<td>NUMBER(7,0)</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>VALUE</td>
+<td>VARCHAR2(200 BYTE)</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>VALUENUM</td>
+<td>NUMBER</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>UOM</td>
+<td>VARCHAR2(20 BYTE)</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>WARNING</td>
+<td>NUMBER(1,0)</td>
+<td></td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>ERROR</td>
+<td>NUMBER(1,0)</td>
+<td></td>
+<td>Y</td>
+</tr>
+
+<tr>
+<td>RESULTSTATUS</td>
+<td>VARCHAR2(20 BYTE)</td>
+<td>Y</td>
+<td></td>
+</tr>
+
+<tr>
+<td>STOPPED</td>
+<td>VARCHAR2(20 BYTE)</td>
+<td>Y</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="detailed-description:b2687244e8ce2ac9ff9735902607b5d7">Detailed Description</h1>
+
+<h2 id="subject-id-hadm-id-icustay-id:b2687244e8ce2ac9ff9735902607b5d7"><code>SUBJECT_ID</code>, <code>HADM_ID</code>, <code>ICUSTAY_ID</code></h2>
+
+<p>Identifiers which specify the patient: <code>SUBJECT_ID</code> is unique to a patient, <code>HADM_ID</code> is unique to a patient hospital stay and <code>ICUSTAY_ID</code> is unique to a patient ICU stay.</p>
+
+<h2 id="itemid:b2687244e8ce2ac9ff9735902607b5d7"><code>ITEMID</code></h2>
+
+<p>Identifier for a single measurement type in the database. Each row associated with one <code>ITEMID</code> (e.g. 212) corresponds to an instantiation of the same measurement (e.g. heart rate).</p>
+
+<h2 id="charttime-storetime:b2687244e8ce2ac9ff9735902607b5d7"><code>CHARTTIME</code>, <code>STORETIME</code></h2>
+
+<p><code>CHARTTIME</code> records the time at which an observation was charted, and is usually the closest proxy to the time the data was actually measured. <code>STORETIME</code> records the time at which an observation was manually input or manually validated by a member of the clinical staff.</p>
+
+<h2 id="cgid:b2687244e8ce2ac9ff9735902607b5d7"><code>CGID</code></h2>
+
+<p><code>CGID</code> is the identifier for the caregiver who validated the given measurement.</p>
+
+<h2 id="value-valuenum:b2687244e8ce2ac9ff9735902607b5d7"><code>VALUE</code>, <code>VALUENUM</code></h2>
+
+<p><code>VALUE</code> contains the value measured for the concept identified by the <code>ITEMID</code>. If this value is numeric, then <code>VALUENUM</code> contains the same data in a numeric format. If this data is not numeric, <code>VALUENUM</code> is null. In some cases (e.g. scores like Glasgow Coma Scale, Richmond Sedation Agitation Scale and Code Status), <code>VALUENUM</code> contains the score and <code>VALUE</code> contains the score and text describing the meaning of the score.</p>
+
+<h2 id="uom:b2687244e8ce2ac9ff9735902607b5d7"><code>UOM</code></h2>
+
+<p><code>UOM</code> is the unit of measurement for the <code>VALUE</code>, if appropriate.</p>
+
+<h2 id="warning-error:b2687244e8ce2ac9ff9735902607b5d7"><code>WARNING</code>, <code>ERROR</code></h2>
+
+<p><code>WARNING</code> and <code>ERROR</code> are Metavision specific columns which specify if a warning for the value was raised and if an error occurred during the measurement.</p>
+
+<p>?? TODO: review metavision front end and provide more detail on the above.</p>
+
+<h2 id="resultstatus-stopped:b2687244e8ce2ac9ff9735902607b5d7"><code>RESULTSTATUS</code>, <code>STOPPED</code></h2>
+
+<p><code>RESULTSTATUS</code> and <code>STOPPED</code> are CareVue specific columns which specify the type of measurement (<code>RESULTSTATUS</code> is &lsquo;Manual&rsquo; or &lsquo;Automatic&rsquo;) and whether the measurement was stopped.</p>
+
+<h1 id="important-considerations:b2687244e8ce2ac9ff9735902607b5d7">Important considerations</h1>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</a></li>
-<li><a href="#getting-access:127f171a52019ad9726e1cd032676173">Getting access</a></li>
+<li><a href="#overview:b2687244e8ce2ac9ff9735902607b5d7">Overview</a></li>
+<li><a href="#table-columns:b2687244e8ce2ac9ff9735902607b5d7">Table columns</a></li>
+<li><a href="#detailed-description:b2687244e8ce2ac9ff9735902607b5d7">Detailed Description</a>
+<ul>
+<li><a href="#subject-id-hadm-id-icustay-id:b2687244e8ce2ac9ff9735902607b5d7"><code>SUBJECT_ID</code>, <code>HADM_ID</code>, <code>ICUSTAY_ID</code></a></li>
+<li><a href="#itemid:b2687244e8ce2ac9ff9735902607b5d7"><code>ITEMID</code></a></li>
+<li><a href="#charttime-storetime:b2687244e8ce2ac9ff9735902607b5d7"><code>CHARTTIME</code>, <code>STORETIME</code></a></li>
+<li><a href="#cgid:b2687244e8ce2ac9ff9735902607b5d7"><code>CGID</code></a></li>
+<li><a href="#value-valuenum:b2687244e8ce2ac9ff9735902607b5d7"><code>VALUE</code>, <code>VALUENUM</code></a></li>
+<li><a href="#uom:b2687244e8ce2ac9ff9735902607b5d7"><code>UOM</code></a></li>
+<li><a href="#warning-error:b2687244e8ce2ac9ff9735902607b5d7"><code>WARNING</code>, <code>ERROR</code></a></li>
+<li><a href="#resultstatus-stopped:b2687244e8ce2ac9ff9735902607b5d7"><code>RESULTSTATUS</code>, <code>STOPPED</code></a></li>
+</ul></li>
+<li><a href="#important-considerations:b2687244e8ce2ac9ff9735902607b5d7">Important considerations</a></li>
 </ul>
 </nav>
 </div>

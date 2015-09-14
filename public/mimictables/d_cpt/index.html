@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.14" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Accessing MIMIC</title>
+    <title>D_CPT</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
 
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Accessing MIMIC</h1>
+                <h1 class="nav top-menu">D_CPT</h1>
             </div>
       </header>
       
@@ -75,16 +75,16 @@
           
               
 
-            <li class="sub-menu active">
+            <li class="sub-menu">
             <a href="javascript:;" class="">
                 <i class='fa fa-road'></i>
                 
                 <span>Getting started</span>
-                <span class="menu-arrow fa fa-angle-down"></span>
+                <span class="menu-arrow fa fa-angle-right"></span>
             </a>
-                <ul class="sub open">
+                <ul class="sub">
                     
-                    <li class="active"><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
                     
                     <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
                     
@@ -96,14 +96,14 @@
           
               
 
-            <li class="sub-menu">
+            <li class="sub-menu active">
             <a href="javascript:;" class="">
                 <i class='fa fa-cog'></i>
                 
                 <span>MIMIC data</span>
-                <span class="menu-arrow fa fa-angle-right"></span>
+                <span class="menu-arrow fa fa-angle-down"></span>
             </a>
-                <ul class="sub">
+                <ul class="sub open">
                     
                     <li><a href="/mimicdata/overview/">Overview</a> </li>
                     
@@ -125,7 +125,7 @@
                     
                     <li><a href="/mimictables/cptevents/">CPTEVENTS</a> </li>
                     
-                    <li><a href="/mimictables/d_cpt/">D_CPT</a> </li>
+                    <li class="active"><a href="/mimictables/d_cpt/">D_CPT</a> </li>
                     
                     <li><a href="/mimictables/d_icd_diagnoses/">D_ICD_DIAGNOSES</a> </li>
                     
@@ -214,7 +214,7 @@
             <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
             
-              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5caccess.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/mimictables%5cd_cpt.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
             
         </ul>
         
@@ -257,29 +257,126 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</h1>
+<h1 id="overview:a38fab3f9619336ecaa4bd68fd8e1df9">Overview</h1>
 
-<p>The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. <a href="http://127.0.0.1:1313/mimicdata/whatsnew/">See here for more detail.</a></p>
+<p><strong>Table source:</strong> Online definitions.</p>
 
-<h1 id="getting-access:127f171a52019ad9726e1cd032676173">Getting access</h1>
+<p><strong>Table purpose:</strong> High-level definitions for current procedural terminology (CPT) codes.</p>
 
-<p>The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available, see (<a href="http://physionet.org/mimic2wdb/">http://physionet.org/mimic2wdb/</a>).</p>
+<p><strong>Number of rows:</strong> 134</p>
 
-<p>The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:</p>
+<p><strong>Links to:</strong></p>
 
 <ul>
-<li>Follow <a href="https://physionet.org/pnw/login">the instructions</a> to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, <a href="https://physionet.org/pnw/login">log in to it</a>.</li>
-<li>On your PhysioNetWorks home page, click on the link titled &ldquo;MIMIC III Clinical Database&rdquo;, and follow the instructions to apply for access.</li>
+<li>CPTEVENTS on <code>CPT_CD</code> between <code>MINCODEINSUBSECTION</code> and <code>MAXCODEINSUBSECTION</code></li>
 </ul>
 
-<p>All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information.</p>
+<h1 id="table-columns:a38fab3f9619336ecaa4bd68fd8e1df9">Table columns</h1>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Postgres data type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>CATEGORY</td>
+<td>SMALLINT</td>
+</tr>
+
+<tr>
+<td>SECTIONRANGE</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>SECTIONHEADER</td>
+<td>VARCHAR(50)</td>
+</tr>
+
+<tr>
+<td>SUBSECTIONRANGE</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>SUBSECTIONHEADER</td>
+<td>VARCHAR(300)</td>
+</tr>
+
+<tr>
+<td>CODESUFFIX</td>
+<td>VARCHAR(5)</td>
+</tr>
+
+<tr>
+<td>MINCODEINSUBSECTION</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>MAXCODEINSUBSECTION</td>
+<td>INT</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="detailed-description:a38fab3f9619336ecaa4bd68fd8e1df9">Detailed Description</h1>
+
+<p><code>D_CPT</code> provides information about CPT codes, specifically it provides the overall purpose of the procedure and in some cases the body system related to the procedure.</p>
+
+<h2 id="category:a38fab3f9619336ecaa4bd68fd8e1df9">CATEGORY</h2>
+
+<p><code>CATEGORY</code> is a integer which identifies the category of the CPT code.</p>
+
+<h2 id="sectionrange-sectionheader:a38fab3f9619336ecaa4bd68fd8e1df9"><code>SECTIONRANGE</code>, <code>SECTIONHEADER</code></h2>
+
+<p><code>SECTIONRANGE</code> defines the range of codes for the given section, and <code>SECTIONHEADER</code> provides the description of the given section. There are 8 possible sections:</p>
+
+<ul>
+<li>Evaluation and management</li>
+<li>Surgery</li>
+<li>Radiology</li>
+<li>Anesthesia</li>
+<li>Emerging technology</li>
+<li>Pathology and laboratory</li>
+<li>Performance measurement</li>
+<li>Medicine</li>
+</ul>
+
+<p>Note that the evaluation and management tends to represent administrative or generic costs.</p>
+
+<h2 id="subsectionrange-subsectionheader:a38fab3f9619336ecaa4bd68fd8e1df9"><code>SUBSECTIONRANGE</code>, <code>SUBSECTIONHEADER</code></h2>
+
+<p>Similarly as for the sections, <code>SUBSECTIONRANGE</code> defines the range of codes for the given subsection, and <code>SUBSECTIONHEADER</code> provides the description of the given subsection. The subsection provides extra detail which can be useful, for example, when the section header is &lsquo;Anesthesia&rsquo; the subsection provides information on the general anatomical region for the anesthesia.</p>
+
+<h2 id="mincodeinsubsection-maxcodeinsubsection:a38fab3f9619336ecaa4bd68fd8e1df9"><code>MINCODEINSUBSECTION</code>, <code>MAXCODEINSUBSECTION</code></h2>
+
+<p>These columns provide numeric representations of minimum and maximum value in the <code>SUBSECTIONRANGE</code> column. This facilitates joining the <code>CPTEVENTS</code> table to the <code>D_CPT</code> table on <code>CPT_CD</code>.</p>
+
+<h1 id="important-considerations:a38fab3f9619336ecaa4bd68fd8e1df9">Important considerations</h1>
+
+<ul>
+<li>Unlike all other definition tables, <code>D_CPT</code> does <em>not</em> have a one to one mapping with the corresponding <code>CPT_CD</code> in <code>CPTEVENTS</code>, rather each row of <code>D_CPT</code> maps to a range of <code>CPT_CD</code>.</li>
+</ul>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</a></li>
-<li><a href="#getting-access:127f171a52019ad9726e1cd032676173">Getting access</a></li>
+<li><a href="#overview:a38fab3f9619336ecaa4bd68fd8e1df9">Overview</a></li>
+<li><a href="#table-columns:a38fab3f9619336ecaa4bd68fd8e1df9">Table columns</a></li>
+<li><a href="#detailed-description:a38fab3f9619336ecaa4bd68fd8e1df9">Detailed Description</a>
+<ul>
+<li><a href="#category:a38fab3f9619336ecaa4bd68fd8e1df9">CATEGORY</a></li>
+<li><a href="#sectionrange-sectionheader:a38fab3f9619336ecaa4bd68fd8e1df9"><code>SECTIONRANGE</code>, <code>SECTIONHEADER</code></a></li>
+<li><a href="#subsectionrange-subsectionheader:a38fab3f9619336ecaa4bd68fd8e1df9"><code>SUBSECTIONRANGE</code>, <code>SUBSECTIONHEADER</code></a></li>
+<li><a href="#mincodeinsubsection-maxcodeinsubsection:a38fab3f9619336ecaa4bd68fd8e1df9"><code>MINCODEINSUBSECTION</code>, <code>MAXCODEINSUBSECTION</code></a></li>
+</ul></li>
+<li><a href="#important-considerations:a38fab3f9619336ecaa4bd68fd8e1df9">Important considerations</a></li>
 </ul>
 </nav>
 </div>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    
+    <meta name="generator" content="Hugo 0.14" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <title>CALLOUT</title>
+
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    <link href="/css/monokai_sublime.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+  
+  <section id="container" class="">
+
+      
+      <header class="header black-bg">
+            <div class="toggle-nav">
+                <i class="fa fa-bars"></i>
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+
+            
+            <a href="/" class="logo"><img src="/img/logo-topleft.png" style="height: 40px; vertical-align: bottom;"> 
+            <span style="font-size: small; text-transform: none;">MIMIC-III v1.0</span></a>
+            
+
+            
+
+
+            <div class="nav title-row" id="top_menu">
+                <h1 class="nav top-menu">CALLOUT</h1>
+            </div>
+      </header>
+      
+      
+
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        
+        <ul class="sidebar-menu">
+          
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-bullhorn'></i>
+                
+                <span>About</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/about/mimic/">MIMIC</a> </li>
+                    
+                    <li><a href="/about/acknowledgments/">Acknowledgements</a> </li>
+                    
+                    <li><a href="/about/releasenotes/">Release notes</a> </li>
+                    
+                    <li><a href="/about/roadmap/">Roadmap</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-road'></i>
+                
+                <span>Getting started</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    
+                    <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
+                    
+                    <li><a href="/gettingstarted/glossary/">Glossary</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu active">
+            <a href="javascript:;" class="">
+                <i class='fa fa-cog'></i>
+                
+                <span>MIMIC data</span>
+                <span class="menu-arrow fa fa-angle-down"></span>
+            </a>
+                <ul class="sub open">
+                    
+                    <li><a href="/mimicdata/overview/">Overview</a> </li>
+                    
+                    <li><a href="/mimicdata/chartingdata/">Charting data</a> </li>
+                    
+                    <li><a href="/mimicdata/whatsnew/">What&#39;s new</a> </li>
+                    
+                    <li><a href="/mimicdata/labitemidmap/">Lab ITEMID mapping</a> </li>
+                    
+                    <li><a href="/mimicdata/ioeventsmerger/">IOEVENTS creation</a> </li>
+                    
+                    <li><a href="/mimictables/admissions/">ADMISSIONS</a> </li>
+                    
+                    <li class="active"><a href="/mimictables/callout/">CALLOUT</a> </li>
+                    
+                    <li><a href="/mimictables/caregivers/">CAREGIVERS</a> </li>
+                    
+                    <li><a href="/mimictables/chartevents/">CHARTEVENTS</a> </li>
+                    
+                    <li><a href="/mimictables/cptevents/">CPTEVENTS</a> </li>
+                    
+                    <li><a href="/mimictables/d_cpt/">D_CPT</a> </li>
+                    
+                    <li><a href="/mimictables/d_icd_diagnoses/">D_ICD_DIAGNOSES</a> </li>
+                    
+                    <li><a href="/mimictables/d_icd_procedures/">D_ICD_PROCEDURES</a> </li>
+                    
+                    <li><a href="/mimictables/d_items/">D_ITEMS</a> </li>
+                    
+                    <li><a href="/mimictables/d_labitems/">D_LABITEMS</a> </li>
+                    
+                    <li><a href="/mimictables/datetimeevents/">DATETIMEEVENTS</a> </li>
+                    
+                    <li><a href="/mimictables/diagnoses_icd/">DIAGNOSES_ICD</a> </li>
+                    
+                    <li><a href="/mimictables/drgcodes/">DRGCODES</a> </li>
+                    
+                    <li><a href="/mimictables/icustayevents/">ICUSTAYEVENTS</a> </li>
+                    
+                    <li><a href="/mimictables/ioevents/">IOEVENTS</a> </li>
+                    
+                    <li><a href="/mimictables/labevents/">LABEVENTS</a> </li>
+                    
+                    <li><a href="/mimictables/microbiologyevents/">MICROBIOLOGYEVENTS</a> </li>
+                    
+                    <li><a href="/mimictables/noteevents/">NOTEEVENTS</a> </li>
+                    
+                    <li><a href="/mimictables/patients/">PATIENTS</a> </li>
+                    
+                    <li><a href="/mimictables/prescriptions/">PRESCRIPTIONS</a> </li>
+                    
+                    <li><a href="/mimictables/procedures_icd/">PROCEDURES_ICD</a> </li>
+                    
+                    <li><a href="/mimictables/services/">SERVICES</a> </li>
+                    
+                    <li><a href="/mimictables/transfers/">TRANSFERS</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+                <li>
+                <a class="" href="/mimictables/">
+                    <i class='fa fa-columns'></i>
+                    
+                    <span>Tables in MIMIC</span>
+                </a>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-group'></i>
+                
+                <span>Community</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/community/contributing/">Contributing</a> </li>
+                    
+                    <li><a href="/community/forum/">Forum</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+              
+
+            <li class="sub-menu">
+            <a href="javascript:;" class="">
+                <i class='fa fa-book'></i>
+                
+                <span>Tutorials</span>
+                <span class="menu-arrow fa fa-angle-right"></span>
+            </a>
+                <ul class="sub">
+                    
+                    <li><a href="/tutorials/intro_to_sql/">Intro to SQL</a> </li>
+                    
+                </ul>
+              
+              </li>
+          
+            <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
+            <span>Issues & help</span></a> </li>
+            
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/mimictables%5ccallout.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+            
+        </ul>
+        
+    </div>
+</aside>
+
+
+
+      
+      <section id="main-content">
+          <section class="wrapper">
+
+              
+                  
+                      
+                      
+                          
+                          
+                          
+                      
+                      
+                  
+              
+
+              <div class="row">
+                  <div class="col-md-1">
+                      
+                      
+                      
+                  </div>
+                <div class="col-md-10">
+                    <section class="panel">
+                          
+                              
+                          
+                   <div class="panel-body">
+
+
+
+<div class="col-lg-8 col-md-12">
+
+
+<h1 id="overview:12b4cce506a7dbbef4b99ba720446873">Overview</h1>
+
+<p><strong>Table source:</strong> Hospital database.</p>
+
+<p><strong>Table purpose:</strong> Provides information when a patient was ready for discharge, and when the patient was actually discharged.</p>
+
+<p><strong>Number of rows:</strong> 34499</p>
+
+<p><strong>Links to:</strong></p>
+
+<ul>
+<li>PATIENTS on <code>SUBJECT_ID</code></li>
+<li>ADMISSIONS on <code>HADM_ID</code></li>
+</ul>
+
+<h1 id="table-columns:12b4cce506a7dbbef4b99ba720446873">Table columns</h1>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Postgres data type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ROW_ID</td>
+<td>BIGINT</td>
+</tr>
+
+<tr>
+<td>SUBJECT_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>HADM_ID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>SUBMIT_WARDID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>SUBMIT_CAREUNIT</td>
+<td>VARCHAR(15)</td>
+</tr>
+
+<tr>
+<td>CURR_WARDID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>CURR_CAREUNIT</td>
+<td>VARCHAR(15)</td>
+</tr>
+
+<tr>
+<td>CALLOUT_WARDID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>CALLOUT_SERVICE</td>
+<td>VARCHAR(10)</td>
+</tr>
+
+<tr>
+<td>REQUEST_TELE</td>
+<td>SMALLINT</td>
+</tr>
+
+<tr>
+<td>REQUEST_RESP</td>
+<td>SMALLINT</td>
+</tr>
+
+<tr>
+<td>REQUEST_CDIFF</td>
+<td>SMALLINT</td>
+</tr>
+
+<tr>
+<td>REQUEST_MRSA</td>
+<td>SMALLINT</td>
+</tr>
+
+<tr>
+<td>REQUEST_VRE</td>
+<td>SMALLINT</td>
+</tr>
+
+<tr>
+<td>CALLOUT_STATUS</td>
+<td>VARCHAR(20)</td>
+</tr>
+
+<tr>
+<td>CALLOUT_OUTCOME</td>
+<td>VARCHAR(20)</td>
+</tr>
+
+<tr>
+<td>DISCHARGE_WARDID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>ACKNOWLEDGE_STATUS</td>
+<td>VARCHAR(20)</td>
+</tr>
+
+<tr>
+<td>CREATETIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>UPDATETIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>ACKNOWLEDGETIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>OUTCOMETIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>FIRSTRESERVATIONTIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+
+<tr>
+<td>CURRENTRESERVATIONTIME</td>
+<td>TIMESTAMP(0)</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="detailed-description:12b4cce506a7dbbef4b99ba720446873">Detailed description</h1>
+
+<p>The CALLOUT table provides information for &ldquo;call out events&rdquo;. A call out event occurs as follows: first, a patient is ready for discharge from the ICU. A care provider creates a call out request (occurring at <code>CREATETIME</code>) stating the desired ward and any necessary precautions. The call out request is acknowledged, usually within a short period of time (<code>ACKNOWLEDGETIME</code>). When the patient is actually transferred out of the ICU, the <code>CALLOUT_OUTCOME</code> becomes &lsquo;Discharged&rsquo; and the <code>OUTCOMETIME</code> column contains the time at which the patient was discharged.</p>
+
+<h2 id="subject-id-hadm-id:12b4cce506a7dbbef4b99ba720446873">SUBJECT_ID, HADM_ID</h2>
+
+<p><code>SUBJECT_ID</code> and <code>HADM_ID</code> define the patient and hospital admission corresponding to the given call out event.
+? Unique</p>
+
+<h2 id="submit-wardid-submit-careunit:12b4cce506a7dbbef4b99ba720446873">SUBMIT_WARDID, SUBMIT_CAREUNIT</h2>
+
+<p><code>SUBMIT_WARDID</code> identifies the ward from which the request was submitted. <code>SUBMIT_CAREUNIT</code> indicates whether the <code>SUBMIT_WARDID</code> corresponds an ICU cost center, and if so, what type of ICU cost center.</p>
+
+<h2 id="curr-wardid-curr-careunit:12b4cce506a7dbbef4b99ba720446873">CURR_WARDID, CURR_CAREUNIT</h2>
+
+<p><code>CURR_WARDID</code> identifies the ward in which the patient resides when called out (i.e. prior to discharge/transfer). <code>CURR_CAREUNIT</code> indicates which ICU cost center the <code>CURR_WARDID</code> corresponds to (note: since all patients are being discharged from an ICU, all patients should reside in an ICU cost center).</p>
+
+<h2 id="callout-wardid-callout-service:12b4cce506a7dbbef4b99ba720446873"><code>CALLOUT_WARDID</code>, <code>CALLOUT_SERVICE</code></h2>
+
+<p><code>CALLOUT_WARDID</code> identifies the ward to which the patient should be discharged. Note that <code>CALLOUT_WARDID</code> = 0 represents &lsquo;Home&rsquo; and <code>CALLOUT_WARDID</code> = 1 represents &lsquo;First available ward&rsquo;. The remaining IDs correspond to distinct wards in the hospital. <code>CALLOUT_SERVICE</code> is the service under which the patient should be discharged to.</p>
+
+<h2 id="request-tele-request-resp-request-cdiff-request-mrsa-request-vre:12b4cce506a7dbbef4b99ba720446873"><code>REQUEST_TELE</code>, <code>REQUEST_RESP</code>, <code>REQUEST_CDIFF</code>, <code>REQUEST_MRSA</code>, <code>REQUEST_VRE</code></h2>
+
+<p>The request columns are binary indicators which request certain precautions for the patient in the subsequent ward where they will reside. For example, MRSA means that the patient is sensitive to MRSA, a drug resistant source of hospital acquired infections.</p>
+
+<h2 id="callout-status-callout-outcome:12b4cce506a7dbbef4b99ba720446873"><code>CALLOUT_STATUS</code>, <code>CALLOUT_OUTCOME</code></h2>
+
+<p><code>CALLOUT_STATUS</code> indicates whether the call out is still active or not: if a call out is answered it should be flagged as inactive. <code>CALLOUT_OUTCOME</code> is either &lsquo;Discharged&rsquo; or &lsquo;Cancelled&rsquo;, indicating whether the patient finally called out (i.e. discharged) or not.</p>
+
+<h2 id="discharge-wardid:12b4cce506a7dbbef4b99ba720446873"><code>DISCHARGE_WARDID</code></h2>
+
+<p><code>DISCHARGE_WARDID</code> indicates the ward to which the patient was actually discharged. <code>DISCHARGE_WARDID</code> = 0 indicates home and other values correspond to distinct wards in the hospital.</p>
+
+<h2 id="acknowledge-status:12b4cce506a7dbbef4b99ba720446873"><code>ACKNOWLEDGE_STATUS</code></h2>
+
+<p><code>ACKNOWLEDGE_STATUS</code> indicates the response to the callout event: &lsquo;Acknowledged&rsquo;, &lsquo;Revised&rsquo;, &lsquo;Unacknowledged&rsquo; or &lsquo;Reactivated&rsquo;.</p>
+
+<h2 id="createtime-updatetime-acknowledgetime-outcometime-firstreservationtime-currentreservationtime:12b4cce506a7dbbef4b99ba720446873"><code>CREATETIME</code>, <code>UPDATETIME</code>, <code>ACKNOWLEDGETIME</code>, <code>OUTCOMETIME</code>, <code>FIRSTRESERVATIONTIME</code>, <code>CURRENTRESERVATIONTIME</code></h2>
+
+<p><code>CREATETIME</code> provides the time and date that the call out was initiated. <code>UPDATETIME</code> provides the last time at which the call out event was updated. <code>ACKNOWLEDGETIME</code> is the time at which the call out was first acknowledged.
+<code>OUTCOMETIME</code> is the time at which the <code>CALLOUT_OUTCOME</code> occurred. <code>FIRSTRESERVATIONTIME</code> and <code>CURRENTRESERVATIONTIME</code> provide information regarding ward reservations.</p>
+
+<h1 id="important-considerations:12b4cce506a7dbbef4b99ba720446873">Important considerations</h1>
+
+<ul>
+<li>Call out data is <em>not</em> available for all adult patients, as the data only began being collected part way through the collection of the MIMIC database</li>
+<li>Call out data is <em>never</em> available for neonates</li>
+</ul>
+
+</div>
+<div id="toc" class="col-lg-offset-6 toc ">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#overview:12b4cce506a7dbbef4b99ba720446873">Overview</a></li>
+<li><a href="#table-columns:12b4cce506a7dbbef4b99ba720446873">Table columns</a></li>
+<li><a href="#detailed-description:12b4cce506a7dbbef4b99ba720446873">Detailed description</a>
+<ul>
+<li><a href="#subject-id-hadm-id:12b4cce506a7dbbef4b99ba720446873">SUBJECT_ID, HADM_ID</a></li>
+<li><a href="#submit-wardid-submit-careunit:12b4cce506a7dbbef4b99ba720446873">SUBMIT_WARDID, SUBMIT_CAREUNIT</a></li>
+<li><a href="#curr-wardid-curr-careunit:12b4cce506a7dbbef4b99ba720446873">CURR_WARDID, CURR_CAREUNIT</a></li>
+<li><a href="#callout-wardid-callout-service:12b4cce506a7dbbef4b99ba720446873"><code>CALLOUT_WARDID</code>, <code>CALLOUT_SERVICE</code></a></li>
+<li><a href="#request-tele-request-resp-request-cdiff-request-mrsa-request-vre:12b4cce506a7dbbef4b99ba720446873"><code>REQUEST_TELE</code>, <code>REQUEST_RESP</code>, <code>REQUEST_CDIFF</code>, <code>REQUEST_MRSA</code>, <code>REQUEST_VRE</code></a></li>
+<li><a href="#callout-status-callout-outcome:12b4cce506a7dbbef4b99ba720446873"><code>CALLOUT_STATUS</code>, <code>CALLOUT_OUTCOME</code></a></li>
+<li><a href="#discharge-wardid:12b4cce506a7dbbef4b99ba720446873"><code>DISCHARGE_WARDID</code></a></li>
+<li><a href="#acknowledge-status:12b4cce506a7dbbef4b99ba720446873"><code>ACKNOWLEDGE_STATUS</code></a></li>
+<li><a href="#createtime-updatetime-acknowledgetime-outcometime-firstreservationtime-currentreservationtime:12b4cce506a7dbbef4b99ba720446873"><code>CREATETIME</code>, <code>UPDATETIME</code>, <code>ACKNOWLEDGETIME</code>, <code>OUTCOMETIME</code>, <code>FIRSTRESERVATIONTIME</code>, <code>CURRENTRESERVATIONTIME</code></a></li>
+</ul></li>
+<li><a href="#important-considerations:12b4cce506a7dbbef4b99ba720446873">Important considerations</a></li>
+</ul>
+</nav>
+</div>
+
+
+                    </div>
+                    </section>
+                    <div style="font-size: medium; font-style: italic; text-align: right;">MIMIC-III v1.0 documentation</div>
+
+                    </div>
+
+                <div class="col-md-1">
+                    
+                    
+                    
+                </div>
+              </div>
+              
+          </section>
+      </section>
+     
+  </section>
+  
+    
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/jquery.scrollTo.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/scripts.js"></script>
+    <script async defer id="github-bjs" src="/js/buttons.js"></script>
+    
+  </body>
+</html>

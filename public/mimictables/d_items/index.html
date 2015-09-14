@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.14" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Accessing MIMIC</title>
+    <title>D_ITEMS</title>
 
     <link href="/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@
 
 
             <div class="nav title-row" id="top_menu">
-                <h1 class="nav top-menu">Accessing MIMIC</h1>
+                <h1 class="nav top-menu">D_ITEMS</h1>
             </div>
       </header>
       
@@ -75,16 +75,16 @@
           
               
 
-            <li class="sub-menu active">
+            <li class="sub-menu">
             <a href="javascript:;" class="">
                 <i class='fa fa-road'></i>
                 
                 <span>Getting started</span>
-                <span class="menu-arrow fa fa-angle-down"></span>
+                <span class="menu-arrow fa fa-angle-right"></span>
             </a>
-                <ul class="sub open">
+                <ul class="sub">
                     
-                    <li class="active"><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
+                    <li><a href="/gettingstarted/access/">Accessing MIMIC</a> </li>
                     
                     <li><a href="/gettingstarted/dbsetup/">Database set up</a> </li>
                     
@@ -96,14 +96,14 @@
           
               
 
-            <li class="sub-menu">
+            <li class="sub-menu active">
             <a href="javascript:;" class="">
                 <i class='fa fa-cog'></i>
                 
                 <span>MIMIC data</span>
-                <span class="menu-arrow fa fa-angle-right"></span>
+                <span class="menu-arrow fa fa-angle-down"></span>
             </a>
-                <ul class="sub">
+                <ul class="sub open">
                     
                     <li><a href="/mimicdata/overview/">Overview</a> </li>
                     
@@ -131,7 +131,7 @@
                     
                     <li><a href="/mimictables/d_icd_procedures/">D_ICD_PROCEDURES</a> </li>
                     
-                    <li><a href="/mimictables/d_items/">D_ITEMS</a> </li>
+                    <li class="active"><a href="/mimictables/d_items/">D_ITEMS</a> </li>
                     
                     <li><a href="/mimictables/d_labitems/">D_LABITEMS</a> </li>
                     
@@ -214,7 +214,7 @@
             <li> <a href="/" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
             
-              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/gettingstarted%5caccess.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
+              <li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/mimictables%5cd_items.md" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>
             
         </ul>
         
@@ -257,29 +257,161 @@
 <div class="col-lg-8 col-md-12">
 
 
-<h1 id="mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</h1>
+<h1 id="overview:58b03f00686cef22962f6ca28d7fe693">Overview</h1>
 
-<p>The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. <a href="http://127.0.0.1:1313/mimicdata/whatsnew/">See here for more detail.</a></p>
+<p><strong>Table source:</strong> CareVue and Metavision ICU databases.</p>
 
-<h1 id="getting-access:127f171a52019ad9726e1cd032676173">Getting access</h1>
+<p><strong>Table purpose:</strong> Definition table for all items in the ICU databases.</p>
 
-<p>The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available, see (<a href="http://physionet.org/mimic2wdb/">http://physionet.org/mimic2wdb/</a>).</p>
+<p><strong>Number of rows:</strong> 15,492</p>
 
-<p>The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:</p>
+<p><strong>Links to:</strong></p>
 
 <ul>
-<li>Follow <a href="https://physionet.org/pnw/login">the instructions</a> to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, <a href="https://physionet.org/pnw/login">log in to it</a>.</li>
-<li>On your PhysioNetWorks home page, click on the link titled &ldquo;MIMIC III Clinical Database&rdquo;, and follow the instructions to apply for access.</li>
+<li>CHARTEVENTS on <code>ITEMID</code></li>
+<li>DATETIMEEVENTS on <code>ITEMID</code></li>
+<li>IOEVENTS on <code>ITEMID</code></li>
+<li>MICROBIOLOGYEVENTS on <code>ITEMID</code></li>
 </ul>
 
-<p>All applications are reviewed, and if yours is approved you will receive separate emails containing instructions for downloading the database from PhysioNetWorks. Note that approval usually requires at least a week, and will be delayed if your request is missing any required information.</p>
+<h1 id="table-columns:58b03f00686cef22962f6ca28d7fe693">Table columns</h1>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Postgres data type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ITEMID</td>
+<td>INT</td>
+</tr>
+
+<tr>
+<td>LABEL</td>
+<td>VARCHAR(200)</td>
+</tr>
+
+<tr>
+<td>ABBREVIATION</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>DBSOURCE</td>
+<td>VARCHAR(20)</td>
+</tr>
+
+<tr>
+<td>LINKSTO</td>
+<td>VARCHAR(50)</td>
+</tr>
+
+<tr>
+<td>CODE</td>
+<td>VARCHAR(20)</td>
+</tr>
+
+<tr>
+<td>CATEGORY</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>UNITNAME</td>
+<td>VARCHAR(100)</td>
+</tr>
+
+<tr>
+<td>PARAM_TYPE</td>
+<td>VARCHAR(30)</td>
+</tr>
+
+<tr>
+<td>LOWNORMALVALUE</td>
+<td>DOUBLE PRECISION</td>
+</tr>
+
+<tr>
+<td>HIGHNORMALVALUE</td>
+<td>DOUBLE PRECISION</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="detailed-description:58b03f00686cef22962f6ca28d7fe693">Detailed Description</h1>
+
+<p>The D_ITEMS table defines <code>ITEMID</code>, which represents measurements in the database. Measurements of the same type (e.g. heart rate) will have the same <code>ITEMID</code> (e.g. 211). The <code>ITEMID</code> column is an alternate primary key to this table: it is unique to each row.</p>
+
+<p>Note that the D_ITEMS table is sourced from two ICU databases: Metavision and CareVue. Each system had its own set of <code>ITEMID</code> to identify concepts. As a result, there are multiple <code>ITEMID</code> which correspond to the same concept. For CareVue data, <code>ITEMID</code> = 211 is used to identify heart rates, whereas for Metavision data, <code>ITEMID</code> = 220045 is used. All Metavision <code>ITEMID</code> will have a value &gt; 220000.</p>
+
+<p>Note that the D_ITEMS table does <em>not</em> link to the LABEVENTS table, as this data was acquired separately from the hospital database. The D_ITEMS table was acquired from the ICU databases.</p>
+
+<h2 id="itemid:58b03f00686cef22962f6ca28d7fe693"><code>ITEMID</code></h2>
+
+<p>As an alternate primary key to the table, <code>ITEMID</code> is unique to each row.</p>
+
+<h2 id="label-abbreviation:58b03f00686cef22962f6ca28d7fe693"><code>LABEL</code>, <code>ABBREVIATION</code></h2>
+
+<p>The <code>LABEL</code> column describes the concept which is represented by the <code>ITEMID</code>. The <code>ABBREVIATION</code> column, only available in Metavision, lists a common abbreviation for the label.</p>
+
+<h2 id="dbsource:58b03f00686cef22962f6ca28d7fe693"><code>DBSOURCE</code></h2>
+
+<p>The <code>DBSOURCE</code> column was generated to clarify which database the given <code>ITEMID</code> was sourced from: &lsquo;carevue&rsquo; indicates the <code>ITEMID</code> was sourced from CareVue, while &lsquo;metavision&rsquo; indicated the <code>ITEMID</code> was sourced from Metavision.</p>
+
+<h2 id="linksto:58b03f00686cef22962f6ca28d7fe693"><code>LINKSTO</code></h2>
+
+<p><code>LINKSTO</code> provides the table name which the data links to. For example, a value of &lsquo;chartevents&rsquo; indicates that the <code>ITEMID</code> of the given row is contained in CHARTEVENTS. A single <code>ITEMID</code> is only used in one event table, that is, if an <code>ITEMID</code> is contained in CHARTEVENTS it will <em>not</em> be contained in any other event table (e.g. IOEVENTS, CHARTEVENTS, etc).</p>
+
+<h2 id="code:58b03f00686cef22962f6ca28d7fe693"><code>CODE</code></h2>
+
+<p><code>CODE</code> is a microbiology specific column used for identifying the organism tested again.</p>
+
+<h2 id="category:58b03f00686cef22962f6ca28d7fe693"><code>CATEGORY</code></h2>
+
+<p><code>CATEGORY</code> provides some information of the type of data the <code>ITEMID</code> corresponds to. Examples include &lsquo;ABG&rsquo;, which indicates the measurement is sourced from an arterial blood gas, &lsquo;IV Medication&rsquo;, which indicates that the medication is administered through an intravenous line, and so on.</p>
+
+<h2 id="unitname:58b03f00686cef22962f6ca28d7fe693"><code>UNITNAME</code></h2>
+
+<p><code>UNITNAME</code> specifies the unit of measurement used for the <code>ITEMID</code>. This column is not always available, and this may be because the unit of measurement varies, a unit of measurement does not make sense for the given data type, or the unit of measurement is simply missing. Note that there is sometimes additional information on the unit of measurement in the associated event table, e.g. the <code>UOM</code> column in CHARTEVENTS.</p>
+
+<h2 id="param-type:58b03f00686cef22962f6ca28d7fe693"><code>PARAM_TYPE</code></h2>
+
+<p><code>PARAM_TYPE</code> describes the type of data which is recorded: a date, a number or a text field.</p>
+
+<h2 id="lownormalvalue-highnormalvalue:58b03f00686cef22962f6ca28d7fe693"><code>LOWNORMALVALUE</code>, <code>HIGHNORMALVALUE</code></h2>
+
+<p><code>LOWNORMALVALUE</code> and <code>HIGHNORMALVALUE</code> provide a reference range for measurements which have a known operating range.</p>
+
+<h1 id="important-considerations:58b03f00686cef22962f6ca28d7fe693">Important considerations</h1>
+
+<ul>
+<li>D_ITEMS is sourced from two <em>distinct</em> ICU databases. The main consequence is that there are duplicate <code>ITEMID</code> for each concept. For example, heart rate is captured both as an <code>ITEMID</code> of 212 (CareVue) and as an <code>ITEMID</code> of 220045 (Metavision). As a result, it is necessary to search for multiple <code>ITEMID</code> to capture a single concept across the entire database. This can be tedious, and it is an active project to coalesce these <code>ITEMID</code> - one which welcomes any and all help provided by the community!</li>
+<li>Another source of duplicate <code>ITEMID</code> is due to the free text nature of data entry in CareVue - as a result there are additional <code>ITEMID</code> which correspond to misspellings or synonymous descriptions of a single concept. It is important to search for all possible abbreviations and descriptions of a concept to capture all associated <code>ITEMID</code>.</li>
+</ul>
 
 </div>
 <div id="toc" class="col-lg-offset-6 toc ">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#mimic-iii:127f171a52019ad9726e1cd032676173">MIMIC III</a></li>
-<li><a href="#getting-access:127f171a52019ad9726e1cd032676173">Getting access</a></li>
+<li><a href="#overview:58b03f00686cef22962f6ca28d7fe693">Overview</a></li>
+<li><a href="#table-columns:58b03f00686cef22962f6ca28d7fe693">Table columns</a></li>
+<li><a href="#detailed-description:58b03f00686cef22962f6ca28d7fe693">Detailed Description</a>
+<ul>
+<li><a href="#itemid:58b03f00686cef22962f6ca28d7fe693"><code>ITEMID</code></a></li>
+<li><a href="#label-abbreviation:58b03f00686cef22962f6ca28d7fe693"><code>LABEL</code>, <code>ABBREVIATION</code></a></li>
+<li><a href="#dbsource:58b03f00686cef22962f6ca28d7fe693"><code>DBSOURCE</code></a></li>
+<li><a href="#linksto:58b03f00686cef22962f6ca28d7fe693"><code>LINKSTO</code></a></li>
+<li><a href="#code:58b03f00686cef22962f6ca28d7fe693"><code>CODE</code></a></li>
+<li><a href="#category:58b03f00686cef22962f6ca28d7fe693"><code>CATEGORY</code></a></li>
+<li><a href="#unitname:58b03f00686cef22962f6ca28d7fe693"><code>UNITNAME</code></a></li>
+<li><a href="#param-type:58b03f00686cef22962f6ca28d7fe693"><code>PARAM_TYPE</code></a></li>
+<li><a href="#lownormalvalue-highnormalvalue:58b03f00686cef22962f6ca28d7fe693"><code>LOWNORMALVALUE</code>, <code>HIGHNORMALVALUE</code></a></li>
+</ul></li>
+<li><a href="#important-considerations:58b03f00686cef22962f6ca28d7fe693">Important considerations</a></li>
 </ul>
 </nav>
 </div>
