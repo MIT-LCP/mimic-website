@@ -3,7 +3,7 @@ date = "2015-09-01T14:02:13-04:00"
 title = "Database set up"
 linktitle = "Database set up"
 weight = 2
-toc = "true"
+toc = "false"
 
 [menu]
   [menu.main]
