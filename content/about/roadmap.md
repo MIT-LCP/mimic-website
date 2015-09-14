@@ -13,4 +13,19 @@ toc = "true"
 
 # Roadmap
 
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
+Currently MIMIC contains data relating to:
+
+ - Laboratory measurements from within the hospital (i.e. in patient) and from clinics (i.e. out patient)
+ - Charted observations during a patient's stay in the intensive care unit
+ - De-identified notes regarding the patient's stay, including nursing notes, physician notes and discharge summaries
+ - Echocardiography reports
+ - Twelve lead electrocardiogram reports
+
+ Nevertheless, there exists more data available to clinical staff which is unavailable to the retrospective researcher. Our aim is to include as much information recorded about the patient in the database to provide a record which is as complete as possible. Given this approach, the following information is of interest for inclusion in the database at a future date:
+ 
+  - Images corresponding to any medical imaging performed during the patient's stay
+  - Clinical measurements recorded while a patient is present in the operating room
+  - Emergency department measurements
+ 
+ If you feel that there is data critical to your study of interest which is currently unavailable in the database and not scheduled for future work please contact us.
+ 
