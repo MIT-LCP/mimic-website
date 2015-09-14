@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T14:02:13-04:00"
 title = "Accessing MIMIC"
-linktitle = "access"
+linktitle = "Accessing MIMIC"
 weight = 1
 toc = "true"
 
