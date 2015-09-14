@@ -13,4 +13,4 @@ toc = "true"
 
 # MIMIC
 
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
+MIMIC is an archived database pertaining to patients admitted to one of many intensive care units (ICUs) at the Beth Israel Deaconess Medical Center in Boston, Massachusetts, USA. The database is notable for three factors: it is publicly and freely available; it encompasses a diverse and very large population of ICU patients; and it contains high temporal resolution data including lab results, electronic documentation, and bedside monitor trends and waveforms. The database can support a diverse range of analytic studies spanning epidemiology, clinical decision-rule improvement, and electronic tool development.
