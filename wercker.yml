@@ -20,17 +20,10 @@ build:
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
     steps:
-        - arjen/hugo-build@1.6.1
+      - arjen/hugo-build@1.6.1
 
 deploy:
     steps:
-        - lukevivier/gh-pages@0.2.1:
-        token: $GIT_TOKEN
-        basedir: public
-        # - sjoerdmulder/rsync-deploy@0.1.0:
-        #     host: $HOST_ADDRESS
-        #     user: $USERNAME
-        #     directory: $HOST_DIR
-        #     source: public
-        #     sshkey: $PRIVATEKEY_FILE
-
+      - lukevivier/gh-pages@0.2.1:
+      token: $GIT_TOKEN
+      basedir: public
