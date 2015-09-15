@@ -20,6 +20,7 @@ build:
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
+    - arjen/hugo-build@1.6.1
     - script:
         name: echo
         code: |
