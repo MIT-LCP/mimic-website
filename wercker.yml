@@ -24,10 +24,9 @@ build:
 # Deploy the website
 deploy:
     steps:
-    - tompollard/step-deploy-ssh-rsync-with-path@0.1.0:
+    - sjoerdmulder/rsync-deploy@0.1.0:
         host: $HOST_ADDRESS
         user: $USERNAME
-        path: /usr/bin/rsync
         directory: $HOST_DIR
         source: public
         sshkey: $PRIVATEKEY_FILE
