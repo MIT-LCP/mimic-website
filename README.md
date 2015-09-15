@@ -10,3 +10,7 @@
 3. Run ```hugo server``` at the command line to build the website and serve the pages;
 4. View the website at: http://127.0.0.1:1313
 
+## Notes on automatic builds
+
+
+
