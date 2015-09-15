@@ -21,10 +21,12 @@ build:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     - arjen/hugo-build@1.6.1
+# Deploy the website
+deploy:
+    steps:
     - sjoerdmulder/rsync-deploy@0.1.0:
         host: $HOST_ADDRESS
         user: $USERNAME
         directory: $HOST_DIR
         source: public
         sshkey: $PRIVATEKEY_FILE
-
