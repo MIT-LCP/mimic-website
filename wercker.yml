@@ -23,6 +23,7 @@ build:
     - arjen/hugo-build@1.6.1
     - sjoerdmulder/rsync-deploy@0.1.0:
         host: $HOST_ADDRESS
+        user: $USERNAME
         directory: $HOST_DIR
         source: public
         sshkey: $PRIVATEKEY_FILE
