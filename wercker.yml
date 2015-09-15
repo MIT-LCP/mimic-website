@@ -21,12 +21,11 @@ build:
     # http://devcenter.wercker.com/docs/steps/index.html
     steps:
     - arjen/hugo-build@1.6.1
-# Deploy the website
 deploy:
     steps:
     - lukevivier/gh-pages@0.2.1:
-        token: $GIT_TOKEN
-        basedir: public
+    token: $GIT_TOKEN
+    basedir: public
     # - sjoerdmulder/rsync-deploy@0.1.0:
     #     host: $HOST_ADDRESS
     #     user: $USERNAME
