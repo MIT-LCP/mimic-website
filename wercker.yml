@@ -16,14 +16,14 @@ box: debian
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
 build:
-    # Steps make up the actions in your pipeline
-    # Read more about steps on our dev center:
-    # http://devcenter.wercker.com/docs/steps/index.html
-    steps:
-      - arjen/hugo-build@1.6.1
+  # Steps make up the actions in your pipeline
+  # Read more about steps on our dev center:
+  # http://devcenter.wercker.com/docs/steps/index.html
+  steps:
+    - arjen/hugo-build@1.6.1
 
 deploy:
-    steps:
-      - lukevivier/gh-pages@0.2.1:
+  steps:
+    - lukevivier/gh-pages@0.2.1:
       token: $GIT_TOKEN
       basedir: public
