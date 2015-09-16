@@ -1,5 +1,6 @@
 +++
 date = "2015-09-01T19:34:46-04:00"
+title = "Data format"
 linktitle = "How is data recorded?"
 weight = 2
 toc = "true"
