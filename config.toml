@@ -30,7 +30,7 @@ theme = "mimic-data"
     url = "/community/"
 [[menu.main]]
     name = "Tutorials"
-    pre = "<i class='fa fa-book'></i>"
+    pre = "<i class='fa fa-cubes'></i>"
     weight = 50
     url = "/tutorials/"
 [[menu.main]]
@@ -38,3 +38,8 @@ theme = "mimic-data"
     pre = "<i class='fa fa-tags'></i>"
     weight = 60
     url = "/glossary/"
+[[menu.main]]
+    name = "Archive"
+    pre = "<i class='fa fa-book'></i>"
+    weight = 70
+    url = "/archive/"
