@@ -16,13 +16,6 @@ toc = "true"
 Many users familiar with MIMIC II will be happy to find MIMIC III has a very similar architecture, however there are key differences to be aware of.
 MIMIC III is an extension of MIMIC II: it incorporates the data contained in MIMIC II (collected between 2001 - 2008) and augments it with newly collected data between 2008 - 2012. Further to this, many data elements have been re-extracted in a more robust manner to improve the quality of the underlying data. A key difficulty in the addition of new data was a change in data management software which occurred at the Beth Israel Deaconess Medical Center (BIDMC): the original CareVue data management system (which archived data from 2001 - 2008) was replaced with the new Metavision data management system (which continues to be used to the present). Many efforts have been made to merge these databases seamlessly: this has been successful in some instances, and continues to be a work in progress for others. This page aims to facilitate the transition for researchers familiar with MIMIC II who would like to continue their research with the updated MIMIC III.
 
-# New tables
-
-## CALLOUT
-
-## PROCEDURES_ICD
-
-
 # Schema changes
 
 ## ADMISSIONS
@@ -75,6 +68,52 @@ The IOEVENTS contains a large number of columns which were not present in the ta
 `HADM_ID` have been regenerated in MIMIC III. `HADM_ID` in MIMIC II v2.6 will *not* match any `HADM_ID` in MIMIC III. The newly generated `HADM_ID` range from 100,000 - 199,999 to help differentiate these IDs from others.
 
 `ICUSTAY_ID` have been regenerated in MIMIC III. `ICUSTAY_ID` in MIMIC II v2.6 will *not* match any `ICUSTAY_ID` in MIMIC III. Note that the newly generated `ICUSTAY_IF` range between 200,000 - 299,999 to prevent confusion with other IDs.
+
+
+# New tables
+
+## CALLOUT
+
+## PROCEDURES_ICD
+
+
+# Removed tables
+
+There were many tables in MIMIC II which are no longer present in MIMIC III. In most cases, these tables were generated from the raw data for user convenience. We have transitioned from the approach of creating flat files of these tables to providing the source code necessary to regenerate them. This has two advantages: first it is much more efficient in terms of data transfer, and second it clarifies that these data are not "raw" in that they are not acquired directly from the databases but rather synthesized views of this data.
+
+# COMORBIDITY_SCORES
+
+This table is frequently used to define the comorbid status for patients. Code for generating this table will be provided in the GitHub repository. The comorbidities will be defined using ICD-9 codes and DRG codes as proposed by Elixhauser et al. 
+
+# DEMOGRAPHICEVENTS, D_DEMOGRAPHICITEMS
+
+These tables were specific to the older CareVue database. As these tables are not present in the Metavision data, and the same information has been acquired from the hospital database (see the ADMISSIONS and D\_PATIENTS tables), these tables have been removed.
+
+# D_CAREUNITS
+
+The care unit identifier, CUID, has been removed from the various tables as it was unavailable in the Metavision ICU database. Care unit can be ascertained at the patient level, rather than the observation level, using the ICUSTAYEVENTS and TRANSFERS table.
+
+# D_CODEDITEMS
+
+This was a generated table to facilitate the interpretation of various coding systems, including microbiology, DRG, etc. The database has been restructured to have explicit definitions for these codes where appropriate, and so this table was made redundant.
+
+# D_PARAMMAP_ITEMS
+
+# ICUSTAY_DAYS
+
+This table was used in the generation of severity scores which were originally imputed into the raw data. The table is no longer necessary as the severity scores are no longer imputed into the database.
+
+# ICUSTAY_DETAILS
+
+A script to generate ICUSTAY_DETAILS will be provided on the GitHub repository shortly.
+
+# PARAMETER_MAPPING
+
+
+# WAVEFORM_*, D_WAVEFORM_SIGNALS
+
+D\_WAVEFORM\_SIGNALS, WAVEFORM\_METADATA, WAVEFORM\_SEGMENTS, WAVEFORM\_SEG\_SIG, WAVEFORM\_SIGNALS, WAVEFORM\_TRENDS, WAVEFORM\_TREND\_SIGNALS have been removed. 
+The mapping to the waveform data is no longer provided within the relative database for clarity.
 
 <!--
 ## `ITEMID`, `IOITEMID`
