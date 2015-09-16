@@ -16,6 +16,14 @@ toc = "true"
 Many users familiar with MIMIC II will be happy to find MIMIC III has a very similar architecture, however there are key differences to be aware of.
 MIMIC III is an extension of MIMIC II: it incorporates the data contained in MIMIC II (collected between 2001 - 2008) and augments it with newly collected data between 2008 - 2012. Further to this, many data elements have been re-extracted in a more robust manner to improve the quality of the underlying data. A key difficulty in the addition of new data was a change in data management software which occurred at the Beth Israel Deaconess Medical Center (BIDMC): the original CareVue data management system (which archived data from 2001 - 2008) was replaced with the new Metavision data management system (which continues to be used to the present). Many efforts have been made to merge these databases seamlessly: this has been successful in some instances, and continues to be a work in progress for others. This page aims to facilitate the transition for researchers familiar with MIMIC II who would like to continue their research with the updated MIMIC III.
 
+# Lab ITEMID mapping
+
+The `ITEMID` for laboratory measurements in the D_LABITEMS and LABEVENTS tables in MIMIC II do *not* match the `ITEMID` for laboratory measurements in MIMIC III. For previous users' benefit, we have provided a mapping table to facilitate the updating of queries which use this table. This mapping can be found at the GitHub repository dedicated to sharing mimic-code: 
+
+https://github.com/MIT-LCP/mimic-code/blob/master/migrating/labid.csv
+
+Furthermore, note that much of the data has been mapped to LOINC codes. LOINC codes are advantageous as they provide an ontology for recorded lab values. However, careful inspection shows that the LOINC code for an `ITEMID` in MIMIC III is, in rare occassions, different from the LOINC code for the same concept in MIMIC II. This is usually attributable to the laboratory assigning a new LOINC code, which is done for many reasons, including changing the reagents of a laboratory test, changing the technique used to acquire the result or because the previous LOINC code was made redundant.
+
 # Schema changes
 
 ## ADMISSIONS
