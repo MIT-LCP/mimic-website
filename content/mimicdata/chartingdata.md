@@ -24,6 +24,7 @@ There are two types of data in the database: static data and dynamic data. Stati
 Each patient or hospital admission is associated with a set of "static" data. Often this is demographic, admission, billing or other administrative data. This data is classified as static as it does not change during a patient's stay: it occurs only once for a given `HADM_ID`. The only static data available for a patient is their gender (`GENDER`), date of birth (`DOB`) and various dates of death (`DOD`, `DOD_HOSP`, `DOD_SSN`). These columns all occur in the PATIENTS table.
 
 The following is a list of static data available in the database for `HADM_ID`:
+
 * Admission time
 * Discharge time
 * Death time
@@ -31,12 +32,15 @@ The following is a list of static data available in the database for `HADM_ID`:
 
 
 The following is a list of static data available in the database for `ICUSTAY_ID`:
+
 * Admission time
 * Discharge time
 * First care unit
 * Last care unit
 
+<!--
 TODO: ?? Is this section useful??
+-->
 
 ## Dynamic
 
