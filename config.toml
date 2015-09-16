@@ -21,12 +21,12 @@ theme = "mimic-data"
 [[menu.main]]
     name = "Tables in MIMIC"
     pre = "<i class='fa fa-columns'></i>"
-    weight = 20
+    weight = 30
     url = "/mimictables/"
 [[menu.main]]
     name = "Community"
     pre = "<i class='fa fa-group'></i>"
-    weight = 30
+    weight = 40
     url = "/community/"
 [[menu.main]]
     name = "Tutorials"
@@ -35,6 +35,6 @@ theme = "mimic-data"
     url = "/tutorials/"
 [[menu.main]]
     name = "Glossary"
-    pre = "<i class='fa fa-book'></i>"
-    weight = 50
+    pre = "<i class='fa fa-tags'></i>"
+    weight = 60
     url = "/glossary/"

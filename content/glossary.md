@@ -12,8 +12,10 @@ toc = "false"
 Term | Description
 ---- | -----
 BIDMC | Beth Israel Deaconess Medical Center
-ICU | Intensive Care Unit
-MICU | Medical Intensive Care Unit
-SICU | Surgical Intensive Care Unit
-CVICU | Cardiovascular Intensive Care Unit
 CCU | Coronary Care Unit
+CVICU | Cardiovascular Intensive Care Unit
+ICU | Intensive Care Unit
+LCP | Laboratory for Computational Physiology
+MICU | Medical Intensive Care Unit
+MIMIC | Multiparameter Intelligent Monitoring in Intensive Care Database
+SICU | Surgical Intensive Care Unit
