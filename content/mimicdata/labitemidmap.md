@@ -11,6 +11,8 @@ toc = "true"
 
 +++
 
+# Lab ITEMID mapping
+
 The following table is a mapping for each `ITEMID` in the MIMIC II v2.6 LABEVENTS table to the new MIMIC III v1.0 LABEVENTS table.
 Every effort has been made to map the data to LOINC codes. LOINC codes are advantageous as they provide an ontology for recorded lab values. However, careful inspection shows that a matched pair of ITEMIDs may have distinct LOINC codes. This is usually attributable to the laboratory assigning a new LOINC code, which is done for many reasons, including changing the reagents of a laboratory test or changing the technique used to acquire the result.
 
