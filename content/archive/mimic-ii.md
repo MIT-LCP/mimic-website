@@ -13,7 +13,8 @@ toc = "true"
 
 # MIMIC-II
 
-Include link to MIMIC-II documentation:
+MIMIC-II documentation: [mimic-ii-guide.pdf](/archive/mimic-releases/mimic-ii-guide.pdf)
 
+Introduction to MIMIC-II: [introduction-mimic-ii.pdf](/archive/mimic-releases/introduction-mimic-ii.pdf)
 
-Include link to MIMIC-II Explorer: https://mimic2app.csail.mit.edu/
+MIMIC-II Explorer: [https://mimic2app.csail.mit.edu/](https://mimic2app.csail.mit.edu/)
