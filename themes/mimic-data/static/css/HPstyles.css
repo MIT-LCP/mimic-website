@@ -28,9 +28,9 @@ body {
 
 .header {
     display: table;
-    height: 70%;
+    height: 50%;
     width: 100%;
-    min-height: 70%;
+    min-height: 50%;
     position: relative;
     background: url(../img/header.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -42,7 +42,7 @@ body {
 }
 
 .logo {
-    max-width: 35em;
+    max-width: 18em;
     width: 100%;
     padding: 2em;
 }
@@ -74,7 +74,7 @@ and (max-device-width : 1024px)
 and (orientation : landscape) {
     .header {
         display: table;
-        height: 70%;
+        height: 50%;
         width: 100%;
         position: relative;
         background: url(../img/header-long.jpg) no-repeat;
@@ -107,7 +107,7 @@ and (orientation : landscape) {
 }
 
 .point {
-    background: rgb(96,210,211);
+    background: rgb(64,103,173);
     padding: 50px 0;
     color: #ffffff;
 }
@@ -121,10 +121,10 @@ and (orientation : landscape) {
 i.callout-icon, i.point-icon, i.lead-icon {
     border-radius: 50%;
     display: inline-block;
-    font-size: 56px;
-    width: 140px;
-    height: 140px;
-    line-height: 136px;
+    font-size: 40px;
+    width: 100px;
+    height: 100px;
+    line-height: 93px;
     vertical-align: middle;
     text-align: center;
     -webkit-transition: box-shadow 0.2s;
