@@ -11,7 +11,11 @@ toc = "true"
 
 +++
 
-# Data archiving
+# Combining input/output measurements across ICU databases
+
+The biggest challenge in combining data from CareVue, the previous ICU database, and Metavision, the current ICU database, was the merging of input/output (IO) events.
+This difficult arose due primarily to two factors: the lower resolution of information archiving in CareVue, and the different definition of an order in the databases.
+The aim of this section is to provide the user insight into how these data were merged: this information is not necessary to understand for the purposes of using the database, but will provide insight into the peculiar format of the IOEVENTS table.
 
 ## CareVue
 
