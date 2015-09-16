@@ -12,6 +12,6 @@
 
 ## Note on deploying the website
 
-Automatic builds are not yet implemented. Currently deploys using the method described at: http://www.andrewcodispoti.com/deploy-process/
+Automatic builds have not yet been implemented. Currently deploys using the method described at: http://www.andrewcodispoti.com/deploy-process/
 
 
