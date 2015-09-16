@@ -222,12 +222,12 @@ textarea {
   background-image: none;
 }
 a {
-  color: #4067AD;
+  color: #ad4067;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #4067AD;
+  color: #ad4067;
   text-decoration: underline;
 }
 a:focus {
@@ -368,7 +368,7 @@ pre {
 code {
   padding: 2px 4px;
   font-size: 90%;
-  color: #c7254e;
+  color: #395c9b;
   background-color: #f9f2f4;
   white-space: nowrap;
   border-radius: 4px;

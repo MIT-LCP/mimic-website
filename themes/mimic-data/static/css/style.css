@@ -143,7 +143,7 @@ a, a:hover, a:focus {
   content: "";
   height: 1px;
   width: 0%;
-  background-color: #4067AD;
+  background-color: #ad4067;
   -webkit-transition: width 0.5s ease;
   -moz-transition: width 0.5s ease;
   -ms-transition: width 0.5s ease;
@@ -157,11 +157,11 @@ a, a:hover, a:focus {
 input:focus, textarea:focus { outline: none; }
 *:focus {outline: none;}
 ::selection {
-    background: #4067AD;
+    background: #ad4067;
     color: #fff;
 }
 ::-moz-selection {
-    background: #4067AD;
+    background: #ad4067;
     color: #fff;
 }
 
@@ -225,7 +225,7 @@ ul.sidebar-menu li ul.sub li a {
 }
 
 ul.sidebar-menu li ul.sub li a:hover, ul.sidebar-menu li ul.sub li.active a {
-    color: #4067AD;
+    color: #ad4067;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -267,7 +267,7 @@ ul.sidebar-menu li a{
 
 ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
     background: #eeeeee;
-    color: #4067AD;
+    color: #ad4067;
     display: block;
     /*border-radius: 4px;
     -webkit-border-radius: 4px;*/
@@ -278,24 +278,24 @@ ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:fo
     transition: all 0.3s ease;
 }
 ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    border-bottom: 1px solid #4067AD;
+    border-bottom: 1px solid #ad4067;
 }
 /*ul.sidebar-menu li.active a,*/ ul.sidebar-menu .sub-menu li.active a{
-    border-bottom: 1px solid #4067AD;
+    border-bottom: 1px solid #ad4067;
 }
 
 ul.sidebar-menu li a i {
     font-size: 18px;
     padding-right: 6px;
-    /*color: #4067AD;*/
+    /*color: #ad4067;*/
 }
 
 ul.sidebar-menu li a:hover i, ul.sidebar-menu li a:focus i {
-    color: #4067AD;
+    color: #ad4067;
 }
 
 ul.sidebar-menu li.active a i {
-    color: #4067AD;
+    color: #ad4067;
 }
 
 
