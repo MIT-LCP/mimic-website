@@ -13,4 +13,5 @@ toc = "true"
 
 # Forum
 
-Fames conubia Cras aptent mi gravida Praesent interdum Integer vitae nibh eu. Feugiat neque Nulla sociis nibh faucibus maximus maximus egestas magnis gravida Nam magnis himenaeos vehicula. Bibendum eleifend fringilla magna Maecenas magnis diam malesuada ante torquent aptent quam. Convallis sollicitudin aptent at dolor varius porttitor est nostra Vivamus scelerisque Donec nisl magna tempus. Morbi enim nisl Pellentesque inceptos lobortis dignissim Nulla Cum Praesent lorem justo sapien natoque.
+To encourage dissemination of knowledge regarding the MIMIC database, we will be hosting a forum for users to both post questions and provide answers to other users.
+This page will be updated when the forum is prepared.
