@@ -29,8 +29,10 @@
               {{end}}
               </li>
           {{end}}
+          	<!--
             <li> <a href="mailto:mimic-support@physionet.org" target="blank"><i class='fa fa-life-ring'></i> 
             <span>Issues & help</span></a> </li>
+            -->
             {{ if .IsPage }}
             {{ $File := .File }}  {{with $File.Path }}<li><a href="https://github.com/MIT-LCP/mimic-website/edit/master/content/{{ $File.Dir }}{{ $File.LogicalName }}" target="blank"><i class='fa fa-edit'></i> Edit this page</a> </li>{{end}}
             {{ end }}
