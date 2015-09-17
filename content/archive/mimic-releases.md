@@ -11,11 +11,6 @@ toc = "true"
 
 +++
 
-# Releases
-
-List of previous releases:
-http://mimic.physionet.org/database/releases.html
-
 # MIMIC II v2.6
 
 ## Changelog
