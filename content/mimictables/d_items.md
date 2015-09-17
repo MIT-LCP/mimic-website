@@ -46,7 +46,7 @@ HIGHNORMALVALUE | DOUBLE PRECISION
 
 The D_ITEMS table defines `ITEMID`, which represents measurements in the database. Measurements of the same type (e.g. heart rate) will have the same `ITEMID` (e.g. 211). The `ITEMID` column is an alternate primary key to this table: it is unique to each row. 
 
-Note that the D_ITEMS table is sourced from two ICU databases: Metavision and CareVue. Each system had its own set of `ITEMID` to identify concepts. As a result, there are multiple `ITEMID` which correspond to the same concept. For CareVue data, `ITEMID` = 211 is used to identify heart rates, whereas for Metavision data, `ITEMID` = 220045 is used. All Metavision `ITEMID` will have a value > 220000.
+Note that the D_ITEMS table is sourced from two ICU databases: Metavision and CareVue. Each system had its own set of `ITEMID` to identify concepts. As a result, there are multiple `ITEMID` which correspond to the same concept. For CareVue data, `ITEMID` = 211 is used to identify heart rates, whereas for Metavision data, `ITEMID` = 220045 is used. All Metavision `ITEMID`s will have a value > 220000.
 
 Note that the D\_ITEMS table does *not* link to the LABEVENTS table, as this data was acquired separately from the hospital database. The D\_ITEMS table was acquired from the ICU databases.
 
