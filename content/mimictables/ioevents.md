@@ -79,4 +79,4 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 `CHARTTIME` records the time at which an observation was charted, and is usually the closest proxy to the time the data was actually measured. `STORETIME` records the time at which an observation was manually input or manually validated by a member of the clinical staff.
 
-# Important considerations
+<!-- # Important considerations -->

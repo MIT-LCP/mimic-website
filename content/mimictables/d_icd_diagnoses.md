@@ -41,4 +41,4 @@ LONG\_TITLE | VARCHAR(300)
 
 The title fields provide a brief definition for the given diagnosis code in `ICD9_CODE`.
 
-# Important considerations
+<!-- # Important considerations -->

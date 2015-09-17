@@ -102,4 +102,3 @@ The request columns are binary indicators which request certain precautions for 
 * Call out data is *not* available for all adult patients, as the data only began being collected part way through the collection of the MIMIC database
 * Call out data is *never* available for neonates
 
-
