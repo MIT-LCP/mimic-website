@@ -13,7 +13,7 @@ toc = "true"
 
 # MIMIC III
 
-The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC II extends the data set to October of 2012 by integrating two ICU databases. See [our documentation on what's new](http://127.0.0.1:1313/mimicdata/whatsnew/) for more detail.
+The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospital admissions corresponding to over 48,000 distinct patients. The data spans June 2001 - October 2012. MIMIC II contained ICU clinical data from 2001 to 2008; MIMIC III extends the data set to October of 2012 by integrating two ICU databases. See [our documentation on what's new](http://127.0.0.1:1313/mimicdata/whatsnew/) for more detail.
 
 # Getting access
 
