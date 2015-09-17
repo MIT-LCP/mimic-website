@@ -37,7 +37,7 @@ The CAREGIVERS table provides information regarding the type of caregiver. Each 
 
 ## `CGID`
 
-`CGID` is a unique identifier for each distinct caregiver present in the database. `CGID` is sourced from two tables in the raw data: the CareVue and Metavision ICU databases. Due to imprecision in the storage of unique identifiers across the database, it is possible that two distinct caregivers (e.g. RN Susan Jones and RN Sarah Jones) would be considered as the same caregiver. However, this is an unlikely occurrence.
+`CGID` is a unique identifier for each distinct caregiver present in the database. `CGID` is sourced from two tables in the raw data: the CareVue and Metavision ICU databases. Due to imprecision in the storage of unique identifiers across the database, it is possible that two distinct caregivers with the same names (e.g. RN Sarah Jones and MD Sarah Jones) would be considered as the same caregiver. However, this is an unlikely occurrence.
 
 ## `LABEL`
 
