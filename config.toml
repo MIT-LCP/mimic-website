@@ -39,3 +39,8 @@ canonifyurls = "false"
     pre = "<i class='fa fa-book'></i>"
     weight = 60
     url = "/archive/"
+[[menu.main]]
+    name = "Issues"
+    pre = "<i class='fa fa-life-ring'></i>"
+    weight = 60
+    url = "/issues/"
