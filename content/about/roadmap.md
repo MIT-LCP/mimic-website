@@ -15,7 +15,7 @@ toc = "true"
 
 Currently MIMIC contains data relating to:
 
- - Laboratory measurements from within the hospital (i.e. in patient) and from clinics (i.e. out patient)
+ - Laboratory measurements from within the hospital (i.e. inpatient) and from clinics (i.e. outpatient)
  - Charted observations during a patient's stay in the intensive care unit
  - De-identified notes regarding the patient's stay, including nursing notes, physician notes and discharge summaries
  - Echocardiography reports
