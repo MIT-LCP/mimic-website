@@ -75,5 +75,5 @@ In the cases where both `CHARTTIME` and `CHARTDATE` exists, `CHARTDATE` is equal
 
 ## `INTERPRETATION`
 
+<!-- # Important considerations -->
 
-# Important considerations

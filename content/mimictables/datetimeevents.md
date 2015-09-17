@@ -71,5 +71,4 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 ## `RESULTSTATUS`, `STOPPED`
 
-
-# Important considerations
+<!-- # Important considerations -->

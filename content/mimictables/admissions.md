@@ -12,7 +12,7 @@ toc = "true"
 
 # Overview
 
-**Table source:** hospital database.
+**Table source:** Hospital database.
 
 **Table purpose:** Define a patient's hospital admission, HADM\_ID.
 

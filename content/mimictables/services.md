@@ -47,4 +47,6 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 ## `PREV_SERVICE`, `CURR_SERVICE`
 
 `PREV_SERVICE` and `CURR_SERVICE` are the previous and current service that the patient resides under.
-# Important considerations
+
+<!-- # Important considerations -->
+

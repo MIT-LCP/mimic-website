@@ -82,4 +82,4 @@ Identifier for a single measurement type in the database. Each row associated wi
 
 `RESULTSTATUS` and `STOPPED` are CareVue specific columns which specify the type of measurement (`RESULTSTATUS` is 'Manual' or 'Automatic') and whether the measurement was stopped.
 
-# Important considerations
+<!-- # Important considerations -->

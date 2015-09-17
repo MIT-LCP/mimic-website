@@ -8,6 +8,7 @@ toc = "true"
 [menu]
   [menu.main]
     parent = "Tables in MIMIC"
+    
 +++
 
 
