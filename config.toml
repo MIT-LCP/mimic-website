@@ -1,6 +1,7 @@
 languageCode = "en-us"
 title = "MIMIC Critical Care Database"
 theme = "mimic-data"
+baseurl = "http://mimic.physionet.org"
 canonifyurls = "false"
 
 [[menu.main]]
