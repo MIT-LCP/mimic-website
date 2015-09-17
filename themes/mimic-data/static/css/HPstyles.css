@@ -113,7 +113,7 @@ and (orientation : landscape) {
 }
 
 
-.point h2, .counterpoint h2 {
+.point h2, .counterpoint h2, .callout h2 {
     font-size: 32pt;
     line-height: 1.7;
 }
