@@ -2,9 +2,13 @@
 date = "2015-09-01T14:02:13-04:00"
 title = "Glossary"
 linktitle = "Glossary"
-weight = 3
-toc = "False"
+weight = 4
+toc = "true"
 
+[menu]
+  [menu.main]
+    parent = "Getting started"
+    
 +++
 
 # Glossary of terms
