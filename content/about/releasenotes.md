@@ -13,5 +13,5 @@ toc = "true"
 
 # Release notes
 
-This page will contain changes implemented in sequential updates to the MIMIC database in reverse chronological order. Due to the large number of changes between MIMIC II and MIMIC III, we have documented those updates in a separate section.
+This page will contain changes implemented in sequential updates to the MIMIC database in reverse chronological order. Due to the large number of changes between MIMIC-II and MIMIC-III, we have documented those updates [in a separate section](/archive/mimic-releases).
 
