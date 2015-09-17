@@ -581,6 +581,10 @@ i.freebsd-19px:before {
     position:fixed;
     background-color: rgba(0, 0, 0, 0.1);
     padding: 10px 50px 10px 20px;
+    top: 60px;
+    bottom:10px;
+    overflow-y:scroll;
+    overflow-x:hidden;
 }
 
 
