@@ -33,7 +33,7 @@ LONG\_TITLE | VARCHAR(300)
 
 # Detailed Description
 
-## ICD9_CODE
+## `ICD9_CODE`
 
 `ICD9_CODE` is the International Coding Definitions Version 9 (ICD-9) code. Each code corresponds to a single diagnostic concept.
 

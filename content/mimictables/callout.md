@@ -58,16 +58,16 @@ CURRENTRESERVATIONTIME | TIMESTAMP(0)
 
 The CALLOUT table provides information for "call out events". A call out event occurs as follows: first, a patient is ready for discharge from the ICU. A care provider creates a call out request (occurring at `CREATETIME`) stating the desired ward and any necessary precautions. The call out request is acknowledged, usually within a short period of time (`ACKNOWLEDGETIME`). When the patient is actually transferred out of the ICU, the `CALLOUT_OUTCOME` becomes 'Discharged' and the `OUTCOMETIME` column contains the time at which the patient was discharged.
 
-## SUBJECT_ID, HADM_ID
+## `SUBJECT_ID`, `HADM_ID`
 
 `SUBJECT_ID` and `HADM_ID` define the patient and hospital admission corresponding to the given call out event.
 ? Unique
 
-## SUBMIT_WARDID, SUBMIT_CAREUNIT
+## `SUBMIT_WARDID`, `SUBMIT_CAREUNIT`
 
 `SUBMIT_WARDID` identifies the ward from which the request was submitted. `SUBMIT_CAREUNIT` indicates whether the `SUBMIT_WARDID` corresponds an ICU cost center, and if so, what type of ICU cost center.
 
-## CURR_WARDID, CURR_CAREUNIT
+## `CURR_WARDID`, `CURR_CAREUNIT`
 
 `CURR_WARDID` identifies the ward in which the patient resides when called out (i.e. prior to discharge/transfer). `CURR_CAREUNIT` indicates which ICU cost center the `CURR_WARDID` corresponds to (note: since all patients are being discharged from an ICU, all patients should reside in an ICU cost center).
 

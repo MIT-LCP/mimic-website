@@ -11,7 +11,6 @@ toc = "true"
     
 +++
 
-
 # Overview
 
 **Table source:** CareVue and Metavision ICU databases.

@@ -60,7 +60,7 @@ Each row of this table contains a unique `HADM_ID`, which represents a single pa
 
 ## `ADMISSION_LOCATION`
 
-`ADMISSION\_LOCATION` provides information about the previous location of the patient prior to arriving at the hospital. There are 9 possible values:
+`ADMISSION_LOCATION` provides information about the previous location of the patient prior to arriving at the hospital. There are 9 possible values:
 
 * EMERGENCY ROOM ADMIT
 * TRANSFER FROM HOSP/EXTRAM
@@ -74,11 +74,11 @@ Each row of this table contains a unique `HADM_ID`, which represents a single pa
 
 The truncated text occurs in the raw data as well. 
 
-## INSURANCE, LANGUAGE, RELIGION, MARITAL_STATUS, ETHNICITY
+## `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY`
 
 The `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY` columns describe various demographic aspects about each patient's admission. These columns occur in the ADMISSIONS table as they are originally sourced from the admission, discharge, transfers (ADT) data from the hospital database. As a result, it is possible (though infrequent) that these values change across two distinct hospital admissions (`HADM_ID`) for a single patient (`SUBJECT_ID`). This is reasonable for some of these columns (e.g. `MARITAL_STATUS`, `RELIGION`), but less reasonable for others (e.g. `ETHNICITY`). 
 
-## DIAGNOSIS
+## `DIAGNOSIS`
 
 The `DIAGNOSIS` column provides the admitting diagnosis for the patient. The diagnosis does not use a systematic ontology: as of MIMIC III v1.0 there are 15,693 distinct diagnoses for 58,976 patients. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness).
 
