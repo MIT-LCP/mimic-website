@@ -35,11 +35,13 @@ LOINC_CODE | VARCHAR(100)
 	
 # Detailed Description
 
-`D_LABITEMS` contains definitions for all `ITEMID` associated with lab measurements in the MIMIC database. All data in LABEVENTS link to the D\_LABITEMS table. Each unique `LABEL` in the hospital database was assigned an `ITEMID` in this table, and the use of this `ITEMID` facilitates efficient storage and querying of the data. Note that lab items are kept separate while most definitions are contained in the D_ITEMS table, and there were good reasons to keep the lab items separate. As the laboratory data is acquired from the hospital database, the data is consistent across all years in the database. Consequently, there is usually only one `ITEMID` associated with each concept in the database (e.g. only `ITEMID`, ???, is used for the Troponin-I measurement). Furthermore, the data contains information collected in departments outside the ICU. This includes both wards within the hospital and clinics outside the hospital. Most concepts in this table have been mapped to LOINC codes, an openly available ontology which provides a rich amount of information about the laboratory measurement including reference ranges, common units of measurement and other further detail regarding the measurement.
+`D_LABITEMS` contains definitions for all `ITEMID` associated with lab measurements in the MIMIC database. All data in LABEVENTS link to the D\_LABITEMS table. Each unique `LABEL` in the hospital database was assigned an `ITEMID` in this table, and the use of this `ITEMID` facilitates efficient storage and querying of the data. Note that lab items are kept separate while most definitions are contained in the D_ITEMS table, and there were good reasons to keep the lab items separate. 
+
+As the laboratory data is acquired from the hospital database, the data is consistent across all years in the database. Consequently, there is usually only one `ITEMID` associated with each concept in the database. Furthermore, the data contains information collected in departments outside the ICU. This includes both wards within the hospital and clinics outside the hospital. Most concepts in this table have been mapped to LOINC codes, an openly available ontology which provides a rich amount of information about the laboratory measurement including reference ranges, common units of measurement and other further detail regarding the measurement.
 
 ## `ITEMID`
 
-As an alternate primary key to the table, `ITEMID` is unique to each row.
+As a candidate key in the table, `ITEMID` is unique to each row.
 
 ## `LABEL`
 

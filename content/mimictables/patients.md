@@ -40,7 +40,7 @@ HOSPITAL\_EXPIRE\_FLAG | VARCHAR(5)
 
 ## `SUBJECT_ID`
 
-`SUBJECT_ID` is a unique identifier which specifies an individual patient. `SUBJECT_ID` is an alternate primary key to this table; each row contains a unique `SUBJECT_ID`. Information which is consistent for the lifetime of a patient is stored in this table.
+`SUBJECT_ID` is a unique identifier which specifies an individual patient. `SUBJECT_ID` is a candidate key for the table, so is unique for each row. Information that is consistent for the lifetime of a patient is stored in this table.
 
 ## `GENDER`
 
@@ -48,7 +48,7 @@ HOSPITAL\_EXPIRE\_FLAG | VARCHAR(5)
 
 ## `DOB`
 
-`DOB` is the date of birth of the given patient. Patients who are older than 89 years old at any time in the database have had their date of birth shifted to obscure their age and comply with HIPAA. The shift process was as follows: the patient's age at their first admission was determined. The date of birth was then set to exactly 210 years before their first admission. As a result, all patients
+`DOB` is the date of birth of the given patient. Patients who are older than 89 years old at any time in the database have had their date of birth shifted to obscure their age and comply with HIPAA. The shift process was as follows: the patient's age at their first admission was determined. The date of birth was then set to exactly 210 years before their first admission. <!-- As a result, all patients-->
 
 ## `DOD`, `DOD_HOSP`, `DOD_SSN`
 

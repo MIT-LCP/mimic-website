@@ -44,8 +44,7 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 ## `DRG_TYPE`
 
-`DRG_TYPE` provides the type of DRG code in the entry. There have been multiple instantiations of DRG coding systems, all of which have different meanings for the codes (and often the range of the codes overlap, and so if the wrong version is assumed the code will be interpreted incorrectly).
-There are two types of DRG codes in the MIMIC III database: 'HFCA' and 'MS-DRG'. 
+`DRG_TYPE` provides the type of DRG code in the entry. There have been multiple versions of DRG coding systems, all of which have different meanings for the codes (and often the range of the codes overlap, and so if the wrong version is assumed the code will be interpreted incorrectly). There are two types of DRG codes in the MIMIC III database: 'HFCA' and 'MS-DRG'. 
 
 ## `DRG_CODE`
 

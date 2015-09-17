@@ -59,9 +59,11 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 ## `CHARTDATE`, `CHARTTIME`
 
 `CHARTTIME` records the time at which an observation was charted, and is usually the closest proxy to the time the data was actually measured.
-`CHARTDATE` is the same as `CHARTTIME`, except there is no time available. Note that not all observations have a `CHARTTIME`, but all observations have a `CHARTDATE`.
-In the cases where both `CHARTTIME` and `CHARTDATE` exists, `CHARTDATE` is equal to a truncated version of `CHARTTIME` (i.e. `CHARTTIME` without the timing information).
+`CHARTDATE` is the same as `CHARTTIME`, except there is no time available. 
+
 `CHARTDATE` was included as time information is not always available for microbiology measurements: in order to be clear about when this occurs, `CHARTTIME` is null, and `CHARTDATE` contains the date of the measurement.
+
+In the cases where both `CHARTTIME` and `CHARTDATE` exists, `CHARTDATE` is equal to a truncated version of `CHARTTIME` (i.e. `CHARTTIME` without the timing information). Not all observations have a `CHARTTIME`, but all observations have a `CHARTDATE`.
 
 ## `SPEC_ITEMID`, `SPEC_TYPE_CD`, `SPEC_TYPE_DESC`
 

@@ -10,7 +10,6 @@ toc = "true"
     parent = "Tables in MIMIC"
 +++
 
-
 # Overview
 
 **Table source:** CareVue and Metavision ICU databases.

@@ -75,7 +75,6 @@ The care unit is defined based upon the ward: if the ward is an ICU cost center,
 
 `LOS` is the length of stay for the patient for the given ward stay, which may be within or outside of the ICU.
 
-
 # Important considerations
 
 * The ICUSTAYEVENTS table is derived from this table.
