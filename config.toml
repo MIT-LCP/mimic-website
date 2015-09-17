@@ -1,7 +1,8 @@
 languageCode = "en-us"
 title = "MIMIC Critical Care Database"
 theme = "mimic-data"
-baseurl = ""
+baseurl = "/"
+canonifyurls = false
 
 [[menu.main]]
     name = "About"
