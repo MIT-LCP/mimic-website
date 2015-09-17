@@ -585,6 +585,7 @@ i.freebsd-19px:before {
     bottom:10px;
     overflow-y:scroll;
     overflow-x:hidden;
+    width: 30%;
 }
 
 
