@@ -20,6 +20,7 @@ toc = "true"
 **Number of rows:** 8221
 
 **Links to:** 
+
 * CHARTEVENTS on `CGID`
 
 # Table columns
