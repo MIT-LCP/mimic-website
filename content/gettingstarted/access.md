@@ -17,7 +17,7 @@ The latest version of MIMIC is MIMIC III v1.0 consisting of nearly 58,000 hospit
 
 # Getting access
 
-The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available. See [http://physionet.org/mimic2wdb/](http://physionet.org/mimic2wdb/) for further information.
+The MIMIC II Waveform Database (bedside monitor trends and waveforms) is freely available. See [http://physionet.org/physiobank/database/mimic2wdb/](http://physionet.org/physiobank/database/mimic2wdb/) for further information.
 
 The MIMIC Clinical Database, although de-identified, still contains detailed information regarding the clinical care of patients, and must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:
 
