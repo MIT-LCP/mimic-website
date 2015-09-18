@@ -17,4 +17,4 @@ MIMIC-II documentation: [mimic-ii-guide.pdf](/archive/mimic-ii-guide.pdf)
 
 Introduction to MIMIC-II: [introduction-mimic-ii.pdf](/archive/introduction-mimic-ii.pdf)
 
-MIMIC-II Explorer: [https://mimic2app.csail.mit.edu/](https://mimic2app.csail.mit.edu/)
+MIMIC-II Querybuilder: [https://mimic2app.csail.mit.edu/](https://mimic2app.csail.mit.edu/)
