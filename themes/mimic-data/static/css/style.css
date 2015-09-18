@@ -579,7 +579,7 @@ i.freebsd-19px:before {
 
 #toc {
     position:fixed;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(64, 103, 173, 0.2);
     padding: 10px 50px 10px 20px;
     top: 60px;
     bottom:10px;
