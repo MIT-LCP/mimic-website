@@ -606,10 +606,11 @@ input[type="number"]::-webkit-inner-spin-button {
 .btn-primary:active {
   color: #007aff;
   border-color: #007aff;
-  background: transparent;  
+  background: #fff;
+  z-index: -1;  
 }
 .btn-primary:active {
-  background-image: none;
+  /*background-image: none;*/
 }
 .btn-success {
   color: #ffffff;
@@ -620,8 +621,9 @@ input[type="number"]::-webkit-inner-spin-button {
 .btn-success:focus,
 .btn-success:active {
   color: #4cd964;
-  background: transparent;
   border-color: #4cd964;
+  background: #fff;
+  z-index: -1;  
 }
 .btn-success:active {
   background-image: none;  
@@ -636,8 +638,9 @@ input[type="number"]::-webkit-inner-spin-button {
 .btn-info:focus,
 .btn-info:active {
   color: #34aadc;
-  background: transparent;
   border-color: #34aadc;
+  background: #fff;
+  z-index: -1;  
 }
 .btn-info:active {
   background-image: none;
