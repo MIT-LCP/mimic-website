@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T14:02:13-04:00"
-title = "Database set up"
-linktitle = "Database set up"
+title = "Setting up the database"
+linktitle = "Setting up the database"
 weight = 2
 toc = "false"
 
@@ -11,7 +11,7 @@ toc = "false"
 
 +++
 
-# Using the data
+# Setting up the database
 
 MIMIC is provided as a collection of comma-separated (CSV) files with double quotes around text fields, along with scripts to help users import the data into popular database systems. Documentation is currently available for MySQL, Postgres and Oracle.
 

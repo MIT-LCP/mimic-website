@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T14:02:13-04:00"
-title = "Accessing MIMIC"
-linktitle = "Accessing MIMIC"
+title = "Requesting access"
+linktitle = "Requesting access"
 weight = 1
 toc = "true"
 
@@ -11,7 +11,7 @@ toc = "true"
 
 +++
 
-# Getting access
+# Requesting access
 
 The latest version of MIMIC is MIMIC-III (version 1.0) comprising nearly 58,000 hospital admissions for over 48,000 distinct patients. The data spans June 2001 - October 2012. The database, although de-identified, still contains detailed information regarding the clinical care of patients, so must be treated with appropriate care and respect. 
 
