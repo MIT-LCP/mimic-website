@@ -13,6 +13,25 @@ toc = "true"
 
 # Contributing
 
-We welcome contributions to MIMIC; both in the form of source code and suggested improvements to the database. We highly encourage users of the database to contribute their source code to our [openly available GitHub repository](https://github.com/MIT-LCP/mimic-code/). We hope that by simplifying access to analyses done by previous users, current and future users will be able to rapidly build upon and extend research into the database.
+MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology. We have limited resources and cannot provide individual support to researchers worldwide. We therefore encourage MIMIC users to work together as a community.
 
-We also welcome any improvements suggested regarding this documentation or the database. This documentation is hosted entirely on GitHub here, and we welcome pull requests. For concerns about errors in the database, including private health information which has not been sufficiently de-identified, please contact us at [mimic-support@physionet.org](mailto:mimic-support@physionet.org).
+## How can I help to improve the MIMIC website and documentation?
+
+The MIMIC website and documentation are hosted publicly in GitHub (https://github.com/MIT-LCP/mimic-website). 
+
+To raise a problem or to suggest an improvement, please create a new issue at: https://github.com/MIT-LCP/mimic-website/issues
+
+To fix an issue or to contribute new content, please either select the 'Edit this page' item in the left hand menu of the website or [submit a pull request in GitHub](https://help.github.com/articles/using-pull-requests/).
+
+## How can I share code that I have written for MIMIC?
+
+Our laboratory and our collaborators have worked hard to create and share the MIMIC dataset. In return, we strongly hope that you will share the code that you use for analysing the data.
+
+We have created a repository on GitHub to hold MIMIC-related code: https://github.com/MIT-LCP/mimic-code. The structure of the repository will develop over time as new contributions are made.
+
+## How can I highlight an issue relating to the MIMIC dataset?
+
+If you identify an issue with the MIMIC data (for example, unusual characteristics or limitations), one useful step would be to add your finding to the documentation, via the method described above.
+
+For concerns about errors in the database, including private health information which has not been sufficiently de-identified, please contact us directly at [mimic-support@physionet.org](mailto:mimic-support@physionet.org).
+
