@@ -14,7 +14,7 @@ toc = "true"
 
 # Data organization
 
-MIMIC is a relational database with multiple tables, each of which contains data relating to patients who stayed within the intensive care units at Beth Israel Deaconess Medical Center. For example, the IOEVENTS table contains all measurements related to intake and output for a given patient. 
+MIMIC is a relational database containing data relating to patients who stayed within the intensive care units at Beth Israel Deaconess Medical Center. For example, the IOEVENTS table contains all measurements related to intake and output for a given patient. 
 
 The tables are linked by identifiers which usually have the suffix "ID". For example `HADM_ID` refers to a unique hospital admission and `SUBJECT_ID` refers to a unique patient. One exception is `ROW_ID`, which is simply a row identifier unique to that table.
 
