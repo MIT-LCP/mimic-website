@@ -61,5 +61,5 @@ The `LABEL` column describes the concept which is represented by the `ITEMID`.
 
 # Important considerations
 
-* The `ITEMID` from MIMIC III v1.0 does *not* match the `ITEMID` from MIMIC II v2.6. If a mapping between the two is necessary, please contact the guardians of the database.
+* The `ITEMID` from MIMIC-III v1.0 does *not* match the `ITEMID` from MIMIC-II v2.6. If a mapping between the two is necessary, please contact the guardians of the database.
 * Many of the LOINC codes were assigned during a project to standardize the ontology of lab measurements in the MIMIC database. Consequently, the codes were assigned post-hoc, and may not be present for every lab measurement. We welcome improvements to the present codes or assignment of LOINC codes to unmapped data elements from the community.

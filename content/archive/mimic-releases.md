@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T19:09:50-04:00"
-title = "MIMIC II releases"
-linktitle = "MIMIC II releases"
+title = "MIMIC-II releases"
+linktitle = "MIMIC-II releases"
 weight = 1
 toc = "true"
 
@@ -11,7 +11,7 @@ toc = "true"
 
 +++
 
-# MIMIC II v2.6
+# MIMIC-II v2.6
 
 ## Changelog
 
@@ -93,7 +93,7 @@ The dates found here will not match those found elsewhere in the
 database.
 
 
-# MIMIC II v2.5
+# MIMIC-II v2.5
 
 ## Changelog
 
@@ -101,7 +101,7 @@ Major changes since version 2.4 :
 
 - Date of death after hospital discharge
 
-Patients have been matched against the Social Security death tapes, and the date of death has been imported into MIMIC II.  For patients who died in the hospital, their respective dates of discharge were used as their dates of death. Two additional columns have been added to the D\_PATIENTS table:
+Patients have been matched against the Social Security death tapes, and the date of death has been imported into MIMIC-II.  For patients who died in the hospital, their respective dates of discharge were used as their dates of death. Two additional columns have been added to the D\_PATIENTS table:
 
 - DOD                            = Date of Death
 - HOSPITAL\_EXPIRE\_FLG  = Whether or not the patient deid in the hospital
@@ -197,7 +197,7 @@ Hospital mortality | 22,870 | 2,666 (11.7%) | | |
 
 *** Only ICUStays where they have all 14 SAPS parameters were included
 
-# MIMIC II v2.4
+# MIMIC-II v2.4
 
 ## Changelog
 

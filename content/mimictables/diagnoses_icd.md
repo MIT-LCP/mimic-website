@@ -49,7 +49,7 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 ## `ICD9_CODE`
 
-`ICD9_CODE` contains the actual code corresponding to the diagnosis assigned to the patient for the given row. Note that all codes, as of MIMIC III v1.0, are ICD-9 codes.
+`ICD9_CODE` contains the actual code corresponding to the diagnosis assigned to the patient for the given row. Note that all codes, as of MIMIC-III v1.0, are ICD-9 codes.
 
 ## `DESCRIPTION`
 
@@ -57,4 +57,4 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 # Important considerations
 
-* All ICD codes in MIMIC III v1.0 are ICD-9 based. The Beth Israel Deaconess Medical Center will begin using ICD-10 codes in 2015.
+* All ICD codes in MIMIC-III v1.0 are ICD-9 based. The Beth Israel Deaconess Medical Center will begin using ICD-10 codes in 2015.

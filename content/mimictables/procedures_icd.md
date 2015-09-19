@@ -51,4 +51,4 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 # Important considerations
 
-* In MIMIC III v1.0, only ICD-9 codes are used for recording procedures.
+* In MIMIC-III v1.0, only ICD-9 codes are used for recording procedures.

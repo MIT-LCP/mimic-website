@@ -82,4 +82,4 @@ The route prescribed for the drug.
 
 # Important considerations
 
-* The table does *not* specify if an order was later cancelled as of MIMIC III v1.0.
+* The table does *not* specify if an order was later cancelled as of MIMIC-III v1.0.
