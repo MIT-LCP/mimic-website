@@ -11,7 +11,7 @@ toc = "false"
 
 As explained elsewhere on this website, MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide. 
 
-We therefore encourage MIMIC users to work together as a community. Please read [our notes on how to get involved in the community](/community/contributing/) for further information.
+We therefore encourage MIMIC users to work together as a community. Please read [our notes on how to get involved](/community/contributing/) in the community for further information.
 
 # Contact us
 
