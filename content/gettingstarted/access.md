@@ -13,7 +13,9 @@ toc = "true"
 
 # Getting access
 
-The latest version of MIMIC is MIMIC-III (version 1.0) comprising nearly 58,000 hospital admissions for over 48,000 distinct patients. The data spans June 2001 - October 2012. The database, although de-identified, still contains detailed information regarding the clinical care of patients, so must be treated with appropriate care and respect. Researchers seeking to use the database must formally request access by following these steps:
+The latest version of MIMIC is MIMIC-III (version 1.0) comprising nearly 58,000 hospital admissions for over 48,000 distinct patients. The data spans June 2001 - October 2012. The database, although de-identified, still contains detailed information regarding the clinical care of patients, so must be treated with appropriate care and respect. 
+
+Researchers seeking to use the database must formally request access by following these steps:
 
 - Follow [the instructions](https://physionet.org/pnw/login) to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, [log in to it](https://physionet.org/pnw/login).
 - On your PhysioNetWorks home page, click on the link titled "MIMIC-III Clinical Database", and follow the instructions to apply for access.
