@@ -2,12 +2,12 @@
 date = "2015-09-01T13:37:00-04:00"
 title = "MIMIC-II to MIMIC-III"
 linktitle = "MIMIC-II to MIMIC-III"
-weight = 6
+weight = 2
 toc = "true"
 
 [menu]
   [menu.main]
-    parent = "About"
+    parent = "MIMIC data"
 
 +++
 

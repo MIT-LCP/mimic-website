@@ -2,7 +2,7 @@
 date = "2015-09-01T19:34:46-04:00"
 title = "How is data recorded?"
 linktitle = "How is data recorded?"
-weight = 2
+weight = 3
 toc = "true"
 
 [menu]
