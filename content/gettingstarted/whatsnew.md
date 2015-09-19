@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T13:37:00-04:00"
-title = "MIMIC II to MIMIC III"
-linktitle = "MIMIC II to MIMIC III"
+title = "MIMIC-II to MIMIC-III"
+linktitle = "MIMIC-II to MIMIC-III"
 weight = 3
 toc = "true"
 
@@ -11,20 +11,20 @@ toc = "true"
 
 +++
 
-# MIMIC II vs MIMIC III
+# MIMIC-II vs MIMIC-III
 
-Many users familiar with MIMIC II will be happy to find MIMIC III has a very similar architecture, however there are key differences to be aware of.
-MIMIC III is an extension of MIMIC II: it incorporates the data contained in MIMIC II (collected between 2001 - 2008) and augments it with newly collected data between 2008 - 2012. Further to this, many data elements have been re-extracted in a more robust manner to improve the quality of the underlying data. 
+Many users familiar with MIMIC-II will be happy to find MIMIC-III has a very similar architecture, however there are key differences to be aware of.
+MIMIC-III is an extension of MIMIC-II: it incorporates the data contained in MIMIC-II (collected between 2001 - 2008) and augments it with newly collected data between 2008 - 2012. Further to this, many data elements have been re-extracted in a more robust manner to improve the quality of the underlying data. 
 
-A key difficulty in the addition of new data was a change in data management software which occurred at the Beth Israel Deaconess Medical Center (BIDMC): the original CareVue data management system (which archived data from 2001 - 2008) was replaced with the new Metavision data management system (which continues to be used to the present). Many efforts have been made to merge these databases seamlessly: this has been successful in some instances, and continues to be a work in progress for others. This page aims to facilitate the transition for researchers familiar with MIMIC II who would like to continue their research with the updated MIMIC III.
+A key difficulty in the addition of new data was a change in data management software which occurred at the Beth Israel Deaconess Medical Center (BIDMC): the original CareVue data management system (which archived data from 2001 - 2008) was replaced with the new Metavision data management system (which continues to be used to the present). Many efforts have been made to merge these databases seamlessly: this has been successful in some instances, and continues to be a work in progress for others. This page aims to facilitate the transition for researchers familiar with MIMIC-II who would like to continue their research with the updated MIMIC-III.
 
 # Lab ITEMID mapping
 
-The `ITEMID` for laboratory measurements in the D_LABITEMS and LABEVENTS tables in MIMIC II do *not* match the `ITEMID` for laboratory measurements in MIMIC III. For previous users' benefit, we have provided a mapping table to facilitate the updating of queries which use this table. This mapping can be found at the GitHub repository dedicated to sharing mimic-code: 
+The `ITEMID` for laboratory measurements in the D_LABITEMS and LABEVENTS tables in MIMIC-II do *not* match the `ITEMID` for laboratory measurements in MIMIC-III. For previous users' benefit, we have provided a mapping table to facilitate the updating of queries which use this table. This mapping can be found at the GitHub repository dedicated to sharing mimic-code: 
 
 https://github.com/MIT-LCP/mimic-code/blob/master/migrating/labid.csv
 
-Furthermore, note that much of the data has been mapped to LOINC codes. LOINC codes are advantageous as they provide an ontology for recorded lab values. However, careful inspection shows that the LOINC code for an `ITEMID` in MIMIC III is, in rare occassions, different from the LOINC code for the same concept in MIMIC II. This is usually attributable to the laboratory assigning a new LOINC code, which is done for many reasons, including changing the reagents of a laboratory test, changing the technique used to acquire the result or because the previous LOINC code was made redundant.
+Furthermore, note that much of the data has been mapped to LOINC codes. LOINC codes are advantageous as they provide an ontology for recorded lab values. However, careful inspection shows that the LOINC code for an `ITEMID` in MIMIC-III is, in rare occassions, different from the LOINC code for the same concept in MIMIC-II. This is usually attributable to the laboratory assigning a new LOINC code, which is done for many reasons, including changing the reagents of a laboratory test, changing the technique used to acquire the result or because the previous LOINC code was made redundant.
 
 # Schema changes
 
@@ -33,7 +33,7 @@ Furthermore, note that much of the data has been mapped to LOINC codes. LOINC co
 
 ## CENSUSEVENTS replaced by TRANSFERS
 
-The CENSUSEVENTS table was used in MIMIC II to track patient hospital admissions. The original source of this table was the ICU database which recorded when patients were admitted and discharged from the ICU. In MIMIC III, this table has been removed and replaced with the TRANSFERS table. The TRANSFERS table is sourced from the hospital admission, discharge, transfer (ADT) data. This has a number of advantages:
+The CENSUSEVENTS table was used in MIMIC-II to track patient hospital admissions. The original source of this table was the ICU database which recorded when patients were admitted and discharged from the ICU. In MIMIC-III, this table has been removed and replaced with the TRANSFERS table. The TRANSFERS table is sourced from the hospital admission, discharge, transfer (ADT) data. This has a number of advantages:
 
  - The ADT data tracks a patient throughout the *entire* hospital stay, providing greater granularity and easier tracking of a patient's hospital course
  - The ADT data provides information regarding ward location
@@ -67,17 +67,17 @@ The term POE, or provider order entry, is vague and references a hospital specif
 
 ## IOEVENTS
 
-The IOEVENTS contains a large number of columns which were not present in the table of the same name in MIMIC II. This is due to two reasons: the drastically different storage methodology used in the Metavision database, and the merging of many tables in CareVue into the single IOEVENTS table. Due to the complicated merging undertaken and the importance of the IOEVENTS table, the methodology has been detailed in its own section.
+The IOEVENTS contains a large number of columns which were not present in the table of the same name in MIMIC-II. This is due to two reasons: the drastically different storage methodology used in the Metavision database, and the merging of many tables in CareVue into the single IOEVENTS table. Due to the complicated merging undertaken and the importance of the IOEVENTS table, the methodology has been detailed in its own section.
 
 # Identifier changes
 
 ## `SUBJECT_ID`, `HADM_ID` and `ICUSTAY_ID`
 
-`SUBJECT_ID` between MIMIC II v2.6 and MIMIC III have been kept consistent, for example, `SUBJECT_ID` 788 is corresponds to the same patient in MIMIC II v2.6 as it does in MIMIC III.
+`SUBJECT_ID` between MIMIC-II v2.6 and MIMIC-III have been kept consistent, for example, `SUBJECT_ID` 788 is corresponds to the same patient in MIMIC-II v2.6 as it does in MIMIC-III.
 
-`HADM_ID` have been regenerated in MIMIC III. `HADM_ID` in MIMIC II v2.6 will *not* match any `HADM_ID` in MIMIC III. The newly generated `HADM_ID` range from 100,000 - 199,999 to help differentiate these IDs from others.
+`HADM_ID` have been regenerated in MIMIC-III. `HADM_ID` in MIMIC-II v2.6 will *not* match any `HADM_ID` in MIMIC-III. The newly generated `HADM_ID` range from 100,000 - 199,999 to help differentiate these IDs from others.
 
-`ICUSTAY_ID` have been regenerated in MIMIC III. `ICUSTAY_ID` in MIMIC II v2.6 will *not* match any `ICUSTAY_ID` in MIMIC III. Note that the newly generated `ICUSTAY_IF` range between 200,000 - 299,999 to prevent confusion with other IDs.
+`ICUSTAY_ID` have been regenerated in MIMIC-III. `ICUSTAY_ID` in MIMIC-II v2.6 will *not* match any `ICUSTAY_ID` in MIMIC-III. Note that the newly generated `ICUSTAY_IF` range between 200,000 - 299,999 to prevent confusion with other IDs.
 
 
 # New tables
@@ -89,7 +89,7 @@ The IOEVENTS contains a large number of columns which were not present in the ta
 
 # Removed tables
 
-There were many tables in MIMIC II which are no longer present in MIMIC III. In most cases, these tables were generated from the raw data for user convenience. We have transitioned from the approach of creating flat files of these tables to providing the source code necessary to regenerate them. This has two advantages: first it is much more efficient in terms of data transfer, and second it clarifies that these data are not "raw" in that they are not acquired directly from the databases but rather synthesized views of this data.
+There were many tables in MIMIC-II which are no longer present in MIMIC-III. In most cases, these tables were generated from the raw data for user convenience. We have transitioned from the approach of creating flat files of these tables to providing the source code necessary to regenerate them. This has two advantages: first it is much more efficient in terms of data transfer, and second it clarifies that these data are not "raw" in that they are not acquired directly from the databases but rather synthesized views of this data.
 
 # COMORBIDITY_SCORES
 
@@ -128,7 +128,7 @@ The mapping to the waveform data is no longer provided within the relative datab
 <!--
 ## `ITEMID`, `IOITEMID`
 
-There were multiple `ITEMID` in the MIMIC II database which caused confusion. Particularly, the IOEVENTS table contained an `ITEMID` and an `IOITEMID`. Each concept now has a unique `ITEMID` with differing ranges.
+There were multiple `ITEMID` in the MIMIC-II database which caused confusion. Particularly, the IOEVENTS table contained an `ITEMID` and an `IOITEMID`. Each concept now has a unique `ITEMID` with differing ranges.
 
 -->
 
@@ -146,7 +146,7 @@ There were multiple `ITEMID` in the MIMIC II database which caused confusion. Pa
  - `ADMISSIONS` and `TRANSFERS` are now sourced entirely from the hospital admission database (they were previously sourced from the ICU database)
  - `DEMOGRAPHIC_DETAIL` has been merged into `ADMISSIONS`
  
- - A number of duplicate `SUBJECT_ID` contained in MIMIC II have been coalesced
+ - A number of duplicate `SUBJECT_ID` contained in MIMIC-II have been coalesced
  - All `ICUSTAY_ID` have a corresponding `HADM_ID`
  - All `HADM_ID` have a corresponding `SUBJECT_ID`
  - Hospital admission dates now have times

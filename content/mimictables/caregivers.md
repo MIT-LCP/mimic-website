@@ -46,4 +46,4 @@ The CAREGIVERS table provides information regarding the type of caregiver. Each 
 
 ## `DESCRIPTION`
 
-`DESCRIPTION` is less frequently present than `LABEL`, and provides additional information regarding the caregiver. This column is much more structured, and contains only 17 unique values as of MIMIC III v1.0.
+`DESCRIPTION` is less frequently present than `LABEL`, and provides additional information regarding the caregiver. This column is much more structured, and contains only 17 unique values as of MIMIC-III v1.0.

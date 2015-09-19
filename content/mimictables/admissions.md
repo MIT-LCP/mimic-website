@@ -80,7 +80,7 @@ The `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY` columns d
 
 ## `DIAGNOSIS`
 
-The `DIAGNOSIS` column provides the admitting diagnosis for the patient. The diagnosis does not use a systematic ontology: as of MIMIC III v1.0 there are 15,693 distinct diagnoses for 58,976 patients. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness).
+The `DIAGNOSIS` column provides the admitting diagnosis for the patient. The diagnosis does not use a systematic ontology: as of MIMIC-III v1.0 there are 15,693 distinct diagnoses for 58,976 patients. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness).
 
 # Important considerations
 
