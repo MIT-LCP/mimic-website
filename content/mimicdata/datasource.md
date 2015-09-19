@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T19:34:46-04:00"
-title = "How is data recorded?"
-linktitle = "How is data recorded?"
+title = "How was the data recorded?"
+linktitle = "How was the data recorded?"
 weight = 3
 toc = "true"
 
@@ -11,9 +11,9 @@ toc = "true"
 
 +++
 
-# How is data recorded in the database?
+# How was the data recorded?
 
-The data within MIMIC was recorded during routine clinical care and *not* explicitly for the purpose of retrospective data analysis. This is a key point to keep in mind when analyzing the data.
+Data within MIMIC was recorded during routine clinical care and *not* explicitly for the purpose of retrospective data analysis. This is a key point to keep in mind when analyzing the data.
 
 # Types of data in the database
 
