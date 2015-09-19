@@ -14,9 +14,11 @@ toc = "true"
 
 # Data organization
 
-MIMIC is organized in a table structure. There are 23 tables, each of which pertaining to a certain type of data collected. For example, the IOEVENTS table contains all measurements related to intake and output for a given patient. These tables make querying the data easier as certain concepts, such as drug infusions, are only logically extracted from the correct table type, in this case IOEVENTS. Data is linked together between tables using an identifier (which usually has the suffix "ID") depending on the data. Note however that `ROW_ID`, present in every table, *does not link any table together*, and is just a row identifier (for those familiar with SQL, `ROW_ID` is the primary key for each table).
+MIMIC is a relational database with multiple tables, each of which contains data relating to patients who stayed within the intensive care units at Beth Israel Deaconess Medical Center. For example, the IOEVENTS table contains all measurements related to intake and output for a given patient. 
 
-A table pre-fixed with "D_" is a dictionary and defines a single identifier. For example, every row of IOEVENTS is associated with a single `ITEMID` which represents the concept measured, but it does *not* contain the actual name of the drug. By joining IOEVENTS and D_ITEMS on `ITEMID`, it is possible to identify what concept a given `ITEMID` represents.
+The tables are linked by identifiers which usually have the suffix "ID". For example `HADM_ID` refers to a unique hospital admission and `SUBJECT_ID` refers to a unique patient. One exception is `ROW_ID`, which is simply a row identifier unique to that table.
+
+Tables pre-fixed with "D_" are dictionaries and provide definitions for identifiers. For example, every row of IOEVENTS is associated with a single `ITEMID` which represents the concept measured, but it does *not* contain the actual name of the drug. By joining IOEVENTS and D_ITEMS on `ITEMID`, it is possible to identify what concept a given `ITEMID` represents.
 
 # List of tables
 
@@ -46,7 +48,7 @@ The following tables contain data associated with each patient:
  - **PRESCRIPTIONS** - Medications ordered, and not necessarily administered, for a given patient
  - **PROCEDURES_ICD** - Patient procedures performed as coded by the international classification of diseases and related health problems (ICD) system
  
-The following dictionary tables exist in the database:
+The following tables are dictionaries:
  
  - **D_CPT** - High level information regarding current procedural terminology (CPT) codes
  - **D_ICD_DIAGNOSES** - Brief description for each ICD code related to a diagnosis

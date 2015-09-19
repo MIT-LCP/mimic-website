@@ -10,12 +10,10 @@ toc = "false"
 
 # Issues
 
-We welcome the community to contribute issues they may find with the database.
 The forum provides a platform for any questions regarding data extraction.
 If you believe there is an error in the data extraction that you feel is due to the process of deidentification or due to the export of the data from its various sources to MIMIC, please report it on the GitHub issues page:
 
 (TBD).
-
 
 Please read through the issues to ensure you are not duplicating a previous report.
 

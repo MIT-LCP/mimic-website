@@ -14,12 +14,14 @@ toc = "true"
 # Combining input/output measurements across ICU databases
 
 The biggest challenge in combining data from CareVue, the previous ICU database, and Metavision, the current ICU database, was the merging of input/output (IO) events.
-This difficult arose due primarily to two factors: the lower resolution of information archiving in CareVue, and the different definition of an order in the databases.
-The aim of this section is to provide the user insight into how these data were merged: this information is not necessary to understand for the purposes of using the database, but will provide insight into the peculiar format of the IOEVENTS table.
 
-## CareVue
+This difficult arose due primarily to two factors: the lower resolution of information archiving in the older CareVue system, and the different definition of an 'order' in the databases.
 
-CareVue stored input/output (IO) data across five tables: IOEVENTS, MEDEVENTS, ADDITIVES, SOLUTIONS and DELIVERIES. Each time a new order for a drug was recorded in the database, the ADDITIVES, SOLUTIONS and DELIVERIES tables would be populated with information regarding the order. The data archival format is best described with an example. 
+The aim of this section is to provide insight into how these data were merged: this information is not necessary to understand for the purposes of using the database, but will provide insight into the format of the IOEVENTS table.
+
+## Philips CareVue
+
+The CareVue system stored input/output (IO) data across five tables: IOEVENTS, MEDEVENTS, ADDITIVES, SOLUTIONS and DELIVERIES. Each time a new order for a drug was recorded in the database, the ADDITIVES, SOLUTIONS and DELIVERIES tables would be populated with information regarding the order. The data archival format is best described with an example. 
 
 Patient A has been recently admitted to the ICU and is to be administered noradrenaline to restore their blood pressure to a value of at least 60 mmHg. The route of administration is intravenous, i.e. the drug is to be pumped into the patient's blood stream directly through a line inserted in a vein. The nurse would prepare a solution of 250 mL sodium chloride (NaCl) to contain the drug. The SOLUTIONS table would consequently contain an entry of 250 mL NaCl for patient A at the time the nurse prepared the solution. The nurse would then mix in the drug into the solution: in this case 8 mg of noreadrenaline is appropriate. The 8 mg of noradrenaline would be recorded in the ADDITIVES table, and an identifier would be recorded which linked the 8 mg of noradrenaline to the 250 mL solution of NaCl. Finally, the nurse would optionally set an initial delivery rate and route: in this case it could be 10 mL/hr intravenously. These would populate the `RATE` and `ROUTE` columns in the DELIVERIES table. Note this data was not consistently recorded.
 
