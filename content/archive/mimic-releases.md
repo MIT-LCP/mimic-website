@@ -2,7 +2,7 @@
 date = "2015-09-01T19:09:50-04:00"
 title = "MIMIC-II releases"
 linktitle = "MIMIC-II releases"
-weight = 1
+weight = 2
 toc = "true"
 
 [menu]

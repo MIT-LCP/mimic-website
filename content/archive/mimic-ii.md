@@ -2,7 +2,7 @@
 date = "2015-09-01T19:09:50-04:00"
 title = "MIMIC-II"
 linktitle = "MIMIC-II"
-weight = 2
+weight = 1
 toc = "true"
 
 [menu]
@@ -12,6 +12,8 @@ toc = "true"
 +++
 
 # MIMIC-II
+
+<!-- update this page to outline MIMIC and MIMIC-II -->
 
 MIMIC-II documentation: [mimic-ii-guide.pdf](/archive/mimic-ii-guide.pdf)
 
