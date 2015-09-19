@@ -13,7 +13,9 @@ toc = "true"
 
 # Acknowledgements
 
-If you use our data, code or algorithms in your work, please provide a citation to this project. Our recommended citation is currently in preparation for publication. In the interim, the older MIMIC II database can be cited as follows (BibTeX entry):
+MIMIC is made available largely through the work of researchers at the MIT Laboratory for Computational Physiology and collaborating research groups. If you use our data, code or algorithms, please provide a citation to this project. 
+
+Our recommended citation for MIMIC-III is in preparation for publication. In the interim, the older MIMIC II database can be cited as follows (BibTeX entry):
 
 ``` 
 @article{MIMICII
