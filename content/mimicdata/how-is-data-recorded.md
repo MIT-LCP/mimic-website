@@ -13,11 +13,11 @@ toc = "true"
 
 # How is data recorded in the database?
 
-The data in the database is recorded during routine clinical care. As a result, the data is collected for the purpose of patient care, and *not* for the purpose of retrospective data analysis. This is a key point to consider at all times when analyzing the data: while it may not be archived in an optimal way for analysis, this is not the primary purpose of the data. This is partly implied by the nature of this research: *secondary* analysis of electronic health records.
+The data within MIMIC was recorded during routine clinical care and *not* explicitly for the purpose of retrospective data analysis. This is a key point to keep in mind when analyzing the data.
 
 # Types of data in the database
 
-There are two types of data in the database: static data and dynamic data. Static data is recorded once for a given identifier. An example of static data is the `DOB` column in the PATIENTS table. Each patient has only one date of birth, which does not change over time and is not recorded with an associated timestamp. In contrast, an example of dynamic data is a patient's blood pressure, which is aperiodically measured during their stay in the ICU. Note that this distinction between static data and dynamic data is merely a helpful conceptual construct: there is *no* strict technical distinction between date of birth and heart rate. However, static data tends to not have an associated `ITEMID` (as there is no need to repeatedly record values for static data), whereas dynamic data must have an `ITEMID` to facilitate repeated measurements.
+There are two types of data in the database: static data and dynamic data. Static data is recorded once for a given identifier. An example of static data is the `DOB` column in the PATIENTS table. Each patient has only one date of birth, which does not change over time and is not recorded with an associated timestamp. An example of dynamic data is a patient's blood pressure, which is periodically measured during a hospital stay. This distinction between static data and dynamic data is merely a helpful conceptual construct: there is *no* strict technical distinction between date of birth and heart rate. However, static data tends to not have an associated `ITEMID` (as there is no need to repeatedly record values for static data), whereas dynamic data must have an `ITEMID` to facilitate repeated measurements.
 
 ## Static
 
@@ -29,7 +29,6 @@ The following is a list of static data available in the database for `HADM_ID`:
 * Discharge time
 * Death time
 * Admission type
-
 
 The following is a list of static data available in the database for `ICUSTAY_ID`:
 

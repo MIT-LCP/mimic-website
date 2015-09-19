@@ -13,10 +13,9 @@ toc = "true"
 
 # MIMIC-II vs MIMIC-III
 
-Many users familiar with MIMIC-II will be happy to find MIMIC-III has a very similar architecture, however there are key differences to be aware of.
-MIMIC-III is an extension of MIMIC-II: it incorporates the data contained in MIMIC-II (collected between 2001 - 2008) and augments it with newly collected data between 2008 - 2012. Further to this, many data elements have been re-extracted in a more robust manner to improve the quality of the underlying data. 
+MIMIC-III is an extension of MIMIC-II: it incorporates the data contained in MIMIC-II (collected between 2001 - 2008) and augments it with newly collected data between 2008 - 2012. In addition, many data elements have been regenerated from the raw data in a more robust manner to improve the quality of the underlying data. 
 
-A key difficulty in the addition of new data was a change in data management software which occurred at the Beth Israel Deaconess Medical Center (BIDMC): the original CareVue data management system (which archived data from 2001 - 2008) was replaced with the new Metavision data management system (which continues to be used to the present). Many efforts have been made to merge these databases seamlessly: this has been successful in some instances, and continues to be a work in progress for others. This page aims to facilitate the transition for researchers familiar with MIMIC-II who would like to continue their research with the updated MIMIC-III.
+One of the challenges of adding new data resulted from a change in data management software at the Beth Israel Deaconess Medical Center. The original Philips CareVue system (which archived data from 2001 - 2008) was replaced with the new Metavision data management system (which continues to be used to the present). This page aims to facilitate the transition for researchers familiar with MIMIC-II who would like to continue their research with the updated MIMIC-III.
 
 # Lab ITEMID mapping
 
