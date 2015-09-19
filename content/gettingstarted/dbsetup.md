@@ -13,7 +13,7 @@ toc = "false"
 
 # Setting up the database
 
-MIMIC is provided as a collection of comma-separated (CSV) files with double quotes around text fields, along with scripts to help users import the data into popular database systems. Documentation is currently available for MySQL, Postgres and Oracle.
+MIMIC is provided as a collection of comma-separated (CSV) files, along with scripts to help users import the data into popular database systems. Documentation is currently available for MySQL, Postgres and Oracle.
 
 # Oracle
 
