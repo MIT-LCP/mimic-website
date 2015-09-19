@@ -13,7 +13,7 @@ toc = "true"
 
 # Contributing
 
-MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology. We have limited resources and cannot provide individual support to researchers worldwide. We therefore encourage MIMIC users to work together as a community.
+MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide. We therefore encourage MIMIC users to work together as a community.
 
 ## How can I help to improve the MIMIC website and documentation?
 
@@ -25,7 +25,7 @@ To fix an issue or to contribute new content, please either select the 'Edit thi
 
 ## How can I share code that I have written for MIMIC?
 
-Our laboratory and our collaborators have worked hard to create and share the MIMIC dataset. In return, we strongly hope that you will share the code that you use for analysing the data.
+Our laboratory and collaborators have worked hard to create and share the MIMIC dataset. In return, we strongly hope that you will share the code that you use for analysing the data.
 
 We have created a repository on GitHub to hold MIMIC-related code: https://github.com/MIT-LCP/mimic-code. The structure of the repository will develop over time as new contributions are made.
 
