@@ -71,3 +71,15 @@ SELECT gender, COUNT(*)
 FROM patients
 GROUP BY gender
 ```
+
+## 4. Mortality and Admissions 
+
+A flag which records whether or not a patient died in the hospital is stored in the patients table. Count the number of patients who died using the following query: 
+
+``` sql
+SELECT hospital_expire_flag, COUNT(*)
+FROM patients
+GROUP BY hospital_expire_flag
+```
+
+The database also contains date of death for patients FIX FIX FIX who died outside the hospital, based on social security death records FIX FIX FIX. This information is contained in the 'dod' column. Please note that this database contains adult, pediatric, and neonatal patients which will affect the mortality statistics. Categorizing patients into different age groups is carried out in the next section. 
