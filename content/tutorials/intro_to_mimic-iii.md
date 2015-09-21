@@ -83,3 +83,60 @@ GROUP BY hospital_expire_flag
 ```
 
 The database also contains date of death for patients FIX FIX FIX who died outside the hospital, based on social security death records FIX FIX FIX. This information is contained in the 'dod' column. Please note that this database contains adult, pediatric, and neonatal patients which will affect the mortality statistics. Categorizing patients into different age groups is carried out in the next section. 
+
+## 5. Patient age and Mortality 
+
+To determine the adult mortality rate, we must first determine adult patients. We define adults as those patients who are 15 or more years old at the date of their first admission. To perform this query, we must first combine the patients and admissions tables to find patient admission dates, and their date of birth. Please note that the table naming in the query below. We have denoted 'admissions' with 'a' and 'patients' with 'p': 
+
+``` sql
+SELECT p.subject_id, p.dob, a.hadm_id, a.admittime, p.hospital_expire_flag 
+FROM admissions a
+INNER JOIN patients p
+ON p.subject_id = a.subject_id
+```
+
+Next, we find the minimum(earliest) admission date for each patient. This requires the use of the new functions, the 'MIN' function, which obtains the minimum value, and the 'PARTITION BY' function which determines the groups over which the minimum value is obtained, in this case, we determine the minimum time of admission for each patient: 
+
+``` sql
+SELECT DISTINCT p.subject_id, p.dob, a.hadm_id, a.admittime, p.hospital_expire_flag, 
+MIN (a.admittime)
+OVER (PARTITION BY p.subject_id)
+AS first_admitdate
+FROM admissions a 
+INNER JOIN patients p 
+ON p.subject_id = a.subject_id 
+AND p.dob IS NOT NULL 
+ORDER BY a.hadm_id, p.subject_id 
+```
+
+A patient's age is given by the difference between their date of birth and the date of their first admission. We can obtain this by combining the above query with another query to provide the ages. Furthermore, we assign categories to different ages: >= 15 years old are adults and the rest are assigned to the 'other' category. The queries are combined using the 'WITH' keyword: 
+
+``` sql 
+WITH first_admission_date AS(
+SELECT DISTINCT p.subject_id, p.dob, p.gender, a.hadm_id, a.admittime,
+MIN (a.admittime)
+OVER (PARTITION BY a.hadm_id, p.subject_id)
+AS first_admitdate
+FROM admissions a 
+INNER JOIN patients p 
+ON p.subject_id = a.subject_id
+AND p.dob IS NOT NULL 
+ORDER BY a.hadm_id, p.subject_id
+), 
+age AS (
+SELECT subject_id, hadm_id, dob, gender, first_admitdate, 
+ROUND(months_between(first_admitdate, dob) /12,2) first_admit_age,
+CASE 
+WHEN (months_between(first_admitdate,dob) /12) >= 15
+THEN 'adult'
+WHEN months_between(first_admitdate,dob) <=1
+THEN 'neonate'
+ELSE 'middle'
+END AS age_group
+FROM first_admission_date
+ORDER BY subject_id,hadm_id
+)
+SELECT * FROM age
+```
+
+The above query can now be combined with the **WHERE** and **COUNT** functions described earlier to determine the number of adult patients, whether or not they died, and therefore, their mortality rate.
