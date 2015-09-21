@@ -36,6 +36,38 @@ Try selecting some other tables and look at the metadata. You can close a tab by
 Ensure that the 'Query...' tab at the top of the screen is selected. SQL queries can be entered in the top panel and the results will be displayed at the bottom when the 'Execute query' button is pressed. Enter the following SQL in the box and press the 'Execute query' button. 
 
 ``` sql
-SELECT *
-FROM noteevents
+SELECT * 
+FROM patients
+```
+
+At the bottom of the screen you will see three columns: subject_id, gender, and date of birth. 50 records are retrieved at a time and you can page through the results using the controls at the bottom of the screen. 
+
+Obtain the number of patients by performing the following query: 
+
+``` sql
+SELECT COUNT(*)
+FROM patients
+```
+
+The 'gender' column identifies the gender of the patient. We can obtain the values used to indicate patient genders using the following query: 
+
+``` sql
+SELECT DISTINCT gender 
+FROM patients
+```
+
+We can see that 'M' and 'F' are the two characters used to indicate patient gender. We can use this information to obtain the number of female patients by restricting the query to retrieve results which have 'F' in the 'gender' column: 
+
+``` sql
+SELECT COUNT(*) 
+FROM patients
+WHERE gender = 'F'
+```
+
+And the numbers of male and female patients can be obtained using this query: 
+
+``` sql
+SELECT gender, COUNT(*)
+FROM patients
+GROUP BY gender
 ```
