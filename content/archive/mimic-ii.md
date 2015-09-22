@@ -13,10 +13,10 @@ toc = "true"
 
 # MIMIC-II
 
+MIMIC-II is an older version of the MIMIC database, now replaced by [MIMIC-III](/about/mimic/). The following information may still be helpful however:
+
 <!-- update this page to outline MIMIC and MIMIC-II -->
 
-MIMIC-II documentation: [mimic-ii-guide.pdf](/archive/mimic-ii-guide.pdf)
-
-Introduction to MIMIC-II: [introduction-mimic-ii.pdf](/archive/introduction-mimic-ii.pdf)
-
-MIMIC-II Querybuilder: [https://mimic2app.csail.mit.edu/](https://mimic2app.csail.mit.edu/)
+- MIMIC-II documentation: [mimic-ii-guide.pdf](/archive/mimic-ii-guide.pdf)
+- Introduction to MIMIC-II: [introduction-mimic-ii.pdf](/archive/introduction-mimic-ii.pdf)
+- MIMIC-II Querybuilder: [https://mimic2app.csail.mit.edu/](https://mimic2app.csail.mit.edu/)
