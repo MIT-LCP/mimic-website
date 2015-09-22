@@ -300,7 +300,7 @@ ul.sidebar-menu li.active a i {
 
 
 #sidebar ul > li > a .menu-arrow {
-    float: right;
+    /*float: right;*/
     margin-right: 8px;
     margin-top: 6px;
 }
