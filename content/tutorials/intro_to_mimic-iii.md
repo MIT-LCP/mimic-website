@@ -18,14 +18,14 @@ toc = "true"
 
 This tutorial provides an introduction to the database structure and content. It also provides an idea of the types of information which can be extracted and the complexity of the data contained. By the end of this tutorial you will be able to: 
 
-* Obtain meta-data from the various database objects (Tables, views, etc). 
+* Obtain metadata from the various database objects (Tables, views, etc). 
 * Perform basic queries on a single table. This includes counting the number of rows, and restricting the query to a subset of rows. 
 * Perform basic 'joins' to combine tables and extract useful information. 
 * Use database 'views' to extract high-level information. 
 
-## 2. Database meta-data 
+## 2. Database metadata 
 
-The meta-data for a particular table can be obtained by clicking on an entry on the left hand side of the screen. Select the patients table to see how the metadata is displayed in the panels on the right hand side of the screen. The columns found in the patients table are displayed, along with the types of data they contained, and various other parameters. Also provided are comments which describe the data contained in the columns. 
+The metadata for a particular table can be obtained by clicking on an entry on the left hand side of the screen. Select the patients table to see how the metadata is displayed in the panels on the right hand side of the screen. The columns found in the patients table are displayed, along with the types of data they contained, and various other parameters. Also provided are comments which describe the data contained in the columns. 
 
 Try selecting some other tables and look at the metadata. You can close a tab by clicking on the 'X' on the metadata tabs. When you have finished, close all of the metadata tabs and go to No.3
 
