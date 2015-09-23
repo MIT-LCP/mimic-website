@@ -42,7 +42,7 @@ Metadata for a particular table can be obtained in Postgres with ```\d+ <schema>
  ...
 ```
 
-Try selecting some other tables and look at the metadata. You can close a tab by clicking on the 'X' on the metadata tabs. When you have finished, close all of the metadata tabs and go to No.3
+Try looking at the metadata for other tables such as ```patients``` and ```ioevents```.
 
 ## 3. Patient Numbers 
 
