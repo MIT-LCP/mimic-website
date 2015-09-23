@@ -23,10 +23,6 @@ This tutorial provides an introduction to the database structure and content. It
 * Perform basic 'joins' to combine tables and extract useful information. 
 * Use database 'views' to extract high-level information. 
 
-Tutorial coming soon...
-
-<!-- 
-
 Commence the tutorial by opening the [QueryBuilder](https://mimic2app.csail.mit.edu/querybuilder/) application. 
 
 ## 2. Database metadata 
@@ -348,6 +344,4 @@ inner join mimic.patients pat
   on ie.subject_id = pat.subject_id
 inner join mimic.admissions adm
   on ie.hadm_id = adm.hadm_id;
-
--->
 
