@@ -18,7 +18,7 @@ toc = "true"
 
 This tutorial provides an introduction to the database structure and content. It also provides an idea of the types of information which can be extracted and the complexity of the data contained. By the end of this tutorial you will be able to: 
 
-* Obtain metadata from the various database objects (Tables, views, etc). 
+* Obtain metadata from the various database objects (tables, views, etc). 
 * Perform basic queries on a single table. This includes counting the number of rows, and restricting the query to a subset of rows. 
 * Perform basic 'joins' to combine tables and extract useful information. 
 * Use database 'views' to extract high-level information. 
@@ -137,7 +137,6 @@ SELECT * FROM age
 
 The above query can now be combined with the **WHERE** and **COUNT** functions described earlier to determine the number of adult patients, whether or not they died, and therefore, their mortality rate. 
 
-
 ## 6. ICU Stays 
 
 In the MIMIC-III database, we define an ICU stay to be continuous if a patient is returned to an ICU room within 24 hours of being moved to a ward. Patient ICU movements are recorded in the transfers table: 
@@ -152,7 +151,9 @@ The transfers table may have multiple entries per patient to provide information
 
 ```sql
 
-SELECT * FROM mimicIII.transfers where HADM_ID = 112213;
+SELECT * 
+FROM mimicIII.transfers 
+WHERE HADM_ID = 112213;
 
 ```
 
@@ -167,11 +168,13 @@ row_id| subject_id | hadm_id | icustay_id | dbsource | eventtype | prev_careunit
    60 |         12 |  112213 |            | carevue    | discharge |               |               |          36 |            
 
 <!-- talk about services --> 
+
 ## 7. Services 
+
 Services is a newly added table in MIMIC-III which contains information about the transfers from being under one service to another during a patient's stay. The services table contains columns including 'prev_service' and 'curr_service' which contain the names of previous and current services respectively. 'transfertime' is the time at which the patient was moved from 'prev_service' to 'curr_service'. 
 
 ## 8. Tutorial Problem 
-​
+
 How would gather useful information about patients admitted to the ICU? 
 
 The problem is problem is broken down into serveral parts and we recommend viewing the solution, which can be found below, after several attempts. 
@@ -196,7 +199,6 @@ Then find those deaths that occured while the patients were in the hospital
 
 ### Step 7 
 Find how many of those deaths occured within the ICU 
-
 
 ## Solutions to Tutorial Problem in No. 7
 
@@ -280,6 +282,7 @@ inner join mimicIII.admissions adm
  ```
 
 ### Solution to Step 6
+
 ``` sql
 select ie.subject_id, ie.hadm_id, ie.icustay_id
       , ie.intime
@@ -305,6 +308,7 @@ inner join mimicIII.admissions adm
   ```
   
 ### Solution to Step 7
+
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
       , ie.intime
