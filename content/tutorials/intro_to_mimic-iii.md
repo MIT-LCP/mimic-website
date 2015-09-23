@@ -160,7 +160,32 @@ SELECT t.subject_id, t.intime, t.outtime, t.prev_wardid, t.prev_careunit, t.curr
 FROM transfers t
 ```
 
-The transfers table may have multiple entries per patient to provide information of all movement between various careunits of the hospital. 
+The transfers table may have multiple entries per patient to provide information of all movement between various careunits of the hospital. The first entry in the transfers table for a patient who comes into the ICU will have nothing in the 'prev_careunit' and 'prev_wardid' columns and similarly, the last entry for a patient will have nothing in the 'curr_careunit' and 'curr_wardid'. Patient entries that have nothing in both previous and current careunit columns signifies that patients have been transfered between units that do not fall under any of the ICUs. An example query for one patient and result from the transfers table is shown below. Note that columns 'intime', 'outtime', and 'los' have been truncated. 
 
+```sql
+
+SELECT * FROM mimic2v30.transfers where HADM_ID = 112213;
+
+```
+
+row_id| subject_id | hadm_id | icustay_id | dbsource  | eventtype | prev_careunit | curr_careunit | prev_wardid | curr_wardid |
+
+
+
+   54 |         12 |  112213 |            | mimic2v26 | admit     |               |               |             |          27 |
+
+   55 |         12 |  112213 |            | mimic2v26 | transfer  |               |               |          27 |           2 | 
+
+   56 |         12 |  112213 |     232669 | mimic2v26 | transfer  |               | SICU          |           2 |          23 | 
+
+   57 |         12 |  112213 |            | mimic2v26 | transfer  | SICU          |               |          23 |          49 | 
+
+   58 |         12 |  112213 |     232669 | mimic2v26 | transfer  |               | SICU          |          49 |          23 | 
+
+   59 |         12 |  112213 |            | mimic2v26 | transfer  | SICU          |               |          23 |          36 | 
+
+   60 |         12 |  112213 |            | mimic2v26 | discharge |               |               |          36 |             | 
+## 7. Services 
+Services is a newly added table in MIMIC-III which contains information about the transfers from being under one service to another during a patient's stay. The services table contains columns including 'prev_service' and 'curr_service' which contain the names of previous and current services respectively. 'transfertime' is the time at which the patient was moved from 'prev_service' to 'curr_service'. 
 -->
 
