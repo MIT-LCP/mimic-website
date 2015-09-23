@@ -44,7 +44,7 @@ Metadata for a particular table can be obtained in Postgres with ```\d+ <schema>
 
 Try looking at the metadata for other tables such as ```patients``` and ```ioevents```.
 
-## 3. Patient Numbers 
+## 3. Patient numbers 
 
 Ensure that the 'Query...' tab at the top of the screen is selected. SQL queries can be entered in the top panel and the results will be displayed at the bottom when the 'Execute query' button is pressed. Enter the following SQL in the box and press the 'Execute query' button. 
 
@@ -97,7 +97,7 @@ GROUP BY hospital_expire_flag;
 
 The database also contains date of death for patients who died inside the hospital in the column 'dod_hosp' and the date of death found in social security death records in 'dod_ssn'. This information from both columns is merged in the 'dod' column with priority given to 'dod_hosp'. Please note that this database contains adult and neonatal patients which will affect the mortality statistics. Categorizing patients into different age groups is carried out in the next section. 
 
-## 5. Patient age and Mortality 
+## 5. Patient age and mortality 
 
 To determine the adult mortality rate, we must first determine adult patients. We define adults as those patients who are 15 or more years old at the date of their first admission. To perform this query, we must first combine the patients and admissions tables to find patient admission dates, and their date of birth. Please note that the table naming in the query below. We have denoted 'admissions' with the alias 'a' and 'patients' with alias 'p': 
 
@@ -152,7 +152,7 @@ SELECT * FROM age;
 
 The above query can now be combined with the **WHERE** and **COUNT** functions described earlier to determine the number of adult patients, whether or not they died, and therefore, their mortality rate. 
 
-## 6. ICU Stays 
+## 6. ICU stays 
 
 In the MIMIC-III database, we define an ICU stay to be continuous if a patient is returned to an ICU room within 24 hours of being moved to a ward. Patient ICU movements are recorded in the transfers table: 
 
@@ -188,7 +188,7 @@ row_id| subject_id | hadm_id | icustay_id | dbsource | eventtype | prev_careunit
 
 Services is a newly added table in MIMIC-III which contains information about the transfers from being under one service to another during a patient's stay. The services table contains columns including 'prev_service' and 'curr_service' which contain the names of previous and current services respectively. 'transfertime' is the time at which the patient was moved from 'prev_service' to 'curr_service'. 
 
-## 8. Tutorial Problem 
+## 8. Tutorial problem 
 
 How would gather useful information about patients admitted to the ICU? 
 
@@ -215,9 +215,9 @@ Then find those deaths that occured while the patients were in the hospital
 ### Step 7 
 Find how many of those deaths occured within the ICU 
 
-## Solutions to Tutorial Problem in No. 7
+## Solutions to tutorial problem in number 7
 
-### Solution to Step 1 
+### Solution to step 1 
 
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
@@ -226,7 +226,7 @@ select ie.subject_id, ie.hadm_id, ie.icustay_id
 from mimicIII.icustayevents ie;
 ```
 
-### Solution to Step 2 
+### Solution to step 2 
 
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
@@ -238,7 +238,7 @@ inner join mimicIII.patients pat
   on ie.subject_id = pat.subject_id;
   ```
   
-### Solution to Step 3
+### Solution to step 3
 
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
@@ -254,7 +254,7 @@ inner join mimicIII.patients pat
   on ie.subject_id = pat.subject_id;
 ```
 
-### Solution to Step 4
+### Solution to step 4
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
       , ie.intime
@@ -274,7 +274,7 @@ inner join mimicIII.admissions adm
   on ie.hadm_id = adm.hadm_id;
   ```  
 
-### Solution to Step 5
+### Solution to step 5
 
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
@@ -296,7 +296,7 @@ inner join mimicIII.admissions adm
   on ie.hadm_id = adm.hadm_id;
  ```
 
-### Solution to Step 6
+### Solution to step 6
 
 ``` sql
 select ie.subject_id, ie.hadm_id, ie.icustay_id
@@ -322,7 +322,7 @@ inner join mimicIII.admissions adm
   on ie.hadm_id = adm.hadm_id;
   ```
   
-### Solution to Step 7
+### Solution to step 7
 
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
