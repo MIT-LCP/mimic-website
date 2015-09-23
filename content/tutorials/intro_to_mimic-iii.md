@@ -176,31 +176,31 @@ How would gather useful information about patients admitted to the ICU?
 
 The problem is problem is broken down into serveral parts and we recommend viewing the solution, which can be found below, after several attempts. 
 
-# Step 1 
+### Step 1 
 First start with retrieving 'subject_id', 'hadm_id', 'icustay_id', 'intime', and 'outtime' from the 'mimicIII' database 'icustayevents' table. 
 
-# Step 2 
+### Step 2 
 In addition to step 1, retrieve the caulcated age of patients by also using the patients table. 
 
-# Step 3 
+### Step 3 
 Now separate neonates from adult patients. 
 
-# Step 4 
+### Step 4 
 By incorporating the admissions table, find how long each stay was **BEFORE** the patients were admitted to the ICU 
 
-# Step 5 
+### Step 5 
 Next find the date of the patient's death if applicable. 
 
-# Step 6 
+### Step 6 
 Then find those deaths that occured while the patients were in the hospital 
 
-# Step 7 
+### Step 7 
 Find how many of those deaths occured within the ICU 
 
 
 ## Solutions to Tutorial Problem in No. 7
 
-# Solution to Step 1 
+### Solution to Step 1 
 
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
@@ -209,7 +209,7 @@ select ie.subject_id, ie.hadm_id, ie.icustay_id
 from mimicIII.icustayevents ie;
 ```
 
-# Solution to Step 2 
+### Solution to Step 2 
 
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
@@ -221,7 +221,7 @@ inner join mimicIII.patients pat
   on ie.subject_id = pat.subject_id;
   ```
   
-# Solution to Step 3
+### Solution to Step 3
 
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
@@ -237,7 +237,7 @@ inner join mimicIII.patients pat
   on ie.subject_id = pat.subject_id;
 ```
 
-# Solution to Step 4
+### Solution to Step 4
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
       , ie.intime
@@ -257,7 +257,7 @@ inner join mimicIII.admissions adm
   on ie.hadm_id = adm.hadm_id;
   ```  
 
-# Solution to Step 5
+### Solution to Step 5
 
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
@@ -279,7 +279,7 @@ inner join mimicIII.admissions adm
   on ie.hadm_id = adm.hadm_id;
  ```
 
-# Solution to Step 6
+### Solution to Step 6
 ``` sql
 select ie.subject_id, ie.hadm_id, ie.icustay_id
       , ie.intime
@@ -304,7 +304,7 @@ inner join mimicIII.admissions adm
   on ie.hadm_id = adm.hadm_id;
   ```
   
-# Solution to Step 7
+### Solution to Step 7
 ``` sql 
 select ie.subject_id, ie.hadm_id, ie.icustay_id
       , ie.intime
