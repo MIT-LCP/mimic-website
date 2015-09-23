@@ -80,7 +80,7 @@ FROM patients
 GROUP BY hospital_expire_flag
 ```
 
-The database also contains date of death for patients FIX FIX FIX who died outside the hospital, based on social security death records FIX FIX FIX. This information is contained in the 'dod' column. Please note that this database contains adult, pediatric, and neonatal patients which will affect the mortality statistics. Categorizing patients into different age groups is carried out in the next section. 
+The database also contains date of death for patients who died inside the hospital in the column 'dod_hosp' and the date of death found in social security death records in 'dod_ssn'. This information from both columns is merged in the 'dod' column with priority given to 'dod_hosp'. Please note that this database contains adult and neonatal patients which will affect the mortality statistics. Categorizing patients into different age groups is carried out in the next section. 
 
 ## 5. Patient age and Mortality 
 
