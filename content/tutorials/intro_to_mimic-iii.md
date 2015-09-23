@@ -35,7 +35,7 @@ Ensure that the 'Query...' tab at the top of the screen is selected. SQL queries
 
 ``` sql
 SELECT * 
-FROM patients
+FROM patients;
 ```
 
 At the bottom of the screen you will see three columns: subject_id, gender, and date of birth. 50 records are retrieved at a time and you can page through the results using the controls at the bottom of the screen. 
@@ -44,14 +44,14 @@ Obtain the number of patients by performing the following query:
 
 ``` sql
 SELECT COUNT(*)
-FROM patients
+FROM patients;
 ```
 
 The 'gender' column identifies the gender of the patient. We can obtain the values used to indicate patient genders using the following query: 
 
 ``` sql
 SELECT gender 
-FROM patients
+FROM patients;
 ```
 
 We can see that 'M' and 'F' are the two characters used to indicate patient gender. We can use this information to obtain the number of female patients by restricting the query to retrieve results which have 'F' in the 'gender' column: 
@@ -59,7 +59,7 @@ We can see that 'M' and 'F' are the two characters used to indicate patient gend
 ``` sql
 SELECT COUNT(*) 
 FROM patients
-WHERE gender = 'F'
+WHERE gender = 'F';
 ```
 
 And the numbers of male and female patients can be obtained using this query which counts how many female and male patients are in the patients table. 
@@ -67,7 +67,7 @@ And the numbers of male and female patients can be obtained using this query whi
 ``` sql
 SELECT gender, COUNT(*)
 FROM patients
-GROUP BY gender
+GROUP BY gender;
 ```
 
 ## 4. Mortality and Admissions 
@@ -77,7 +77,7 @@ A flag which records whether or not a patient died in the hospital is stored in 
 ``` sql
 SELECT hospital_expire_flag, COUNT(*)
 FROM patients
-GROUP BY hospital_expire_flag
+GROUP BY hospital_expire_flag;
 ```
 
 The database also contains date of death for patients who died inside the hospital in the column 'dod_hosp' and the date of death found in social security death records in 'dod_ssn'. This information from both columns is merged in the 'dod' column with priority given to 'dod_hosp'. Please note that this database contains adult and neonatal patients which will affect the mortality statistics. Categorizing patients into different age groups is carried out in the next section. 
@@ -90,7 +90,7 @@ To determine the adult mortality rate, we must first determine adult patients. W
 SELECT p.subject_id, p.dob, a.hadm_id, a.admittime, p.hospital_expire_flag 
 FROM admissions a
 INNER JOIN patients p
-ON p.subject_id = a.subject_id
+ON p.subject_id = a.subject_id;
 ```
 
 Next, we find the minimum(earliest) admission date for each patient. This requires the use of the new functions, the 'MIN' function, which obtains the minimum value, and the 'PARTITION BY' function which determines the groups over which the minimum value is obtained, in this case, we determine the minimum time of admission for each patient: 
@@ -103,7 +103,7 @@ AS first_admittime
 FROM admissions a 
 INNER JOIN patients p 
 ON p.subject_id = a.subject_id 
-ORDER BY a.hadm_id, p.subject_id 
+ORDER BY a.hadm_id, p.subject_id;
 ```
 
 A patient's age is given by the difference between their date of birth and the date of their first admission. We can obtain this by combining the above query with another query to provide the ages. Furthermore, we assign categories to different ages: >= 15 years old are adults and the rest are assigned to the 'other' category. The queries are combined using the 'WITH' keyword: 
@@ -132,7 +132,7 @@ END AS age_group
 FROM first_admission_time
 ORDER BY subject_id,hadm_id
 )
-SELECT * FROM age
+SELECT * FROM age;
 ```
 
 The above query can now be combined with the **WHERE** and **COUNT** functions described earlier to determine the number of adult patients, whether or not they died, and therefore, their mortality rate. 
@@ -142,7 +142,7 @@ The above query can now be combined with the **WHERE** and **COUNT** functions d
 In the MIMIC-III database, we define an ICU stay to be continuous if a patient is returned to an ICU room within 24 hours of being moved to a ward. Patient ICU movements are recorded in the transfers table: 
 
 ``` sql 
-SELECT * FROM transfers
+SELECT * FROM transfers;
 ```
 
 The columns should be fairly self explanatory, click on the transfers table on the left hand side if you need more information about the columns and the data they contain. The 'prev_careunit' and 'curr_careunit' contain the names of the previous and current careunit respectively. The transfers table also contains columns 'prev_wardid' and 'curr_wardid' which contain the IDs of the previous and current careunit respectively. Ward IDs which specify the room within a ward have no corresponding key in order to protect patient health information. 
