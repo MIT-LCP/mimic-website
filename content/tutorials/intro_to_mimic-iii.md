@@ -187,6 +187,167 @@ row_id| subject_id | hadm_id | icustay_id | dbsource | eventtype | prev_careunit
    60 |         12 |  112213 |            | mimic    | discharge |               |               |          36 |             | 
 
 ## 7. Services 
-Services is a newly added table in MIMIC-III which contains information about the transfers from being under one service to another during a patient's stay. The services table contains columns including 'prev_service' and 'curr_service' which contain the names of previous and current services respectively. 'transfertime' is the time at which the patient was moved from 'prev_service' to 'curr_service'. 
+Services is a newly added table in MIMIC-III which contains information about the transfers from being under one service to another during a patient's stay. The services table contains columns including 'prev_service' and 'curr_service' which contain the names of previous and current services respectively. 'transfertime' is the time at which the patient was moved from 'prev_service' to 'curr_service'.
+
+## 8. Tutorial Problem 
+
+How would gather useful information about patients admitted to the ICU? 
+
+The problem is problem is broken down into serveral parts and we recommend viewing the solution, which can be found below, after several attempts. 
+
+# Step 1 
+First start with retrieving 'subject_id', 'hadm_id', 'icustay_id', 'intime', and 'outtime' from the 'mimic' database 'icustayevents' table. 
+
+# Step 2 
+In addition to step 1, retrieve the caulcated age of patients by also using the patients table. 
+
+# Step 3 
+Now separate neonates from adult patients. 
+
+# Step 4 
+By incorporating the admissions table, find how long each stay was **BEFORE** the patients were admitted to the ICU 
+
+# Step 5 
+Next find the date of the patient's death if applicable. 
+
+# Step 6 
+Then find those deaths that occured while the patients were in the hospital 
+
+# Step 7 
+Find how many of those deaths occured within the ICU 
+
+## Solutions to Tutorial Problem in No. 7
+
+# Solution to Step 1 
+
+select ie.subject_id, ie.hadm_id, ie.icustay_id
+      , ie.intime
+      , ie.outtime
+from mimic.icustayevents ie;
+
+# Solution to Step 2 
+
+select ie.subject_id, ie.hadm_id, ie.icustay_id
+      , ie.intime
+      , ie.outtime
+      , round( months_between(ie.intime,pat.dob)/12 , 2 ) as age
+from mimic.icustayevents ie
+inner join mimic.patients pat
+  on ie.subject_id = pat.subject_id;
+
+# Solution to Step 3
+
+select ie.subject_id, ie.hadm_id, ie.icustay_id
+      , ie.intime
+      , ie.outtime
+      , round( months_between(ie.intime,pat.dob)/12 , 2 ) as age
+      , case 
+          when months_between(ie.intime,pat.dob) <= 1 then 'neonate'
+          when months_between(ie.intime,pat.dob) > 1 and months_between(ie.intime,pat.dob) <= 15*12 then 'middle'
+          else 'adult' end as ICUSTAY_AGE_GROUP
+from mimic.icustayevents ie
+inner join mimic.patients pat
+  on ie.subject_id = pat.subject_id;
+
+# Solution to Step 4
+
+select ie.subject_id, ie.hadm_id, ie.icustay_id
+      , ie.intime
+      , ie.outtime
+      , round( months_between(ie.intime,pat.dob)/12 , 2 ) as age
+      
+      , case 
+          when months_between(ie.intime,pat.dob) <= 1 then 'neonate'
+          when months_between(ie.intime,pat.dob) > 1 and months_between(ie.intime,pat.dob) <= 15*12 then 'middle'
+          else 'adult' end as ICUSTAY_AGE_GROUP
+          
+      , round( ie.intime - adm.admittime , 2 ) as preICULOS
+from mimic.icustayevents ie
+inner join mimic.patients pat
+  on ie.subject_id = pat.subject_id
+inner join mimic.admissions adm
+  on ie.hadm_id = adm.hadm_id;
+  
+
+# Solution to Step 5
+
+select ie.subject_id, ie.hadm_id, ie.icustay_id
+      , ie.intime
+      , ie.outtime
+      , round( months_between(ie.intime,pat.dob)/12 , 2 ) as age
+      
+      , case 
+          when months_between(ie.intime,pat.dob) <= 1 then 'neonate'
+          when months_between(ie.intime,pat.dob) > 1 and months_between(ie.intime,pat.dob) <= 15*12 then 'middle'
+          else 'adult' end as ICUSTAY_AGE_GROUP
+          
+      , round( ie.intime - adm.admittime , 2 ) as preICULOS
+      , adm.deathtime
+from mimic.icustayevents ie
+inner join mimic.patients pat
+  on ie.subject_id = pat.subject_id
+inner join mimic.admissions adm
+  on ie.hadm_id = adm.hadm_id;
+  
+
+# Solution to Step 6
+
+select ie.subject_id, ie.hadm_id, ie.icustay_id
+      , ie.intime
+      , ie.outtime
+      , round( months_between(ie.intime,pat.dob)/12 , 2 ) as age
+      
+      , case 
+          when months_between(ie.intime,pat.dob) <= 1 then 'neonate'
+          when months_between(ie.intime,pat.dob) > 1 and months_between(ie.intime,pat.dob) <= 15*12 then 'middle'
+          else 'adult' end as ICUSTAY_AGE_GROUP
+          
+      , round( ie.intime - adm.admittime , 2 ) as preICULOS
+      , adm.deathtime
+      
+      , case when adm.discharge_location = 'DEAD/EXPIRED' then 'Y' else 'N' end
+          as hospital_expire_flag
+          
+from mimic.icustayevents ie
+inner join mimic.patients pat
+  on ie.subject_id = pat.subject_id
+inner join mimic.admissions adm
+  on ie.hadm_id = adm.hadm_id;
+  
+# Solution to Step 7
+
+select ie.subject_id, ie.hadm_id, ie.icustay_id
+      , ie.intime
+      , ie.outtime
+      , round( months_between(ie.intime,pat.dob)/12 , 2 ) as age
+      
+      , case 
+          when months_between(ie.intime,pat.dob) <= 1 then 'neonate'
+          when months_between(ie.intime,pat.dob) > 1 and months_between(ie.intime,pat.dob) <= 15*12 then 'middle'
+          else 'adult' end as ICUSTAY_AGE_GROUP
+          
+      , round( ie.intime - adm.admittime , 2 ) as preICULOS
+      , adm.deathtime
+      
+      , case when adm.discharge_location = 'DEAD/EXPIRED' then 'Y' else 'N' end
+          as hospital_expire_flag
+
+        , case 
+            when adm.deathtime between ie.intime and ie.outtime 
+              then 'Y'
+            when adm.deathtime <= ie.intime -- sometimes there are typographical errors in the death date
+              then 'Y'
+            when adm.dischtime <= ie.outtime and adm.discharge_location = 'DEAD/EXPIRED'
+              then 'Y'
+            else 'N' end 
+          as ICUSTAY_EXPIRE_FLAG
+          
+          
+from mimic.icustayevents ie
+inner join mimic.patients pat
+  on ie.subject_id = pat.subject_id
+inner join mimic.admissions adm
+  on ie.hadm_id = adm.hadm_id;
+
 -->
 
