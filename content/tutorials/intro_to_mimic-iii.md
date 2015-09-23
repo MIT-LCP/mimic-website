@@ -145,5 +145,22 @@ SELECT * FROM age
 
 The above query can now be combined with the **WHERE** and **COUNT** functions described earlier to determine the number of adult patients, whether or not they died, and therefore, their mortality rate.
 
+## 6. ICU Stays 
+
+In the MIMIC-III database, we define an ICU stay to be continuous if a patient is returned to an ICU room within 24 hours of being moved to a ward. Patient ICU movements are recorded in the transfers table: 
+
+``` sql 
+SELECT * FROM transfers
+```
+
+The columns should be fairly self explanatory, click on the transfers table on the left hand side if you need more information about the columns and the data they contain. The 'prev_careunit' and 'curr_careunit' contain the names of the previous and current careunit respectively. The transfers table also contains columns 'prev_wardid' and 'curr_wardid' which contain the IDs of the previous and current careunit respectively. Ward IDs which specify the room whithin a careunit have no corresponding key in order to preserve patient specific information. To see the care unit names: 
+
+``` sql 
+SELECT t.subject_id, t.intime, t.outtime, t.prev_wardid, t.prev_careunit, t.curr_wardid, t.curr_careunit 
+FROM transfers t
+```
+
+The transfers table may have multiple entries per patient to provide information of all movement between various careunits of the hospital. 
+
 -->
 
