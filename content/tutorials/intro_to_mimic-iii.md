@@ -124,7 +124,7 @@ ORDER BY a.hadm_id, p.subject_id;
 A patient's age is given by the difference between their date of birth and the date of their first admission. We can obtain this by combining the above query with another query to provide the ages. Furthermore, we assign categories to different ages: >= 15 years old are adults and the rest are assigned to the 'other' category. The queries are combined using the 'WITH' keyword: 
 
 ``` sql 
-WITH first_admission_time AS(
+WITH first_admission_time AS (
 SELECT p.subject_id, p.dob, p.gender, a.hadm_id, a.admittime,
 MIN (a.admittime)
 OVER (PARTITION BY a.hadm_id, p.subject_id)
@@ -147,7 +147,8 @@ END AS age_group
 FROM first_admission_time
 ORDER BY subject_id,hadm_id
 )
-SELECT * FROM age;
+SELECT * 
+FROM age;
 ```
 
 The above query can now be combined with the **WHERE** and **COUNT** functions described earlier to determine the number of adult patients, whether or not they died, and therefore, their mortality rate. 
@@ -168,7 +169,7 @@ The transfers table may have multiple entries per patient to provide information
 ```sql
 
 SELECT * 
-FROM mimicIII.transfers 
+FROM MIMICIII.transfers 
 WHERE HADM_ID = 112213;
 
 ```
@@ -216,7 +217,7 @@ Then find those deaths that occured while the patients were in the hospital
 ### Step 7 
 Find how many of those deaths occured within the ICU 
 
-## Solutions to tutorial problem in number 7
+## Solutions to the problems in section 8
 
 ### Solution to step 1 
 
@@ -243,15 +244,14 @@ INNER join mimicIII.patients pat
 
 ``` sql 
 SELECT ie.subject_id, ie.hadm_id, ie.icustay_id
-      , ie.intime
-      , ie.outtime
-      , round( months_between(ie.intime,pat.dob)/12 , 2 ) as age
+      , ie.intime, ie.outtime
+      , ROUND (months_between(ie.intime,pat.dob)/12, 2) as age
       , CASE 
           WHEN months_between(ie.intime,pat.dob) <= 1 then 'neonate'
           WHEN months_between(ie.intime,pat.dob) > 1 and months_between(ie.intime,pat.dob) <= 15*12 then 'middle'
           ELSE 'adult' END AS ICUSTAY_AGE_GROUP
-FROM mimicIII.icustayevents ie
-INNER join mimicIII.patients pat
+FROM MIMICIII.icustayevents ie
+INNER JOIN MIMICIII.patients pat
   ON ie.subject_id = pat.subject_id;
 ```
 
@@ -268,11 +268,11 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id
             AND months_between(ie.intime,pat.dob) <= 15*12 THEN 'middle'
           ELSE 'adult' end as ICUSTAY_AGE_GROUP
           
-      , ROUND( ie.intime - adm.admittime , 2 ) as preICULOS
-FROM mimicIII.icustayevents ie
-INNER join mimicIII.patients pat
+      , ROUND (ie.intime - adm.admittime, 2) as preICULOS
+FROM MIMICIII.icustayevents ie
+INNER JOIN MIMICIII.patients pat
   ON ie.subject_id = pat.subject_id
-INNER join mimicIII.admissions adm
+INNER JOIN MIMICIII.admissions adm
   ON ie.hadm_id = adm.hadm_id;
   ```  
 
@@ -292,10 +292,10 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id
           
       , ROUND( ie.intime - adm.admittime , 2 ) AS preICULOS
       , adm.deathtime
-FROM mimicIII.icustayevents ie
-INNER join mimicIII.patients pat
+FROM MIMICIII.icustayevents ie
+INNER Join MIMICIII.patients pat
   ON ie.subject_id = pat.subject_id
-INNER join mimicIII.admissions adm
+INNER JOIN MIMICIII.admissions adm
   ON ie.hadm_id = adm.hadm_id;
  ```
 
@@ -356,9 +356,9 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id, ie.intime, ie.outtime
           AS ICUSTAY_EXPIRE_FLAG
           
           
-FROM mimicIII.icustayevents ie
-INNER JOIN mimicIII.patients pat
+FROM MIMICIII.icustayevents ie
+INNER JOIN .patients pat
   ON ie.subject_id = pat.subject_id
-INNER join mimicIII.admissions adm
+INNER join MIMICIII.admissions adm
   ON ie.hadm_id = adm.hadm_id;
   ```
