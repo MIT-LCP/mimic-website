@@ -1,3 +1,13 @@
++++
+date = "2015-09-01T14:02:13-04:00"
+title = "Intro to MIMIC-III"
+draft = true
+linktitle = "Intro to MIMIC-III"
+weight = 1
+toc = "true"
+
++++
+
 # Quick guide on installing PostgreSQL on Ubuntu
 
 ```sh
