@@ -3,7 +3,7 @@ date = "2015-09-01T14:02:13-04:00"
 title = "Intro to MIMIC-III"
 draft = false
 linktitle = "Intro to MIMIC-III"
-weight = 1
+weight = 2
 toc = "true"
 
 [menu]
@@ -13,6 +13,8 @@ toc = "true"
 +++
 
 # Introduction to MIMIC-III
+
+Prerequisites: *This tutorial assumes that you have an active connection to an instance of MIMIC-III running on Postgres.*
 
 ## 1. Overview 
 
@@ -89,7 +91,7 @@ GROUP BY gender;
 
 A flag which records whether or not a patient died in the hospital is stored in the patients table. Count the number of patients who died using the following query: 
 
-``` sql
+``` sql 
 SELECT hospital_expire_flag, COUNT(*)
 FROM patients
 GROUP BY hospital_expire_flag;
@@ -101,7 +103,7 @@ The database also contains date of death for patients who died inside the hospit
 
 To determine the adult mortality rate, we must first determine adult patients. We define adults as those patients who are 15 or more years old at the date of their first admission. To perform this query, we must first combine the patients and admissions tables to find patient admission dates, and their date of birth. Please note that the table naming in the query below. We have denoted 'admissions' with the alias 'a' and 'patients' with alias 'p': 
 
-``` sql
+``` sql 
 SELECT p.subject_id, p.dob, a.hadm_id, a.admittime, p.hospital_expire_flag 
 FROM admissions a
 INNER JOIN patients p
@@ -110,7 +112,7 @@ ON p.subject_id = a.subject_id;
 
 Next, we find the minimum(earliest) admission date for each patient. This requires the use of the new functions, the 'MIN' function, which obtains the minimum value, and the 'PARTITION BY' function which determines the groups over which the minimum value is obtained, in this case, we determine the minimum time of admission for each patient: 
 
-``` sql
+``` sql 
 SELECT p.subject_id, p.dob, a.hadm_id, a.admittime, p.hospital_expire_flag, 
 MIN (a.admittime)
 OVER (PARTITION BY p.subject_id)
@@ -123,7 +125,7 @@ ORDER BY a.hadm_id, p.subject_id;
 
 A patient's age is given by the difference between their date of birth and the date of their first admission. We can obtain this by combining the above query with another query to provide the ages. Furthermore, we assign categories to different ages: >= 15 years old are adults and the rest are assigned to the 'other' category. The queries are combined using the 'WITH' keyword: 
 
-``` sql 
+``` sql  
 WITH first_admission_time AS (
 SELECT p.subject_id, p.dob, p.gender, a.hadm_id, a.admittime,
 MIN (a.admittime)
@@ -157,7 +159,7 @@ The above query can now be combined with the **WHERE** and **COUNT** functions d
 
 In the MIMIC-III database, we define an ICU stay to be continuous if a patient is returned to an ICU room within 24 hours of being moved to a ward. Patient ICU movements are recorded in the transfers table: 
 
-``` sql 
+``` sql  
 SELECT * 
 FROM transfers;
 ```
@@ -166,12 +168,10 @@ The columns should be fairly self explanatory, click on the transfers table on t
 
 The transfers table may have multiple entries per patient to provide information of all movement between various careunits of the hospital. The first entry in the transfers table for a patient who comes into the ICU will have nothing in the 'prev_careunit' column and similarly, the last entry for a patient will have nothing in the 'curr_careunit'. Patient entries that have nothing in both previous and current careunit columns signifies that patients have been transfered between units that do not fall under any of the ICUs. An example query for one patient and result from the transfers table is shown below. Note that columns 'intime', 'outtime', and 'los' have been truncated. 
 
-```sql
-
+``` sql
 SELECT * 
 FROM MIMICIII.transfers 
 WHERE HADM_ID = 112213;
-
 ```
 
 row_id| subject_id | hadm_id | icustay_id | dbsource | eventtype | prev_careunit | curr_careunit | prev_wardid | curr_wardid
