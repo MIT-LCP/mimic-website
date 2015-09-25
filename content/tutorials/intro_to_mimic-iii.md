@@ -174,15 +174,15 @@ FROM MIMICIII.transfers
 WHERE HADM_ID = 112213;
 ```
 
-row_id| subject_id | hadm_id | icustay_id | dbsource | eventtype | prev_careunit | curr_careunit | prev_wardid | curr_wardid
--------- | ------------ | --------- | ------------ | ----------- | ----------- | --------------- | --------------- | ------------- | -------------
-   54 |         12 |  112213 |            | carevue    | admit     |               |               |             |          27
-   55 |         12 |  112213 |            | carevue    | transfer  |               |               |          27 |           2 
-   56 |         12 |  112213 |     232669 | carevue    | transfer  |               | SICU          |           2 |          23 
-   57 |         12 |  112213 |            | carevue    | transfer  | SICU          |               |          23 |          49 
-   58 |         12 |  112213 |     232669 | carevue    | transfer  |               | SICU          |          49 |          23 
-   59 |         12 |  112213 |            | carevue    | transfer  | SICU          |               |          23 |          36 
-   60 |         12 |  112213 |            | carevue    | discharge |               |               |          36 |            
+row_id| subject_id | hadm_id | icustay_id | ...
+-------- | ------------ | --------- | ------------ | ...
+   54 |         12 |  112213 |            | ...
+   55 |         12 |  112213 |            | ...
+   56 |         12 |  112213 |     232669 | ...
+   57 |         12 |  112213 |            | ...
+   58 |         12 |  112213 |     232669 | ...
+   59 |         12 |  112213 |            | ...
+   60 |         12 |  112213 |            | ...       
 
 <!-- talk about services --> 
 
@@ -274,7 +274,7 @@ INNER JOIN MIMICIII.patients pat
   ON ie.subject_id = pat.subject_id
 INNER JOIN MIMICIII.admissions adm
   ON ie.hadm_id = adm.hadm_id;
-  ```  
+```  
 
 ### Solution to step 5
 
@@ -297,7 +297,7 @@ INNER Join MIMICIII.patients pat
   ON ie.subject_id = pat.subject_id
 INNER JOIN MIMICIII.admissions adm
   ON ie.hadm_id = adm.hadm_id;
- ```
+```
 
 ### Solution to step 6
 
@@ -325,7 +325,7 @@ INNER join MIMICIII.patients pat
   ON ie.subject_id = pat.subject_id
 INNER join MIMICIII.admissions adm
   ON ie.hadm_id = adm.hadm_id;
-  ```
+```
   
 ### Solution to step 7
 
@@ -361,4 +361,4 @@ INNER JOIN .patients pat
   ON ie.subject_id = pat.subject_id
 INNER join MIMICIII.admissions adm
   ON ie.hadm_id = adm.hadm_id;
-  ```
+```
