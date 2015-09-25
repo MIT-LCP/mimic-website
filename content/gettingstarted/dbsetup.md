@@ -13,16 +13,13 @@ toc = "false"
 
 # Setting up the database
 
-MIMIC is provided as a collection of comma-separated (CSV) files, along with scripts to help users import the data into popular database systems. Documentation is currently available for MySQL, Postgres and Oracle.
+Once your [application to access MIMIC](http://mimic.physionet.org/gettingstarted/access/) has been approved, you will be granted access to the 'MIMIC-III Clinical Database' project page on PhysioNet:
+https://physionet.org/works/MIMICIIIClinicalDatabase/
 
-# Oracle
+MIMIC is provided as a collection of comma-separated (CSV) files, along with scripts to help users import the data into popular database systems. Scripts are available in the [MIMIC code repostory](https://github.com/MIT-LCP/mimic-code) for Postgres, MySQL, and Oracle:
+https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic
 
-Scripts for importing the data into Oracle are provided in the GitHub repository (forthcoming).
+For a tutorial on installing MIMIC in a local Postgres database, see:
+http://mimic.physionet.org/tutorials/install_mimic_locally/
 
-# Postgres
 
-Scripts for importing the data into Postgres are provided in the GitHub repository (forthcoming).
-
-# MySQL
-
-Scripts for importing the data into MySQL are provided in the GitHub repository (forthcoming).
