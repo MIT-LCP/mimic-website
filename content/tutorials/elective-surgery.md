@@ -291,4 +291,4 @@ Admissions | 58976
 
 TODO: provide more detail on above table
 
-Since there are only 40 `HADM_ID` we can investigate them.
+Since there are only 40 `HADM_ID` we can investigate the notes associated with these admissions to determine whether they are truly surgical admissions.
