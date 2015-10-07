@@ -13,16 +13,30 @@ toc = "false"
 
 # Setting up the database
 
-MIMIC is provided as a collection of comma-separated (CSV) files, along with scripts to help users import the data into popular database systems. Documentation is currently available for MySQL, Postgres and Oracle.
+## Creating a local version of MIMIC from the CSV files
 
-# Oracle
+Once your [application to access MIMIC](http://mimic.physionet.org/gettingstarted/access/) has been approved, you will be granted access to the 'MIMIC-III Clinical Database' project page on PhysioNet:
+https://physionet.org/works/MIMICIIIClinicalDatabase/
 
-Scripts for importing the data into Oracle are provided in the GitHub repository (forthcoming).
+MIMIC is provided as a collection of comma-separated (CSV) files, along with scripts to help users import the data into popular database systems. Scripts are available in the [MIMIC code repostory](https://github.com/MIT-LCP/mimic-code) for Postgres, MySQL, and Oracle:
+https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic
 
-# Postgres
+For a tutorial on installing MIMIC in a local Postgres database, see:
+http://mimic.physionet.org/tutorials/install_mimic_locally/
 
-Scripts for importing the data into Postgres are provided in the GitHub repository (forthcoming).
+## Creating and connecting to a cloud version of MIMIC with Amazon Relational Database Service (RDS)
 
-# MySQL
+Amazon Relational Database Service allows a relational database to be created on a remote cloud server. Tutorial to follow...
 
-Scripts for importing the data into MySQL are provided in the GitHub repository (forthcoming).
+## Creating a cloud version of MIMIC with Microsoft Azure
+
+Microsoft Azure's SQL Database allows a relational database to be created on a remote cloud server. Tutorial to follow...
+
+
+
+
+
+
+
+
+
