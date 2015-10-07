@@ -13,7 +13,7 @@ toc = "true"
 
 # Requesting access
 
-The latest version of MIMIC is MIMIC-III (version 1.0) comprising nearly 58,000 hospital admissions for over 48,000 distinct patients. The data spans June 2001 - October 2012. The database, although de-identified, still contains detailed information regarding the clinical care of patients, so must be treated with appropriate care and respect. 
+The latest version of MIMIC is MIMIC-III comprising nearly 58,000 hospital admissions for over 48,000 distinct patients. The data spans June 2001 - October 2012. The database, although de-identified, still contains detailed information regarding the clinical care of patients, so must be treated with appropriate care and respect. 
 
 Researchers seeking to use the database must formally request access with the steps below:
 
