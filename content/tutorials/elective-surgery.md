@@ -168,7 +168,7 @@ NumAdm | NumSingleService | PercentWithSingleService
 ---- | ---- | ----
 58976 | 48079 | 81.52
 
-So we can see that 80\% of hospital admissions have only one service. In these cases it is trivial to define elective surgery, as the patient is only admitted under one service (which will have the suffix 'SURG') and will have 'ELECTIVE' as their `ADMISSION_TYPE`.
+So we can see that 80% of hospital admissions have only one service. In these cases it is trivial to define elective surgery, as the patient is only admitted under one service (which will have the suffix 'SURG') and will have 'ELECTIVE' as their `ADMISSION_TYPE`.
 
 For the remaining admissions, we must determine a method of defining their surgical status. One method could be defining a patient as surgical if their *first* service is surgical. This could be accomplished as follows:
 
@@ -211,11 +211,11 @@ left join multipleservice ms
 
 which returns:
 
-NumAdm | NumSingleService | \% with single services | NumMultiService | \% with multiple services
+NumAdm | NumSingleService | % with single services | NumMultiService | % with multiple services
 ---- | ---- | ---- | ---- | ----
 58976 | 48079 | 81.52 | 10847 | 99.92
 
-Here we can see that this method gives us a definition of surgical status for 99.92\%. When performing retrospective data analysis, 99.92\% data completion is a very nice number to see.
+Here we can see that this method gives us a definition of surgical status for 99.92%. When performing retrospective data analysis, 99.92% data completion is a very nice number to see.
 However, we have made an assumption with this extraction: we assumed that all patients whose first service was surgical were admitted for a pre-planned elective surgery. This sounds reasonable, but all assumptions should be validated before they are used in an analysis. We can investigate the number of elective admissions under a variety of constraints as follows:
 
 ```sql
@@ -241,9 +241,12 @@ with singleservice as
   where ss.hadm_id is null
 )
 select
---  adm.subject_id, adm.hadm_id, adm.admittime, adm.dischtime
---, ss.curr_service as singleservice, ms.curr_service as multservice, adm.admission_type, adm.diagnosis --, adm.admission_location, adm.discharge_location
-count(distinct adm.hadm_id) as NumAdm, count(ss.curr_service) as NumSingleService
+
+-- How many admissions are there?
+ count(distinct adm.hadm_id) as NumAdm
+
+-- How many admissions have only a single service?
+, count(ss.curr_service) as NumSingleService
 
 -- How many admissions have multiple services?
 , count(case when serviceorder = 1 then ms.curr_service else null end)
@@ -278,17 +281,78 @@ left join multipleservice ms
 
 This results in the following table (transposed for reading convenience)
 
-Column | count
----- | ----
-Admissions | 58976
-.. with single service | 48079
-.. with multiple services | 10847
-.... and the first service is surgical | 1800
-...... and it occurrs within 8 hours of admission | 1715
-.... number of surgical services within 8 hours of admission | 2264
- | 239
- | 278
+Name | Description | count
+---- | ---- | ----
+NumAdm | Admissions | 58976
+NumSingleService | .. with single service | 48079
+NumMS  | .. with multiple services | 10847
+NumMS_Surgical  | .... and the first service is surgical | 1800
+NumMS_FirstSurg8hr | ...... and it occurrs within 8 hours of admission | 1715
+NumMSElect_FirstSurg8hr | ........ and it's an elective admission | 239
+NumMS_AnySurg8hr | Number of admissions with surgical services within 8 hours of admission | 2264
+NumMSElect_AnySurg8hr | .. and it's an elective admission  | 278
 
-TODO: provide more detail on above table
+Since there are only 40 `HADM_ID` who had a service within 8 hours that was *not* their first service, it's a small enough task that we can investigate the discharge summaries associated with these admissions to determine whether they are truly surgical admissions.
 
-Since there are only 40 `HADM_ID` we can investigate the notes associated with these admissions to determine whether they are truly surgical admissions.
+# Final query
+
+```sql
+
+-- table with all hospital admissions who only ever had 1 service
+with singleservice as
+(
+  select hadm_id, curr_service from mimic2v30.services
+  -- filter down to *only* admissions with 1 service
+  where hadm_id in
+  (
+    select hadm_id from mimic2v30.services group by hadm_id having count(*)<2
+  )
+)
+-- table with hospital admissions who had multiple services
+, multipleservice as
+(
+  select s.hadm_id, s.TRANSFERTIME, s.PREV_SERVICE, s.CURR_SERVICE
+  , ROW_NUMBER() over (partition by s.hadm_id ORDER BY s.transfertime) as ServiceOrder
+  from mimic2v30.services s
+  -- join to single services table to filter these HADM_ID out
+  left join singleservice ss
+    on s.hadm_id = ss.hadm_id
+  where ss.hadm_id is null
+)
+select
+  adm.subject_id, adm.hadm_id, adm.admittime, adm.dischtime
+, case when adm.ADMISSION_TYPE != 'ELECTIVE' then 0
+    when ss.curr_service is not null and ss.curr_service like '%SURG%' then 1
+    when ms.curr_service is not null and ms.curr_service like '%SURG%' then 1
+    else 0
+  end as ElectiveSurgery
+
+from mimic2v30.admissions adm
+left join singleservice ss
+  on adm.hadm_id = ss.hadm_id
+left join multipleservice ms
+  on adm.hadm_id = ms.hadm_id and ServiceOrder = 1;
+
+ ```
+
+ This query could be simplified by collapsing the single service and multiple service queries into a single query which extracts the first service, regardless of the number of services a patient has, as follows:
+
+ ```sql
+ -- table with all hospital admissions and their services
+ ss as
+ (
+   select s.hadm_id, s.TRANSFERTIME, s.PREV_SERVICE, s.CURR_SERVICE
+   , ROW_NUMBER() over (partition by s.hadm_id ORDER BY s.transfertime) as ServiceOrder
+   from mimic2v30.services s
+ )
+ select
+   adm.subject_id, adm.hadm_id, adm.admittime, adm.dischtime
+ , case when adm.ADMISSION_TYPE != 'ELECTIVE' then 0
+     when ss.curr_service is not null and ss.curr_service like '%SURG%' then 1
+     else 0
+   end as ElectiveSurgery
+
+ from mimic2v30.admissions adm
+ left join ss
+   on adm.hadm_id = ms.hadm_id and ServiceOrder = 1;
+  ```
