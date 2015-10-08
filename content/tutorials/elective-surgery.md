@@ -294,6 +294,17 @@ NumMSElect_AnySurg8hr | .. and it's an elective admission  | 278
 
 Since there are only 40 `HADM_ID` who had a service within 8 hours that was *not* their first service, it's a small enough task that we can investigate the discharge summaries associated with these admissions to determine whether they are truly surgical admissions.
 
+```sql
+select adm.hadm_id, adm.admittime, adm.dischtime
+, ne.chartdate, ne.category, ne.description
+, ne.text
+from mimic2v30.admissions adm
+left join mimic2v30.noteevents ne
+  on adm.hadm_id = ne.hadm_id and ne.category = 'Discharge summary'
+where adm.hadm_id = 100010
+order by hadm_id;
+```
+
 # Final query
 
 ```sql
@@ -337,22 +348,23 @@ left join multipleservice ms
 
  This query could be simplified by collapsing the single service and multiple service queries into a single query which extracts the first service, regardless of the number of services a patient has, as follows:
 
- ```sql
- -- table with all hospital admissions and their services
- ss as
- (
-   select s.hadm_id, s.TRANSFERTIME, s.PREV_SERVICE, s.CURR_SERVICE
-   , ROW_NUMBER() over (partition by s.hadm_id ORDER BY s.transfertime) as ServiceOrder
-   from mimic2v30.services s
- )
- select
-   adm.subject_id, adm.hadm_id, adm.admittime, adm.dischtime
- , case when adm.ADMISSION_TYPE != 'ELECTIVE' then 0
-     when ss.curr_service is not null and ss.curr_service like '%SURG%' then 1
-     else 0
-   end as ElectiveSurgery
+```sql
+-- table with all hospital admissions and their services
+with ss as
+(
+ select s.hadm_id, s.TRANSFERTIME, s.PREV_SERVICE, s.CURR_SERVICE
+ , ROW_NUMBER() over (partition by s.hadm_id ORDER BY s.transfertime) as ServiceOrder
+ from mimic2v30.services s
+)
+select
+ adm.subject_id, adm.hadm_id, adm.admittime, adm.dischtime
+ , adm.admission_type, ss.curr_service
+, case when adm.ADMISSION_TYPE != 'ELECTIVE' then 0
+   when ss.curr_service is not null and ss.curr_service like '%SURG%' then 1
+   else 0
+ end as ElectiveSurgery
 
- from mimic2v30.admissions adm
- left join ss
-   on adm.hadm_id = ms.hadm_id and ServiceOrder = 1;
-  ```
+from mimic2v30.admissions adm
+left join ss
+ on adm.hadm_id = ss.hadm_id and ServiceOrder = 1;
+```
