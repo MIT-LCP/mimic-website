@@ -91,7 +91,72 @@ Number of admissions with ICU data | 35407 |
 .. with callout | 28623 | 81%
 
 So clearly we have quite a few ICU admissions who do not have an entry in the call out table: almost 20%!
-We will investigate why shortly.
+
+## Histograms
+
+Knowing what time of day a patient is discharged can be very interesting. Here we have a query which groups call out times and discharge times by the hour of the day:
+
+```sql
+with call as
+(
+select ca.hadm_id, ie.icustay_id, ie.outtime
+-- group by the hour of ICU discharge
+, EXTRACT(HOUR FROM cast(ie.outtime as timestamp)) as bucket_outtime
+-- group by the callout time
+, EXTRACT(HOUR FROM cast(ca.createtime as timestamp)) as bucket_callout
+from ca
+inner join mimic2v30.icustayevents ie
+  on ca.hadm_id = ie.hadm_id
+where ca.CREATETIME is not null
+and ca.hadm_id in
+(select hadm_id from mimic2v30.icustayevents group by hadm_id having count(*)<2)
+)
+, createhist as
+(
+select bucket_callout as HH, count(*) as ct from call
+group by bucket_callout
+)
+, callhist as
+(
+select bucket_outtime as HH, count(*) as ct from call
+group by bucket_outtime
+)
+select callhist.HH
+, createhist.ct as CalledOutTime
+, callhist.ct as CalledOutDischTime
+from callhist
+left join createhist on callhist.HH = createhist.HH
+order by HH;
+```
+
+Hour | Number called out | Number discharged
+---- | ---- | ----
+00:00 | 6 | 501
+01:00 | 6 | 349
+02:00 | 5 | 168
+03:00 | 3 | 106
+04:00 | 8 | 50
+05:00 | 19 | 66
+06:00 | 60 | 65
+07:00 | 1663 | 46
+08:00 | 4034 | 48
+09:00 | 4816 | 147
+10:00 | 5183 | 503
+11:00 | 4360 | 1102
+12:00 | 2730 | 1292
+13:00 | 1586 | 1530
+14:00 | 1659 | 2216
+15:00 | 1108 | 2546
+16:00 | 859 | 3504
+17:00 | 675 | 4270
+18:00 | 446 | 4036
+19:00 | 199 | 1222
+20:00 | 120 | 1804
+21:00 | 82 | 2157
+22:00 | 58 | 1406
+23:00 | 6 | 557
+
+Here we can see most call outs happen between 07:00 and 13:00 and most discharges happen between 14:00 and 20:00. This lines up with intuition: call outs occur during rounds, and most discharges occur when a bed has been freed in the ward (say after a patient has been discharged at the end of the day).
 
 # Base cohort
 
@@ -132,6 +197,19 @@ select * from ca;
 ```
 
 This query defines our temporary table, ca, which will be referenced in all the subsequent queries.
+
+## Missing callout data
+
+```sql
+select *
+from ca
+where ca.createtime is null
+order by hadm_id;
+```
+
+Let's pick one of the `HADM_ID` to investigate..
+
+
 
 ## Acknowledge status
 
