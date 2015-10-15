@@ -90,7 +90,256 @@ Number of admissions | 36140 |
 Number of admissions with ICU data | 35407 |
 .. with callout | 28623 | 81%
 
-So clearly we have quite a few ICU admissions who do not have an entry in the call out table: almost 20%!
+So clearly we have quite a few ICU admissions who do not have an entry in the call out table: almost 20%! These patients likely died in the ICU. This can be a little tricky to define because we only have information on death in hospital, not death in the ICU. We will have to use the time of death and proximity to ICU discharge to estimate whether the patient died in the ICU.
+
+# Patients who died in the ICU
+
+# Multiple call outs for a single hospital admission
+
+These could occur because:
+
+1. A patient was accidentally called out
+2. A patient deteriorated and was no longer fit to stay on the ward
+
+
+```sql
+with ca as
+(
+select
+  adm.SUBJECT_ID, adm.HADM_ID
+
+  , call.HADM_ID as callout_hadm_id
+
+  , adm.admittime, adm.dischtime
+  -- callout variables
+  , call.createtime as CALLOUT_TIME
+
+  -- this is when a coordinator acknowledged the call out request
+  , call.acknowledge_status, call.acknowledgetime
+
+  -- this is the status of the call out
+  , call.callout_status
+
+  -- any updates done to the call out...
+  , call.updatetime
+
+  -- the final outcome (discharged or cancelled) for the call out
+  , call.callout_outcome, call.outcometime
+
+  , HAS_CHARTEVENTS_DATA
+
+  from mimic2v30.admissions adm
+  inner join mimic2v30.patients pat
+    on adm.subject_id = pat.subject_id
+  left join  mimic2v30.callout call
+    on adm.subject_id = call.subject_id and adm.hadm_id = call.hadm_id
+
+  -- filter to only patients admitted after call out data collection began
+  where adm.hadm_id in
+  (
+  select hadm_id from mimic2v30_phi_release.admissions
+  where admittime > (select min(createtime) from mimic2v30_phi_release.callout)
+  )
+  and months_between(adm.admittime,pat.dob) > 1
+)
+select
+SUBJECT_ID, HADM_ID, CALLOUT_HADM_ID
+, ACKNOWLEDGE_STATUS, ACKNOWLEDGETIME
+, UPDATETIME
+, CALLOUT_STATUS
+, CALLOUT_TIME
+, CALLOUT_OUTCOME
+, OUTCOMETIME
+--  count(hadm_id) as NumAdmissions
+--  , sum(HAS_CHARTEVENTS_DATA) as NumAdmWithICUData
+--  , count(callout_hadm_id) as NumAdmWithCallout
+--  , count(case when HAS_CHARTEVENTS_DATA = 1 then callout_hadm_id else null end) as NumAdmWithICUDataAndCallout
+from ca
+where hadm_id in (select hadm_id from ca group by hadm_id having count(*)>1)
+order by hadm_id, admittime, CALLOUT_TIME;
+```
+
+## Investigation of single hospital admissions
+
+A lot of information about a table can be gleaned from investigating single patients and understanding the context of their admission from various notes. Here we investigate `HADM_ID` = 100007.
+
+```sql
+with ca as
+(
+select
+  adm.SUBJECT_ID, adm.HADM_ID
+
+  , call.HADM_ID as callout_hadm_id
+
+  , adm.admittime, adm.dischtime
+  -- callout variables
+  , call.createtime as CALLOUT_TIME
+
+  -- this is when a coordinator acknowledged the call out request
+  , call.acknowledge_status, call.acknowledgetime
+
+  -- this is the status of the call out
+  , call.callout_status
+
+  -- any updates done to the call out...
+  , call.updatetime
+
+  -- the final outcome (discharged or cancelled) for the call out
+  , call.callout_outcome, call.outcometime
+
+  , HAS_CHARTEVENTS_DATA
+
+  from mimic2v30.admissions adm
+  inner join mimic2v30.patients pat
+    on adm.subject_id = pat.subject_id
+  left join  mimic2v30.callout call
+    on adm.subject_id = call.subject_id and adm.hadm_id = call.hadm_id
+
+  -- filter to only patients admitted after call out data collection began
+  where adm.hadm_id in
+  (
+  select hadm_id from mimic2v30_phi_release.admissions
+  where admittime > (select min(createtime) from mimic2v30_phi_release.callout)
+  )
+  and months_between(adm.admittime,pat.dob) > 1
+)
+select
+SUBJECT_ID, HADM_ID, CALLOUT_HADM_ID
+, ACKNOWLEDGE_STATUS, ACKNOWLEDGETIME
+, UPDATETIME
+, CALLOUT_STATUS
+, CALLOUT_TIME
+, CALLOUT_OUTCOME
+, OUTCOMETIME
+from ca
+where hadm_id = 100007
+order by hadm_id, admittime, CALLOUT_TIME;
+```
+
+The result is:
+
+SUBJECT_ID | HADM_ID | ADMITTIME | DISCHTIME
+---- | ---- | ---- | ----
+23018 | 100007 | 2145-03-31 05:33:00 | 2145-04-07 12:40:00
+
+ACKNOWLEDGE STATUS | ACKNOWLEDGE TIME | UPDATE TIME | CALLOUT STATUS | CALLOUT TIME | OUTCOME STATUS | OUTCOME TIME
+---- | ---- | ---- | ---- | ---- | ---- | ---- | ----
+Revised |  | 04-01 15:12:03 | Inactive | 04-01 08:52:08 | Discharged | 04-01 18:10:04
+Acknowledged | 04-03 11:28:20 | 04-03 13:16:56 | Inactive | 04-03 08:33:47 | Cancelled | 04-03 13:16:56
+Acknowledged | 04-04 08:42:26 | 04-04 08:02:54 | Inactive | 04-04 08:02:54 | Discharged | 04-04 12:55:02
+
+<!-- Two points to make with the above table:
+1) Short (<1 day) readmissions can be captured by the call out table
+2) Canceled call outs are poorly understood
+-->
+
+### Unexpected readmission
+
+Looking at the same patient in the transfers table:
+
+```sql
+select
+  eventtype, icustay_id, curr_careunit, intime, outtime
+from mimic2v30.transfers where hadm_id = 100007;
+```
+
+Event | ICUSTAY_ID | Care unit | In time | Out time
+---- | ---- | ---- | ---- | ----
+admit |  |  | 2145-03-31 05:34:18 | 2145-03-31 10:17:23
+transfer | 217937 | SICU | 2145-03-31 10:17:23 | 2145-04-01 17:46:05
+transfer |  |  | 2145-04-01 17:46:05 | 2145-04-01 23:59:49
+transfer |  |  | 2145-04-01 23:59:49 | 2145-04-02 16:11:46
+transfer | 217937 | TSICU | 2145-04-02 16:11:46 | 2145-04-04 12:41:10
+transfer |  |  | 2145-04-04 12:41:10 | 2145-04-07 12:41:04
+discharge |  |  | 2145-04-07 12:41:04 |
+
+We can see that we have assigned the patient the same `ICUSTAY_ID` using our rule of readmission within one day. However they were called out between 04-01 and 04-02, implying that perhaps they were discharged and readmitted. Let's investigate the notes.
+
+```sql
+select * from mimic2v30.noteevents ne
+where hadm_id = 100007
+order by chartdate, charttime;
+```
+
+The end of a note at 2145-04-01 15:26:00 states: "Transfer pt to [Hospital Ward Name 53] 9 when telemetry bed becomes available".  
+
+A note during the subsequent transfer to the TSICU states: "small bowel resection with new pneumonia (??aspiration) and confusion. P: continue current antibiotics." So it appears this is an unexpected readmission! So, this implies we should define ICU stays using the call out table, rather than the ICUSTAYEVENTS table.
+
+
+### Canceled callout
+
+`HADM_ID` 100007 has a call out event at 04-03 08:33:47 that was cancelled at 04-03 13:16:56.
+If we investigate a nursing note at 04-03 05:13:00 the last phrase is "Transfer to floor.". The subsequent note describes the patient's condition but does not make it clear whether they deteriorated and it was decided to keep them on the unit.
+
+### Other patients listed by HADM_ID
+
+100131 has an `ACKNOWLEDGE_TIME` occurring 7 minutes after their `OUTCOME_TIME` for a cancelled callout. Perhaps this was an accidental call out as it was cancelled 13 seconds after it was input.
+
+100137 (CCU patient) has " ?C/O to floor if groin stable. " before a call out event that is cancelled 3 hours after it is created. The subsequent note reads "CV - pt c/o chest pain as well as l arm pain x 3 this am, occuring during rest.  Pt rec'd sl ntg x1 w/ relief for each incident.  No ecg changes noted.  Decision by team and pt, for further intervention on RCA.  Unable to perform today."
+
+100160 was called out at 16:15 but has a clear nursing note at 17:00 to "REMAIN IN MICU."
+
+100242 on 2161-09-18 00:00:00 "To floor at 1730". No nursing notes earlier. Was in CVICU between 09-01 to 09-03, then 09-06 to 09-07, but no call out information there???
+
+#### Queries used
+
+```sql
+select
+  eventtype, icustay_id, curr_careunit, intime, outtime
+from mimic2v30_phi_release.transfers where hadm_id = 100242;
+```
+
+```sql
+with ca as
+(
+select
+  adm.SUBJECT_ID, adm.HADM_ID
+
+  , call.HADM_ID as callout_hadm_id
+
+  , adm.admittime, adm.dischtime
+  -- callout variables
+  , call.createtime as CALLOUT_TIME
+
+  -- this is when a coordinator acknowledged the call out request
+  , call.acknowledge_status, call.acknowledgetime
+
+  -- this is the status of the call out
+  , call.callout_status
+
+  -- any updates done to the call out...
+  , call.updatetime
+
+  -- the final outcome (discharged or cancelled) for the call out
+  , call.callout_outcome, call.outcometime
+
+  , HAS_CHARTEVENTS_DATA
+
+  from mimic2v30.admissions adm
+  inner join mimic2v30.patients pat
+    on adm.subject_id = pat.subject_id
+  left join  mimic2v30.callout call
+    on adm.subject_id = call.subject_id and adm.hadm_id = call.hadm_id
+
+  -- filter to only patients admitted after call out data collection began
+  where months_between(adm.admittime,pat.dob) > 1
+)
+select
+SUBJECT_ID, HADM_ID, CALLOUT_HADM_ID
+, ACKNOWLEDGE_STATUS, ACKNOWLEDGETIME
+, UPDATETIME
+, CALLOUT_STATUS
+, CALLOUT_TIME
+, CALLOUT_OUTCOME
+, OUTCOMETIME
+--  count(hadm_id) as NumAdmissions
+--  , sum(HAS_CHARTEVENTS_DATA) as NumAdmWithICUData
+--  , count(callout_hadm_id) as NumAdmWithCallout
+--  , count(case when HAS_CHARTEVENTS_DATA = 1 then callout_hadm_id else null end) as NumAdmWithICUDataAndCallout
+from ca
+where hadm_id in (select hadm_id from ca group by hadm_id having count(*)>1)
+order by hadm_id, admittime, CALLOUT_TIME;
+```
 
 ## Histograms
 
