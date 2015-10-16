@@ -100,7 +100,7 @@ CREATE INDEX ADMISSIONS_IDX01
   ON MIMICIII.ADMISSIONS (SUBJECT_ID,HADM_ID);
 ``` 
 
-## 8. MIMIC-III is ready for analyses
+## 8. MIMIC-III is ready for analysis
 
 You should now have a working copy of MIMIC-III ready to query with the psql command line tool. Try, for example, counting the number of patients in the database:
 
