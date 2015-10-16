@@ -110,7 +110,7 @@ from MIMICIII.PATIENTS;
 -- returns x rows
 ```
 
-## 9 (optional). Install PgAdminIII
+## 9. Install PgAdminIII (optional) 
 
 PgAdmin is a graphical user interface ('GUI') tool for administering Postgres databases. For installation guidelines see: http://www.pgadmin.org/download/
 
