@@ -16,7 +16,7 @@ toc = "true"
 
 **Table source:** Hospital database.
 
-**Table purpose:** Provides information when a patient was ready for discharge, and when the patient was actually discharged.
+**Table purpose:** Provides information when a patient was READY for discharge from the ICU, and when the patient was actually discharged.
 
 **Number of rows:** 34499
 
