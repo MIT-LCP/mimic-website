@@ -13,4 +13,4 @@ toc = "true"
 
 # Forum
 
-To encourage collaboration and knowledge-sharing, we plan to host a forum. This page will be updated when the forum is prepared.
+To encourage collaboration and knowledge-sharing, we will be hosting a forum. This page will be updated when the forum is prepared.
