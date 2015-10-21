@@ -33,21 +33,24 @@ The following tables are used to define and track patient stays:
 
 Each `ICUSTAY_ID` corresponds to a single `HADM_ID` and a single `SUBJECT_ID`. Each `HADM_ID` corresponds to a single `SUBJECT_ID`. A single `SUBJECT_ID` can correspond to multiple `HADM_ID` (multiple hospitalizations of the same patient), and multiple `ICUSTAY_ID` (multiple ICU stays either within the same hospitalization, or across multiple hospitalizations, or both).
  
-The following tables contain data associated with each patient:
+The following tables contain data collected in the critical care unit:
 
  - **CAREGIVERS**: Every caregiver who has recorded data in the database (defines `CGID`)
  - **CHARTEVENTS**: All charted observations for all patients
- - **CPTEVENTS**: Procedures recorded as Current Procedural Terminology (CPT) codes
  - **DATETIMEEVENTS**: Recorded observations which relate to dates (anonymized).
+ - **IOEVENTS**: Intake and output information for patients while in the ICU
+ - **NOTEEVENTS**: Deidentified notes, including nursing notes, ECG reports, echo reports, and discharge summaries
+
+The following tables contain data collected in the hospital record system:
+
+ - **CPTEVENTS**: Procedures recorded as Current Procedural Terminology (CPT) codes
  - **DIAGNOSES_ICD**: Hospital assigned diagnoses as classified by the international classification of diseases and related health problems (ICD)
  - **DRGCODES**: Diagnosis Related Groups (DRGs) which are used for hospital billing for patient stays
- - **IOEVENTS**: Intake and output information for patients while in the ICU
  - **LABEVENTS**: Laboratory measurements for patients both within the hospital and in out patient clinics
  - **MICROBIOLOGYEVENTS**: Microbiology measurements and sensitivities from the hospital database
- - **NOTEEVENTS**: Deidentified notes, including nursing notes, ECG reports, echo reports, and discharge summaries
  - **PRESCRIPTIONS**: Medications ordered, and not necessarily administered, for a given patient
  - **PROCEDURES_ICD**: Patient procedures performed as coded by the international classification of diseases and related health problems (ICD) system
- 
+
 The following tables are dictionaries:
  
  - **D_CPT**: High-level dictionary of Current Procedural Terminology (CPT) codes
