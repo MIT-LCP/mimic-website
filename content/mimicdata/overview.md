@@ -34,7 +34,7 @@ Each `ICUSTAY_ID` corresponds to a single `HADM_ID` and a single `SUBJECT_ID`. E
  
 The following tables contain data associated with each patient:
 
- - **CALLOUT**: Information regarding when a patient was scheduled for ICU discharge and when the patient was actually discharged
+ - **CALLOUT**: Defines when a patient was scheduled for ICU discharge and when the patient was actually discharged
  - **CAREGIVERS**: Every caregiver who has recorded data in the database (defines `CGID`)
  - **CHARTEVENTS**: All charted observations for all patients
  - **CPTEVENTS**: Procedure codes for all procedures done for patients in the ICU
@@ -50,9 +50,9 @@ The following tables contain data associated with each patient:
  
 The following tables are dictionaries:
  
- - **D_CPT**: High level information regarding current procedural terminology (CPT) codes
+ - **D_CPT**: High level dictionary of Current Procedural Terminology (CPT) codes
  - **D_ICD_DIAGNOSES**: Brief description for each ICD code related to a diagnosis
  - **D_ICD_PROCEDURES**: Brief description for each ICD code related to a procedure
- - **D_ITEMS**: Defines each `ITEMID` in the ICU database, which are used to represent concepts
- - **D_LABITEMS**: Defines each `ITEMID` in the laboratory database sourced from the hospital
+ - **D_ITEMS**: Describes each `ITEMID` in the ICU database
+ - **D_LABITEMS**: Describes each `ITEMID` in the laboratory database
 
