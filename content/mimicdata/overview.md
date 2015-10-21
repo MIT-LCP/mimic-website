@@ -24,9 +24,10 @@ Tables pre-fixed with "D_" are dictionaries and provide definitions for identifi
 
 The following tables are used to define and track patient stays:
 
- - **PATIENTS**: Every unique patient in the database (defines `SUBJECT_ID`)
  - **ADMISSIONS**: Every unique hospitalization for each patient in the database (defines `HADM_ID`)
+ - **CALLOUT**: Defines when a patient was scheduled for ICU discharge and when the patient was actually discharged
  - **ICUSTAYEVENTS**: Every unique ICU stay in the database (defines `ICUSTAY_ID`)
+ - **PATIENTS**: Every unique patient in the database (defines `SUBJECT_ID`)
  - **SERVICES**: The service under which a patient is currently cared for
  - **TRANSFERS**: Patient movement within the hospital, including admission and discharge to the ICU
 
@@ -34,7 +35,6 @@ Each `ICUSTAY_ID` corresponds to a single `HADM_ID` and a single `SUBJECT_ID`. E
  
 The following tables contain data associated with each patient:
 
- - **CALLOUT**: Defines when a patient was scheduled for ICU discharge and when the patient was actually discharged
  - **CAREGIVERS**: Every caregiver who has recorded data in the database (defines `CGID`)
  - **CHARTEVENTS**: All charted observations for all patients
  - **CPTEVENTS**: Procedure codes for all procedures done for patients in the ICU
