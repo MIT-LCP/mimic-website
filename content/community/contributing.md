@@ -15,6 +15,14 @@ toc = "true"
 
 MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide. We therefore encourage MIMIC users to work together as a community.
 
+## How can I get help with my analysis?
+
+If you are seeking advice for a specific question, we would suggest either:
+
+- posting your question to the [Open Data StackExchange](http://opendata.stackexchange.com/), labelled with "mimic-iii" as one of the keywords. For example, see the following question about diabetic patients: http://opendata.stackexchange.com/questions/6182/gold-annotations-for-diabetic-patients-in-mimic-iii
+- posting your question as an issue in the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/issues)
+- holding on until the [forthcoming forum](/community/forum/) has been created.
+
 ## How can I help to improve the MIMIC website and documentation?
 
 The MIMIC website and documentation are hosted publicly in GitHub (https://github.com/MIT-LCP/mimic-website). 
