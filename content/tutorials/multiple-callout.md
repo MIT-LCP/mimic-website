@@ -54,9 +54,6 @@ and months_between(adm.intime,pat.dob) > 1;
 
 Returns 36140 total rows, and 35407 with data. Note `months_between` is Oracle specific, you may need to adapt this command to your own version of SQL.
 
-This query forms our base cohort.
-
-
 Let's see how many have an observation in the CALLOUT table:
 
 ```sql
@@ -91,8 +88,6 @@ Number of admissions with ICU data | 35407 |
 .. with callout | 28623 | 81%
 
 So clearly we have quite a few ICU admissions who do not have an entry in the call out table: almost 20%! These patients likely died in the ICU. This can be a little tricky to define because we only have information on death in hospital, not death in the ICU. We will have to use the time of death and proximity to ICU discharge to estimate whether the patient died in the ICU.
-
-# Patients who died in the ICU
 
 # Multiple call outs for a single hospital admission
 
@@ -271,15 +266,19 @@ A note during the subsequent transfer to the TSICU states: "small bowel resectio
 `HADM_ID` 100007 has a call out event at 04-03 08:33:47 that was cancelled at 04-03 13:16:56.
 If we investigate a nursing note at 04-03 05:13:00 the last phrase is "Transfer to floor.". The subsequent note describes the patient's condition but does not make it clear whether they deteriorated and it was decided to keep them on the unit.
 
-### Other patients listed by HADM_ID
+`HADM_ID` 100131 has an `ACKNOWLEDGE_TIME` occurring 7 minutes after their `OUTCOME_TIME` for a cancelled callout. Perhaps this was an accidental call out as it was cancelled 13 seconds after it was input.
 
-100131 has an `ACKNOWLEDGE_TIME` occurring 7 minutes after their `OUTCOME_TIME` for a cancelled callout. Perhaps this was an accidental call out as it was cancelled 13 seconds after it was input.
+`HADM_ID` 100137 (CCU patient) has " ?C/O to floor if groin stable. " before a call out event that is cancelled 3 hours after it is created. The subsequent note reads "CV - pt c/o chest pain as well as l arm pain x 3 this am, occuring during rest.  Pt rec'd sl ntg x1 w/ relief for each incident.  No ecg changes noted.  Decision by team and pt, for further intervention on RCA.  Unable to perform today."
 
-100137 (CCU patient) has " ?C/O to floor if groin stable. " before a call out event that is cancelled 3 hours after it is created. The subsequent note reads "CV - pt c/o chest pain as well as l arm pain x 3 this am, occuring during rest.  Pt rec'd sl ntg x1 w/ relief for each incident.  No ecg changes noted.  Decision by team and pt, for further intervention on RCA.  Unable to perform today."
+`HADM_ID` 100160 was called out at 16:15 but has a clear nursing note at 17:00 to "REMAIN IN MICU."
 
-100160 was called out at 16:15 but has a clear nursing note at 17:00 to "REMAIN IN MICU."
+`HADM_ID` 100242 on 2161-09-18 00:00:00 "To floor at 1730". No nursing notes earlier. Was in CVICU between 09-01 to 09-03, then 09-06 to 09-07, but no call out information there???
 
-100242 on 2161-09-18 00:00:00 "To floor at 1730". No nursing notes earlier. Was in CVICU between 09-01 to 09-03, then 09-06 to 09-07, but no call out information there???
+### Final definition
+
+Given the above, we will adjust our definition to be the first *non-cancelled* call out event for the patient's first ICU stay.
+
+
 
 #### Queries used
 
@@ -407,7 +406,333 @@ Hour | Number called out | Number discharged
 
 Here we can see most call outs happen between 07:00 and 13:00 and most discharges happen between 14:00 and 20:00. This lines up with intuition: call outs occur during rounds, and most discharges occur when a bed has been freed in the ward (say after a patient has been discharged at the end of the day).
 
-# Base cohort
+# Defining the base cohort
+
+Now that we have done plenty of investigation into the CALLOUT table, we can go ahead and define our base cohort.
+
+## All patients
+
+First, we see how many unique `ICUSTAY_ID` we have.
+
+```sql
+select
+count(ie.icustay_id) as NumIID
+from mimic2v30.ICUSTAYEVENTS ie;
+```
+
+Returns 61532. Note ICUSTAYEVENTS has one unique `ICUSTAY_ID` per row.
+We will need more information (e.g. date of birth, hospital admission date) for these patients, so we join to the other patient information tables:
+
+```sql
+select
+    count(ie.icustay_id) as NumIID
+from mimic2v30.icustayevents ie
+
+-- get more information regarding each ICU stay
+inner join mimic2v30.patients pat
+  on ie.subject_id = pat.subject_id
+inner join mimic2v30.ADMISSIONS adm
+  on ie.subject_id = pat.subject_id and ie.hadm_id = adm.hadm_id;
+```
+
+Returns 61532. Unsurprisingly, joining to these tables does not duplicate rows.
+
+## Filter out neonates
+
+We are not interested in neonatal patients for this study.
+
+```sql
+select
+count(ie.icustay_id) as NumIID
+from mimic2v30.icustayevents ie
+
+-- get more information regarding each ICU stay
+inner join mimic2v30.patients pat
+  on ie.subject_id = pat.subject_id
+inner join mimic2v30.ADMISSIONS adm
+  on ie.subject_id = pat.subject_id and ie.hadm_id = adm.hadm_id
+
+-- only adults
+where extract(YEAR from ie.intime) - extract(YEAR from pat.dob) > 1;
+```
+
+Returns 53432. Next up, we know that CALLOUT data began data collection sometime during the archiving of the database, so we filter to only these patients.
+
+```sql
+select
+count(ie.icustay_id) as NumIID
+from mimic2v30.icustayevents ie
+
+-- get more information regarding each ICU stay
+inner join mimic2v30.patients pat
+  on ie.subject_id = pat.subject_id
+inner join mimic2v30.ADMISSIONS adm
+  on ie.subject_id = pat.subject_id and ie.hadm_id = adm.hadm_id
+
+-- only adults
+where extract(YEAR from ie.intime) - extract(YEAR from pat.dob) > 1
+
+-- filter to only patients admitted after call out data collection began
+and ie.hadm_id in
+(
+select hadm_id from mimic2v30_phi_release.admissions
+where admittime > (select min(createtime) from mimic2v30_phi_release.callout)
+);
+```
+
+Returns 38164.
+Now, we filter to only the first ICU stay for each hospital admission (we rearrange the query to use a temporary with to facilitate this).
+
+```sql
+with co as
+(
+  select
+    ie.*
+      -- generate an integer which is 1 for the first ICU stay
+      , ROW_NUMBER() over (partition by ie.hadm_id order by ie.intime) as ICU_STAY
+
+  from mimic2v30.icustayevents ie
+
+  -- get more information regarding each ICU stay
+  inner join mimic2v30.patients pat
+    on ie.subject_id = pat.subject_id
+  inner join mimic2v30.ADMISSIONS adm
+    on ie.subject_id = pat.subject_id and ie.hadm_id = adm.hadm_id
+
+  -- only adults
+  where extract(YEAR from ie.intime) - extract(YEAR from pat.dob) > 1
+
+  -- filter to only patients admitted after call out data collection began
+  and ie.hadm_id in
+  (
+    select hadm_id from mimic2v30_phi_release.admissions
+    where admittime > (select min(createtime) from mimic2v30_phi_release.callout)
+  )
+)
+select
+count(icustay_id) as NumIID
+from co
+where HOSP_STAY = 1;
+```
+
+This returns 35494. Next we filter to only the first hospital stay for each patient.
+
+```sql
+with co as
+(
+  select
+    ie.*
+  -- generate an integer which is 1 for the first hospital stay
+  , ROW_NUMBER() over (partition by adm.subject_id order by adm.admittime, ie.intime) as HOSP_STAY
+
+  -- generate an integer which is 1 for the first ICU stay
+  , ROW_NUMBER() over (partition by ie.hadm_id order by ie.intime) as ICU_STAY
+  from mimic2v30.icustayevents ie
+
+  -- get more information regarding each ICU stay
+  inner join mimic2v30.patients pat
+    on ie.subject_id = pat.subject_id
+  inner join mimic2v30.ADMISSIONS adm
+    on ie.subject_id = pat.subject_id and ie.hadm_id = adm.hadm_id
+
+  -- only adults
+  where extract(YEAR from ie.intime) - extract(YEAR from pat.dob) > 1
+
+  -- filter to only patients admitted after call out data collection began
+  and ie.hadm_id in
+  (
+    select hadm_id from mimic2v30_phi_release.admissions
+    where admittime > (select min(createtime) from mimic2v30_phi_release.callout)
+  )
+)
+select
+count(icustay_id) as NumIID
+from co
+where HOSP_STAY = 1
+and ICU_STAY = 1;
+```
+
+This returns 27800. A little thought will allow you to conclude that, as the code is written, the filter for the first hospital admission also filters the first ICU admission. So we can remove the `ICU_STAY` column as it is redundant.
+ Now, we join this to the actual CALLOUT table to get information regarding patient discharge planning.
+
+```sql
+with co as
+(
+  select
+
+  -- ICU information
+  ie.*
+
+  -- we may need hospital admission/discharge times later
+  , adm.admittime, adm.dischtime
+
+  -- generate an integer which is 1 for the first ICU admission in the first hospital admission
+  , ROW_NUMBER() over (partition by adm.subject_id order by adm.admittime, ie.intime) as HOSP_STAY
+
+
+  from mimic2v30.icustayevents ie
+
+  -- get more information regarding each ICU stay
+  inner join mimic2v30.patients pat
+    on ie.subject_id = pat.subject_id
+  inner join mimic2v30.ADMISSIONS adm
+    on ie.subject_id = pat.subject_id and ie.hadm_id = adm.hadm_id
+
+  -- only adults
+  where extract(YEAR from ie.intime) - extract(YEAR from pat.dob) > 1
+
+  -- filter to only patients admitted after call out data collection began
+  and ie.hadm_id in
+  (
+    select hadm_id from mimic2v30_phi_release.admissions
+    where admittime > (select min(createtime) from mimic2v30_phi_release.callout)
+  )
+)
+select
+count(icustay_id) as NumIID
+, count(distinct icustay_id) as NumIID_unique
+, count(ca.hadm_id) as NumCallout
+, count(distinct ca.hadm_id) as NumCallout_unique
+from co
+-- join to callout table using hospital admission identifier and times of ICU admit/discharge
+left join mimic2v30.callout ca
+  on co.hadm_id = ca.hadm_id and ca.createtime between co.intime and co.outtime
+where HOSP_STAY = 1;
+```
+
+Note that we couldn't directly use `ICUSTAY_ID` to identify call outs because the hospital database that records call out events does not record a equivalent identifier to `ICUSTAY_ID`.
+We also have added in a check check if we are not duplicating rows.
+The query returns 30529	for NumIID, and 27800 for NumIID_unique, indicating that there are multiple call out events for each `ICUSTAY_ID`, as could be predicted.
+It also returns 25061 for NumCallout and 22332 for NumCallout_unique, implying that not all of the ICU stays have a call out event. Our next step is to remove cancelled callouts.
+
+```sql
+with co as
+(
+  select
+
+  -- ICU information
+  ie.*
+
+  -- we may need hospital admission/discharge times later
+  , adm.admittime, adm.dischtime
+
+  -- generate an integer which is 1 for the first ICU admission in the first hospital admission
+  , ROW_NUMBER() over (partition by adm.subject_id order by adm.admittime, ie.intime) as HOSP_STAY
+
+
+  from mimic2v30.icustayevents ie
+
+  -- get more information regarding each ICU stay
+  inner join mimic2v30.patients pat
+    on ie.subject_id = pat.subject_id
+  inner join mimic2v30.ADMISSIONS adm
+    on ie.subject_id = pat.subject_id and ie.hadm_id = adm.hadm_id
+
+  -- only adults
+  where extract(YEAR from ie.intime) - extract(YEAR from pat.dob) > 1
+
+  -- filter to only patients admitted after call out data collection began
+  and ie.hadm_id in
+  (
+    select hadm_id from mimic2v30_phi_release.admissions
+    where admittime > (select min(createtime) from mimic2v30_phi_release.callout)
+  )
+)
+select
+count(icustay_id) as NumIID
+, count(distinct icustay_id) as NumIID_unique
+, count(ca.hadm_id) as NumCallout
+, count(distinct ca.hadm_id) as NumCallout_unique
+from co
+-- join to callout table using hospital admission identifier and times of ICU admit/discharge
+left join mimic2v30.callout ca
+  on co.hadm_id = ca.hadm_id and ca.createtime between co.intime and co.outtime
+
+  -- do not join to cancelled callout events
+  and ca.callout_outcome != 'Cancelled'
+
+where HOSP_STAY = 1;
+```
+
+NumIID has been reduced to 28187, and NumIID_unique remains unchanged at 27800.
+NumCallout has been reduced to 21897, and NumCallout_unique has dropped to 21510 (a reduction of 822).
+The next step is to only include the first call out event for patients with multiple call outs during the same ICUSTAY_ID.
+This has the effect of removing unexpected readmissions within 24 hours after a patient's discharge.
+
+```sql
+with co as
+(
+  select
+
+  -- ICU information
+  ie.*
+
+  -- we may need hospital admission/discharge times later
+  , adm.admittime, adm.dischtime
+
+  -- generate an integer which is 1 for the first ICU admission in the first hospital admission
+  , ROW_NUMBER() over (partition by adm.subject_id order by adm.admittime, ie.intime) as HOSP_STAY
+
+
+  from mimic2v30.icustayevents ie
+
+  -- get more information regarding each ICU stay
+  inner join mimic2v30.patients pat
+    on ie.subject_id = pat.subject_id
+  inner join mimic2v30.ADMISSIONS adm
+    on ie.subject_id = pat.subject_id and ie.hadm_id = adm.hadm_id
+
+  -- only adults
+  where extract(YEAR from ie.intime) - extract(YEAR from pat.dob) > 1
+
+  -- filter to only patients admitted after call out data collection began
+  and ie.hadm_id in
+  (
+    select hadm_id from mimic2v30_phi_release.admissions
+    where admittime > (select min(createtime) from mimic2v30_phi_release.callout)
+  )
+)
+, c2 as
+(
+select
+co.icustay_id, co.intime, co.outtime
+, co.admittime, co.dischtime
+, ca.*
+
+-- generate an integer which is 1 for the first callout event
+, ROW_NUMBER() over (partition by co.icustay_id order by ca.createtime) as CALLOUT_NUM
+
+from co
+-- join to callout table using hospital admission identifier and times of ICU admit/discharge
+left join mimic2v30.callout ca
+  on co.hadm_id = ca.hadm_id and ca.createtime between co.intime and co.outtime
+
+  -- do not join to cancelled callout events
+  and ca.callout_outcome != 'Cancelled'
+
+where HOSP_STAY = 1
+)
+select
+count(icustay_id) as NumIID
+, count(distinct icustay_id) as NumIID_unique
+-- HADM_ID is sourced from the callout table in the above subquery
+, count(hadm_id) as NumCallout
+, count(distinct hadm_id) as NumCallout_unique
+from c2
+where CALLOUT_NUM = 1;
+```
+
+Now NumIID and NumIID_unique are identical at 27800. NumCallout and NumCallout_unique are identical at 21510.
+The ICU stays without callout likely occur due to in ICU death.
+The next step is to remove these patients.
+
+
+
+
+ and (ii) any call outs subsequent to the first call out.
+
+
+
 
 Now that we have defined our base cohort, let's put it into a temporary view so that we can conveniently access it in subsequent queries.
 

@@ -100,7 +100,7 @@ CREATE INDEX ADMISSIONS_IDX01
   ON MIMICIII.ADMISSIONS (SUBJECT_ID,HADM_ID);
 ``` 
 
-## 8. MIMIC-III is ready for analyses
+## 8. MIMIC-III is ready for analysis
 
 You should now have a working copy of MIMIC-III ready to query with the psql command line tool. Try, for example, counting the number of patients in the database:
 
@@ -110,7 +110,7 @@ from MIMICIII.PATIENTS;
 -- returns x rows
 ```
 
-## 9 (optional). Install PgAdminIII
+## 9. Install PgAdminIII (optional) 
 
 PgAdmin is a graphical user interface ('GUI') tool for administering Postgres databases. For installation guidelines see: http://www.pgadmin.org/download/
 
