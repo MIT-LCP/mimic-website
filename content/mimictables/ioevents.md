@@ -85,13 +85,30 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 ## ITEMID
 
-## AMOUNT, AMOUNTUOM, RATE, RATEUOM
+Identifier for a single measurement type in the database. Each row associated with one `ITEMID` (e.g. 212) corresponds to an instantiation of the same measurement (e.g. heart rate).
+Metavision `ITEMID` values are all above 220000. A subset of commonly used medications in CareVue data have `ITEMID` values are between 30000-39999. The remaining input/output `ITEMID` values are between 40000-49999.
+
+## AMOUNT, AMOUNTUOM
+
+`AMOUNT` and `AMOUNTUOM` list the amount of a drug or substance administered to the patient either between the `STARTTIME` and `ENDTIME` (if both are available) or at the `ENDTIME` (when the exact start time is unknown, but usually up to an hour before).
+
+## RATE, RATEUOM
+
+`RATE` and `RATEUOM` list the rate at which the drug or substance was administered to the patient either between the `STARTTIME` and `ENDTIME` (if both are available), or it lists the rate at which the drug is *currently* administered at the `ENDTIME`.
 
 ## STORETIME
 
+`STORETIME` records the time at which an observation was manually input or manually validated by a member of the clinical staff.
+
 ## CGID
 
+`CGID` is the identifier for the caregiver who validated the given measurement.
+
 ## ORDERID, LINKORDERID
+
+`ORDERID` links multiple items contained in the same solution together. For example, when a solution of noradrenaline and normal saline is administered both noradrenaline and normal saline occur on distinct rows but will have the same `ORDERID`.
+
+`LINKORDERID` links the same order across multiple instantiations: for example, if the rate of delivery for the solution with noradrenaline and normal saline is changed, two new rows which share the same new `ORDERID` will be generated, but the `LINKORDERID` will be the same. 
 
 ## ORDERCATEGORYNAME, SECONDARYORDERCATEGORYNAME, ORDERCOMPONENTTYPEDESCRIPTION, ORDERCATEGORYDESCRIPTION
 
