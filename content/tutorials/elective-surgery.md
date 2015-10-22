@@ -3,7 +3,7 @@ date = "2015-09-01T14:02:13-04:00"
 title = "Elective surgery data extraction"
 draft = true
 linktitle = "Elective surgery data extraction"
-weight = 1
+weight = 4
 toc = "true"
 
 [menu]

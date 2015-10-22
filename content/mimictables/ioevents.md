@@ -26,6 +26,8 @@ toc = "true"
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 
+A high level description of the data is available [here](/mimicdata/ioevents).
+
 # Table columns
 
 Name | Postgres data type
