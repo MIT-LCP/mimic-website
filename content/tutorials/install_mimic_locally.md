@@ -43,7 +43,7 @@ After connecting with psql, create a new user. Next, create a MIMIC database wit
 CREATE USER MIMIC;
 CREATE DATABASE MIMIC OWNER MIMIC;
 # connect to the database
-\c MIMIC
+\c mimic
 CREATE SCHEMA MIMICIII;
 ```
 
