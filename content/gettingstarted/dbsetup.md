@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T14:02:13-04:00"
-title = "Setting up the database"
-linktitle = "Setting up the database"
+title = "Downloading the database"
+linktitle = "Downloading the database"
 weight = 2
 toc = "false"
 
@@ -31,12 +31,3 @@ Amazon Relational Database Service allows a relational database to be created on
 ## Creating a cloud version of MIMIC with Microsoft Azure
 
 Microsoft Azure's SQL Database allows a relational database to be created on a remote cloud server. Tutorial to follow...
-
-
-
-
-
-
-
-
-
