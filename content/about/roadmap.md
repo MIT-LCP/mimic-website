@@ -13,7 +13,7 @@ toc = "true"
 
 # Roadmap
 
-Our aim is to include data that supports all research with the potential to improve patient outcomes. MIMIC currently contains data such as:
+Our aim is to include data that supports all research which aims to improve knowledge surrounding critical care. MIMIC currently contains data such as:
 
 - Laboratory measurements from within the hospital (i.e. inpatient) and from clinics (i.e. outpatient)
 - Charted observations during a patient's stay in the intensive care unit
