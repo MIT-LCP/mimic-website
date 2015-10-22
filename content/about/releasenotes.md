@@ -18,7 +18,7 @@ To ensure transparency in this process, updates to the database will be made in 
 This page lists the current version, and all previous versions which have existed,  in sequential, reverse chronological order.
 Each version will address a finite set of updates which are tracked using a unique issue number, usually of the form #100, #101, etc.
 
-Note that the changes between MIMIC-II and MIMIC-III are not listed here, due to the large number of differences between the databases. A separate document has been provided for that purpose [here](/archive/mimic-releases).
+Note that the changes between MIMIC-II and MIMIC-III are not listed here, due to the large number of differences between the databases. A separate document has been provided for that purpose [here](/mimicdata/whatsnew). The release notes for MIMIC-II versions is available [here](/archive/mimic-releases).
 
 # Current version
 
@@ -42,4 +42,4 @@ This section lists past versions in reverse chronological order.
 
 ## MIMIC III v1.0
 
-MIMIC III v1.0 was released on August 25th, 2015. It was a preliminary version and not widely publicized to allow for internal testing. As this was the first release of the database, and the successor of the MIMIC-II database, no changes are listed here. An overview of changes between MIMIC-II and MIMIC-III is provided [here](/archive/mimic-releases).
+MIMIC III v1.0 was released on August 25th, 2015. It was a preliminary version and not widely publicized to allow for internal testing. As this was the first release of the database, and the successor of the MIMIC-II database, no changes are listed here. An overview of changes between MIMIC-II and MIMIC-III is provided [here](/mimicdata/whatsnew).
