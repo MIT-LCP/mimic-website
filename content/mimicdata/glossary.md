@@ -21,5 +21,5 @@ CVICU | Cardiovascular Intensive Care Unit
 ICU | Intensive Care Unit
 LCP | Laboratory for Computational Physiology
 MICU | Medical Intensive Care Unit
-MIMIC | Multiparameter Intelligent Monitoring in Intensive Care Database
+MIMIC | Medical Information Mart for Intensive Care
 SICU | Surgical Intensive Care Unit
