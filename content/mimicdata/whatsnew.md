@@ -13,13 +13,13 @@ toc = "true"
 
 # MIMIC-II vs MIMIC-III
 
-MIMIC-III is an extension of MIMIC-II: it incorporates the data contained in MIMIC-II (collected between 2001 - 2008) and augments it with newly collected data between 2008 - 2012. In addition, many data elements have been regenerated from the raw data in a more robust manner to improve the quality of the underlying data. 
+MIMIC-III is an extension of MIMIC-II: it incorporates the data contained in MIMIC-II (collected between 2001 - 2008) and augments it with newly collected data between 2008 - 2012. In addition, many data elements have been regenerated from the raw data in a more robust manner to improve the quality of the underlying data.
 
 One of the challenges of adding new data resulted from a change in data management software at the Beth Israel Deaconess Medical Center. The original Philips CareVue system (which archived data from 2001 - 2008) was replaced with the new Metavision data management system (which continues to be used to the present). This page aims to facilitate the transition for researchers familiar with MIMIC-II who would like to continue their research with the updated MIMIC-III.
 
 # Lab ITEMID mapping
 
-The `ITEMID` for laboratory measurements in the D_LABITEMS and LABEVENTS tables in MIMIC-II do *not* match the `ITEMID` for laboratory measurements in MIMIC-III. For previous users' benefit, we have provided a mapping table to facilitate the updating of queries which use this table. This mapping can be found at the GitHub repository dedicated to sharing mimic-code: 
+The `ITEMID` for laboratory measurements in the D_LABITEMS and LABEVENTS tables in MIMIC-II do *not* match the `ITEMID` for laboratory measurements in MIMIC-III. For previous users' benefit, we have provided a mapping table to facilitate the updating of queries which use this table. This mapping can be found at the GitHub repository dedicated to sharing mimic-code:
 
 https://github.com/MIT-LCP/mimic-code/blob/master/migrating/labid.csv
 
@@ -28,6 +28,7 @@ Furthermore, note that much of the data has been mapped to LOINC codes. LOINC co
 # Schema changes
 
 ## ADMISSIONS
+
 
 
 ## CENSUSEVENTS replaced by TRANSFERS
@@ -40,7 +41,9 @@ The CENSUSEVENTS table was used in MIMIC-II to track patient hospital admissions
  - The ADT data is available for all patients in the ICU database
 
 
-## D_CHARTITEMS, D_IOITEMS and D_MEDITEMS merged into D_ITEMS 
+## D_CHARTITEMS, D_IOITEMS and D_MEDITEMS merged into D_ITEMS
+
+D_CHARTITEMS, D_IOITEMS, and D_MEDITEMS were all sourced from the same data source: the ICU database (specfically Philips CareVue). In contrast, iMDSoft Metavision only has a single table to define most `ITEMID` concepts. In order to simplify the schema and coalesce the databases, it was decided to merge together all the `ITEMID` dictionary tables into a single table, *except* D_LABITEMS. D_LABITEMS was kept separate as the laboratory data is sourced from the hospital database.
 
 ## DEMOGRAPHIC_DETAIL merged into ADMISSIONS
 
@@ -66,7 +69,7 @@ The term POE, or provider order entry, is vague and references a hospital specif
 
 ## IOEVENTS
 
-The IOEVENTS contains a large number of columns which were not present in the table of the same name in MIMIC-II. This is due to two reasons: the drastically different storage methodology used in the Metavision database, and the merging of many tables in CareVue into the single IOEVENTS table. Due to the complicated merging undertaken and the importance of the IOEVENTS table, the methodology has been detailed in its own section.
+The IOEVENTS contains a large number of columns which were not present in the table of the same name in MIMIC-II. This is due to two reasons: the drastically different storage methodology used in the Metavision database, and the merging of many tables in CareVue into the single IOEVENTS table. Due to the complicated merging undertaken and the importance of the IOEVENTS table, the methodology has been detailed in its own section [here](mimicdata/ioevents).
 
 # Identifier changes
 
@@ -83,7 +86,10 @@ The IOEVENTS contains a large number of columns which were not present in the ta
 
 ## CALLOUT
 
+The CALLOUT table contains information about ICU discharge planning and execution. Each patient is "called out" of the ICU: which involves alerting hospital administrative staff that a bed, usually on the floor, is required for a patient currently in the ICU. The call out event also includes any precautions that the patient may require (such as susceptibility to MRSA or respiratory support). The table provides information both on when the patient was deemed ready for discharge and when the patient actually left the ICU.
+
 ## PROCEDURES_ICD
+
 
 
 # Removed tables
@@ -92,7 +98,7 @@ There were many tables in MIMIC-II which are no longer present in MIMIC-III. In 
 
 # COMORBIDITY_SCORES
 
-This table is frequently used to define the comorbid status for patients. Code for generating this table will be provided in the GitHub repository. The comorbidities will be defined using ICD-9 codes and DRG codes as proposed by Elixhauser et al. 
+This table is frequently used to define the comorbid status for patients. Code for generating this table will be provided in the GitHub repository. The comorbidities will be defined using ICD-9 codes and DRG codes as proposed by Elixhauser et al.
 
 # DEMOGRAPHICEVENTS, D_DEMOGRAPHICITEMS
 
@@ -108,6 +114,8 @@ This was a generated table to facilitate the interpretation of various coding sy
 
 # D_PARAMMAP_ITEMS
 
+This table is no longer needed as all `ITEMID` concepts have been consolidated in D_ITEMS.
+
 # ICUSTAY_DAYS
 
 This table was used in the generation of severity scores which were originally imputed into the raw data. The table is no longer necessary as the severity scores are no longer imputed into the database.
@@ -118,10 +126,11 @@ A script to generate ICUSTAY_DETAILS will be provided on the GitHub repository s
 
 # PARAMETER_MAPPING
 
+This table is no longer needed as all `ITEMID` concepts have been consolidated in D_ITEMS.
 
 # WAVEFORM_*, D_WAVEFORM_SIGNALS
 
-D\_WAVEFORM\_SIGNALS, WAVEFORM\_METADATA, WAVEFORM\_SEGMENTS, WAVEFORM\_SEG\_SIG, WAVEFORM\_SIGNALS, WAVEFORM\_TRENDS, WAVEFORM\_TREND\_SIGNALS have been removed. 
+D\_WAVEFORM\_SIGNALS, WAVEFORM\_METADATA, WAVEFORM\_SEGMENTS, WAVEFORM\_SEG\_SIG, WAVEFORM\_SIGNALS, WAVEFORM\_TRENDS, WAVEFORM\_TREND\_SIGNALS have been removed.
 The mapping to the waveform data is no longer provided within the relative database for clarity.
 
 <!--
@@ -131,9 +140,9 @@ There were multiple `ITEMID` in the MIMIC-II database which caused confusion. Pa
 
 -->
 
-<!-- 
+<!--
 
- 
+
 # Detailed changelog
 
 # Primary changes at a glance
@@ -144,19 +153,19 @@ There were multiple `ITEMID` in the MIMIC-II database which caused confusion. Pa
  	- The data now includes all out of ICU activity, and covers patient ward visits for their entire hospital stay
  - `ADMISSIONS` and `TRANSFERS` are now sourced entirely from the hospital admission database (they were previously sourced from the ICU database)
  - `DEMOGRAPHIC_DETAIL` has been merged into `ADMISSIONS`
- 
+
  - A number of duplicate `SUBJECT_ID` contained in MIMIC-II have been coalesced
  - All `ICUSTAY_ID` have a corresponding `HADM_ID`
  - All `HADM_ID` have a corresponding `SUBJECT_ID`
  - Hospital admission dates now have times
  - Hospital discharge disposition is now available in a structured form
- 
+
 The comparison of patients, admissions, and icustays between v2.6 and v3.0 is listed below:
 
 Table name (Primary key column) | Count (MIMIC2 v2.6)
---------- | --------- | --------- 
+--------- | --------- | ---------
 ```D_Patients``` (```subject_id```) | 32,536
 ```Admissions``` (```hadm_id```) | 36,095
-```ICUStayEvents``` (```icustay_id```) | 40,426 
+```ICUStayEvents``` (```icustay_id```) | 40,426
 
 -->
