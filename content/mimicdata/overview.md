@@ -58,3 +58,11 @@ The following tables are dictionaries:
  - **D_ICD_PROCEDURES**: Dictionary of International Classification of Diseases (ICD) codes relating to procedures
  - **D_ITEMS**: Describes `ITEMID`s in the ICU database
  - **D_LABITEMS**: Describes `ITEMID`s in the laboratory database
+
+# Derived tables
+
+The MIMIC-II database contained a variety of derived tables which simplified use of the database. For example, a commonly used table was the ICUSTAY_DETAIL table, which provided additional information summarizing a patient's ICU stay. The database also contained derived parameters commonly required by studies, such as severity scores. In MIMIC-III, we have made a conscious decision to *not* include any derived tables or calculated parameters as far as is possible. Instead, we encourage the community to produce and share scripts which can be run to create these tables or parameters. This has many advantageous: it keeps the distinction between raw data and calculated data, it encourages users to validate the scripts which derive the data, and allows for as many scripts as is conceivable without cluttering the database for all users. We have provided a set of scripts at the mimic-code repository, which can be found here:
+
+http://github.com/MIT-lcp/mimic-code
+
+We will continue to update this repository both with code which we produce as well as with code produced by the community. We encourage users to make pull requests (a feature of git which allows us to integrate community created code) or raise issues regarding code found in the repository. The creation of an active international community building openly available code for capturing a variety of concepts will increase the speed of research on MIMIC-III exponentially - we hope you take the time to investigate the mimic-code repository for anything which may be of use to you, and further contribute any work of your own!
