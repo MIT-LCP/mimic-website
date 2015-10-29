@@ -43,5 +43,3 @@ This section lists past versions in reverse chronological order.
 ## MIMIC III v1.0
 
 MIMIC III v1.0 was released on August 25th, 2015. It was a preliminary version and not widely publicized to allow for internal testing. As this was the first release of the database, and the successor of the MIMIC-II database, no changes are listed here. An overview of changes between MIMIC-II and MIMIC-III is provided [here](/mimicdata/whatsnew).
-
-(test comment)
