@@ -33,7 +33,7 @@ CHARTTIME | VOLUME | VOLUMEUOM | CHARTTIME | RATE | RATEUOM
  | | | 09:00 | 1 | mL/hr
 10:00 | 60 | mL | | |
 11:00 | 60  | mL | | |
- | | 11:30 | 0.5 | mL/hr |
+ | | | 11:30 | 0.5 | mL/hr
 12:00 | 45 | mL | | |
 
 Here, the volume is recorded only every hour, and no start time is available. However, it's reasonable to assume that the volume measurement corresponds to an hour. Next, we can see that the rate was titrated to 0.5, and for the period between 11:00 to 12:00 there was half an hour of delivery at 1 mL/hr, and half an hour of delivery at 0.5 mL/hr, resulting in a total volume of 45 mL delivered for the past hour.
