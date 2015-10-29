@@ -2,7 +2,7 @@
 date = "2015-09-01T19:33:17-04:00"
 title = "Acknowledgements"
 linktitle = "Acknowledgements"
-weight = 2
+weight = 5
 toc = "true"
 
 [menu]
@@ -13,11 +13,11 @@ toc = "true"
 
 # Acknowledgements
 
-MIMIC is made available largely through the work of researchers at the MIT Laboratory for Computational Physiology and collaborating research groups. If you use our data, code or algorithms, please provide a citation to this project. 
+MIMIC is made available largely through the work of researchers at the MIT Laboratory for Computational Physiology and collaborating research groups. If you use our data, code or algorithms, please provide a citation to this project.
 
 Our recommended citation for MIMIC-III is in preparation for publication. In the interim, the older MIMIC II database can be cited as follows (BibTeX entry):
 
-``` 
+```
 @article{MIMICII
 , Author = {Saeed, Mohammed and Villarroel, Mauricio and Reisner, Andrew T. and Clifford, Gari and Lehman, Li-Wei and Moody, George and Heldt, Thomas and Kyaw, Tin H. and Moody, Benjamin and Mark, Roger G.}
 , Title = {Multiparameter Intelligent Monitoring in Intensive Care II (MIMIC-II): A public-access intensive care unit database}
@@ -37,7 +37,3 @@ Our recommended citation for MIMIC-III is in preparation for publication. In the
 - [Philips Health Care](http://www.healthcare.philips.com/main/index.wpd)
 
 <!-- Add details of funders here -->
-
-
-
-

@@ -30,7 +30,7 @@ Now that Postgres is running, you should be able to connect to the system using 
 
 ``` bash
 # connect to the default database
-psql postgres 
+psql postgres
 ```
 
 ## 4. Create an empty database containing a MIMIC-III schema
@@ -43,7 +43,7 @@ After connecting with psql, create a new user. Next, create a MIMIC database wit
 CREATE USER MIMIC;
 CREATE DATABASE MIMIC OWNER MIMIC;
 # connect to the database
-\c MIMIC
+\c mimic
 CREATE SCHEMA MIMICIII;
 ```
 
@@ -57,9 +57,9 @@ DROP TABLE MIMICIII.CAREGIVERS;
 
 -- create the table
 CREATE TABLE MIMICIII.CAREGIVERS
-    (    ROW_ID INT NOT NULL, 
-    CGID INT NOT NULL, 
-    LABEL VARCHAR(15), 
+    (    ROW_ID INT NOT NULL,
+    CGID INT NOT NULL,
+    LABEL VARCHAR(15),
     DESCRIPTION VARCHAR(30),
     CONSTRAINT cg_rowid_pk  PRIMARY KEY (ROW_ID),
     CONSTRAINT cg_cgid_unique UNIQUE (CGID)
@@ -79,9 +79,9 @@ Option 1: import with ```\COPY```
 Option 2: import with ```COPY```
 
 ``` sql
-COPY MIMICIII.CAREGIVERS 
-    FROM '/path/to/file/CAREGIVERS_DATA_TABLE.csv' 
-    DELIMITER ',' 
+COPY MIMICIII.CAREGIVERS
+    FROM '/path/to/file/CAREGIVERS_DATA_TABLE.csv'
+    DELIMITER ','
     CSV HEADER;
 ```
 
@@ -96,11 +96,11 @@ Indexes provide additional structure for the database that can help to improve t
 drop index MIMICIII.ADMISSIONS_idx01;
 
 -- create the index
-CREATE INDEX ADMISSIONS_IDX01 
+CREATE INDEX ADMISSIONS_IDX01
   ON MIMICIII.ADMISSIONS (SUBJECT_ID,HADM_ID);
-``` 
+```
 
-## 8. MIMIC-III is ready for analyses
+## 8. MIMIC-III is ready for analysis
 
 You should now have a working copy of MIMIC-III ready to query with the psql command line tool. Try, for example, counting the number of patients in the database:
 
@@ -110,7 +110,7 @@ from MIMICIII.PATIENTS;
 -- returns x rows
 ```
 
-## 9 (optional). Install PgAdminIII
+## 9. Install PgAdminIII (optional)
 
 PgAdmin is a graphical user interface ('GUI') tool for administering Postgres databases. For installation guidelines see: http://www.pgadmin.org/download/
 
@@ -119,9 +119,3 @@ On Mac OSX with the [Homebrew package manager](http://brew.sh/), install PgAdmin
 Once PgAdminIII is installed, it can be connected to your local MIMIC instance. The tool offers a simple point and click interface for exploring the data and running queries.
 
 ![PgAdminIII screenshot](/img/tutorial_pgadminIII.png)
-
-
-
-
-
-
