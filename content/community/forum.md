@@ -13,4 +13,4 @@ toc = "true"
 
 # Forum
 
-To encourage collaboration and knowledge-sharing, we will be hosting a forum. This page will be updated when the forum is prepared.
+To encourage collaboration and knowledge-sharing, we will be hosting a forum. This page will be updated when the forum is prepared. In the mean time, the [OpenData stack exchange](http://opendata.stackexchange.com) allows questions regarding specific openly available datasets, including MIMIC-III. You are welcome to post questions there.

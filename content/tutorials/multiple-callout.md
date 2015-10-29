@@ -3,7 +3,7 @@ date = "2015-10-08T07:01:22-04:00"
 title = "Multiple callouts"
 draft = true
 linktitle = "Multiple callouts"
-weight = 1
+weight = 3
 toc = "true"
 
 [menu]
@@ -258,7 +258,7 @@ order by chartdate, charttime;
 
 The end of a note at 2145-04-01 15:26:00 states: "Transfer pt to [Hospital Ward Name 53] 9 when telemetry bed becomes available".  
 
-A note during the subsequent transfer to the TSICU states: "small bowel resection with new pneumonia (??aspiration) and confusion. P: continue current antibiotics." So it appears this is an unexpected readmission! So, this implies we should define ICU stays using the call out table, rather than the ICUSTAYEVENTS table.
+A note during the subsequent transfer to the TSICU states: "small bowel resection with new pneumonia (??aspiration) and confusion. P: continue current antibiotics." So it appears this is an unexpected readmission! So, this implies we could define ICU stays using the call out table, rather than the TRANSFERS table. Unfortunately, this would only work for patients admitted after 2005.
 
 
 ### Canceled callout

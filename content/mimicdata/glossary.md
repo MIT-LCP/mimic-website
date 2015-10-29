@@ -2,13 +2,13 @@
 date = "2015-09-01T14:02:13-04:00"
 title = "Glossary"
 linktitle = "Glossary"
-weight = 4
+weight = 6
 toc = "true"
 
 [menu]
   [menu.main]
-    parent = "Getting started"
-    
+    parent = "MIMIC data"
+
 +++
 
 # Glossary of terms
@@ -21,5 +21,5 @@ CVICU | Cardiovascular Intensive Care Unit
 ICU | Intensive Care Unit
 LCP | Laboratory for Computational Physiology
 MICU | Medical Intensive Care Unit
-MIMIC | Multiparameter Intelligent Monitoring in Intensive Care Database
+MIMIC | Medical Information Mart for Intensive Care
 SICU | Surgical Intensive Care Unit

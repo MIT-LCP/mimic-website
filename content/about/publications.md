@@ -2,7 +2,7 @@
 date = "2015-09-01T19:33:17-04:00"
 title = "Publications"
 linktitle = "Publications"
-weight = 5
+weight = 4
 toc = "true"
 type = "publications"
 
@@ -11,4 +11,3 @@ type = "publications"
     parent = "About"
 
 +++
-

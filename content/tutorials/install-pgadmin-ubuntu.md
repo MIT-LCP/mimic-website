@@ -1,8 +1,8 @@
 +++
 date = "2015-09-01T14:02:13-04:00"
-title = "Intro to MIMIC-III"
+title = "Install PostgreSQL"
 draft = true
-linktitle = "Intro to MIMIC-III"
+linktitle = "Install PostgreSQL"
 weight = 1
 toc = "true"
 
