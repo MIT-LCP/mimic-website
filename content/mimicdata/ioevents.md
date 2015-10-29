@@ -29,11 +29,11 @@ It is reasonable to assume that any output recorded is for the previous hour.
 Inputs are handled differently by CareVue and Metavision. For CareVue data, only the `ENDTIME` is available. Second, the `RATE` and `AMOUNT` columns are *asynchronous*. Volumes of input (e.g. 50 mL of normal saline) would be stored in one table, and would usually be recorded every hour (though sometimes the period was longer). Conversely, the `RATE` of the drug would be stored separately, and only updated when a change or verification of the rate was made by clinical staff. As a result, the raw data looked something similar to:
 
 CHARTTIME | VOLUME | VOLUMEUOM | CHARTTIME | RATE | RATEUOM
----- | ---- | ---- | ----
+---- | ---- | ---- | ---- | ---- | ----
  | | | 09:00 | 1 | mL/hr
-10:00 | 60 | mL | | | |
-11:00 | 60  | mL | |
- | | 11:30 | 0.5 | mL/hr
+10:00 | 60 | mL | | |
+11:00 | 60  | mL | | |
+ | | 11:30 | 0.5 | mL/hr |
 12:00 | 45 | mL | | |
 
 Here, the volume is recorded only every hour, and no start time is available. However, it's reasonable to assume that the volume measurement corresponds to an hour. Next, we can see that the rate was titrated to 0.5, and for the period between 11:00 to 12:00 there was half an hour of delivery at 1 mL/hr, and half an hour of delivery at 0.5 mL/hr, resulting in a total volume of 45 mL delivered for the past hour.
