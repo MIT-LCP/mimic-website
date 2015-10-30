@@ -24,8 +24,8 @@ toc = "true"
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ROW\_ID | BIGINT
 SUBJECT\_ID | INT
 HADM\_ID | INT
@@ -72,19 +72,18 @@ Each row of this table contains a unique `HADM_ID`, which represents a single pa
 * HMO REFERRAL/SICK
 * PHYS REFERRAL/NORMAL DELI
 
-The truncated text occurs in the raw data as well. 
+The truncated text occurs in the raw data as well.
 
 ## `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY`
 
-The `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY` columns describe various demographic aspects about each patient's admission. These columns occur in the ADMISSIONS table as they are originally sourced from the admission, discharge, transfers (ADT) data from the hospital database. As a result, it is possible (though infrequent) that these values change across two distinct hospital admissions (`HADM_ID`) for a single patient (`SUBJECT_ID`). This is reasonable for some of these columns (e.g. `MARITAL_STATUS`, `RELIGION`), but less reasonable for others (e.g. `ETHNICITY`). 
+The `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY` columns describe various demographic aspects about each patient's admission. These columns occur in the ADMISSIONS table as they are originally sourced from the admission, discharge, transfers (ADT) data from the hospital database. As a result, it is possible (though infrequent) that these values change across two distinct hospital admissions (`HADM_ID`) for a single patient (`SUBJECT_ID`). This is reasonable for some of these columns (e.g. `MARITAL_STATUS`, `RELIGION`), but less reasonable for others (e.g. `ETHNICITY`).
 
 ## `DIAGNOSIS`
 
-The `DIAGNOSIS` column provides the admitting diagnosis for the patient. The diagnosis does not use a systematic ontology: as of MIMIC-III v1.0 there are 15,693 distinct diagnoses for 58,976 patients. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness).
+The `DIAGNOSIS` column provides a free text diagnosis for the patient on hospital admission. The diagnosis does not use a systematic ontology: as of MIMIC-III v1.0 there are 15,693 distinct diagnoses for 58,976 admissions. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness). Coded diagnoses for hospital admissions can be found in the DIAGNOSES_ICD table.
 
 # Important considerations
 
 * The data is sourced from the admission, discharge and transfer database from the hospital, frequently called ADT data.
 * Organ donor accounts occur sometimes for patients who died in the hospital. These are distinct hospital admissions with very short, sometimes negative lengths of stay. Furthermore, their `DEATHTIME` is frequently the same as the original patient's `DEATHTIME`.
 * All text data, except for that in the `INSURANCE` column, is stored in upper case.
-
