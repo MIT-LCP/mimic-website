@@ -33,9 +33,7 @@ To fix an issue or to contribute new content, please either select the 'Edit thi
 
 ## How can I share code that I have written for MIMIC?
 
-We have worked hard to create and share the MIMIC dataset. In return, we encourage you to share the code that you use for analysing the data.
-
-Please add your code to the MIMIC Code Repository at: https://github.com/MIT-LCP/mimic-code. The structure of the repository will develop over time as new contributions are made.
+We encourage you to share the code that you use for analysing the data. Please add your code to the MIMIC Code Repository at: https://github.com/MIT-LCP/mimic-code. The structure of the repository will develop over time as new contributions are made.
 
 ## How can I highlight an issue relating to the MIMIC dataset?
 
