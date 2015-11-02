@@ -9,7 +9,7 @@ toc = "false"
 
 # Help and support
 
-As explained elsewhere on this website, MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide. 
+MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide. 
 
 We therefore encourage MIMIC users to work together as a community. Please read [our notes on how to get involved](/community/contributing/) for further information.
 
