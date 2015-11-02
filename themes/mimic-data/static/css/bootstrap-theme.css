@@ -505,9 +505,17 @@ table {
   max-width: 100%;
   background-color: transparent;
 }
-th {
+/* TP: tidier table start; */
+/*th {
   text-align: left;
+}*/
+td, th {
+  text-align: left;
+  border: 1px solid #999;
+  padding: 0.6rem;
+  font-size: 80%;
 }
+/* TP: tidier table end */
 @media (max-width: 768px) {
 }
 fieldset {
