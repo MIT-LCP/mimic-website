@@ -1,8 +1,8 @@
 +++
 date = "2015-09-01T19:34:46-04:00"
-title = "IOEVENTS"
-linktitle = "IOEVENTS"
-weight = 25
+title = "INPUTEVENTS_CV"
+linktitle = "INPUTEVENTS_CV"
+weight = 24
 toc = "true"
 
 [menu]
@@ -12,17 +12,17 @@ toc = "true"
 
 # Overview
 
-**Table source:** CareVue and Metavision ICU databases.
+**Table source:** CareVue ICU databases.
 
-**Table purpose:** Input/output data for patients.
+**Table purpose:** Input data for patients.
 
-**Number of rows:** 25,889,251
+**Number of rows:** TBC
 
 **Links to:**
 
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
-* ICUSTAYEVENTS on `ICUSTAY_ID`
+* ICUSTAYS on `ICUSTAY_ID`
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 

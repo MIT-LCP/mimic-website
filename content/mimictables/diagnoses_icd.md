@@ -2,7 +2,7 @@
 date = "2015-09-01T19:34:46-04:00"
 title = "DIAGNOSES_ICD"
 linktitle = "DIAGNOSES_ICD"
-weight = 22
+weight = 21
 toc = "true"
 
 [menu]
@@ -23,7 +23,7 @@ toc = "true"
 
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
-* ICUSTAYEVENTS on `ICUSTAY_ID`
+* ICUSTAYS on `ICUSTAY_ID`
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 

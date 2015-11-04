@@ -2,7 +2,7 @@
 date = "2015-09-01T19:34:46-04:00"
 title = "D_ITEMS"
 linktitle = "D_ITEMS"
-weight = 19
+weight = 18
 toc = "true"
 
 [menu]

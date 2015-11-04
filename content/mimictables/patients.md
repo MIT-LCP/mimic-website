@@ -2,7 +2,7 @@
 date = "2015-09-01T19:34:46-04:00"
 title = "PATIENTS"
 linktitle = "PATIENTS"
-weight = 29
+weight = 30
 toc = "true"
 
 [menu]
@@ -22,7 +22,7 @@ toc = "true"
 **Links to:**
 
 * ADMISSIONS on `SUBJECT_ID`
-* ICUSTAYEVENTS on `SUBJECT_ID`
+* ICUSTAYS on `SUBJECT_ID`
 
 # Table columns
 
