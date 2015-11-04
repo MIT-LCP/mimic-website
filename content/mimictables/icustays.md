@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T19:34:46-04:00"
-title = "ICUSTAYEVENTS"
-linktitle = "ICUSTAYEVENTS"
+title = "ICUSTAYS"
+linktitle = "ICUSTAYS"
 weight = 24
 toc = "true"
 
@@ -69,4 +69,4 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 # Important considerations
 
 * `ICUSTAY_ID` is a *generated* identifier, that is it is *not* based off any raw data identifier. The hospital and ICU databases are not intrinsically linked, and so do not have any concept of an ICU encounter identifier.
-* The ICUSTAYEVENTS table is derived from the TRANSFERS table. Specifically, it groups the TRANSFERS table based on ICUSTAY\_ID, and excludes rows where no ICUSTAY\_ID is present.
+* The ICUSTAYS table is derived from the TRANSFERS table. Specifically, it groups the TRANSFERS table based on ICUSTAY\_ID, and excludes rows where no ICUSTAY\_ID is present.
