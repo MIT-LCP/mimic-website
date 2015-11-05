@@ -32,7 +32,7 @@ Name | Postgres data type
 ---- | ---- 
 SUBJECT\_ID | INT
 HADM\_ID | INT
-PROC\_SEQ\_NUM | INT
+SEQ\_NUM | INT
 ICD9\_CODE | VARCHAR(20)
 	
 # Detailed Description
@@ -41,7 +41,7 @@ ICD9\_CODE | VARCHAR(20)
 
 Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `HADM_ID` is unique to a patient hospital stay.
 
-## `PROC_SEQ_NUM`
+## `SEQ_NUM`
 
 `PROC_SEQ_NUM` provides the order in which the procedures were performed.
 
