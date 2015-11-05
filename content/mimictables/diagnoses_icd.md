@@ -42,9 +42,9 @@ ICD9_CODE | VARCHAR(20)
 
 Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `HADM_ID` is unique to a patient hospital stay.
 
-## `SEQUENCE`
+## `SEQ_NUM`
 
-`SEQUENCE` provides the order in which the ICD diagnoses relate to the patient. ICD diagnoses are ordered by priority - and the order does have an impact on the reimbursement for treatment.
+`SEQ_NUM` provides the order in which the ICD diagnoses relate to the patient. ICD diagnoses are ordered by priority - and the order does have an impact on the reimbursement for treatment.
 
 ## `ICD9_CODE`
 
