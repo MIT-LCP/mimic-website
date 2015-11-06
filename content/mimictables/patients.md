@@ -34,7 +34,7 @@ DOB | TIMESTAMP(0)
 DOD | TIMESTAMP(0)
 DOD\_HOSP | TIMESTAMP(0)
 DOD\_SSN | TIMESTAMP(0)
-HOSPITAL\_EXPIRE\_FLAG | VARCHAR(5)
+EXPIRE\_FLAG | VARCHAR(5)
 	
 # Detailed Description
 
@@ -54,9 +54,9 @@ HOSPITAL\_EXPIRE\_FLAG | VARCHAR(5)
 
 `DOD` is the date of death for the given patient. `DOD_HOSP` is the date of death as recorded in the hospital database. `DOD_SSN` is the date of death from the social security database. Note that `DOD` merged together `DOD_HOSP` and `DOD_SSN`, giving priority to `DOD_HOSP` if both were recorded. 
 
-## `HOSPITAL_EXPIRE_FLAG`
+## `EXPIRE_FLAG`
 
-`HOSPITAL_EXPIRE_FLAG` indicates whether the patient died within the hospital. Note that if `DOD_HOSP` is present, then the last admission for the patient will have `HOSPITAL_EXPIRE_FLAG` = 'Y'.
+`EXPIRE_FLAG` indicates whether the patient died within the hospital. Note that if `DOD_HOSP` is present, then the last admission for the patient will have `EXPIRE_FLAG` = 'Y'.
 
 # Important considerations
 
