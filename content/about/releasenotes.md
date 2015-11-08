@@ -22,7 +22,7 @@ Note that the changes between MIMIC-II and MIMIC-III are not listed here, due to
 
 # Current version
 
-The current version of the database v1.1. When referencing this version, we recommend using the full title: MIMIC-III v1.1.
+The current version of the database is v1.1. When referencing this version, we recommend using the full title: MIMIC-III v1.1.
 
 ## MIMIC III v1.1
 
