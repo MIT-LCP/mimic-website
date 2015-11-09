@@ -80,7 +80,7 @@ The `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY` columns d
 
 ## `DIAGNOSIS`
 
-The `DIAGNOSIS` column provides a free text diagnosis for the patient on hospital admission. The diagnosis is preliminary, is usually assigned by the admitting clincian, and does not use a systematic ontology: as of MIMIC-III v1.0 there are 15,693 distinct diagnoses for 58,976 admissions. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness). Final diagnoses for hospital admissions are coded can be found in the DIAGNOSES_ICD table.
+The `DIAGNOSIS` column provides a free text diagnosis for the patient on hospital admission. The diagnosis is preliminary, is usually assigned by the admitting clincian, and does not use a systematic ontology: as of MIMIC-III v1.0 there are 15,693 distinct diagnoses for 58,976 admissions. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness). Final diagnoses for hospital admissions are coded and can be found in the DIAGNOSES_ICD table.
 
 # Important considerations
 
