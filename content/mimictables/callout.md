@@ -65,7 +65,7 @@ The CALLOUT table provides information for "call out events". A call out event o
 
 ## `SUBMIT_WARDID`, `SUBMIT_CAREUNIT`
 
-`SUBMIT_WARDID` identifies the ward from which the request was submitted. `SUBMIT_CAREUNIT` indicates whether the `SUBMIT_WARDID` corresponds an ICU cost center, and if so, what type of ICU cost center.
+`SUBMIT_WARDID` identifies the ward from which the request was submitted. `SUBMIT_CAREUNIT` indicates whether the `SUBMIT_WARDID` corresponds to an ICU cost center, and if so, what type of ICU cost center.
 
 ## `CURR_WARDID`, `CURR_CAREUNIT`
 
@@ -73,12 +73,12 @@ The CALLOUT table provides information for "call out events". A call out event o
 
 ## `CALLOUT_WARDID`, `CALLOUT_SERVICE`
 
-`CALLOUT_WARDID` identifies the ward to which the patient should be discharged. Note that `CALLOUT_WARDID` = 0 represents 'Home' and `CALLOUT_WARDID` = 1 represents 'First available ward'. The remaining IDs correspond to distinct wards in the hospital. `CALLOUT_SERVICE` is the service under which the patient should be discharged to.
+`CALLOUT_WARDID` identifies the ward to which the patient should be discharged. Note that `CALLOUT_WARDID` = 0 represents 'Home' and `CALLOUT_WARDID` = 1 represents 'First available ward'. The remaining IDs correspond to distinct wards in the hospital. `CALLOUT_SERVICE` is the service under which the patient should be discharged.
 
 
 ## `REQUEST_TELE`, `REQUEST_RESP`, `REQUEST_CDIFF`, `REQUEST_MRSA`, `REQUEST_VRE`
 
-The request columns are binary indicators which request certain precautions for the patient in the subsequent ward where they will reside. For example, MRSA means that the patient is sensitive to MRSA, a drug resistant source of hospital acquired infections.
+The request columns are binary indicators which request certain precautions for the patient in the subsequent ward where they will reside. For example, MRSA means that the patient is colonized or infected with MRSA, a drug resistant source of hospital acquired infections.
 
 ## `CALLOUT_STATUS`, `CALLOUT_OUTCOME`
 
@@ -99,6 +99,6 @@ The request columns are binary indicators which request certain precautions for 
 
 # Important considerations
 
-* Call out data is *not* available for all adult patients, as the data only began being collected part way through the collection of the MIMIC database
+* Call out data is *not* available for all adult patients, as the data collection only began part way through the collection of the MIMIC database
 * Call out data is *never* available for neonates
 
