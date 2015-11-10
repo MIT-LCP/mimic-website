@@ -13,12 +13,12 @@ toc = "true"
 
 # Waveforms vs. clinical data
 
-This website is primarily dedicated to the MIMIC-III clinical database. It is worth noting that, in conjunction with the clinical database, high resolution waveforms and numerics (second by second derived values from the waveforms) are collected. This latter database is known as the MIMIC-III waveform database.
+This website provides documentation for the MIMIC-III Clinical Database. A separate, complementary resource named the "MIMIC-III Waveform Database" contains high resolution waveforms and numerics (second by second derived values from the waveforms). 
 
-The MIMIC-III waveform database and the MIMIC-III clinical database are separate entities which are accessed through the same portal, PhysioNet, but through distinct means. This has primarily arisen for two reasons: the very different storage and analysis methods used for high resolution waveforms sampled at consistent frequencies versus heterogenous unevenly sampled clinical data, and the lack of integration of waveforms and clinical data at the source. Implied by the latter point, and now explicitly stated, is that the waveform and clinical database are *separate* databases and special procedures must be taken to match records between the two.
+The clinical data can be accessed through PhysioNetWorks as detailed on the [getting started](/gettingstarted/access) pages. The waveform data can be accessed directly through PhysioNetBank and requires no log-in (details forthcoming).
 
-The clinical data can be accessed through PhysioNetWorks as detailed [here](gettingstarted/access).
-
-The waveform data can be accessed through PhysioNetBank, and requires no log-in, [here](http://physionet.org/bank/mimic3wdb).
+<!--
+The waveform data can be accessed through PhysioNetBank and requires no log-in, [here](http://physionet.org/bank/mimic3wdb).
 
 Detail on how to match records from the clinical database and the waveform database is provided on PhysioNetBank [here](http://physionet.org/bank/mimic3cdb).
+-->
