@@ -58,7 +58,7 @@ Identifier for a single measurement type in the database. Each row associated wi
 
 ## `CHARTTIME`, `STORETIME`
 
-`CHARTTIME` records the time at which an observation was charted, and is usually the closest proxy to the time the data was actually measured. `STORETIME` records the time at which an observation was manually input or manually validated by a member of the clinical staff.
+`CHARTTIME` records the time at which an observation was made, and is usually the closest proxy to the time the data was actually measured. `STORETIME` records the time at which an observation was manually input or manually validated by a member of the clinical staff.
 
 ## `CGID`
 
