@@ -1,7 +1,7 @@
 +++
 date = "2015-09-08T06:58:18-04:00"
-title = "Inputs and outputs"
-linktitle = "Inputs and outputs"
+title = "Times"
+linktitle = "Times"
 weight = 3
 toc = "true"
 
