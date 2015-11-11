@@ -15,15 +15,15 @@ canonifyurls = "false"
     weight = 10
     url = "/gettingstarted/"
 [[menu.main]]
-    name = "MIMIC data"
-    pre = "<i class='fa fa-cog'></i>"
-    weight = 20
-    url = "/mimicdata/"
-[[menu.main]]
     name = "Tables in MIMIC"
     pre = "<i class='fa fa-columns'></i>"
-    weight = 30
+    weight = 20
     url = "/mimictables/"
+[[menu.main]]
+    name = "Data details"
+    pre = "<i class='fa fa-cog'></i>"
+    weight = 30
+    url = "/mimicdata/"
 [[menu.main]]
     name = "Community"
     pre = "<i class='fa fa-group'></i>"
