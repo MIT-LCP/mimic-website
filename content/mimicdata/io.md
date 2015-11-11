@@ -1,7 +1,7 @@
 +++
 date = "2015-09-08T06:58:18-04:00"
-title = "Understanding IOEVENTS"
-linktitle = "Understanding IOEVENTS"
+title = "Inputs and outputs"
+linktitle = "Inputs and outputs"
 weight = 4
 toc = "true"
 
