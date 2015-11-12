@@ -16,7 +16,7 @@ toc = "true"
 
 **Table purpose:** Output data for patients.
 
-**Number of rows:** TBC
+**Number of rows:** 4,349,340
 
 **Links to:**
 
@@ -74,5 +74,7 @@ Metavision `ITEMID` values are all above 220000. A subset of commonly used medic
 `CGID` is the identifier for the caregiver who validated the given measurement.
 
 ## STOPPED, NEWBOTTLE, ISERROR
+
+`STOPPED` indicates if the order was disconnected at the given `CHARTTIME`. `NEWBOTTLE` indicates that a new bag of solution was hung at the given `CHARTTIME`. `ISERROR` is a Metavision checkbox where a care giver can specify that an observation is an error. No other details are provided.
 
 <!-- # Important considerations -->

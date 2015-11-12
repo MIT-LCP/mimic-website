@@ -16,7 +16,7 @@ toc = "true"
 
 **Table purpose:** Input data for patients.
 
-**Number of rows:** TBC
+**Number of rows:** 17,528,895
 
 **Links to:**
 
@@ -26,7 +26,7 @@ toc = "true"
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 
-A high level description of the data is available [here](/mimicdata/ioevents).
+A high level description of the data is available [here](/mimicdata/io).
 
 # Table columns
 
@@ -35,8 +35,7 @@ Name | Postgres data type
 SUBJECT\_ID | INT
 HADM\_ID | INT
 ICUSTAY\_ID | INT
-STARTTIME | TIMESTAMP(0)
-ENDTIME | TIMESTAMP(0)
+CHARTTIME | TIMESTAMP(0)
 ITEMID | INT
 AMOUNT | DOUBLE PRECISION
 AMOUNTUOM | VARCHAR(30)
@@ -46,23 +45,8 @@ STORETIME | TIMESTAMP(0)
 CGID | BIGINT
 ORDERID | BIGINT
 LINKORDERID | BIGINT
-ORDERCATEGORYNAME | VARCHAR(100)
-SECONDARYORDERCATEGORYNAME | VARCHAR(100)
-ORDERCOMPONENTTYPEDESCRIPTION | VARCHAR(200)
-ORDERCATEGORYDESCRIPTION | VARCHAR(50)
-PATIENTWEIGHT | DOUBLE PRECISION
-TOTALAMOUNT | DOUBLE PRECISION
-TOTALAMOUNTUOM | VARCHAR(50)
-STATUSDESCRIPTION | VARCHAR(30)
 STOPPED | VARCHAR(30)
 NEWBOTTLE | INT
-ISOPENBAG | SMALLINT
-CONTINUEINNEXTDEPT | SMALLINT
-CANCELREASON | SMALLINT
-COMMENTS\_STATUS | VARCHAR(30)
-COMMENTS\_TITLE | VARCHAR(100)
-COMMENTS\_DATE | TIMESTAMP(0)
-ORIGINALCHARTTIME | TIMESTAMP(0)
 ORIGINALAMOUNT | DOUBLE PRECISION
 ORIGINALAMOUNTUOM | VARCHAR(30)
 ORIGINALROUTE | VARCHAR(30)
@@ -108,24 +92,14 @@ Metavision `ITEMID` values are all above 220000. A subset of commonly used medic
 
 `ORDERID` links multiple items contained in the same solution together. For example, when a solution of noradrenaline and normal saline is administered both noradrenaline and normal saline occur on distinct rows but will have the same `ORDERID`.
 
-`LINKORDERID` links the same order across multiple instantiations: for example, if the rate of delivery for the solution with noradrenaline and normal saline is changed, two new rows which share the same new `ORDERID` will be generated, but the `LINKORDERID` will be the same. 
+`LINKORDERID` links the same order across multiple instantiations: for example, if the rate of delivery for the solution with noradrenaline and normal saline is changed, two new rows which share the same new `ORDERID` will be generated, but the `LINKORDERID` will be the same.
 
-## ORDERCATEGORYNAME, SECONDARYORDERCATEGORYNAME, ORDERCOMPONENTTYPEDESCRIPTION, ORDERCATEGORYDESCRIPTION
+## STOPPED, NEWBOTTLE
 
-## PATIENTWEIGHT
+`STOPPED` indicates whether the infusion has been disconnected or continued. `NEWBOTTLE` indicates if a new preparation of the solution was hung at the bedside.
 
-## TOTALVOLUME, TOTALVOLUMEUOM
+## ORIGINALAMOUNT, ORIGINALAMOUNTUOM, ORIGINALROUTE, ORIGINALRATE, ORIGINALRATEUOM , ORIGINALSITE
 
-## STATUSDESCRIPTION
-
-## STOPPED, NEWBOTTLE, ISOPENBAG
-
-## CONTINUEINNEXTDEPT
-
-## CANCELREASON
-
-## COMMENTS_STATS, COMMENTS_TITLE, COMMENTS_DATE
-
-## ORIGINALCHARTTIME, ORIGINALAMOUNT, ORIGINALAMOUNTUOM, ORIGINALROUTE, ORIGINALRATE, ORIGINALRATEUOM , ORIGINALSITE
+These columns provide information about the solution the medication was a part of when it was first entered into the information system.
 
 <!-- # Important considerations -->
