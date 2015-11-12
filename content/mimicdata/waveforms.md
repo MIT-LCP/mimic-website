@@ -2,18 +2,18 @@
 date = "2015-10-25T13:37:00-04:00"
 title = "Waveforms"
 linktitle = "Waveforms"
-weight = 5
+weight = 6
 toc = "true"
 
 [menu]
   [menu.main]
-    parent = "MIMIC data"
+    parent = "Data details"
 
 +++
 
 # Waveforms vs. clinical data
 
-This website provides documentation for the MIMIC-III Clinical Database. A separate, complementary resource named the "MIMIC-III Waveform Database" contains high resolution waveforms and numerics (second by second derived values from the waveforms). 
+This website provides documentation for the MIMIC-III Clinical Database. A separate, complementary resource named the "MIMIC-III Waveform Database" contains high resolution waveforms and numerics (second by second derived values from the waveforms).
 
 The clinical data can be accessed through PhysioNetWorks as detailed on the [getting started](/gettingstarted/access) pages. The waveform data can be accessed directly through PhysioNetBank and requires no log-in (details forthcoming).
 
