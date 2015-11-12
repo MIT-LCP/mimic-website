@@ -23,14 +23,12 @@ toc = "true"
 
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
-* ICUSTAYS on `ICUSTAY_ID`
-* D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 RECORD\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
@@ -40,7 +38,7 @@ DESCRIPTION | VARCHAR(300)
 CGID | INT
 ISERROR | CHAR(1)
 TEXT | TEXT
-	
+
 # Detailed Description
 
 ## `RECORD_ID`
