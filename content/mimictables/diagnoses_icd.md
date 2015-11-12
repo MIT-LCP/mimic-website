@@ -23,9 +23,7 @@ toc = "true"
 
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
-* ICUSTAYS on `ICUSTAY_ID`
-* D_ITEMS on `ITEMID`
-* CAREGIVERS on `CGID`
+* DIAGNOSES_ICD on `ICD9_CODE`
 
 # Table columns
 

@@ -1,62 +1,96 @@
 +++
 date = "2015-09-01T19:34:46-04:00"
-title = "Data available"
-linktitle = "Data available"
-weight = 3
+title = "Data sources"
+linktitle = "Data sources"
+weight = 2
 toc = "true"
 
 [menu]
   [menu.main]
-    parent = "MIMIC data"
+    parent = "Data details"
 
 +++
+
+# Patient level data: `SUBJECT_ID`
+
+The following is a list of static data available in the database for `SUBJECT_ID` in the PATIENTS table:
+
+* GENDER
+* DOB
+* DOD
+* DOD_HOSP
+* DOD_SSN
+
+This list contains all the static data available for a single patient.
+Note that the `DOD_SSN` (which also contributes to the `DOD` column) is acquired from the social security death registry, i.e. an external source. It contains dates of death up to 90 days in the future for Metavision patients. It contains dates of death up to 4 years in the future for CareVue patients.
+
+# Hospital level data: `HADM_ID`
+
+The following tables were sourced from the hospital database, and contain information recorded in the hospital, but not necessarily during the patient's ICU stay:
+
+* ADMISSIONS
+* CALLOUT
+* CPTEVENTS
+* DIAGNOSES_ICD
+* DRGCODES
+* ICUSTAYS
+* LABEVENTS
+* MICROBIOLOGYEVENTS
+* PATIENTS
+* PRESCRIPTIONS
+* PROCEDURES_ICD
+* SERVICES
+* TRANSFERS
+
+The following is a list of static data available in the database for `HADM_ID` in the ADMISSIONS table. This data is constant for a single hospital admission.
+
+* `ADMITTIME` - The hospital admission time
+* `DISCHTIME` - The hospital discharge time
+* `DEATHTIME` - The date of death of the patient if they died within the hospital
+* `ADMISSION_TYPE` - The type of admission: ELECTIVE, EMERGENCY, NEWBORN or URGENT (note that the NEWBORN value here does not perfectly identify newborns)
+* `ADMISSION_LOCATION` - The location of the patient prior to hospital admission
+* `DISCHARGE_LOCATION` - The location of the patient after hospital discharge
+* `INSURANCE` - The patient's type of medical insurance
+* `LANGUAGE` - The patient's primary language
+* `RELIGION` - The patient's stated religion
+* `MARITAL_STATUS` - The patient's marital status
+* `ETHNICITY` - The patient's stated ethnicity
+* `DIAGNOSIS` - A short description of the reason for the patient's admission
+
+# ICU level data: `ICUSTAY_ID`
+
+The following tables were sourced from the ICU databases, and contain information only during a patient's ICU stay:
+
+* DATETIMEEVENTS
+* INPUTEVENTS_CV
+* INPUTEVENTS_MV
+* NOTEEVENTS
+* OUTPUTEVENTS
+* PROCEDUREEVENTS_MV
+
+The following is a list of static data available in the database for `ICUSTAY_ID` in the ICUSTAYS table:
+
+* `DBSOURCE` - The ICU database from which the patient exists in
+* `FIRST_CAREUNIT` - The first unit that cared for the patient (all ICUs except NWARD)
+* `LAST_CAREUNIT` - The last care unit that cared for the patient (all ICUs except NWARD)
+* `FIRST_WARDID` - An integer representing the first physical location of the patient
+* `LAST_WARDID` - An integer representing the last physical location of the patient
+* `INTIME` - Time entered the ICU
+* `OUTTIME` - Time left the ICU
+* `LOS` - The patient's ICU length of stay
+
+<!--
 
 # Types of data in the database
 
 Data within MIMIC were recorded during routine clinical care and *not* explicitly for the purpose of retrospective data analysis. This is a key point to keep in mind when analyzing the data.
 
+There are two types of data in the database: static data and dynamic data. Static data is recorded once for a given identifier. An example of static data is the `DOB` column in the PATIENTS table. Each patient has only one date of birth, which does not change over time and is not recorded with an associated timestamp. An example of dynamic data is a patient's blood pressure, which is periodically measured during a hospital stay. This distinction between static data and dynamic data is merely a helpful conceptual construct: there is *no* strict technical distinction between date of birth and heart rate. However, static data tends to not have an associated `ITEMID` (as there is no need to repeatedly record values for static data), whereas dynamic data have an `ITEMID` to facilitate efficient storage of repeated measurements.
 
-There are two types of data in the database: static data and dynamic data. Static data is recorded once for a given identifier. An example of static data is the `DOB` column in the PATIENTS table. Each patient has only one date of birth, which does not change over time and is not recorded with an associated timestamp. An example of dynamic data is a patient's blood pressure, which is periodically measured during a hospital stay. This distinction between static data and dynamic data is merely a helpful conceptual construct: there is *no* strict technical distinction between date of birth and heart rate. However, static data tends to not have an associated `ITEMID` (as there is no need to repeatedly record values for static data), whereas dynamic data must have an `ITEMID` to facilitate repeated measurements.
+# Static data
 
-## Static
-
-Each patient or hospital admission is associated with a set of "static" data. Often these are demographic, admission, billing or other administrative data. This data type is classified as static as it does not change during a patient's stay: it occurs only once for a given `HADM_ID`. The only static data available for patients are their gender (`GENDER`), date of birth (`DOB`) and various dates of death (`DOD`, `DOD_HOSP`, `DOD_SSN`). These columns all occur in the PATIENTS table.
-
-The following is a list of static data available in the database for `HADM_ID`:
-
-* Admission time
-* Discharge time
-* Death time
-* Admission type
-
-The following is a list of static data available in the database for `ICUSTAY_ID`:
-
-* Admission time
-* Discharge time
-* First care unit
-* Last care unit
-
-<!--
-TODO: ?? Is this section useful??
--->
-
-## Dynamic
-
-### Recording the time of dynamic observations
-
-Most data, with the exception of patient related demographics, are recorded with a time indicating when the observation was made: `CHARTTIME`. `CHARTTIME` dates back to the use of paper charts: in order to facilitate efficient observations by nursing staff, the day was separated into hourly blocks, and observations were recorded within these hourly blocks. Thus, any time one performed a measurement between the hours of 04:00 and 05:00, the data would be charted in the 04:00 block, and so on. This concept has carried forward into the electronic recording of data: even if data is recorded at 04:23, in many cases it is still charted as occurring at 04:00.
-
-### Automatic synchronization of data
-
-Many of the monitors in the ICU continuously update the ICU database with observations of the patient. For example, patients with an ECG (i.e. almost all ICU patients) have a heart rate continuously input into the database every minute. However, casual inspection of the database will indicate that heart rate is documented far less frequently than once per minute. In fact, it is usually documented once per hour. The reason for this is because the minute by minute heart rate values are not *validated*. The process of data validation involves a nurse manually right clicking the observation and selecting "validate" from a drop down menu. All charted values in the database have been validated by a nursing staff. In routine clinical practice, the nurse only validates the patient's vital signs on an hourly basis. As a result, only these hourly observations constitute the data available in the database. The time at which the data is validated is recorded in the database in the `STORETIME` field. Note that a nurse can validate multiple observations at the same time. The user who validates the data is typically recorded in the `CGID` column - linking this to the `CAREGIVERS` table allows one to inspect the role of the caregiver who validated the data (RN, etc).
-
-Putting this all together, let's consider recording the heart rate of a single patient. The heart rate will be continuously uploaded to the ICU database. Nurse A decides to review the flowsheet of the patient they are assigned at 19:41 (note that the "flowsheet" summarizes all the patient observations and is essentially a front end to the database). Nurse A notes that for the past three hours the heart rate has not been validated (it appears as italic text). The nurse will review the measurements, ensure that they are physiologically reasonable and match nurse A's observations of the patient for the past three hours. Then, nurse A selects the past three hours of heart rate measurements (17:00, 18:00 and 19:00) and selects "validate" from a drop down menu. Visually, the text of these measurements changes from italics to bold weight. Technically, the data has been marked as validated and will be archived in the database. The `CHARTTIME` for these three measurements will be 17:00, 18:00 and 19:00. The `STORETIME` for all three measurements will be 19:41.
-
-### Manual input of data
+# Manual input of data
 
 Not all data in the ICU is recorded automatically by monitors and synchronized with the database. For example the Glasgow Coma Scale, a measurement of neurological dysfunction, requires interaction and observation with the patient by a member of the clinical staff. These observations must be manually recorded in the database. Typical workflow for data of this type is to record the observation on paper, and later transcribe a batch of data to the database. Again, the data would appear with a `CHARTTIME` corresponding to the hour of the measurement, and data entered contemporaneously would share the same `STORETIME`.
 
-
-### Summing up: `CHARTTIME` vs. `STORETIME`
-
-`CHARTTIME` is the time at which a measurement is *charted*. In almost all cases, this is the time which best matches the time of actual measurement. In the case of continuous vital signs, the `CHARTTIME` is usually exactly the time of measurement. `STORETIME` is the time at which the data is recorded in the database: logically it occurs after `CHARTTIME`, often by hours, but usually not more than that.
+-->

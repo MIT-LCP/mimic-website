@@ -1,13 +1,13 @@
 +++
 date = "2015-09-08T06:58:18-04:00"
-title = "Understanding IOEVENTS"
-linktitle = "Understanding IOEVENTS"
-weight = 4
+title = "Inputs and outputs"
+linktitle = "Inputs and outputs"
+weight = 5
 toc = "true"
 
 [menu]
   [menu.main]
-    parent = "MIMIC data"
+    parent = "Data details"
 
 +++
 
