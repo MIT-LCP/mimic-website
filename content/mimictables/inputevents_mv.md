@@ -16,7 +16,7 @@ toc = "true"
 
 **Table purpose:** Input data for patients.
 
-**Number of rows:** TBC
+**Number of rows:** 3,618,992
 
 **Links to:**
 
@@ -26,7 +26,7 @@ toc = "true"
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 
-A high level description of the data is available [here](/mimicdata/ioevents).
+A high level description of the data is available [here](/mimicdata/io).
 
 # Table columns
 
@@ -53,22 +53,15 @@ ORDERCATEGORYDESCRIPTION | VARCHAR(50)
 PATIENTWEIGHT | DOUBLE PRECISION
 TOTALAMOUNT | DOUBLE PRECISION
 TOTALAMOUNTUOM | VARCHAR(50)
-STATUSDESCRIPTION | VARCHAR(30)
-STOPPED | VARCHAR(30)
-NEWBOTTLE | INT
 ISOPENBAG | SMALLINT
 CONTINUEINNEXTDEPT | SMALLINT
 CANCELREASON | SMALLINT
+STATUSDESCRIPTION | VARCHAR(30)
 COMMENTS\_STATUS | VARCHAR(30)
 COMMENTS\_TITLE | VARCHAR(100)
 COMMENTS\_DATE | TIMESTAMP(0)
-ORIGINALCHARTTIME | TIMESTAMP(0)
 ORIGINALAMOUNT | DOUBLE PRECISION
-ORIGINALAMOUNTUOM | VARCHAR(30)
-ORIGINALROUTE | VARCHAR(30)
 ORIGINALRATE | DOUBLE PRECISION
-ORIGINALRATEUOM | VARCHAR(30)
-ORIGINALSITE | VARCHAR(30)
 
 # Detailed Description
 
@@ -108,24 +101,42 @@ Metavision `ITEMID` values are all above 220000. A subset of commonly used medic
 
 `ORDERID` links multiple items contained in the same solution together. For example, when a solution of noradrenaline and normal saline is administered both noradrenaline and normal saline occur on distinct rows but will have the same `ORDERID`.
 
-`LINKORDERID` links the same order across multiple instantiations: for example, if the rate of delivery for the solution with noradrenaline and normal saline is changed, two new rows which share the same new `ORDERID` will be generated, but the `LINKORDERID` will be the same. 
+`LINKORDERID` links the same order across multiple instantiations: for example, if the rate of delivery for the solution with noradrenaline and normal saline is changed, two new rows which share the same new `ORDERID` will be generated, but the `LINKORDERID` will be the same.
 
 ## ORDERCATEGORYNAME, SECONDARYORDERCATEGORYNAME, ORDERCOMPONENTTYPEDESCRIPTION, ORDERCATEGORYDESCRIPTION
 
+These columns provide higher level information about the order the medication/solution is a part of. Categories represent the type of administration, while the `ORDERCOMPONENTTYPEDESCRIPTION` describes the role of the substance in the solution (i.e. main order parameter, additive, or mixed solution)
+
 ## PATIENTWEIGHT
 
-## TOTALVOLUME, TOTALVOLUMEUOM
+The patient weight in kilograms.
+
+## TOTALAMOUNT, TOTALAMOUNTUOM
+
+The total amount of the substance in the bag containing the solution.
 
 ## STATUSDESCRIPTION
 
-## STOPPED, NEWBOTTLE, ISOPENBAG
+States whether the ultimate status of the item.
+
+## ISOPENBAG
+
+Whether the order was from an open bag.
 
 ## CONTINUEINNEXTDEPT
 
+If the order ended on patient transfer, this field indicates if it continued into the next department (e.g. a floor).
+
 ## CANCELREASON
 
-## COMMENTS_STATS, COMMENTS_TITLE, COMMENTS_DATE
+If the order was canceled, this column provides some explanation.
 
-## ORIGINALCHARTTIME, ORIGINALAMOUNT, ORIGINALAMOUNTUOM, ORIGINALROUTE, ORIGINALRATE, ORIGINALRATEUOM , ORIGINALSITE
+## COMMENTS_STATUS, COMMENTS_TITLE, COMMENTS_DATE
+
+Specifies if the order was edited or canceled, and if so, the date and job title of the care giver who canceled or edited it.
+
+## ORIGINALAMOUNT, ORIGINALRATE
+
+Information on the initial amount and rate of the order.
 
 <!-- # Important considerations -->
