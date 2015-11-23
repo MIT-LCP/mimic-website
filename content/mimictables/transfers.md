@@ -60,8 +60,9 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 ## `PREV_CAREUNIT`, `CURR_CAREUNIT`
 
-`PREV_CAREUNIT` contains the care unit in which the patient previously resided. `CURR_CAREUNIT` contains the care unit in which the patient currently resides.
-The care unit is defined based upon the ward: if the ward is an ICU cost center, then the care unit defines the type of ICU. However, if the ward is *not* an ICU, then the care unit is null. The `INTIME` and `OUTTIME` of the transfer event correspond to the `CURR_CAREUNIT`. The `PREV_CAREUNIT` for each row is provided for convenience, and is identical to the `CURR_CAREUNIT` of the previous row (assuming the event is not an admission).
+`PREV_CAREUNIT` contains the care unit in which the patient previously resided. `CURR_CAREUNIT` contains the care unit in which the patient currently resides. The care unit is defined based upon the ward: if the ward is an ICU cost center, then the care unit defines the type of ICU. If the ward is *not* an ICU then in most cases the care unit is null. There are one or two exceptions to this rule. For example, ```NWARD``` is a ward for newborns.
+
+The `INTIME` and `OUTTIME` of the transfer event correspond to the `CURR_CAREUNIT`. The `PREV_CAREUNIT` for each row is provided for convenience, and is identical to the `CURR_CAREUNIT` of the previous row (assuming the event is not an admission).
 
 ## `PREV_WARDID`, `CURR_WARDID`
 
