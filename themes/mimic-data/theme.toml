@@ -3,7 +3,7 @@
 
 name = "MIMIC Data"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
+licenselink = "https://github.com/MIT-LCP/mimic-website/blob/master/themes/mimic-data/LICENSE.md"
 description = "Website for the MIMIC Critical Care Dataset"
 homepage = "http://mimic.physionet.org/"
 tags = ["", ""]
