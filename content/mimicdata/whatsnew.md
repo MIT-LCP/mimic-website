@@ -57,9 +57,9 @@ The DRGEVENTS table has been renamed DRGCODES. The table still corresponds to di
 
 To clarify the content of the table, the ICD9 table has been renamed to DIAGNOSES_ICD. The table contains diagnoses sourced from the hospital databased codified by ICD, usually ICD-9.
 
-## IOEVENTS, ADDITIVES, DELIVERIES and MEDEVENTS merged into IOEVENTS
+## IOEVENTS, ADDITIVES, DELIVERIES and MEDEVENTS
 
-The data in IOEVENTS and MEDEVENTS has been merged into the IOEVENTS table. As all the medications in the MEDEVENTS table were continuous infusions, they were all associated with an entry in IOEVENTS. MEDEVENTS would specify the drug rate, while IOEVENTS would specify the volume given. These tables have been consolidated to ease querying for drug deliveries.
+Data in the IOEVENTS and MEDEVENTS tables is now contained in the OUTPUTEVENTS, INPUTPUTEVENTS\_CV and INPUTEVENTS\_MV tables. As all the medications in the MEDEVENTS table were continuous infusions, they were all associated with an entry in IOEVENTS. MEDEVENTS would specify the drug rate, while IOEVENTS would specify the volume given. These tables have been consolidated to ease querying for drug deliveries.
 
 ## POE_MED_ORDER and POE_DRUG_ORDER merged into PRESCRIPTIONS
 
@@ -67,9 +67,9 @@ The term POE, or provider order entry, is vague and references a hospital specif
 
 # Table changes
 
-## IOEVENTS
+## IOEVENTS\_CV and IOEVENTS\_MV
 
-The IOEVENTS contains a large number of columns which were not present in the table of the same name in MIMIC-II. This is due to two reasons: the drastically different storage methodology used in the Metavision database, and the merging of many tables in CareVue into the single IOEVENTS table. Due to the complicated merging undertaken and the importance of the IOEVENTS table, the methodology has been detailed in its own section [here](mimicdata/ioevents).
+Two different monitoring systems were operating in the hospital over the data collection period. The systems - Metavision and CareVue - recorded data in very different ways. We therefore made the decision not to merge the data, and instead provided two separate tables (inputevents\_cv and inputevents\_mv).
 
 # Identifier changes
 
@@ -94,11 +94,11 @@ The CALLOUT table contains information about ICU discharge planning and executio
 
 # Removed tables
 
-There were many tables in MIMIC-II which are no longer present in MIMIC-III. In most cases, these tables were generated from the raw data for user convenience. We have transitioned from the approach of creating flat files of these tables to providing the source code necessary to regenerate them. This has two advantages: first it is much more efficient in terms of data transfer, and second it clarifies that these data are not "raw" in that they are not acquired directly from the databases but rather synthesized views of this data.
+There are many tables in MIMIC-II which are no longer present in MIMIC-III. In most cases, these tables were generated from the raw data for user convenience. We have transitioned from the approach of creating flat files of these tables to providing the source code necessary to regenerate them. This has two advantages: first it is much more efficient in terms of data transfer, and second it clarifies that these data are not "raw" in that they are not acquired directly from the databases but rather synthesized views of this data.
 
 # COMORBIDITY_SCORES
 
-This table is frequently used to define the comorbid status for patients. Code for generating this table will be provided in the GitHub repository. The comorbidities will be defined using ICD-9 codes and DRG codes as proposed by Elixhauser et al.
+This table is frequently used to define the comorbid status for patients. Code for generating this table will be provided in the [MIMIC Code Repository.](https://github.com/MIT-LCP/mimic-code) The comorbidities will be defined using ICD-9 codes and DRG codes as proposed by Elixhauser et al.
 
 # DEMOGRAPHICEVENTS, D_DEMOGRAPHICITEMS
 
@@ -106,27 +106,23 @@ These tables were specific to the older CareVue database. As these tables are no
 
 # D_CAREUNITS
 
-The care unit identifier, CUID, has been removed from the various tables as it was unavailable in the Metavision ICU database. Care unit can be ascertained at the patient level, rather than the observation level, using the ICUSTAYEVENTS and TRANSFERS table.
+The care unit identifier, CUID, has been removed from the various tables as it was unavailable in the Metavision ICU database. Care unit can be determined at the patient level, rather than the observation level, using the ICUSTAYEVENTS and TRANSFERS tables.
 
 # D_CODEDITEMS
 
-This was a generated table to facilitate the interpretation of various coding systems, including microbiology, DRG, etc. The database has been restructured to have explicit definitions for these codes where appropriate, and so this table was made redundant.
+This was a generated table to facilitate the interpretation of various coding systems, including microbiology, DRG, etc. The database has been restructured to have explicit definitions for these codes where appropriate.
 
 # D_PARAMMAP_ITEMS
 
-This table is no longer needed as all `ITEMID` concepts have been consolidated in D_ITEMS.
-
-# ICUSTAY_DAYS
-
-This table was used in the generation of severity scores which were originally imputed into the raw data. The table is no longer necessary as the severity scores are no longer imputed into the database.
+This table is no longer needed as `ITEMID` concepts have been consolidated in the D_ITEMS table.
 
 # ICUSTAY_DETAILS
 
-A script to generate ICUSTAY_DETAILS will be provided on the GitHub repository shortly.
+A script to generate ICUSTAY_DETAILS will be provided in the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code) shortly.
 
 # PARAMETER_MAPPING
 
-This table is no longer needed as all `ITEMID` concepts have been consolidated in D_ITEMS.
+This table is no longer needed as `ITEMID` concepts have been consolidated in the D_ITEMS table.
 
 # WAVEFORM_*, D_WAVEFORM_SIGNALS
 
