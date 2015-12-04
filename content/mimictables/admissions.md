@@ -40,7 +40,12 @@ LANGUAGE | VARCHAR(10)
 RELIGION | VARCHAR(50)
 MARITAL\_STATUS | VARCHAR(50)
 ETHNICITY | VARCHAR(200)
+EDREGTIME | TIMESTAMP(0)
+EDOUTTIME | TIMESTAMP(0)
 DIAGNOSIS | VARCHAR(300)
+HOSPITAL\_EXPIRE_FLAG | TINYINT
+HAS\_IOEVENTS_DATA | TINYINT
+HAS\_CHARTEVENTS_DATA | TINYINT
 
 # Detailed description
 
@@ -77,6 +82,10 @@ The truncated text occurs in the raw data as well.
 ## `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY`
 
 The `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY` columns describe various demographic aspects about each patient's admission. These columns occur in the ADMISSIONS table as they are originally sourced from the admission, discharge, transfers (ADT) data from the hospital database. As a result, it is possible (though infrequent) that these values change across two distinct hospital admissions (`HADM_ID`) for a single patient (`SUBJECT_ID`). This is reasonable for some of these columns (e.g. `MARITAL_STATUS`, `RELIGION`), but less reasonable for others (e.g. `ETHNICITY`).
+
+## `EDREGTIME`, `EDOUTTIME`
+
+Time of registration and discharge in the emergency department.
 
 ## `DIAGNOSIS`
 
