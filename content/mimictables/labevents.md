@@ -36,7 +36,7 @@ ITEMID | INT
 CHARTTIME | TIMESTAMP(0)
 VALUE | VARCHAR(200)
 VALUENUM | DOUBLE PRECISION
-UOM | VARCHAR(20)
+VALUEUOM | VARCHAR(20)
 FLAG | VARCHAR(20)
 	
 # Detailed Description
@@ -60,9 +60,9 @@ Note that because the data is directly sourced from the laboratory database, it 
 
 `VALUE` contains the value measured for the concept identified by the `ITEMID`. If this value is numeric, then `VALUENUM` contains the same data in a numeric format. If this data is not numeric, `VALUENUM` is null. In some cases (e.g. scores like Glasgow Coma Scale, Richmond Sedation Agitation Scale and Code Status), `VALUENUM` contains the score and `VALUE` contains the score and text describing the meaning of the score.
 
-## `UOM`
+## `VALUEUOM`
 
-`UOM` is the unit of measurement for the `VALUE`, if appropriate.
+`VALUEUOM` is the unit of measurement for the `VALUE`, if appropriate.
 
 ## `FLAG`
 
