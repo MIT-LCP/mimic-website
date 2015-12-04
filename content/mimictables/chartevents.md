@@ -39,7 +39,7 @@ STORETIME | DATE | Y | Y
 CGID | NUMBER(7,0) | Y | Y
 VALUE | VARCHAR2(200 BYTE) | Y | Y
 VALUENUM | NUMBER | Y | Y
-UOM | VARCHAR2(20 BYTE) | Y | Y
+VALUEUOM | VARCHAR2(20 BYTE) | Y | Y
 WARNING | NUMBER(1,0) | | Y 
 ERROR | NUMBER(1,0) | | Y
 RESULTSTATUS | VARCHAR2(20 BYTE) | Y | 
@@ -68,9 +68,9 @@ Identifier for a single measurement type in the database. Each row associated wi
 
 `VALUE` contains the value measured for the concept identified by the `ITEMID`. If this value is numeric, then `VALUENUM` contains the same data in a numeric format. If this data is not numeric, `VALUENUM` is null. In some cases (e.g. scores like Glasgow Coma Scale, Richmond Sedation Agitation Scale and Code Status), `VALUENUM` contains the score and `VALUE` contains the score and text describing the meaning of the score.
 
-## `UOM`
+## `VALUEUOM`
 
-`UOM` is the unit of measurement for the `VALUE`, if appropriate.
+`VALUEUOM` is the unit of measurement for the `VALUE`, if appropriate.
 
 ## `WARNING`, `ERROR`
 
