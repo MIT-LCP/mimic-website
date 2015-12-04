@@ -23,13 +23,16 @@ toc = "true"
 
 * CHARTEVENTS on `ITEMID`
 * DATETIMEEVENTS on `ITEMID`
-* IOEVENTS on `ITEMID`
+* INPUTEVENTS_CV on `ITEMID`
+* INPUTEVENTS_MV on `ITEMID`
 * MICROBIOLOGYEVENTS on `ITEMID`
+* OUTPUTEVENTS on `ITEMID`
+* PROCEDUREEVENTS_MV on `ITEMID`
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ITEMID | INT
 LABEL | VARCHAR(200)
 ABBREVIATION | VARCHAR(100)
@@ -44,7 +47,7 @@ HIGHNORMALVALUE | DOUBLE PRECISION
 
 # Detailed Description
 
-The D_ITEMS table defines `ITEMID`, which represents measurements in the database. Measurements of the same type (e.g. heart rate) will have the same `ITEMID` (e.g. 211). The `ITEMID` column is an alternate primary key to this table: it is unique to each row. 
+The D_ITEMS table defines `ITEMID`, which represents measurements in the database. Measurements of the same type (e.g. heart rate) will have the same `ITEMID` (e.g. 211). The `ITEMID` column is an alternate primary key to this table: it is unique to each row.
 
 Note that the D_ITEMS table is sourced from two ICU databases: Metavision and CareVue. Each system had its own set of `ITEMID` to identify concepts. As a result, there are multiple `ITEMID` which correspond to the same concept. For CareVue data, `ITEMID` = 211 is used to identify heart rates, whereas for Metavision data, `ITEMID` = 220045 is used. All Metavision `ITEMID`s will have a value > 220000.
 
@@ -60,7 +63,7 @@ The `LABEL` column describes the concept which is represented by the `ITEMID`. T
 
 ## `DBSOURCE`
 
-The `DBSOURCE` column was generated to clarify which database the given `ITEMID` was sourced from: 'carevue' indicates the `ITEMID` was sourced from CareVue, while 'metavision' indicated the `ITEMID` was sourced from Metavision. 
+The `DBSOURCE` column was generated to clarify which database the given `ITEMID` was sourced from: 'carevue' indicates the `ITEMID` was sourced from CareVue, while 'metavision' indicated the `ITEMID` was sourced from Metavision.
 
 ## `LINKSTO`
 
@@ -90,3 +93,4 @@ The `DBSOURCE` column was generated to clarify which database the given `ITEMID`
 
 * D_ITEMS is sourced from two *distinct* ICU databases. The main consequence is that there are duplicate `ITEMID` for each concept. For example, heart rate is captured both as an `ITEMID` of 212 (CareVue) and as an `ITEMID` of 220045 (Metavision). As a result, it is necessary to search for multiple `ITEMID` to capture a single concept across the entire database. This can be tedious, and it is an active project to coalesce these `ITEMID` - one which welcomes any and all help provided by the community!
 * Another source of duplicate `ITEMID` is due to the free text nature of data entry in CareVue - as a result there are additional `ITEMID` which correspond to misspellings or synonymous descriptions of a single concept. It is important to search for all possible abbreviations and descriptions of a concept to capture all associated `ITEMID`.
+* If the `LINKSTO` column is null, then the data is currently unavailable, but planned for a future release.
