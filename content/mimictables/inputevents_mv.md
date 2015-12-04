@@ -139,4 +139,6 @@ Specifies if the order was edited or canceled, and if so, the date and job title
 
 Information on the initial amount and rate of the order.
 
-<!-- # Important considerations -->
+# Important considerations
+
+* The `STATUSDESCRIPTION` column specifies if an order is 'Rewritten', that is: it was never delivered to the patient as the order was rewritten.
