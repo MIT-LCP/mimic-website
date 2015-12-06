@@ -49,11 +49,11 @@ HAS\_CHARTEVENTS_DATA | TINYINT
 
 # Detailed description
 
-The `ADMISSIONS` table defines all `HADM_ID` present in the database, which include all hospital admissions between June 1st, 2001 and October 10th, 2012.
+The `ADMISSIONS` table defines all `HADM_ID` present in the database, covering an admission period between 1 June 2001 and 10 October 2012.
 
 ## `SUBJECT_ID`, `HADM_ID`
 
-Each row of this table contains a unique `HADM_ID`, which represents a single patient's admission to the hospital. `HADM_ID` can range from 1000000 - 1999999. It is possible for this table to have duplicate `SUBJECT_ID`, indicating that a single patient had multiple admissions to the hospital. The ADMISSIONS table can be linked to the PATIENTS table using `SUBJECT_ID`.
+Each row of this table contains a unique `HADM_ID`, which represents a single patient's admission to the hospital. `HADM_ID` ranges from 1000000 - 1999999. It is possible for this table to have duplicate `SUBJECT_ID`, indicating that a single patient had multiple admissions to the hospital. The ADMISSIONS table can be linked to the PATIENTS table using `SUBJECT_ID`.
 
 ## `ADMITTIME`, `DISCHTIME`, `DEATHTIME`
 
@@ -77,22 +77,22 @@ Each row of this table contains a unique `HADM_ID`, which represents a single pa
 * HMO REFERRAL/SICK
 * PHYS REFERRAL/NORMAL DELI
 
-The truncated text occurs in the raw data as well.
+The truncated text occurs in the raw data.
 
 ## `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY`
 
-The `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY` columns describe various demographic aspects about each patient's admission. These columns occur in the ADMISSIONS table as they are originally sourced from the admission, discharge, transfers (ADT) data from the hospital database. As a result, it is possible (though infrequent) that these values change across two distinct hospital admissions (`HADM_ID`) for a single patient (`SUBJECT_ID`). This is reasonable for some of these columns (e.g. `MARITAL_STATUS`, `RELIGION`), but less reasonable for others (e.g. `ETHNICITY`).
+The `INSURANCE`, `LANGUAGE`, `RELIGION`, `MARITAL_STATUS`, `ETHNICITY` columns describe patient demographics. These columns occur in the ADMISSIONS table as they are originally sourced from the admission, discharge, and transfers (ADT) data from the hospital database. The values occasionally change between hospital admissions (`HADM_ID`) for a single patient (`SUBJECT_ID`). This is reasonable for some fields (e.g. `MARITAL_STATUS`, `RELIGION`), but less reasonable for others (e.g. `ETHNICITY`).
 
 ## `EDREGTIME`, `EDOUTTIME`
 
-Time of registration and discharge in the emergency department.
+Time that the patient was registered and discharged from the emergency department.
 
 ## `DIAGNOSIS`
 
-The `DIAGNOSIS` column provides a free text diagnosis for the patient on hospital admission. The diagnosis is preliminary, is usually assigned by the admitting clincian, and does not use a systematic ontology: as of MIMIC-III v1.0 there are 15,693 distinct diagnoses for 58,976 admissions. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness). Final diagnoses for hospital admissions are coded and can be found in the DIAGNOSES_ICD table.
+The `DIAGNOSIS` column provides a preliminary, free text diagnosis for the patient on hospital admission. The diagnosis is usually assigned by the admitting clincian and does not use a systematic ontology. As of MIMIC-III v1.0 there were 15,693 distinct diagnoses for 58,976 admissions. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness). Final diagnoses for hospital admissions are coded and can be found in the DIAGNOSES_ICD table.
 
 # Important considerations
 
-* The data is sourced from the admission, discharge and transfer database from the hospital, frequently called ADT data.
-* Organ donor accounts occur sometimes for patients who died in the hospital. These are distinct hospital admissions with very short, sometimes negative lengths of stay. Furthermore, their `DEATHTIME` is frequently the same as the original patient's `DEATHTIME`.
+* The data is sourced from the admission, discharge and transfer database from the hospital (often referred to as 'ADT' data).
+* Organ donor accounts are sometimes created for patients who died in the hospital. These are distinct hospital admissions with very short, sometimes negative lengths of stay. Furthermore, their `DEATHTIME` is frequently the same as the original patient's `DEATHTIME`.
 * All text data, except for that in the `INSURANCE` column, is stored in upper case.
