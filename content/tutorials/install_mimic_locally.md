@@ -51,7 +51,7 @@ CREATE DATABASE mimic OWNER mimic;
 
 Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)' script in the MIMIC code repository to create the mimiciii schema and then build a set of empty tables. Each table is created by running a ```CREATE TABLE``` command in psql. 
 
-First, exit from psql with "\q" which should bring you back to the shell command prompt. Now run the "[postgres\_create\_tables.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_create_tables.sql)" script from the command prompt:
+First, exit from psql with "\q" which should bring you back to the shell command prompt. Now run the "[postgres\_create\_tables.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_create_tables.sql)" script as follows:
 
 ``` bash
 # Run the following command to create the mimiciii schema and tables
@@ -73,7 +73,7 @@ CREATE TABLE
 
 ## 6. Import the CSV data files into the empty tables
 
-Using the [Postgres ```COPY``` or ```\COPY``` commands](https://wiki.postgresql.org/wiki/COPY), you should now be able to import the CSV data into the empty set of tables. If the CSV files are contained in your current working directory, then you can run the "[postgres\_load\_data.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_load_data.sql)" script from the command prompt using:
+Using the [Postgres ```COPY``` or ```\COPY``` commands](https://wiki.postgresql.org/wiki/COPY), you should now be able to import the CSV data into the empty set of tables. You can run the "[postgres\_load\_data.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_load_data.sql)" script from the command prompt using:
 
 ``` sql
 # Load the data into the mimic database
