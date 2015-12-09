@@ -93,15 +93,11 @@ COPY 7567
 
 ## 7. Add indexes to improve performance
 
-Indexes provide additional structure for the database that can help to improve the speed of queries. The MIMIC code repository [includes a script with a set of suggested indexes](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_add_indexes.sql). For example, an index on subject_id and hadm_id can be created for the ADMISSIONS table with the following command:
+Indexes provide additional structure for the database that can help to improve the speed of queries. The MIMIC code repository [includes a script with a set of suggested indexes](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_add_indexes.sql). As before, you can run this script from the command line:
 
-``` sql
--- drop the existing index if it exists
-drop index mimiciii.ADMISSIONS_idx01;
-
--- create the index
-CREATE INDEX ADMISSIONS_IDX01
-  ON mimiciii.admissions (SUBJECT_ID,HADM_ID);
+``` bash
+# create indexes
+psql -f postgres_add_indexes.sql -U mimic
 ```
 
 ## 8. MIMIC-III is ready for analysis
