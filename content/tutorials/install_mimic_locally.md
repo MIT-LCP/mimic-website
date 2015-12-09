@@ -22,7 +22,9 @@ On Mac OSX with the [Homebrew package manager](http://brew.sh/), simply type ```
 
 ## 2. Place the CSV data files in a local directory
 
-Assuming that you have completed the [steps required to gain access](/gettingstarted/access) to the MIMIC dataset, you should be able to access the CSV data files on PhysioNet at: https://physionet.org/works/MIMICIIIClinicalDatabase/files/. Download these files to a local folder and decompress them if necessary.
+Assuming that you have completed the [steps required to gain access](/gettingstarted/access) to the MIMIC dataset, you should be able to access the CSV data files on PhysioNet at: https://physionet.org/works/MIMICIIIClinicalDatabase/files/. 
+
+Download these files to a local folder and decompress them if necessary (from the command line, run ```gzip -d *.gz``` in the directory containing the files).
 
 ## 3. Connect to the database with psql
 
