@@ -37,28 +37,29 @@ psql postgres
 
 From this point onwards we will be referring to scripts in the '[buildmimic](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic)' directory of the [MIMIC code repository](https://github.com/MIT-LCP/mimic-code/).
 
-After connecting with psql, create a new user. Next, create a new database called "mimic":
+After connecting with psql, create a new user called "mimic", with temporary superuser privileges. Next, create a new database called "mimic":
 
-``` bash
+``` psql
 CREATE USER mimic;
+ALTER USER mimic superuser;
 CREATE DATABASE mimic OWNER mimic;
-# connect to the database
-\c mimic
 ```
 
 ## 5. Create a set of empty tables on a mimiciii schema, ready to populate with the data
 
-Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)' script in the MIMIC code repository to create the mimiciii schema and then build a set of empty tables. Each table is created by running a ```CREATE TABLE``` command in psql. You can run the "[postgres\_create\_tables.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_create_tables.sql)" script from the psql prompt using the following command:
+Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)' script in the MIMIC code repository to create the mimiciii schema and then build a set of empty tables. Each table is created by running a ```CREATE TABLE``` command in psql. 
 
-``` psql
--- Run the following command to create the mimiciii schema and tables
--- postgres_create_tables.sql must be in your local directory
-\i ./postgres_create_tables.sql
+First, exit from psql with "\q" which should bring you back to the shell command prompt. Now run the "[postgres\_create\_tables.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_create_tables.sql)" script from the command prompt:
+
+``` bash
+# Run the following command to create the mimiciii schema and tables
+# postgres_create_tables.sql must be in your local directory
+psql -f postgres_create_tables.sql -U mimic
 ```
 
 If the script runs successfully, you should see the following output:
 
-``` psql
+``` bash
 CREATE SCHEMA
 SET
 CREATE TABLE
@@ -70,21 +71,22 @@ CREATE TABLE
 
 ## 6. Import the CSV data files into the empty tables
 
-Using the [Postgres ```COPY``` or ```\COPY``` commands](https://wiki.postgresql.org/wiki/COPY), you should now be able to import the CSV data into the empty set of tables. If the CSV files are contained in your current working directory, then either of the following commands should import the caregivers table:
-
-Option 1: import with ```\COPY```
+Using the [Postgres ```COPY``` or ```\COPY``` commands](https://wiki.postgresql.org/wiki/COPY), you should now be able to import the CSV data into the empty set of tables. If the CSV files are contained in your current working directory, then you can run the "[postgres\_load\_data.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_load_data.sql)" script from the command prompt using:
 
 ``` sql
-\COPY mimiciii.caregivers from 'CAREGIVERS_DATA_TABLE.csv' with DELIMITER ',' CSV HEADER
+# Load the data into the mimic database
+# Replace <path_to_data> with the directory containing the MIMIC-III CSV files
+psql -f postgres_load_data.sql -U mimic -v mimic_data_dir='<path_to_data>'
 ```
 
-Option 2: import with ```COPY```
+If the script runs successfully, you should see the following output:
 
-``` sql
-COPY mimiciii.caregivers
-    FROM '/path/to/file/CAREGIVERS_DATA_TABLE.csv'
-    DELIMITER ','
-    CSV HEADER;
+``` bash
+SET
+COPY 58976
+COPY 34499
+COPY 7567
+... etc
 ```
 
 *Importing the data can be slow, particularly for larger tables like CHARTEVENTS which may take several hours.*
