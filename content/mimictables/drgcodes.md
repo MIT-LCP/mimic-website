@@ -53,7 +53,7 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 ## `DESCRIPTION`
 
 `DESCRIPTION` provides a human understandable summary of the meaning of the given DRG code.
-The description field frequently has acronyms which represent comorbidity levels. The following table provides a definition for some of these acronyms:
+The description field frequently has acronyms which represent comorbidity levels (comorbid conditions or "CC"). The following table provides a definition for some of these acronyms:
 
 
 Acronym | Description
