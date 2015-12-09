@@ -79,7 +79,7 @@ The `DBSOURCE` column was generated to clarify which database the given `ITEMID`
 
 ## `UNITNAME`
 
-`UNITNAME` specifies the unit of measurement used for the `ITEMID`. This column is not always available, and this may be because the unit of measurement varies, a unit of measurement does not make sense for the given data type, or the unit of measurement is simply missing. Note that there is sometimes additional information on the unit of measurement in the associated event table, e.g. the `UOM` column in CHARTEVENTS.
+`UNITNAME` specifies the unit of measurement used for the `ITEMID`. This column is not always available, and this may be because the unit of measurement varies, a unit of measurement does not make sense for the given data type, or the unit of measurement is simply missing. Note that there is sometimes additional information on the unit of measurement in the associated event table, e.g. the `VALUEUOM` column in CHARTEVENTS.
 
 ## `PARAM_TYPE`
 
