@@ -37,33 +37,35 @@ psql postgres
 
 From this point onwards we will be referring to scripts in the '[buildmimic](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic)' directory of the [MIMIC code repository](https://github.com/MIT-LCP/mimic-code/).
 
-After connecting with psql, create a new user. Next, create a MIMIC database with a schema for MIMIC-III:
+After connecting with psql, create a new user. Next, create a new database called "mimic":
 
 ``` bash
 CREATE USER mimic;
 CREATE DATABASE mimic OWNER mimic;
 # connect to the database
 \c mimic
-CREATE SCHEMA mimiciii;
 ```
 
-## 5. Create a set of empty tables, ready to populate with the data
+## 5. Create a set of empty tables on a mimiciii schema, ready to populate with the data
 
-Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)' script in the MIMIC code repository to build a set of empty tables. Each table is created by running a ```CREATE TABLE``` command in psql. For example, the caregivers table is created with:
+Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)' script in the MIMIC code repository to create the mimiciii schema and then build a set of empty tables. Each table is created by running a ```CREATE TABLE``` command in psql. You can run the "[postgres\_create\_tables.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_create_tables.sql)" script from the psql prompt using the following command:
 
 ``` psql
--- drop the table if it already exists
-DROP TABLE mimiciii.caregivers;
+-- Run the following command to create the mimiciii schema and tables
+-- postgres_create_tables.sql must be in your local directory
+\i ./postgres_create_tables.sql
+```
 
--- create the table
-CREATE TABLE mimiciii.caregivers
-    (    ROW_ID INT NOT NULL,
-    CGID INT NOT NULL,
-    LABEL VARCHAR(15),
-    DESCRIPTION VARCHAR(30),
-    CONSTRAINT cg_rowid_pk  PRIMARY KEY (ROW_ID),
-    CONSTRAINT cg_cgid_unique UNIQUE (CGID)
-    );
+If the script runs successfully, you should see the following output:
+
+``` psql
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+... etc
 ```
 
 ## 6. Import the CSV data files into the empty tables
