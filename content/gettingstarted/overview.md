@@ -18,7 +18,7 @@ MIMIC is a relational database containing tables of data relating to patients wh
 
 The tables are linked by identifiers which usually have the suffix "ID". For example `HADM_ID` refers to a unique hospital admission and `SUBJECT_ID` refers to a unique patient. One exception is `ROW_ID`, which is simply a row identifier unique to that table.
 
-Tables pre-fixed with "D_" are dictionaries and provide definitions for identifiers. For example, every row of IOEVENTS is associated with a single `ITEMID` which represents the concept measured, but it does *not* contain the actual name of the drug. By joining IOEVENTS and D_ITEMS on `ITEMID`, it is possible to identify what concept a given `ITEMID` represents.
+Tables pre-fixed with "D\_" are dictionaries and provide definitions for identifiers. For example, every row of OUTPUTEVENTS is associated with a single `ITEMID` which represents the concept measured, but it does *not* contain the actual name of the drug. By joining OUTPUTEVENTS and D_ITEMS on `ITEMID`, it is possible to identify what concept a given `ITEMID` represents.
 
 # List of tables
 
@@ -37,8 +37,10 @@ The following tables contain data collected in the critical care unit:
 
  - **CAREGIVERS**: Every caregiver who has recorded data in the database (defines `CGID`)
  - **CHARTEVENTS**: All charted observations for all patients
- - **DATETIMEEVENTS**: Recorded observations which relate to dates (anonymized).
- - **IOEVENTS**: Intake and output information for patients while in the ICU
+ - **DATETIMEEVENTS**: Recorded observations which relate to dates (anonymized)
+ - **INPUTEVENTS_CV**: Intake for patients monitored using the Philips CareVue system while in the ICU
+ - **INPUTEVENTS_MV**: Intake for patients monitored using the iMDSoft Metavision system while in the ICU
+ - **OUTPUTEVENTS**: Output information for patients while in the ICU
  - **NOTEEVENTS**: Deidentified notes, including nursing notes, ECG reports, echo reports, and discharge summaries
 
 The following tables contain data collected in the hospital record system:
