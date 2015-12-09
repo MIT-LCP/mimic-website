@@ -120,7 +120,7 @@ Now connect to the MIMIC database:
 Before going further, you should revoke the superuser privileges from the mimic user:
 
 ``` sql
-alter user mimic nosuperuser
+alter user mimic nosuperuser;
 ```
 
 Now try, for example, counting the number of patients in the database:
