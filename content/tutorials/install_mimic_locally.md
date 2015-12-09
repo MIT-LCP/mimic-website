@@ -102,7 +102,26 @@ psql -f postgres_add_indexes.sql -U mimic
 
 ## 8. MIMIC-III is ready for analysis
 
-You should now have a working copy of MIMIC-III ready to query with the psql command line tool. Try, for example, counting the number of patients in the database:
+You should now have a working copy of MIMIC-III ready to query with the psql command line tool. First start the PSQL client from the command line:
+
+``` bash
+psql -U mimic
+```
+
+Now connect to the MIMIC database:
+
+``` sql
+-- connect to the mimic database
+\c mimic
+```
+
+Before going further, you should revoke the superuser privileges from the mimic user:
+
+``` sql
+alter user mimic nosuperuser
+```
+
+Now try, for example, counting the number of patients in the database:
 
 ``` sql
 select count(subject_id)
