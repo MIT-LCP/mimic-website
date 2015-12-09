@@ -25,8 +25,8 @@ toc = "true"
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ICD9\_CODE | VARCHAR(10)
 SHORT\_TITLE | VARCHAR(50)
 LONG\_TITLE | VARCHAR(300)
