@@ -40,11 +40,11 @@ From this point onwards we will be referring to scripts in the '[buildmimic](htt
 After connecting with psql, create a new user. Next, create a MIMIC database with a schema for MIMIC-III:
 
 ``` bash
-CREATE USER MIMIC;
-CREATE DATABASE MIMIC OWNER MIMIC;
+CREATE USER mimic;
+CREATE DATABASE mimic OWNER mimic;
 # connect to the database
 \c mimic
-CREATE SCHEMA MIMICIII;
+CREATE SCHEMA mimiciii;
 ```
 
 ## 5. Create a set of empty tables, ready to populate with the data
@@ -53,10 +53,10 @@ Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tre
 
 ``` psql
 -- drop the table if it already exists
-DROP TABLE MIMICIII.CAREGIVERS;
+DROP TABLE mimiciii.caregivers;
 
 -- create the table
-CREATE TABLE MIMICIII.CAREGIVERS
+CREATE TABLE mimiciii.caregivers
     (    ROW_ID INT NOT NULL,
     CGID INT NOT NULL,
     LABEL VARCHAR(15),
@@ -79,7 +79,7 @@ Option 1: import with ```\COPY```
 Option 2: import with ```COPY```
 
 ``` sql
-COPY MIMICIII.CAREGIVERS
+COPY mimiciii.caregivers
     FROM '/path/to/file/CAREGIVERS_DATA_TABLE.csv'
     DELIMITER ','
     CSV HEADER;
@@ -93,11 +93,11 @@ Indexes provide additional structure for the database that can help to improve t
 
 ``` sql
 -- drop the existing index if it exists
-drop index MIMICIII.ADMISSIONS_idx01;
+drop index mimiciii.ADMISSIONS_idx01;
 
 -- create the index
 CREATE INDEX ADMISSIONS_IDX01
-  ON MIMICIII.ADMISSIONS (SUBJECT_ID,HADM_ID);
+  ON mimiciii.admissions (SUBJECT_ID,HADM_ID);
 ```
 
 ## 8. MIMIC-III is ready for analysis
@@ -106,7 +106,7 @@ You should now have a working copy of MIMIC-III ready to query with the psql com
 
 ``` sql
 select count(subject_id)
-from MIMICIII.PATIENTS;
+from mimiciii.patients;
 -- returns x rows
 ```
 
