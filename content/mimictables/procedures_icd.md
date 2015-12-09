@@ -28,13 +28,13 @@ toc = "true"
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
-SUBJECT\_ID | INT
-HADM\_ID | INT
-SEQ\_NUM | INT
-ICD9\_CODE | VARCHAR(20)
-	
+Name | PostgreSQL data type  | Modifiers
+---- | ----
+SUBJECT\_ID     | INTEGER               | not null
+HADM\_ID        | INTEGER               | not null
+SEQ\_NUM        | INTEGER               |
+ICD9\_CODE      | VARCHAR(10)           |
+
 # Detailed Description
 
 ## `SUBJECT_ID`, `HADM_ID`
@@ -47,7 +47,7 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 ## `ICD9_CODE`
 
-`CODE` provides the code for the given procedure. 
+`CODE` provides the code for the given procedure.
 
 # Important considerations
 
