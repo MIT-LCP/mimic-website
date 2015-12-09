@@ -53,6 +53,19 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 ## `DESCRIPTION`
 
 `DESCRIPTION` provides a human understandable summary of the meaning of the given DRG code.
+The description field frequently has acronyms which represent comorbidity levels. The following table provides a definition for some of these acronyms:
+
+
+Acronym | Description
+---- | ----
+w CC/MCC | with CC or Major CC
+w MCC | with Major CC
+w CC | with CC and without Major CC
+w NonCC | with NonCC and without CC or Major CC
+w/o MCC | with CC or Non CC and without Major CC
+w/o CC/MCC | with nonCC and without CC or Major CC
+
+Note that there are three levels of comorbidities: none, with comorbid conditions, and with major comorbid conditions. These acronyms are primarily used in HCFA/MS DRG codes.
 
 ## `DRG_SEVERITY`, `DRG_MORTALITY`
 
