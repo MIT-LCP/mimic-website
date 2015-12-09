@@ -79,7 +79,7 @@ Two different monitoring systems were operating in the hospital over the data co
 
 `HADM_ID` have been regenerated in MIMIC-III. `HADM_ID` in MIMIC-II v2.6 will *not* match any `HADM_ID` in MIMIC-III. The newly generated `HADM_ID` range from 100,000 - 199,999 to help differentiate these IDs from others.
 
-`ICUSTAY_ID` have been regenerated in MIMIC-III. `ICUSTAY_ID` in MIMIC-II v2.6 will *not* match any `ICUSTAY_ID` in MIMIC-III. Note that the newly generated `ICUSTAY_IF` range between 200,000 - 299,999 to prevent confusion with other IDs.
+`ICUSTAY_ID` have been regenerated in MIMIC-III. `ICUSTAY_ID` in MIMIC-II v2.6 will *not* match any `ICUSTAY_ID` in MIMIC-III. Note that the newly generated `ICUSTAY_ID` range is between 200,000 - 299,999 to prevent confusion with other IDs.
 
 
 # New tables
