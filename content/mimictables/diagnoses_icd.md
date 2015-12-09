@@ -27,13 +27,13 @@ toc = "true"
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
-SUBJECT\_ID | INT
-HADM\_ID | INT
-SEQUENCE | INT
-ICD9_CODE | VARCHAR(20)
-	
+Name | PostgreSQL data type  | Modifiers
+---- | ----
+SUBJECT\_ID     | INTEGER               | not null
+HADM\_ID        | INTEGER               | not null
+SEQ\_NUM        | INTEGER               |
+ICD9\_CODE      | VARCHAR(10)           |
+
 # Detailed Description
 
 ## `SUBJECT_ID`, `HADM_ID`
@@ -50,5 +50,5 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 # Important considerations
 
-* All ICD codes in MIMIC-III v1.0 are ICD-9 based. The Beth Israel Deaconess Medical Center will begin using ICD-10 codes in 2015.
-* The ICD codes do not contain decimals either in this table or D_ICD_DIAGNOSES. This is the format of the data in the hospital database.
+* All ICD codes in MIMIC-III are ICD-9 based. The Beth Israel Deaconess Medical Center will begin using ICD-10 codes in 2015.
+* The code field for the ICD-9-CM Principal and Other Diagnosis Codes is six characters in length, with the decimal point implied between the third and fourth digit for all diagnosis codes other than the V codes. The decimal is implied for V codes between the second and third digit.
