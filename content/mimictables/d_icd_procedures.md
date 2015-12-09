@@ -19,18 +19,18 @@ toc = "true"
 
 **Number of rows:** 3,882
 
-**Links to:** 
+**Links to:**
 
 * PROCEDURES_ICD on `ICD9_CODE`
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ICD9\_CODE | VARCHAR(10)
-SHORT\_TITLE | VARCHAR(50) 
+SHORT\_TITLE | VARCHAR(50)
 LONG\_TITLE | VARCHAR(300)
-	
+
 # Detailed Description
 
 ## `ICD9_CODE`
