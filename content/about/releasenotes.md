@@ -59,6 +59,10 @@ sed -i 's1/"UOM"/"VALUEUOM"/' LABEVENTS_DATA_TABLE.csv
 
 Be sure to validate the checksum of the resultant file to ensure you have the correct version.
 
+# Past versions
+
+This section lists past versions in reverse chronological order.
+
 ## MIMIC-III v1.2
 
 MIMIC-III v1.2 was released on November 10th, 2015. MIMIC-III v1.2 was a major release providing both bug fixes and a large amount of additional data.
@@ -102,10 +106,6 @@ MIMIC-III v1.1 was released on September 24th, 2015. It was primarily a bug fix 
 * #121 - IOEVENTS contained incorrect units for certain drugs (sometimes the unit was a rate when the actual observation was an amount, e.g. listed as "mcgkgmin" when it should have been "mg").
 * #122 - `DBSOURCE` in the TRANSFERS and ICUSTAYEVENTS tables has been corrected - originally it only contained 'metavision' when a patient was in the ICU, so the same patient would be listed as 'carevue' when out of the ICU and 'metavision' when inside the ICU.
 * #123 - Precision in the IOEVENTS table has been fixed at 10 decimal places.
-
-# Past versions
-
-This section lists past versions in reverse chronological order.
 
 ## MIMIC-III v1.0
 
