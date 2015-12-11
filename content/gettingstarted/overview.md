@@ -40,8 +40,8 @@ The following tables contain data collected in the critical care unit:
  - **DATETIMEEVENTS**: Recorded observations which relate to dates (anonymized)
  - **INPUTEVENTS_CV**: Intake for patients monitored using the Philips CareVue system while in the ICU
  - **INPUTEVENTS_MV**: Intake for patients monitored using the iMDSoft Metavision system while in the ICU
- - **OUTPUTEVENTS**: Output information for patients while in the ICU
  - **NOTEEVENTS**: Deidentified notes, including nursing notes, ECG reports, echo reports, and discharge summaries
+ - **OUTPUTEVENTS**: Output information for patients while in the ICU
 
 The following tables contain data collected in the hospital record system:
 
