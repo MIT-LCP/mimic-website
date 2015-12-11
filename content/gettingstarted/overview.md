@@ -26,7 +26,7 @@ The following tables are used to define and track patient stays:
 
  - **ADMISSIONS**: Every unique hospitalization for each patient in the database (defines `HADM_ID`)
  - **CALLOUT**: Defines when a patient was scheduled for ICU discharge and when the patient was actually discharged
- - **ICUSTAYEVENTS**: Every unique ICU stay in the database (defines `ICUSTAY_ID`)
+ - **ICUSTAYS**: Every unique ICU stay in the database (defines `ICUSTAY_ID`)
  - **PATIENTS**: Every unique patient in the database (defines `SUBJECT_ID`)
  - **SERVICES**: The service under which a patient received care
  - **TRANSFERS**: Patient movement within the hospital, including admission and discharge to the ICU
