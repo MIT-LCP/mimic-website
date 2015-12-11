@@ -42,6 +42,7 @@ The following tables contain data collected in the critical care unit:
  - **INPUTEVENTS_MV**: Intake for patients monitored using the iMDSoft Metavision system while in the ICU
  - **NOTEEVENTS**: Deidentified notes, including nursing and physician notes, ECG reports, imaging reports, and discharge summaries.
  - **OUTPUTEVENTS**: Output information for patients while in the ICU
+ - **PROCEDUREEVENTS_MV**: Patient procedures for the subset of patients who were monitored in the ICU using the iMDSoft MetaVision system. 
 
 The following tables contain data collected in the hospital record system:
 
