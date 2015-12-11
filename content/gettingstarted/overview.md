@@ -25,41 +25,41 @@ Tables pre-fixed with "D\_" are dictionaries and provide definitions for identif
 The following tables are used to define and track patient stays:
 
  - **ADMISSIONS**: Every unique hospitalization for each patient in the database (defines `HADM_ID`)
- - **CALLOUT**: Defines when a patient was scheduled for ICU discharge and when the patient was actually discharged
+ - **CALLOUT**: Information regarding when a patient was cleared for ICU discharge and when the patient was actually discharged
  - **ICUSTAYS**: Every unique ICU stay in the database (defines `ICUSTAY_ID`)
  - **PATIENTS**: Every unique patient in the database (defines `SUBJECT_ID`)
- - **SERVICES**: The service under which a patient received care
- - **TRANSFERS**: Patient movement within the hospital, including admission and discharge to the ICU
+ - **SERVICES**: The clinical service under which a patient is registered
+ - **TRANSFERS**: Patient movement from bed to bed within the hospital, including ICU admission and discharge
 
 Each `ICUSTAY_ID` corresponds to a single `HADM_ID` and a single `SUBJECT_ID`. Each `HADM_ID` corresponds to a single `SUBJECT_ID`. A single `SUBJECT_ID` can correspond to multiple `HADM_ID` (multiple hospitalizations of the same patient), and multiple `ICUSTAY_ID` (multiple ICU stays either within the same hospitalization, or across multiple hospitalizations, or both).
 
 The following tables contain data collected in the critical care unit:
 
  - **CAREGIVERS**: Every caregiver who has recorded data in the database (defines `CGID`)
- - **CHARTEVENTS**: All charted observations for all patients
- - **DATETIMEEVENTS**: Recorded observations which relate to dates (anonymized)
+ - **CHARTEVENTS**: All charted observations for patients
+ - **DATETIMEEVENTS**: All recorded observations which are dates, for example time of dialysis or insertion of lines.
  - **INPUTEVENTS_CV**: Intake for patients monitored using the Philips CareVue system while in the ICU
  - **INPUTEVENTS_MV**: Intake for patients monitored using the iMDSoft Metavision system while in the ICU
- - **NOTEEVENTS**: Deidentified notes, including nursing notes, ECG reports, echo reports, and discharge summaries
+ - **NOTEEVENTS**: Deidentified notes, including nursing and physician notes, ECG reports, imaging reports, and discharge summaries.
  - **OUTPUTEVENTS**: Output information for patients while in the ICU
 
 The following tables contain data collected in the hospital record system:
 
  - **CPTEVENTS**: Procedures recorded as Current Procedural Terminology (CPT) codes
- - **DIAGNOSES_ICD**: Hospital assigned diagnoses as classified by the international classification of diseases and related health problems (ICD)
- - **DRGCODES**: Diagnosis Related Groups (DRGs) which are used for hospital billing for patient stays
+ - **DIAGNOSES_ICD**: Hospital assigned diagnoses, coded using the International Statistical Classification of Diseases and Related Health Problems (ICD) system
+ - **DRGCODES**: Diagnosis Related Groups (DRG), which are used by the hospital for billing purposes.
  - **LABEVENTS**: Laboratory measurements for patients both within the hospital and in out patient clinics
  - **MICROBIOLOGYEVENTS**: Microbiology measurements and sensitivities from the hospital database
  - **PRESCRIPTIONS**: Medications ordered, and not necessarily administered, for a given patient
- - **PROCEDURES_ICD**: Patient procedures performed as coded by the international classification of diseases and related health problems (ICD) system
+ - **PROCEDURES_ICD**: Patient procedures, coded using the International Statistical Classification of Diseases and Related Health Problems (ICD) system
 
 The following tables are dictionaries:
 
  - **D_CPT**: High-level dictionary of Current Procedural Terminology (CPT) codes
- - **D_ICD_DIAGNOSES**: Dictionary of International Classification of Diseases (ICD) codes relating to diagnoses
- - **D_ICD_PROCEDURES**: Dictionary of International Classification of Diseases (ICD) codes relating to procedures
- - **D_ITEMS**: Describes `ITEMID`s in the ICU database
- - **D_LABITEMS**: Describes `ITEMID`s in the laboratory database
+ - **D_ICD_DIAGNOSES**: Dictionary of International Statistical Classification of Diseases and Related Health Problems (ICD) codes relating to diagnoses
+ - **D_ICD_PROCEDURES**: Dictionary of International Statistical Classification of Diseases and Related Health Problems (ICD) codes relating to procedures
+ - **D_ITEMS**: Dictionary of `ITEMID`s appearing in the MIMIC database, except those that relate to laboratory tests
+ - **D_LABITEMS**: Dictionary of `ITEMID`s in the laboratory database that relate to laboratory tests
 
 # Derived tables
 
