@@ -29,7 +29,12 @@ Furthermore, note that much of the data has been mapped to LOINC codes. LOINC co
 
 ## ADMISSIONS
 
+ADMISSIONS is now sourced from the hospital database, rather than the ICU database. Changes include:
 
+- Admission and discharge dates now have the time component
+- Discharge location is now available
+- Diagnosis on admission is now available
+- ED registration and exit time are now available
 
 ## CENSUSEVENTS replaced by TRANSFERS
 
@@ -47,7 +52,7 @@ D_CHARTITEMS, D_IOITEMS, and D_MEDITEMS were all sourced from the same data sour
 
 ## DEMOGRAPHIC_DETAIL merged into ADMISSIONS
 
-The DEMOGRAPHIC_DETAIL provided extra static information regarding a patient which rarely changed throughout an admission (e.g. age, ethnicity). This data was originally sourced from the ICU database. The new ADMISSIONS table is sourced entirely from the hospital database, and contained the same set of demographics. Instead of creating a new table for this demographics, it was decided to maintain the demographics within the ADMISSIONS table in the same format as it exists in the raw data.
+The DEMOGRAPHIC_DETAIL provided extra static information regarding a patient which rarely changed throughout an admission (e.g. age, ethnicity). This data was originally sourced from the ICU database. The new ADMISSIONS table is sourced entirely from the hospital database, and contained the same set of demographics. Instead of creating a new table for these demographics, it was decided to maintain the demographics within the ADMISSIONS table in the same format as it exists in the raw data.
 
 ## DRGEVENTS renamed DRGCODES
 
@@ -64,12 +69,6 @@ Data in the IOEVENTS and MEDEVENTS tables is now contained in the OUTPUTEVENTS, 
 ## POE_MED_ORDER and POE_DRUG_ORDER merged into PRESCRIPTIONS
 
 The term POE, or provider order entry, is vague and references a hospital specific database which users may not be familiar with. To clarify the content of these tables, they have been merged into a single table named PRESCRIPTIONS.
-
-# Table changes
-
-## IOEVENTS\_CV and IOEVENTS\_MV
-
-Two different monitoring systems were operating in the hospital over the data collection period. The systems - Metavision and CareVue - recorded data in very different ways. We therefore made the decision not to merge the data, and instead provided two separate tables (inputevents\_cv and inputevents\_mv).
 
 # Identifier changes
 
@@ -90,7 +89,15 @@ The CALLOUT table contains information about ICU discharge planning and executio
 
 ## PROCEDURES_ICD
 
+ICD-9 codes for procedures are now available in the PROCEDURES_ICD table.
 
+## INPUTPUTEVENTS\_CV and INPUTPUTEVENTS\_MV
+
+Two different monitoring systems were operating in the hospital over the data collection period. The systems - Metavision and CareVue - recorded data in very different ways. We therefore made the decision not to merge the data, and instead provided two separate tables (INPUTPUTEVENTS\_CV and INPUTPUTEVENTS\_MV).
+
+## OUTPUTEVENTS
+
+Data about outputs were recorded in a consistent fashion for the Metavision and CareVue databases. Therefore, we merged this data into one table: OUTPUTEVENTS.
 
 # Removed tables
 
