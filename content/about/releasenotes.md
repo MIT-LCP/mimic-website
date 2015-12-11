@@ -26,7 +26,7 @@ The current version of the database is v1.3. When referencing this version, we r
 
 ## MIMIC-III v1.3
 
-MIMIC-III v1.3 was released on December 10th, 2015. MIMIC-III v1.3.
+MIMIC-III v1.3 was released on December 10th, 2015. It was a minor release enhancing the consistency of the dataset.
 
 Issues addressed include:
 
