@@ -26,13 +26,24 @@ The current version of the database is v1.3. When referencing this version, we r
 
 ## MIMIC-III v1.3
 
-MIMIC-III v1.3 was released on December 10th, 2015. MIMIC-III v1.3. Issues addressed include:
+MIMIC-III v1.3 was released on December 10th, 2015. MIMIC-III v1.3. The tables modified were:
+
+* ADMISSIONS
+* CHARTEVENTS
+* DATETIMEEVENTS
+* DRGCODES
+* ICUSTAYS
+* LABEVENTS
+* NOTEEVENTS
+* TRANSFERS
+
+Issues addressed include:
 
 * #175 - A new value for ```DRG_VERSION``` was added to the DRGCODES table to clarify why the same code matched to multiple descriptions.
 * #174 - The ```EDTIMEOUT``` column was renamed to ```EDOUTTIME``` in the ADMISSIONS table for consistency with other timestamp columns.
 * #173 - The ```UOM``` column was renamed to ```VALUEUOM``` in the CHARTEVENTS, DATETIMEEVENTS, and LABEVENTS tables for consistency with other UOM columns.
 * #172, #177 - Several careunit acronyms were merged in the TRANSFERS and ICUSTAYS tables for ease of interpretation.
-* #168 - A fix was made that required the addition of 30000 to itemids in the MEDEVENTS table.
+* #168 - A set of ITEMIDs in the INPUTEVENTS_CV table were inappropriately low (<30000), they have no been corrected.
 * #167 - Duplicate radiology reports were removed from the NOTEEVENTS table. These duplicates were present in the raw data.
 * #166 - The ```DBSOURCE``` column was corrected from Metavision to CareVue for a set of patients in the TRANSFERS and ICUSTAYS tables.
 
