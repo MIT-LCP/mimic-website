@@ -22,6 +22,12 @@ toc = "true"
 
 * PATIENTS on `SUBJECT_ID`
 
+# Important considerations
+
+* The data is sourced from the admission, discharge and transfer database from the hospital (often referred to as 'ADT' data).
+* Organ donor accounts are sometimes created for patients who died in the hospital. These are distinct hospital admissions with very short, sometimes negative lengths of stay. Furthermore, their `DEATHTIME` is frequently the same as the original patient's `DEATHTIME`.
+* All text data, except for that in the `INSURANCE` column, is stored in upper case.
+
 # Table columns
 
 Name | Postgres data type
@@ -91,8 +97,3 @@ Time that the patient was registered and discharged from the emergency departmen
 
 The `DIAGNOSIS` column provides a preliminary, free text diagnosis for the patient on hospital admission. The diagnosis is usually assigned by the admitting clincian and does not use a systematic ontology. As of MIMIC-III v1.0 there were 15,693 distinct diagnoses for 58,976 admissions. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness). Final diagnoses for hospital admissions are coded and can be found in the DIAGNOSES_ICD table.
 
-# Important considerations
-
-* The data is sourced from the admission, discharge and transfer database from the hospital (often referred to as 'ADT' data).
-* Organ donor accounts are sometimes created for patients who died in the hospital. These are distinct hospital admissions with very short, sometimes negative lengths of stay. Furthermore, their `DEATHTIME` is frequently the same as the original patient's `DEATHTIME`.
-* All text data, except for that in the `INSURANCE` column, is stored in upper case.

@@ -25,6 +25,10 @@ toc = "true"
 * ADMISSIONS on `HADM_ID`
 * ICUSTAYS on `ICUSTAY_ID`
 
+# Important considerations
+
+* The table does *not* specify if an order was later cancelled as of MIMIC-III v1.0.
+
 # Table columns
 
 Name | Postgres data type 
@@ -80,6 +84,3 @@ These columns provide a representation of the drug in various coding systems.
 
 The route prescribed for the drug.
 
-# Important considerations
-
-* The table does *not* specify if an order was later cancelled as of MIMIC-III v1.0.

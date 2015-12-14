@@ -23,6 +23,8 @@ toc = "true"
 
 * LABEVENTS on `ITEMID`
 
+<!-- # Important considerations -->
+
 # Table columns
 
 Name | Postgres data type 

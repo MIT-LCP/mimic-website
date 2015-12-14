@@ -24,6 +24,11 @@ toc = "true"
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 
+# Important considerations
+
+* `ICUSTAY_ID` is a *generated* identifier, that is it is *not* based off any raw data identifier. The hospital and ICU databases are not intrinsically linked, and so do not have any concept of an ICU encounter identifier.
+* The ICUSTAYS table is derived from the TRANSFERS table. Specifically, it groups the TRANSFERS table based on ICUSTAY\_ID, and excludes rows where no ICUSTAY\_ID is present.
+
 # Table columns
 
 Name | Postgres data type 
@@ -65,8 +70,3 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 ## `LOS`
 
 `LOS` is the length of stay for the patient for the given ICU stay, which may include one or more ICU units.
-
-# Important considerations
-
-* `ICUSTAY_ID` is a *generated* identifier, that is it is *not* based off any raw data identifier. The hospital and ICU databases are not intrinsically linked, and so do not have any concept of an ICU encounter identifier.
-* The ICUSTAYS table is derived from the TRANSFERS table. Specifically, it groups the TRANSFERS table based on ICUSTAY\_ID, and excludes rows where no ICUSTAY\_ID is present.

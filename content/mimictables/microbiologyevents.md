@@ -27,6 +27,8 @@ toc = "true"
 * D\_ITEMS on `ORG_ITEMID`
 * D\_ITEMS on `AB_ITEMID`
 
+<!-- # Important considerations -->
+
 # Table columns
 
 Name | Postgres data type 
@@ -76,6 +78,4 @@ In the cases where both `CHARTTIME` and `CHARTDATE` exists, `CHARTDATE` is equal
 ## `DILUTION_TEXT`, `DILUTION_COMPARISON`, `DILUTION_VALUE`
 
 ## `INTERPRETATION`
-
-<!-- # Important considerations -->
 

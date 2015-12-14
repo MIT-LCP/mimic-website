@@ -11,7 +11,6 @@ toc = "true"
 
 +++
 
-
 # Overview
 
 **Table source:** Hospital database.
@@ -25,6 +24,10 @@ toc = "true"
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 * D\_ICD\_PROCEDURES on `ICD9_CODE`
+
+# Important considerations
+
+* In MIMIC-III v1.0, only ICD-9 codes are used for recording procedures.
 
 # Table columns
 
@@ -49,6 +52,3 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 `CODE` provides the code for the given procedure.
 
-# Important considerations
-
-* In MIMIC-III v1.0, only ICD-9 codes are used for recording procedures.

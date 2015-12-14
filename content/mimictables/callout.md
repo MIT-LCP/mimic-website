@@ -11,7 +11,6 @@ toc = "true"
 
 +++
 
-
 # Overview
 
 **Table source:** Hospital database.
@@ -24,6 +23,11 @@ toc = "true"
 
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
+
+# Important considerations
+
+* Call out data is *not* available for all adult patients, as the data collection only began part way through the collection of the MIMIC database
+* Call out data is *never* available for neonates
 
 # Table columns
 
@@ -96,9 +100,4 @@ The request columns are binary indicators which request certain precautions for 
 
 `CREATETIME` provides the time and date that the call out was initiated. `UPDATETIME` provides the last time at which the call out event was updated. `ACKNOWLEDGETIME` is the time at which the call out was first acknowledged.
 `OUTCOMETIME` is the time at which the `CALLOUT_OUTCOME` occurred. `FIRSTRESERVATIONTIME` and `CURRENTRESERVATIONTIME` provide information regarding ward reservations.
-
-# Important considerations
-
-* Call out data is *not* available for all adult patients, as the data collection only began part way through the collection of the MIMIC database
-* Call out data is *never* available for neonates
 

@@ -27,6 +27,10 @@ toc = "true"
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 
+# Important considerations
+
+* The respiratory cost center bills for ventilation *regardless* of duration. That means that 30 minutes of mechanical ventilation for a single day would result in same billing code as a full 24 hours of mechanical ventilation.
+
 # Table columns
 
 Name | Postgres data type 
@@ -76,6 +80,4 @@ The section headers provide a category for the given CPT code. These headers wer
 
 In the case of a `CPT_CD` corresponding to the respiratory cost center, the description provides information about the meaning of the CPT code. Otherwise, the field is null.
 
-# Important considerations
 
-* The respiratory cost center bills for ventilation *regardless* of duration. That means that 30 minutes of mechanical ventilation for a single day would result in same billing code as a full 24 hours of mechanical ventilation.

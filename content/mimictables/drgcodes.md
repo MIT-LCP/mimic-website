@@ -24,6 +24,12 @@ toc = "true"
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 
+# Important considerations
+
+* HCFA-DRG codes have multiple descriptions as they have changed over time. Sometimes these descriptions are similar, but sometimes they are *completely different diagnoses*. Users will need to select rows using both the code *and* the description.
+* Since there are multiple versions of DRG codes, queries will need to incorporate both the type of DRG and the code when filtering for a certain diagnosis.
+* All patients have an HCFA-DRG code, but not all patients have an APR-DRG code. Note that APR-DRG is believed to be an alternative, more specific, code which could be used in conjunction with the HCFA codes.
+
 # Table columns
 
 Name | PostgreSQL data type
@@ -70,9 +76,3 @@ Note that there are three levels of comorbidities: none, with comorbid condition
 ## `DRG_SEVERITY`, `DRG_MORTALITY`
 
 `DRG_SEVERITY` and `DRG_MORTALITY` provide additional granularity to DRG codes in the 'APR' DRG type. Severity and mortality allow for higher billing costs when a diagnosis is more severe, and vice versa.
-
-# Important considerations
-
-* HCFA-DRG codes have multiple descriptions as they have changed over time. Sometimes these descriptions are similar, but sometimes they are *completely different diagnoses*. Users will need to select rows using both the code *and* the description.
-* Since there are multiple versions of DRG codes, queries will need to incorporate both the type of DRG and the code when filtering for a certain diagnosis.
-* All patients have an HCFA-DRG code, but not all patients have an APR-DRG code. Note that APR-DRG is believed to be an alternative, more specific, code which could be used in conjunction with the HCFA codes.

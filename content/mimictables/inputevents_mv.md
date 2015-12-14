@@ -28,6 +28,10 @@ toc = "true"
 
 A high level description of the data is available [here](/mimicdata/io).
 
+# Important considerations
+
+* The `STATUSDESCRIPTION` column specifies if an order is 'Rewritten', that is: it was never delivered to the patient as the order was rewritten.
+
 # Table columns
 
 Name | Postgres data type
@@ -131,7 +135,7 @@ If the order ended on patient transfer, this field indicates if it continued int
 
 If the order was canceled, this column provides some explanation.
 
-## COMMENTS_STATUS, COMMENTS_TITLE, COMMENTS_DATE
+## COMMENTS\_STATUS, COMMENTS\_TITLE, COMMENTS_DATE
 
 Specifies if the order was edited or canceled, and if so, the date and job title of the care giver who canceled or edited it.
 
@@ -139,6 +143,3 @@ Specifies if the order was edited or canceled, and if so, the date and job title
 
 Information on the initial amount and rate of the order.
 
-# Important considerations
-
-* The `STATUSDESCRIPTION` column specifies if an order is 'Rewritten', that is: it was never delivered to the patient as the order was rewritten.

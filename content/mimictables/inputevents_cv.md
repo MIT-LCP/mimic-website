@@ -28,6 +28,8 @@ toc = "true"
 
 A high level description of the data is available [here](/mimicdata/io).
 
+<!-- # Important considerations -->
+
 # Table columns
 
 Name | Postgres data type
@@ -101,5 +103,3 @@ Metavision `ITEMID` values are all above 220000. A subset of commonly used medic
 ## ORIGINALAMOUNT, ORIGINALAMOUNTUOM, ORIGINALROUTE, ORIGINALRATE, ORIGINALRATEUOM , ORIGINALSITE
 
 These columns provide information about the solution the medication was a part of when it was first entered into the information system.
-
-<!-- # Important considerations -->

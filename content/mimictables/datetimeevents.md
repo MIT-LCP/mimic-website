@@ -27,6 +27,8 @@ toc = "true"
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 
+<!-- # Important considerations -->
+
 # Table columns
 
 Name | Postgres data type 
@@ -71,4 +73,3 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 ## `RESULTSTATUS`, `STOPPED`
 
-<!-- # Important considerations -->
