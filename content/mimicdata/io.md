@@ -14,13 +14,14 @@ toc = "true"
 # Inputs and outputs
 
 Inputs and outputs are extremely useful when studying intensive care unit patients. Inputs are any fluids which have been administered to the patient: such as oral or tube feedings or intravenous solutions containing medications. Outputs are fluids which have either been excreted by the patient, such as urine output, or extracted from the patient, for example through a drain.
-These data were the most complicated to handle technically in the MIMIC-III data. Recall that the MIMIC-III database contains information from two distinct clinical information systems: Philips CareVue and iMDSoft Metavision. These two databases were not guaranteed to store data in a similar fashion, and the IOEVENTS table reflect the merging of two very distinct data archiving techniques. In the descriptions in this document, data will be referred to as being sourced either from "CareVue" or "Metavision" to help differentiate between the different methods in which the data was stored.
+These data were the most complicated to handle technically in the MIMIC-III data. 
+
+The MIMIC-III database contains information from two distinct critical care information systems: Philips CareVue and iMDSoft Metavision. These two databases store data in different ways. In the descriptions in this document, data will be referred to as being sourced either from "CareVue" or "Metavision" to differentiate between the different systems.
 
 # INPUTEVENTS_CV, INPUTEVENTS_MV, OUTPUTEVENTS
 
-Inputs exist in two separate tables: INPUTEVENTS_CV and INPUTEVENTS_MV. INPUTEVENTS_CV contains CareVue inputs, while INPUTEVENTS_MV contains Metavision inputs. Results from these tables can be unioned as the same patient stay never occurs in both tables. Concretely, a unique `ICUSTAY_ID` only occurs in *one* out of the two tables. However, if a patient has two ICU stays, one in CareVue and one in Metavision, then they could appear in both tables. As a result, a unique `SUBJECT_ID` could occur in both tables.
-
-Conversely, all outputs for both Metavision and CareVue patients have been merged into the OUTPUTEVENTS table.
+Inputs exist in two separate tables: INPUTEVENTS\_CV and INPUTEVENTS\_MV. INPUTEVENTS\_CV contains CareVue inputs, while INPUTEVENTS\_MV contains Metavision inputs. Results from these tables can be unioned as the same patient stay never occurs in both tables. Concretely, a unique `ICUSTAY_ID` only occurs in *one* out of the two tables. However, if a patient has two ICU stays, one in CareVue and one in Metavision, then they could appear in both tables. As a result, a unique `SUBJECT_ID` could occur in both tables.
+All outputs for both Metavision and CareVue patients have been merged into the OUTPUTEVENTS table.
 
 ## Outputs
 
