@@ -23,7 +23,10 @@ toc = "true"
 
 * LABEVENTS on `ITEMID`
 
-<!-- # Important considerations -->
+# Important considerations
+
+* The `ITEMID` from MIMIC-III v1.0 does *not* match the `ITEMID` from MIMIC-II v2.6. If a mapping between the two is necessary, please contact the guardians of the database.
+* Many of the LOINC codes were assigned during a project to standardize the ontology of lab measurements in the MIMIC database. Consequently, the codes were assigned post-hoc, and may not be present for every lab measurement. We welcome improvements to the present codes or assignment of LOINC codes to unmapped data elements from the community.
 
 # Table columns
 
@@ -60,8 +63,3 @@ The `LABEL` column describes the concept which is represented by the `ITEMID`.
 ## `LOINC_CODE`
 
 `LOINC_CODE` contains the LOINC code associated with the given `ITEMID`. LOINC is an ontology which originally specified laboratory measurements but has since expanded to cover a wide range of clinically relevant concepts. LOINC openly provide a table which contains a large amount of detail about each LOINC code. This table is freely available online or can be provided by the guardians of the database.
-
-# Important considerations
-
-* The `ITEMID` from MIMIC-III v1.0 does *not* match the `ITEMID` from MIMIC-II v2.6. If a mapping between the two is necessary, please contact the guardians of the database.
-* Many of the LOINC codes were assigned during a project to standardize the ontology of lab measurements in the MIMIC database. Consequently, the codes were assigned post-hoc, and may not be present for every lab measurement. We welcome improvements to the present codes or assignment of LOINC codes to unmapped data elements from the community.
