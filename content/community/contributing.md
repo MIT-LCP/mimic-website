@@ -39,5 +39,5 @@ We encourage you to share the code that you use for analysing the data. Please a
 
 If you identify an issue with the MIMIC data (for example, unusual characteristics or limitations), one useful step would be to add your finding to the documentation, via the method described above.
 
-For concerns about errors in the database, including private health information which has not been sufficiently de-identified, please contact us directly at [mimic-support@physionet.org](mailto:mimic-support@physionet.org).
+One exception is where a topic is sensitive, for example relating to patient health information. If you need to raise a private issue, please contact us at: [mimic-support@physionet.org](mailto:mimic-support@physionet.org).
 
