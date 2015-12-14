@@ -52,9 +52,9 @@ If upgrading between v1.2 to v1.3, please note that the updated tables include:
 \* Only the header row of these tables was updated. It is possible to save bandwidth and update these tables on your local computer, e.g. with the commands:
 
 ```sh
-sed -i 's1/"UOM"/"VALUEUOM"/' CHARTEVENTS_DATA_TABLE.csv
-sed -i 's1/"UOM"/"VALUEUOM"/' DATETIMEEVENTS_DATA_TABLE.csv
-sed -i 's1/"UOM"/"VALUEUOM"/' LABEVENTS_DATA_TABLE.csv
+sed -i '1s/"UOM"/"VALUEUOM"/' CHARTEVENTS_DATA_TABLE.csv
+sed -i '1s/"UOM"/"VALUEUOM"/' DATETIMEEVENTS_DATA_TABLE.csv
+sed -i '1s/"UOM"/"VALUEUOM"/' LABEVENTS_DATA_TABLE.csv
 ```
 
 Be sure to validate the checksum of the resultant file to ensure you have the correct version.
