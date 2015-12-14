@@ -25,6 +25,12 @@ toc = "true"
 * ADMISSIONS on `HADM_ID`
 * ICUSTAYS on `ICUSTAY_ID`
 
+# Important considerations
+
+* The ICUSTAYEVENTS table is derived from this table.
+* Care units are defined based off the `WARDID` being associated with an ICU cost center.
+* ICUs in the Beth Israel have moved throughout the years, and consequently the same `WARDID` may be considered as an ICU for patient A but not an ICU for patient B.
+
 # Table columns
 
 Name | Postgres data type 
@@ -76,8 +82,3 @@ The `INTIME` and `OUTTIME` of the transfer event correspond to the `CURR_CAREUNI
 
 `LOS` is the length of stay for the patient for the given ward stay, which may be within or outside of the ICU.
 
-# Important considerations
-
-* The ICUSTAYEVENTS table is derived from this table.
-* Care units are defined based off the `WARDID` being associated with an ICU cost center.
-* ICUs in the Beth Israel have moved throughout the years, and consequently the same `WARDID` may be considered as an ICU for patient A but not an ICU for patient B.

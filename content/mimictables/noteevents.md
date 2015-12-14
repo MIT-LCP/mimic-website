@@ -25,6 +25,11 @@ toc = "true"
 * ADMISSIONS on `HADM_ID`
 * CAREGIVERS on `CGID`
 
+# Important considerations
+
+* `TEXT` is often large and contains many newline characters: it may be easier to read if viewed in a distinct program rather than the one performing the queries.
+* Echos are generated using templates and in some cases there may be discrepancies in severity.  For example one report may contain: "Mild PA systolic hypertension. Severe PA systolic hypertension." indicating that the caregiver may not have removed the appropriate item from the template.
+
 # Table columns
 
 Name | Postgres data type
@@ -67,7 +72,3 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 `TEXT` contains the note text.
 
-# Important considerations
-
-* `TEXT` is often large and contains many newline characters: it may be easier to read if viewed in a distinct program rather than the one performing the queries.
-* Echos are generated using templates and in some cases there may be discrepancies in severity.  For example one report may contain: "Mild PA systolic hypertension. Severe PA systolic hypertension." indicating that the caregiver may not have removed the appropriate item from the template.

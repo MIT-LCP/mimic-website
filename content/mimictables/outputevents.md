@@ -26,7 +26,7 @@ toc = "true"
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 
-A high level description of the data is available [here](/mimicdata/ioevents).
+<!-- # Important considerations -->
 
 # Table columns
 
@@ -76,5 +76,3 @@ Metavision `ITEMID` values are all above 220000. A subset of commonly used medic
 ## STOPPED, NEWBOTTLE, ISERROR
 
 `STOPPED` indicates if the order was disconnected at the given `CHARTTIME`. `NEWBOTTLE` indicates that a new bag of solution was hung at the given `CHARTTIME`. `ISERROR` is a Metavision checkbox where a care giver can specify that an observation is an error. No other details are provided.
-
-<!-- # Important considerations -->

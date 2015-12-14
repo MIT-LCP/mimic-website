@@ -23,6 +23,8 @@ toc = "true"
 
 * DIAGNOSES_ICD ON `ICD9_CODE`
 
+<!-- # Important considerations -->
+
 # Table columns
 
 Name | Postgres data type
@@ -41,4 +43,3 @@ LONG\_TITLE | VARCHAR(300)
 
 The title fields provide a brief definition for the given diagnosis code in `ICD9_CODE`.
 
-<!-- # Important considerations -->

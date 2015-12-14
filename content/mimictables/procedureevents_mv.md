@@ -18,27 +18,48 @@ toc = "true"
 
 **Table purpose:** Contains procedures for patients
 
-**Number of rows:** TBC
-
-Details to follow.
-
-<!--
+**Number of rows:** 258,066
 
 **Links to:**
 
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
-* D\_ICD\_PROCEDURES on `ICD9_CODE`
+* ICUSTAYS on `ICUSTAY_ID`
+* D_ITEMS on `ITEMID`
+
+<!-- # Important considerations -->
 
 # Table columns
 
 Name | Postgres data type 
 ---- | ---- 
-SUBJECT\_ID | INT
-HADM\_ID | INT
-PROC\_SEQ\_NUM | INT
-ICD9\_CODE | VARCHAR(20)
-	
+ROW_ID |  INT NOT NULL
+SUBJECT_ID |  INT NOT NULL
+HADM_ID |  INT NOT NULL
+ICUSTAY_ID |  INT
+STARTTIME |  TIMESTAMP(0)
+ENDTIME |  TIMESTAMP(0)
+ITEMID |  INT
+VALUE |  DOUBLE PRECISION
+VALUEUOM |  VARCHAR(30)
+LOCATION |  VARCHAR(30)
+LOCATIONCATEGORY |  VARCHAR(30)
+STORETIME |  TIMESTAMP(0)
+CGID  |  INT
+ORDERID |  INT
+LINKORDERID |  INT
+ORDERCATEGORYNAME |  VARCHAR(100)
+SECONDARYORDERCATEGORYNAME |  VARCHAR(100)
+ORDERCATEGORYDESCRIPTION |  VARCHAR(50)
+ISOPENBAG |  SMALLINT
+CONTINUEINNEXTDEPT |  SMALLINT
+CANCELREASON |  SMALLINT
+STATUSDESCRIPTION |  VARCHAR(30)
+COMMENTS_EDITEDBY |  VARCHAR(30)
+COMMENTS_CANCELEDBY |  VARCHAR(30)
+COMMENTS_DATE |  TIMESTAMP(0)
+
+<!--
 # Detailed Description
 
 ## `SUBJECT_ID`, `HADM_ID`
@@ -52,9 +73,5 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 ## `ICD9_CODE`
 
 `CODE` provides the code for the given procedure. 
-
-# Important considerations
-
-* In MIMIC-III v1.0, only ICD-9 codes are used for recording procedures.
 
 -->

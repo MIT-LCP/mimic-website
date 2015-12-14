@@ -26,6 +26,13 @@ toc = "true"
 * ADMISSIONS on `HADM_ID`
 * D_LABITEMS on `ITEMID`
 
+# Important considerations
+
+* Note that the time associated with this result is the time of the fluid *acquisition*, not the time that the values were made available to the clinical staff. 
+* The labevents table contains both in-hospital laboratory measurements *and* out of hospital laboratory measurements from clinics which the patient has visited (since the patient is not "in" a hospital when visiting a clinic, these patients often referred to as "out patients" and the data is often called "out patient" data).
+* In MIMIC-III v1.0, there is a subset of patients for which the outpatient lab data is not available. They can be identified by checking for patients whose data *always* has an `HADM_ID`.
+* In MIMIC-III v1.0, there is a subset of patients for which text laboratory data is missing. This primarily affects the blood gas type recorded with blood gases.
+
 # Table columns
 
 Name | Postgres data type 
@@ -68,9 +75,3 @@ Note that because the data is directly sourced from the laboratory database, it 
 
 `FLAG` indicates whether the laboratory value is considered abnormal or not, using pre-defined thresholds.
 
-# Important considerations
-
-* Note that the time associated with this result is the time of the fluid *acquisition*, not the time that the values were made available to the clinical staff. 
-* The labevents table contains both in-hospital laboratory measurements *and* out of hospital laboratory measurements from clinics which the patient has visited (since the patient is not "in" a hospital when visiting a clinic, these patients often referred to as "out patients" and the data is often called "out patient" data).
-* In MIMIC-III v1.0, there is a subset of patients for which the outpatient lab data is not available. They can be identified by checking for patients whose data *always* has an `HADM_ID`.
-* In MIMIC-III v1.0, there is a subset of patients for which text laboratory data is missing. This primarily affects the blood gas type recorded with blood gases.

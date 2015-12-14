@@ -24,6 +24,10 @@ toc = "true"
 * ADMISSIONS on `SUBJECT_ID`
 * ICUSTAYS on `SUBJECT_ID`
 
+# Important considerations
+
+* `DOB` has been shifted for patients older than 89. The median age for the patients whose date of birth was shifted is 91.4.
+
 # Table columns
 
 Name | Postgres data type 
@@ -58,6 +62,3 @@ EXPIRE\_FLAG | VARCHAR(5)
 
 `EXPIRE_FLAG` indicates whether the patient died within the hospital. Note that if `DOD_HOSP` is present, then the last admission for the patient will have `EXPIRE_FLAG` = 'Y'.
 
-# Important considerations
-
-* `DOB` has been shifted for patients older than 89. The median age for the patients whose date of birth was shifted is 91.4.

@@ -27,10 +27,12 @@ toc = "true"
 
 Name | Postgres data type 
 ---- | ---- 
-ROW\_ID | 
-CGID | 
-LABEL | 
-DESCRIPTION | 
+ROW\_ID | INT
+CGID | INT
+LABEL | VARCHAR(15)
+DESCRIPTION | VARCHAR(30)
+
+<!-- # Important considerations -->
 
 # Detailed Description
 

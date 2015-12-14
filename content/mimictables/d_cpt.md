@@ -23,6 +23,10 @@ toc = "true"
 
 * CPTEVENTS on `CPT_CD` between `MINCODEINSUBSECTION` and `MAXCODEINSUBSECTION`
 
+# Important considerations
+
+* Unlike all other definition tables, `D_CPT` does *not* have a one to one mapping with the corresponding `CPT_CD` in `CPTEVENTS`, rather each row of `D_CPT` maps to a range of `CPT_CD`.
+
 # Table columns
 
 Name | Postgres data type
@@ -66,7 +70,3 @@ Similarly as for the sections, `SUBSECTIONRANGE` defines the range of codes for 
 ## `MINCODEINSUBSECTION`, `MAXCODEINSUBSECTION`
 
 These columns provide numeric representations of minimum and maximum value in the `SUBSECTIONRANGE` column. This facilitates joining the `CPTEVENTS` table to the `D_CPT` table on `CPT_CD`.
-
-# Important considerations
-
-* Unlike all other definition tables, `D_CPT` does *not* have a one to one mapping with the corresponding `CPT_CD` in `CPTEVENTS`, rather each row of `D_CPT` maps to a range of `CPT_CD`.

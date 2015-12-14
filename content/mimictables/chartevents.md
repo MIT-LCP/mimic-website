@@ -26,6 +26,8 @@ toc = "true"
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 
+<!-- # Important considerations -->
+
 # Table columns
 
 Name | Postgres data type | In CareVue | In Metavision
@@ -82,4 +84,3 @@ Identifier for a single measurement type in the database. Each row associated wi
 
 `RESULTSTATUS` and `STOPPED` are CareVue specific columns which specify the type of measurement (`RESULTSTATUS` is 'Manual' or 'Automatic') and whether the measurement was stopped.
 
-<!-- # Important considerations -->
