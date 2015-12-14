@@ -27,7 +27,7 @@ toc = "true"
 
 # Important considerations
 
-* The ICUSTAYEVENTS table is derived from this table.
+* The ICUSTAYS table is derived from this table.
 * Care units are defined based off the `WARDID` being associated with an ICU cost center.
 * ICUs in the Beth Israel have moved throughout the years, and consequently the same `WARDID` may be considered as an ICU for patient A but not an ICU for patient B.
 
