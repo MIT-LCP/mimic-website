@@ -23,7 +23,7 @@ toc = "true"
 
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
-* DIAGNOSES_ICD on `ICD9_CODE`
+* D\_ICD\_DIAGNOSES on `ICD9_CODE`
 
 # Important considerations
 
@@ -33,7 +33,7 @@ toc = "true"
 # Table columns
 
 Name | PostgreSQL data type  | Modifiers
----- | ----
+---- | ---- | ----
 SUBJECT\_ID     | INTEGER               | not null
 HADM\_ID        | INTEGER               | not null
 SEQ\_NUM        | INTEGER               |
