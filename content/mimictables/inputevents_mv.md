@@ -121,7 +121,7 @@ The total amount of the substance in the bag containing the solution.
 
 ## STATUSDESCRIPTION
 
-States whether the ultimate status of the item.
+States the ultimate status of the item.
 
 ## ISOPENBAG
 
