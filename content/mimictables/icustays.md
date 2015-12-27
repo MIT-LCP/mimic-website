@@ -26,7 +26,7 @@ toc = "true"
 
 # Important considerations
 
-* `ICUSTAY_ID` is a *generated* identifier, that is it is *not* based off any raw data identifier. The hospital and ICU databases are not intrinsically linked, and so do not have any concept of an ICU encounter identifier.
+* `ICUSTAY_ID` is a *generated* identifier that is *not* based on any raw data identifier. The hospital and ICU databases are not intrinsically linked and so do not have any concept of an ICU encounter identifier.
 * The ICUSTAYS table is derived from the TRANSFERS table. Specifically, it groups the TRANSFERS table based on ICUSTAY\_ID, and excludes rows where no ICUSTAY\_ID is present.
 
 # Table columns
