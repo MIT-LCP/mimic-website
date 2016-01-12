@@ -17,7 +17,7 @@ toc = "true"
 
 **Table purpose:** Lists services that a patient was admitted/transferred under.
 
-**Number of rows:** 73,344
+**Number of rows:** 73,343
 
 **Links to:**
 

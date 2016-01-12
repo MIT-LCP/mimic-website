@@ -16,7 +16,7 @@ toc = "true"
 
 **Table purpose:** Contains all charted data for all patients.
 
-**Number of rows:** 257,495,071
+**Number of rows:** 263,201,375
 
 **Links to:**
  

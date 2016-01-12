@@ -17,7 +17,7 @@ toc = "true"
 
 **Table purpose:** Definition table for all items in the ICU databases.
 
-**Number of rows:** 15,492
+**Number of rows:** 12,478
 
 **Links to:**
 

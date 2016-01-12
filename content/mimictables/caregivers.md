@@ -17,7 +17,7 @@ toc = "true"
 
 **Table purpose:** Defines the role of caregivers.
 
-**Number of rows:** 8221
+**Number of rows:** 7567
 
 **Links to:** 
 
