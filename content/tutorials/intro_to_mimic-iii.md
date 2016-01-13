@@ -127,25 +127,26 @@ A patient's age is given by the difference between their date of birth and the d
 
 ``` sql  
 WITH first_admission_time AS (
-SELECT p.subject_id, p.dob, p.gender, a.hadm_id, a.admittime,
-MIN (a.admittime)
-OVER (PARTITION BY p.subject_id)
-AS first_admittime
-FROM admissions a
-INNER JOIN patients p
+SELECT 
+    p.subject_id, p.dob, p.gender
+    , MIN (a.admittime) AS first_admittime
+FROM patients p
+INNER JOIN admissions a
 ON p.subject_id = a.subject_id
+GROUP BY p.subject_id, p.dob, p.gender
 ORDER BY a.hadm_id, p.subject_id
 ),
 age AS (
-SELECT distinct subject_id,  dob, gender, first_admittime,
-ROUND(months_between(first_admittime, dob) /12,2) first_admit_age,
-CASE
-WHEN (months_between(first_admittime,dob) /12) >= 15
-THEN 'adult'
-WHEN months_between(first_admittime,dob) <=1
-THEN 'neonate'
-ELSE 'middle'
-END AS age_group
+SELECT 
+    subject_id,  dob, gender, first_admittime
+    , ROUND(months_between(first_admittime, dob) /12,2) first_admit_age
+    , CASE
+    WHEN (months_between(first_admittime,dob) /12) >= 15
+        THEN 'adult'
+    WHEN months_between(first_admittime,dob) <=1
+         THEN 'neonate'
+    ELSE 'middle'
+   END AS age_group
 FROM first_admission_time
 ORDER BY subject_id
 )
