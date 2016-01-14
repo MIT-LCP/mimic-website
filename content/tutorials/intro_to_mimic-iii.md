@@ -114,9 +114,7 @@ Next we find the earliest admission date for each patient. This requires the use
 
 ``` sql
 SELECT p.subject_id, p.dob, a.hadm_id, a.admittime, p.hospital_expire_flag,
-MIN (a.admittime)
-OVER (PARTITION BY p.subject_id)
-AS first_admittime
+    MIN (a.admittime) OVER (PARTITION BY p.subject_id) AS first_admittime
 FROM admissions a
 INNER JOIN patients p
 ON p.subject_id = a.subject_id
@@ -128,8 +126,8 @@ A patient's age is given by the difference between their date of birth and the d
 ``` sql  
 WITH first_admission_time AS (
 SELECT 
-    p.subject_id, p.dob, p.gender
-    , MIN (a.admittime) AS first_admittime
+    p.subject_id, p.dob, p.gender, 
+    MIN (a.admittime) AS first_admittime
 FROM patients p
 INNER JOIN admissions a
 ON p.subject_id = a.subject_id
@@ -138,15 +136,13 @@ ORDER BY a.hadm_id, p.subject_id
 ),
 age AS (
 SELECT 
-    subject_id,  dob, gender, first_admittime
-    , ROUND(months_between(first_admittime, dob) /12,2) first_admit_age
-    , CASE
-    WHEN (months_between(first_admittime,dob) /12) >= 15
-        THEN 'adult'
-    WHEN months_between(first_admittime,dob) <=1
-         THEN 'neonate'
-    ELSE 'middle'
-   END AS age_group
+    subject_id,  dob, gender, first_admittime, 
+    ROUND(months_between(first_admittime, dob) /12,2) first_admit_age, 
+    CASE
+        WHEN (months_between(first_admittime, dob)/12) >= 15 THEN 'adult'
+        WHEN months_between(first_admittime, dob) <=1 THEN 'neonate'
+        ELSE 'middle'
+        END AS age_group
 FROM first_admission_time
 ORDER BY subject_id
 )
@@ -171,22 +167,19 @@ The transfers table may have multiple entries per patient to provide detail of a
 
 ``` sql
 SELECT *
-FROM MIMICIII.transfers
+FROM transfers
 WHERE HADM_ID = 112213;
 ```
 
-row_id | subject_id | hadm_id | icustay_id | ...  
---- | --- | --- | --- | ...  
-54 | 12 |  112213 |  | ...  
-55 | 12 |  112213 |  | ...  
-56 | 12 |  112213 | 232669 | ...  
-57 | 12 |  112213 |  | ...  
-58 | 12 |  112213 | 232669 | ...  
-59 | 12 |  112213 |  | ...  
-60 | 12 |  112213 |  | ...  
-
-
-<!-- talk about services -->
+| row\_id  | subject\_id | hadm\_id  | icustay\_id  |
+| ------------- | ------------- | ------------- | ------------- |
+| 54  | 12  | 112213 |  |
+| 55  | 12  | 112213 |  |
+| 56  | 12  | 112213 | 232669 |
+| 57  | 12  | 112213 |  |
+| 58  | 12  | 112213 | 232669 |
+| 59  | 12  | 112213 |  |
+| 60  | 12  | 112213 |  |
 
 ## 7. Services
 
@@ -222,142 +215,123 @@ Find how many of those deaths occurred within the ICU.
 ### Solution to step 1
 
 ``` sql
-SELECT ie.subject_id, ie.hadm_id, ie.icustay_id
-      , ie.intime
-      , ie.outtime
-FROM MIMICIII.icustayevents ie;
+SELECT ie.subject_id, ie.hadm_id, ie.icustay_id, ie.intime, ie.outtime
+FROM icustayevents ie;
 ```
 
 ### Solution to step 2
 
 ``` sql
-SELECT ie.subject_id, ie.hadm_id, ie.icustay_id
-      , ie.intime
-      , ie.outtime
-      , round (months_between(ie.intime,pat.dob)/12 , 2) as age
-FROM mimicIII.icustayevents ie
-INNER join mimicIII.patients pat
-  ON ie.subject_id = pat.subject_id;
+SELECT ie.subject_id, ie.hadm_id, ie.icustay_id, ie.intime, ie.outtime, 
+    ROUND(months_between(ie.intime, pat.dob)/12, 2) AS age
+FROM icustayevents ie
+INNER JOIN patients pat
+ON ie.subject_id = pat.subject_id;
   ```
 
 ### Solution to step 3
 
 ``` sql
-SELECT ie.subject_id, ie.hadm_id, ie.icustay_id
-      , ie.intime, ie.outtime
-      , ROUND (months_between(ie.intime,pat.dob)/12, 2) as age
-      , CASE
-          WHEN months_between(ie.intime,pat.dob) <= 1 then 'neonate'
-          WHEN months_between(ie.intime,pat.dob) > 1 and months_between(ie.intime,pat.dob) <= 15*12 then 'middle'
-          ELSE 'adult' END AS ICUSTAY_AGE_GROUP
-FROM MIMICIII.icustayevents ie
-INNER JOIN MIMICIII.patients pat
-  ON ie.subject_id = pat.subject_id;
+SELECT ie.subject_id, ie.hadm_id, ie.icustay_id, ie.intime, ie.outtime, 
+    ROUND(months_between(ie.intime, pat.dob)/12, 2) AS age, 
+    CASE
+        WHEN months_between(ie.intime, pat.dob) <= 1 THEN 'neonate'
+        WHEN months_between(ie.intime, pat.dob) > 1 
+            AND months_between(ie.intime, pat.dob) <= 15*12 THEN 'middle'
+        ELSE 'adult' 
+        END AS ICUSTAY_AGE_GROUP
+FROM icustayevents ie
+INNER JOIN patients pat
+ON ie.subject_id = pat.subject_id;
 ```
 
 ### Solution to step 4
 ``` sql
-SELECT ie.subject_id, ie.hadm_id, ie.icustay_id
-      , ie.intime
-      , ie.outtime
-      , round( months_between(ie.intime,pat.dob)/12 , 2 ) as age
-
-      , CASE
-          WHEN months_between(ie.intime,pat.dob) <= 1 THEN 'neonate'
-          WHEN months_between(ie.intime,pat.dob) > 1
-            AND months_between(ie.intime,pat.dob) <= 15*12 THEN 'middle'
-          ELSE 'adult' end as ICUSTAY_AGE_GROUP
-
-      , ROUND (ie.intime - adm.admittime, 2) as preICULOS
-FROM MIMICIII.icustayevents ie
-INNER JOIN MIMICIII.patients pat
-  ON ie.subject_id = pat.subject_id
-INNER JOIN MIMICIII.admissions adm
-  ON ie.hadm_id = adm.hadm_id;
+SELECT ie.subject_id, ie.hadm_id, ie.icustay_id, ie.intime, ie.outtime, 
+    ROUND(months_between(ie.intime,pat.dob)/12, 2) as age, 
+    CASE
+        WHEN months_between(ie.intime, pat.dob) <= 1 THEN 'neonate'
+        WHEN months_between(ie.intime, pat.dob) > 1
+            AND months_between(ie.intime, pat.dob) <= 15*12 THEN 'middle'
+        ELSE 'adult' 
+        END AS ICUSTAY_AGE_GROUP, 
+    ROUND (ie.intime - adm.admittime, 2) as preiculos
+FROM icustayevents ie
+INNER JOIN patients pat
+ON ie.subject_id = pat.subject_id
+INNER JOIN admissions adm
+ON ie.hadm_id = adm.hadm_id;
 ```  
 
 ### Solution to step 5
 
 ``` sql
-SELECT ie.subject_id, ie.hadm_id, ie.icustay_id
-      , ie.intime
-      , ie.outtime
-      , round( months_between(ie.intime,pat.dob)/12 , 2 ) as age
-
-      , case
-          WHEN months_between(ie.intime,pat.dob) <= 1 THEN 'neonate'
-          WHEN months_between(ie.intime,pat.dob) > 1
-            AND months_between(ie.intime,pat.dob) <= 15*12 THEN 'middle'
-          ELSE 'adult' end as ICUSTAY_AGE_GROUP
-
-      , ROUND( ie.intime - adm.admittime , 2 ) AS preICULOS
-      , adm.deathtime
-FROM MIMICIII.icustayevents ie
-INNER Join MIMICIII.patients pat
-  ON ie.subject_id = pat.subject_id
-INNER JOIN MIMICIII.admissions adm
-  ON ie.hadm_id = adm.hadm_id;
+SELECT ie.subject_id, ie.hadm_id, ie.icustay_id, ie.intime, ie.outtime, 
+    ROUND(months_between(ie.intime,pat.dob)/12, 2) as age, 
+    CASE
+        WHEN months_between(ie.intime, pat.dob) <= 1 THEN 'neonate'
+        WHEN months_between(ie.intime, pat.dob) > 1
+            AND months_between(ie.intime, pat.dob) <= 15*12 THEN 'middle'
+        ELSE 'adult' 
+        END AS ICUSTAY_AGE_GROUP, 
+    ROUND(ie.intime - adm.admittime, 2) AS preiculos, adm.deathtime
+FROM icustayevents ie
+INNER JOIN patients pat
+ON ie.subject_id = pat.subject_id
+INNER JOIN admissions adm
+ON ie.hadm_id = adm.hadm_id;
 ```
 
 ### Solution to step 6
 
 ``` sql
-SELECT ie.subject_id, ie.hadm_id, ie.icustay_id
-      , ie.intime
-      , ie.outtime
-      , ROUND (months_between(ie.intime,pat.dob)/12, 2) as age
-
-      , CASE
-          WHEN months_between(ie.intime,pat.dob) <= 1 THEN 'neonate'
-          WHEN months_between(ie.intime,pat.dob) > 1
-              AND months_between(ie.intime,pat.dob) <= 15*12 THEN 'middle'
-          ELSE 'adult' END
-          AS ICUSTAY_AGE_GROUP
-
-      , ROUND (ie.intime - adm.admittime , 2) AS preICULOS
-      , adm.deathtime
-
-      , CASE WHEN adm.discharge_location = 'DEAD/EXPIRED' THEN 'Y' ELSE 'N' END
-          AS hospital_expire_flag
-
-FROM MIMICIII.icustayevents ie
-INNER join MIMICIII.patients pat
-  ON ie.subject_id = pat.subject_id
-INNER join MIMICIII.admissions adm
-  ON ie.hadm_id = adm.hadm_id;
+SELECT ie.subject_id, ie.hadm_id, ie.icustay_id, ie.intime, ie.outtime, 
+    ROUND (months_between(ie.intime, pat.dob)/12, 2) as age, 
+    CASE
+        WHEN months_between(ie.intime, pat.dob) <= 1 THEN 'neonate'
+        WHEN months_between(ie.intime, pat.dob) > 1
+            AND months_between(ie.intime, pat.dob) <= 15*12 THEN 'middle'
+        ELSE 'adult' 
+        END AS ICUSTAY_AGE_GROUP, 
+    ROUND (ie.intime - adm.admittime,2) AS preiculos, adm.deathtime, 
+    CASE 
+        WHEN adm.discharge_location = 'DEAD/EXPIRED' THEN 'Y' 
+        ELSE 'N' 
+        END AS hospital_expire_flag
+FROM icustayevents ie
+INNER join patients pat
+ON ie.subject_id = pat.subject_id
+INNER join admissions adm
+ON ie.hadm_id = adm.hadm_id;
 ```
 
 ### Solution to step 7
 
 ``` sql
-SELECT ie.subject_id, ie.hadm_id, ie.icustay_id, ie.intime, ie.outtime
-      , ROUND (months_between(ie.intime,pat.dob)/12, 2) AS age
-
-      , CASE
-          WHEN months_between(ie.intime,pat.dob) <= 1 THEN 'neonate'
-          WHEN months_between(ie.intime,pat.dob) > 1
-              AND months_between(ie.intime,pat.dob) <= 15*12 THEN 'middle'
-          ELSE 'adult' end as ICUSTAY_AGE_GROUP
-
-      , ROUND ( ie.intime - adm.admittime , 2 ) as preICULOS
-      , adm.deathtime
-
-      , CASE when adm.discharge_location = 'DEAD/EXPIRED' THEN 'Y' ELSE 'N' END
-          AS hospital_expire_flag
-        , CASE
-            WHEN adm.deathtime BETWEEN ie.intime and ie.outtime
-              THEN 'Y'
-            WHEN adm.deathtime <= ie.intime
-            -- sometimes there are typographical errors in the death date
-              THEN 'Y'
-            WHEN adm.dischtime <= ie.outtime AND adm.discharge_location = 'DEAD/EXPIRED'
-              THEN 'Y'
-            ELSE 'N' END
-          AS ICUSTAY_EXPIRE_FLAG
-
-FROM MIMICIII.icustayevents ie
-INNER JOIN .patients pat
-  ON ie.subject_id = pat.subject_id
-INNER join MIMICIII.admissions adm
-  ON ie.hadm_id = adm.hadm_id;
+SELECT ie.subject_id, ie.hadm_id, ie.icustay_id, ie.intime, ie.outtime, 
+    ROUND (months_between(ie.intime, pat.dob)/12, 2) AS age, 
+    CASE
+        WHEN months_between(ie.intime, pat.dob) <= 1 THEN 'neonate'
+        WHEN months_between(ie.intime, pat.dob) > 1
+            AND months_between(ie.intime, pat.dob) <= 15*12 THEN 'middle'
+        ELSE 'adult' 
+        END AS ICUSTAY_AGE_GROUP, 
+    ROUND (ie.intime - adm.admittime, 2) as preiculos, adm.deathtime, 
+    CASE 
+        WHEN adm.discharge_location = 'DEAD/EXPIRED' THEN 'Y' 
+        ELSE 'N' 
+        END AS hospital_expire_flag, 
+    CASE
+        WHEN adm.deathtime BETWEEN ie.intime and ie.outtime THEN 'Y'
+        WHEN adm.deathtime <= ie.intime THEN 'Y'
+        -- sometimes there are typographical errors in the death date
+        WHEN adm.dischtime <= ie.outtime 
+            AND adm.discharge_location = 'DEAD/EXPIRED' THEN 'Y'
+        ELSE 'N' 
+        END AS ICUSTAY_EXPIRE_FLAG
+FROM icustayevents ie
+INNER JOIN patients pat
+ON ie.subject_id = pat.subject_id
+INNER join admissions adm
+ON ie.hadm_id = adm.hadm_id;
 ```
