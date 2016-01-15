@@ -44,7 +44,7 @@ Here, the volume is recorded only every hour, and no start time is available. Ho
 
 Summing up, for CareVue data, the rate and volume will be asynchronous, and only the `CHARTTIME` will be available. For rates, the `CHARTTIME` will correspond to a start time (when the drug was set to that rate). For volumes, the `CHARTTIME` will correspond to an end time.
 
-For Metavision data, there is no concept of a volume in the database: only a `RATE`. Furthermore, all inputs are recorded with a `STARTTIME` and an `ENDTIME`. As a result, the volumes in the database for Metavision patients are *derived* from the rates. Furthermore, exact start and stop times for the drugs are easily deducible.
+For Metavision data, there is no concept of a volume in the database: only a `RATE`. All inputs are recorded with a `STARTTIME` and an `ENDTIME`. As a result, the volumes in the database for Metavision patients are *derived* from the rates. Furthermore, exact start and stop times for the drugs are easily deducible.
 
 <!--
 TODO: ORDERID description, ORIGINALAMOUNT, etc.
@@ -54,7 +54,7 @@ TODO: ORDERID description, ORIGINALAMOUNT, etc.
 
 The difficulty in merging the databases arose due primarily to two factors: the lower resolution of information archiving in the CareVue system, and the different definition of an 'order' in the databases.
 
-The aim of this section is to provide all the detail into how these data were merged: this information is not necessary to understand for the purposes of using the database, but will provide insight into the format of the IOEVENTS table. We always welcome suggestions from the community on improving the format and usability of the table.
+The aim of this section is to provide all the detail into how these data were merged: this information is not necessary to understand for the purposes of using the database, but will provide insight into the format of the IOEVENTS table. We welcome suggestions from the community on improving the format and usability of the table.
 
 ## Philips CareVue
 
@@ -86,7 +86,7 @@ Note that the changing of the bag is sometimes, but not always, recorded in the 
 
 Metavision records IO data using two tables: RANGESIGNALS and ORDERENTRY. These tables do not appear in MIMIC-III as they have been merged to form the INPUTEVENTS_MV table. RANGESIGNALS contains recorded data elements which last for a fixed period of time. Furthermore, the RANGESIGNALS table recorded information for each component of the drug separately. For example, for a noradrenaline administration there would be two components: a main order component (noradrenaline) and a solution component (NaCl). The `STARTTIME` and `ENDTIME` of RANGESIGNALS indicated when the drug started and finished. *Any* change in the drug rate would result in the current infusion ending, and a new `STARTTIME` being created.
 
-Let's return to our example above of the patient being given noreadrenaline. The `STARTTIME` for the solution (NaCl) and the drug (noradrenaline) would be 18:20. The rate of the drug would be listed as 1 mcg/kg/min, and the rate of the solution would be listed as 10 mL/hr. The nurse, as before, decides to increase the drug rate at 18:25 to 2 mcg/kg/min. As a result, the `ENDTIME` for the two rows corresponding to the solution (NaCl and noreadrenaline) is set to 18:25. Two new rows are generated with a `STARTTIME` of 18:25. These two new rows would continue until either (i) the drug rate was changed or (ii) the drug was delivery was discontinued. The `ORDERID` column would be identical for each instantiation of NaCl and noradrenaline which corresponded to the same solution/rate. That is, for the infusion given between 18:20 and 18:25, both NaCl and noreadrenaline would have the same `ORDERID`. `LINKORDERID` would further link the drug across all administrations, even when the rate is changed. Here is a table illucidating these concepts:
+Let's return to our example above of the patient being given noreadrenaline. The `STARTTIME` for the solution (NaCl) and the drug (noradrenaline) would be 18:20. The rate of the drug would be listed as 1 mcg/kg/min, and the rate of the solution would be listed as 10 mL/hr. The nurse, as before, decides to increase the drug rate at 18:25 to 2 mcg/kg/min. As a result, the `ENDTIME` for the two rows corresponding to the solution (NaCl and noreadrenaline) is set to 18:25. Two new rows are generated with a `STARTTIME` of 18:25. These two new rows would continue until either (i) the drug rate was changed or (ii) the drug was delivery was discontinued. The `ORDERID` column would be identical for each instantiation of NaCl and noradrenaline which corresponded to the same solution/rate. That is, for the infusion given between 18:20 and 18:25, both NaCl and noreadrenaline would have the same `ORDERID`. `LINKORDERID` would further link the drug across all administrations, even when the rate is changed. The following table demonstrates these concepts:
 
 Item | `STARTTIME` | `ENDTIME` | `RATE` | `RATEUOM` | `ORDERID` | `LINKORDERID`
 ---- | ---- | ---- | ---- | ---- | ---- | ----
