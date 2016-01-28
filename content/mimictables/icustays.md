@@ -57,7 +57,7 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 ## `FIRST_CAREUNIT`, `LAST_CAREUNIT`
 
-`FIRST_CAREUNIT` and `LAST_CAREUNIT` contain, respectively, the first and last ICU type in which the patient was cared for. As an `ICUSTAY_ID` groups all ICU admissions within 24 hours of each other, it is possible for a patient to be transferred from one type of ICU to another and have the same ICU ID.
+`FIRST_CAREUNIT` and `LAST_CAREUNIT` contain, respectively, the first and last ICU type in which the patient was cared for. As an `ICUSTAY_ID` groups all ICU admissions within 24 hours of each other, it is possible for a patient to be transferred from one type of ICU to another and have the same `ICUSTAY_ID`.
 
 ## `FIRST_WARDID`, `LAST_WARDID`
 
