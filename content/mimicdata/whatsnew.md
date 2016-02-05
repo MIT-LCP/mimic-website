@@ -62,7 +62,7 @@ To clarify the content of the table, the ICD9 table has been renamed to DIAGNOSE
 
 ## IOEVENTS, ADDITIVES, DELIVERIES and MEDEVENTS
 
-Data in the IOEVENTS and MEDEVENTS tables is now contained in the OUTPUTEVENTS, INPUTPUTEVENTS\_CV and INPUTEVENTS\_MV tables. As all the medications in the MEDEVENTS table were continuous infusions, they were all associated with an entry in IOEVENTS. MEDEVENTS would specify the drug rate, while IOEVENTS would specify the volume given. These tables have been consolidated to ease querying for drug deliveries.
+Data in the IOEVENTS and MEDEVENTS tables is now contained in the OUTPUTEVENTS, INPUTEVENTS\_CV and INPUTEVENTS\_MV tables. As all the medications in the MEDEVENTS table were continuous infusions, they were all associated with an entry in IOEVENTS. MEDEVENTS would specify the drug rate, while IOEVENTS would specify the volume given. These tables have been consolidated to ease querying for drug deliveries.
 
 ## POE_MED_ORDER and POE_DRUG_ORDER merged into PRESCRIPTIONS
 
@@ -89,9 +89,9 @@ The CALLOUT table contains information about ICU discharge planning and executio
 
 ICD-9 codes for procedures are now available in the PROCEDURES_ICD table.
 
-## INPUTPUTEVENTS\_CV and INPUTPUTEVENTS\_MV
+## INPUTEVENTS\_CV and INPUTEVENTS\_MV
 
-Two different monitoring systems were operating in the hospital over the data collection period. The systems - Metavision and CareVue - recorded data in very different ways. We therefore made the decision not to merge the data, and instead provided two separate tables (INPUTPUTEVENTS\_CV and INPUTPUTEVENTS\_MV).
+Two different monitoring systems were operating in the hospital over the data collection period. The systems - Metavision and CareVue - recorded data in very different ways. We therefore made the decision not to merge the data, and instead provided two separate tables (INPUTEVENTS\_CV and INPUTEVENTS\_MV).
 
 ## OUTPUTEVENTS
 
