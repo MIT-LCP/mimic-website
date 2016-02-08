@@ -31,6 +31,8 @@ Run through the entire install process - remember your postgres user password as
 
 Open up the SQL shell program. Log-in as user postgres (and use the password you specified during the install process).
 
+### Create the database to hold the data
+
 Run the following commands:
 
 ```sql
@@ -46,6 +48,10 @@ Next, connect to the `mimic` database.
 \c mimic;
 ```
 
+
+### Create the tables on the database
+
+Note the script, by default, places the tables on the `mimiciii` *schema* within the `mimic` *database*. If you would like to change the schema name, please modify all three scripts accordingly.
 Run the create tables script (note: this assumes that the create table script is in the current directory - if it is not, see below).
 
 ```sql
@@ -58,7 +64,11 @@ If you get the error `postgres_create_tables.sql: No such file or directory` tha
 \i D:/work/mimic-code/buildmimic/postgres/postgres_create_tables.sql
 ```
 
-If you see a lot of "NOTICE: table does not exist" don't worry, that's normal. The script tries to delete the table before it creates it. Next, import the data into these tables.
+If you see a lot of "NOTICE: table does not exist" don't worry, that's normal. The script tries to delete the table before it creates it.
+
+### Import the data into the tables
+
+Run the following command import the data into these tables:
 
 ```sql
 \set ON_ERROR_STOP 1
@@ -68,12 +78,19 @@ SET search_path TO mimiciii;
 ```
 
 Note I have specified a folder, `'D:/mimic/v1_3'`. This folder contains all the CSV files which store MIMIC. This should begin the load process, which takes some time.
+
+### Add indexes
+
 After the load finishes, it is recommended to install indexes to improve the speed of queries on the database.
 These can be installed by running the following:
 
 ```sql
 \i D:/work/mimic-code/buildmimic/postgres/postgres_add_indexes.sql
 ```
+
+While you have the option of building constraints (using `postgres_add_constraints.sql`) these are mainly used for data integrity checking during the creation of the data - it is not necessary to run this file on your local installation.
+
+### Test your build
 
 You should now be able to query MIMIC-III! Try the following simple query:
 
