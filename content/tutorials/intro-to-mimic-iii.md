@@ -130,39 +130,72 @@ ON p.subject_id = a.subject_id
 ORDER BY a.hadm_id, p.subject_id;
 ```
 
-A patient's age is given by the difference between their date of birth and the date of their first admission. We can obtain this by combining the above query with another query to provide the ages. Furthermore, we assign categories to different ages: >= 15 years old are adults and the rest are assigned to the 'other' category. The queries are combined using the 'WITH' keyword:
+A patient's age is given by the difference between their date of birth and the date of their first admission. We can obtain this by combining the above query with another query to provide the ages. Furthermore, we assign categories to different ages: >= 15 years old are adults and the rest are assigned to other categories. Note the use of the `WITH` clause, which allows us to make a temporary view which we can query against in subsequent lines.
 
 ``` sql  
-WITH first_admission_time AS (
+
+WITH first_admission_time AS
+(
+  SELECT
+      p.subject_id, p.dob, p.gender
+      , MIN (a.admittime) AS first_admittime
+      , MIN( ROUND( (cast(admittime as date) - cast(dob as date)) / 365.242,2) )
+          AS first_admit_age
+  FROM patients p
+  INNER JOIN admissions a
+  ON p.subject_id = a.subject_id
+  GROUP BY p.subject_id, p.dob, p.gender
+  ORDER BY p.subject_id
+)
 SELECT
-    p.subject_id, p.dob, p.gender,
-    MIN (a.admittime) AS first_admittime
-FROM patients p
-INNER JOIN admissions a
-ON p.subject_id = a.subject_id
-GROUP BY p.subject_id, p.dob, p.gender
-ORDER BY a.hadm_id, p.subject_id
-),
-age AS (
-SELECT
-    subject_id,  dob, gender, first_admittime,
-    ROUND(months_between(first_admittime, dob)/12,2)
-        AS first_admit_age,
-    CASE
-        WHEN (months_between(first_admittime, dob)/12) >= 15
+    subject_id, dob, gender
+    , first_admittime, first_admit_age
+    , CASE
+        WHEN first_admit_age >= 15
             THEN 'adult'
-        WHEN months_between(first_admittime, dob) <=1
+        WHEN first_admit_age <= 1
             THEN 'neonate'
         ELSE 'middle'
         END AS age_group
 FROM first_admission_time
 ORDER BY subject_id
-)
-SELECT *
-FROM age;
 ```
 
 The above query can now be combined with the **WHERE** and **COUNT** functions described earlier to determine the number of adult patients, whether or not they died, and therefore, their mortality rate.
+
+``` sql  
+WITH first_admission_time AS
+(
+  SELECT
+      p.subject_id, p.dob, p.gender
+      , MIN (a.admittime) AS first_admittime
+      , MIN( ROUND( (cast(admittime as date) - cast(dob as date)) / 365.242,2) )
+          AS first_admit_age
+  FROM patients p
+  INNER JOIN admissions a
+  ON p.subject_id = a.subject_id
+  GROUP BY p.subject_id, p.dob, p.gender
+  ORDER BY p.subject_id
+)
+, age as
+(
+  SELECT
+      subject_id, dob, gender
+      , first_admittime, first_admit_age
+      , CASE
+          WHEN first_admit_age >= 15
+              THEN 'adult'
+          WHEN first_admit_age <= 1
+              THEN 'neonate'
+          ELSE 'middle'
+          END AS age_group
+  FROM first_admission_time
+)
+select age_group, gender
+  , count(subject_id) as NumberOfPatients
+from age
+group by age_group, gender
+```
 
 ## 6. ICU stays
 
@@ -229,7 +262,7 @@ Find how many of those deaths occurred within the ICU.
 ``` sql
 SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     ie.intime, ie.outtime
-FROM icustayevents ie;
+FROM icustays ie;
 ```
 
 ### Solution to step 2
@@ -237,8 +270,8 @@ FROM icustayevents ie;
 ``` sql
 SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     ie.intime, ie.outtime,
-    ROUND(months_between(ie.intime, pat.dob)/12, 2) AS age
-FROM icustayevents ie
+    ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) AS age
+FROM icustays ie
 INNER JOIN patients pat
 ON ie.subject_id = pat.subject_id;
   ```
@@ -248,35 +281,34 @@ ON ie.subject_id = pat.subject_id;
 ``` sql
 SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     ie.intime, ie.outtime,
-    ROUND(months_between(ie.intime, pat.dob)/12, 2) AS age,
+    ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) AS age,
     CASE
-        WHEN months_between(ie.intime, pat.dob) <= 1
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 1
             THEN 'neonate'
-        WHEN months_between(ie.intime, pat.dob) > 1
-            AND months_between(ie.intime, pat.dob) <= 15*12
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 15
             THEN 'middle'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP
-FROM icustayevents ie
+FROM icustays ie
 INNER JOIN patients pat
 ON ie.subject_id = pat.subject_id;
 ```
 
 ### Solution to step 4
+
 ``` sql
 SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     ie.intime, ie.outtime,
-    ROUND(months_between(ie.intime,pat.dob)/12, 2) as age,
-    ROUND (ie.intime - adm.admittime, 2) as preiculos,
+    ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) as age,
+    ROUND((cast(ie.intime as date) - cast(adm.admittime as date))/365.242, 2) as preiculos,
     CASE
-        WHEN months_between(ie.intime, pat.dob) <= 1
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 1
             THEN 'neonate'
-        WHEN months_between(ie.intime, pat.dob) > 1
-            AND months_between(ie.intime, pat.dob) <= 15*12
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 15
             THEN 'middle'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP
-FROM icustayevents ie
+FROM icustays ie
 INNER JOIN patients pat
 ON ie.subject_id = pat.subject_id
 INNER JOIN admissions adm
@@ -288,17 +320,16 @@ ON ie.hadm_id = adm.hadm_id;
 ``` sql
 SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     ie.intime, ie.outtime, adm.deathtime,
-    ROUND(months_between(ie.intime,pat.dob)/12, 2) as age,
-    ROUND(ie.intime - adm.admittime, 2) AS preiculos,
+    ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) as age,
+    ROUND((cast(ie.intime as date) - cast(adm.admittime as date))/365.242, 2) AS preiculos,
     CASE
-        WHEN months_between(ie.intime, pat.dob) <= 1
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 1
             THEN 'neonate'
-        WHEN months_between(ie.intime, pat.dob) > 1
-            AND months_between(ie.intime, pat.dob) <= 15*12
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 15
             THEN 'middle'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP
-FROM icustayevents ie
+FROM icustays ie
 INNER JOIN patients pat
 ON ie.subject_id = pat.subject_id
 INNER JOIN admissions adm
@@ -310,13 +341,12 @@ ON ie.hadm_id = adm.hadm_id;
 ``` sql
 SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     ie.intime, ie.outtime, adm.deathtime,
-    ROUND (months_between(ie.intime, pat.dob)/12, 2) AS age,
-    ROUND (ie.intime - adm.admittime,2) AS preiculos,
+    ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) AS age,
+    ROUND((cast(ie.intime as date) - cast(adm.admittime as date))/365.242, 2) AS preiculos,
     CASE
-        WHEN months_between(ie.intime, pat.dob) <= 1
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 1
             THEN 'neonate'
-        WHEN months_between(ie.intime, pat.dob) > 1
-            AND months_between(ie.intime, pat.dob) <= 15*12
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 15
             THEN 'middle'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP,
@@ -324,7 +354,7 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
         WHEN adm.discharge_location = 'DEAD/EXPIRED' THEN 'Y'
         ELSE 'N'
         END AS hospital_expire_flag
-FROM icustayevents ie
+FROM icustays ie
 INNER JOIN patients pat
 ON ie.subject_id = pat.subject_id
 INNER JOIN admissions adm
@@ -336,13 +366,12 @@ ON ie.hadm_id = adm.hadm_id;
 ``` sql
 SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     ie.intime, ie.outtime, adm.deathtime,
-    ROUND (months_between(ie.intime, pat.dob)/12, 2) AS age,
-    ROUND (ie.intime - adm.admittime, 2) as preiculos,
+    ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) AS age,
+    ROUND((cast(ie.intime as date) - cast(adm.admittime as date))/365.242, 2) AS preiculos,
     CASE
-        WHEN months_between(ie.intime, pat.dob) <= 1
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 1
             THEN 'neonate'
-        WHEN months_between(ie.intime, pat.dob) > 1
-            AND months_between(ie.intime, pat.dob) <= 15*12
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 15
             THEN 'middle'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP,
@@ -353,15 +382,15 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     CASE
         WHEN adm.deathtime BETWEEN ie.intime and ie.outtime
             THEN 'Y'
+        -- sometimes there are typographical errors in the death date, so check before intime
         WHEN adm.deathtime <= ie.intime
             THEN 'Y'
-        -- sometimes there are typographical errors in the death date
         WHEN adm.dischtime <= ie.outtime
             AND adm.discharge_location = 'DEAD/EXPIRED'
             THEN 'Y'
         ELSE 'N'
         END AS ICUSTAY_EXPIRE_FLAG
-FROM icustayevents ie
+FROM icustays ie
 INNER JOIN patients pat
 ON ie.subject_id = pat.subject_id
 INNER JOIN admissions adm
