@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T14:02:13-04:00"
-title = "Install MIMIC locally"
-linktitle = "Install MIMIC locally"
+title = "Install MIMIC-III - Ubuntu"
+linktitle = "Install MIMIC-III - Ubuntu"
 weight = 1
 toc = "true"
 
