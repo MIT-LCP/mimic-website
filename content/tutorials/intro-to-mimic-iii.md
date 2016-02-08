@@ -15,6 +15,13 @@ toc = "true"
 # Querying MIMIC-III
 
 Prerequisites: *This tutorial assumes that you have an active connection to an instance of MIMIC-III running on PostgreSQL*.
+Note also that all the queries are written assuming that the MIMIC-III database is on your default search path. To change this in PostgreSQL, run the following command:
+
+```sql
+set search_path to mimiciii;
+```
+
+Note in the above we have assumed MIMIC-III is installed under the schema `mimiciii` - it may be different on your system.
 
 ## 1. Overview
 
