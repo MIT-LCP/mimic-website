@@ -4,6 +4,10 @@ title = "Install MIMIC-III - Windows"
 linktitle = "Install MIMIC-III - Windows"
 weight = 2
 toc = "true"
+
+[menu]
+  [menu.main]
+    parent = "Tutorials"
 +++
 
 # Instructions for windows users
