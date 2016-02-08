@@ -1,11 +1,9 @@
 +++
 date = "2015-09-01T14:02:13-04:00"
-title = "Install PostgreSQL"
-draft = true
-linktitle = "Install PostgreSQL"
-weight = 1
+title = "Install MIMIC-III - Windows"
+linktitle = "Install MIMIC-III - Windows"
+weight = 2
 toc = "true"
-
 +++
 
 # Instructions for windows users
