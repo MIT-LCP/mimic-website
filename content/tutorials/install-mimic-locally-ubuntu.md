@@ -22,7 +22,7 @@ On Mac OSX with the [Homebrew package manager](http://brew.sh/), simply type ```
 
 ## 2. Place the CSV data files in a local directory
 
-Assuming that you have completed the [steps required to gain access](/gettingstarted/access) to the MIMIC dataset, you should be able to access the CSV data files on PhysioNet at: https://physionet.org/works/MIMICIIIClinicalDatabase/files/. 
+Assuming that you have completed the [steps required to gain access](/gettingstarted/access) to the MIMIC dataset, you should be able to access the CSV data files on PhysioNet at: https://physionet.org/works/MIMICIIIClinicalDatabase/files/.
 
 Download these files to a local folder and decompress them if necessary (from the command line, run ```gzip -d *.gz``` in the directory containing the files).
 
@@ -49,7 +49,7 @@ CREATE DATABASE mimic OWNER mimic;
 
 ## 5. Create a set of empty tables on a mimiciii schema, ready to populate with the data
 
-Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)' script in the MIMIC code repository to create the mimiciii schema and then build a set of empty tables. Each table is created by running a ```CREATE TABLE``` command in psql. 
+Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)' script in the MIMIC code repository to create the mimiciii schema and then build a set of empty tables. Each table is created by running a ```CREATE TABLE``` command in psql.
 
 First, exit from psql with "\q" which should bring you back to the shell command prompt. Now run the "[postgres\_create\_tables.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_create_tables.sql)" script as follows:
 
