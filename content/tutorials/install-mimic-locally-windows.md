@@ -1,5 +1,5 @@
 +++
-date = "2015-09-01T14:02:13-04:00"
+date = "2016-02-06T07:30:21-04:00"
 title = "Install MIMIC-III - Windows"
 linktitle = "Install MIMIC-III - Windows"
 weight = 2
