@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T14:02:13-04:00"
-title = "Install MIMIC-III - Ubuntu"
-linktitle = "Install MIMIC-III - Ubuntu"
+title = "Install MIMIC-III - Ubuntu/Mac OS X"
+linktitle = "Install MIMIC-III - Ubuntu/Mac OS X"
 weight = 1
 toc = "true"
 
@@ -10,9 +10,11 @@ toc = "true"
     parent = "Tutorials"
 +++
 
-# How to install MIMIC-III in a local Postgres database
+# Installing MIMIC-III in a local Postgres database
 
 Prerequisites: *This tutorial assumes that you have already completed the [steps required to gain access](/gettingstarted/access) to the MIMIC dataset on PhysioNet.*
+
+Note that this install was written and tested using Mac OS X and Ubuntu 15.04.
 
 ## 1. Install Postgres
 

@@ -10,7 +10,7 @@ toc = "true"
     parent = "Tutorials"
 +++
 
-# Instructions for windows users
+# Installing MIMIC-III in a local Postgres database on Windows
 
 These are relatively brief instructions provided to ease installation of PostgreSQL with MIMIC on a Windows machine. If you feel there are key details missing, please [raise an issue](https://github.com/MIT-LCP/mimic-website/issues) with your suggested improvements - we would love to incorporate them!
 
