@@ -151,7 +151,7 @@ SELECT
     subject_id, dob, gender
     , first_admittime, first_admit_age
     , CASE
-        WHEN first_admit_age >= 15
+        WHEN first_admit_age >= 14
             THEN 'adult'
         WHEN first_admit_age <= 1
             THEN 'neonate'
@@ -183,7 +183,7 @@ WITH first_admission_time AS
       subject_id, dob, gender
       , first_admittime, first_admit_age
       , CASE
-          WHEN first_admit_age >= 15
+          WHEN first_admit_age >= 14
               THEN 'adult'
           WHEN first_admit_age <= 1
               THEN 'neonate'
@@ -196,6 +196,8 @@ select age_group, gender
 from age
 group by age_group, gender
 ```
+
+Note that no 'middle' patients show up - this reflects the fact that MIMIC-III does not contain data from paediatric patients.
 
 ## 6. ICU stays
 
@@ -285,7 +287,7 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     CASE
         WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 1
             THEN 'neonate'
-        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 15
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 14
             THEN 'middle'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP
@@ -304,7 +306,7 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     CASE
         WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 1
             THEN 'neonate'
-        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 15
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 14
             THEN 'middle'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP
@@ -325,7 +327,7 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     CASE
         WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 1
             THEN 'neonate'
-        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 15
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 14
             THEN 'middle'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP
@@ -346,7 +348,7 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     CASE
         WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 1
             THEN 'neonate'
-        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 15
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 14
             THEN 'middle'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP,
@@ -371,7 +373,7 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
     CASE
         WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 1
             THEN 'neonate'
-        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 15
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 14
             THEN 'middle'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP,
