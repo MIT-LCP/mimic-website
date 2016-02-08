@@ -151,6 +151,9 @@ SELECT
     subject_id, dob, gender
     , first_admittime, first_admit_age
     , CASE
+        -- all ages > 89 in the database were replaced with 300
+        WHEN first_admit_age > 89
+            then '>89'
         WHEN first_admit_age >= 14
             THEN 'adult'
         WHEN first_admit_age <= 1
@@ -183,6 +186,10 @@ WITH first_admission_time AS
       subject_id, dob, gender
       , first_admittime, first_admit_age
       , CASE
+          -- all ages > 89 in the database were replaced with 300
+          -- we check using > 100 as a conservative threshold to ensure we capture all these patients
+          WHEN first_admit_age > 100
+              then '>89'
           WHEN first_admit_age >= 14
               THEN 'adult'
           WHEN first_admit_age <= 1
@@ -289,6 +296,9 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
             THEN 'neonate'
         WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 14
             THEN 'middle'
+        -- all ages > 89 in the database were replaced with 300
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) > 100
+            then '>89'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP
 FROM icustays ie
@@ -308,6 +318,9 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
             THEN 'neonate'
         WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 14
             THEN 'middle'
+        -- all ages > 89 in the database were replaced with 300
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) > 100
+            THEN '>89'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP
 FROM icustays ie
@@ -329,6 +342,9 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
             THEN 'neonate'
         WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 14
             THEN 'middle'
+        -- all ages > 89 in the database were replaced with 300
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) > 100
+            THEN '>89'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP
 FROM icustays ie
@@ -350,6 +366,9 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
             THEN 'neonate'
         WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 14
             THEN 'middle'
+        -- all ages > 89 in the database were replaced with 300
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) > 100
+            THEN '>89'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP,
     CASE
@@ -375,6 +394,9 @@ SELECT ie.subject_id, ie.hadm_id, ie.icustay_id,
             THEN 'neonate'
         WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) <= 14
             THEN 'middle'
+        -- all ages > 89 in the database were replaced with 300
+        WHEN ROUND((cast(ie.intime as date) - cast(pat.dob as date))/365.242, 2) > 100
+            THEN '>89'
         ELSE 'adult'
         END AS ICUSTAY_AGE_GROUP,
     CASE
