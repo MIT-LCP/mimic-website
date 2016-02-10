@@ -3,8 +3,10 @@
 # 
 # Requires:
 # - biopython ("pip install biopython")
+# - json
 
 from Bio import Entrez
+import json
 
 def search(query):
     handle = Entrez.esearch(db='pubmed', 
@@ -26,7 +28,7 @@ def fetch_details(id_list):
  def main():
  	Entrez.email = 'mimic-support@physionet.org'
 
- 	query = """((Celi[Author]) OR Ghassemi[Author]) AND MIT AND ((MIMIC AND ICU) OR (MIMIC-II OR "MIMIC II" or "MIMIC 2" or "MIMIC 3" OR MIMIC-III or "MIMIC III")"""
+ 	query = """(Celi[Author] OR Mark[Author]) AND MIT AND ((MIMIC AND ICU) OR (MIMIC-II OR "MIMIC II" or "MIMIC 2" or "MIMIC 3" OR MIMIC-III or "MIMIC III"))"""
 
     results = search(query)
     id_list = results['IdList']
@@ -43,19 +45,20 @@ def fetch_details(id_list):
 
     with open(fn, "a") as mimic_publ_file:
 	    for i, paper in enumerate(papers):
-	    	authors = "%s" % (paper['MedlineCitation']['Article']['AuthorList'])
+	    	authors = paper['MedlineCitation']['Article']['AuthorList']
+	    	authors = json.dumps([[a['LastName'],a['Initials']] for a in authors])
+	    	authors = authors.replace('[','').replace(']','').replace('"','')
 	        title = "%s" % (paper['MedlineCitation']['Article']['ArticleTitle'])
-	        journal = "%s" % (paper['MedlineCitation']['Article']['Journal'])
-	        issue = "%s" % (paper['MedlineCitation']['Article']['ArticleTitle'])
+	        journaltitle = "%s" % (paper['MedlineCitation']['Article']['Journal']['Title'])
+	        issue = (paper['MedlineCitation']['Article']['Journal']['Issue'])
 	        doi = ""
 	        pmid = "%s" % (paper['MedlineCitation']['PMID'])
+	        record = ""
 	        mimic_publ_file.write(title.encode('utf-8').strip() + '\n')
 	        print(title)
 
     # Pretty print the first paper in full to observe its structure
-    #import json
     #print(json.dumps(papers[0], indent=2, separators=(',', ':')))	
-
 
 if __name__ == '__main__':
     main()
