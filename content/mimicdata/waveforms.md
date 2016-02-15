@@ -13,7 +13,7 @@ toc = "true"
 
 # Waveforms vs. clinical data
 
-* Work to link waveform data with the MIMIC-III Clinical Database is still underway. Please check here for updates on our progress. *
+__Work to link waveform data with the MIMIC-III Clinical Database is still underway. Please check here for updates on our progress.__
 
 This website provides documentation for the MIMIC-III Clinical Database. A separate, complementary resource named the "MIMIC-III Waveform Database" contains high resolution waveforms and numerics (second by second derived values from the waveforms).
 
