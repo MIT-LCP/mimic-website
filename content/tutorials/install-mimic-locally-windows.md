@@ -1,7 +1,7 @@
 +++
 date = "2016-02-06T07:30:21-04:00"
-title = "Install MIMIC-III - Windows"
-linktitle = "Install MIMIC-III - Windows"
+title = "Install MIMIC (Windows)"
+linktitle = "Install MIMIC (Windows)"
 weight = 2
 toc = "true"
 
