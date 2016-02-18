@@ -32,7 +32,7 @@ toc = "true"
 # Table columns
 
 Name | PostgreSQL data type  | Modifiers
----- | ----
+---- | ---- | ----
 SUBJECT\_ID     | INTEGER               | not null
 HADM\_ID        | INTEGER               | not null
 SEQ\_NUM        | INTEGER               |
