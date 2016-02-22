@@ -19,6 +19,6 @@ The database includes information such as demographics, vital sign measurements 
 
 MIMIC supports a diverse range of analytic studies spanning epidemiology, clinical decision-rule improvement, and electronic tool development. It is notable for three factors:
 
-- it is publicly and freely available
+- it is freely available to researchers worldwide
 - it encompasses a diverse and very large population of ICU patients
 - it contains high temporal resolution data including lab results, electronic documentation, and bedside monitor trends and waveforms.
