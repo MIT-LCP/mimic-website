@@ -79,4 +79,4 @@ In the cases where both `CHARTTIME` and `CHARTDATE` exists, `CHARTDATE` is equal
 
 ## `INTERPRETATION`
 
-`INTERPRETATION` indicates the results of the test. "S" is sensitive, "R" is resistant, and "I" is inconclusive.
+`INTERPRETATION` indicates the results of the test. "S" is sensitive, "R" is resistant, and "I" is intermediate.
