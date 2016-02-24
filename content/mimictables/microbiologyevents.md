@@ -33,6 +33,7 @@ toc = "true"
 
 Name | Postgres data type 
 ---- | ---- 
+ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
 CHARTDATE | TIMESTAMP(0)
