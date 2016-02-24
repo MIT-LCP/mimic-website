@@ -28,6 +28,7 @@ toc = "true"
 # Important considerations
 
 * `TEXT` is often large and contains many newline characters: it may be easier to read if viewed in a distinct program rather than the one performing the queries.
+* Echo reports, ECG reports, and radiology reports are available for both inpatient and outpatient stays. If a patient is an outpatient, there will not be an `HADM_ID` associated with the note. If the patient is an inpatient, but was not admitted to the ICU for that particular hospital admission, then there will *not* be an `HADM_ID` associated with the note.
 * Echos are generated using templates and in some cases there may be discrepancies in severity.  For example one report may contain: "Mild PA systolic hypertension. Severe PA systolic hypertension." indicating that the caregiver may not have removed the appropriate item from the template.
 
 # Table columns
@@ -71,4 +72,3 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 ## `TEXT`
 
 `TEXT` contains the note text.
-
