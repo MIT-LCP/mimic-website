@@ -34,9 +34,10 @@ toc = "true"
 
 Name | PostgreSQL data type  | Modifiers
 ---- | ---- | ----
-SUBJECT\_ID     | INTEGER               | not null
-HADM\_ID        | INTEGER               | not null
-SEQ\_NUM        | INTEGER               |
+ROW\_ID     | INT               | not null
+SUBJECT\_ID     | INT               | not null
+HADM\_ID        | INT               | not null
+SEQ\_NUM        | INT               |
 ICD9\_CODE      | VARCHAR(10)           |
 
 # Detailed Description
