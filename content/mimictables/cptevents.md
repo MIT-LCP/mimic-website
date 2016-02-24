@@ -30,11 +30,12 @@ toc = "true"
 # Important considerations
 
 * The respiratory cost center bills for ventilation *regardless* of duration. That means that 30 minutes of mechanical ventilation for a single day would result in same billing code as a full 24 hours of mechanical ventilation.
+* Non-invasive ventilation and mechanical ventilation use the same CPT code. Differentiating these concepts requires selecting them using the `DESCRIPTION` column.
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
@@ -79,5 +80,3 @@ The section headers provide a category for the given CPT code. These headers wer
 ## `DESCRIPTION`
 
 In the case of a `CPT_CD` corresponding to the respiratory cost center, the description provides information about the meaning of the CPT code. Otherwise, the field is null.
-
-
