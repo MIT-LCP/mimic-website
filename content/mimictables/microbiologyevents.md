@@ -27,12 +27,15 @@ toc = "true"
 * D\_ITEMS on `ORG_ITEMID`
 * D\_ITEMS on `AB_ITEMID`
 
-<!-- # Important considerations -->
+# Important considerations
+
+* The MICROBIOLOGYEVENTS table does not contain cultures from samples taken outside the ICU
+* If the specimen is null, then the culture had no growth reported.
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
@@ -52,7 +55,7 @@ DILUTION\_TEXT | VARCHAR(10)
 DILUTION\_COMPARISON | VARCHAR(20)
 DILUTION\_VALUE | DOUBLE PRECISION
 INTERPRETATION | VARCHAR(5)
-	
+
 # Detailed Description
 
 ## `SUBJECT_ID`, `HADM_ID`
@@ -62,7 +65,7 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 ## `CHARTDATE`, `CHARTTIME`
 
 `CHARTTIME` records the time at which an observation was charted, and is usually the closest proxy to the time the data was actually measured.
-`CHARTDATE` is the same as `CHARTTIME`, except there is no time available. 
+`CHARTDATE` is the same as `CHARTTIME`, except there is no time available.
 
 `CHARTDATE` was included as time information is not always available for microbiology measurements: in order to be clear about when this occurs, `CHARTTIME` is null, and `CHARTDATE` contains the date of the measurement.
 
