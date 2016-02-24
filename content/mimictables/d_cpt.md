@@ -31,6 +31,7 @@ toc = "true"
 
 Name | Postgres data type
 ---- | --------
+ROW\_ID | INT
 CATEGORY | SMALLINT
 SECTIONRANGE | VARCHAR(100)
 SECTIONHEADER | VARCHAR(50) 
