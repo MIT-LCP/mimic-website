@@ -32,6 +32,7 @@ toc = "true"
 
 Name | Postgres data type | In CareVue | In Metavision
 ---- | -------- | ----  | ----
+ROW\_ID | INT | Y | Y
 SUBJECT\_ID | NUMBER(7,0) | Y | Y
 HADM\_ID | NUMBER(7,0) | Y | Y
 ICUSTAY\_ID | NUMBER(7,0) | Y | Y
