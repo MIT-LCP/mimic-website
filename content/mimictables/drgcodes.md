@@ -34,6 +34,7 @@ toc = "true"
 
 Name | PostgreSQL data type
 ---- | ----
+ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
 DRG\_TYPE | VARCHAR(20)
