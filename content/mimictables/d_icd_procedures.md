@@ -29,6 +29,7 @@ toc = "true"
 
 Name | Postgres data type
 ---- | ----
+ROW\_ID | INT
 ICD9\_CODE | VARCHAR(10)
 SHORT\_TITLE | VARCHAR(50)
 LONG\_TITLE | VARCHAR(300)
