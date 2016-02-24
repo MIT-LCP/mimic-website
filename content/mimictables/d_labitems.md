@@ -32,6 +32,7 @@ toc = "true"
 
 Name | Postgres data type 
 ---- | ---- 
+ROW_ID | INT
 ITEMID | INT
 LABEL | VARCHAR(100) 
 FLUID | VARCHAR(100)
