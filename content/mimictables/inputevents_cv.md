@@ -34,6 +34,7 @@ A high level description of the data is available [here](/mimicdata/io).
 
 Name | Postgres data type
 ---- | ----
+ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
 ICUSTAY\_ID | INT
