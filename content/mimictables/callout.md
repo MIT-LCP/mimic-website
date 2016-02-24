@@ -33,7 +33,7 @@ toc = "true"
 
 Name | Postgres data type 
 ---- | ---- 
-ROW\_ID | BIGINT
+ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
 SUBMIT\_WARDID | INT
