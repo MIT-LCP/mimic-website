@@ -32,6 +32,7 @@ toc = "true"
 
 Name | Postgres data type 
 ---- | ---- 
+ROW\_ID | INT
 SUBJECT\_ID | INT
 GENDER | VARCHAR(5)
 DOB | TIMESTAMP(0)
