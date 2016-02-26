@@ -64,9 +64,9 @@ To clarify the content of the table, the ICD9 table has been renamed to DIAGNOSE
 
 Data in the IOEVENTS and MEDEVENTS tables is now contained in the OUTPUTEVENTS, INPUTEVENTS\_CV and INPUTEVENTS\_MV tables. As all the medications in the MEDEVENTS table were continuous infusions, they were all associated with an entry in IOEVENTS. MEDEVENTS would specify the drug rate, while IOEVENTS would specify the volume given. These tables have been consolidated to ease querying for drug deliveries.
 
-## POE_MED_ORDER and POE_DRUG_ORDER merged into PRESCRIPTIONS
+## POE_MED and POE_ORDER merged into PRESCRIPTIONS
 
-The term POE, or provider order entry, is vague and references a hospital specific database which users may not be familiar with. To clarify the content of these tables, they have been merged into a single table named PRESCRIPTIONS.
+The term POE, or provider order entry, references a hospital specific database which users may not be familiar with. To clarify the content of these tables, they have been merged into a single table named PRESCRIPTIONS.
 
 # Identifier changes
 
