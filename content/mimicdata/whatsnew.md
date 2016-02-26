@@ -19,9 +19,9 @@ One of the challenges of adding new data resulted from a change in data manageme
 
 # Lab ITEMID mapping
 
-The `ITEMID` for laboratory measurements in the D_LABITEMS and LABEVENTS tables in MIMIC-II do *not* match the `ITEMID` for laboratory measurements in MIMIC-III. For previous users' benefit, we have provided a mapping table to facilitate the updating of queries which use this table. This mapping can be found in the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/blob/master/migrating/labid.csv):
+The `ITEMID` for laboratory measurements in the D_LABITEMS and LABEVENTS tables in MIMIC-II do *not* match the `ITEMID` for laboratory measurements in MIMIC-III. We have provided a mapping table to facilitate the updating of queries which use this table. The mapping can be found in the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/blob/master/migrating/labid.csv):
 
-Furthermore, note that much of the data has been mapped to LOINC codes. LOINC codes are advantageous as they provide an ontology for recorded lab values. However, careful inspection shows that the LOINC code for an `ITEMID` in MIMIC-III is, in rare occassions, different from the LOINC code for the same concept in MIMIC-II. This is usually attributable to the laboratory assigning a new LOINC code, which is done for many reasons, including changing the reagents of a laboratory test, changing the technique used to acquire the result or because the previous LOINC code was made redundant.
+Much of the data has been mapped to LOINC codes, which provide a standard ontology for recorded lab values. Careful inspection shows that the LOINC code for an `ITEMID` in MIMIC-III is, in rare occasions, different from the LOINC code for the same concept in MIMIC-II. This is usually attributable to the laboratory assigning a new LOINC code, which is done for many reasons, including changing the reagents of a laboratory test, changing the technique used to acquire the result or because the previous LOINC code was discontinued.
 
 # Schema changes
 
