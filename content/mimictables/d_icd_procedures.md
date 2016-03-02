@@ -23,6 +23,10 @@ toc = "true"
 
 * PROCEDURES_ICD on `ICD9_CODE`
 
+# Brief summary
+
+This table defines International Classification of Diseases Version 9 (ICD-9) codes for **procedures**. These codes are assigned at the end of the patient's stay and are used by the hospital to bill for care provided. They can further be used to identify if certain procedures have been performed (e.g. surgery).
+
 <!-- # Important considerations -->
 
 # Table columns
@@ -43,4 +47,3 @@ LONG\_TITLE | VARCHAR(300)
 ## `SHORT_TITLE`, `LONG_TITLE`
 
 The title fields provide a brief definition for the given procedure code in `ICD9_CODE`.
-

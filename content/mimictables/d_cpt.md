@@ -23,6 +23,10 @@ toc = "true"
 
 * CPTEVENTS on `CPT_CD` between `MINCODEINSUBSECTION` and `MAXCODEINSUBSECTION`
 
+# Brief summary
+
+This table gives some high level information regarding current procedural terminology (CPT) codes. Unfortunately, detailed information for individual codes is unavailable.
+
 # Important considerations
 
 * Unlike all other definition tables, `D_CPT` does *not* have a one to one mapping with the corresponding `CPT_CD` in `CPTEVENTS`, rather each row of `D_CPT` maps to a range of `CPT_CD`.
@@ -34,16 +38,16 @@ Name | Postgres data type
 ROW\_ID | INT
 CATEGORY | SMALLINT
 SECTIONRANGE | VARCHAR(100)
-SECTIONHEADER | VARCHAR(50) 
-SUBSECTIONRANGE | VARCHAR(100) 
-SUBSECTIONHEADER | VARCHAR(300) 
+SECTIONHEADER | VARCHAR(50)
+SUBSECTIONRANGE | VARCHAR(100)
+SUBSECTIONHEADER | VARCHAR(300)
 CODESUFFIX | VARCHAR(5)
 MINCODEINSUBSECTION | INT
 MAXCODEINSUBSECTION | INT
-	
+
 # Detailed Description
 
-`D_CPT` provides information about CPT codes, specifically it provides the overall purpose of the procedure and in some cases the body system related to the procedure. 
+`D_CPT` provides information about CPT codes, specifically it provides the overall purpose of the procedure and in some cases the body system related to the procedure.
 
 ## CATEGORY
 
