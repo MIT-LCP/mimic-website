@@ -23,6 +23,10 @@ toc = "true"
 
 * DIAGNOSES_ICD ON `ICD9_CODE`
 
+# Brief summary
+
+This table defines International Classification of Diseases Version 9 (ICD-9) codes for **diagnoses**. These codes are assigned at the end of the patient's stay and are used by the hospital to bill for care provided.
+
 <!-- # Important considerations -->
 
 # Table columns
@@ -43,4 +47,3 @@ LONG\_TITLE | VARCHAR(300)
 ## `SHORT_TITLE`, `LONG_TITLE`
 
 The title fields provide a brief definition for the given diagnosis code in `ICD9_CODE`.
-

@@ -19,12 +19,16 @@ toc = "true"
 **Number of rows:** 263,201,375
 
 **Links to:**
- 
+
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
 * ICUSTAYS on `ICUSTAY_ID`
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
+
+# Brief summary
+
+CHARTEVENTS contains all the charted data available for a patient. During their ICU stay, the primary repository of a patient's information is their electronic chart. The electronic chart displays patients' routine vital signs and any additional information relevant to their care: ventilator settings, laboratory values, code status, mental status, and so on. As a result, the bulk of information about a patient's stay is contained in CHARTEVENTS. Furthermore, even though laboratory values are captured elsewhere (LABEVENTS), they are frequently repeated within CHARTEVENTS. This occurs because it is desirable to display the laboratory values on the patient's electronic chart, and so the values are copied from the database storing laboratory values to the database storing the CHARTEVENTS.
 
 <!-- # Important considerations -->
 
@@ -43,11 +47,11 @@ CGID | NUMBER(7,0) | Y | Y
 VALUE | VARCHAR2(200 BYTE) | Y | Y
 VALUENUM | NUMBER | Y | Y
 VALUEUOM | VARCHAR2(20 BYTE) | Y | Y
-WARNING | NUMBER(1,0) | | Y 
+WARNING | NUMBER(1,0) | | Y
 ERROR | NUMBER(1,0) | | Y
-RESULTSTATUS | VARCHAR2(20 BYTE) | Y | 
-STOPPED | VARCHAR2(20 BYTE) | Y | 
-    
+RESULTSTATUS | VARCHAR2(20 BYTE) | Y |
+STOPPED | VARCHAR2(20 BYTE) | Y |
+
 
 # Detailed Description
 
@@ -77,11 +81,10 @@ Identifier for a single measurement type in the database. Each row associated wi
 
 ## `WARNING`, `ERROR`
 
-`WARNING` and `ERROR` are Metavision specific columns which specify if a warning for the value was raised and if an error occurred during the measurement. 
+`WARNING` and `ERROR` are Metavision specific columns which specify if a warning for the value was raised and if an error occurred during the measurement.
 
 ?? TODO: review metavision front end and provide more detail on the above.
 
 ## `RESULTSTATUS`, `STOPPED`
 
 `RESULTSTATUS` and `STOPPED` are CareVue specific columns which specify the type of measurement (`RESULTSTATUS` is 'Manual' or 'Automatic') and whether the measurement was stopped.
-

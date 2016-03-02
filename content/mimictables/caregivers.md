@@ -8,7 +8,7 @@ toc = "true"
 [menu]
   [menu.main]
     parent = "Tables in MIMIC"
-    
+
 +++
 
 # Overview
@@ -19,20 +19,24 @@ toc = "true"
 
 **Number of rows:** 7567
 
-**Links to:** 
+**Links to:**
 
 * CHARTEVENTS on `CGID`
 
+# Brief summary
+
+This table provides information regarding care givers. For example, it would define if a care giver is a research nurse (RN), medical doctor (MD), and so on.
+
+<!-- # Important considerations -->
+
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ROW\_ID | INT
 CGID | INT
 LABEL | VARCHAR(15)
 DESCRIPTION | VARCHAR(30)
-
-<!-- # Important considerations -->
 
 # Detailed Description
 

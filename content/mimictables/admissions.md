@@ -22,10 +22,14 @@ toc = "true"
 
 * PATIENTS on `SUBJECT_ID`
 
+# Brief summary
+
+The ADMISSIONS table gives information regarding a patient's admission to the hospital. Since each unique hospital visit for a patient is assigned a unique `HADM_ID`, the ADMISSIONS table can be considered as a definition table for `HADM_ID`. Information available includes timing information for admission and discharge, demographic information, the source of the admission, and so on.
+
 # Important considerations
 
 * The data is sourced from the admission, discharge and transfer database from the hospital (often referred to as 'ADT' data).
-* Organ donor accounts are sometimes created for patients who died in the hospital. These are distinct hospital admissions with very short, sometimes negative lengths of stay. Furthermore, their `DEATHTIME` is frequently the same as the original patient's `DEATHTIME`.
+* Organ donor accounts are sometimes created for patients who died in the hospital. These are distinct hospital admissions with very short, sometimes negative lengths of stay. Furthermore, their `DEATHTIME` is frequently the same as the earlier patient admission's `DEATHTIME`.
 * All text data, except for that in the `INSURANCE` column, is stored in upper case.
 
 # Table columns
@@ -96,4 +100,3 @@ Time that the patient was registered and discharged from the emergency departmen
 ## `DIAGNOSIS`
 
 The `DIAGNOSIS` column provides a preliminary, free text diagnosis for the patient on hospital admission. The diagnosis is usually assigned by the admitting clincian and does not use a systematic ontology. As of MIMIC-III v1.0 there were 15,693 distinct diagnoses for 58,976 admissions. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness). Final diagnoses for hospital admissions are coded and can be found in the DIAGNOSES_ICD table.
-

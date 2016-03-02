@@ -15,14 +15,18 @@ toc = "true"
 
 **Table source:** Hospital database.
 
-**Table purpose:** Provides information when a patient was READY for discharge from the ICU, and when the patient was actually discharged.
+**Table purpose:** Provides information when a patient was READY for discharge from the ICU, and when the patient was actually discharged from the ICU.
 
 **Number of rows:** 34499
 
-**Links to:** 
+**Links to:**
 
 * PATIENTS on `SUBJECT_ID`
 * ADMISSIONS on `HADM_ID`
+
+# Brief summary
+
+The CALLOUT table provides information about ICU discharge planning. When a patient is deemed ready to leave the ICU, they are "called out". This process involves: (i) a care provider registering that the patient is ready to leave the ICU and detailing any specialized precautions required, (ii) a coordinator acknowledging the patient requires a bed outside the ward, (iii) a variable period of time in order to coordinate the transfer, and finally (iv) an outcome: either the patient is called out (discharged) or the call out event is canceled. This table provides information for all of the above.
 
 # Important considerations
 
@@ -31,8 +35,8 @@ toc = "true"
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
@@ -100,4 +104,3 @@ The request columns are binary indicators which request certain precautions for 
 
 `CREATETIME` provides the time and date that the call out was initiated. `UPDATETIME` provides the last time at which the call out event was updated. `ACKNOWLEDGETIME` is the time at which the call out was first acknowledged.
 `OUTCOMETIME` is the time at which the `CALLOUT_OUTCOME` occurred. `FIRSTRESERVATIONTIME` and `CURRENTRESERVATIONTIME` provide information regarding ward reservations.
-
