@@ -26,7 +26,13 @@ toc = "true"
 
 # Brief summary
 
-The services table describes the service that a patient was admitted under. While a patient can be physicially located at a given ICU type (say MICU), they are not necessarily being cared for by the team which staffs the MICU. This can happen due to a number of reasons, including bed shortage. The SERVICES table should be used if interested in stratifying patients by their ICU type. The following is a map from services to ICU types:
+The services table describes the service that a patient was admitted under. While a patient can be physicially located at a given ICU type (say MICU), they are not necessarily being cared for by the team which staffs the MICU. This can happen due to a number of reasons, including bed shortage. The SERVICES table should be used if interested in stratifying patients by their ICU type.
+
+<!--
+
+TODO: need to verify the below.
+
+The following is a map from services to ICU types:
 
 Service | ICU service
 --- | ---
@@ -51,6 +57,7 @@ TRAUM | TSICU
 TSURG | TSICU
 VSURG | CSRU
 
+-->
 
 <!-- # Important considerations -->
 
