@@ -28,15 +28,15 @@ toc = "true"
 
 # Important considerations
 
-* Note that the time associated with this result is the time of the fluid *acquisition*, not the time that the values were made available to the clinical staff. 
-* The labevents table contains both in-hospital laboratory measurements *and* out of hospital laboratory measurements from clinics which the patient has visited (since the patient is not "in" a hospital when visiting a clinic, these patients often referred to as "out patients" and the data is often called "out patient" data).
+* Note that the time associated with this result is the time of the fluid *acquisition*, not the time that the values were made available to the clinical staff.
+* The labevents table contains both in-hospital laboratory measurements *and* out of hospital laboratory measurements from clinics which the patient has visited (since the patient is not "in" a hospital when visiting a clinic, these patients often referred to as "out patients" and the data is often called "out patient" data). Laboratory measurements for out patients **does not have a `HADM_ID`**.
 * In MIMIC-III v1.0, there is a subset of patients for which the outpatient lab data is not available. They can be identified by checking for patients whose data *always* has an `HADM_ID`.
 * In MIMIC-III v1.0, there is a subset of patients for which text laboratory data is missing. This primarily affects the blood gas type recorded with blood gases.
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
@@ -46,7 +46,7 @@ VALUE | VARCHAR(200)
 VALUENUM | DOUBLE PRECISION
 VALUEUOM | VARCHAR(20)
 FLAG | VARCHAR(20)
-	
+
 # Detailed Description
 
 The `LABEVENTS` data contains information regarding laboratory based measurements. The process for acquiring a lab measurement is as follows: first, a member of the clinical staff acquires a fluid from a site in the patient's body (e.g. blood from an arterial line, urine from a catheter, etc). Next, the fluid is bar coded to associate it with the patient *and* timestamped to record the time of the fluid acquisition. The lab analyses the data and returns a result within 4-12 hours.
@@ -75,4 +75,3 @@ Note that because the data is directly sourced from the laboratory database, it 
 ## `FLAG`
 
 `FLAG` indicates whether the laboratory value is considered abnormal or not, using pre-defined thresholds.
-
