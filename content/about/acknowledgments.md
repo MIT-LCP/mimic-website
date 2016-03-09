@@ -23,7 +23,7 @@ Our recommended citation for MIMIC-III is in preparation for publication.
 
 The older MIMIC II database can be cited as follows (BibTeX entry):
 
-```
+```text
 @article{MIMICII,
   Author = {Saeed, Mohammed and Villarroel, Mauricio and Reisner, Andrew T. and Clifford, Gari and Lehman, Li-Wei and Moody, George and Heldt, Thomas and Kyaw, Tin H. and Moody, Benjamin and Mark, Roger G.},
   Title = {Multiparameter Intelligent Monitoring in Intensive Care II (MIMIC-II): A public-access intensive care unit database},
@@ -38,7 +38,7 @@ The older MIMIC II database can be cited as follows (BibTeX entry):
 
 The recommended (additional) citation for all data hosted on PhysioNet is:
 
-```
+```text
 @article{goldberger2000physiobank,
   title={Physiobank, physiotoolkit, and physionet components of a new research resource for complex physiologic signals},
   author={Goldberger, Ary L and Amaral, Luis AN and Glass, Leon and Hausdorff, Jeffrey M and Ivanov, Plamen Ch and Mark, Roger G and Mietus, Joseph E and Moody, George B and Peng, Chung-Kang and Stanley, H Eugene},
