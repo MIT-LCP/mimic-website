@@ -32,6 +32,7 @@ toc = "true"
 * The labevents table contains both in-hospital laboratory measurements *and* out of hospital laboratory measurements from clinics which the patient has visited (since the patient is not "in" a hospital when visiting a clinic, these patients often referred to as "out patients" and the data is often called "out patient" data). Laboratory measurements for out patients **does not have a `HADM_ID`**.
 * In MIMIC-III v1.0, there is a subset of patients for which the outpatient lab data is not available. They can be identified by checking for patients whose data *always* has an `HADM_ID`.
 * In MIMIC-III v1.0, there is a subset of patients for which text laboratory data is missing. This primarily affects the blood gas type recorded with blood gases.
+* Some items are duplicated between the labevents and chartevents tables. In cases where there is disagreement between measurements, labevents should be taken as the ground truth.
 
 # Table columns
 
