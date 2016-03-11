@@ -28,9 +28,7 @@ toc = "true"
 
 A high level description of the data is available [here](/mimicdata/io).
 
-# Important considerations
-
-* The `STATUSDESCRIPTION` column specifies if an order is 'Rewritten', that is: it was never delivered to the patient as the order was rewritten.
+<!-- # Important considerations -->
 
 # Table columns
 
@@ -122,7 +120,7 @@ The total amount of the substance in the bag containing the solution.
 
 ## STATUSDESCRIPTION
 
-States the ultimate status of the item.
+```STATUSDESCRIPTION``` states the ultimate status of the item. 'Stopped' indicates that the caregiver stopped the item or the programmed volume came to an end. 'Finished running' indicates that the programmed volume has come to an end. 'Rewritten' indicates that the caregiver rewrote the item, for example making an amendment to the starttime. 'Changed' indicates that the caregiver changed an item, for example setting a new rate or dose. Flushed' indicates that a line was flushed. 
 
 ## ISOPENBAG
 
