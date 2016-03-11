@@ -85,7 +85,8 @@ Identifier for a single measurement type in the database. Each row associated wi
 
 `WARNING` and `ERROR` are Metavision specific columns which specify if a warning for the value was raised and if an error occurred during the measurement.
 
-?? TODO: review metavision front end and provide more detail on the above.
+<!-- ?? TODO: review metavision front end and provide more detail on the above.
+ -->
 
 ## `RESULTSTATUS`, `STOPPED`
 
