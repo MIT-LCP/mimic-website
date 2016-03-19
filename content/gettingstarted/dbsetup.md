@@ -25,6 +25,5 @@ https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic
 
 ## Tutorial  
 
-For a tutorial on installing MIMIC in a local Postgres database, see:
-http://mimic.physionet.org/tutorials/install_mimic_locally/
+Tutorials for installing MIMIC in a local Postgres database are provided for Mac OSX, Unix, and MS Windows systems. For more detail, select the 'Tutorial' item in the left menu.
 
