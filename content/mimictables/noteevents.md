@@ -47,10 +47,6 @@ TEXT | TEXT
 
 # Detailed Description
 
-## `RECORD_ID`
-
-`RECORD_ID` identifies a unique note in the database. This is almost always unique to the row. However, there are a handful of cases where the hospital admission times overlap, resulting in ambiguity regarding which admission the note is associated with. In these cases, the note is duplicated and associated with each `HADM_ID`.
-
 ## `SUBJECT_ID`, `HADM_ID`
 
 Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `HADM_ID` is unique to a patient hospital stay.
