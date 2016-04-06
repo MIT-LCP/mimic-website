@@ -68,11 +68,11 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 ## `DRUG`, `DRUG_NAME_POE`, `DRUG_NAME_GENERIC`
 
-These columns are various representations of the drug prescribed to the patient
+These columns are various representations of the drug prescribed to the patient. 
 
 ## `FORMULARY_DRUG_CD`, `GSN`, `NDC`
 
-These columns provide a representation of the drug in various coding systems.
+These columns provide a representation of the drug in various coding systems. `GSN` is the Generic Sequence Number. `NDC` is the [National Drug Code](https://en.wikipedia.org/wiki/National_Drug_Code)
 
 ## `PROD_STRENGTH`
 
