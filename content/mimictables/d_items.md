@@ -39,17 +39,16 @@ toc = "true"
 
 Name | Postgres data type
 ---- | ----
+ROW_ID | INT
 ITEMID | INT
 LABEL | VARCHAR(200)
 ABBREVIATION | VARCHAR(100)
 DBSOURCE | VARCHAR(20)
 LINKSTO | VARCHAR(50)
-CODE | VARCHAR(20)
 CATEGORY | VARCHAR(100)
 UNITNAME | VARCHAR(100)
 PARAM\_TYPE | VARCHAR(30)
-LOWNORMALVALUE | DOUBLE PRECISION
-HIGHNORMALVALUE | DOUBLE PRECISION
+CONCEPTID | INT
 
 # Detailed Description
 
@@ -75,10 +74,6 @@ The `DBSOURCE` column was generated to clarify which database the given `ITEMID`
 
 `LINKSTO` provides the table name which the data links to. For example, a value of 'chartevents' indicates that the `ITEMID` of the given row is contained in CHARTEVENTS. A single `ITEMID` is only used in one event table, that is, if an `ITEMID` is contained in CHARTEVENTS it will *not* be contained in any other event table (e.g. IOEVENTS, CHARTEVENTS, etc).
 
-## `CODE`
-
-`CODE` is a microbiology specific column used for identifying the organism tested again.
-
 ## `CATEGORY`
 
 `CATEGORY` provides some information of the type of data the `ITEMID` corresponds to. Examples include 'ABG', which indicates the measurement is sourced from an arterial blood gas, 'IV Medication', which indicates that the medication is administered through an intravenous line, and so on.
@@ -90,8 +85,3 @@ The `DBSOURCE` column was generated to clarify which database the given `ITEMID`
 ## `PARAM_TYPE`
 
 `PARAM_TYPE` describes the type of data which is recorded: a date, a number or a text field.
-
-## `LOWNORMALVALUE`, `HIGHNORMALVALUE`
-
-`LOWNORMALVALUE` and `HIGHNORMALVALUE` provide a reference range for measurements which have a known operating range.
-
