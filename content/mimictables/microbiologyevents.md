@@ -73,6 +73,8 @@ In the cases where both `CHARTTIME` and `CHARTDATE` exists, `CHARTDATE` is equal
 
 ## `SPEC_ITEMID`, `SPEC_TYPE_CD`, `SPEC_TYPE_DESC`
 
+Details the itemid, code, and description for the specimen.
+
 ## `ORG_ITEMID`, `ORG_CD`, `ORG_NAME`
 
 ## `ISOLATE_NUM`
