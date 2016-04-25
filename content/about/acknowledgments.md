@@ -17,39 +17,15 @@ MIMIC is made available largely through the work of researchers at the MIT Labor
 
 ## MIMIC-III citation
 
-Our recommended citation for MIMIC-III is in preparation for publication.
+Our recommended citation for MIMIC-III is:
 
-## MIMIC-II citation
-
-The older MIMIC II database can be cited as follows (BibTeX entry):
-
-```text
-@article{MIMICII,
-  Author = {Saeed, Mohammed and Villarroel, Mauricio and Reisner, Andrew T. and Clifford, Gari and Lehman, Li-Wei and Moody, George and Heldt, Thomas and Kyaw, Tin H. and Moody, Benjamin and Mark, Roger G.},
-  Title = {Multiparameter Intelligent Monitoring in Intensive Care II (MIMIC-II): A public-access intensive care unit database},
-  Journal = {Critical Care Medicine},
-  Volume = {39}, Number = {}, Pages = {952-960}, Month = {May}, Year = {2011},
-  Howpublished = {\url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3124312/}},
-  Note = {}
-}
-```
+>  MIMIC-III, a freely accessible critical care database. Johnson AEW, Pollard TJ, Shen L, Lehman L, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, and Mark RG. Scientific Data (2016). *In press*
 
 ## PhysioNet citation
 
-The recommended (additional) citation for all data hosted on PhysioNet is:
+An additional citation for all data hosted on PhysioNet is:
 
-```text
-@article{goldberger2000physiobank,
-  title={Physiobank, physiotoolkit, and physionet components of a new research resource for complex physiologic signals},
-  author={Goldberger, Ary L and Amaral, Luis AN and Glass, Leon and Hausdorff, Jeffrey M and Ivanov, Plamen Ch and Mark, Roger G and Mietus, Joseph E and Moody, George B and Peng, Chung-Kang and Stanley, H Eugene},
-  journal={Circulation},
-  volume={101},
-  number={23},
-  pages={e215--e220},
-  year={2000},
-  publisher={Am Heart Assoc}
-}
-```
+>  Physiobank, physiotoolkit, and physionet components of a new research resource for complex physiologic signals. Goldberger AL, Amaral LAN, Glass L,  Hausdorff JM, Ivanov P, Mark RG, Mietus JE, Moody GB, Peng C, and Stanley HE. Circulation. 101(23), pe215--e220. 2000.
 
 # Research groups
 
