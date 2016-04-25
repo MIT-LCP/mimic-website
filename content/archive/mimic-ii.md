@@ -19,4 +19,4 @@ MIMIC-II is an older version of the MIMIC database, now replaced by [MIMIC-III](
 
 - MIMIC-II documentation: [mimic-ii-guide.pdf](/archive/mimic-ii-guide.pdf)
 - Introduction to MIMIC-II: [introduction-mimic-ii.pdf](/archive/introduction-mimic-ii.pdf)
-- MIMIC-II Querybuilder: [https://mimic2app.csail.mit.edu/](https://mimic2app.csail.mit.edu/) (to avoid seeing a warning message when you access the application, please first install the certificate at: http://mimic.physionet.org/oldsite/certs/lcpca.crt)
+- MIMIC-II Querybuilder: [https://mimic2app.csail.mit.edu/](https://mimic2app.csail.mit.edu/) (to avoid seeing a warning message when you access the application, please first install the certificate at: http://mimic.physionet.org/certs/lcpca.crt)
