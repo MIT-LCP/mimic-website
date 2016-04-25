@@ -17,7 +17,7 @@ MIMIC is made available largely through the work of researchers at the MIT Labor
 
 ## MIMIC-III citation
 
-Our recommended citation for MIMIC-III is:
+If you use our data, code, or algorithms in your work, please cite this project. Our recommended publication is:
 
 >  MIMIC-III, a freely accessible critical care database. Johnson AEW, Pollard TJ, Shen L, Lehman L, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, and Mark RG. Scientific Data (2016). *In press*
 
