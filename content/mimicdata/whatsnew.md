@@ -35,7 +35,7 @@ D_CHARTITEMS, D_IOITEMS, and D_MEDITEMS were all sourced from the same data sour
 As the `ITEMID` ranges in the original D_ tables overlapped, they were offset by constant values. The following table maps the old `ITEMID` value ranges to the new ranges:
 
 MIMIC-II source | Old range | New range | Offset
---- | --- | --- | --- | ---
+--- | --- | --- | ---
 D_CHARTITEMS | 1 - 20009 | 1-20009 | *None*
 D_MEDITEMS | 1 - 405 | 30001 - 30405 | + 30000
 D_IOITEMS | 1 - 6807 | 40001 - 46807 | + 40000
