@@ -42,6 +42,8 @@ D_IOITEMS | 1 - 6807 | 40001 - 46807 | + 40000
 
 For example, the charted item "Heart Rate" had an `ITEMID` of 211 in MIMIC-II (in D_CHARTITEMS). The new `ITEMID` for this is, again, 211, as there was no offset for D_CHARTITEMS. This means that any ITEMIDs used in the D_CHARTITEMS table will be directly portable to MIMIC-III (caveat: you will still need to extract additional `ITEMID` for the new metavision patients).
 
+Conversely, if we look at the `ITEMID` = 51 in MIMIC-II D_MEDITEMS (vasopressin), we can find the same concept in MIMIC-III as 51 + 30000 = 30051.
+
 ## D_CODEDITEMS
 
 D_CODEDITEMS contained many concepts - most of these have been unchanged, simply moved to the new table D_ITEMS. The following table provides details.
