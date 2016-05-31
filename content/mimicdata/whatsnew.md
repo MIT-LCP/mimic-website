@@ -17,11 +17,52 @@ MIMIC-III is an extension of MIMIC-II: it incorporates the data contained in MIM
 
 One of the challenges of adding new data resulted from a change in data management software at the Beth Israel Deaconess Medical Center. The original Philips CareVue system (which archived data from 2001 - 2008) was replaced with the new Metavision data management system (which continues to be used to the present). This page aims to facilitate the transition for researchers familiar with MIMIC-II who would like to continue their research with the updated MIMIC-III.
 
-# Lab ITEMID mapping
+# ITEMID mapping
+
+In MIMIC-II there were multiple tables containing the same column name, `ITEMID`, but referring to different concepts. In attempt to alleviate confusion, we have merged all these tables into a single table, as follows:
+
+Old table | Merged into
+--- | ---
+D_CHARTITEMS | D_ITEMS
+D_IOITEMS | D_ITEMS
+D_MEDITEMS | D_ITEMS
+D_CODEDITEMS | *deleted*
+D_PARAMMAP_ITEMS | *deleted*
+D_LABITEMS | D_LABITEMS
+
+D_CHARTITEMS, D_IOITEMS, and D_MEDITEMS were all sourced from the same data source: the ICU database (specfically Philips CareVue). In contrast, iMDSoft Metavision only has a single table to define most `ITEMID` concepts. In order to simplify the schema and coalesce the databases, it was decided to merge together all the `ITEMID` dictionary tables into a single table, *except* D_LABITEMS (see below).
+
+As the `ITEMID` ranges in the original D_ tables overlapped, they were offset by constant values. The following table maps the old `ITEMID` value ranges to the new ranges:
+
+MIMIC-II source | Old range | New range | Offset
+--- | --- | --- | --- | ---
+D_CHARTITEMS | 1 - 20009 | 1-20009 | *None*
+D_MEDITEMS | 1 - 405 | 30001 - 30405 | + 30000
+D_IOITEMS | 1 - 6807 | 40001 - 46807 | + 40000
+
+For example, the charted item "Heart Rate" had an `ITEMID` of 211 in MIMIC-II (in D_CHARTITEMS). The new `ITEMID` for this is, again, 211, as there was no offset for D_CHARTITEMS. This means that any ITEMIDs used in the D_CHARTITEMS table will be directly portable to MIMIC-III (caveat: you will still need to extract additional `ITEMID` for the new metavision patients).
+
+## D_CODEDITEMS
+
+D_CODEDITEMS contained many concepts - most of these have been unchanged, simply moved to the new table D_ITEMS. The following table provides details.
+
+`ITEMID` range | Concept | Where is it in MIMIC-III?
+--- | --- | ---
+60001 - 61018 | DRG codes | Deleted - DRGs are stored with descriptions in DRGCODES
+70001 - 70093 | Microbiology specimens | D_ITEMS, these `ITEMID` values are **unchanged**
+80001 - 80312 | Microbiology organisms | D_ITEMS, these `ITEMID` values are **unchanged**
+90001 - 90031 | Microbiology antibacterium | D_ITEMS, these `ITEMID` values are **unchanged**
+100001 - 101885 | ICD-9 procedure codes | Deleted - ICD9 codes are stored with descriptions
+
+## Lab ITEMIDs - not merged into D_ITEMS
 
 The `ITEMID` for laboratory measurements in the D_LABITEMS and LABEVENTS tables in MIMIC-II do *not* match the `ITEMID` for laboratory measurements in MIMIC-III. We have provided a mapping table to facilitate the updating of queries which use this table. The mapping can be found in the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/blob/master/migrating/labid.csv):
 
 Much of the data has been mapped to LOINC codes, which provide a standard ontology for recorded lab values. Careful inspection shows that the LOINC code for an `ITEMID` in MIMIC-III is, in rare occasions, different from the LOINC code for the same concept in MIMIC-II. This is usually attributable to the laboratory assigning a new LOINC code, which is done for many reasons, including changing the reagents of a laboratory test, changing the technique used to acquire the result or because the previous LOINC code was discontinued.
+
+## New ITEMIDs
+
+While almost all concepts are unified into a single table (D_ITEMS), the concepts within that table are *not* unified. As patients admitted between 2001-2008 used a different ICU system to patients admitted between 2008-2012, the `ITEMID` values for the same concept differ in these two time periods. That is, for heart rates between 2001-2008, the `ITEMID` value 211 is appropriate. For heart rates for patients admitted between 2008 and onward, the `ITEMID` 220045 is appropriate. Most concepts will require the use of multiple `ITEMID` values in order to completely extract the data.
 
 # Schema changes
 
@@ -42,11 +83,6 @@ The CENSUSEVENTS table was used in MIMIC-II to track patient hospital admissions
  - The ADT data provides information regarding ward location
  - The ADT data has fewer erroneous admissions: frequently the ICU database contained erroneous entries corresponding to accidental admission/discharges
  - The ADT data is available for all patients in the ICU database
-
-
-## D_CHARTITEMS, D_IOITEMS and D_MEDITEMS merged into D_ITEMS
-
-D_CHARTITEMS, D_IOITEMS, and D_MEDITEMS were all sourced from the same data source: the ICU database (specfically Philips CareVue). In contrast, iMDSoft Metavision only has a single table to define most `ITEMID` concepts. In order to simplify the schema and coalesce the databases, it was decided to merge together all the `ITEMID` dictionary tables into a single table, *except* D_LABITEMS. D_LABITEMS was kept separate as the laboratory data is sourced from the hospital database.
 
 ## DEMOGRAPHIC_DETAIL merged into ADMISSIONS
 
