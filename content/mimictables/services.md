@@ -26,38 +26,32 @@ toc = "true"
 
 # Brief summary
 
-The services table describes the service that a patient was admitted under. While a patient can be physicially located at a given ICU type (say MICU), they are not necessarily being cared for by the team which staffs the MICU. This can happen due to a number of reasons, including bed shortage. The SERVICES table should be used if interested in stratifying patients by their ICU type.
+The services table describes the service that a patient was admitted under. While a patient can be physicially located at a given ICU type (say MICU), they are not necessarily being cared for by the team which staffs the MICU. This can happen due to a number of reasons, including bed shortage. The SERVICES table should be used if interested in identifying the type of service a patient is receiving in the hospital. For example, if interested in identifying surgical patients, the recommended method is searching for patients admitted under a surgical service.
 
-<!--
+Each service is listed in the table as an abbreviation - this is exactly how the data is stored in the hospital database. For user convenience, we have provided a description of each service type.
 
-TODO: need to verify the below.
-
-The following is a map from services to ICU types:
-
-Service | ICU service
+Service | Description
 --- | ---
-CMED | CCU
-CSURG | CSRU
-DENT |
-ENT |
-GU |
-GYN |
-MED | MICU
-NB | Newborn
-NBB | Newborn
-NMED | MICU
-NSURG | SICU
-OBS |
-ORTHO | MICU
-OMED | MICU
-PSURG |
-PSYCH |
-SURG | SICU
-TRAUM | TSICU
-TSURG | TSICU
-VSURG | CSRU
-
--->
+CMED | Cardiac Medical - for non-surgical cardiac related admissions
+CSURG | Cardiac Surgery - for surgical cardiac admissions
+DENT | Dental - for dental/jaw related admissions
+ENT | Ear, nose, and throat - conditions primarily affecting these areas
+GU | Genitourinary - reproductive organs/urinary system
+GYN | Gynecological - female reproductive systems and breasts
+MED | Medical - general service for internal medicine
+NB | Newborn - infants born at the hospital
+NBB | Newborn baby - infants born at the hospital
+NMED | Neurologic Medical - non-surgical, relating to the brain
+NSURG | Neurologic Surgical - surgical, relating to the brain
+OBS | Observation - not ill enough for a service but kept in hospital for observation
+ORTHO | Orthopaedic - surgical, relating to the musculoskeletal system
+OMED | Orthopaedic medicine - non-surgical, relating to musculoskeletal system
+PSURG | Plastic - restortation/reconstruction of the human body (including cosmetic or aesthetic)
+PSYCH | Psychiatric - mental disorders relating to mood, behaviour, cognition, or perceptions
+SURG | Surgical - general surgical service not classified elsewhere
+TRAUM | Trauma - injury or damage caused by physical harm from an external source
+TSURG | Thoracic Surgical - surgery on the thorax, located between the neck and the abdomen
+VSURG | Vascular Surgical - surgery relating to the circulatory system
 
 <!-- # Important considerations -->
 
