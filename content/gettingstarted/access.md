@@ -20,4 +20,4 @@ Researchers seeking to use the database must formally request access with the st
 - Follow [the instructions](https://physionet.org/pnw/login) to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, [log in to it](https://physionet.org/pnw/login).
 - On your PhysioNetWorks project page, click on the link titled "[MIMIC-III Clinical Database](https://physionet.org/works/MIMICIIIClinicalDatabase/)", and follow the instructions to apply for access.
 
-When your application has been approved you will receive emails containing instructions for downloading the database from PhysioNetWorks. Approval may take several business days, and will be delayed if your request is missing any required information.
+"When your application has been approved you will receive emails containing instructions for downloading the database from PhysioNetWorks. Approval may take several business days, and will be delayed if your request is missing any required information or if you have not completed the [required CITI training]( https://physionet.org/works/MIMICIIClinicalDatabase/CITI_instructions.shtml).
