@@ -32,7 +32,8 @@ toc = "true"
 # Table columns
 
 Name | Postgres data type 
----- | ---- 
+---- | ----
+ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
 ICUSTAY\_ID | INT
