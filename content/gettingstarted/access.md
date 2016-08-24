@@ -17,7 +17,16 @@ The latest version of MIMIC is MIMIC-III, which comprises over 58,000 hospital a
 
 Researchers seeking to use the database must formally request access with the steps below:
 
-- Follow [the instructions](https://physionet.org/pnw/login) to create and log in to a PhysioNetWorks account. If you already have a PhysioNetWorks account, [log in to it](https://physionet.org/pnw/login).
-- On your PhysioNetWorks project page, click on the link titled "[MIMIC-III Clinical Database](https://physionet.org/works/MIMICIIIClinicalDatabase/)", and follow the instructions to apply for access.
+### Complete the required training course
 
-When your application has been approved you will receive emails containing instructions for downloading the database from PhysioNetWorks. Approval may take several business days, and will be delayed if your request is missing any required information or if you have not completed the required CITI training.
+Prior to requesting access to MIMIC, you will need to complete the CITI “Data or Specimens Only Research” course:
+
+- First register on the CITI program website, selecting “Massachusetts Institute of Technology Affiliates” as your organization affilitation: https://www.citiprogram.org/index.cfm?pageID=154&icat=0&ac=0
+- Follow the links to add a Massachusetts Institute of Technology Affiliates course. In the Human Subjects training category, select the “Data or Specimens Only Research” course
+- Complete the course and save a copy of your certificate.
+
+### Request access to MIMIC-III: 
+
+- Create an account on PhysioNet using the following link: https://physionet.org/pnw/login. If you already have a PhysioNetWorks account, [log in to it](https://physionet.org/pnw/login).
+- Follow the instructions on PhysioNet to apply for access to the MIMIC-III project, remembering to provide your CITI training certificate: https://physionet.org/works/MIMICIIIClinicalDatabase/access.shtml
+- When your application has been approved you will receive emails containing instructions for downloading the database from PhysioNetWorks. Approval may take several business days, and will be delayed if your request is missing any required information.
