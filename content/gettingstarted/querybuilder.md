@@ -1,0 +1,31 @@
++++
+date = "2016-09-01T19:34:46-04:00"
+title = "Querybuilder"
+linktitle = "Querybuilder"
+weight = 4
+toc = "true"
+
+[menu]
+  [menu.main]
+    parent = "Getting started"
+
++++
+
+# MIMIC Querybuilder
+
+The MIMIC Querybuilder is a graphical interface for running SQL queries on the MIMIC-III database. It is intended for light exploration of the data, in particular for researchers who are new to MIMIC-III and seeking to gain an understanding of its structure. Researchers seeking to carry out research projects with MIMIC should [follow our instructions](http://mimic.physionet.org/gettingstarted/dbsetup/) for building a local version of the database. 
+
+# Notes and limitations
+
+Queries should be written using PostgreSQL syntax. Two key limitations have been implemented to manage server load:
+
+- The system has been intentionally limited to return only the first 1000 rows of a query
+- All queries have a maximum running time of 15 minutes. Queries that run for over 15 minutes will time out, returning no results.
+
+While we will aim to provide a stable service, our laboratory has limited resources and so we cannot commit to providing continuous uptime.
+
+# Access Querybuilder
+
+Querybuilder is available via the following link, using the MIMIC username and password provided to you [after requesting access](http://mimic.physionet.org/gettingstarted/access/): https://querybuilder-lcp.mit.edu/
+
+
