@@ -19,7 +19,7 @@ The MIMIC Querybuilder is a graphical interface for running SQL queries on the M
 
 Queries should be written using PostgreSQL syntax. Two key limitations have been implemented to manage server load:
 
-- The system has been intentionally limited to return only the first 1000 rows of a query
+- The system has been intentionally limited to return only the first 5000 rows of a query
 - All queries have a maximum running time of 15 minutes. Queries that run for over 15 minutes will time out, returning no results.
 
 While we will aim to provide a stable service, our laboratory has limited resources and so we cannot commit to providing continuous uptime.
