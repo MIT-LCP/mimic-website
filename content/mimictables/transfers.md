@@ -33,8 +33,8 @@ toc = "true"
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
@@ -49,7 +49,7 @@ INTIME | TIMESTAMP(0)
 OUTTIME | TIMESTAMP(0)
 LOS | INT
 
-	
+
 # Detailed Description
 
 ## `SUBJECT_ID`, `HADM_ID`, `ICUSTAY_ID`
@@ -71,6 +71,18 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 The `INTIME` and `OUTTIME` of the transfer event correspond to the `CURR_CAREUNIT`. The `PREV_CAREUNIT` for each row is provided for convenience, and is identical to the `CURR_CAREUNIT` of the previous row (assuming the event is not an admission).
 
+Care units include the following:
+
+Care unit | Description
+--- | ---
+CCU | Coronary care unit
+CSRU | Cardiac surgery recovery unit
+MICU | Medical intensive care unit
+NICU | Neonatal intensive care unit
+NWARD | Neonatal ward
+SICU | Surgical intensive care unit
+TSICU | Trauma/surgical intensive care unit
+
 ## `PREV_WARDID`, `CURR_WARDID`
 
 `PREV_WARDID` and `CURR_WARDID` contain the previous and current ward in which the patient stayed. Note that the grouping of physical locations in the hospital database is referred to as a ward. Though in practice ICUs are not referred to as wards, the hospital database technically tracks ICUs as "wards with an ICU cost center". As a result, each ICU is associated with a `WARDID`, but not every `WARDID` is an ICU.
@@ -82,4 +94,3 @@ The `INTIME` and `OUTTIME` of the transfer event correspond to the `CURR_CAREUNI
 ## `LOS`
 
 `LOS` is the length of stay for the patient for the given ward stay, which may be within or outside of the ICU.
-
