@@ -31,8 +31,8 @@ toc = "true"
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
@@ -45,7 +45,7 @@ LAST\_WARDID | SMALLINT
 INTIME | TIMESTAMP(0)
 OUTTIME | TIMESTAMP(0)
 LOS | DOUBLE | PRECISION
-	
+
 # Detailed Description
 
 ## `SUBJECT_ID`, `HADM_ID`, `ICUSTAY_ID`
@@ -59,6 +59,8 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 ## `FIRST_CAREUNIT`, `LAST_CAREUNIT`
 
 `FIRST_CAREUNIT` and `LAST_CAREUNIT` contain, respectively, the first and last ICU type in which the patient was cared for. As an `ICUSTAY_ID` groups all ICU admissions within 24 hours of each other, it is possible for a patient to be transferred from one type of ICU to another and have the same `ICUSTAY_ID`.
+
+Care units are derived from the TRANSFERS table, and definition for the abbreviations can be found in the documentation for TRANSFERS.
 
 ## `FIRST_WARDID`, `LAST_WARDID`
 
