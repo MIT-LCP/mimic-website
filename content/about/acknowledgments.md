@@ -21,6 +21,12 @@ If you use our data, code, or algorithms in your work, please cite this project.
 
 >  MIMIC-III, a freely accessible critical care database. Johnson AEW, Pollard TJ, Shen L, Lehman L, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, and Mark RG. Scientific Data (2016). DOI: <a href="http://dx.doi.org/10.1038/sdata.2016.35">10.1038/sdata.2016.35</a>. Available at: <a href="http://www.nature.com/articles/sdata201635">http://www.nature.com/articles/sdata201635</a>
 
+## Acknowledging the MIMIC funders
+
+Researchers publishing studies using the MIMIC-III database are required to acknowledge the project funders, by including the following statement in the article: 
+
+> Research reported in this publication was supported by the National Institute of Biomedical Imaging and Bioengineering of the National Institutes of Health under Award Number R01EB017205. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.
+
 ## PhysioNet citation
 
 An additional citation for all data hosted on PhysioNet is:
