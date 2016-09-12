@@ -27,25 +27,25 @@ The current version of the database is v1.4. When referencing this version, we r
 ## MIMIC-III v1.4
 
 
-MIMIC-III v1.3 was released on September 2nd, 2016. It was a major release enhancing data quality and providing a large amount of additional data for Metavision patients.  
+MIMIC-III v1.4 was released on 2 September 2016. It was a major release enhancing data quality and providing a large amount of additional data for Metavision patients.  
 
 Issues addressed include:  
 
-* #88 - Text data sourced from drop down menus or "pick lists" has been added to the database for Metavision patients. Users interested in the exact concepts added can query them as follows: select * from d_items where linksto = 'chartevents' and dbsource = 'metavision' and param_type = 'Text'. All data was added to CHARTEVENTS, and has increased the raw (uncompressed) size of the datafile by 5 GB.  
-* #201 - Data in tables may now only occur within 1 year of a patient's hospital admission ADMITTIME and DISCHTIME. Observations outside this range corresponded to typographical errors in the CHARTTIME, and this unreliable data has been removed.  
-* #197 - A small issue where a single observation was duplicated and assigned to two ICUSTAY_ID (and sometimes two HADM_ID) has been corrected: this affected 37 ICUSTAY_ID and 80 HADM_ID. Thanks @matteobonvini on GitHub for the report.  
+* #88 - Text data sourced from drop down menus or "pick lists" has been added to the database for Metavision patients. Users interested in the exact concepts added can query them as follows: `select * from d_items where linksto = 'chartevents' and dbsource = 'metavision' and param_type = 'Text'`. All data was added to `chartevents` and has increased the raw (uncompressed) size of the datafile by 5 GB.  
+* #201 - Data in tables may now only occur within 1 year of a patient's hospital admission `admittime` and `dischtime`. Observations outside this range corresponded to typographical errors in the `charttime`, and this unreliable data has been removed.  
+* #197 - A small issue where a single observation was duplicated and assigned to two ICUSTAY_ID (and sometimes two HADM_ID) has been corrected: this affected 37 `icustay_id` and 80 `hadm_id`. Thanks @matteobonvini on GitHub for the report.  
 * #191 - A subset of patients were missing data due to the transition from CareVue to Metavision: this data has been restored.  
 * #193 - Some laboratory concepts (particularly CD counts) were conflated (i.e. percentages mixed with counts) - these have been corrected. Thanks Yuqi Si for the report (via StackExchange).  
-* #196 - The AMOUNT column in INPUTEVENTS_MV did not correspond to AMOUNTUOM (unit of measurement) - instead it corresponded to a "base" unit (e.g. grams instead of milligrams). Data in the AMOUNT has been updated to match the AMOUNTUOM where appropriate. This also effected the PROCEDUREEVENTS_MV table. Thanks @ngageorange on GitHub for the report.  
+* #196 - The `amount` column in `inputevents_mv` did not correspond to `amountuom` (unit of measurement) - instead it corresponded to a "base" unit (e.g. grams instead of milligrams). Data in the `amount` has been updated to match the `amountuom` where appropriate. This also effected the `procedureevents_mv` table. Thanks @ngageorange on GitHub for the report.  
 * #198 - NULL values for character fields are now properly represented in the CSV file as empty fields with no double quotes. Database systems such as PostgreSQL will now recognize these fields as null when copying with the NULL '' qualifier.  
-* #199 - Addendums to discharge summaries in the notes can now be distinguished in the NOTEEVENTS table: their CATEGORY has remained 'Discharge summary', but their description has been changed from 'Report' to 'Addendum'  
+* #199 - Addendums to discharge summaries in the notes can now be distinguished in the `noteevents` table: their `category` has remained 'Discharge summary', but their description has been changed from 'Report' to 'Addendum'  
 * #194 - The LOINC code for Total CO2 has been corrected (was 1959-6 total bicarb, is now 34728-6 total CO2)  
 * #186 - Data has been harmonized into EST.  
 * #180 - Some patients were erroneously labelled as in care unit 'TSICU': these have been corrected to 'CSRU'  
-* #189 - Schema change: The HAS_IOEVENTS_DATA column in ADMISSIONS has been removed as it was antiquated.  
-* #185 - Three text concepts (GCS, code status, RASS) had a null LINKSTO field in D_ITEMS, even though the data existed in CHARTEVENTS. This has been corrected. Note these were the only three text concepts available for Metavision patients in MIMIC-III v1.3 (see #88).  
-* #60 - The date shift for dates in the TEXT field of NOTEEVENTS has been corrected: before it corresponded to a different date shifted used in MIMIC-II (easily identifiable by years occurring between 2500-3500). It now matches the dates in the structured data.  
-* #188 - Negative microbiology cultures are now recorded in MICROBIOLOGYEVENTS - negative cultures can be identified by a NULL value for the organism name (ORG_NAME).  
+* #189 - Schema change: The `has_ioevents_data` column in `admissions` has been removed as it was no longer meaningful.  
+* #185 - Three text concepts (GCS, code status, RASS) had a null `linksto` field in `d_items`, even though the data existed in CHARTEVENTS. This has been corrected. Note these were the only three text concepts available for Metavision patients in MIMIC-III v1.3 (see #88).  
+* #60 - The date shift for dates in the TEXT field of `noteevents` has been corrected: before it corresponded to a different date shifted used in MIMIC-II (easily identifiable by years occurring between 2500-3500). It now matches the dates in the structured data.  
+* #188 - Negative microbiology cultures are now recorded in `micriobiologyevents` - negative cultures can be identified by a NULL value for the organism name (`org_name`).  
 
 Be sure to validate the checksum of the resultant file to ensure you have the correct version.
 
