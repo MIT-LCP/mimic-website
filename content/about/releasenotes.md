@@ -31,7 +31,12 @@ MIMIC-III v1.4 was released on 2 September 2016. It was a major release enhancin
 
 Issues addressed include:  
 
-* #88 - Text data sourced from drop down menus or "pick lists" has been added to the database for Metavision patients. Users interested in the exact concepts added can query them as follows: `select * from d_items where linksto = 'chartevents' and dbsource = 'metavision' and param_type = 'Text'`. All data was added to `chartevents` and has increased the raw (uncompressed) size of the datafile by 5 GB.  
+* #88 - Text data sourced from drop down menus or "pick lists" has been added to the database for Metavision patients. Users interested in the exact concepts added can query them as follows:  
+    `select * from d_items  `  
+    `where linksto = 'chartevents'`  
+    `and dbsource = 'metavision'`   
+    `and param_type = 'Text'`.  
+All data was added to the `chartevents` table, increasing the raw (uncompressed) size of the datafile by 5 GB.  
 * #201 - Data in tables may now only occur within 1 year of a patient's hospital admission `admittime` and `dischtime`. Observations outside this range corresponded to typographical errors in the `charttime`, and this unreliable data has been removed.  
 * #197 - A small issue where a single observation was duplicated and assigned to two ICUSTAY_ID (and sometimes two HADM_ID) has been corrected: this affected 37 `icustay_id` and 80 `hadm_id`. Thanks @matteobonvini on GitHub for the report.  
 * #191 - A subset of patients were missing data due to the transition from CareVue to Metavision: this data has been restored.  
