@@ -38,7 +38,7 @@ Issues addressed include:
     `and param_type = 'Text'`.  
 All data was added to the `chartevents` table, increasing the raw (uncompressed) size of the datafile by 5 GB.  
 * #201 - Data in tables may now only occur within 1 year of a patient's hospital admission `admittime` and `dischtime`. Observations outside this range corresponded to typographical errors in the `charttime`, and this unreliable data has been removed.  
-* #197 - A small issue where a single observation was duplicated and assigned to two ICUSTAY_ID (and sometimes two HADM_ID) has been corrected: this affected 37 `icustay_id` and 80 `hadm_id`. Thanks @matteobonvini on GitHub for the report.  
+* #197 - A small issue where a single observation was duplicated and assigned to two `icustay_id` (and sometimes two `hadm_id`) has been corrected: this affected 37 `icustay_id` and 80 `hadm_id`. Thanks @matteobonvini on GitHub for the report.  
 * #191 - A subset of patients were missing data due to the transition from CareVue to Metavision: this data has been restored.  
 * #193 - Some laboratory concepts (particularly CD counts) were conflated (i.e. percentages mixed with counts) - these have been corrected. Thanks Yuqi Si for the report (via StackExchange).  
 * #196 - The `amount` column in `inputevents_mv` did not correspond to `amountuom` (unit of measurement) - instead it corresponded to a "base" unit (e.g. grams instead of milligrams). Data in the `amount` has been updated to match the `amountuom` where appropriate. This also effected the `procedureevents_mv` table. Thanks @ngageorange on GitHub for the report.  
