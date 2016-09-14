@@ -26,6 +26,6 @@ While we will aim to provide a stable service, our laboratory has limited resour
 
 # Access Querybuilder
 
-Querybuilder is available via the following link, using the MIMIC username and password provided to you [after requesting access](http://mimic.physionet.org/gettingstarted/access/): https://querybuilder-lcp.mit.edu/
+Querybuilder is available via the following link, using the PhysioNetWorks username (email address) and password provided to you [upon being granted access](http://mimic.physionet.org/gettingstarted/access/): https://querybuilder-lcp.mit.edu/
 
 
