@@ -17,7 +17,7 @@ MIMIC is provided through the work of researchers at the MIT Laboratory for Comp
 
 ## How can I help to improve the MIMIC website and documentation?
 
-The MIMIC website and documentation are hosted publicly in GitHub (https://github.com/MIT-LCP/mimic-website). 
+Content for the MIMIC website and documentation is hosted publicly on GitHub: https://github.com/MIT-LCP/mimic-website. 
 
 To raise a problem or to suggest an improvement, please create a new issue at: https://github.com/MIT-LCP/mimic-website/issues
 
