@@ -30,8 +30,8 @@ toc = "true"
 
 # Table columns
 
-Name | Postgres data type 
----- | ---- 
+Name | Postgres data type
+---- | ----
 ROW\_ID | INT
 SUBJECT\_ID | INT
 GENDER | VARCHAR(5)
@@ -40,7 +40,7 @@ DOD | TIMESTAMP(0)
 DOD\_HOSP | TIMESTAMP(0)
 DOD\_SSN | TIMESTAMP(0)
 EXPIRE\_FLAG | VARCHAR(5)
-	
+
 # Detailed Description
 
 ## `SUBJECT_ID`
@@ -57,9 +57,8 @@ EXPIRE\_FLAG | VARCHAR(5)
 
 ## `DOD`, `DOD_HOSP`, `DOD_SSN`
 
-`DOD` is the date of death for the given patient. `DOD_HOSP` is the date of death as recorded in the hospital database. `DOD_SSN` is the date of death from the social security database. Note that `DOD` merged together `DOD_HOSP` and `DOD_SSN`, giving priority to `DOD_HOSP` if both were recorded. 
+`DOD` is the date of death for the given patient. `DOD_HOSP` is the date of death as recorded in the hospital database. `DOD_SSN` is the date of death from the social security database. Note that `DOD` merged together `DOD_HOSP` and `DOD_SSN`, giving priority to `DOD_HOSP` if both were recorded.
 
 ## `EXPIRE_FLAG`
 
-`EXPIRE_FLAG` indicates whether the patient died within the hospital. Note that if `DOD_HOSP` is present, then the last admission for the patient will have `EXPIRE_FLAG` = 'Y'.
-
+`EXPIRE_FLAG` is a binary flag which indicates whether the patient died, i.e. whether `DOD` is null or not. These deaths include both deaths within the hospital (`DOD_HOSP`) and deaths identified by matching the patient to the social security master death index (`DOD_SSN`).
