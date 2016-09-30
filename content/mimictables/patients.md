@@ -53,7 +53,7 @@ EXPIRE\_FLAG | VARCHAR(5)
 
 ## `DOB`
 
-`DOB` is the date of birth of the given patient. Patients who are older than 89 years old at any time in the database have had their date of birth shifted to obscure their age and comply with HIPAA. The shift process was as follows: the patient's age at their first admission was determined. The date of birth was then set to exactly 210 years before their first admission. <!-- As a result, all patients-->
+`DOB` is the date of birth of the given patient. Patients who are older than 89 years old at any time in the database have had their date of birth shifted to obscure their age and comply with HIPAA. The shift process was as follows: the patient's age at their first admission was determined. The date of birth was then set to exactly 300 years before their first admission. <!-- As a result, all patients-->
 
 ## `DOD`, `DOD_HOSP`, `DOD_SSN`
 
