@@ -21,7 +21,7 @@ Researchers seeking to use the database must formally request access with the st
 
 Prior to requesting access to MIMIC, you will need to complete the CITI “Data or Specimens Only Research” course:
 
-- First register on the CITI program website, selecting “Massachusetts Institute of Technology Affiliates” as your organization affilitation: https://www.citiprogram.org/index.cfm?pageID=154&icat=0&ac=0
+- First register on the CITI program website, selecting “Massachusetts Institute of Technology Affiliates” as your organization affiliation: https://www.citiprogram.org/index.cfm?pageID=154&icat=0&ac=0
 - Follow the links to add a Massachusetts Institute of Technology Affiliates course. In the Human Subjects training category, select the “Data or Specimens Only Research” course
 - Complete the course and save a copy of your certificate.
 
