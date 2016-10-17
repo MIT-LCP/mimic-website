@@ -65,6 +65,8 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 ## `ISERROR`
 
+A '1' in the `ISERROR` column indicates that a physician has identified this note as an error. 
+
 ## `TEXT`
 
 `TEXT` contains the note text.
