@@ -244,7 +244,7 @@ Services is a newly added table in MIMIC-III which contains information about th
 How would gather useful information about patients admitted to the ICU? The problem can be broken down into several parts:
 
 ### Step 1
-First start with retrieving 'subject_id', 'hadm_id', 'icustay_id', 'intime', and 'outtime' from the 'icustayevents' table.
+First start with retrieving 'subject_id', 'hadm_id', 'icustay_id', 'intime', and 'outtime' from the 'icustays' table.
 
 ### Step 2
 Using the patients table retrieve the calculated age of patients.
