@@ -99,9 +99,9 @@ GROUP BY gender;
 A flag which records whether or not a patient died in the hospital is stored in the patients table. Count the number of patients who died using the following query:
 
 ``` sql
-SELECT hospital_expire_flag, COUNT(*)
+SELECT expire_flag, COUNT(*)
 FROM patients
-GROUP BY hospital_expire_flag;
+GROUP BY expire_flag;
 ```
 
 The database also contains date of death for patients who died inside the hospital in the column 'dod\_hosp' and the date of death found in social security death records in 'dod\_ssn'. This information from both columns is merged in the 'dod' column with priority given to 'dod_hosp'. Note that this database contains adult and neonatal patients which will affect the mortality statistics. Categorizing patients into different age groups is carried out in the next section.
@@ -112,7 +112,7 @@ To determine the adult mortality rate we must first select the adult patients. W
 
 ``` sql
 SELECT p.subject_id, p.dob, a.hadm_id,
-    a.admittime, p.hospital_expire_flag
+    a.admittime, p.expire_flag
 FROM admissions a
 INNER JOIN patients p
 ON p.subject_id = a.subject_id;
@@ -122,7 +122,7 @@ Next we find the earliest admission date for each patient. This requires the use
 
 ``` sql
 SELECT p.subject_id, p.dob, a.hadm_id,
-    a.admittime, p.hospital_expire_flag,
+    a.admittime, p.expire_flag,
     MIN (a.admittime) OVER (PARTITION BY p.subject_id) AS first_admittime
 FROM admissions a
 INNER JOIN patients p
