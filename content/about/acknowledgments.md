@@ -15,7 +15,7 @@ toc = "true"
 
 MIMIC is made available largely through the work of researchers at the MIT Laboratory for Computational Physiology and collaborating research groups.  
 
-Our work is supported by grants from the National Institute of Biomedical Imaging and Bioengineering (NIBIB) of the National Institutes of Health (NIH) under award numbers R01-EB001659 (2003-2013) and NIH-R01-GM104987 (2014-2018).  
+Our work is supported by grants from the National Institute of Biomedical Imaging and Bioengineering (NIBIB) of the National Institutes of Health (NIH) under award numbers R01-EB001659 (2003-2013) and R01-GM104987 (2014-2018).  
 
 If you use our data, code, or algorithms, please provide a citation to this project.
 
