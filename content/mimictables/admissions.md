@@ -10,7 +10,7 @@ toc = "true"
     parent = "Tables in MIMIC"
 +++
 
-# Overview
+# The admissions table
 
 **Table source:** Hospital database.
 

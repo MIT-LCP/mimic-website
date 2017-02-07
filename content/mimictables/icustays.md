@@ -11,7 +11,7 @@ toc = "true"
 +++
 
 
-# Overview
+# The icustays table
 
 **Table source:** Hospital database.
 

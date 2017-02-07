@@ -11,7 +11,7 @@ toc = "true"
 
 +++
 
-# Overview
+# The prescriptions table
 
 **Table source:** Hospital provider order entry database.
 

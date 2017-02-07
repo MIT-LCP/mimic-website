@@ -11,7 +11,7 @@ toc = "true"
 
 +++
 
-# Overview
+# The drgcodes table
 
 **Table source:** Hospital database.
 

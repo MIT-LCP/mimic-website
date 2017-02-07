@@ -11,7 +11,7 @@ toc = "true"
 
 +++
 
-# Overview
+# The d_labitems table
 
 **Table source:** Hospital database.
 
