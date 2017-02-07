@@ -10,7 +10,7 @@ toc = "true"
     parent = "Tables in MIMIC"
 +++
 
-# Overview
+# The inputevents_cv table
 
 **Table source:** CareVue ICU databases.
 

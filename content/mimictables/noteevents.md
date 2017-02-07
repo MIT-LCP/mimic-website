@@ -11,7 +11,7 @@ toc = "true"
 
 +++
 
-# Overview
+# The noteevents table
 
 **Table source:** Hospital database.
 

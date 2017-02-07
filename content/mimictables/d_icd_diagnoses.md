@@ -11,7 +11,7 @@ toc = "true"
 
 +++
 
-# Overview
+# The d_icd_diagnoses table
 
 **Table source:** Online sources.
 

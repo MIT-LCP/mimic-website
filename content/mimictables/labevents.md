@@ -12,7 +12,7 @@ toc = "true"
 +++
 
 
-# Overview
+# The labevents table
 
 **Table source:** Hospital database.
 

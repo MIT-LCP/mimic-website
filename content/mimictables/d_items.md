@@ -11,7 +11,7 @@ toc = "true"
 
 +++
 
-# Overview
+# The d_items table
 
 **Table source:** CareVue and Metavision ICU databases.
 

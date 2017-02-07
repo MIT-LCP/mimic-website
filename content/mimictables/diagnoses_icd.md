@@ -11,7 +11,7 @@ toc = "true"
 
 +++
 
-# Overview
+# The diagnoses_icd table
 
 **Table source:** Hospital database.
 

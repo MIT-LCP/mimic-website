@@ -11,7 +11,7 @@ toc = "true"
 
 +++
 
-# Overview
+# The d_icd_procedures table
 
 **Table source:** Online sources.
 

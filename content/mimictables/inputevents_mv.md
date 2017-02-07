@@ -10,7 +10,7 @@ toc = "true"
     parent = "Tables in MIMIC"
 +++
 
-# Overview
+# The inputeevents_mv table
 
 **Table source:** Metavision ICU databases.
 

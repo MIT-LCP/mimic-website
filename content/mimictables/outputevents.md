@@ -10,7 +10,7 @@ toc = "true"
     parent = "Tables in MIMIC"
 +++
 
-# Overview
+# The outputevents table
 
 **Table source:** CareVue and Metavision ICU databases.
 
