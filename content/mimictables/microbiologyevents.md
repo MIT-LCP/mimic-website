@@ -17,7 +17,7 @@ toc = "true"
 
 **Table purpose:** Contains microbiology information, including tests performed and sensitivities.
 
-**Number of rows:** 328,446
+**Number of rows:** 631,726
 
 **Links to:**
 
