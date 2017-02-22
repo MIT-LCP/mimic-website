@@ -18,7 +18,7 @@ toc = "true"
 
 **Table purpose:** Contains all laboratory measurements for a given patient, including out patient data.
 
-**Number of rows:** 27,872,575
+**Number of rows:** 27,854,055
 
 **Links to:**
 
