@@ -17,7 +17,7 @@ toc = "true"
 
 **Table purpose:** Contains all date formatted data.
 
-**Number of rows:** 4,486,049
+**Number of rows:** 4,485,937
 
 **Links to:**
 
