@@ -17,7 +17,7 @@ toc = "true"
 
 **Table purpose:** Contains medication related order entries, i.e. prescriptions.
 
-**Number of rows:** 4,156,848
+**Number of rows:** 4,156,450
 
 **Links to:**
 
