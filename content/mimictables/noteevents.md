@@ -17,7 +17,7 @@ toc = "true"
 
 **Table purpose:** Contains all notes for patients.
 
-**Number of rows:**
+**Number of rows:** 2,083,180
 
 **Links to:**
 
