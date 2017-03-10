@@ -28,7 +28,9 @@ toc = "true"
 
 A high level description of the data is available [here](/mimicdata/io).
 
-<!-- # Important considerations -->
+# Important considerations
+
+* A bolus will be listed as ending one minute after it started, i.e. `ENDTIME` = `STARTTIME` + 1 minute
 
 # Table columns
 
@@ -76,21 +78,18 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 `STARTTIME` and `ENDTIME` record the start and end time of an input/output event.
 
-* `STARTTIME` is only available for inputs, and is unavailable for a large portion of the data (see the [understanding IOEVENTS page](/mimicdata/ioevents))
-* `ENDTIME` is the only time used for outputs
-
 ## ITEMID
 
-Identifier for a single measurement type in the database. Each row associated with one `ITEMID` (e.g. 212) corresponds to an instantiation of the same measurement (e.g. heart rate).
-Metavision `ITEMID` values are all above 220000. A subset of commonly used medications in CareVue data have `ITEMID` values are between 30000-39999. The remaining input/output `ITEMID` values are between 40000-49999.
+Identifier for a single measurement type in the database. Each row associated with one `ITEMID` which corresponds to an instantiation of the same measurement (e.g. norepinephrine).
+MetaVision `ITEMID` values are all above 220000. Since this data only contains data from MetaVision, it only contains `ITEMID` above 220000 (see [here](/mimicdata/metavision/) for details about MetaVision)
 
 ## AMOUNT, AMOUNTUOM
 
-`AMOUNT` and `AMOUNTUOM` list the amount of a drug or substance administered to the patient either between the `STARTTIME` and `ENDTIME` (if both are available) or at the `ENDTIME` (when the exact start time is unknown, but usually up to an hour before).
+`AMOUNT` and `AMOUNTUOM` list the amount of a drug or substance administered to the patient either between the `STARTTIME` and `ENDTIME`.
 
 ## RATE, RATEUOM
 
-`RATE` and `RATEUOM` list the rate at which the drug or substance was administered to the patient either between the `STARTTIME` and `ENDTIME` (if both are available), or it lists the rate at which the drug is *currently* administered at the `ENDTIME`.
+`RATE` and `RATEUOM` list the rate at which the drug or substance was administered to the patient either between the `STARTTIME` and `ENDTIME`.
 
 ## STORETIME
 
@@ -116,11 +115,11 @@ The patient weight in kilograms.
 
 ## TOTALAMOUNT, TOTALAMOUNTUOM
 
-The total amount of the substance in the bag containing the solution.
+Intravenous administrations are usually given by hanging a bag of fluid at the bedside for continuous infusion over a certain period of time. These columns list the total amount of the fluid in the bag containing the solution.
 
 ## STATUSDESCRIPTION
 
-```STATUSDESCRIPTION``` states the ultimate status of the item. 'Stopped' indicates that the caregiver stopped the item or the programmed volume came to an end. 'Finished running' indicates that the programmed volume has come to an end. 'Rewritten' indicates that the caregiver rewrote the item, for example making an amendment to the starttime. 'Changed' indicates that the caregiver changed an item, for example setting a new rate or dose. Flushed' indicates that a line was flushed. 
+```STATUSDESCRIPTION``` states the ultimate status of the item. 'Stopped' indicates that the caregiver stopped the item or the programmed volume came to an end. 'Finished running' indicates that the programmed volume has come to an end. 'Rewritten' indicates that the caregiver rewrote the item, for example making an amendment to the starttime. 'Changed' indicates that the caregiver changed an item, for example setting a new rate or dose. Flushed' indicates that a line was flushed.
 
 ## ISOPENBAG
 
@@ -138,7 +137,11 @@ If the order was canceled, this column provides some explanation.
 
 Specifies if the order was edited or canceled, and if so, the date and job title of the care giver who canceled or edited it.
 
-## ORIGINALAMOUNT, ORIGINALRATE
+## ORIGINALAMOUNT
 
-Information on the initial amount and rate of the order.
+Drugs are usually mixed within a solution and delivered continuously from the same bag. This column represents the amount of the drug contained in the bag at `STARTTIME`. For the first infusion of a new bag, `ORIGINALAMOUNT` = `TOTALAMOUNT`. Later on, if the rate is changed, then the amount of the drug in the bag will be lower (as some has been administered to the patient). As a result, `ORIGINALAMOUNT` < `TOTALAMOUNT`, and `ORIGINALAMOUNT` will be the amount of drug leftover in the bag at that `STARTTIME`.
 
+## ORIGINALRATE
+
+This is the rate that was input by the care provider. Note that this may differ from `RATE` because of various reasons: `ORIGINALRATE` was the original planned rate, while the `RATE` column will be the true rate delivered. For example, if a a bag is about to run out and the care giver decides to push the rest of the fluid, then `RATE` > `ORIGINALRATE`.
+However, these two columns are usually the same, but have minor non-clinically significant differences due to rounding error.
