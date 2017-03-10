@@ -2,7 +2,7 @@
 date = "2015-09-08T06:58:18-04:00"
 title = "Inputs and outputs"
 linktitle = "Inputs and outputs"
-weight = 5
+weight = 7
 toc = "true"
 
 [menu]
@@ -14,7 +14,7 @@ toc = "true"
 # Inputs and outputs
 
 Inputs and outputs are extremely useful when studying intensive care unit patients. Inputs are any fluids which have been administered to the patient: such as oral or tube feedings or intravenous solutions containing medications. Outputs are fluids which have either been excreted by the patient, such as urine output, or extracted from the patient, for example through a drain.
-These data were the most complicated to handle technically in the MIMIC-III data. 
+These data were the most complicated to handle technically in the MIMIC-III data.
 
 The MIMIC-III database contains information from two distinct critical care information systems: Philips CareVue and iMDSoft Metavision. These two databases store data in different ways. In the descriptions in this document, data will be referred to as being sourced either from "CareVue" or "Metavision" to differentiate between the different systems.
 

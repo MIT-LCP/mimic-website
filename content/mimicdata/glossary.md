@@ -2,7 +2,7 @@
 date = "2015-09-01T14:02:13-04:00"
 title = "Glossary"
 linktitle = "Glossary"
-weight = 7
+weight = 9
 toc = "true"
 
 [menu]
@@ -25,4 +25,3 @@ MICU | Medical Intensive Care Unit
 MIMIC | Medical Information Mart for Intensive Care (*previously Multiparameter Intelligent Monitoring in Intensive Care*)
 NICU | Neonatal Intensive Care Unit
 SICU | Surgical Intensive Care Unit
-
