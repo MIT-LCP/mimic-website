@@ -2,7 +2,7 @@
 date = "2015-10-25T13:37:00-04:00"
 title = "Waveforms"
 linktitle = "Waveforms"
-weight = 6
+weight = 8
 toc = "true"
 
 [menu]

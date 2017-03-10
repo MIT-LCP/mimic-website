@@ -2,7 +2,7 @@
 date = "2015-09-01T19:34:46-04:00"
 title = "Patient identifiers"
 linktitle = "Patient identifiers"
-weight = 1
+weight = 3
 toc = "true"
 
 [menu]
@@ -15,7 +15,7 @@ toc = "true"
 
 Data within MIMIC were recorded during routine clinical care and *not* explicitly for the purpose of retrospective data analysis. This is a key point to keep in mind when analyzing the data.
 
-There are two types of data in the database: static data and dynamic data. Static data is recorded once for a given identifier. An example of static data is the `DOB` column in the PATIENTS table. Each patient has only one date of birth, which does not change over time and is not recorded with an associated timestamp. An example of dynamic data is a patient's blood pressure, which is periodically measured during a hospital stay. 
+There are two types of data in the database: static data and dynamic data. Static data is recorded once for a given identifier. An example of static data is the `DOB` column in the PATIENTS table. Each patient has only one date of birth, which does not change over time and is not recorded with an associated timestamp. An example of dynamic data is a patient's blood pressure, which is periodically measured during a hospital stay.
 
 This distinction between static data and dynamic data is merely a helpful conceptual construct: there is *no* strict technical distinction between date of birth and heart rate. However, static data tends to not have an associated `ITEMID` (as there is no need to repeatedly record values for static data), whereas dynamic data have an `ITEMID` to facilitate efficient storage of repeated measurements.
 
