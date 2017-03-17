@@ -25,6 +25,10 @@ If you use our data, code, or algorithms in your work, please cite this project.
 
 >  MIMIC-III, a freely accessible critical care database. Johnson AEW, Pollard TJ, Shen L, Lehman L, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, and Mark RG. Scientific Data (2016). DOI: <a href="http://dx.doi.org/10.1038/sdata.2016.35">10.1038/sdata.2016.35</a>. Available at: <a href="http://www.nature.com/articles/sdata201635">http://www.nature.com/articles/sdata201635</a>
 
+The data citation for MIMIC-III, which we also kindly ask you cite, is:
+
+> Pollard, T. J. & Johnson, A. E. W. The MIMIC-III Clinical Database http://dx.doi.org/10.13026/C2XW26 (2016).
+
 <!-- ## Requirement for studies using MIMIC-III    
 
 Researchers of studies using the MIMIC-III database are required to acknowledge our project funders by including the following statement in published articles: 
