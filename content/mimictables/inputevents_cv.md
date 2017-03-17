@@ -63,12 +63,16 @@ ORIGINALSITE | VARCHAR(30)
 
 Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HADM_ID` is unique to a patient hospital stay and `ICUSTAY_ID` is unique to a patient ICU stay.
 
-## `STARTTIME`, `ENDTIME`
+## `CHARTTIME`
 
-`STARTTIME` and `ENDTIME` record the start and end time of an input/output event.
+`CHARTTIME` represents the time at which the measurement was charted - that is - recorded on the clinical information system at the bedside.
+For amounts received (usually volumes), the `CHARTTIME` represents the time at which that volume was received.
+That is, it can be considered an "end time", i.e. X millilitres of solution was administered to the patient by this `CHARTTIME`.
+For rates, the `CHARTTIME` represents the time at which that rate was set.
+That is, it can be considered a "start time", i.e. the patient is now receiving X mcg/kg/min of a drug at this `CHARTTIME`.
 
-* `STARTTIME` is only available for inputs, and is unavailable for a large portion of the data (see the [understanding IOEVENTS page](/mimicdata/ioevents))
-* `ENDTIME` is the only time used for outputs
+
+See the [understanding IOEVENTS page](/mimicdata/ioevents) for a bit more detail about how this table was formed from the raw data.
 
 ## ITEMID
 
