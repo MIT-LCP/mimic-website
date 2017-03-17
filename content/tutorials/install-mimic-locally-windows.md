@@ -101,4 +101,4 @@ from icustays
 limit 10;
 ```
 
-You may also find the [introduction to MIMIC-III](/tutorials/intro-to-mimiciii/) guide useful. Good luck in your research!
+You may also find the [introduction to MIMIC-III](/tutorials/intro-to-mimic-iii/) guide useful. Good luck in your research!
