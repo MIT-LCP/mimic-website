@@ -43,7 +43,7 @@ NB | Newborn - infants born at the hospital
 NBB | Newborn baby - infants born at the hospital
 NMED | Neurologic Medical - non-surgical, relating to the brain
 NSURG | Neurologic Surgical - surgical, relating to the brain
-OBS | Observation - not ill enough for a service but kept in hospital for observation
+OBS | Obstetrics - conerned with childbirth and the care of women giving birth
 ORTHO | Orthopaedic - surgical, relating to the musculoskeletal system
 OMED | Orthopaedic medicine - non-surgical, relating to musculoskeletal system
 PSURG | Plastic - restortation/reconstruction of the human body (including cosmetic or aesthetic)
