@@ -21,10 +21,7 @@ Public discussion reaches a larger audience, enables wider discourse, and reduce
 
 ## How can I get help with my analysis?
 
-If you are seeking advice for a specific question, we would suggest either:
-
-- posting your question to the [Open Data StackExchange](http://opendata.stackexchange.com/), labelled with the "mimic-iii" keyword. For example, see [this question](http://opendata.stackexchange.com/questions/6262/what-is-the-iserror-column-in-mimic-iiis-noteevents-table) on the noteevents table. If your question is answered appropriately, please accept the answer.
-- raising an issue on the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/issues). 
+If you are seeking advice for a specific question, we would suggest raising an issue on the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/issues). 
 
 ## How do I raise an issue on the MIMIC Code Repository?
 
