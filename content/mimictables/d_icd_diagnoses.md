@@ -21,7 +21,7 @@ toc = "true"
 
 **Links to:**
 
-* DIAGNOSES_ICD ON `ICD9_CODE`
+* D_ICD_DIAGNOSES ON `ICD9_CODE`
 
 # Brief summary
 
