@@ -51,8 +51,19 @@ Next, connect to the `mimic` database.
 
 ### Create the tables on the database
 
-Note the script, by default, places the tables on the `mimiciii` *schema* within the `mimic` *database*. If you would like to change the schema name, please modify all three scripts accordingly.
-Run the create tables script (note: this assumes that the create table script is in the current directory - if it is not, see below).
+Note that postgres uses the `public` schema by default. While it is personal preference, we recommend creating an independent schema to host the data. To do this, create the mimiciii schema:
+
+```
+CREATE SCHEMA mimiciii;
+```
+
+Then, inform postgres that it should by default use the `mimiciii` schema. **You will need to do this every time you launch psql**.
+
+```
+set search_path to mimiciii;
+```
+
+Now run the create tables script (note: this assumes that the create table script is in the current directory - if it is not, see below).
 
 ```sql
 \i postgres_create_tables.sql
@@ -73,7 +84,6 @@ Run the following command import the data into these tables:
 ```sql
 \set ON_ERROR_STOP 1
 \set mimic_data_dir 'D:/mimic/v1_3'
-SET search_path TO mimiciii;
 \i D:/work/mimic-code/buildmimic/postgres/postgres_load_data.sql
 ```
 
