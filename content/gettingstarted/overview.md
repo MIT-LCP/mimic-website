@@ -20,7 +20,7 @@ The tables are linked by identifiers which usually have the suffix "ID". For exa
 
 Tables pre-fixed with "D\_" are dictionaries and provide definitions for identifiers. For example, every row of OUTPUTEVENTS is associated with a single `ITEMID` which represents the concept measured, but it does *not* contain the actual name of the drug. By joining OUTPUTEVENTS and D_ITEMS on `ITEMID`, it is possible to identify what concept a given `ITEMID` represents.
 
-# List of tables
+## List of tables
 
 The following tables are used to define and track patient stays:
 
@@ -62,7 +62,7 @@ The following tables are dictionaries:
  - **D_ITEMS**: Dictionary of `ITEMID`s appearing in the MIMIC database, except those that relate to laboratory tests
  - **D_LABITEMS**: Dictionary of `ITEMID`s in the laboratory database that relate to laboratory tests
 
-# Derived tables
+## Derived tables
 
 The MIMIC-II database contained a variety of derived tables which simplified use of the database. For example, a commonly used table was the ICUSTAY_DETAIL table, which provided additional information summarizing a patient's ICU stay. The database also contained derived parameters commonly required by studies, such as severity scores. In MIMIC-III, we have made a conscious decision to *not* include any derived tables or calculated parameters as far as is possible. Instead, we encourage the community to produce and share scripts which can be run to create these tables or parameters. This has many advantageous: it keeps the distinction between raw data and calculated data, it encourages users to validate the scripts which derive the data, and allows for as many scripts as is conceivable without cluttering the database for all users. We have provided a set of scripts at the mimic-code repository, which can be found here:
 

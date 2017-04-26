@@ -2,7 +2,7 @@
 date = "2016-09-01T19:34:46-04:00"
 title = "Querybuilder"
 linktitle = "Querybuilder"
-weight = 4
+weight = 5
 toc = "true"
 
 [menu]
@@ -15,7 +15,7 @@ toc = "true"
 
 The MIMIC Querybuilder is a graphical interface for running SQL queries on the MIMIC-III database. It is intended for light exploration of the data, in particular for researchers who are new to MIMIC-III and seeking to gain an understanding of its structure. Researchers seeking to carry out research projects with MIMIC should [follow our instructions](http://mimic.physionet.org/gettingstarted/dbsetup/) for building a local version of the database. 
 
-# Notes and limitations
+## Notes and limitations
 
 Queries should be written using PostgreSQL syntax. Two key limitations have been implemented to manage server load:
 
@@ -24,7 +24,7 @@ Queries should be written using PostgreSQL syntax. Two key limitations have been
 
 While we will aim to provide a stable service, our laboratory has limited resources and so we cannot commit to providing continuous uptime.
 
-# Access Querybuilder
+## Access Querybuilder
 
 Querybuilder is available via the following link, using the PhysioNetWorks username (email address) and password provided to you upon being [granted access](http://mimic.physionet.org/gettingstarted/access/): https://querybuilder-lcp.mit.edu/
 
