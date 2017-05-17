@@ -83,11 +83,11 @@ Run the following command import the data into these tables:
 
 ```sql
 \set ON_ERROR_STOP 1
-\set mimic_data_dir 'D:/mimic/v1_3'
+\set mimic_data_dir 'D:/mimic/v1_4'
 \i D:/work/mimic-code/buildmimic/postgres/postgres_load_data.sql
 ```
 
-Note I have specified a folder, `'D:/mimic/v1_3'`. This folder contains all the CSV files which store MIMIC. This should begin the load process, which takes some time.
+Note I have specified a folder, `'D:/mimic/v1_4'`. This folder contains all the CSV files which store MIMIC. This should begin the load process, which takes some time.
 
 ### Add indexes
 

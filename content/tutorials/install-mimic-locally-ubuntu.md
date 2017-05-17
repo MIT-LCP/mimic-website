@@ -49,16 +49,33 @@ ALTER USER mimic superuser;
 CREATE DATABASE mimic OWNER mimic;
 ```
 
-## 5. Create a set of empty tables on a mimiciii schema, ready to populate with the data
+## 5. (Optional, recommended) Create a schema to hold the data
+
+Note that postgres uses the `public` schema by default. We recommend creating an independent schema to host the data. To do this, create the mimiciii schema:
+
+```
+\c mimic;
+CREATE SCHEMA mimiciii;
+```
+
+In the future, you will need to inform postgres that it should use the `mimiciii` schema.
+
+```
+set search_path to mimiciii;
+```
+
+ **You will need to run the above every time you launch psql**.
+
+## 6. Create a set of empty tables on a mimiciii schema, ready to populate with the data
 
 Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)' script in the MIMIC code repository to create the mimiciii schema and then build a set of empty tables. Each table is created by running a ```CREATE TABLE``` command in psql.
 
 First, exit from psql with "\q" which should bring you back to the shell command prompt. Now run the "[postgres\_create\_tables.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_create_tables.sql)" script as follows:
 
 ``` bash
-# Run the following command to create the mimiciii schema and tables
+# Run the following command to create tables on the mimiciii schema
 # postgres_create_tables.sql must be in your local directory
-psql -f postgres_create_tables.sql -U mimic
+psql 'dbname=mimic user=mimic options=--search_path=mimiciii' -f postgres_create_tables.sql
 ```
 
 If the script runs successfully, you should see the following output:
@@ -80,7 +97,7 @@ Using the [Postgres ```COPY``` or ```\COPY``` commands](https://wiki.postgresql.
 ``` sql
 # Load the data into the mimic database
 # Replace <path_to_data> with the directory containing the MIMIC-III CSV files
-psql -f postgres_load_data.sql -U mimic -v mimic_data_dir='<path_to_data>'
+psql 'dbname=mimic user=mimic options=--search_path=mimiciii' -f postgres_load_data.sql -v mimic_data_dir='<path_to_data>'
 ```
 
 If the script runs successfully, you should see the following output:
@@ -90,10 +107,13 @@ SET
 COPY 58976
 COPY 34499
 COPY 7567
+COPY 0
 ... etc
 ```
 
 *Importing the data can be slow, particularly for larger tables like CHARTEVENTS which may take several hours.*
+
+Note also that above, we have included a line which states `COPY 0`. This is expected: CHARTEVENTS acts as a "mapping" table to multiple sub-tables, and no data is actually stored within it, so postgres reports that 0 rows were inserted. **This is expected behaviour for CHARTEVENTS.**
 
 ## 7. Add indexes to improve performance
 
@@ -101,7 +121,7 @@ Indexes provide additional structure for the database that can help to improve t
 
 ``` bash
 # create indexes
-psql -f postgres_add_indexes.sql -U mimic
+psql 'dbname=mimic user=mimic options=--search_path=mimiciii' -f postgres_add_indexes.sql
 ```
 
 ## 8. MIMIC-III is ready for analysis
@@ -109,14 +129,7 @@ psql -f postgres_add_indexes.sql -U mimic
 You should now have a working copy of MIMIC-III ready to query with the psql command line tool. First start the PSQL client from the command line:
 
 ``` bash
-psql -U mimic
-```
-
-Now connect to the MIMIC database:
-
-``` sql
--- connect to the mimic database
-\c mimic
+psql 'dbname=mimic user=mimic options=--search_path=mimiciii'
 ```
 
 Before going further, you should revoke the superuser privileges from the mimic user:
@@ -130,7 +143,14 @@ Now try, for example, counting the number of patients in the database:
 ``` sql
 select count(subject_id)
 from mimiciii.patients;
--- returns x rows
+```
+
+Note that, because we specified the search_path in the connection string above (`--search_path=mimiciii`), we can omit it in the query:
+
+
+``` sql
+select count(subject_id)
+from patients;
 ```
 
 ## 9. Install PgAdminIII (optional)
