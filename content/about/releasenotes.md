@@ -46,7 +46,7 @@ All data was added to the `chartevents` table, increasing the raw (uncompressed)
 * #199 - Addendums to discharge summaries in the notes can now be distinguished in the `noteevents` table: their `category` has remained 'Discharge summary', but their description has been changed from 'Report' to 'Addendum'  
 * #194 - The LOINC code for Total CO2 has been corrected (was 1959-6 total bicarb, is now 34728-6 total CO2)  
 * #186 - Data has been harmonized into EST.  
-* #180 - Some patients were erroneously labelled as in care unit 'TSICU': these have been corrected to 'CSRU'  
+* #180 - Some patients were erroneously labelled as in care unit `TSICU`: these have been corrected to `CSRU`  
 * #189 - Schema change: The `has_ioevents_data` column in `admissions` has been removed as it was no longer meaningful.  
 * #185 - Three text concepts (GCS, code status, RASS) had a null `linksto` field in `d_items`, even though the data existed in `chartevents`. This has been corrected. Note these were the only three text concepts available for Metavision patients in MIMIC-III v1.3 (see #88).  
 * #60 - The date shift for dates in the `text` field of `noteevents` has been corrected: before it corresponded to a different date shifted used in MIMIC-II (easily identifiable by years occurring between 2500-3500). It now matches the dates in the structured data.  
