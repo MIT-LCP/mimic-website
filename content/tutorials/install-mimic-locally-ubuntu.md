@@ -16,6 +16,13 @@ Prerequisites: *This tutorial assumes that you have already completed the [steps
 
 Note that this install was written and tested using Mac OS X and Ubuntu 15.04.
 
+There are two options for installing MIMIC-III locally in a PostgreSQL database:
+
+1. Manually, by following the tutorial below
+2. Automatically, using the make files available in the [mimic-code repository](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)
+
+These steps are roughly equivalent, though you may learn more about the database configuration by installing the data manually.
+
 ## 1. Install Postgres
 
 Postgres (also known as PostgreSQL) is a database management system. To create an instance of MIMIC-III on your local machine, you'll first need to make sure that Postgres is installed. For installation, please refer to: http://www.postgresql.org/download/
@@ -26,30 +33,47 @@ On Mac OSX with the [Homebrew package manager](http://brew.sh/), simply type ```
 
 Assuming that you have completed the [steps required to gain access](/gettingstarted/access) to the MIMIC dataset, you should be able to access the CSV data files on PhysioNet at: https://physionet.org/works/MIMICIIIClinicalDatabase/files/.
 
-Download these files to a local folder and decompress them if necessary (from the command line, run ```gzip -d *.gz``` in the directory containing the files).
+Download these files to a local folder and decompress them if desired (it is possible to load the data directly into a database from compressed data files). The program `gzip` can be used to decompress the data (e.g. ```gzip -d *.gz```).
 
-## 3. Connect to the database with psql
+
+## 3. Create a user to access the data
+
+It's bad practice to use a superuser account for day to day querying as you may accidentally drop raw data or something similar which would take effort to rectify.
+
+To avoid this issue, we will create a user account on the database with the same username as the operating system user. To find out the local operating system username, type the following in the terminal:
+
+```bash
+whoami
+```
+
+That should return a username. For the rest of this tutorial, we will use `mimicuser`, but it's recommended to replace this with your local username. If you do, you can use operating system authentication and avoid having to password protect the user for the database. We can use a terminal command to create the user:
+
+```bash
+createuser -P -s -e -d mimicuser
+```
+
+This user is a superuser - we will remove this privilege later.
+
+## 4. Connect to the database with psql
 
 Now that Postgres is running, you should be able to connect to the system using the ```psql``` command line tool. With new installations, the default database name is 'postgres', so try connecting with:
 
 ``` bash
-# connect to the default database
-psql postgres
+# connect to the default database 'postgres'
+psql -U username -d postgres
 ```
 
-## 4. Create an empty database containing a MIMIC-III schema
+## 5. Create an empty database containing a MIMIC-III schema
 
 From this point onwards we will be referring to scripts in the '[buildmimic](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic)' directory of the [MIMIC code repository](https://github.com/MIT-LCP/mimic-code/).
 
-After connecting with psql, create a new user called "mimic", with temporary superuser privileges. Next, create a new database called "mimic":
+After connecting with psql, create a new database called "mimic":
 
 ``` psql
-CREATE USER mimic;
-ALTER USER mimic superuser;
-CREATE DATABASE mimic OWNER mimic;
+CREATE DATABASE mimic OWNER mimicuser;
 ```
 
-## 5. (Optional, recommended) Create a schema to hold the data
+## 6. (Optional, recommended) Create a schema to hold the data
 
 Note that postgres uses the `public` schema by default. We recommend creating an independent schema to host the data. To do this, create the mimiciii schema:
 
@@ -66,16 +90,16 @@ set search_path to mimiciii;
 
  **You will need to run the above every time you launch psql**.
 
-## 6. Create a set of empty tables on a mimiciii schema, ready to populate with the data
+## 7. Create a set of empty tables on a mimiciii schema, ready to populate with the data
 
 Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)' script in the MIMIC code repository to create the mimiciii schema and then build a set of empty tables. Each table is created by running a ```CREATE TABLE``` command in psql.
 
-First, exit from psql with "\q" which should bring you back to the shell command prompt. Now run the "[postgres\_create\_tables.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_create_tables.sql)" script as follows:
+First, exit from psql with `\q` which should bring you back to the shell command prompt. Now run the "[postgres\_create\_tables.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_create_tables.sql)" script as follows:
 
 ``` bash
 # Run the following command to create tables on the mimiciii schema
 # postgres_create_tables.sql must be in your local directory
-psql 'dbname=mimic user=mimic options=--search_path=mimiciii' -f postgres_create_tables.sql
+psql 'dbname=mimic user=mimicuser options=--search_path=mimiciii' -f postgres_create_tables.sql
 ```
 
 If the script runs successfully, you should see the following output:
@@ -90,14 +114,16 @@ CREATE TABLE
 ... etc
 ```
 
-## 6. Import the CSV data files into the empty tables
+If you see warnings about being unable to drop tables, don't worry, this is expected (see [#224](https://github.com/MIT-LCP/mimic-code/issues/224)).
+
+## 8. Import the CSV data files into the empty tables
 
 Using the [Postgres ```COPY``` or ```\COPY``` commands](https://wiki.postgresql.org/wiki/COPY), you should now be able to import the CSV data into the empty set of tables. You can run the "[postgres\_load\_data.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_load_data.sql)" script from the command prompt using:
 
 ``` sql
 # Load the data into the mimic database
 # Replace <path_to_data> with the directory containing the MIMIC-III CSV files
-psql 'dbname=mimic user=mimic options=--search_path=mimiciii' -f postgres_load_data.sql -v mimic_data_dir='<path_to_data>'
+psql 'dbname=mimic user=mimicuser options=--search_path=mimiciii' -f postgres_load_data.sql -v mimic_data_dir='<path_to_data>'
 ```
 
 If the script runs successfully, you should see the following output:
@@ -115,26 +141,29 @@ COPY 0
 
 Note also that above, we have included a line which states `COPY 0`. This is expected: CHARTEVENTS acts as a "mapping" table to multiple sub-tables, and no data is actually stored within it, so postgres reports that 0 rows were inserted. **This is expected behaviour for CHARTEVENTS.**
 
-## 7. Add indexes to improve performance
+## 9. Add indexes to improve performance
 
 Indexes provide additional structure for the database that can help to improve the speed of queries. The MIMIC code repository [includes a script with a set of suggested indexes](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_add_indexes.sql). As before, you can run this script from the command line:
 
 ``` bash
 # create indexes
-psql 'dbname=mimic user=mimic options=--search_path=mimiciii' -f postgres_add_indexes.sql
+psql 'dbname=mimic user=mimicuser options=--search_path=mimiciii' -f postgres_add_indexes.sql
 ```
 
-## 8. MIMIC-III is ready for analysis
+## 10. MIMIC-III is ready for analysis
 
 You should now have a working copy of MIMIC-III ready to query with the psql command line tool. First start the PSQL client from the command line:
 
 ``` bash
-psql 'dbname=mimic user=mimic options=--search_path=mimiciii'
+psql 'dbname=mimic user=mimicuser options=--search_path=mimiciii'
 ```
 
-Before going further, you should revoke the superuser privileges from the mimic user:
+Before going further, you should grant all privileges needed to the mimic user, then revoke the superuser privilege:
 
 ``` sql
+grant select on all tables in schema mimiciii to mimicuser;
+grant usage on schema mimiciii to mimicuser;
+grant connect on database mimic to mimicuser;
 alter user mimic nosuperuser;
 ```
 
@@ -153,7 +182,7 @@ select count(subject_id)
 from patients;
 ```
 
-## 9. Install PgAdminIII (optional)
+## 11. Install PgAdminIII (optional)
 
 PgAdmin is a graphical user interface ('GUI') tool for administering Postgres databases. For installation guidelines see: http://www.pgadmin.org/download/
 
