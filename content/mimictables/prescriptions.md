@@ -59,9 +59,9 @@ ROUTE | VARCHAR(120)
 
 Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HADM_ID` is unique to a patient hospital stay and `ICUSTAY_ID` is unique to a patient ICU stay.
 
-## `STARTTIME`, `ENDTIME`
+## `STARTDATE`, `ENDDATE`
 
-`STARTTIME` and `ENDTIME` specify the time period for which the prescription was valid.
+`STARTDATE` and `ENDDATE` specify the date period for which the prescription was valid.
 
 ## `DRUG_TYPE`
 
