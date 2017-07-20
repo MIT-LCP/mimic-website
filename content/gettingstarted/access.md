@@ -28,5 +28,5 @@ Prior to requesting access to MIMIC, you will need to complete the CITI “Data 
 ### Request access to MIMIC-III: 
 
 - Create an account on PhysioNet using the following link: https://physionet.org/pnw/login. If you already have a PhysioNetWorks account, [log in to it](https://physionet.org/pnw/login).
-- Follow the instructions on PhysioNet to apply for access to the MIMIC-III project, remembering to provide your CITI training certificate: https://physionet.org/works/MIMICIIIClinicalDatabase/access.shtml
+- Follow the instructions on PhysioNet to apply for access to the MIMIC-III project, remembering to provide your CITI completion report: https://physionet.org/works/MIMICIIIClinicalDatabase/access.shtml
 - When your application has been approved you will receive emails containing instructions for downloading the database from PhysioNetWorks. Approval may take several business days, and will be delayed if your request is missing any required information.
