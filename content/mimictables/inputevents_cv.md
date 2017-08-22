@@ -72,7 +72,7 @@ For rates, the `CHARTTIME` represents the time at which that rate was set.
 That is, it can be considered a "start time", i.e. the patient is now receiving X mcg/kg/min of a drug at this `CHARTTIME`.
 
 
-See the [understanding IOEVENTS page](/mimicdata/ioevents) for a bit more detail about how this table was formed from the raw data.
+See the [Inputs and outputs page](/mimicdata/io) for a bit more detail about how this table was formed from the raw data.
 
 ## ITEMID
 
