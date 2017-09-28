@@ -88,7 +88,7 @@ In the future, you will need to inform postgres that it should use the `mimiciii
 set search_path to mimiciii;
 ```
 
- **You will need to run the above every time you launch psql**.
+**You will need to run the above every time you launch psql**.
 
 ## 7. Create a set of empty tables on a mimiciii schema, ready to populate with the data
 
@@ -150,7 +150,18 @@ Indexes provide additional structure for the database that can help to improve t
 psql 'dbname=mimic user=mimicuser options=--search_path=mimiciii' -f postgres_add_indexes.sql
 ```
 
-## 10. MIMIC-III is ready for analysis
+## 10. Run checks
+
+We have included a script which verifies all rows have been loaded in. Run those checks now:
+
+```bash
+# create indexes
+psql 'dbname=mimic user=mimic options=--search_path=mimiciii' -f postgres_checks.sql
+```
+
+If all tables have the expected number of rows, you should see the phrase 'PASSED' for every table.
+
+## 11. MIMIC-III is ready for analysis
 
 You should now have a working copy of MIMIC-III ready to query with the psql command line tool. First start the PSQL client from the command line:
 
@@ -182,12 +193,18 @@ select count(subject_id)
 from patients;
 ```
 
-## 11. Install PgAdminIII (optional)
+## 12. Install a graphical user interface (optional)
 
-PgAdmin is a graphical user interface ('GUI') tool for administering Postgres databases. For installation guidelines see: http://www.pgadmin.org/download/
+It is sometimes convenient to use a graphical user interface (GUI) for working with the database. There are a few options here:
 
+* pgadmin - http://www.pgadmin.org/download/
+* dbeaver - https://dbeaver.jkiss.org/
+* valentina - https://www.valentina-db.com/en/
+
+<!--
 On Mac OSX with the [Homebrew package manager](http://brew.sh/), install PgAdminIII with ```brew install cask pgadmin3``` ('brew cask' is a tool for installing non-command-line packages). On Ubuntu Linux, try ```sudo apt-get install pgadmin3```.
 
 Once PgAdminIII is installed, it can be connected to your local MIMIC instance. The tool offers a simple point and click interface for exploring the data and running queries.
 
 ![PgAdminIII screenshot](/img/tutorial_pgadminIII.png)
+-->
