@@ -9,25 +9,32 @@ toc = "false"
 
 # Help and support
 
-MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide. 
+MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide.
 
-We therefore encourage MIMIC users to work together as a community. Please read [our notes on how to get involved](/community/contributing/) for further information.
+## How can I contribute my work to the community?
+
+Contributing is easy!
+Both the [website documentation](https://github.com/MIT-LCP/mimic-website/) and the [code repository](https://github.com/MIT-LCP/mimic-code/) are openly collaborated upon via GitHub - and your contributions are welcome.
+See [our notes on how to get involved](/community/contributing/) for further information.
 
 ## How can I get help with my analysis?
 
-If you are seeking advice for a specific question, we would suggest raising an issue on the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/issues). 
+MIMIC is a complex dataset and we understand that there are many open questions, both in terms of the data and its analysis.
+We encourage MIMIC users to work together as a community, and actively participate in the discussion.
+If you are seeking advice for a specific question, we would suggest raising an issue on the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/issues).
+Please demonstrate that you have investigated the question yourself! Simply asking "how do I find X in MIMIC" is unlikely to garner any useful response, since it's unclear what you have or have not tried yet.
 
 ## How can I highlight an issue relating to the MIMIC dataset?
 
-MIMIC is a complex dataset and we understand that there are many open questions, both in terms of the data and its analysis. If you identify an issue with the MIMIC data (for example, errors in the data, unusual characteristics, etc), we suggest raising an issue on the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/issues).
+If you identify an issue with the MIMIC data (for example, errors in the data, unusual characteristics, etc), we suggest raising an issue on the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/issues).
 
 ## How do I raise an issue on the MIMIC Code Repository?
 
-To raise an issue, first navigate to the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/issues). After logging in to GitHub, click "New issue", add a title and description of the problem, and then select the "Submit new issue" button.
+See the [contributing section](/community/contributing/) for information about raising issues.
 
-Public discussion reaches a larger audience, enables wider discourse, and reduces workload on our laboratory. One exception is where a topic is sensitive, for example relating to patient health information. **If you need to raise a private issue, please contact us using the method noted below.**
+## What if I have found something that my involve sensitive information?
 
-# Contact us
+One exception to public discussion is where a topic is sensitive, for example relating to patient health information (PHI).
+If you need to raise an issue related to PHI, please contact: [phi-report@physionet.org](mailto:phi-report@physionet.org)
 
-If you need to raise an issue privately, outside the public forums, please contact us at: [mimic-support@physionet.org](mailto:mimic-support@physionet.org).
-
+If you need to raise an otherwise private issue, please contact us: [mimic-support@physionet.org](mailto:mimic-support@physionet.org).
