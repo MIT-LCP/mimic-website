@@ -32,4 +32,9 @@ To fix an issue or to contribute new content, please either select the 'Edit thi
 
 ## How can I share code that I have written for MIMIC?
 
-We encourage you to share the code that you use for analyzing the data. Please add your code to the MIMIC Code Repository at: https://github.com/MIT-LCP/mimic-code. The structure of the repository will develop over time as new contributions are made.
+We encourage you to share the code that you use for analyzing the data. We currently collaboratively develop code in the MIMIC Code Repository:
+https://github.com/MIT-LCP/mimic-code
+
+## Do I need to contribute my code to the MIMIC Code Repository?
+
+Of course not - feel free to start your own repository! Be sure to tag it for discoverability - for example, on GitHub, you can use the `mimic-iii` tag.
