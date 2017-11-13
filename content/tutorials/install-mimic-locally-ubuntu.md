@@ -105,8 +105,6 @@ psql 'dbname=mimic user=mimicuser options=--search_path=mimiciii' -f postgres_cr
 If the script runs successfully, you should see the following output:
 
 ``` bash
-CREATE SCHEMA
-SET
 CREATE TABLE
 CREATE TABLE
 CREATE TABLE
@@ -129,7 +127,6 @@ psql 'dbname=mimic user=mimicuser options=--search_path=mimiciii' -f postgres_lo
 If the script runs successfully, you should see the following output:
 
 ``` bash
-SET
 COPY 58976
 COPY 34499
 COPY 7567
