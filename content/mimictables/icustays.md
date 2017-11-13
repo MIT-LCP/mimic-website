@@ -72,4 +72,4 @@ Care units are derived from the TRANSFERS table, and definition for the abbrevia
 
 ## `LOS`
 
-`LOS` is the length of stay for the patient for the given ICU stay, which may include one or more ICU units.
+`LOS` is the length of stay for the patient for the given ICU stay, which may include one or more ICU units. The length of stay is measured in fractional days.
