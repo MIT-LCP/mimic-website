@@ -111,4 +111,19 @@ from icustays
 limit 10;
 ```
 
+If you'd like to verify everything loaded correctly, you can run the check script:
+
+```sql
+\i D:/work/mimic-code/buildmimic/postgres/postgres_checks.sql
+```
+
+### (Optional) Add comments
+
+We have provided a script to add comments to all the tables/columns in MIMIC-III. Run the following to add these comments:
+
+
+```sql
+\i D:/work/mimic-code/buildmimic/postgres/postgres_add_comments.sql
+```
+
 You may also find the [introduction to MIMIC-III](/tutorials/intro-to-mimic-iii/) guide useful. Good luck in your research!
