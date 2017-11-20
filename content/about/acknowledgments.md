@@ -21,7 +21,7 @@ If you use our data, code, or algorithms, please provide a citation to this proj
 
 ## MIMIC-III citation
 
-If you use our data, code, or algorithms in your work, please cite this project. Our recommended publication is:
+If you use MIMIC-III in your work, please cite this project. Our recommended publication is:
 
 >  MIMIC-III, a freely accessible critical care database. Johnson AEW, Pollard TJ, Shen L, Lehman L, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, and Mark RG. Scientific Data (2016). DOI: <a href="http://dx.doi.org/10.1038/sdata.2016.35">10.1038/sdata.2016.35</a>. Available at: <a href="http://www.nature.com/articles/sdata201635">http://www.nature.com/articles/sdata201635</a>
 
@@ -31,7 +31,7 @@ The data citation for MIMIC-III, which we also kindly ask you cite, is:
 
 <!-- ## Requirement for studies using MIMIC-III    
 
-Researchers of studies using the MIMIC-III database are required to acknowledge our project funders by including the following statement in published articles: 
+Researchers of studies using the MIMIC-III database are required to acknowledge our project funders by including the following statement in published articles:
 
 > Research reported in this publication was supported by the National Institute of Biomedical Imaging and Bioengineering of the National Institutes of Health under Award Number R01EB017205. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health. -->
 
@@ -40,6 +40,12 @@ Researchers of studies using the MIMIC-III database are required to acknowledge 
 An additional citation for all data hosted on PhysioNet is:
 
 >  Physiobank, physiotoolkit, and physionet components of a new research resource for complex physiologic signals. Goldberger AL, Amaral LAN, Glass L,  Hausdorff JM, Ivanov P, Mark RG, Mietus JE, Moody GB, Peng C, and Stanley HE. Circulation. 101(23), pe215--e220. 2000.
+
+## MIMIC Code Repository
+
+The [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code) provides code and example usage of the MIMIC-III database, and is described in [the open access publication here](https://doi.org/10.1093/jamia/ocx084). If you use any code in the repository, we would appreciate if you would cite the publication as follows:
+
+> Johnson, Alistair EW, David J. Stone, Leo A. Celi, and Tom J. Pollard. "The MIMIC Code Repository: enabling reproducibility in critical care research." Journal of the American Medical Informatics Association (2017): ocx084.
 
 # Research groups
 
