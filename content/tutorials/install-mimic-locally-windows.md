@@ -162,6 +162,7 @@ COPY 7567
 ```
 
 This is expected - the fourth table is chartevents, and is by far the largest, and therefore takes the longest to load.
+Note also that eventually the fourth line will read `COPY 0`. This is expected: CHARTEVENTS acts as a “mapping” table to multiple sub-tables, and no data is actually stored within it, so postgres reports that 0 rows were inserted. This is expected behaviour for `chartevents`. When querying, do not query subtables `chartevents_1`, `chartevents_2`, etc, only query `chartevents` itself.
 
 ### Build indexes
 
