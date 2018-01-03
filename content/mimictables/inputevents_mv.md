@@ -119,7 +119,14 @@ Intravenous administrations are usually given by hanging a bag of fluid at the b
 
 ## STATUSDESCRIPTION
 
-```STATUSDESCRIPTION``` states the ultimate status of the item. 'Stopped' indicates that the caregiver stopped the item or the programmed volume came to an end. 'Finished running' indicates that the programmed volume has come to an end. 'Rewritten' indicates that the caregiver rewrote the item, for example making an amendment to the starttime. 'Changed' indicates that the caregiver changed an item, for example setting a new rate or dose. Flushed' indicates that a line was flushed.
+```STATUSDESCRIPTION``` states the ultimate status of the item, or more specifically, row. It is used to indicate why the delivery of the compound has ended. There are only six possible statuses:
+
+* Changed - The current delivery has ended as some aspect of it has changed (most frequently, the rate has been changed)
+* Paused - The current delivery has been paused
+* FinishedRunning - The delivery of the item has finished (most frequently, the bag containing the compound is empty)
+* Stopped - The delivery of the item been terminated by the caregiver
+* Rewritten - Incorrect information was input, and so the information in this row was rewritten (these rows are primarily useful for auditing purposes - the rates/amounts described were *not* delivered and so should not be used if determining what compounds a patient has received)
+* Flushed - A line was flushed.
 
 ## ISOPENBAG
 
