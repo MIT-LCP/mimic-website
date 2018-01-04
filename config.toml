@@ -25,22 +25,27 @@ canonifyurls = "false"
     weight = 30
     url = "/mimicdata/"
 [[menu.main]]
+    name = "Tools"
+    pre = "<i class='fa fa-wrench'></i>"
+    weight = 40
+    url = "/tools/"
+[[menu.main]]
     name = "Community"
     pre = "<i class='fa fa-group'></i>"
-    weight = 40
+    weight = 50
     url = "/community/"
 [[menu.main]]
     name = "Tutorials"
     pre = "<i class='fa fa-cubes'></i>"
-    weight = 50
+    weight = 60
     url = "/tutorials/"
 [[menu.main]]
     name = "Archive"
     pre = "<i class='fa fa-book'></i>"
-    weight = 60
+    weight = 70
     url = "/archive/"
 [[menu.main]]
     name = "Help"
     pre = "<i class='fa fa-life-ring'></i>"
-    weight = 70
+    weight = 80
     url = "/help"

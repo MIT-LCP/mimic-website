@@ -1,13 +1,14 @@
 +++
 date = "2016-09-01T19:34:46-04:00"
 title = "Querybuilder"
+aliases = "/gettingstarted/querybuilder/"
 linktitle = "Querybuilder"
-weight = 5
+weight = 1
 toc = "true"
 
 [menu]
   [menu.main]
-    parent = "Getting started"
+    parent = "Tools"
 
 +++
 
