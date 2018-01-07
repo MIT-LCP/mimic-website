@@ -241,7 +241,7 @@ Services is a newly added table in MIMIC-III which contains information about th
 
 ## 8. Tutorial problem
 
-How would gather useful information about patients admitted to the ICU? The problem can be broken down into several parts:
+How would you gather useful information about patients admitted to the ICU? The problem can be broken down into several parts:
 
 ### Step 1
 First start with retrieving 'subject_id', 'hadm_id', 'icustay_id', 'intime', and 'outtime' from the 'icustays' table.
