@@ -153,7 +153,7 @@ We have included a script which verifies all rows have been loaded in. Run those
 
 ```bash
 # create indexes
-psql 'dbname=mimic user=mimic options=--search_path=mimiciii' -f postgres_checks.sql
+psql 'dbname=mimic user=mimicuser options=--search_path=mimiciii' -f postgres_checks.sql
 ```
 
 If all tables have the expected number of rows, you should see the phrase 'PASSED' for every table.
