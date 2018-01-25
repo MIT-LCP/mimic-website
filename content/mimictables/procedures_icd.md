@@ -48,9 +48,9 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 ## `SEQ_NUM`
 
-`PROC_SEQ_NUM` provides the order in which the procedures were performed.
+`SEQ_NUM` provides the order in which the procedures were performed.
 
 ## `ICD9_CODE`
 
-`CODE` provides the code for the given procedure.
+`ICD9_CODE` provides the ICD-9 code for the given procedure. This code can be joined to the D_ICD_PROCEDURES table to determine what procedure is recorded for the patient.
 
