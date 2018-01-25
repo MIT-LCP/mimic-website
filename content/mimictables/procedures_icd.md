@@ -28,7 +28,7 @@ toc = "true"
 # Important considerations
 
 * The ICD codes are generated for billing purposes at the end of the hospital stay.
-* In MIMIC-III v1.0, only ICD-9 codes are used for recording procedures.
+* ICD codes are recorded for all patient hospitalizations in MIMIC-III.
 
 # Table columns
 
