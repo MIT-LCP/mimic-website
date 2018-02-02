@@ -1,7 +1,8 @@
 +++
-date = "2018-02-02T19:09:50-04:00"
+date = "2018-02-01T19:09:50-04:00"
 title = "Events"
 linktitle = "Events"
+aliases = "/bhibsn_datathon/"
 weight = 1
 toc = "false"
 
