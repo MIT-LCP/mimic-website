@@ -39,7 +39,9 @@ Team must register for the challenge using the following form before midnight (P
 
 ## Who is eligibile?
 
-Anyone with an interest in the reuse of routinely collected clinical data to improve healthcare is invited to participate. We encourage the formation of teams with participants of different backgrounds, including for example data analysts, statisticians, caregivers, and patients.
+Anyone with an interest in the reuse of routinely collected clinical data to improve healthcare is invited to participate. We encourage the formation of teams with participants of different backgrounds, including for example data analysts, statisticians, caregivers, and patients. 
+
+At least one member of a team should be registed to attend the [BHI & BSN Annual Conference](https://bhi-bsn.embs.org/2018/) in Las Vegas, USA 4-7 March 2018 because winning teams will be invited to give a short presentation at the event on **7 March 2018**.
 
 ## How can I access the challenge data?
 
