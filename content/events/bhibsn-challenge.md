@@ -37,7 +37,7 @@ Team must register for the challenge using the following form before midnight (P
 
 <!-- Explain why we have selected this challenge. Aim is to introduce people to working with MIMIC-III; interested in seeing diversity approaches to look at similar question; seek to reinforce good practice in retrospective research. -->
 
-## Who is eligibile?
+## Who is eligible?
 
 Anyone with an interest in the reuse of routinely collected clinical data to improve healthcare is invited to participate. We encourage the formation of teams with participants of different backgrounds, including for example data analysts, statisticians, caregivers, and patients. 
 
