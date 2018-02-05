@@ -59,32 +59,32 @@ Gaining access to the full MIMIC-III dataset may take several days, so we sugges
 
 Project entries will be assessed by a judging panel on the following criteria:
 
-- Reproducibility
-- Scientific methods
-- Presentation
-- Novelty
+- Reproducibility  
+- Scientific methods  
+- Presentation  
+- Novelty  
 
 ## Registration checklist
 
-1. Register your team using this form []
-2. Get access to the data:
-       a. Participants should complete human subjects ethics training (see here [site])
-       b. Participants need to agree to the MIMIC III data use agreement [site]
-       c. Participants need to download the data  [site]
-3. Mark your calendar for presentation session on March 7 [site]
+1. Register your team using this form []  
+2. Get access to the data by following the instructions at: https://mimic.physionet.org/gettingstarted/access/  
+  - Participants should complete [human subjects ethics training](https://www.citiprogram.org/index.cfm?pageID=154&icat=0&ac=0). Select 'Massachusetts Institute of Technology Affiliates' as your organization affiliation. 
+  - Participants need to agree to the MIMIC III data use agreement.  
+  - Participants need to download the MIMIC-III dataset.
+3. Mark your calendar for the presentation session at the [BHI & BSN Annual Conference](https://bhi-bsn.embs.org/2018/) in Las Vegas on 7 March 2018.
 
 ## Submission checklist
 
-1. Prepare your slides in PDF or PPT:
-   a. Presentations will be allotted at most 7 minutes.
-   b. Presentations must include: methodology, results and conclusions.
-2. Is your project reproducible?
-   a. Is your code available?
-   b. Could someone replicate your study cohort and analysis easily?
-   c. Have you clearly cited your data sources?
-3. Have you practiced and timed your presentation? The presentation should be no more than 7 minutes. 
-4. Have you emailed your presentation to the challenge organizers at `data-challenge.physionet.org`? Deadline: 6 March 2018 (noon PST).
-5. Please arrive the conference room of the presentation session at least 15 minutes in advance of the start of the session and introduce yourself to the session chair.
+1. Prepare your slides in PDF or PPT format:  
+  - Presentations will be allotted at most 7 minutes.  
+  - Presentations must include: methodology, results and conclusions.  
+2. Is your project reproducible?  
+  - Is your code available?  
+  - Could someone replicate your study cohort and analysis easily?  
+  - Have you clearly cited your data sources?  
+3. Have you practiced and timed your presentation? The presentation should be no more than 7 minutes.  
+4. Have you emailed your presentation to the challenge organizers at `data-challenge.physionet.org`? Deadline: 6 March 2018 (noon PST).  
+5. Please arrive the conference room of the presentation session at least 15 minutes in advance of the start of the session and introduce yourself to the session chair.  
 
 
 
