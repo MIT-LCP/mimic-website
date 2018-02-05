@@ -43,11 +43,13 @@ The BHI & BSN Data Challenge asks participants to carry out a retrospective stud
 
 _Are patients admitted to the intensive care unit on a weekend more likely to die in the hospital than those admitted on a weekday?_
 
-Team must register for the challenge using the following form before midnight (PST) on **1 March 2018**. Challenge entries must be submitted in the form of a 7-minute research presentation before noon (PST) on **6 March 2018**. Guidelines for formatting the presentations are available at: TBC.
+Teams must register for the challenge using the following form before midnight (PST) on **1 March 2018**: [http://goo.gl/yQUazq](http://goo.gl/yQUazq).   
+
+Challenge entries must be submitted in the form of a 7-minute research presentation, which should be emailed to `data-challenge.physionet.org` before noon (PST) on **6 March 2018**.
+
+Guidelines for entering the challenge and preparing the presentation are outlined in the "Registration checklist" and "Submission checklist" sections below.
 
 <!-- Explain why we have selected this challenge. Aim is to introduce people to working with MIMIC-III; interested in seeing diversity approaches to look at similar question; seek to reinforce good practice in retrospective research. -->
-
-See our registration checklist below for the steps required for a team to enter the challenge.
 
 ## How can I access the challenge data?
 
@@ -66,7 +68,7 @@ Project entries will be assessed by a judging panel on the following criteria:
 
 ## Registration checklist
 
-1. Register your team using this form []  
+1. Register your team using the following form: [http://goo.gl/yQUazq](http://goo.gl/yQUazq).
 2. Get access to the data by following the instructions at: https://mimic.physionet.org/gettingstarted/access/  
   - Participants should complete [human subjects ethics training](https://www.citiprogram.org/index.cfm?pageID=154&icat=0&ac=0). Select 'Massachusetts Institute of Technology Affiliates' as your organization affiliation. 
   - Participants need to agree to the MIMIC III data use agreement.  
@@ -75,14 +77,15 @@ Project entries will be assessed by a judging panel on the following criteria:
 
 ## Submission checklist
 
-1. Prepare your slides in PDF or PPT format:  
+1. Prepare your slides in PDF or PPT format: 
+  - A [slide template](https://github.com/MIT-LCP/bhi-bsn-challenge/blob/master/slide-template.pptx) is provided at: https://github.com/MIT-LCP/bhi-bsn-challenge, but there is no requirement to use it.
   - Presentations will be allotted at most 7 minutes.  
   - Presentations must include: methodology, results and conclusions.  
 2. Is your project reproducible?  
-  - Is your code available?  
+  - Is your code publicly available?  
   - Could someone replicate your study cohort and analysis easily?  
   - Have you clearly cited your data sources?  
-3. Have you practiced and timed your presentation? The presentation should be no more than 7 minutes.  
+3. Have you practiced and timed your presentation? 
 4. Have you emailed your presentation to the challenge organizers at `data-challenge.physionet.org`? Deadline: 6 March 2018 (noon PST).  
 5. Please arrive the conference room of the presentation session at least 15 minutes in advance of the start of the session and introduce yourself to the session chair.  
 
