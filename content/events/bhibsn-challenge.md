@@ -83,7 +83,7 @@ Project entries will be assessed by a judging panel on the following criteria:
   - Could someone replicate your study cohort and analysis easily?  
   - Have you clearly cited your data sources?  
 3. Have you practiced and timed your presentation? The presentation should be no more than 7 minutes.  
-4. Have you emailed your presentation to the challenge organizers at `data-challenge.physionet.org`? Deadline: 6 March 2018 (noon PST).  
+4. Have you emailed your presentation to the challenge organizers at `data-challenge@physionet.org`? Deadline: 6 March 2018 (noon PST).  
 5. Please arrive the conference room of the presentation session at least 15 minutes in advance of the start of the session and introduce yourself to the session chair.  
 
 
