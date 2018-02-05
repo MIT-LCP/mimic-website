@@ -45,7 +45,7 @@ _Are patients admitted to the intensive care unit on a weekend more likely to di
 
 Teams must register for the challenge using the following form before midnight (PST) on **1 March 2018**: [http://goo.gl/yQUazq](http://goo.gl/yQUazq).   
 
-Challenge entries must be submitted in the form of a 7-minute research presentation, which should be emailed to `data-challenge.physionet.org` before noon (PST) on **6 March 2018**.
+Challenge entries must be submitted in the form of a 7-minute research presentation, which should be emailed to `data-challenge@physionet.org` before noon (PST) on **6 March 2018**.
 
 Guidelines for entering the challenge and preparing the presentation are outlined in the "Registration checklist" and "Submission checklist" sections below.
 
@@ -86,7 +86,7 @@ Project entries will be assessed by a judging panel on the following criteria:
   - Could someone replicate your study cohort and analysis easily?  
   - Have you clearly cited your data sources?  
 3. Have you practiced and timed your presentation? 
-4. Have you emailed your presentation to the challenge organizers at `data-challenge.physionet.org`? Deadline: 6 March 2018 (noon PST).  
+4. Have you emailed your presentation to the challenge organizers at `data-challenge@physionet.org`? Deadline: 6 March 2018 (noon PST).  
 5. Please arrive the conference room of the presentation session at least 15 minutes in advance of the start of the session and introduce yourself to the session chair.  
 
 
