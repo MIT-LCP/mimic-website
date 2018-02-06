@@ -29,19 +29,11 @@ The Challenge is now open for registration! Participating teams have one month t
 - Deadline for final submission: 6 March 2018 (noon PST)
 - Awards and presentations by selected participants: 7 March 2018 (sessions TBC)
 
-## Who is eligible?
-
-Anyone with an interest in the reuse of routinely collected clinical data to improve healthcare is invited to participate. This is an opportunity for participants to learn about the benefits and challenges of working with complex healthcare data.  
-
-While individual submissions are welcomed, we encourage the formation of teams with participants of different backgrounds. Often successful projects consider a broad range of perspectives, including for example the data scientist, statistician, carer, and patient.
-
-At least one member of a team must be able to attend the [BHI & BSN Annual Conference](https://bhi-bsn.embs.org/2018/) in Las Vegas, USA 4-7 March 2018 to give a short presentation at the event on **7 March 2018**.  Registration at the conference is _not_ a requirement, and not all team members need be present. 
-
 ## How can I enter the challenge?
 
 The BHI & BSN Data Challenge asks participants to carry out a retrospective study using the MIMIC-III Database. This year's research question is focused on a controversial and important logistical issue hospitals encounter every week:
 
-_Are patients admitted to the intensive care unit on a weekend more likely to die in the hospital than those admitted on a weekday?_
+**Are patients admitted to the intensive care unit on a weekend more likely to die in the hospital than those admitted on a weekday?**
 
 Teams must register for the challenge using the following form before midnight (PST) on **1 March 2018**: [http://goo.gl/yQUazq](http://goo.gl/yQUazq).   
 
@@ -50,6 +42,14 @@ Challenge entries must be submitted in the form of a 7-minute research presentat
 Guidelines for entering the challenge and preparing the presentation are outlined in the "Registration checklist" and "Submission checklist" sections below.
 
 <!-- Explain why we have selected this challenge. Aim is to introduce people to working with MIMIC-III; interested in seeing diversity approaches to look at similar question; seek to reinforce good practice in retrospective research. -->
+
+## Who is eligible?
+
+Anyone with an interest in the reuse of routinely collected clinical data to improve healthcare is invited to participate. This is an opportunity for participants to learn about the benefits and challenges of working with complex healthcare data.  
+
+While individual submissions are welcomed, we encourage the formation of teams with participants of different backgrounds. Often successful projects consider a broad range of perspectives, including for example the data scientist, statistician, carer, and patient.
+
+At least one member of a team must be able to attend the [BHI & BSN Annual Conference](https://bhi-bsn.embs.org/2018/) in Las Vegas, USA 4-7 March 2018 to give a short presentation at the event on **7 March 2018**.  Registration at the conference is _not_ a requirement, and not all team members need be present. 
 
 ## How can I access the challenge data?
 
