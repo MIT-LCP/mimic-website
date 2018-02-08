@@ -70,8 +70,12 @@ Project entries will be assessed by a judging panel on the following criteria:
 
 1. Register your team using the following form: [http://goo.gl/yQUazq](http://goo.gl/yQUazq).
 2. Get access to the data by following the instructions at: https://mimic.physionet.org/gettingstarted/access/  
-  - Participants should complete [human subjects ethics training](https://www.citiprogram.org/index.cfm?pageID=154&icat=0&ac=0). Select 'Massachusetts Institute of Technology Affiliates' as your organization affiliation. 
-  - Participants need to agree to the MIMIC-III data use agreement.  
+  - Participants should complete [human subjects ethics training](https://www.citiprogram.org/index.cfm?pageID=154&icat=0&ac=0). 
+      - Select 'Massachusetts Institute of Technology Affiliates' as your organization affiliation. 
+      - Please complete the "Data or Specimens Only Research" training program.
+  - Participants need to agree to the MIMIC-III data use agreement.
+      - Please submit the completion report (_not_ the certificate)
+      - For the 'General research area for which the data will be used' field, please use: 'BHI & BSN Data Challenge 2018'.
   - Participants need to download the MIMIC-III dataset.
 3. Mark your calendar for the presentation session at the [BHI & BSN Annual Conference](https://bhi-bsn.embs.org/2018/) in Las Vegas on 7 March 2018.
 
