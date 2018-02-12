@@ -16,9 +16,9 @@ toc = "false"
 
 In collaboration with the IEEE Conference on Biomedical and Health Informatics (BHI) 2018 and the IEEE Conference on Body Sensor Networks (BSN), we are hosting a challenge to explore real clinical questions in critically ill patients using the MIMIC-III database. Participants in the challenge will be invited the present at the BHI & BSN Annual Conference in Las Vegas, USA (4-7 March 2018): https://bhi-bsn.embs.org/2018/
 
-## What are the prizes?
+## Will there be prizes?
 
-TBC
+Yes, prizes are sponsored by [Google Cloud](https://cloud.google.com) and [Georgia Tech](http://www.gatech.edu/).
 
 ## What is the timeline?
 
