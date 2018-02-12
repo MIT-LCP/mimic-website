@@ -20,6 +20,8 @@ In collaboration with the IEEE Conference on Biomedical and Health Informatics (
 
 Yes, prizes are sponsored by [Google Cloud](https://cloud.google.com) and [Georgia Tech](http://www.gatech.edu/).
 
+![Sponsored by Google Cloud and Georgia Tech](/img/bhibsn-sponsors.png)
+
 ## What is the timeline?
 
 The Challenge is now open for registration! Participating teams have one month to carry out a research project using the MIMIC-III database. Final submissions must be sent for consideration by noon (PST) on **6 March 2018**. 
