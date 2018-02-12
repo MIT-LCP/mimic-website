@@ -43,7 +43,7 @@ Guidelines for entering the challenge and preparing the presentation are outline
 
 ## Is there sample code to get us started?
 
-Sample code to get you started is available at: https://github.com/MIT-LCP/bhi-bsn-challenge. For example, see these Jupyter Notebooks in [Python](https://github.com/MIT-LCP/bhi-bsn-challenge/blob/master/challenge-demo.ipynb) and [R](https://github.com/MIT-LCP/bhi-bsn-challenge/blob/master/jupyter_example_notebook_in_R.ipynb). 
+Sample code is available at: https://github.com/MIT-LCP/bhi-bsn-challenge. For example, see these Jupyter Notebooks in [Python](https://github.com/MIT-LCP/bhi-bsn-challenge/blob/master/challenge-demo.ipynb) and [R](https://github.com/MIT-LCP/bhi-bsn-challenge/blob/master/jupyter_example_notebook_in_R.ipynb). 
 
 <!-- Explain why we have selected this challenge. Aim is to introduce people to working with MIMIC-III; interested in seeing diversity approaches to look at similar question; seek to reinforce good practice in retrospective research. -->
 
