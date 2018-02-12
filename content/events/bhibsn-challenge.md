@@ -41,7 +41,7 @@ Challenge entries must be submitted in the form of a 7-minute research presentat
 
 Guidelines for entering the challenge and preparing the presentation are outlined in the "Registration checklist" and "Submission checklist" sections below.
 
-## Is there sample code to help kickstart our project?
+## Is there sample code to get us started?
 
 Sample code to get you started is available at: https://github.com/MIT-LCP/bhi-bsn-challenge. For example, see these Jupyter Notebooks in [Python](https://github.com/MIT-LCP/bhi-bsn-challenge/blob/master/challenge-demo.ipynb) and [R](https://github.com/MIT-LCP/bhi-bsn-challenge/blob/master/jupyter_example_notebook_in_R.ipynb). 
 
