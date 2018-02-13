@@ -63,6 +63,8 @@ Participants will use the MIMIC-III database, which comprises routinely collecte
 
 Gaining access to the full MIMIC-III dataset may take several days, so we suggest using the MIMIC-III demo while waiting to gain full access: https://mimic.physionet.org/gettingstarted/demo/
 
+If you need help getting set up with access to MIMIC-III for the Challenge, please contact us at: `data-challenge@physionet.org`.
+
 ## How are entries assessed?
 
 Project entries will be assessed by a judging panel on the following criteria:
