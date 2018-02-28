@@ -32,7 +32,7 @@ If you identify an issue with the MIMIC data (for example, errors in the data, u
 
 See the [contributing section](/community/contributing/) for information about raising issues.
 
-## What if I have found something that my involve sensitive information?
+## What if I have found something that may involve sensitive information?
 
 One exception to public discussion is where a topic is sensitive, for example relating to patient health information (PHI).
 If you need to raise an issue related to PHI, please contact: [phi-report@physionet.org](mailto:phi-report@physionet.org)
