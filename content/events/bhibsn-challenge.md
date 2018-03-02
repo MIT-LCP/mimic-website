@@ -27,7 +27,7 @@ Yes, prizes are sponsored by [Google Cloud](https://cloud.google.com) and [Georg
 The Challenge is now open for registration! Participating teams have one month to carry out a research project using the MIMIC-III database. Final submissions must be sent for consideration by noon (PST) on **6 March 2018**. 
 
 - Challenge announced: 5 February 2018
-- Deadline for registration of teams: 1 March 2018 or as space permits
+- Deadline for registration of teams: 1 March 2018 or as space permits (**updated: 4 March 2018**)
 - Deadline for final submission: 6 March 2018 (noon PST)
 - Awards and presentations by selected participants: 7 March 2018 (sessions TBC)
 
