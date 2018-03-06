@@ -27,9 +27,11 @@ Yes, prizes are sponsored by [Google Cloud](https://cloud.google.com) and [Georg
 The Challenge is now open for registration! Participating teams have one month to carry out a research project using the MIMIC-III database. Final submissions must be sent for consideration by noon (PST) on **6 March 2018**. 
 
 - Challenge announced: 5 February 2018
-- Deadline for registration of teams: 1 March 2018 or as space permits (**updated: 4 March 2018**)
-- Deadline for final submission: 6 March 2018 (noon PST)
-- Awards and presentations by selected participants: 7 March 2018 (sessions TBC)
+- Deadline for registration of teams: 1 March 2018 or as space permits (**updated: 6 March 2018**)
+- Office hours and help with projects: 6 March 2018 (2.15pm-3.45pm) in Treasure Island F.
+- Deadline for final submission: 6 March 2018 (**updated: 7am on Wednesday 7 March!**)
+- Challenge Presentations: 7 March 2018 (8.50am-11:35am) in Treasure Island F.
+- Awards: 7 March 2018: 5.50pm.
 
 ## How can I enter the challenge?
 
@@ -39,7 +41,7 @@ The BHI & BSN Data Challenge asks participants to carry out a retrospective stud
 
 Teams must register for the challenge using the following form before midnight (PST) on **1 March 2018**: [http://goo.gl/yQUazq](http://goo.gl/yQUazq).   
 
-Challenge entries must be submitted in the form of a 7-minute research presentation, which should be emailed to `data-challenge@physionet.org` before noon (PST) on **6 March 2018**.
+Challenge entries must be submitted in the form of a 7-minute research presentation, which should be emailed to `data-challenge@physionet.org` before **7am (PST) Wednesday 7 March 2018**.
 
 Guidelines for entering the challenge and preparing the presentation are outlined in the "Registration checklist" and "Submission checklist" sections below.
 
@@ -98,7 +100,7 @@ Project entries will be assessed by a judging panel on the following criteria:
   - Could someone replicate your study cohort and analysis easily?  
   - Have you clearly cited your data sources?  
 3. Have you practiced and timed your presentation? 
-4. Have you emailed your presentation to the challenge organizers at `data-challenge@physionet.org`? Deadline: 6 March 2018 (noon PST).  
+4. Have you emailed your presentation to the challenge organizers at `data-challenge@physionet.org`? Deadline: 7am on Wednesday 7 March 2018.  
 5. Please arrive the conference room of the presentation session at least 15 minutes in advance of the start of the session and introduce yourself to the session chair.  
 
 
