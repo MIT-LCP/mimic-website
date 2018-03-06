@@ -1,10 +1,10 @@
 +++
-date = "2018-02-01T19:09:50-04:00"
-title = "Events"
-linktitle = "Events"
+date = "2018-02-01T19:08:50-04:00"
+title = "BHI & BSN Challenge"
+linktitle = "BHI & BSN Challenge"
 aliases = "/bhibsn_datathon/"
-weight = 1
-toc = "false"
+weight = 2
+toc = "true"
 
 [menu]
   [menu.main]

@@ -39,6 +39,11 @@ googleAnalytics = ""
     weight = 50
     url = "/community/"
 [[menu.main]]
+    name = "Events"
+    pre = "<i class='fa fa-group'></i>"
+    weight = 55
+    url = "/events/"
+[[menu.main]]
     name = "Tutorials"
     pre = "<i class='fa fa-cubes'></i>"
     weight = 60
