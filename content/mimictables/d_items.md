@@ -31,7 +31,7 @@ toc = "true"
 
 # Important considerations
 
-* D_ITEMS is sourced from two *distinct* ICU databases. The main consequence is that there are duplicate `ITEMID` for each concept. For example, heart rate is captured both as an `ITEMID` of 212 (CareVue) and as an `ITEMID` of 220045 (Metavision). As a result, it is necessary to search for multiple `ITEMID` to capture a single concept across the entire database. This can be tedious, and it is an active project to coalesce these `ITEMID` - one which welcomes any and all help provided by the community!
+* D_ITEMS is sourced from two *distinct* ICU databases. The main consequence is that there are duplicate `ITEMID` for each concept. For example, heart rate is captured both as an `ITEMID` of 211 (CareVue) and as an `ITEMID` of 220045 (Metavision). As a result, it is necessary to search for multiple `ITEMID` to capture a single concept across the entire database. This can be tedious, and it is an active project to coalesce these `ITEMID` - one which welcomes any and all help provided by the community!
 * Another source of duplicate `ITEMID` is due to the free text nature of data entry in CareVue - as a result there are additional `ITEMID` which correspond to misspellings or synonymous descriptions of a single concept. It is important to search for all possible abbreviations and descriptions of a concept to capture all associated `ITEMID`.
 * If the `LINKSTO` column is null, then the data is currently unavailable, but planned for a future release.
 
