@@ -29,8 +29,7 @@ toc = "true"
 
 # Important considerations
 
-* The MICROBIOLOGYEVENTS table does not contain cultures from samples taken outside the ICU
-* If the specimen is null, then the culture had no growth reported.
+* If the organism is null, then the culture had no growth reported.
 
 # Table columns
 
@@ -71,20 +70,26 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 In the cases where both `CHARTTIME` and `CHARTDATE` exists, `CHARTDATE` is equal to a truncated version of `CHARTTIME` (i.e. `CHARTTIME` without the timing information). Not all observations have a `CHARTTIME`, but all observations have a `CHARTDATE`.
 
-## `SPEC_ITEMID`, `SPEC_TYPE_CD`, `SPEC_TYPE_DESC`
+## `SPEC_ITEMID`, `SPEC_TYPE_DESC`
 
-Details the itemid, code, and description for the specimen.
+Specimen which is tested for bacterial growth.
 
-## `ORG_ITEMID`, `ORG_CD`, `ORG_NAME`
+## `ORG_ITEMID`, `ORG_NAME`
+
+The organism, if any, which grew when tested. If NULL, no organism grew (i.e. negative culture).
 
 ## `ISOLATE_NUM`
 
-## `AB_ITEMID`, `AB_CD`, `AB_NAME`
+For testing antibiotics, the isolated colony (integer; starts at 1).
+
+## `AB_ITEMID`, `AB_NAME`
+
+If an antibiotic was tested against the given organism for sensitivity, the name is listed here.
 
 ## `DILUTION_TEXT`, `DILUTION_COMPARISON`, `DILUTION_VALUE`
 
+Dilution values when testing antibiotic sensitivity.
+
 ## `INTERPRETATION`
 
-`INTERPRETATION` indicates the results of the test. "S" is sensitive, "R" is resistant, "I" is intermediate, and "P" is pending.
-
-
+`INTERPRETATION` of the antibiotic sensitivity, and indicates the results of the test. "S" is sensitive, "R" is resistant, "I" is intermediate, and "P" is pending.
