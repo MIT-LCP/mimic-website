@@ -33,6 +33,6 @@ Prior to requesting access to MIMIC, you will need to complete the CITI “Data 
 
 You will need to fill in a form to submit a data use agreement and request access to restricted-access clinical databases hosted on PhysioNet. Please be sure to provide all requested information. Submissions that are clearly incomplete, incorrect, or frivolous may be discarded without notice.
 
-If you are a student or a postdoc, the form will request your supervisor's name and contact information. If you are not listed in a directory or other easy-to-find page of your organization’s website, please provide the name and contact information of a reference such as a supervisor or colleague. Do not list yourself as reference.
+If you are a student or a postdoc, you must provide your supervisor’s name and contact information in the "reference" section of the form. If you are not listed in a directory or other easy-to-find page of your organization’s website, please provide the name and contact information of a reference such as a supervisor or colleague. Do not list yourself as reference.
 
 Be sure to upload the completion report from the CITI “Data or Specimens Only Research” training program (PDF or image file). The completion report lists all modules completed, with dates and scores. If you would like to submit multiple pages, please combine them into a single pdf file.
