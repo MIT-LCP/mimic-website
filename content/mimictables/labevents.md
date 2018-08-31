@@ -26,6 +26,10 @@ toc = "true"
 * ADMISSIONS on `HADM_ID`
 * D_LABITEMS on `ITEMID`
 
+# Brief summary
+
+The `LABEVENTS` data contains information regarding laboratory based measurements. The process for acquiring a lab measurement is as follows: first, a member of the clinical staff acquires a fluid from a site in the patient's body (e.g. blood from an arterial line, urine from a catheter, etc). Next, the fluid is bar coded to associate it with the patient *and* timestamped to record the time of the fluid acquisition. The lab analyses the data and returns a result within 4-12 hours.
+
 # Important considerations
 
 * Note that the time associated with this result is the time of the fluid *acquisition*, not the time that the values were made available to the clinical staff.
@@ -49,8 +53,6 @@ VALUEUOM | VARCHAR(20)
 FLAG | VARCHAR(20)
 
 # Detailed Description
-
-The `LABEVENTS` data contains information regarding laboratory based measurements. The process for acquiring a lab measurement is as follows: first, a member of the clinical staff acquires a fluid from a site in the patient's body (e.g. blood from an arterial line, urine from a catheter, etc). Next, the fluid is bar coded to associate it with the patient *and* timestamped to record the time of the fluid acquisition. The lab analyses the data and returns a result within 4-12 hours.
 
 ## `SUBJECT_ID`, `HADM_ID`
 
