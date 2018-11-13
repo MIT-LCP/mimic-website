@@ -20,8 +20,7 @@ The MIMIC-III database contains information from two distinct critical care info
 
 # INPUTEVENTS_CV, INPUTEVENTS_MV, OUTPUTEVENTS
 
-Inputs exist in two separate tables: INPUTEVENTS\_CV and INPUTEVENTS\_MV. INPUTEVENTS\_CV contains CareVue inputs, while INPUTEVENTS\_MV contains Metavision inputs. Results from these tables can be unioned as the same patient stay never occurs in both tables. Concretely, a unique `ICUSTAY_ID` only occurs in *one* out of the two tables. However, if a patient has two ICU stays, one in CareVue and one in Metavision, then they could appear in both tables. As a result, a unique `SUBJECT_ID` could occur in both tables.
-All outputs for both Metavision and CareVue patients have been merged into the OUTPUTEVENTS table.
+Inputs exist in two separate tables: INPUTEVENTS\_CV and INPUTEVENTS\_MV. INPUTEVENTS\_CV contains CareVue inputs, while INPUTEVENTS\_MV contains Metavision inputs. Results from these tables can be unioned as observations are not duplicated across tables.
 
 ## Outputs
 
