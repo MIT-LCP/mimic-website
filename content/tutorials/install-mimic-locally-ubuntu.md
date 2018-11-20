@@ -172,7 +172,7 @@ Before going further, you should grant all privileges needed to the mimic user, 
 grant select on all tables in schema mimiciii to mimicuser;
 grant usage on schema mimiciii to mimicuser;
 grant connect on database mimic to mimicuser;
-alter user mimic nosuperuser;
+alter user mimicuser nosuperuser;
 ```
 
 Now try, for example, counting the number of patients in the database:
