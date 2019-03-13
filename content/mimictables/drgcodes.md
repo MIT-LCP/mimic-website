@@ -26,9 +26,9 @@ toc = "true"
 
 # Important considerations
 
-* HCFA-DRG codes have multiple descriptions as they have changed over time. Sometimes these descriptions are similar, but sometimes they are *completely different diagnoses*. Users will need to select rows using both the code *and* the description.
+* HCFA-DRG and MS-DRG codes have multiple descriptions as they have changed over time. Sometimes these descriptions are similar, but sometimes they are *completely different diagnoses*. Users will need to select rows using both the code *and* the description.
 * Since there are multiple versions of DRG codes, queries will need to incorporate both the type of DRG and the code when filtering for a certain diagnosis.
-* All patients have an HCFA-DRG code, but not all patients have an APR-DRG code. Note that APR-DRG is believed to be an alternative, more specific, code which could be used in conjunction with the HCFA codes.
+* All patients have an HCFA-DRG or MS-DRG code, but not all patients have an APR-DRG code. Note that APR-DRG is believed to be an alternative, more specific, code which could be used in conjunction with the HCFA codes.
 
 # Table columns
 
@@ -51,7 +51,7 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `
 
 ## `DRG_TYPE`
 
-`DRG_TYPE` provides the type of DRG code in the entry. There are two types of DRG codes in the database which have overlapping ranges but distinct definitions for the codes. The two types of DRG codes in the MIMIC-III database are 'HCFA' (Health Care Financing Administration) and 'APR' (All Payers Registry).
+`DRG_TYPE` provides the type of DRG code in the entry. There are two types of DRG codes in the database which have overlapping ranges but distinct definitions for the codes. The three types of DRG codes in the MIMIC-III database are 'HCFA' (Health Care Financing Administration), 'MS' (Medicare), and 'APR' (All Payers Registry).
 
 ## `DRG_CODE`
 
