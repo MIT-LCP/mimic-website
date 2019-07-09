@@ -39,6 +39,8 @@ ROW\_ID | INT
 SUBJECT\_ID | INT
 HADM\_ID | INT
 CHARTDATE | TIMESTAMP(0)
+CHARTTIME | TIMESTAMP(0)
+STORETIME | TIMESTAMP(0)
 CATEGORY | VARCHAR(50)
 DESCRIPTION | VARCHAR(300)
 CGID | INT
@@ -51,9 +53,14 @@ TEXT | TEXT
 
 Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient and `HADM_ID` is unique to a patient hospital stay.
 
-## `CHARTDATE`
+## `CHARTDATE`, `CHARTTIME`, `STORETIME`
 
-`CHARTDATE` records the date at which the note was charted.
+`CHARTDATE` records the date at which the note was charted. `CHARTDATE` will always have a time value of 00:00:00.
+
+`CHARTTIME` records the date and time at which the note was charted. If both `CHARTDATE` and `CHARTTIME` exist, then the date portions will be identical. All records have a `CHARTDATE`. A subset are missing `CHARTTIME`. More specifically, notes with a `CATEGORY` value of 'Discharge Summary', 'ECG', and 'Echo' never have a `CHARTTIME`, only `CHARTDATE`. Other categories almost always have both `CHARTTIME` and `CHARTDATE`, but there is a small amount of missing data for `CHARTTIME` (usually less than 0.5% of the total number of notes for that category). 
+
+`STORETIME` records the date and time at which a note was saved into the system.
+Notes with a `CATEGORY` value of 'Discharge Summary', 'ECG', 'Radiology', and 'Echo' never have a `STORETIME`. All other notes have a `STORETIME`.
 
 ## `CATEGORY`, `DESCRIPTION`
 
