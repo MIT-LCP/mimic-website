@@ -13,7 +13,7 @@ toc = "true"
 
 # Requesting access
 
-The latest version of MIMIC is MIMIC-III v1.4, which comprises over 58,000 hospital admissions for 38,645 adults and 7,875 neonates. The data spans June 2001 - October 2012. The database, although de-identified, still contains detailed information regarding the clinical care of patients, so must be treated with appropriate care and respect.
+The latest version of MIMIC is MIMIC-III v1.4, which comprises 61,532 intensive care unit stays: 53,432 stays for adult patients and 8,100 for neonatal patients. The data spans June 2001 - October 2012. The database, although de-identified, still contains detailed information regarding the clinical care of patients, so must be treated with appropriate care and respect.
 
 Researchers seeking to use the database must formally request access with the steps below.
 
