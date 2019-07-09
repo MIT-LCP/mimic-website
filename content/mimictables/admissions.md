@@ -98,7 +98,9 @@ Time that the patient was registered and discharged from the emergency departmen
 
 ## `DIAGNOSIS`
 
-The `DIAGNOSIS` column provides a preliminary, free text diagnosis for the patient on hospital admission. The diagnosis is usually assigned by the admitting clinician and does not use a systematic ontology. As of MIMIC-III v1.0 there were 15,693 distinct diagnoses for 58,976 admissions. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness). Final diagnoses for hospital admissions are coded and can be found in the DIAGNOSES_ICD table.
+The `DIAGNOSIS` column provides a preliminary, free text diagnosis for the patient on hospital admission. The diagnosis is usually assigned by the admitting clinician and does not use a systematic ontology. As of MIMIC-III v1.0 there were 15,693 distinct diagnoses for 58,976 admissions. The diagnoses can be very informative (e.g. chronic kidney failure) or quite vague (e.g. weakness).
+Final diagnoses for a patient's hospital stay are coded on discharge and can be found in the DIAGNOSES_ICD table.
+While this field can provide information about the status of a patient on hospital admission, it is not recommended to use it to stratify patients.
 
 ## `HOSPITAL_EXPIRE_FLAG`
 
