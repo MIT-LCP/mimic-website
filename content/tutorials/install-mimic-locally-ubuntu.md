@@ -14,7 +14,7 @@ toc = "true"
 
 Prerequisites: *This tutorial assumes that you have already completed the [steps required to gain access](/gettingstarted/access) to the MIMIC dataset on PhysioNet.*
 
-Note that this install was written and tested using Mac OS X and Ubuntu 15.04.
+Note that this install was written and tested using Mac OS X and Ubuntu 15.04. If you feel there are key details missing, please [raise an issue](https://github.com/MIT-LCP/mimic-website/issues) with your suggested improvements - we would love to incorporate them!
 
 There are two options for installing MIMIC-III locally in a PostgreSQL database:
 
@@ -22,6 +22,16 @@ There are two options for installing MIMIC-III locally in a PostgreSQL database:
 2. Automatically, using the make files available in the [mimic-code repository](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)
 
 These steps are roughly equivalent, though you may learn more about the database configuration by installing the data manually.
+
+## 0. Prepare
+
+Note that before proceeding with this tutorial you will need to:
+
+1. Download the MIMIC-III Clinical Database (see [here](/gettingstarted/access/) for details on gaining access).
+2. Place the MIMIC-III Clinical Database as either .csv or .csv.gz files somewhere on your local computer.
+3. Download the PostgreSQL scripts from [here](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres) - only the files which end in `.sql` are required.
+
+It's easiest to move all the MIMIC data files and the scripts to load the data into a single folder (usually called the working directory). Most of the commands below will assume that files are located in the current folder.
 
 ## 1. Install Postgres
 
@@ -66,6 +76,7 @@ psql -U username -d postgres
 ## 5. Create an empty database containing a MIMIC-III schema
 
 From this point onwards we will be referring to scripts in the '[buildmimic](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic)' directory of the [MIMIC code repository](https://github.com/MIT-LCP/mimic-code/).
+You should have already downloaded the SQL scripts to your working directory.
 
 After connecting with psql, create a new database called "mimic":
 
@@ -111,6 +122,9 @@ CREATE TABLE
 CREATE TABLE
 ... etc
 ```
+
+
+If you get the error `postgres_create_tables.sql: No such file or directory` that means that the file `postgres_create_tables.sql` is not in your current directory. Either download the file to the local directory, or specify the directory in the above command.
 
 If you see warnings about being unable to drop tables, don't worry, this is expected (see [#224](https://github.com/MIT-LCP/mimic-code/issues/224)).
 
