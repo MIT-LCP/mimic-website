@@ -19,8 +19,7 @@ The demo dataset (v1.4) can be downloaded either as 25 comma-separated-value (CS
 
 ## Accessing the demo data
 
-- Create an account on PhysioNet using the following link: https://physionet.org/pnw/login. If you already have a PhysioNetWorks account, [log in to it](https://physionet.org/pnw/login).
-- Navigate to the project page on PhysioNet: https://physionet.org/works/MIMICIIIClinicalDatabaseDemo/
-- Read the Data Use Agreement and, if you agree to the terms and conditions for usage, click "I agree" to access the data files.
+- Navigate to the project page on PhysioNet: https://physionet.org/content/mimiciii-demo/
+- Scroll to the "Files" section to view and download the data.
 
 

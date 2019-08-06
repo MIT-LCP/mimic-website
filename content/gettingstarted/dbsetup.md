@@ -16,7 +16,7 @@ toc = "false"
 ## PhysioNet  
 
 Once your [application to access MIMIC](http://mimic.physionet.org/gettingstarted/access/) has been approved, you will be granted access to the 'MIMIC-III Clinical Database' project page on PhysioNet:  
-https://physionet.org/works/MIMICIIIClinicalDatabase/
+https://physionet.org/content/mimiciii/
 
 ## Data and build scripts
 
