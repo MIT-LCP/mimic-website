@@ -89,9 +89,9 @@ Let's return to our example above of the patient being given noreadrenaline. The
 
 Item | `STARTTIME` | `ENDTIME` | `RATE` | `RATEUOM` | `ORDERID` | `LINKORDERID`
 ---- | ---- | ---- | ---- | ---- | ---- | ----
-NaCl | 18:20 | 18:25 | 1 | mcg/kg/min | 8003 | 8003
-Noradrenaline | 18:20 | 18:25 | 10 | ml/hr | 8003 | 8003
-NaCl | 18:25 | 20:00 | 2 | mcg/kg/min | 8020 | 8003
-Noradrenaline | 18:25 | 20:00 | 20 | ml/hr | 8020 | 8003
+Norepinephrine | 18:20 | 18:25 | 1 | mcg/kg/min | 8003 | 8003
+NaCl | 18:20 | 18:25 | 10 | ml/hr | 8003 | 8003
+Norepinephrine | 18:25 | 20:00 | 2 | mcg/kg/min | 8020 | 8003
+NaCl | 18:25 | 20:00 | 20 | ml/hr | 8020 | 8003
 
 Note that `ORDERID` links items occurring at the same time which correspond to the same solution, while `LINKORDERID` links all these solutions together across time. Note also that `LINKORDERID` is equal to the first `ORDERID` which occurs for the solution, as above.
