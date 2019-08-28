@@ -41,7 +41,7 @@ On Mac OSX with the [Homebrew package manager](http://brew.sh/), simply type ```
 
 ## 2. Place the CSV data files in a local directory
 
-Assuming that you have completed the [steps required to gain access](/gettingstarted/access) to the MIMIC dataset, you should be able to access the CSV data files on PhysioNet at: https://physionet.org/works/MIMICIIIClinicalDatabase/files/.
+Assuming that you have completed the [steps required to gain access](/gettingstarted/access) to the MIMIC dataset, you should be able to access the CSV data files on PhysioNet at: https://physionet.org/content/mimiciii/.
 
 Download these files to a local folder and decompress them if desired (it is possible to load the data directly into a database from compressed data files). The program `gzip` can be used to decompress the data (e.g. ```gzip -d *.gz```).
 
