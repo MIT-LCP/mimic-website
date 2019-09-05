@@ -14,4 +14,6 @@
 
 Automatic builds have not yet been implemented. Currently deploys using the method described at: http://www.andrewcodispoti.com/deploy-process/
 
+## Issues with the website or MIMIC
 
+Please raise issues related to the website or MIMIC-III in the [mimic-code repository](https://github.com/mit-lcp/mimic-code).
