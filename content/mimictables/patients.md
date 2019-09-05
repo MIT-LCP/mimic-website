@@ -15,7 +15,7 @@ toc = "true"
 
 **Table source:** CareVue and Metavision ICU databases.
 
-**Table purpose:** Contains all charted data for all patients.
+**Table purpose:** Defines each SUBJECT\_ID in the database, i.e. defines a single patient.
 
 **Number of rows:** 46,520
 

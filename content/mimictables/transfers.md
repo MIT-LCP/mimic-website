@@ -62,7 +62,7 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 
 ## `EVENTTYPE`
 
-`EVENTTYPE` describes what transfer event occurred: 'admit' for an admission, 'transfer' for an inter-hospital transfer and 'discharge' for a discharge from the hospital.
+`EVENTTYPE` describes what transfer event occurred: 'admit' for an admission, 'transfer' for an intra-hospital transfer and 'discharge' for a discharge from the hospital.
 
 
 ## `PREV_CAREUNIT`, `CURR_CAREUNIT`
