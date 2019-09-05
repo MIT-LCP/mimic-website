@@ -9,3 +9,5 @@ toc = "False"
 
 # Archive
 
+* [About MIMIC-II](/archive/mimic-ii/)
+* [MIMIC-II releases](/archive/mimic-releases/)

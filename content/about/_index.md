@@ -9,3 +9,8 @@ toc = "False"
 
 # About
 
+* [About MIMIC](/about/mimic/)
+* [Release notes](/about/releasenotes/)
+* [Roadmap](/about/roadmap/)
+* [Publications](/about/publications/)
+* [Acknowledgements](/about/acknowledgements/)

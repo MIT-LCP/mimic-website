@@ -9,5 +9,5 @@ toc = "false"
 
 # Events
 
-
+* [BHI & BSN Challenge 2019](/events/bhibsn-challenge/)
 

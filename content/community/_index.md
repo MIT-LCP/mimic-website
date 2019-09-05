@@ -9,3 +9,4 @@ toc = "False"
 
 # Community
 
+* [Contributing](/community/contributing/)
