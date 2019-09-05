@@ -25,9 +25,35 @@ If you use MIMIC-III in your work, please cite this project. Our recommended pub
 
 >  MIMIC-III, a freely accessible critical care database. Johnson AEW, Pollard TJ, Shen L, Lehman L, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, and Mark RG. Scientific Data (2016). DOI: <a href="http://dx.doi.org/10.1038/sdata.2016.35">10.1038/sdata.2016.35</a>. Available at: <a href="http://www.nature.com/articles/sdata201635">http://www.nature.com/articles/sdata201635</a>
 
+BibTeX entry:
+
+```
+@article{mimiciii,
+  title={MIMIC-III, a freely accessible critical care database},
+  author={Johnson, Alistair EW and Pollard, Tom J and Shen, Lu and Li-wei, H Lehman and Feng, Mengling and Ghassemi, Mohammad and Moody, Benjamin and Szolovits, Peter and Celi, Leo Anthony and Mark, Roger G},
+  journal={Scientific data},
+  volume={3},
+  pages={160035},
+  year={2016},
+  publisher={Nature Publishing Group}
+}
+```
+
 The data citation for MIMIC-III, which we also kindly ask you cite, is:
 
 > Pollard, T. J. & Johnson, A. E. W. The MIMIC-III Clinical Database http://dx.doi.org/10.13026/C2XW26 (2016).
+
+BibTeX entry:
+
+```
+@misc{mimiciiidata,
+  author={Pollard, Tom J abd Johnson, Alistair EW},
+  title={{The MIMIC-III Clinical Database},
+  doi={10.13026/C2XW26},
+  year={2016},
+  howpublished= {\url{http://dx.doi.org/10.13026/C2XW26}
+}
+```
 
 <!-- ## Requirement for studies using MIMIC-III    
 
@@ -40,6 +66,23 @@ Researchers of studies using the MIMIC-III database are required to acknowledge 
 An additional citation for all data hosted on PhysioNet is:
 
 >  Physiobank, physiotoolkit, and physionet components of a new research resource for complex physiologic signals. Goldberger AL, Amaral LAN, Glass L,  Hausdorff JM, Ivanov P, Mark RG, Mietus JE, Moody GB, Peng C, and Stanley HE. Circulation. 101(23), pe215--e220. 2000.
+
+
+BibTeX entry:
+
+```
+@article{physionet,
+  title={PhysioBank, PhysioToolkit, and PhysioNet: components of a new research resource for complex physiologic signals},
+  author={Goldberger, Ary L and Amaral, Luis AN and Glass, Leon and Hausdorff, Jeffrey M and Ivanov, Plamen Ch and Mark, Roger G and Mietus, Joseph E and Moody, George B and Peng, Chung-Kang and Stanley, H Eugene},
+  journal={Circulation},
+  volume={101},
+  number={23},
+  pages={e215--e220},
+  year={2000},
+  publisher={Am Heart Assoc}
+}
+```
+
 
 ## MIMIC Code Repository
 
