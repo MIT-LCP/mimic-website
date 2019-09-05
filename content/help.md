@@ -11,6 +11,11 @@ toc = "false"
 
 MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide.
 
+## How can I find an answer to my question?
+
+We recommend searching the [MIMIC Code Repository GitHub issues page](https://github.com/MIT-LCP/mimic-code/issues) for your question.
+The page already contains a number of useful discussions around nuanced aspects of the data.
+
 ## How can I contribute my work to the community?
 
 Contributing is easy!
