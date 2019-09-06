@@ -38,3 +38,9 @@ Please be sure to provide all requested information. Submissions that are clearl
 If you are a student or a postdoc, you must provide your supervisor’s name and contact information in the "reference" section of the form. If you are not listed in a directory or other easy-to-find page of your organization’s website, please provide the name and contact information of a reference such as a supervisor or colleague. Do not list yourself as reference.
 
 Be sure to upload the completion report from the CITI “Data or Specimens Only Research” training program (PDF or image file). The completion report lists all modules completed, with dates and scores. If you would like to submit multiple pages, please combine them into a single pdf file.
+
+# Precautions
+
+The contents of restricted-access clinical databases maintained by PhysioNet were derived from original data that contained protected health information (PHI), as defined by HIPAA. The providers of the data have given scrupulous attention to the task of locating and removing all PHI, so that the remaining data can be considered de-identified and therefore not subject to the HIPAA Privacy Rule restrictions on sharing PHI.
+
+Nevertheless, we require that you exercise all reasonable and prudent care to maintain the physical and electronic security of PhysioNet restricted data. How you do this is up to your discretion, but we expect you to take matters of security seriously and to make sure that the data are accessible to no one but yourself.
