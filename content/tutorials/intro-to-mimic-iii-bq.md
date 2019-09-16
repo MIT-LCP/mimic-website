@@ -4,7 +4,7 @@ title = "BigQuery + MIMIC-III tutorial"
 draft = false
 linktitle = "BigQuery + MIMIC-III"
 weight = 4
-toc = "true"
+toc = false
 
 [menu]
   [menu.main]
