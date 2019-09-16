@@ -121,7 +121,9 @@ https://aws.amazon.com/blogs/big-data/perform-biomedical-informatics-without-a-d
 
 
 
-### Troubleshooting
+## Troubleshooting
+
+### GCP
 
 #### I get a pop-up about Terms of Service
 
