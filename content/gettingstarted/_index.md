@@ -11,5 +11,6 @@ toc = "False"
 
 * [Overview of the data](/gettingstarted/overview/)
 * [Getting access](/gettingstarted/access/)
+* [Using MIMIC on the Cloud](/gettingstarted/cloud/)
 * [Where to download the data](/gettingstarted/dbsetup/)
 * [MIMIC-III demo](/gettingstarted/demo/)
