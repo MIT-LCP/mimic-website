@@ -53,7 +53,9 @@ For AWS, add your AWS canonical ID. This is *not your e-mail*. It is a numeric i
 ## Accessing a project on the cloud
 
 Now that your cloud credentials are available in PhysioNet, you can request access to databases within those cloud systems.
-Cloud access to PhysiNet projects such as MIMIC-III and eICU-CRD are managed independently. You must request access to the cloud systems via their project pages (note: access is provisioned instantly for credentialed approved users).
+Cloud access to PhysioNet projects such as MIMIC-III and eICU-CRD are managed independently. You must request access to the cloud systems via their project pages (access is provisioned instantly for credentialed approved users).
+
+## Accessing MIMIC-III on the cloud
 
 For MIMIC-III, go to the [MIMIC-III PhysioNet project page](https://physionet.org/content/mimiciii/1.4/).
 
@@ -63,16 +65,16 @@ Otherwise, you should see the following:
 
 ![Methods for accessing MIMIC-III](/img/cloud/mimic_files.png)
 
-The following access options are available:
+The following describes the access options listed above in the order they are listed:
 
 * Downloading the data as one large zip file
-* **Cloud**: Using the data in GCP BigQuery.
-* Downloading the data from a GCP Storage Bucket.
-* Viewing the data in the AWS Open Data Repository.
-* **Cloud**: Using the data in AWS.
-** Downloading the data from the website as individual CSV files using `wget`.
+* **Cloud**: Adds your GCP e-mail to the access list for GCP BigQuery.
+* Adds your GCP e-mail to the access list for downloading the data from a GCP Storage Bucket.
+* A public page for viewing the data description in the AWS Open Data Repository.
+* **Cloud**: Adds your AWS account ID to the access list for AWS.
+* Provides a command for downloading the data from PhysioNet as individual CSV files using `wget` (your command will have a different username).
 
-For cloud access, the 2nd and 5th options are the relevant modes of access. Click the one which you would like to use. Then, proceed to the appropriate section below.
+For cloud access, the 2nd and 5th options are the relevant items. Click the one which you would like to use. Then, proceed to the appropriate section below.
 
 ## GCP - BigQuery
 
@@ -82,13 +84,9 @@ Once you have requested access to using MIMIC-III on BigQuery, you need to "pin"
 
 1. Go to the BigQuery console: http://console.cloud.google.com/bigquery
 2. On the left sidebar, next to "Resources", click "+ ADD DATA", followed by "Pin a project"
-
 ![Pin data for easy access](/img/cloud/bq/pin_data.png)
-
 3. In the pop up window, type `physionet-data`, and click "PIN".
-
 ![Type physionet-data to pin the MIMIC-III data project](/img/cloud/bq/pin_physionet_data.png)
-
 4. In the sidebar on the left, you should now see the `physionet-data` project. Click the arrow to the left of `physionet-data` to expand the project.
 5. You should now see the following projects: `eicu_crd_demo`, `mimiciii_clinical`, `mimiciii_demo`, `mimiciii_notes`, and `mimiciii_derived`. You are ready to query the data! Try a simple query in the main dialogue box:
 
@@ -99,11 +97,15 @@ WHERE icustay_id < 200100
 ORDER BY icustay_id
 ```
 
-The query should return some data - at which point you are ready to use MIMIC on the Cloud!
+The query should return some data, and your browser window should be similar to the below:
+
+![Example output for the query](/img/cloud/bq/example_query.png)
+
+At this point you are ready to use MIMIC on BigQuery!
+
+A tutorial on using BigQuery to query MIMIC-III is available [here](/tutorials/intro-to-mimic-iii-bq.md).
 
 Note that we have a number of pre-generated "views" of the data. These are available in the `mimiciii_derived` dataset which you are free to query. All code used to generate these views has been made openly available in the [google-cloud-views branch of the MIMIC code repository](https://github.com/MIT-LCP/mimic-code/tree/google-cloud-views).
-
-A tutorial on using SQL to query MIMIC-III is available [here](/tutorials/intro-to-mimic-iii-bq.md).
 
 ### Troubleshooting
 
