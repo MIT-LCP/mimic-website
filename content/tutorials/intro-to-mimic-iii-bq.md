@@ -2,7 +2,7 @@
 date = "2015-09-01T14:02:13-04:00"
 title = "BigQuery + MIMIC-III tutorial"
 draft = false
-linktitle = "BigQuery + MIMIC-III tutorial"
+linktitle = "BigQuery + MIMIC-III"
 weight = 4
 toc = "true"
 
