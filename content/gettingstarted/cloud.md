@@ -24,27 +24,27 @@ In order to use MIMIC on the cloud, you must:
 
 Go to your PhysioNet profile page.
 
-![Profile page on PhysioNet](/static/img/cloud/profile.png)
+![Profile page on PhysioNet](/img/cloud/profile.png)
 
 Click "Emails":
 
-![Navigate to the e-mails page](/static/img/cloud/emails.png)
+![Navigate to the e-mails page](/img/cloud/emails.png)
 
 For GCP access, ensure that one of your e-mails is a Google account. This can either be a gmail account (as in the picture), or a G Suite account if your organization is a member of G Suite.
 
 Navigate to the "Cloud" page on PhysioNet.
 
-![Navigate to the Cloud page](/static/img/cloud/cloud_page.png)
+![Navigate to the Cloud page](/img/cloud/cloud_page.png)
 
 You should see two options on this page: one for GCP, and one for AWS.
 
-![Profile cloud credentials](/static/img/cloud/credentials.png)
+![Profile cloud credentials](/img/cloud/credentials.png)
 
 For GCP, click the drop down menu and set your GCP e-mail to the Google account you provided in the earlier step.
 
 For AWS, add your AWS canonical ID. This is *not your e-mail*. It is a numeric identifier that can be found in your AWS cloud profile. [Click here to go to your AWS profile page](https://console.aws.amazon.com/billing/home?#/account). Then look for your "Account Id":
 
-![AWS ID](/static/img/cloud/aws/aws_id.png)
+![AWS ID](/img/cloud/aws/aws_id.png)
 
 ## Accessing a project on the cloud
 
@@ -57,7 +57,7 @@ Once there, scroll to the bottom to the "Files" section.
 *If* the page shows a restricted-access warning, you need to [get access to MIMIC-III](/about/access) or sign the data use agreement for this project.
 Otherwise, you should see the following:
 
-![Methods for accessing MIMIC-III](/static/img/cloud/mimic_files.png)
+![Methods for accessing MIMIC-III](/img/cloud/mimic_files.png)
 
 The following access options are available:
 
@@ -79,11 +79,11 @@ Once you have requested access to using MIMIC-III on BigQuery, you need to "pin"
 1. Go to the BigQuery console: http://console.cloud.google.com/bigquery
 2. On the left sidebar, next to "Resources", click "+ ADD DATA", followed by "Pin a project"
 
-![Pin data for easy access](/static/img/cloud/bq/pin_data.png)
+![Pin data for easy access](/img/cloud/bq/pin_data.png)
 
 3. In the pop up window, type `physionet-data`, and click "PIN".
 
-![Type physionet-data to pin the MIMIC-III data project](/static/img/cloud/bq/pin_physionet_data.png)
+![Type physionet-data to pin the MIMIC-III data project](/img/cloud/bq/pin_physionet_data.png)
 
 4. In the sidebar on the left, you should now see the `physionet-data` project. Click the arrow to the left of `physionet-data` to expand the project.
 5. You should now see the following projects: `eicu_crd_demo`, `mimiciii_clinical`, `mimiciii_demo`, `mimiciii_notes`, and `mimiciii_derived`. You are ready to query the data! Try a simple query in the main dialogue box:
@@ -105,20 +105,20 @@ A tutorial on using SQL to query MIMIC-III is available [here](/tutorials/intro-
 
 #### I get a pop-up about Terms of Service
 
-![Agree to the terms of service](/static/img/cloud/bq/agree_tos.png)
+![Agree to the terms of service](/img/cloud/bq/agree_tos.png)
 
 You will need to agree to all GCP Terms of Service and adhere to their terms in order to use the data on BigQuery.
 
 #### When I go to BigQuery, it asks me to create a project
 
-![Create a project on GCP](/static/img/cloud/bq/create_project.png)
+![Create a project on GCP](/img/cloud/bq/create_project.png)
 
 Almost all of your interactions with GCP are associated with a *project*. Importantly, all billing for your usage must be allotted to a single project.
 In order to use BigQuery you must have an activate project associated with your account. BigQuery offers a $300 free trial for first time users.
 
 Create a project and select it as your activate project. If you've done this correctly, then the top bar of the Google console page should stop saying "Select a project", and instead have your project name. For example, in the below, I have selected the project `alistairewj`, which is now the activate project:
 
-![Example of a working activate project](/static/img/cloud/bq/active_project.png)
+![Example of a working activate project](/img/cloud/bq/active_project.png)
 
 
 ## AWS

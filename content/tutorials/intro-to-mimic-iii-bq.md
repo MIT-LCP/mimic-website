@@ -45,7 +45,7 @@ First, navigate to BigQuery: https://console.cloud.google.com/bigquery
 
 Metadata for a particular table can be obtained by clicking the table on the left sidebar on BigQuery, as below:
 
-![Metadata for the admissions table in BigQuery](/static/img/tutorial/bq/metadata.png)
+![Metadata for the admissions table in BigQuery](/img/tutorial/bq/metadata.png)
 
 If you do not see the `mimiciii_clinical` dataset on BigQuery, you may need to [request access to MIMIC-III on BigQuery](/about/cloud), or [pin the project to your sidebar](/about/cloud#gcp-bigquery).
 
@@ -62,7 +62,7 @@ FROM `physionet-data.mimiciii_clinical.patients`
 
 You should see the following:
 
-![Example patients query](/static/img/tutorial/bq/patients.png)
+![Example patients query](/img/tutorial/bq/patients.png)
 
 50 records are retrieved at a time and you can page through the results using the controls at the bottom of the screen.
 
@@ -150,7 +150,7 @@ ORDER BY p.subject_id, a.hadm_id;
 
 You should see the following:
 
-![Ages of patients in MIMIC](/static/img/tutorial/bq/age.png)
+![Ages of patients in MIMIC](/img/tutorial/bq/age.png)
 
 Note at the bottom we have calculated the age for `subject_id` = 17 twice, once for each of their hospital admissions (the `hadm_id` is different between the rows).
 
