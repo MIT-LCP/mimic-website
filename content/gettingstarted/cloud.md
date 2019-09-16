@@ -30,9 +30,13 @@ Click "Emails":
 
 ![Navigate to the e-mails page](/img/cloud/emails.png)
 
-For GCP access, ensure that one of your e-mails is a Google account. This can either be a gmail account (as in the picture), or a G Suite account if your organization is a member of G Suite.
+For GCP access, ensure that one of your e-mails is a Google account. This can either be a gmail account (as in the picture), or a G Suite account if your organization is a member of G Suite. You can add an e-mail at the bottom of the page:
 
-Navigate to the "Cloud" page on PhysioNet.
+![Navigate to the Cloud page](/img/cloud/add_email.png)
+
+You will need to verify your e-mail address before continuing (note: e-mail addresses are only used for GCP access, and not for AWS access).
+
+Once you have a verified e-mail address ready, navigate to the "Cloud" page on PhysioNet.
 
 ![Navigate to the Cloud page](/img/cloud/cloud_page.png)
 
