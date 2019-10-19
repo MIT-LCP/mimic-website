@@ -15,7 +15,7 @@ toc = "true"
 
 **Table source:** Hospital database.
 
-**Table purpose:** Contains microbiology information, including tests performed and sensitivities.
+**Table purpose:** Contains microbiology information, including cultures acquired and associated sensitivities.
 
 **Number of rows:** 631,726
 
@@ -30,6 +30,9 @@ toc = "true"
 # Important considerations
 
 * If the organism is null, then the culture had no growth reported.
+* In the source data for MIMIC there is a distinct column that describes the test performed, which is not included in MIMIC-III. 
+* Individual rows corresponding to the type of test ordered are not included in MIMIC-III. Examples of this would be a row only describing the type of test e.g. "anaerobic bottle", "aerobic bottle", etc
+* Store time is not available. Blood cultures generally take days to complete, and the `charttime` should be considered as when the culture was *relevant*, **not** when it was available to patients.
 
 # Table columns
 
@@ -70,6 +73,7 @@ In the cases where both `CHARTTIME` and `CHARTDATE` exists, `CHARTDATE` is equal
 ## `SPEC_ITEMID`, `SPEC_TYPE_DESC`
 
 Specimen which is tested for bacterial growth.
+The specimen is a sample derived from a patient; e.g. blood, urine, sputum, etc.
 
 ## `ORG_ITEMID`, `ORG_NAME`
 
