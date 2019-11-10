@@ -17,7 +17,23 @@ Time in the database is stored with one of two suffixes: `TIME` and `DATE`. If a
 
 # Date shifting
 
-All dates in the database have been shifted to protect patient confidentiality. Dates will be internally consistent for the same patient, but randomly distributed in the future. Dates of birth which occur in the present time are *not* true dates of birth. Furthermore, dates of birth which occur before the year 1900 occur if the patient is older than 89. In these cases, the patient's age at their first admission has been fixed to 300.
+All dates in the database have been shifted to protect patient confidentiality. Dates will be internally consistent for the same patient, but randomly distributed in the future. This means that if measurement A is made at `2150-01-01 14:00:00`, and measurement B is made at `2150-01-01 15:00:00`, then measurement B was made 1 hour after measurement A.
+
+The date shifting preserved the following:
+
+* Time of day - a measurement made at `15:00:00` was actually made at `15:00:00` local standard time.
+* Day of the week - a measurement made on a Sunday will appear on a Sunday in the future.
+* Seasonality - a measurement made during the winter months will appear during a winter month.
+
+The date shifting *removed* the following:
+
+* Year - The year is randomly distributed between 2100 - 2200.
+* Day of the month - The absolute day of the month is *not* preserved.
+* Inter-patient information - Two patients in the ICU on `2150-01-01` were *not* in the ICU at the same time.
+
+## Dates of birth
+
+Dates of birth which occur in the present time are *not* true dates of birth. Furthermore, dates of birth which occur before the year 1900 occur if the patient is older than 89. In these cases, the patient's age at their first admission has been fixed to 300.
 
 # Time columns in the database
 
