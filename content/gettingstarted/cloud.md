@@ -142,3 +142,8 @@ Create a project and select it as your activate project. If you've done this cor
 
 ![Example of a working activate project](/img/cloud/bq/active_project.png)
 
+
+#### I can only see `eicu_crd_demo` and `mimiciii_demo`
+
+These datasets are fully public, so the implication is that you have not been granted access to the full versions of the databases.
+Please (1) double check you have entered your cloud information into your PhysioNet profile, verifying any e-mails as needed, and (2) requested access to the specific cloud project on its respective PhysioNet project page.
