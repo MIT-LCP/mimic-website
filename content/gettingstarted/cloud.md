@@ -67,14 +67,20 @@ Otherwise, you should see the following:
 
 The following describes the access options listed above in the order they are listed:
 
-* Downloading the data as one large zip file
-* **Cloud**: Adds your GCP e-mail to the access list for GCP BigQuery.
-* Adds your GCP e-mail to the access list for downloading the data from a GCP Storage Bucket.
-* A public page for viewing the data description in the AWS Open Data Repository.
-* **Cloud**: Adds your AWS account ID to the access list for AWS.
-* Provides a command for downloading the data from PhysioNet as individual CSV files using `wget` (your command will have a different username).
+1. Downloading the data as one large zip file
+  * This downloads the data directly from the PhysioNet servers.
+2. **Cloud**: Adds your GCP e-mail to the access list for GCP BigQuery.
+  * This option adds the GCP e-mail in your PhysioNet account to a BigQuery access list; it's required in order to use the data in BigQuery.
+3. **Cloud**: Adds your GCP e-mail to the access list for downloading the data from a GCP Storage Bucket.
+  * This option adds the GCP e-mail in your PhysioNet account to a GCP access list; it's required in order to download the data from a storage bucket on GCP.
+4. **Cloud**: A public page for viewing the data description in the AWS Open Data Repository.
+  * This forwards you to the AWS Open Data Repository listing of the data. For information on how to use AWS, we [recommend reading this tutorial](https://aws.amazon.com/blogs/big-data/perform-biomedical-informatics-without-a-database-using-mimic-iii-data-and-amazon-athena/).
+5. **Cloud**: Adds your AWS account ID to the access list for AWS.
+  * This is necessary in order to access the data via AWS services. For information on how to use AWS, we [recommend reading this tutorial](https://aws.amazon.com/blogs/big-data/perform-biomedical-informatics-without-a-database-using-mimic-iii-data-and-amazon-athena/).
+6. Provides a command for downloading the data from PhysioNet as individual CSV files using `wget` (when compared to the image above, your command will have a distinct username).
+  * This downloads the data directly from PhysioNet servers, but in their raw (usually uncompressed) form.
 
-For cloud access, the 2nd and 5th options are the relevant items. Click the one which you would like to use. Then, proceed to the appropriate section below.
+We will focus on the two options which provide access to the data in a relational database (#2 and #5 in the above).
 
 ## GCP - BigQuery
 
