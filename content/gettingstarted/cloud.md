@@ -80,7 +80,7 @@ The following describes the access options listed above in the order they are li
 6. Provides a command for downloading the data from PhysioNet as individual CSV files using `wget` (when compared to the image above, your command will have a distinct username).
   * This downloads the data directly from PhysioNet servers, but in their raw (usually uncompressed) form.
 
-We will focus on the two options which provide access to the data in a relational database (#2 and #5 in the above).
+Options #1, #3, #4, and #6 all provide the ability to download the data locally. For the remainder of this guide, we will focus on the two options which provide access to the data in a cloud based relational database (#2 and #5 in the above).
 
 ## GCP - BigQuery
 
