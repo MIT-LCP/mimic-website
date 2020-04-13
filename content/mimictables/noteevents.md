@@ -64,7 +64,7 @@ Notes with a `CATEGORY` value of 'Discharge Summary', 'ECG', 'Radiology', and 'E
 
 ## `CATEGORY`, `DESCRIPTION`
 
-`CATEGORY` and `DESCRIPTION` define the type of note recorded. For example, a `CATEGORY` of 'Discharge' indicates that the note is a discharge note, and a `DESCRIPTION` of 'Summary' in conjunction with this indicates that the note is a discharge summary.
+`CATEGORY` and `DESCRIPTION` define the type of note recorded. For example, a `CATEGORY` of 'Discharge summary' indicates that the note is a discharge summary, and the `DESCRIPTION` of 'Report' indicates a full report while a `DESCRIPTION` of 'Addendum' indicates an addendum (additional text to be added to the previous report).
 
 ## `CGID`
 
