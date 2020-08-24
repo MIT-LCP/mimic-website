@@ -23,14 +23,14 @@ If you use our data, code, or algorithms, please provide a citation to this proj
 
 If you use MIMIC-III in your work, please cite this project. Our recommended publication is:
 
->  MIMIC-III, a freely accessible critical care database. Johnson AEW, Pollard TJ, Shen L, Lehman L, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, and Mark RG. Scientific Data (2016). DOI: <a href="http://dx.doi.org/10.1038/sdata.2016.35">10.1038/sdata.2016.35</a>. Available at: <a href="http://www.nature.com/articles/sdata201635">http://www.nature.com/articles/sdata201635</a>
+>  MIMIC-III, a freely accessible critical care database. Johnson AEW, Pollard TJ, Shen L, Lehman LH, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, and Mark RG. Scientific Data (2016). DOI: <a href="http://dx.doi.org/10.1038/sdata.2016.35">10.1038/sdata.2016.35</a>. Available at: <a href="http://www.nature.com/articles/sdata201635">http://www.nature.com/articles/sdata201635</a>
 
 BibTeX entry:
 
 ```
 @article{mimiciii,
   title={MIMIC-III, a freely accessible critical care database},
-  author={Johnson, Alistair EW and Pollard, Tom J and Shen, Lu and Li-wei, H Lehman and Feng, Mengling and Ghassemi, Mohammad and Moody, Benjamin and Szolovits, Peter and Celi, Leo Anthony and Mark, Roger G},
+  author={Johnson, Alistair EW and Pollard, Tom J and Shen, Lu and Lehman, Li{-}wei H and Feng, Mengling and Ghassemi, Mohammad and Moody, Benjamin and Szolovits, Peter and Celi, Leo Anthony and Mark, Roger G},
   journal={Scientific data},
   volume={3},
   pages={160035},
