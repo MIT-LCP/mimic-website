@@ -202,7 +202,7 @@ SELECT
         -- all ages > 89 in the database were replaced with 300
         WHEN first_admit_age > 89
             then '>89'
-        WHEN first_admit_age >= 14
+        WHEN first_admit_age >= 15
             THEN 'adult'
         WHEN first_admit_age <= 1
             THEN 'neonate'
