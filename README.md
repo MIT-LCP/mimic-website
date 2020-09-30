@@ -17,3 +17,5 @@ Automatic builds have not yet been implemented. Currently deploys using the meth
 ## Issues with the website or MIMIC
 
 Please raise issues related to the website or MIMIC-III in the [mimic-code repository](https://github.com/mit-lcp/mimic-code).
+
+"FONT SIZE IS MUCH BIGGER AS COMPARED TO NORMAL WEBSITES, OTHERWISE EVERYTHING IS GOOD"
