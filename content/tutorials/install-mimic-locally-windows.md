@@ -96,7 +96,7 @@ DROP DATABASE IF EXISTS mimic;
 CREATE DATABASE mimic OWNER postgres;
 ```
 
-![Screenshot of successfully creating the database.](/img/tutorial/psql_windows_dropdp.png)
+![Screenshot of successfully creating the database.](/img/tutorial/windows/psql_windows_dropdp.png)
 
 If this is the first time you are installing MIMIC, the "DROP DATABASE" command will warn you that no database existed - this is expected behaviour.
 
@@ -124,7 +124,7 @@ set search_path to mimiciii;
 
 Here's what it should look like so far:
 
-![Screenshot of creating database, schema, and setting the path.](/img/tutorial/psql_windows_set_path.png)
+![Screenshot of creating database, schema, and setting the path.](/img/tutorial/windows/psql_windows_set_path.png)
 
 ### Create the tables under the schema
 
@@ -137,7 +137,7 @@ In my case, I downloaded the entire mimic-code repository and extracted the file
 
 You should see something like the below screenshot.
 
-![Screenshot of successfully creating tables in an empty schema.](/img/tutorial/psql_create_tables.png)
+![Screenshot of successfully creating tables in an empty schema.](/img/tutorial/windows/psql_create_tables.png)
 
 Don't worry about the "NOTICE: table does not exist" statements - they are normal. The script tries to delete the table before it creates it, and since nothing exists it provides a notice.
 
