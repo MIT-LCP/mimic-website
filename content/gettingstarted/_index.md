@@ -7,10 +7,15 @@ toc = "False"
 
 +++
 
+<!--- NOTE: this only controls the content for the
+/gettingstarted/ page, the sub-headings in the
+page navigation to the left are controlled by the 
+individual .md files --->
+
 # Getting started
 
-* [Overview of the data](/gettingstarted/overview/)
-* [Getting access](/gettingstarted/access/)
-* [Using MIMIC on the Cloud](/gettingstarted/cloud/)
-* [Where to download the data](/gettingstarted/dbsetup/)
+* [Overview](/gettingstarted/overview/)
+* [Requesting access](/gettingstarted/access/)
+* [MIMIC in the Cloud](/gettingstarted/cloud/)
+* [Downloading the database](/gettingstarted/dbsetup/)
 * [MIMIC-III demo](/gettingstarted/demo/)

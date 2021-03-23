@@ -1,12 +1,12 @@
 +++
-title = "Cloud"
-linktitle = "Cloud"
+title = "MIMIC in the Cloud"
+linktitle = "MIMIC in the Cloud"
 weight = 3
 toc = false
 
 [menu]
   [menu.main]
-    parent = "About"
+    parent = "Getting started"
 
 +++
 
@@ -88,13 +88,16 @@ BigQuery is a columnar, distributed relational database management system. BigQu
 
 Once you have requested access to using MIMIC-III on BigQuery, you need to "pin" the dataset to see it on the web browser. This adds the dataset to the sidebar in BigQuery. While not required, we do recommend pinning the data for easier navigation.
 
-1. Go to the BigQuery console: http://console.cloud.google.com/bigquery
-2. On the left sidebar, next to "Resources", click "+ ADD DATA", followed by "Pin a project"
+1. Ensure you have added a gmail account to your PhysioNet profile as described above.
+2. Go to the BigQuery console: http://console.cloud.google.com/bigquery while logged into your gmail account.
+3. If you haven't created a BigQuery project previously you will be asked to do so.  You will need to enter information
+   to pay for the cost of queries.  For more details see: https://cloud.google.com/resource-manager/docs/creating-managing-projects  
+4. On the left sidebar, next to "Resources", click "+ ADD DATA", followed by "Pin a project"
 ![Pin data for easy access](/img/cloud/bq/pin_data.png)
-3. In the pop up window, type `physionet-data`, and click "PIN".
+6. In the pop up window, type `physionet-data`, and click "PIN".
 ![Type physionet-data to pin the MIMIC-III data project](/img/cloud/bq/pin_physionet_data.png)
-4. In the sidebar on the left, you should now see the `physionet-data` project. Click the arrow to the left of `physionet-data` to expand the project.
-5. You should now see the following projects: `eicu_crd_demo`, `mimiciii_clinical`, `mimiciii_demo`, `mimiciii_notes`, and `mimiciii_derived`. You are ready to query the data! Try a simple query in the main dialogue box:
+6. In the sidebar on the left, you should now see the `physionet-data` project. Click the arrow to the left of `physionet-data` to expand the project.
+7. You should now see the following projects: `eicu_crd_demo`, `mimiciii_clinical`, `mimiciii_demo`, `mimiciii_notes`, and `mimiciii_derived`. Make sure you are logged in under your project that pays for queries: /bigquery?project=paying-project-name . You are ready to query the data! Try a simple query in the main dialogue box:
 
 ```sql
 SELECT *
