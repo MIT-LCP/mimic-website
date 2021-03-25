@@ -1,4 +1,4 @@
-# Website and documentation for the MIMIC Critical Care Database [![Build Status](https://travis-ci.org/MIT-LCP/mimic-website.svg?branch=master)](https://travis-ci.org/MIT-LCP/mimic-website)
+# Website and documentation for the MIMIC Critical Care Database
 
 ## Instructions for running the website locally
 
