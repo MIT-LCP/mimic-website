@@ -13,10 +13,7 @@ toc = "true"
 
 # Release notes
 
-**To receive updates on new data releases, please subscribe to notifications at: [https://github.com/MIT-LCP/mimic-code/issues/397](https://github.com/MIT-LCP/mimic-code/issues/397)**
-
-The MIMIC-III database will be periodically updated as more data becomes available, as data linkage and extraction methods improve, and when the community provides feedback regarding the database content. To ensure transparency in this process, updates to the database will be made in batch, and the version number of the MIMIC-III database will be updated.
-This page lists the current version, and all previous versions which have existed, in sequential, reverse chronological order. Each version will address a finite set of updates which are tracked using a unique issue number, usually of the form #100, #101, etc.
+This page lists the current version of MIMIC-III, and all previous versions which have existed, in sequential, reverse chronological order. Each version will address a finite set of updates which are tracked using a unique issue number, usually of the form #100, #101, etc.
 
 Note that the changes between MIMIC-II and MIMIC-III are not listed here, due to the large number of differences between the databases. A separate document has been provided for that purpose [here](/mimicdata/whatsnew). The release notes for MIMIC-II versions is available [here](/archive/mimic-releases).
 
