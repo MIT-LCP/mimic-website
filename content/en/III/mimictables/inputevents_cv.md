@@ -21,7 +21,7 @@ toc = "true"
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 
-A high level description of the data is available [here](/mimicdata/io).
+A high level description of the data is available [here](/iii/mimicdata/io).
 
 <!-- # Important considerations -->
 
@@ -67,7 +67,7 @@ For rates, the `CHARTTIME` represents the time at which that rate was set.
 That is, it can be considered a "start time", i.e. the patient is now receiving X mcg/kg/min of a drug at this `CHARTTIME`.
 
 
-See the [Inputs and outputs page](/mimicdata/io) for a bit more detail about how this table was formed from the raw data.
+See the [Inputs and outputs page](/iii/mimicdata/io) for a bit more detail about how this table was formed from the raw data.
 
 ## ITEMID
 

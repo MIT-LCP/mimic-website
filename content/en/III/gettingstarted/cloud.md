@@ -10,7 +10,7 @@ MIMIC is available for use via two cloud platforms: Google Cloud Platform (GCP) 
 
 In order to use MIMIC on the cloud, you must:
 
-1. Be an approved user on PhysioNet. [Read this page for instructions on gaining access to MIMIC-III.](/gettingstarted/access)
+1. Be an approved user on PhysioNet. [Read this page for instructions on gaining access to MIMIC-III.](/iii/gettingstarted/access)
 2. Add cloud credentials to your PhysioNet profile
 3. Request access on the MIMIC-III PhysioNet project page
 
@@ -54,7 +54,7 @@ Cloud access to PhysioNet projects such as MIMIC-III and eICU-CRD are managed in
 For MIMIC-III, go to the [MIMIC-III PhysioNet project page](https://physionet.org/content/mimiciii/1.4/).
 
 Once there, scroll to the bottom to the "Files" section.
-*If* the page shows a restricted-access warning, you need to [get access to MIMIC-III](/gettingstarted/access) or sign the data use agreement for this project.
+*If* the page shows a restricted-access warning, you need to [get access to MIMIC-III](/iii/gettingstarted/access) or sign the data use agreement for this project.
 Otherwise, you should see the following:
 
 ![Methods for accessing MIMIC-III](/img/cloud/mimic_files.png)

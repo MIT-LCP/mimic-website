@@ -7,7 +7,7 @@ toc = "false"
 
 +++
 
-CareVue is a clinical information system provided by Philips which archived and displayed clinical data at the bedside for intensive care unit patients admitted to the Beth Israel Deaconess Medical Center. Part of the MIMIC-III database is extracted from the CareVue system, the other part is extracted from the [MetaVision system](/mimicdata/metavision/). The immediate consequence of this is that data for the entire duration of the MIMIC-III database needs to be extracted using special steps of different `ITEMID` in order to get data from both systems.
+CareVue is a clinical information system provided by Philips which archived and displayed clinical data at the bedside for intensive care unit patients admitted to the Beth Israel Deaconess Medical Center. Part of the MIMIC-III database is extracted from the CareVue system, the other part is extracted from the [MetaVision system](/iii/mimicdata/metavision/). The immediate consequence of this is that data for the entire duration of the MIMIC-III database needs to be extracted using special steps of different `ITEMID` in order to get data from both systems.
 
 CareVue is frequently referenced in the documentation because:
 
