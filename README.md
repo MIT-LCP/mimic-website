@@ -1,19 +1,17 @@
-# Website and documentation for the MIMIC Critical Care Database
+# Online documentation for the MIMIC-IV Database
+
+This directory contains the source code used to generate the MIMIC-IV website:
+
+https://mimic-iv.mit.edu
 
 ## Instructions for running the website locally
 
-1. Install Go and Hugo. For instructions, see: http://gohugo.io/overview/installing/
+1. Install Hugo. For instructions, see: http://gohugo.io/overview/installing/
 2. Clone the website repository:
    ```
-   git clone https://github.com/MIT-LCP/mimic-website.git
+   git clone --recursive https://github.com/mit-lcp/mimic-iv-website.git
    ```
-3. Run ```hugo server``` at the command line to build the website and serve the pages;
+3. Run ```hugo server``` at the command line to build the website and serve the pages.
 4. View the website at: http://127.0.0.1:1313
 
-## Note on deploying the website
-
-Automatic builds have not yet been implemented. 
-
-## Issues with the website or MIMIC
-
-Please raise issues related to the website or MIMIC-III in the [mimic-code repository](https://github.com/mit-lcp/mimic-code).
+The website was tested with Hugo Static Site Generator v0.59.1 linux/amd64 BuildDate: 2019-10-31T21:21:45Z.
