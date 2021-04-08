@@ -1,4 +1,4 @@
-baseurl = "https://mimic-iv.mit.edu/"
+baseurl = "https://mimic.mit.edu/"
 canonifyurls = false
 googleAnalytics = ""
 languageCode = "en-us"
@@ -57,7 +57,7 @@ id = "UA-00000000-0"
 [languages.en]
 description = "A large, publicly available critical care database"
 languageName = "English"
-title = "MIMIC-IV"
+title = "MIMIC"
 # Weight used for sorting.
 weight = 1
 

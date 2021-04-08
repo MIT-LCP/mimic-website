@@ -1,11 +1,15 @@
 ---
-title: "Accessing MIMIC-IV on the cloud"
+title: "Request access to MIMIC-IV"
 linktitle: "Request"
 date: 2020-11-27
 weight: 2
 description: >
   How to grant your linked cloud account access to MIMIC.
 ---
+
+<!-- 
+NOTE: the content below was copied directly from the /iv/access/cloud .md page.  If an automated way of duplicating this content while keeping it under the /iii/ path can be determined it should be implemented.
+-->
 
 Now that your cloud credentials are available in PhysioNet, you can request access to databases within those cloud systems.
 Cloud access to PhysioNet projects such as MIMIC-IV and MIMIC-III are managed independently. You must request access to the cloud systems via their project pages (access is provisioned instantly for credentialed users who have signed the DUA).
@@ -34,6 +38,7 @@ The following describes the access options listed above in the order they are li
 5. Download the files using your terminal
     * Provides a command for downloading the data from PhysioNet as individual CSV files using `wget` (when compared to the image above, your command will have a distinct username).
 
+
 <!--
 4. TBD. AWS is not yet available for MIMIC-IV-notNeeded.
 5. TBD. AWS is not yet available for MIMIC-IV-notNeeded.
@@ -48,14 +53,14 @@ For example, if you are interested in accessing MIMIC-IV on BigQuery, you would 
 
 ![Access granted to Google Cloud Platform's BigQuery service](/img/cloud/bq_provisioned.png)
 
-You will receive an e-mail detailing instructions for how to access MIMIC on BigQuery. Alternatively, instructions are also provided on the [BigQuery page](../bigquery).
+You will receive an e-mail detailing instructions for how to access MIMIC-IV on BigQuery. Alternatively, instructions are also provided on the [MIMIC-IV BigQuery page](/iv/access/cloud/bigquery).
 
 ## Using data on the cloud
 
 Once you have been granted access to a cloud resource, the next step is to navigate to that resource in the cloud.
 
 * For the GCP Storage Bucket, click the link e-mailed to you.
-* For BigQuery, see the [BigQuery page](../bigquery). You may also be interested in the [querying tutorial on BigQuery] for [MIMIC-III](/iii/tutorials/intro-to-mimic-iii-bq/) or [MIMIC-IV](/iv/tutorials/bigquery).
+* For BigQuery, see the [MIMIC-IV BigQuery page](/iv/access/cloud/bigquery). You may also be interested in the [querying tutorial on BigQuery](/iv/tutorials/bigquery).
 * AWS access is currently unavailable, but planned.
 
-Once you have access to MIMIC, we highly recommend you read the respective database introduction: [MIMIC-III](/iii/gettingstarted/overview), [MIMIC-IV](/iv/overview/).
+Once you have access to MIMIC-IV, we highly recommend you read the [database introduction](/iv/overview/).

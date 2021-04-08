@@ -1,6 +1,6 @@
 ---
-title: MIMIC-III documentation
-linktitle: MIMIC-III
+title: MIMIC-II documentation
+linktitle: MIMIC-II
 
 cascade:
 - type: "docs"

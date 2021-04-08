@@ -4,15 +4,15 @@ linkTitle: "Access"
 date: 2020-08-10
 weight: 2
 description: >
-  Instructions for getting access to MIMIC-IV, and detail about cloud services available to work with the data.
+  Instructions for getting access to MIMIC, and detail about cloud services available to work with the data.
 ---
 
-Although de-identified, MIMIC-IV contains detailed information regarding the clinical care of patients, and as such it must be treated with appropriate care and respect.
+Although de-identified, MIMIC III and IV contain detailed information regarding the clinical care of patients, and as such it must be treated with appropriate care and respect.
 
 Researchers seeking to use the database must:
 
 1. Become a credentialed user on PhysioNet. This involves completion of a training course in human subjects research.
-2. Sign the data use agreement (DUA) for MIMIC-IV. Adherence to the terms of the DUA is paramount.
+2. Sign the data use agreement (DUA). Adherence to the terms of the DUA is paramount.
 3. Follow the tutorials for direct cloud access (recommended), or download the data locally.
 
 ### PhysioNet Credentialing
@@ -25,7 +25,7 @@ If you are a student (including graduate students) or a postdoc, you must provid
 ### Sign the data use agreement
 
 - [Log in](https://physionet.org/login/) to your PhysioNet account.
-- Go to the [MIMIC-IV project page](https://physionet.org/content/mimiciv/).
+- Go to the [MIMIC-III project page](https://physionet.org/content/mimiciii/) or [MIMIC-IV project page](https://physionet.org/content/mimiciv/).
 - Find the “Files” section in the project description
 - Click through, and if you agree, sign the data use agreement
 
@@ -33,4 +33,4 @@ If you are a student (including graduate students) or a postdoc, you must provid
 
 We highly recommend accessing the data through a cloud service.
 In order to use the cloud service, you must associate your PhysioNet account with your cloud account.
-The [cloud access page](/iv/access/cloud) provides instructions on how to do this.
+The [cloud access page](./cloud) provides instructions on how to do this.

@@ -1,9 +1,9 @@
 +++
-title = "MIMIC-IV"
-linkTitle = "MIMIC-IV"
+title = "MIMIC database"
+linkTitle = "MIMIC database"
 +++
 
-{{< blocks/cover title="MIMIC-IV" image_anchor="top" height="full" color="orange" >}}
+{{< blocks/cover title="MIMIC database" image_anchor="top" height="full" color="orange" >}}
 <p class="lead mt-5">Freely available medical data for research.</p>
 <div class="mx-auto">
 	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/IV" >}}">
@@ -26,23 +26,27 @@ MIMIC-IV is separated into “modules” to reflect the provenance of the data. 
 {{% /blocks/lead %}}
 
 {{< blocks/section color="primary-light" >}}
-{{% blocks/feature icon="fa-lightbulb" title="MIMIC-core" url="/iv/datasets/core" %}}
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-core" url="/iv/modules/core" %}}
 All patients across all modules are in MIMIC-core.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="MIMIC-hosp" url="/iv/datasets/hosp" %}}
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-hosp" url="/iv/modules/hosp" %}}
 The Hosp module provides all data acquired from the hospital wide electronic health record.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="MIMIC-icu" url="/iv/datasets/icu" %}}
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-ICU" url="/iv/modules/icu" %}}
 The ICU module contains information collected from the clinical information system used within the ICU.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="MIMIC-ed" url="/iv/datasets/ed" %}}
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-ED" url="/iv/modules/ed" %}}
 The ED module contains data for emergency department patients collected while they are in the ED.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="MIMIC-cxr" url="/iv/datasets/cxr" %}}
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-CXR" url="/iv/modules/cxr" %}}
+MIMIC-cxr provides chest x-ray data, where available, for patients from the clinical database.
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-note" url="/iv/modules/note" %}}
 MIMIC-cxr provides chest x-ray data, where available, for patients from the clinical database.
 {{% /blocks/feature %}}
 

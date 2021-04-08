@@ -1,10 +1,45 @@
 +++
 title = "Cloud access"
-linktitle = "MIMIC in the Cloud"
-weight = 3
+linktitle = "Cloud"
 toc = false
 
 +++
+
+<!-- 
+NOTE: the content below was copied directly from the /iv/access/cloud .md page.  If an automated way of duplicating this content while keeping it under the /iii/ path can be determined it should be implemented.
+-->
+
+MIMIC-III and MIMIC-IV are made available via Physionet: [MIMIC-III](https://physionet.org/content/mimiciii/), [MIMIC-IV](https://physionet.org/content/mimiciv/). Beyond directly downloading the dataset from PhysioNet, there are a few mechanisms for accessing the data:
+
+* Accessing the data in BigQuery
+* Accessing the data on AWS (MIMIC-III)
+* Accessing the data in a Google Cloud storage bucket (MIMIC-IV)
+
+We **highly** recommend using MIMIC in BigQuery for the following reasons:
+
+* No setup required
+* Updates will be integrated into BigQuery when they are available
+* Derived concepts from the [MIMIC code repository](https://www.github.com/MIT-LCP/mimic-iv) are precomputed and available on the `mimic_derived` dataset
+
+If absolutely necessary, it is possible to download the data from a Google cloud bucket; instructions are provided at the end of the document.
+Please do keep in mind that the PhysioNet team is covering the cost of downloading the dataset.
+
+## Accessing data on the cloud
+
+There are three steps to accessing data on the cloud:
+
+1. Link your cloud account to your PhysioNet profile
+2. Request access to the cloud resource
+3. Log-in to the appropriate service and navigate to the resource
+
+These steps assume you are already credentialed and have signed the data use agreement for MIMIC-IV.
+If you have not, read this page for instructions on gaining access to [MIMIC-III](/iii/gettingstarted/access) or [MIMIC-IV](/iv/access).
+
+
+
+
+<!--
+NOTE: This was the only page (/getttingstarted/_index.md) for info on cloud access on the original MIMIC III website.  To consolidate with the MIMIC IV content, I'm breaking this into sections.
 
 MIMIC is available for use via two cloud platforms: Google Cloud Platform (GCP) and Amazon Web Services (AWS). Access to these services is directly controlled via your PhysioNet account.
 
@@ -150,3 +185,4 @@ Create a project and select it as your activate project. If you've done this cor
 
 These datasets are fully public, so the implication is that you have not been granted access to the full versions of the databases.
 Please (1) double check you have entered your cloud information into your PhysioNet profile, verifying any e-mails as needed, and (2) requested access to the specific cloud project on its respective PhysioNet project page.
+-->

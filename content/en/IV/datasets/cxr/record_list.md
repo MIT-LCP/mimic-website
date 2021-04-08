@@ -7,10 +7,11 @@ description: >
   CXR Record List
 ---
 
-
+<!--
 {{% pageinfo %}}
 In order to access this table, you must sign the data use agreement for MIMIC-CXR and request access to MIMIC-CXR data on BigQuery via the MIMIC-CXR PhysioNet project page.
 {{% /pageinfo %}}
+-->
 
 This table lists all records in the MIMIC-CXR database.
 Each DICOM file, corresponding to a single chest x-ray, is assigned a unique `dicom_id`.

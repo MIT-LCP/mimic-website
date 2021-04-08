@@ -7,6 +7,10 @@ description: >
   How to connect your PhysioNet account to a cloud account.
 ---
 
+<!-- 
+NOTE: the content below was copied directly from the /iv/access/cloud .md page.  If an automated way of duplicating this content while keeping it under the /iii/ path can be determined it should be implemented.
+-->
+
 MIMIC is available for use via two cloud platforms: Google Cloud Platform (GCP) and Amazon Web Services (AWS). Access to these services is directly controlled via your PhysioNet account.
 
 We will assume you are a credentialed user on PhysioNet and have signed the MIMIC data use agreement.
