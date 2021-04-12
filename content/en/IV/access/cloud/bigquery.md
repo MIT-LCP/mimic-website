@@ -4,7 +4,7 @@ linktitle: "BigQuery"
 date: 2020-08-10
 weight: 3
 description: >
-  Access MIMIC III and IV on BigQuery.
+  Access MIMIC IV on BigQuery.
 ---
 
 BigQuery is a columnar, distributed relational database management system. BigQuery accesses only the columns specified in the query, making it ideal for data analysis workflows. [Read more about BigQuery in Google's cloud documentation](https://cloud.google.com/bigquery/).
