@@ -96,10 +96,10 @@ version = "1.0"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://mimic-iv.mit.edu"
+url_latest_version = "https://mimic.mit.edu"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/MIT-LCP/mimic-iv"
+github_repo = "https://github.com/MIT-LCP/mimic-code"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 github_project_repo = ""
 
@@ -151,14 +151,4 @@ enable = false
 #icon = "fa fa-envelope"
 #name = "User mailing list"
 #url = "https://example.org/mail"
-[[params.links.user]]
-desc = "Discuss MIMIC-IV with other users"
-icon = "fab fa-gitter"
-name = "Gitter"
-url = "https://gitter.im/mimic-iv/community"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
-[[params.links.developer]]
-desc = "Documentation and code repository"
-icon = "fab fa-github"
-name = "GitHub"
-url = "https://github.com/MIT-LCP/mimic-iv"
