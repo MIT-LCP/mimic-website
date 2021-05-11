@@ -133,7 +133,7 @@ the schema, metadata and preview of rows tabs.
 ### Queries
 
 Most of the following queries are adapted from the
-[MIMIC cohort selection tutorial](https://github.com/MIT-LCP/mimic-code/blob/master/tutorials/cohort-selection.ipynb).
+[MIMIC cohort selection tutorial](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/tutorials/cohort-selection.ipynb).
 
 ## Analysis
 

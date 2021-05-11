@@ -15,7 +15,7 @@ https://physionet.org/content/mimiciii/
 ## Data and build scripts
 
 MIMIC is provided as a collection of comma-separated (CSV) files, along with scripts to help users import the data into popular database systems. Scripts are available in the [MIMIC code repository](https://github.com/MIT-LCP/mimic-code) for Postgres, MySQL, and Oracle:  
-https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic
+https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic
 
 If you are familiar with Make, then you can directly clone the above repository and run `make` in order to build MIMIC on a PostgreSQL instance. Otherwise, see the tutorials below.
 

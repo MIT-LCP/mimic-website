@@ -81,7 +81,7 @@ data. Radiology, Echo and ECG reports are missing from NOTEEVENTS.
 
 The waveform metadata contains dates from the current waveforms available on PhysioNet:
 
-http://physionet.org/physiobank/database/mimic2db/
+https://archive.physionet.org/physiobank/database/mimic2db/
 
 The dates found here will not match those found elsewhere in the
 database.

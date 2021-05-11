@@ -123,7 +123,7 @@ Here's what it should look like so far:
 
 ### Create the tables under the schema
 
-Now run the create tables script. In order to run this script, make a note of where you downloaded the [SQL scripts from the postgres folder of mimic-code](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres).
+Now run the create tables script. In order to run this script, make a note of where you downloaded the [SQL scripts from the postgres folder of mimic-code](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic/postgres).
 In my case, I downloaded the entire mimic-code repository and extracted the files in `C:/Tools/mimic-code-master/`. Therefore my path is `C:/Tools/mimic-code-master/buildmimic/postgres/`, and I ran:
 
 ```sql
