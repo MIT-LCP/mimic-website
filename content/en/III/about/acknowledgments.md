@@ -90,6 +90,6 @@ The [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code) provides code
 - [MIT Clinical Decision Making](http://groups.csail.mit.edu/medg/)
 - [MIT Computational Physiology and Clinical Inference Group](http://www.rle.mit.edu/cpci/)
 - [MIT Lab for Computational Physiology](http://lcp.mit.edu/)
-- [Philips Health Care](http://www.healthcare.philips.com/main/index.wpd)
+- [Philips Health Care](http://www.healthcare.philips.com/)
 
 <!-- Add details of funders here -->

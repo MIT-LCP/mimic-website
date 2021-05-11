@@ -15,4 +15,4 @@ https://github.com/MIT-LCP/mimic-cxr/tree/master/notebooks
 -->
 
 Python notebook examples which use the MIMIC-CXR data can be found at the code repository:
-https://github.com/MIT-LCP/mimic-cxr/tree/master/notebooks
+https://github.com/MIT-LCP/mimic-code/tree/main/mimic-cxr/notebooks

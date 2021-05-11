@@ -14,9 +14,9 @@ All patient identifiers begin with the digit 1 and have a total length of 8 digi
 All study identifiers begin with the digit 5 and have a total length of 8 digits.
 DICOM file names are unique 40 character hexadecimal strings with dashes separating groups of eight characters.
 
-Images are provided in DICOM format; see the [image](/image) section for more information about the images.
+Images are provided in DICOM format; see the [image](/iv/modules/cxr/images/) section for more information about the images.
 
-Reports are provided as plain text files; see the [reports](/reports) section for more information about the reports.
+Reports are provided as plain text files; see the [reports](/iv/modules/cxr/reports) section for more information about the reports.
 
 # Data Organization
 

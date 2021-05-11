@@ -66,4 +66,4 @@ Please (1) double check you have entered your cloud information into your Physio
 
 ## I have a different issue
 
-If none of the above have the answer, feel free to [raise an issue at the MIMIC repository](https://github.com/MIT-LCP/mimic-iv/issues).
+If none of the above have the answer, feel free to [raise an issue at the MIMIC repository](https://github.com/MIT-LCP/mimic-code/issues).

@@ -19,4 +19,4 @@ Protected health information has been removed from the database.
 # Research groups
 
 - [MIT Lab for Computational Physiology](https://lcp.mit.edu/)
-- [Philips Health Care](https://www.healthcare.philips.com/main/index.wpd)
+- [Philips Health Care](https://www.healthcare.philips.com/)

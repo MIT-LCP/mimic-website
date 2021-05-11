@@ -32,7 +32,7 @@ You'll need to install `gsutil` locally and authenticate with the same Google ac
 
 See their instruction page for details on the install and configuration process: https://cloud.google.com/storage/docs/quickstart-gsutil
 
-In order to access the data on GCP, your PhysioNet account must have your Google account e-mail, and you must [request access on the PhysioNet project page](https://physionet.org/content/mimic-cxr/#files). See the [cloud page for more detail on this process](/about/cloud).
+In order to access the data on GCP, your PhysioNet account must have your Google account e-mail, and you must [request access on the PhysioNet project page](https://physionet.org/content/mimic-cxr/#files). See the [cloud page for more detail on this process](/iv/access/cloud/).
 
 Once you have `gsutil` installed and authenticated, you can download MIMIC-CXR as follows:
 

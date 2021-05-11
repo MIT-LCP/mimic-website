@@ -14,7 +14,7 @@ For MIMIC-III, go to the [MIMIC-III PhysioNet project page](https://physionet.or
 For MIMIC-IV, go to the [MIMIC-IV PhysioNet project page](https://physionet.org/content/mimiciv).
 
 Once there, scroll to the bottom to the "Files" section.
-*If* the page shows a restricted-access warning, you need to get access to [MIMIC-III](/iii/gettingstarted/access) / [MIMIC-IV](/iv/access).
+*If* the page shows a restricted-access warning, you need to get access to [MIMIC-III](/iii/gettingstarted/cloud) / [MIMIC-IV](/iv/access).
 Otherwise, you should see the following:
 
 ![Methods for accessing MIMIC-IV](/img/cloud/mimiciv_files.png)

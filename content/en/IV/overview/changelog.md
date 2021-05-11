@@ -113,7 +113,7 @@ MIMIC-IV v0.2 was released June 23rd, 2020.
 - *icustays*
   - Re-derived `stay_id` - the new `stay_id` are distinct from the previous version.
 - *diagnosis*
-  - Added [*diagnosis*](/iv/datasets/ed/diagnosis) table with similar schema as the *diagnosis_icd* table.
+  - Added diagnosis table with similar schema as the *diagnosis_icd* table.
 - *main*
   - Removed diagnosis columns from this table (inserted into *diagnosis* above)
 

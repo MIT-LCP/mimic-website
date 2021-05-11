@@ -100,7 +100,7 @@ Identifiers which specify the patient: `subject_id` is unique to a patient, `had
 ## ITEMID
 
 Identifier for a single measurement type in the database. Each row associated with one `ITEMID` which corresponds to an instantiation of the same measurement (e.g. norepinephrine).
-MetaVision `ITEMID` values are all above 220000. Since this data only contains data from MetaVision, it only contains `ITEMID` above 220000 (see [here](/iv/mimicdata/metavision/) for details about MetaVision)
+MetaVision `ITEMID` values are all above 220000. Since this data only contains data from MetaVision, it only contains `ITEMID` above 220000 (see [here](/iii/mimicdata/metavision/) for details about MetaVision)
 
 ## AMOUNT, AMOUNTUOM
 

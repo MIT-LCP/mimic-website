@@ -19,7 +19,7 @@ The three datasets on BigQuery are:
 
 * `mimiciii_clinical` - Almost all of MIMIC-III is stored here.
 * `mimiciii_notes` - The NOTEEVENTS table is stored here.
-* `mimiciii_derived` - Useful derivations which have been extracted from MIMIC-III are stored here for reuse by the community. All code to generate these views are open source and publicly available on the [google-cloud-views branch of GitHub](https://github.com/MIT-LCP/mimic-code/tree/google-cloud-views).
+* `mimiciii_derived` - Useful derivations which have been extracted from MIMIC-III are stored here for reuse by the community. All code to generate these views are open source and publicly available on the [mimic-code repository](https://github.com/MIT-LCP/mimic-code/).
 
 This tutorial will focus on querying the bulk of MIMIC-III data stored in `mimiciii_clinical`.
 
@@ -40,7 +40,7 @@ Metadata for a particular table can be obtained by clicking the table on the lef
 
 ![Metadata for the admissions table in BigQuery](/img/tutorial/bq/metadata.png)
 
-If you do not see the `mimiciii_clinical` dataset on BigQuery, you may need to [request access to MIMIC-III on BigQuery](/iii/about/cloud), or [pin the project to your sidebar](/iii/about/cloud#gcp-bigquery).
+If you do not see the `mimiciii_clinical` dataset on BigQuery, you may need to [request access to MIMIC-III on BigQuery](/iii/gettingstarted/cloud), or [pin the project to your sidebar](/iii/gettingstarted/cloud/bigquery/).
 
 Try looking at the metadata for other tables such as `patients` and `chartevents`.
 

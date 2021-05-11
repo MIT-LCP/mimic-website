@@ -21,6 +21,6 @@ While we will aim to provide a stable service, our laboratory has limited resour
 
 ## Access Querybuilder
 
-Querybuilder is available via the following link, using the PhysioNetWorks username (email address) and password provided to you upon being [granted access](/iii/gettingstarted/access/): https://querybuilder-lcp.mit.edu/
+Querybuilder is available via the following link, using the PhysioNetWorks username (email address) and password provided to you upon being [granted access](/iii/gettingstarted/cloud/): https://querybuilder-lcp.mit.edu/
 
 

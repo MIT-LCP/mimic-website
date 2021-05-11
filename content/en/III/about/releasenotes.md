@@ -9,7 +9,7 @@ toc = "true"
 
 This page lists the current version of MIMIC-III, and all previous versions which have existed, in sequential, reverse chronological order. Each version will address a finite set of updates which are tracked using a unique issue number, usually of the form #100, #101, etc.
 
-Note that the changes between MIMIC-II and MIMIC-III are not listed here, due to the large number of differences between the databases. A separate document has been provided for that purpose [here](/iii/mimicdata/whatsnew). The release notes for MIMIC-II versions is available [here](/iii/archive/mimic-releases).
+Note that the changes between MIMIC-II and MIMIC-III are not listed here, due to the large number of differences between the databases. A separate document has been provided for that purpose [here](/iii/mimicdata/whatsnew). The release notes for MIMIC-II versions is available [here](/ii/mimic-releases/).
 
 # Current version
 

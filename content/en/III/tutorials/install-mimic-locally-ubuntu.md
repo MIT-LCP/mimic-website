@@ -7,14 +7,14 @@ toc = "true"
 
 +++
 
-Prerequisites: *This tutorial assumes that you have already completed the [steps required to gain access](/iii/gettingstarted/access) to the MIMIC dataset on PhysioNet.*
+Prerequisites: *This tutorial assumes that you have already completed the [steps required to gain access](/iii/gettingstarted) to the MIMIC dataset on PhysioNet.*
 
 Note that this install was written and tested using Mac OS X and Ubuntu 15.04. If you feel there are key details missing, please [raise an issue](https://github.com/MIT-LCP/mimic-website/issues) with your suggested improvements - we would love to incorporate them!
 
 There are two options for installing MIMIC-III locally in a PostgreSQL database:
 
 1. Manually, by following the tutorial below
-2. Automatically, using the make files available in the [mimic-code repository](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)
+2. Automatically, using the make files available in the [mimic-code repository](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic/postgres)
 
 These steps are roughly equivalent, though you may learn more about the database configuration by installing the data manually.
 
@@ -22,9 +22,9 @@ These steps are roughly equivalent, though you may learn more about the database
 
 Note that before proceeding with this tutorial you will need to:
 
-1. Download the MIMIC-III Clinical Database (see [here](/iii/gettingstarted/access/) for details on gaining access).
+1. Download the MIMIC-III Clinical Database (see [here](/iii/gettingstarted/) for details on gaining access).
 2. Place the MIMIC-III Clinical Database as either .csv or .csv.gz files somewhere on your local computer.
-3. Download the PostgreSQL scripts from [here](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres) - only the files which end in `.sql` are required.
+3. Download the PostgreSQL scripts from [here](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic/postgres) - only the files which end in `.sql` are required.
 
 It's easiest to move all the MIMIC data files and the scripts to load the data into a single folder (usually called the working directory). Most of the commands below will assume that files are located in the current folder.
 
@@ -36,7 +36,7 @@ On Mac OSX with the [Homebrew package manager](http://brew.sh/), simply type ```
 
 ## 2. Place the CSV data files in a local directory
 
-Assuming that you have completed the [steps required to gain access](/iii/gettingstarted/access) to the MIMIC dataset, you should be able to access the CSV data files on PhysioNet at: https://physionet.org/content/mimiciii/.
+Assuming that you have completed the [steps required to gain access](/iii/gettingstarted) to the MIMIC dataset, you should be able to access the CSV data files on PhysioNet at: https://physionet.org/content/mimiciii/.
 
 Download these files to a local folder and decompress them if desired (it is possible to load the data directly into a database from compressed data files). The program `gzip` can be used to decompress the data (e.g. ```gzip -d *.gz```).
 
@@ -70,7 +70,7 @@ psql -U username -d postgres
 
 ## 5. Create an empty database containing a MIMIC-III schema
 
-From this point onwards we will be referring to scripts in the '[buildmimic](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic)' directory of the [MIMIC code repository](https://github.com/MIT-LCP/mimic-code/).
+From this point onwards we will be referring to scripts in the '[buildmimic](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic)' directory of the [MIMIC code repository](https://github.com/MIT-LCP/mimic-code/).
 You should have already downloaded the SQL scripts to your working directory.
 
 After connecting with psql, create a new database called "mimic":
@@ -98,9 +98,9 @@ set search_path to mimiciii;
 
 ## 7. Create a set of empty tables on a mimiciii schema, ready to populate with the data
 
-Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tree/master/buildmimic/postgres)' script in the MIMIC code repository to create the mimiciii schema and then build a set of empty tables. Each table is created by running a ```CREATE TABLE``` command in psql.
+Refer to the '[postgres_create_tables](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic/postgres)' script in the MIMIC code repository to create the mimiciii schema and then build a set of empty tables. Each table is created by running a ```CREATE TABLE``` command in psql.
 
-First, exit from psql with `\q` which should bring you back to the shell command prompt. Now run the "[postgres\_create\_tables.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_create_tables.sql)" script as follows:
+First, exit from psql with `\q` which should bring you back to the shell command prompt. Now run the "[postgres\_create\_tables.sql](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic/postgres/postgres_create_tables.sql)" script as follows:
 
 ``` bash
 # Run the following command to create tables on the mimiciii schema
@@ -125,7 +125,7 @@ If you see warnings about being unable to drop tables, don't worry, this is expe
 
 ## 8. Import the CSV data files into the empty tables
 
-Using the [Postgres ```COPY``` or ```\COPY``` commands](https://wiki.postgresql.org/wiki/COPY), you should now be able to import the CSV data into the empty set of tables. You can run the "[postgres\_load\_data.sql](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_load_data.sql)" script from the command prompt using:
+Using the [Postgres ```COPY``` or ```\COPY``` commands](https://wiki.postgresql.org/wiki/COPY), you should now be able to import the CSV data into the empty set of tables. You can run the "[postgres\_load\_data.sql](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic/postgres/postgres_load_data.sql)" script from the command prompt using:
 
 ``` sql
 # Load the data into the mimic database
@@ -149,7 +149,7 @@ Note also that above, we have included a line which states `COPY 0`. This is exp
 
 ## 9. Add indexes to improve performance
 
-Indexes provide additional structure for the database that can help to improve the speed of queries. The MIMIC code repository [includes a script with a set of suggested indexes](https://github.com/MIT-LCP/mimic-code/blob/master/buildmimic/postgres/postgres_add_indexes.sql). As before, you can run this script from the command line:
+Indexes provide additional structure for the database that can help to improve the speed of queries. The MIMIC code repository [includes a script with a set of suggested indexes](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic/postgres/postgres_add_indexes.sql). As before, you can run this script from the command line:
 
 ``` bash
 # create indexes

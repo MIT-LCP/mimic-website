@@ -23,6 +23,6 @@ Credentialing requires completion of a training course, as follows:
 
 - Register on the CITI program website, selecting “Massachusetts Institute of Technology Affiliates” as your organization affiliation: https://www.citiprogram.org/index.cfm?pageID=154&icat=0&ac=0
 - Follow the links to add a Massachusetts Institute of Technology Affiliates course. In the Human Subjects training category, select the “Data or Specimens Only Research” course
-- Complete the course and save a copy of your certificate.
+- Complete the course and save a copy of your completion report.
 
 Once completed, register an account on PhysioNet. Navigate to the credentialing page, and apply for credentialed privileges: https://physionet.org/settings/credentialing/

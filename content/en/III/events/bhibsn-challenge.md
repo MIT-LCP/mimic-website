@@ -55,9 +55,9 @@ At least one member of a team must be able to attend the [BHI & BSN Annual Confe
 
 ## How can I access the challenge data?
 
-Participants will use the MIMIC-III database, which comprises routinely collected data for critical care patients for over 50,000 hospital stays. There is a formal process for requesting access to MIMIC-III, which is described at: https://mimic.physionet.org/gettingstarted/access/
+Participants will use the MIMIC-III database, which comprises routinely collected data for critical care patients for over 50,000 hospital stays. There is a formal process for requesting access to MIMIC-III, which is described at: [access](/iii/gettingstarted)
 
-Gaining access to the full MIMIC-III dataset may take several days, so we suggest using the MIMIC-III demo while waiting to gain full access: https://mimic.physionet.org/gettingstarted/demo/
+Gaining access to the full MIMIC-III dataset may take several days, so we suggest using the MIMIC-III demo while waiting to gain full access: [demo](/iii/gettingstarted/demo/)
 
 If you need help getting set up with access to MIMIC-III for the Challenge, please contact us at: `data-challenge@physionet.org`.
 
@@ -73,7 +73,7 @@ Project entries will be assessed by a judging panel on the following criteria:
 ## Registration checklist
 
 1. Register your team using the following form: [http://goo.gl/yQUazq](http://goo.gl/yQUazq).
-2. Get access to the data by following the instructions at: https://mimic.physionet.org/gettingstarted/access/  
+2. Get access to the data by following the instructions at: [access](/iii/gettingstarted) 
   - Participants should complete [human subjects ethics training](https://www.citiprogram.org/index.cfm?pageID=154&icat=0&ac=0). 
       - Select 'Massachusetts Institute of Technology Affiliates' as your organization affiliation. 
       - Please complete the "Data or Specimens Only Research" training program.
@@ -86,7 +86,7 @@ Project entries will be assessed by a judging panel on the following criteria:
 ## Submission checklist
 
 1. Prepare your slides in PDF or PPT format: 
-  - A [slide template](https://github.com/MIT-LCP/bhi-bsn-challenge/blob/master/slide-template.pptx) is provided at: https://github.com/MIT-LCP/bhi-bsn-challenge, but there is no requirement to use it.
+  - A [slide template](https://github.com/MIT-LCP/bhi-bsn-challenge/blob/master/slide-template.pptx) is provided at: https://github.com/MIT-LCP/bhi-bsn-challenge , but there is no requirement to use it.
   - Presentations will be allotted at most 7 minutes.  
   - Presentations must include: methodology, results and conclusions.  
 2. Is your project reproducible?  
