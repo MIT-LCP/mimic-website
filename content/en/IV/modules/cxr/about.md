@@ -26,3 +26,7 @@ MIMIC-CXR v1.0.0 was released on 22 January 2019.
 The data contains only JPG format images and 14 structured labels extracted from an NLP tool.
 As we have reorganized the data since the release of v1.0.0, we no longer distribute v1.0.0.
 The images are identical to MIMIC-CXR v2.0.0, and we will make the structured labels available again shortly.
+
+{{% alert title="Tables" color="primary" %}}
+This section provides a description of the MIMIC-CXR module. Detailed table information is found in the [Tables](/iv/datasets/cxr) section. 
+{{% /alert %}}
