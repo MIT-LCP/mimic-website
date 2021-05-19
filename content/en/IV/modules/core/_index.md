@@ -7,4 +7,6 @@ description: >
   The core module contains patient tracking data. Demographics, hospital admissions, and in-hospital ward transfers are described here.
 ---
 
-This section provides a description of the MIMIC-core module. Detailed table information is found in the [Tables](/iv/datasets) section. 
+{{% alert title="Tables" color="primary" %}}
+This section provides a description of the MIMIC-core module. Detailed table information is found in the [Tables](/iv/datasets/core) section.
+{{% /alert %}}
