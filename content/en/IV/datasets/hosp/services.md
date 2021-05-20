@@ -19,6 +19,7 @@ CMED | Cardiac Medical - for non-surgical cardiac related admissions
 CSURG | Cardiac Surgery - for surgical cardiac admissions
 DENT | Dental - for dental/jaw related admissions
 ENT | Ear, nose, and throat - conditions primarily affecting these areas
+EYE | Eye diseases - including subspecialty services in glaucoma, cataract surgery, cornea and external diseases, and neuro-ophthalmology.
 GU | Genitourinary - reproductive organs/urinary system
 GYN | Gynecological - female reproductive systems and breasts
 MED | Medical - general service for internal medicine
