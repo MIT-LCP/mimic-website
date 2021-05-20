@@ -13,7 +13,6 @@ The *prescriptions* table provides information about prescribed medications. Inf
 
 ## Links to
 
-* *poe* on `poe_id`
 * *pharmacy* on `pharmacy_id`
 * *emar* on `poe_id`
 
@@ -32,18 +31,18 @@ Name | Postgres data type
 `pharmacy_id` | INTEGER
 `starttime` | TIMESTAMP
 `stoptimetime` | TIMESTAMP
-`drug_type` |
-`drug` | TEXT
+`drug_type` | VARCHAR(20) NOT NULL
+`drug` | VARCHAR(255) NOT NULL
 `gsn` | VARCHAR(10)
 `ndc` | VARCHAR(20)
-`prod_strength` | TEXT
-`form_rx` |
-`dose_val_rx` |
-`dose_unit_rx` |
-`form_val_disp` |
-`form_unit_disp` |
-`doses_per_24_hrs` |
-`route` |
+`prod_strength` | VARCHAR(255)
+`form_rx` | VARCHAR(25)
+`dose_val_rx` | VARCHAR(100)
+`dose_unit_rx` | VARCHAR(50)
+`form_val_disp` | VARCHAR(50)
+`form_unit_disp` | VARCHAR(50)
+`doses_per_24_hrs` | REAL
+`route` | VARCHAR(50)
 
 ### `subject_id`
 

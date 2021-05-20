@@ -19,7 +19,8 @@ MIMIC-IV v1.0 was released March 16th, 2021.
 
 * *admissions*
     * A number (~1000, <1%) of erroneous `hadm_id` have been removed.
-* *patients
+* *patients*
+    * 942 `subject_id` have been removed as they were only associated with the above erroneous `hadm_id`.
     * `dod` is now populated using the patient's `deathtime` from their latest hospitalization (reported in [#71](https://github.com/MIT-LCP/mimic-iv/issues/71), thanks [@jinjinzhou](https://github.com/jinjinzhou)).
     * At the moment, out-of-hospital mortality is **not** captured by `dod`
 * *transfers*

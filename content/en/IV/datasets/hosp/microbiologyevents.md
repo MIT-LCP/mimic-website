@@ -37,9 +37,9 @@ Bacteria will be cultured on the blood sample, and the remaining columns depend 
 
 Name | Postgres data type
 ---- | ----
+`microevent_id` | INTEGER NOT NULL
 `subject_id` | INTEGER
 `hadm_id` | INTEGER
-`stay_id` | INTEGER
 `micro_specimen_id` | INTEGER NOT NULL
 `chartdate` | TIMESTAMP(0) NOT NULL
 `charttime` | TIMESTAMP(0)
@@ -63,6 +63,10 @@ Name | Postgres data type
 `interpretation` | VARCHAR(5)
 `comments` | TEXT
 
+### `microevent_id`
+
+A unique integer denoting the row.
+
 ### `subject_id`
 
 {{% include "/static/include/subject_id.md" %}}
@@ -70,11 +74,6 @@ Name | Postgres data type
 ### `hadm_id`
 
 {{% include "/static/include/hadm_id.md" %}}
-
-### `stay_id`
-
-{{% include "/static/include/stay_id.md" %}}
-
 
 ## `chartdate`, `charttime`
 
