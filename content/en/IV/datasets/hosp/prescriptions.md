@@ -13,7 +13,6 @@ The *prescriptions* table provides information about prescribed medications. Inf
 
 ## Links to
 
-* *poe* on `poe_id`
 * *pharmacy* on `pharmacy_id`
 * *emar* on `poe_id`
 
