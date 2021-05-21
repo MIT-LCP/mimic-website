@@ -11,7 +11,7 @@ MIMIC is made available largely through the work of researchers at the MIT Labor
 
 Our work is supported by grants from the National Institute of Biomedical Imaging and Bioengineering (NIBIB) of the National Institutes of Health (NIH) under award numbers R01-EB001659 (2003-2013) and R01-EB017205 (2014-2018).  
 
-If you use our data, code, or algorithms, please provide a citation to this project.
+If you use our data, code, or algorithms, please provide a citation to this project. Citations are the primary mechanism through which we demonstrate the impact of MIMIC and justify continued research funding.
 
 ## MIMIC-IV citation
 
@@ -29,6 +29,63 @@ BibTeX entry:
   publisher={PhysioNet}
 }
 ```
+
+## MIMIC-III citation
+
+If you use MIMIC-III in your work, please cite this project:
+
+> Johnson AEW, Pollard TJ, Shen L, Lehman LH, Feng M, Ghassemi M, Moody B, Szolovits P, Celi LA, Mark RG. MIMIC-III, a freely accessible critical care database. Scientific data. 2016 May 24;3(1):1-9.
+
+BibTeX entry:
+
+```
+@article{johnson2016mimic,
+  title={MIMIC-III, a freely accessible critical care database},
+  author={Johnson, Alistair E W and Pollard, Tom J and Shen, Lu and Lehman, Li-Wei H and Feng, Mengling and Ghassemi, Mohammad and Moody, Benjamin and Szolovits, Peter and Celi, Leo Anthony and Mark, Roger G},
+  journal={Scientific data},
+  volume={3},
+  number={1},
+  pages={1--9},
+  year={2016},
+  publisher={Nature Publishing Group}
+}
+```
+
+## MIMIC-CXR citation
+
+If you use MIMIC-CXR in your work, please cite this project:
+
+> Johnson AE, Pollard TJ, Berkowitz SJ, Greenbaum NR, Lungren MP, Deng CY, Mark RG, Horng S. MIMIC-CXR, a de-identified publicly available database of chest radiographs with free-text reports. Scientific data. 2019 Dec 12;6(1):1-8.
+
+BibTeX entry:
+
+```
+@article{johnson2019mimic,
+  title={MIMIC-CXR, a de-identified publicly available database of chest radiographs with free-text reports},
+  author={Johnson, Alistair E W and Pollard, Tom J and Berkowitz, Seth J and Greenbaum, Nathaniel R and Lungren, Matthew P and Deng, Chih-ying and Mark, Roger G and Horng, Steven},
+  journal={Scientific data},
+  volume={6},
+  number={1},
+  pages={1--8},
+  year={2019},
+  publisher={Nature Publishing Group}
+}
+```
+
+MIMIC-CXR-JPG is a derivation of MIMIC-CXR. Please cite the above article if you use it. You may also cite the preprint which describes additional processing on MIMIC-CXR to create the annotations and JPG format images:
+
+> Johnson AE, Pollard TJ, Greenbaum NR, Lungren MP, Deng CY, Peng Y, Lu Z, Mark RG, Berkowitz SJ, Horng S. MIMIC-CXR-JPG, a large publicly available database of labeled chest radiographs. arXiv preprint arXiv:1901.07042. 2019 Jan 21.
+
+
+```
+@article{johnson2019mimic,
+  title={MIMIC-CXR-JPG, a large publicly available database of labeled chest radiographs},
+  author={Johnson, Alistair E W and Pollard, Tom J and Greenbaum, Nathaniel R and Lungren, Matthew P and Deng, Chih-ying and Peng, Yifan and Lu, Zhiyong and Mark, Roger G and Berkowitz, Seth J and Horng, Steven},
+  journal={arXiv preprint arXiv:1901.07042},
+  year={2019}
+}
+```
+
 
 ## PhysioNet citation
 
