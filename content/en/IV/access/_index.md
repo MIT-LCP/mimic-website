@@ -7,7 +7,7 @@ description: >
   Instructions for getting access to MIMIC, and detail about cloud services available to work with the data.
 ---
 
-Although de-identified, MIMIC III and IV contain detailed information regarding the clinical care of patients, and as such it must be treated with appropriate care and respect.
+Although de-identified, the datasets described herein contain detailed information regarding the clinical care of patients, and as such it must be treated with appropriate care and respect.
 
 Researchers seeking to use the database must:
 
@@ -25,8 +25,12 @@ If you are a student (including graduate students) or a postdoc, you must provid
 ### Sign the data use agreement
 
 - [Log in](https://physionet.org/login/) to your PhysioNet account.
-- Go to the [MIMIC-III project page](https://physionet.org/content/mimiciii/) or [MIMIC-IV project page](https://physionet.org/content/mimiciv/).
-- Find the “Files” section in the project description
+- Go to the page for the dataset you are interested in, i.e. one or more of:
+    - [MIMIC-III project page](https://physionet.org/content/mimiciii/)
+    - [MIMIC-IV project page](https://physionet.org/content/mimiciv/)
+    - [MIMIC-CXR project page](https://physionet.org/content/mimic-cxr/)
+    - [MIMIC-ED project page](https://physionet.org/content/mimic-ed/)
+- Find the "Files" section in the project description
 - Click through, and if you agree, sign the data use agreement
 
 ### Work with the data
