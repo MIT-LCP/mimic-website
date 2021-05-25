@@ -1,2 +1,2 @@
 ### Documentation issues only
-* Please only add documentation issues with the MIMIC website here.  All other issues, including asking for help or code-related issues should be raised in the mimic-code repository: https://github.com/MIT-LCP/mimic-code/issues .
+* Please only raise issues that relate to the MIMIC website here. All other issues - for example, requests for help with analyses - should be raised in the MIMIC Code Repository: https://github.com/MIT-LCP/mimic-code/issues
