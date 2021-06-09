@@ -29,7 +29,7 @@ If you are a student (including graduate students) or a postdoc, you must provid
     - [MIMIC-III project page](https://physionet.org/content/mimiciii/)
     - [MIMIC-IV project page](https://physionet.org/content/mimiciv/)
     - [MIMIC-CXR project page](https://physionet.org/content/mimic-cxr/)
-    - [MIMIC-ED project page](https://physionet.org/content/mimic-ed/)
+    - [MIMIC-ED project page](https://physionet.org/content/mimic-iv-ed/)
 - Find the "Files" section in the project description
 - Click through, and if you agree, sign the data use agreement
 
