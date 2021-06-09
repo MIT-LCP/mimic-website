@@ -14,7 +14,7 @@ Datasets available on GCS include:
 - [MIMIC-III](https://physionet.org/content/mimiciii/)
 - [MIMIC-IV](https://physionet.org/content/mimiciv/)
 - [MIMIC-CXR](https://physionet.org/content/mimic-cxr/)\*\*
-- [MIMIC-ED](https://physionet.org/content/mimic-ed/)
+- [MIMIC-ED](https://physionet.org/content/mimic-iv-ed)
 
 
 \*\* MIMIC-CXR is over 4.7 TB, almost entirely due to the size of the DICOMs.
