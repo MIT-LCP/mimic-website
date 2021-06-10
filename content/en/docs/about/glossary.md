@@ -2,7 +2,7 @@
 date = "2015-09-01T14:02:13-04:00"
 title = "Glossary of terms"
 linktitle = "Glossary"
-weight = 10
+weight = 30
 toc = "true"
 
 +++
