@@ -1,11 +1,13 @@
-+++
-date = "2015-09-01T19:33:17-04:00"
-title = "Help and support"
-linktitle = "Help"
-weight = 1
-toc = "false"
+---
+title: Help and support
+linktitle: help
 
-+++
+cascade:
+- type: "docs"
+  _target:
+    path: "/**"
+
+---
 
 MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/iii/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide.
 
