@@ -1,6 +1,7 @@
 ---
 title: Help and support
-linktitle: help
+linktitle: Help
+weight: 10
 
 cascade:
 - type: "docs"
