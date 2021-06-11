@@ -2,7 +2,7 @@
 title: "Cloud"
 linktitle: "Cloud"
 date: 2020-11-25
-weight: 1
+weight: 10
 description: >
   Access MIMIC on the Cloud
 ---
