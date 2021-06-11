@@ -1,7 +1,7 @@
 +++
 date = "2015-09-01T14:02:13-04:00"
-title = "Downloading the MIMIC-III database"
-linktitle = "Downloading the database"
+title = "Local database setup"
+linktitle = "Local"
 weight = 4
 toc = "false"
 
