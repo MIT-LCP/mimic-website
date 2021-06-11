@@ -2,7 +2,7 @@
 date = "2015-09-01T19:34:46-04:00"
 title = "Types of data in the database"
 linktitle = "Patient identifiers"
-weight = 4
+weight = 30
 toc = "true"
 
 +++

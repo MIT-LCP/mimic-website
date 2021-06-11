@@ -2,7 +2,7 @@
 date = "2015-09-01T14:02:13-04:00"
 title = "Querying MIMIC-III"
 draft = false
-linktitle = "Postgres Queries"
+linktitle = "Postgres queries"
 weight = 3
 toc = "true"
 

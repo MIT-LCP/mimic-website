@@ -1,8 +1,8 @@
 +++
 date = "2015-09-01T19:34:46-04:00"
 title = "Patient level data: `SUBJECT_ID`"
-linktitle = "Data sources"
-weight = 4
+linktitle = "Data"
+weight = 20
 toc = "true"
 
 +++

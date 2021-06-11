@@ -1,8 +1,8 @@
 +++
 date = "2015-09-01T19:33:17-04:00"
 title = "Release notes"
-linktitle = "Releases of MIMIC-III"
-weight = 2
+linktitle = "Releases"
+weight = 70
 toc = "true"
 
 +++
