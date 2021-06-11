@@ -1,8 +1,8 @@
 ---
-title: "Access"
-linkTitle: "Access"
+title: "Getting Started"
+linkTitle: "Getting Started"
 date: 2020-08-10
-weight: 2
+weight: 30
 description: >
   Instructions for getting access to MIMIC, and detail about cloud services available to work with the data.
 ---
