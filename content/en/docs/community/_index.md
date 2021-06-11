@@ -1,7 +1,7 @@
 ---
 title: "Community"
 linkTitle: "Community"
-weight: 1
+weight: 40
 cascade:
 - type: "docs"
   _target:

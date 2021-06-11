@@ -1,7 +1,7 @@
 +++
 title = "Guidelines for reviewers and authors"
 linktitle = "Paper Guidelines"
-weight = 2
+weight = 20
 toc = "true"
 
 +++
