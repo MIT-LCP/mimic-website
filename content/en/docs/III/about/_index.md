@@ -1,8 +1,8 @@
 +++
 date = "2015-09-01T19:33:17-04:00"
-title = "MIMIC-III Critical Care Database"
-linktitle = "MIMIC-III"
-weight = 1
+title = "About MIMIC-III"
+linktitle = "About"
+weight = 10
 toc = "true"
 
 +++

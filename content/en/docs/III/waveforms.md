@@ -2,7 +2,7 @@
 date = "2015-10-25T13:37:00-04:00"
 title = "Waveforms vs. clinical data"
 linktitle = "Waveforms"
-weight = 9
+weight = 40
 toc = "true"
 
 +++
