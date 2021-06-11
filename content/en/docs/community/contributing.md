@@ -2,7 +2,7 @@
 date = "2015-09-01T19:09:50-04:00"
 title = "Contributions and questions"
 linktitle = "Contributing"
-weight = 1
+weight = 10
 toc = "true"
 
 +++
