@@ -1,8 +1,8 @@
 +++
 date = "2015-09-01T13:37:00-04:00"
 title = "MIMIC-II vs MIMIC-III"
-linktitle = "MIMIC-II to MIMIC-III"
-weight = 7
+linktitle = "Change log"
+weight = 80
 toc = "true"
 
 +++

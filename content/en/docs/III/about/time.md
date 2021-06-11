@@ -2,7 +2,7 @@
 date = "2015-09-08T06:58:18-04:00"
 title = "Time types"
 linktitle = "Times"
-weight = 6
+weight = 50
 toc = "true"
 
 +++

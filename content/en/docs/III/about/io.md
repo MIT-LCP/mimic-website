@@ -1,8 +1,8 @@
 +++
 date = "2015-09-08T06:58:18-04:00"
 title = "Inputs and outputs"
-linktitle = "Inputs and outputs"
-weight = 8
+linktitle = "Inputs outputs"
+weight = 40
 toc = "true"
 
 +++
