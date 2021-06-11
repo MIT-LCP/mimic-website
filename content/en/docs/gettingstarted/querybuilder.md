@@ -3,7 +3,7 @@ date = "2016-09-01T19:34:46-04:00"
 title = "MIMIC Querybuilder"
 aliases = "/gettingstarted/querybuilder/"
 linktitle = "Querybuilder"
-weight = 1
+weight = 30
 toc = "true"
 
 +++
