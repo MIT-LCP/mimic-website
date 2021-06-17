@@ -20,13 +20,6 @@ Bacteria will be cultured on the blood sample, and the remaining columns depend 
 * If bacteria is found, then each organism of bacteria will be present in `org_name`, resulting in multiple rows for the single specimen (i.e. multiple rows for the given `spec_type_desc`).
 * If antibiotics are tested on a given bacterial organism, then each antibiotic tested will be present in the `ab_name` column (i.e. multiple rows for the given `org_name` associated with the given `spec_type_desc`). Antibiotic parameters and sensitivities are present in the remaining columns (`dilution_text`, `dilution_comparison`, `dilution_value`, `interpretation`).
 
-## Links to
-
-* d_micro on `spec_itemid`
-* d_micro on `test_itemid`
-* d_micro on `org_itemid`
-* d_micro on `ab_itemid`
-
 <!--
 
 # Important considerations
