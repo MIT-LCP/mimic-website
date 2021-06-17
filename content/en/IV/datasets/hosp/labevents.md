@@ -4,7 +4,7 @@ linktitle: "labevents"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Laboratory measurements sourced from patient derived specimens.
 ---
 
 ## *labevents*
@@ -26,9 +26,9 @@ These include hematology measurements, blood gases, chemistry panels, and less c
 
 Name | Postgres data type
 ---- | ----
+`labevent_id` | INTEGER NOT NULL
 `subject_id` | INTEGER NOT NULL
 `hadm_id` | INTEGER
-`stay_id` | INTEGER
 `specimen_id` | INTEGER NOT NULL
 `itemid` | INTEGER NOT NULL
 `charttime` | TIMESTAMP NOT NULL
@@ -42,6 +42,9 @@ Name | Postgres data type
 `priority` | VARCHAR(7)
 `comments` | TEXT
 
+### `labevent_id`
+
+An integer which is unique for every row in the table.
 
 ### `subject_id`
 
@@ -50,10 +53,6 @@ Name | Postgres data type
 ### `hadm_id`
 
 {{% include "/static/include/hadm_id.md" %}}
-
-### `stay_id`
-
-{{% include "/static/include/stay_id.md" %}}
 
 ### `specimen_id`
 
