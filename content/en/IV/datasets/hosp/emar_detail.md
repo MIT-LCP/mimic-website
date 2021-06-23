@@ -1,10 +1,10 @@
 ---
-title: "eMAR details"
+title: "emar_detail"
 linktitle: "emar_detail"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Supplementary information for electronic administrations recorded in *emar*.
 ---
 
 ## *emar_detail*

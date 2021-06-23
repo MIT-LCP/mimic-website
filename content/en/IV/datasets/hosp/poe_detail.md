@@ -1,10 +1,10 @@
 ---
-title: "Provider Order Entry detail"
+title: "poe_detail"
 linktitle: "poe_detail"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Supplementary information for orders made by providers in the hospital.
 ---
 
 ## *poe_detail*

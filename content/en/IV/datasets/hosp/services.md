@@ -1,10 +1,10 @@
 ---
-title: "Services"
+title: "services"
 linktitle: "services"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  The hospital service(s) which cared for the patient during their hospitalization.
 ---
 
 ## *services*

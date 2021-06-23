@@ -1,10 +1,10 @@
 ---
-title: "Prescriptions"
+title: "prescriptions"
 linktitle: "prescriptions"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Prescribed medications.
 ---
 
 ## *prescriptions*

@@ -1,14 +1,14 @@
 ---
-title: "Dimension table: ICD diagnoses"
+title: "d_icd_diagnoses"
 linktitle: "d_icd_diagnoses"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Dimension table for *diagnoses_icd*; provides a description of ICD-9/ICD-10 billed diagnoses.
 ---
 
 
-## The d_icd_diagnoses table
+## The *d_icd_diagnoses* table
 
 This table defines International Classification of Diseases (ICD) Version 9 and 10 codes for **diagnoses**. These codes are assigned at the end of the patient's stay and are used by the hospital to bill for care provided.
 

@@ -1,10 +1,10 @@
 ---
-title: "Pharmacy"
+title: "pharmacy"
 linktitle: "pharmacy"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Formulary, dosing, and other information for prescribed medications.
 ---
 
 ## *pharmacy*

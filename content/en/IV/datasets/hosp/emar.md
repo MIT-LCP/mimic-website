@@ -1,10 +1,10 @@
 ---
-title: "Electronic Medical Administration Record"
+title: "emar"
 linktitle: "emar"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  The Electronic Medicine Administration Record (eMAR); barcode scanning of medications at the time of administration.
 ---
 
 ## *emar*

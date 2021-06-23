@@ -1,10 +1,10 @@
 ---
-title: "ICD Procedures"
+title: "procedures_icd"
 linktitle: "procedures_icd"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Billed procedures for patients during their hospital stay.
 ---
 
 ## *procedures_icd*

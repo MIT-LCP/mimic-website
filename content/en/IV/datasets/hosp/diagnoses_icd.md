@@ -1,10 +1,10 @@
 ---
-title: "ICD diagnoses"
+title: "diagnoses_icd"
 linktitle: "diagnoses_icd"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Billed ICD-9/ICD-10 diagnoses for hospitalizations.
 ---
 
 ## *diagnoses_icd*

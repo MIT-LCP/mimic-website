@@ -1,19 +1,19 @@
 ---
-title: "Dimension table: ICD procedures"
+title: "d_icd_procedures"
 linktitle: "d_icd_procedures"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Dimension table for *procedures_icd*; provides a description of ICD-9/ICD-10 billed procedures.
 ---
 
-## The D_ICD_PROCEDURES table
+## The *d_icd_procedures* table
 
 This table defines International Classification of Diseases (ICD) codes for **procedures**. These codes are assigned at the end of the patient's stay and are used by the hospital to bill for care provided. They can further be used to identify if certain procedures have been performed (e.g. surgery).
 
 ### Links to
 
-* procedures_icd on `icd_code`
+* *procedures_icd* on `icd_code`
 
 ## Brief summary
 

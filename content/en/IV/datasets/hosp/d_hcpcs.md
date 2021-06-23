@@ -1,19 +1,19 @@
 ---
-title: "Dimension table: hcpcs"
+title: "d_hcpcs"
 linktitle: "d_hcpcs"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Dimension table for *hcpcsevents*; provides a description of CPT codes.
 ---
 
-## The d_hcpcs table
+## The *d_hcpcs* table
 
-The D_HCPCS table is used to acquire human readable definitions for the codes used in the HCPCSEVENTS table. The concepts primarily correspond to hospital billing, and are mostly CPT codes. Unfortunately due to licensing restrictions not all code definitions are available.
+The *d_hcpcs* table is used to acquire human readable definitions for the codes used in the *hcpcsevents* table. The concepts primarily correspond to hospital billing, and are mostly CPT codes. Unfortunately due to licensing restrictions not all code definitions are available.
 
 ### Links to
 
-* HCPCSEVENTS on `code`
+* *hcpcsevents* on `code`
 
 <!--
 
