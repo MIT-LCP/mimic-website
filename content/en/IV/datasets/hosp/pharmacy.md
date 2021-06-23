@@ -75,11 +75,11 @@ The start and stop times for the given prescribed medication.
 
 The name of the medication provided.
 
-### `ord_proc_type_full`
+### `proc_type`
 
 The type of order: "IV Piggyback", "Non-formulary", "Unit Dose", and so on.
 
-### `status_full`
+### `status`
 
 Whether the prescription is active, inactive, or discontinued.
 
