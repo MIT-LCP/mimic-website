@@ -1,5 +1,5 @@
 ---
-title: Overview of MIMIC data sources
+title: MIMIC data sources
 linktitle: Sources
 weight: 20
 
@@ -10,4 +10,6 @@ cascade:
   
 ---
 
-Placeholder page that describes data sources for MIMIC
+MIMIC is comprised of data collected from two different clinical information systems: CareVue and MetaVision.  
+
+For additional details please see [CareVue](carevue) and [MetaVision](metavision).
