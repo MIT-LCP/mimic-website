@@ -1,10 +1,10 @@
 ---
-title: "Datetimeevents"
+title: "datetimeevents"
 linktitle: "datetimeevents"
 weight: 10
 date: 2020-08-10
 description: >
-  ICU level table
+  Documented information which is in a date format (e.g. date of last dialysis).
 ---
 
 
@@ -18,10 +18,10 @@ description: >
 
 **Links to:**
 
-* PATIENTS on `subject_id`
-* ADMISSIONS on `hadm_id`
-* ICUSTAYS on `STAY_ID`
-* D_ITEMS on `itemid`
+* patients on `subject_id`
+* admissions on `hadm_id`
+* icustays on `STAY_ID`
+* d_items on `itemid`
 
 <!-- # Important considerations -->
 
@@ -30,15 +30,15 @@ description: >
 
 Name | Data type
 ---- | --------
-SUBJECT\_ID | Integer
-HADM\_ID | Integer
-STAY\_ID | Integer
-CHARTTIME | Date with times
-STORETIME | Date with times
-ITEMID | Integer
-VALUE | Date with times
-VALUEUOM | Text
-WARNING | Binary (0 or 1)
+subject\_id | Integer
+hadm\_id | Integer
+stay\_id | Integer
+charttime | Date with times
+storetime | Date with times
+itemid | Integer
+value | Date with times
+valueuom | Text
+warning | Binary (0 or 1)
 	
 # Detailed Description
 

@@ -1,10 +1,10 @@
 ---
-title: "Prescriptions"
+title: "prescriptions"
 linktitle: "prescriptions"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Prescribed medications.
 ---
 
 ## *prescriptions*
@@ -30,7 +30,7 @@ Name | Postgres data type
 `hadm_id` | INTEGER NOT NULL
 `pharmacy_id` | INTEGER
 `starttime` | TIMESTAMP
-`stoptimetime` | TIMESTAMP
+`stoptime` | TIMESTAMP
 `drug_type` | VARCHAR(20) NOT NULL
 `drug` | VARCHAR(255) NOT NULL
 `gsn` | VARCHAR(10)

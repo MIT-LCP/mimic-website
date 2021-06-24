@@ -1,14 +1,14 @@
 ---
-title: "Outputevents"
+title: "outputevents"
 linktitle: "outputevents"
 weight: 10
 date: 2020-08-10
 description: >
-  ICU level table
+  Information regarding patient outputs including urine, drainage, and so on.
 ---
 
 
-# The outputevents table
+# The *outputevents* table
 
 **Table source:** MetaVision ICU database.
 
@@ -18,10 +18,10 @@ description: >
 
 **Links to:**
 
-* PATIENTS on `subject_id`
-* ADMISSIONS on `hadm_id`
-* ICUSTAYS on `stay_id`
-* D_ITEMS on `itemid`
+* patients on `subject_id`
+* admissions on `hadm_id`
+* icustays on `stay_id`
+* d_items on `itemid`
 
 <!-- # Important considerations -->
 
@@ -29,15 +29,15 @@ description: >
 
 Name | Data type
 ---- | --------
-SUBJECT\_ID | Integer
-HADM\_ID | Integer
-STAY\_ID | Integer
-CHARTTIME | Date with times
-STORETIME | Date with times
-ITEMID | Integer
-VALUE | Floating point number
-VALUEUOM | Text
-WARNING | Binary (0 or 1)
+subject\_id | Integer
+hadm\_id | Integer
+stay\_id | Integer
+charttime | Date with times
+storetime | Date with times
+itemid | Integer
+value | Floating point number
+valueuom | Text
+warning | Binary (0 or 1)
 
 # Detailed Description
 

@@ -1,10 +1,10 @@
 ---
-title: "HCPCS events"
+title: "hpcsevents"
 linktitle: "hcpcsevents"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Billed events occurring during the hospitalization. Includes CPT codes.
 ---
 
 ## *hcpcsevents*
@@ -45,7 +45,7 @@ The date associated with the coded event.
 ### `hcpcs_cd`
 
 A five character code which uniquely represents the event.
-Link this to `code` in D_HCPCS for a longer description of the code.
+Link this to `code` in *d_hcpcs* for a longer description of the code.
 
 ### `seq_num`
 

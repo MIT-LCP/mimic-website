@@ -1,10 +1,10 @@
 ---
-title: "Dimension table: lab items"
+title: "d_labitems"
 linktitle: "d_labitems"
 weight: 1
 date: 2020-08-10
 description: >
-  Hospital level table
+  Dimension table for *labevents*; provides a description of all lab items.
 ---
 
 ## *d_labitems*

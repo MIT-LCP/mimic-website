@@ -1,14 +1,14 @@
 ---
 date: "2015-09-01T19:34:46-04:00"
-title: "Inputevents"
+title: "inputevents"
 linktitle: "Inputevents"
 weight: 10
 date: 2020-08-10
 description: >
-  ICU level table
+  Information documented regarding continuous infusions or intermittent administrations.
 ---
 
-# The Inputevents table
+# The *inputevents* table
 
 **Table source:** MetaVision ICU database.
 
@@ -18,10 +18,10 @@ description: >
 
 **Links to:**
 
-* PATIENTS on `subject_id`
-* ADMISSIONS on `hadm_id`
-* ICUSTAYS on `stay_id`
-* D_ITEMS on `ITEMID`
+* patients on `subject_id`
+* admissions on `hadm_id`
+* icustays on `stay_id`
+* d_items on `itemid`
 
 # Brief example
 
@@ -47,37 +47,37 @@ The `STARTTIME` for the solution (NaCl) and the drug (norepinephrine) would be 1
 
 Name | Postgres data type
 ---- | ----
-ROW\_ID | INT
-SUBJECT\_ID | INT
-HADM\_ID | INT
-ICUSTAY\_ID | INT
-STARTTIME | TIMESTAMP(0)
-ENDTIME | TIMESTAMP(0)
-ITEMID | INT
-AMOUNT | DOUBLE PRECISION
-AMOUNTUOM | VARCHAR(30)
-RATE | DOUBLE PRECISION
-RATEUOM | VARCHAR(30)
-STORETIME | TIMESTAMP(0)
-CGID | BIGINT
-ORDERID | BIGINT
-LINKORDERID | BIGINT
-ORDERCATEGORYNAME | VARCHAR(100)
-SECONDARYORDERCATEGORYNAME | VARCHAR(100)
-ORDERCOMPONENTTYPEDESCRIPTION | VARCHAR(200)
-ORDERCATEGORYDESCRIPTION | VARCHAR(50)
-PATIENTWEIGHT | DOUBLE PRECISION
-TOTALAMOUNT | DOUBLE PRECISION
-TOTALAMOUNTUOM | VARCHAR(50)
-ISOPENBAG | SMALLINT
-CONTINUEINNEXTDEPT | SMALLINT
-CANCELREASON | SMALLINT
-STATUSDESCRIPTION | VARCHAR(30)
-COMMENTS\_STATUS | VARCHAR(30)
-COMMENTS\_TITLE | VARCHAR(100)
-COMMENTS\_DATE | TIMESTAMP(0)
-ORIGINALAMOUNT | DOUBLE PRECISION
-ORIGINALRATE | DOUBLE PRECISION
+row\_id | INT
+subject\_id | INT
+hadm\_id | INT
+icustay\_id | INT
+starttime | TIMESTAMP(0)
+endtime | TIMESTAMP(0)
+itemid | INT
+amount | DOUBLE PRECISION
+amountuom | VARCHAR(30)
+rate | DOUBLE PRECISION
+rateuom | VARCHAR(30)
+storetime | TIMESTAMP(0)
+cgid | BIGINT
+orderid | BIGINT
+linkorderid | BIGINT
+ordercategoryname | VARCHAR(100)
+secondaryordercategoryname | VARCHAR(100)
+ordercomponenttypedescription | VARCHAR(200)
+ordercategorydescription | VARCHAR(50)
+patientweight | DOUBLE PRECISION
+totalamount | DOUBLE PRECISION
+totalamountuom | VARCHAR(50)
+isopenbag | SMALLINT
+continueinnextdept | SMALLINT
+cancelreason | SMALLINT
+statusdescription | VARCHAR(30)
+comments\_status | VARCHAR(30)
+comments\_title | VARCHAR(100)
+comments\_date | TIMESTAMP(0)
+originalamount | DOUBLE PRECISION
+originalrate | DOUBLE PRECISION
 
 # Detailed Description
 
