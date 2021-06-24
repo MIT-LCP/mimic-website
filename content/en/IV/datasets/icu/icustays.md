@@ -4,7 +4,7 @@ linktitle: "icustays"
 weight: 10
 date: 2020-08-10
 description: >
-  ICU level table
+  Tracking information for ICU stays including adminission and discharge times.
 ---
 
 
@@ -18,8 +18,8 @@ description: >
 
 **Links to:**
 
-* PATIENTS on `subject_id`
-* ADMISSIONS on `hadm_id`
+* patients on `subject_id`
+* admissions on `hadm_id`
 
 # Important considerations
 
@@ -30,14 +30,14 @@ description: >
 
 Name | Postgres data type
 ---- | ----
-SUBJECT\_ID | INT
-HADM\_ID | INT
-STAY\_ID | INT
-FIRST\_CAREUNIT | VARCHAR(20)
-LAST\_CAREUNIT | VARCHAR(20)
-INTIME | TIMESTAMP(0)
-OUTTIME | TIMESTAMP(0)
-LOS | DOUBLE | PRECISION
+subject\_id | INT
+hadm\_id | INT
+stay\_id | INT
+first\_careunit | VARCHAR(20)
+last\_careunit | VARCHAR(20)
+intime | TIMESTAMP(0)
+outtime | TIMESTAMP(0)
+los | DOUBLE PRECISION
 
 # Detailed Description
 
