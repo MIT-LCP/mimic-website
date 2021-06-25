@@ -11,7 +11,7 @@ These are relatively brief instructions provided to ease installation of Postgre
 
 Note that before proceeding with this guide you will need to:
 
-1. Download the MIMIC-III Clinical Database (see [here](/iii/gettingstarted) for details on gaining access).
+1. Download the MIMIC-III Clinical Database (see [here](/docs/gettingstarted) for details on gaining access).
 2. Extract the MIMIC-III Clinical Database as .csv files somewhere on your local computer.
 3. Download the PostgreSQL scripts from [here](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic/postgres) - only the files which end in `.sql` are required.
 
@@ -216,7 +216,7 @@ We have provided a script to add comments to all the tables/columns in MIMIC-III
 \i C:/Tools/mimic-code-master/buildmimic/postgres/postgres_add_comments.sql
 ```
 
-You may also find the [introduction to MIMIC-III](/iii/tutorials/intro-to-mimic-iii/) guide useful.
+You may also find the [introduction to MIMIC-III](/docs/iii/tutorials/intro-to-mimic-iii/) guide useful.
 Also, check out the [schema](https://mit-lcp.github.io/mimic-schema-spy/).
 
 Good luck in your research!

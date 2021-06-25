@@ -9,7 +9,7 @@ description: >
 
 BigQuery is a columnar, distributed relational database management system. BigQuery accesses only the columns specified in the query, making it ideal for data analysis workflows. [Read more about BigQuery in Google's cloud documentation](https://cloud.google.com/bigquery/).
 
-First, ensure you have been provisioned access to MIMIC III or IV on BigQuery. See the [cloud page for instructions](/iv/access/cloud). Once you have been provisioned access to using MIMIC on BigQuery, it's worthwhile to "pin" the dataset to see it on the BigQuery web tool.
+First, ensure you have been provisioned access to MIMIC III or IV on BigQuery. See the [cloud page for instructions](../../cloud). Once you have been provisioned access to using MIMIC on BigQuery, it's worthwhile to "pin" the dataset to see it on the BigQuery web tool.
 
 1. Go to the BigQuery console: http://console.cloud.google.com/bigquery
 2. If you haven’t created a BigQuery project previously you will be asked to do so. You will need to enter information to pay for the cost of queries. For more details see: https://cloud.google.com/resource-manager/docs/creating-managing-projects

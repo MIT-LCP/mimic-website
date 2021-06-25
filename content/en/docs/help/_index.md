@@ -10,7 +10,7 @@ cascade:
 
 ---
 
-MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/iii/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide.
+MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/docs/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide.
 
 ## How can I find an answer to my question?
 
@@ -21,7 +21,7 @@ The page already contains a number of useful discussions around nuanced aspects 
 
 Contributing is easy!
 Both the [website documentation](https://github.com/MIT-LCP/mimic-website/) and the [code repository](https://github.com/MIT-LCP/mimic-code/) are openly collaborated upon via GitHub - and your contributions are welcome.
-See [our notes on how to get involved](/iii/community/contributing/) for further information.
+See [our notes on how to get involved](/docs/community/contributing/) for further information.
 
 ## How can I get help with my analysis?
 

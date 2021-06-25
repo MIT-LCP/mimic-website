@@ -83,7 +83,7 @@ MIMIC-IV v0.2 was released June 23rd, 2020.
 - Updated demographics in the patient table
   - `anchor_year` -> `anchor_year_group`
   - `anchor_year_shifted` -> `anchor_year`
-  - See the [patients table](/iv/datasets/core/patients) for detail on these columns
+  - See the [patients table](/docs/iv/tables/core/patients) for detail on these columns
 - *transfers*
   - Deleted the `los` column
 - *emar*
@@ -103,11 +103,11 @@ MIMIC-IV v0.2 was released June 23rd, 2020.
 - *microbiologyevents*
   - `stay_id` column removed
   - `spec_id` -> `micro_specimen_id`
-- Added the [*poe*](/iv/datasets/hosp/poe) and [*poe_detail*](/iv/datasets/hosp/poe_detail) tables
+- Added the [*poe*](/docs/iv/tables/hosp/poe) and [*poe_detail*](/docs/iv/tables/hosp/poe_detail) tables
   - Documentation of provider orders for various treatments and other aspects of patient management
-- Added the [*prescriptions*](/iv/datasets/hosp/prescriptions) table
+- Added the [*prescriptions*](/docs/iv/tables/hosp/prescriptions) table
   - Documentation of medicine prescriptions via the provider order interface
-- Added the [*pharmacy*](/iv/datasets/hosp/pharmacy) table
+- Added the [*pharmacy*](/docs/iv/tables/hosp/pharmacy) table
   - Detailed information regarding prescriptions provided by the pharmacy including formulary dose, route, frequency, dose, and so on.
 - *inputevents*
   - Fixed an error in the calculation of the *amount* column

@@ -12,16 +12,16 @@ cascade:
 
 MIMIC-IV is a relational database containing real hospital stays for patients admitted to a tertiary academic medical center in Boston, MA, USA. MIMIC-IV contains comprehensive information for each patient while they were in the hospital: laboratory measurements, medications administered, vital signs documented, and so on.
 The database is intended to support a wide variety of research in healthcare.
-MIMIC-IV builds upon the success of [MIMIC-III](/iii), and incorporates numerous improvements over MIMIC-III.
+MIMIC-IV builds upon the success of [MIMIC-III](/docs/iii), and incorporates numerous improvements over MIMIC-III.
 
 MIMIC-IV is separated into "modules" to reflect the provenance of the data. There are currently five modules:
 
-- [core](/iv/datasets/core) - patient stay information (i.e. admissions and transfers)
-- [hosp](/iv/datasets/hosp) - hospital level data for patients: labs, micro, and electronic medication administration
-- [icu](/iv/datasets/icu) - ICU level data. These are the event tables, and are identical in structure to MIMIC-III (chartevents, etc)
-- [ed](/iv/datasets/ed) - data from the emergency department
-- [cxr](/iv/datasets/cxr) - lookup tables and meta-data from MIMIC-CXR, allowing linking to MIMIC-IV
-- [note](/iv/datasets/note) - deidentified free-text clinical notes
+- [core](/docs/iv/tables/core) - patient stay information (i.e. admissions and transfers)
+- [hosp](/docs/iv/tables/hosp) - hospital level data for patients: labs, micro, and electronic medication administration
+- [icu](/docs/iv/tables/icu) - ICU level data. These are the event tables, and are identical in structure to MIMIC-III (chartevents, etc)
+- [ed](/docs/iv/tables/ed) - data from the emergency department
+- [cxr](/docs/iv/tables/cxr) - lookup tables and meta-data from MIMIC-CXR, allowing linking to MIMIC-IV
+- [note](/docs/iv/tables/note) - deidentified free-text clinical notes
 
 {{% pageinfo %}}
 MIMIC-Note is currently not publicly available and the structure is subject to change.

@@ -10,7 +10,7 @@ toc = false
 
 BigQuery is a columnar, distributed relational database management system. BigQuery accesses only the columns specified in the query, making it ideal for data analysis workflows.
 BigQuery can be used to query a cloud based instance of MIMIC-III through the web browser.
-To access MIMIC-III on BigQuery, see the [cloud data access guide](/iii/gettingstarted/cloud).
+To access MIMIC-III on BigQuery, see the [cloud data access guide](/docs/gettingstarted/cloud).
 
 # MIMIC-III on BigQuery
 
@@ -40,7 +40,7 @@ Metadata for a particular table can be obtained by clicking the table on the lef
 
 ![Metadata for the admissions table in BigQuery](/img/tutorial/bq/metadata.png)
 
-If you do not see the `mimiciii_clinical` dataset on BigQuery, you may need to [request access to MIMIC-III on BigQuery](/iii/gettingstarted/cloud), or [pin the project to your sidebar](/iii/gettingstarted/cloud/bigquery/).
+If you do not see the `mimiciii_clinical` dataset on BigQuery, you may need to [request access to MIMIC-III on BigQuery](/docs/gettingstarted/cloud), or [pin the project to your sidebar](/docs/gettingstarted/cloud/bigquery/).
 
 Try looking at the metadata for other tables such as `patients` and `chartevents`.
 

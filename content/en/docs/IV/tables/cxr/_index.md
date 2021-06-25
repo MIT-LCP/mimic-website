@@ -27,7 +27,7 @@ DICOM file names are unique 40 character hexadecimal strings with dashes separat
 
 Images are provided in DICOM format; see the [image](#images) section for more information about the images.
 
-Reports are provided as plain text files; see the [reports](#reports) section for more information about the reports.
+Reports are provided as plain text files; see the [reports](#deidentified-free-text-radiology-reports) section for more information about the reports.
 
 ## Data Organization
 

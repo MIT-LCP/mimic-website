@@ -1,6 +1,6 @@
 +++
 date = "2015-09-01T14:02:13-04:00"
-title = "Querying MIMIC-III"
+title = "Querying MIMIC-III in Postgres"
 draft = false
 linktitle = "Postgres queries"
 weight = 3

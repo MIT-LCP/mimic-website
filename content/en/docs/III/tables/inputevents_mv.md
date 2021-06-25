@@ -21,7 +21,7 @@ toc = "true"
 * D_ITEMS on `ITEMID`
 * CAREGIVERS on `CGID`
 
-A high level description of the data is available [here](/iii/mimicdata/io).
+A high level description of the data is available [here](/docs/iii/about/io).
 
 # Important considerations
 
@@ -76,7 +76,7 @@ Identifiers which specify the patient: `SUBJECT_ID` is unique to a patient, `HAD
 ## ITEMID
 
 Identifier for a single measurement type in the database. Each row associated with one `ITEMID` which corresponds to an instantiation of the same measurement (e.g. norepinephrine).
-MetaVision `ITEMID` values are all above 220000. Since this data only contains data from MetaVision, it only contains `ITEMID` above 220000 (see [here](/iii/mimicdata/metavision/) for details about MetaVision)
+MetaVision `ITEMID` values are all above 220000. Since this data only contains data from MetaVision, it only contains `ITEMID` above 220000 (see [here](/docs/about/sources/metavision/) for details about MetaVision)
 
 ## AMOUNT, AMOUNTUOM
 

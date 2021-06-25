@@ -48,7 +48,7 @@ warning | Binary (0 or 1)
 
 ## `subject_id`, `hadm_id`, `stay_id`
 
-Identifiers which specify the patient: `subject_id` is unique to a patient, `hadm_id` is unique to a patient hospital stay and `stay_id` is unique to a patient ward stay. More information about these identifiers is [available here](/iv/overview/concepts/).
+Identifiers which specify the patient: `subject_id` is unique to a patient, `hadm_id` is unique to a patient hospital stay and `stay_id` is unique to a patient ward stay. More information about these identifiers is [available here](/docs/iv/about/concepts/).
 
 ## `charttime`, `storetime`
 
