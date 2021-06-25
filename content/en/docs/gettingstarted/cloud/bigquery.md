@@ -33,7 +33,7 @@ The query should return some data, and your browser window should be similar to 
 
 At this point you are ready to use MIMIC on BigQuery!
 
-A tutorial on using BigQuery to query MIMIC-III is available [here](/iii/tutorials/intro-to-mimic-iii-bq).
+A tutorial on using BigQuery to query MIMIC-III is available [here](/docs/iii/tutorials/intro-to-mimic-iii-bq).
 
 Note that we have a number of pre-generated "views" of the data. These are available in the `mimic_derived` dataset which you are free to query. All code used to generate these views has been made openly available on the [MIMIC-IV code repository](https://github.com/MIT-LCP/mimic-iv/).
 

@@ -8,7 +8,7 @@ toc = "true"
 
 +++
 
-The MIMIC Querybuilder is a graphical interface for running SQL queries on the MIMIC-III database. It is intended for light exploration of the data, in particular for researchers who are new to MIMIC-III and seeking to gain an understanding of its structure. Researchers seeking to carry out research projects with MIMIC should [follow our instructions](/iii/gettingstarted/dbsetup/) for building a local version of the database. 
+The MIMIC Querybuilder is a graphical interface for running SQL queries on the MIMIC-III database. It is intended for light exploration of the data, in particular for researchers who are new to MIMIC-III and seeking to gain an understanding of its structure. Researchers seeking to carry out research projects with MIMIC should [follow our instructions](/docs/gettingstarted/local) for building a local version of the database. 
 
 ## Notes and limitations
 
