@@ -7,7 +7,7 @@ description: >
   Changes from MIMIC-III to MIMIC-IV.
 ---
 
-Many users will be familiar with [MIMIC-III](/iii), the predecessor of MIMIC-IV.
+Many users will be familiar with [MIMIC-III](/docs/iii), the predecessor of MIMIC-IV.
 A number of improvements have been made, including simplifying the structure, adding new data elements, and improving the usability of previous data elements.
 
 ## Structure
