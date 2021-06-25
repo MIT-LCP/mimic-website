@@ -1,10 +1,9 @@
 ---
-title: "BigQuery"
+title: "BigQuery Tutorial"
 linktitle: "BigQuery"
 date: 2020-08-10
 weight: 2
-description: >
-  BigQuery
+
 ---
 
 ## BigQuery UI

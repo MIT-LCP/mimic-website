@@ -13,11 +13,11 @@ Datasets available on GCS include:
 
 - [MIMIC-III](https://physionet.org/content/mimiciii/)
 - [MIMIC-IV](https://physionet.org/content/mimiciv/)
-- [MIMIC-CXR](https://physionet.org/content/mimic-cxr/)\*\*
-- [MIMIC-ED](https://physionet.org/content/mimic-iv-ed)
+- [MIMIC-IV-CXR](https://physionet.org/content/mimic-cxr/)\*\*
+- [MIMIC-IV-ED](https://physionet.org/content/mimic-iv-ed)
 
 
-\*\* MIMIC-CXR is over 4.7 TB, almost entirely due to the size of the DICOMs.
+\*\* MIMIC-IV-CXR is over 4.7 TB, almost entirely due to the size of the DICOMs.
 Users should strongly consider *not* downloading the data, and instead using it within Google Cloud Platform (GCP), which we support natively.
 GCP does not charge for data transfer within a region in GCP ([see this page for more details about network charges.](https://cloud.google.com/storage/pricing#network-pricing)).
 
