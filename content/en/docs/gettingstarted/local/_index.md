@@ -14,24 +14,12 @@ https://physionet.org/content/mimiciii/
 
 ## Data and build scripts
 
-MIMIC is provided as a collection of comma-separated (CSV) files, along with scripts to help users import the data into popular database systems. 
-
-Instructions and build scripts for MIMIC are available in the [MIMIC code repository](https://github.com/MIT-LCP/mimic-code) for Postgres, MySQL, and Oracle:  
-
-MIMIC-IV:
-https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iv/buildmimic
-
-MIMIC-IV-CXR:
-To be released
-
-MIMIC-IV-ED:
-To be released
-
-MIMIC-III:
+MIMIC is provided as a collection of comma-separated (CSV) files, along with scripts to help users import the data into popular database systems. Scripts are available in the [MIMIC code repository](https://github.com/MIT-LCP/mimic-code) for Postgres, MySQL, and Oracle:  
 https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iii/buildmimic
 
+If you are familiar with Make, then you can directly clone the above repository and run `make` in order to build MIMIC on a PostgreSQL instance. Otherwise, see the tutorials below.
 
 ## Tutorial  
 
-In addition to the instructions on GitHub, tutorials for installing MIMIC-III in a local Postgres database are provided for Mac OSX, Unix, and MS Windows systems.
+Tutorials for installing MIMIC in a local Postgres database are provided for Mac OSX, Unix, and MS Windows systems. For more detail, select the 'Tutorial' item in the left menu.
 
