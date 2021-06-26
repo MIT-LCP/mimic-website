@@ -14,5 +14,6 @@ menu:
     weight: 10
 ---
 
+
 Some of the information applies across all versions of MIMIC. Information specific to a given version can be found under that version in the navigation to the left.
 

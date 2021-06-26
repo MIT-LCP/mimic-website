@@ -17,3 +17,4 @@ MIMIC supports a diverse range of analytic studies spanning epidemiology, clinic
 - it is freely available to researchers worldwide
 - it encompasses a diverse and very large population of ICU patients
 - it contains high temporal resolution data including lab results, electronic documentation, and bedside monitor trends and waveforms.
+
