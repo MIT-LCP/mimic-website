@@ -4,7 +4,6 @@ linktitle: MIMIC-IV
 weight: 50
 
 cascade:
-
 - type: "docs"
   _target:
     path: "/**"

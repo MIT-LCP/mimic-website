@@ -7,8 +7,8 @@ cascade:
 - type: "docs"
   _target:
     path: "/**"
-
 ---
+
 
 MIMIC is provided through the work of researchers at the MIT Laboratory for Computational Physiology and [our collaborators](/docs/about/acknowledgments/). We have limited resources and cannot provide individual support to researchers worldwide.
 
@@ -36,7 +36,7 @@ If you identify an issue with the MIMIC data (for example, errors in the data, u
 
 ## How do I raise an issue on the MIMIC Code Repository?
 
-See the [contributing section](/iii/community/contributing/) for information about raising issues.
+See the [contributing section](/docs/community/contributing/) for information about raising issues.
 
 ## What if I have found something that may involve sensitive information?
 
