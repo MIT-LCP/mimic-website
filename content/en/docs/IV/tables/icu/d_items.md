@@ -32,6 +32,7 @@ description: >
 
 Name | Postgres data type
 ---- | ----
+<<<<<<< HEAD
 itemid | INTEGER
 label | VARCHAR(200)
 abbreviation | VARCHAR(100)

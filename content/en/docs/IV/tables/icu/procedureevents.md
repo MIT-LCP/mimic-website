@@ -30,6 +30,7 @@ description: >
 
 Name | Data type
 ---- | --------
+<<<<<<< HEAD
 subject\_id | Integer
 hadm\_id | Integer
 stay\_id | Integer
@@ -59,6 +60,36 @@ comments_date |  TIMESTAMP(0)
 
 <!--
 
+=======
+SUBJECT\_ID | Integer
+HADM\_ID | Integer
+STAY\_ID | Integer
+ITEMID | Integer
+CHARTTIME | Date with times
+STORETIME | Date with times
+VALUE | Text
+VALUENUM | Decimal number
+VALUEUOM | Text
+WARNING | Binary (0 or 1)
+LOCATION |  VARCHAR(30)
+LOCATIONCATEGORY |  VARCHAR(30)
+STORETIME |  TIMESTAMP(0)
+CGID  |  INT
+ORDERID |  INT
+LINKORDERID |  INT
+ORDERCATEGORYNAME |  VARCHAR(100)
+SECONDARYORDERCATEGORYNAME |  VARCHAR(100)
+ORDERCATEGORYDESCRIPTION |  VARCHAR(50)
+ISOPENBAG |  SMALLINT
+CONTINUEINNEXTDEPT |  SMALLINT
+CANCELREASON |  SMALLINT
+STATUSDESCRIPTION |  VARCHAR(30)
+COMMENTS_EDITEDBY |  VARCHAR(30)
+COMMENTS_CANCELEDBY |  VARCHAR(30)
+COMMENTS_DATE |  TIMESTAMP(0)
+
+<!--
+>>>>>>> 93c1ec5 (Move /iv/ under docs directory: /docs/iv)
 # Detailed Description
 
 ## `subject_id`, `hadm_id`
