@@ -4,7 +4,7 @@ title: "About MIMIC-III"
 linktitle: "About"
 weight: 10
 description: >
-    This section gives and overview of MIMIC-III.
+    This section gives an overview of MIMIC-III.
 
 ---
 
