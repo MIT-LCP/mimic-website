@@ -1,6 +1,6 @@
 ---
 title: "Tables"
-linkTitle: "Tables"
+linkTitle: "Modules"
 weight: 3
 date: 2020-08-10
 description: >
