@@ -19,6 +19,38 @@ Not only does this clarify the data provenance, but it answers many questions re
 For example, as the CHARTEVENTS table is sourced from the ICU clinical information system, it will only provide data for patients while they are in an ICU.
 Conversely, the LABEVENTS table is sourced from the hospital database, and consequently contains information for a patient's entire hospital stay.
 
+Table-wise changes are summarized below.
+
+MIMIC-III table | MIMIC-IV module | Removed columns | Additional columns | Notes
+--- | --- | --- | --- | ---
+patients            | core | row_id, dob, dod_ssn, dod_hosp, expire_flag | anchor_age, anchor_year, anchor_year_group | DOD no longer available outside of the hospital.
+admissions          | core | row_id, religion, has_chartevents_data | | Values changed for many columns (e.g. language, ethnicity).
+transfers           | core | row_id, icustay_id, dbsource, prev_careunit, curr_careunit, prev_wardid, curr_wardid, los | transfer_id, careunit | Schema is simplified in MIMIC-IV.
+d_hcpcs             | hosp | N/A, was d_cpt | | New table.
+d_icd_diagnoses     | hosp | row_id, icd9_code, short_title | icd_code, icd_version | Now contains ICD-9 and ICD-10 codes.
+d_icd_procedures    | hosp | row_id, icd9_code, short_title | icd_code, icd_version | Now contains ICD-9 and ICD-10 codes.
+d_labitems          | hosp | row_id | | Many additional itemid added.
+diagnoses_icd       | hosp | row_id, icd9_code | icd_code, icd_version | Now contains ICD-9 and ICD-10 codes.
+drgcodes            | hosp | row_id | | 
+emar                | hosp | N/A, new table. | |
+emar_detail         | hosp | N/A, new table. | |
+hcpcsevents         | hosp | N/A, was cptevents. | |
+labevents           | hosp | row_id | labevent_id, specimen_id, storetime, ref_range_lower, ref_range_upper, priority, comments
+microbiologyevents  | hosp | row_id | microevent_id, micro_specimen_id, test_seq, storedate, storetime, test_itemid, test_name, quantity, comments
+pharmacy            | hosp | N/A, new table. | |
+poe                 | hosp | N/A, new table. | |
+poe_detail          | hosp | N/A, new table. | |
+prescriptions       | hosp | row_id, startdate, enddate, drug_name_poe, drug_name_generic, formulary_drug_cd | starttime, stoptime, form_rx, doses_per_24_hrs |
+procedures_icd      | hosp | row_id, icd9_code | icd_code, icd_version | Now contains ICD-9 and ICD-10 codes.
+services            | hosp | row_id | |
+d_items             | icu  | row_id, dbsource, conceptid | lownormalvalue, highnormalvalue
+chartevents         | icu  | row_id, icustay_id, cgid, error, resultstatus, stopped | stay_id
+datetimeevents      | icu  | row_id, icustay_id, cgid, error, resultstatus, stopped | stay_id
+icustays            | icu  | row_id, icustay_id | stay_id
+inputevents         | icu  | row_id, icustay_id, cgid, error | stay_id | Was inputevents_mv in MIMIC-III.
+outputevents        | icu  | row_id, icustay_id, cgid, error | stay_id |
+procedureevents     | icu  | row_id, icustay_id, cgid, comments_editedby, comments_canceledby | stay_id, patientweight, totalamount, totalamountuom, originalamount, originalrate |
+
 ## Contemporary
 
 MIMIC-IV contains data from 2008 - 2019 (inclusive).
