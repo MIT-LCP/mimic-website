@@ -1,7 +1,7 @@
 ---
 date: "2015-09-01T19:34:46-04:00"
-title: "inputevents"
-linktitle: "Inputevents"
+title: "Inputevents"
+linktitle: "inputevents"
 weight: 10
 date: 2020-08-10
 description: >
