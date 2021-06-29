@@ -7,9 +7,9 @@ description: >
   Electrocardiogram reports.
 ---
 
-## *echo*
+## *ecg*
 
-The *echo* table contains echocardiography reports - specifically the free-text interpretation of a 12-lead electrocardiogram (ECG).
+The *ecg* table contains echocardiography reports - specifically the free-text interpretation of a 12-lead electrocardiogram (ECG).
 
 ## Links to
 
@@ -48,7 +48,7 @@ A unique identifier for the given note. `note_id` is composed of `subject_id`, t
 
 ### `note_type`
 
-The type of note recorded in the row. There are two types of note:
+The type of note recorded in the row. This tables only has one type of note:
 
 * 'EK' - electrocardiogram report
 
