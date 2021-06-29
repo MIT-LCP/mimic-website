@@ -124,6 +124,8 @@ offlineSearch = false
 sidebar_menu_compact = true
 # Use foldable navigation menu, i.e. dropdown arrows
 sidebar_menu_foldable = true
+# Set foldable depth
+sidebar_menu_unfold_depth = 2
 # Keep sub-menu level expanded even after going into it
 # ul_show = 2
 #  Set to true to disable breadcrumb navigation.
