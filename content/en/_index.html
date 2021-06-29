@@ -6,13 +6,13 @@ linkTitle = "MIMIC"
 {{< blocks/cover title="Medical Information Mart for Intensive Care" image_anchor="top" height="full" color="orange" >}}
 <p class="lead mt-5">Freely available medical data for research.</p>
 <div class="mx-auto">
-	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/IV" >}}">
+	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
 		Documentation <i class="fas fa-arrow-alt-circle-right ml-2"></i>
 	</a>
-	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="{{< relref "/IV/access" >}}">
-		Access <i class="fas fa-download ml-2 "></i>
+	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="{{< relref "/docs/gettingstarted" >}}">
+		Getting Started <i class="fas fa-download ml-2 "></i>
 	</a>
-	<a class="btn btn-lg btn-success mr-3 mb-4" href="https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iv">
+	<a class="btn btn-lg btn-success mr-3 mb-4" href="https://github.com/MIT-LCP/mimic-code/">
 		Code <i class="fab fa-github ml-2 "></i>
 	</a>
 	<p class="lead mt-5">Click or scroll to learn about the components of MIMIC.</p>
@@ -26,33 +26,33 @@ MIMIC-IV is separated into "modules" to reflect the provenance of the data.
 {{% /blocks/lead %}}
 
 {{< blocks/section color="primary-light" >}}
-{{% blocks/feature icon="fa-lightbulb" title="MIMIC-Core" url="/iv/datasets/core" %}}
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-IV-Core" url="/docs/iv/modules/core" %}}
 Patient demographics, admission tracking, and stay information is available in MIMIC-Core.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="MIMIC-Hosp" url="/iv/datasets/hosp" %}}
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-IV-Hosp" url="/docs/iv/modules/hosp" %}}
 The Hosp module provides all data acquired from the hospital wide electronic health record.
 This includes laboratory measurements, microbiology cultures, medication information, services provided, billed diagnoses and procedures, and so on.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="MIMIC-ICU" url="/iv/datasets/icu" %}}
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-IV-ICU" url="/docs/iv/modules/icu" %}}
 The ICU module contains information collected from the clinical information system used within the ICU.
 This includes highly granular information such as hour-to-hour vital signs, information about fluid management, and other charted observations.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="MIMIC-ED" url="/iv/datasets/ed" %}}
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-IV-ED" url="/docs/iv/modules/ed" %}}
 The ED module contains data for emergency department patients including a triage assessment, nurse-validated vital signs, medicine reconciliation, and treatment information.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="MIMIC-CXR" url="/iv/datasets/cxr" %}}
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-IV-CXR" url="/docs/iv/modules/cxr" %}}
 MIMIC-cxr provides chest x-ray images and radiology reports for a subset of patients admitted to the emergency department.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-lightbulb" title="MIMIC-Note" url="/iv/datasets/note" %}}
+{{% blocks/feature icon="fa-lightbulb" title="MIMIC-IV-Note" url="/docs/iv/modules/note" %}}
 The Note module contains deidentified free-text clinical notes for hospitalized patients.
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-scroll" title="MIMIC-III" url="/iii/" %}}
+{{% blocks/feature icon="fa-scroll" title="MIMIC-III" url="/docs/iii/" %}}
 MIMIC-III is an older version of MIMIC. It contains an older group of patients (ending in 2012), and a subset of the ICU and hospital information available in MIMIC-IV.
 We highly recommend researchers starting new studies to use the above modules in MIMIC-IV.
 We will maintain MIMIC-III for a short period to allow researchers to transition.
