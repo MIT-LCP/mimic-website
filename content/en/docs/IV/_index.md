@@ -15,12 +15,12 @@ MIMIC-IV builds upon the success of [MIMIC-III](/docs/iii), and incorporates num
 
 MIMIC-IV is separated into "modules" to reflect the provenance of the data. There are currently five modules:
 
-- [core](/docs/iv/tables/core) - patient stay information (i.e. admissions and transfers)
-- [hosp](/docs/iv/tables/hosp) - hospital level data for patients: labs, micro, and electronic medication administration
-- [icu](/docs/iv/tables/icu) - ICU level data. These are the event tables, and are identical in structure to MIMIC-III (chartevents, etc)
-- [ed](/docs/iv/tables/ed) - data from the emergency department
-- [cxr](/docs/iv/tables/cxr) - lookup tables and meta-data from MIMIC-CXR, allowing linking to MIMIC-IV
-- [note](/docs/iv/tables/note) - deidentified free-text clinical notes
+- [core](/docs/iv/modules/core) - patient stay information (i.e. admissions and transfers)
+- [hosp](/docs/iv/modules/hosp) - hospital level data for patients: labs, micro, and electronic medication administration
+- [icu](/docs/iv/modules/icu) - ICU level data. These are the event tables, and are identical in structure to MIMIC-III (chartevents, etc)
+- [ed](/docs/iv/modules/ed) - data from the emergency department
+- [cxr](/docs/iv/modules/cxr) - lookup tables and meta-data from MIMIC-CXR, allowing linking to MIMIC-IV
+- [note](/docs/iv/modules/note) - deidentified free-text clinical notes
 
 {{% pageinfo %}}
 MIMIC-Note is currently not publicly available and the structure is subject to change.
