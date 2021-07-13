@@ -64,6 +64,6 @@ Create a project and select it as your activate project. If you've done this cor
 These datasets are fully public, so the implication is that you have not been granted access to the full versions of the databases.
 Please (1) double check you have entered your cloud information into your PhysioNet profile, verifying any e-mails as needed, and (2) requested access to the specific cloud project on its respective PhysioNet project page.
 
-## I have a different issue
+### I want to ask a question about MIMIC or raise an issue on the MIMIC Code Repository
 
 If none of the above have the answer, feel free to [raise an issue](https://github.com/MIT-LCP/mimic-code/issues) or [ask for advice](https://github.com/MIT-LCP/mimic-code/discussions) in the MIMIC repository.
