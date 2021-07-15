@@ -36,7 +36,6 @@ description: >
 
 Name | Data type
 ---- | --------
-<<<<<<< HEAD
 subject\_id | Integer
 hadm\_id | Integer
 stay\_id | Integer
@@ -55,26 +54,6 @@ Identifiers which specify the patient: `subject_id` is unique to a patient, `had
 ## `charttime`, `storetime`
 
 `charttime` records the time at which an observation was made, and is usually the closest proxy to the time the data was actually measured. `storetime` records the time at which an observation was manually input or manually validated by a member of the clinical staff.
-=======
-SUBJECT\_ID | Integer
-HADM\_ID | Integer
-STAY\_ID | Integer
-CHARTTIME | Date with times
-STORETIME | Date with times
-ITEMID | Integer
-VALUE | Text
-VALUENUM | Decimal number
-VALUEUOM | Text
-WARNING | Binary (0 or 1)
-
-## `subject_id`, `hadm_id`, `stay_id`
-
-Identifiers which specify the patient: `subject_id` is unique to a patient, `hadm_id` is unique to a patient hospital stay and `stay_id` is unique to a patient ward stay. More information about these identifiers is [available here](/iv/overview/concepts/).
-
-## `CHARTTIME`, `STORETIME`
-
-`CHARTTIME` records the time at which an observation was made, and is usually the closest proxy to the time the data was actually measured. `STORETIME` records the time at which an observation was manually input or manually validated by a member of the clinical staff.
->>>>>>> 93c1ec5 (Move /iv/ under docs directory: /docs/iv)
 
 <!-- 
 
