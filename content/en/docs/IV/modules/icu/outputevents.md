@@ -37,7 +37,6 @@ storetime | Date with times
 itemid | Integer
 value | Floating point number
 valueuom | Text
-warning | Binary (0 or 1)
 
 # Detailed Description
 
