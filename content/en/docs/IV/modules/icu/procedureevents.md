@@ -30,7 +30,6 @@ description: >
 
 Name | Data type
 ---- | --------
-<<<<<<< HEAD
 subject\_id | Integer
 hadm\_id | Integer
 stay\_id | Integer
