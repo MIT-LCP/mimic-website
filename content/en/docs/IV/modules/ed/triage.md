@@ -66,10 +66,20 @@ The level of pain self-reported by the patient, on a scale of 0-10.
 
 ## `Acuity`
 
-The assigned acuity level for the patient. The acuity level determines how immediately the patient requires care:
+An order of priority based upon acuity utilizing the Emergency Severity Index (ESI) Five Level triage system. This priority is assigned by a registered nurse. Level 1 is the highest priority, while level 5 is the lowest priority. The levels are:
 
-* 1 - Not urgent
-* 5 - Must be admitted and seen by medical staff immediately
+* 1
+  * When Level 1 condition or patient meets ED Trigger Criteria, the triage process stops, the patient is taken directly to a room and immediate physician intervention requested.
+  * Patient conditions which trigger level 1 include being unresponsive, intubated, apneic, pulseless, requiring a medication/intervention to alter ESI level e.g. narcan/adenosine/cardioversion, trauma, stroke, stemi
+* 2
+  * When a Level 2 condition is identified, the triage nurse notifies the resource nurse and appropriate placement will be determined.
+  * Patient conditions which trigger level 2 include high risk situations, new onset confusion, suicidal/homicidal ideation, lethargy, seizures or disorientation, possible ectopic pregnancy, an immunocompromised patient with a fever, severe pain/distress, or vital sign instability
+* 3
+  * Includes patients requiring two or more resources (labs, EKG, x-rays, IV fluids, etc) with stable vital signs
+* 4
+  * Patients requiring one resource only (labs, EKG, etc)
+* 5
+  * Patients not requiring any resources
 
 ## `SBP`, `DBP`
 
