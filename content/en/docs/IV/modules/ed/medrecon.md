@@ -6,19 +6,19 @@ description: >
   medrecon table
 ---
 
-# The MEDRECON table
+# The *medrecon* table
 
-On admission to the emergency departments, staff will ask the patient what current medications they are taking. This process is called medicine reconciliation, and the MEDRECON table stores the findings of the care providers.
+On admission to the emergency departments, staff will ask the patient what current medications they are taking. This process is called medicine reconciliation, and the *medrecon* table stores the findings of the care providers.
 
-**Table source:** Emergency department database.
+**Table source:** Emergency department information system.
 
 **Table purpose:** Document medications a patient is currently taking.
 
-**Number of rows:** 
+**Number of rows:** 3,147,294
 
 **Links to:**
 
-* MAIN on `stay_id`
+* *edstays* on `stay_id`
 
 <!-- # Important considerations -->
 
@@ -26,7 +26,8 @@ On admission to the emergency departments, staff will ask the patient what curre
 
 Name | Postgres data type
 ---- | ----
-`stay_id`         | INT NOT NULL
+`subject_id`      | INTEGER NOT NULL
+`stay_id`         | INTEGER NOT NULL
 `charttime`       | TIMESTAMP(0)
 `name`            | VARCHAR(255)
 `gsn`             | VARCHAR(10)
@@ -34,6 +35,10 @@ Name | Postgres data type
 `etc_rn`          | SMALLINT NOT NULL
 `etccode`         | VARCHAR(8)
 `etcdescription`  | VARCHAR(255)
+
+## `subject_id`
+
+`subject_id` is a unique identifier which specifies an individual patient. Any rows associated with a single `subject_id` pertain to the same individual.
 
 ## `stay_id`
 
@@ -49,7 +54,7 @@ The name of the medication.
 
 ## `gsn`
 
-A code for the medication.
+The Generic Sequence Number (GSN), an ontology for the medication.
 
 ## `ndc`
 
@@ -57,4 +62,4 @@ The National Drug Code (ndc) for the medication.
 
 ## `etc_rn`, `etccode`, `etcdescription`
 
-Medications are grouped using a hierarchical ontology. As more than one group may be associated with the medication, `etc_rn` is used to differentiate the groups (there is no meaning to the order of `etc_rn`). `etccode` provides the code and `etcdescription` provides the description of the group.
+Medications are grouped using a hierarchical ontology known as the Enhanced Therapeutic Class (ETC). As more than one group may be associated with the medication, a sequential integer (`etc_rn`) was generated to differentiate the groups. There is no meaning to the order of `etc_rn`. `etccode` provides the code and `etcdescription` provides the description of the group.

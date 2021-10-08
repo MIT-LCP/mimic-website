@@ -6,7 +6,7 @@ description: >
   vitalsign_hl7 table
 ---
 
-# The VITALSIGN_HL7 table
+# The *vitalsign_hl7* table
 
 **This table is not yet populated.**
 
@@ -15,15 +15,15 @@ Minute-by-minute vital signs for telemetry are communicated to a central server 
 However, vital signs are only communicated with patient identifiers manually input into the bedside monitors, a process which is not routine practice.
 As a result, many patients who are monitored by telemetry do not have their vital signs recorded in this table.
 
-**Table source:** Emergency department database.
+**Table source:** Emergency department information system.
 
 **Table purpose:** Continuous vital signs for monitored patients.
 
-**Number of rows:** 
+**Number of rows:** 0.
 
 **Links to:**
 
-* MAIN on `stay_id`
+* *edstays* on `stay_id`
 
 <!-- # Important considerations -->
 
@@ -31,6 +31,7 @@ As a result, many patients who are monitored by telemetry do not have their vita
 
 Name | Postgres data type
 ---- | ----
+`subject_id` | INTEGER NOT NULL
 `stay_id`    | INTEGER NOT NULL
 `charttime`  | TIMESTAMP(0) NOT NULL
 `hr`         | INTEGER
@@ -40,6 +41,10 @@ Name | Postgres data type
 `nbp_d`      | INTEGER
 `nbp_m`      | INTEGER
 `nbp_s`      | INTEGER
+
+## `subject_id`
+
+`subject_id` is a unique identifier which specifies an individual patient. Any rows associated with a single `subject_id` pertain to the same individual.
 
 ## `stay_id`
 

@@ -6,20 +6,19 @@ description: >
   vitalsign table
 ---
 
+# The *vitalsign* table
 
-# The VITALSIGN table
+Patients admitted to the emergency department have routine vital signs taken ever 1-4 hours. These vital signs are stored in the *vitalsign* table.
 
-Patients admitted to the emergency department have routine vital signs taken ever 1-4 hours. These vital signs are stored in the VITALSIGN table.
-
-**Table source:** Emergency department database.
+**Table source:** Emergency department information system.
 
 **Table purpose:** Provides nurse documented vital signs.
 
-**Number of rows:** 
+**Number of rows:** 1,651,119.
 
 **Links to:**
 
-* MAIN on `stay_id`
+* *edstays* on `stay_id`
 
 <!-- # Important considerations -->
 
@@ -27,16 +26,21 @@ Patients admitted to the emergency department have routine vital signs taken eve
 
 Name | Postgres data type
 ---- | ----
-`stay_id`   | INTEGER NOT NULL
-`charttime` | TIMESTAMP(0)
-`temp`      | NUMERIC(10, 4)
-`pulse`     | NUMERIC(10, 4)
-`SBP`       | INTEGER
-`DBP`       | INTEGER
-`RR`        | NUMERIC(10, 4)
-`O2Sat`     | NUMERIC(10, 4)
-`Rhythm`    | TEXT
-`Pain`      | TEXT
+`subject_id`  | INTEGER NOT NULL
+`stay_id`     | INTEGER NOT NULL
+`charttime`   | TIMESTAMP(0)
+`temperature` | NUMERIC(10, 4)
+`heartrate`   | NUMERIC(10, 4)
+`resprate`    | NUMERIC(10, 4)
+`o2sat`       | NUMERIC(10, 4)
+`sbp`         | INTEGER
+`dbp`         | INTEGER
+`rhythm`      | TEXT
+`pain`        | TEXT
+
+## `subject_id`
+
+`subject_id` is a unique identifier which specifies an individual patient. Any rows associated with a single `subject_id` pertain to the same individual.
 
 ## `stay_id`
 
@@ -46,32 +50,32 @@ An identifier which uniquely identifies a single emergency department stay for a
 
 The time at which the vital signs were charted.
 
-## `temp`
+## `temperature`
 
-The patient's temperature.
+The patient's temperature in degrees Farenheit. Some temperatures may be incorrectly documented as Celsius.
 
-## `pulse`
+## `heartrate`
 
-The patient's heart rate.
+The patient's heart rate in beats per minute.
 
-## `sbp`, `dbp`
+## `resprate`
 
-The patient's diastolic (dbp) and systolic (sbp) blood pressure.
-
-## `rr`
-
-The patient's respiratory rate.
-
-<!-- o2flow -->
+The patient's respiratory rate in breaths per minute.
 
 ## `o2sat`
 
-The patient's peripheral oxygen saturation.
+The patient's oxygen saturation measured as a percentage.
+
+## `sbp`, `dbp`
+
+The patient's systolic (sbp) and diastolic (dbp) blood pressure measured in millimetres of mercury (mmHg).
+
+<!-- o2flow -->
 
 ## `rhythm`
 
-The patient's current heart rhythm
+The patient's heart rhythm.
 
 ## `pain`
 
-The patient's self-reported level of pain on a scale from 0-10.
+The patient's self-reported level of pain on a scale from 0-10. The pain is documented as free-text and may contain non-numeric entries.
