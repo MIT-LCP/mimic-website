@@ -14,7 +14,7 @@ Their vital signs are measured and a level of acuity is assigned. Based on the l
 
 All fields in *triage* were originally free-text. For deidentification purposes, the vital sign and pain fields were converted into a numeric value. As a result, a small number of `NULL` values were introduced for text entries.
 
-**Table source:** Emergency department database.
+**Table source:** Emergency department information system.
 
 **Table purpose:** 
 
@@ -54,7 +54,7 @@ An identifier which uniquely identifies a single emergency department stay for a
 
 ## `temperature`
 
-The patient's temperature in degrees Celsius. Incorrect documentation in Fahrenheit may occur.
+The patient's temperature in degrees Farenheit. Some temperatures may be incorrectly documented as Celsius.
 
 ## `heartrate`
 

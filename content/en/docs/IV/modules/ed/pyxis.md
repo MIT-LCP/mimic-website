@@ -6,19 +6,21 @@ description: >
   pyxis table
 ---
 
-# The PYXIS table
+# The *pyxis* table
 
-The PYXIS table provides information for medicine administrations made via the Pyxis system.
+The *pyxis* table provides information for medicine dispensations made via the Pyxis system.
 
-**Table source:** Emergency department database.
+Note that as the same medication may have multiple `gsn` values, each row does *not* necessarily indicate a unique dispensation. The `med_rn` column allows for subselecting to individual dispensations.
+
+**Table source:** Emergency department information system.
 
 **Table purpose:** Track medicine administrations.
 
-**Number of rows:** 
+**Number of rows:** 1,674,652
 
 **Links to:**
 
-* MAIN on `stay_id`
+* *edstays* on `stay_id`
 
 <!-- # Important considerations -->
 
@@ -26,13 +28,18 @@ The PYXIS table provides information for medicine administrations made via the P
 
 Name | Postgres data type
 ---- | ----
-`stay_id`   | INT NOT NULL
+`subject_id` | INTEGER NOT NULL
+`stay_id`   | INTEGER NOT NULL
 `charttime` | TIMESTAMP(0)
 `med_rn`    | SMALLINT NOT NULL
 `name`      | VARCHAR(255)
 `ifu`       | VARCHAR(255)
 `gsn_rn`    | SMALLINT NOT NULL
 `gsn`       | VARCHAR(10)
+
+## `subject_id`
+
+`subject_id` is a unique identifier which specifies an individual patient. Any rows associated with a single `subject_id` pertain to the same individual.
 
 ## `stay_id`
 
@@ -44,18 +51,16 @@ The time at which the medication was charted, which is the closest approximation
 
 ## `med_rn`
 
-A row number for the medicine.
+A row number for the medicine used to group single dispensations.
 
 ## `name`
 
 The name of the medicine.
 
-## `ifu`
-
 ## `gsn`
 
-A hierarchical ontology which groups the medication.
+The Generic Sequence Number (GSN), an ontology which provides a code for each medicine.
 
 ## `gsn_rn`
 
-As a medicine may be a member of multiple groups in the GSN ontology, this row number differentiates them.
+As a medicine may be a member of multiple groups in the GSN ontology, this row number differentiates them. The order of `gsn_rn` has no meaning.
