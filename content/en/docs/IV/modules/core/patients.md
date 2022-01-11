@@ -36,7 +36,7 @@ These columns provide information regarding the actual patient year for the pati
 
 * `anchor_year` is a shifted year for the patient.
 * `anchor_year_group` is a range of years - the patient's `anchor_year` occurred during this range.
-* `anchor_age` is the patient's age in the `anchor_year`.
+* `anchor_age` is the patient's age in the `anchor_year`. If a patient's `anchor_age` is over 89 in the `anchor_year` then their `anchor_age` is set to 91, regardless of how old they actually were.
 * Example: a patient has an `anchor_year` of 2153, `anchor_year_group` of 2008 - 2010, and an `anchor_age` of 60.
   * The year 2153 for the patient corresponds to 2008, 2009, or 2010.
   * The patient was 60 in the shifted year of 2153, i.e. they were 60 in 2008, 2009, or 2010.
