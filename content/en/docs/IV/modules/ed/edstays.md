@@ -10,7 +10,6 @@ description: >
 
 The *edstays* table is the primary tracking table for emergency department visits.
 It provides the time the patient entered the emergency department and the time they left the emergency department.
-It also provides a set of diagnoses assigned for the patient.
 
 **Table source:** Emergency department information system.
 
