@@ -14,7 +14,7 @@ The *prescriptions* table provides information about prescribed medications. Inf
 ## Links to
 
 * *pharmacy* on `pharmacy_id`
-* *emar* on `pharmacy_id` to `poe_id` (via the pharmacy table)
+* *emar* on `pharmacy_id`
 
 <!--
 
