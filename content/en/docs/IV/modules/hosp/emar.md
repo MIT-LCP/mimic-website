@@ -16,7 +16,7 @@ Records in this table are populated by bedside nursing staff scanning barcodes a
 
 * *emar_detail* on `emar_id`
 * *pharmacy* on `pharmacy_id`
-* *prescriptions* on `poe_id` to `pharmacy_id` (via the pharmacy table)
+* *prescriptions* on `pharmacy_id`
 * *poe* on `poe_id`
 
 <!--
