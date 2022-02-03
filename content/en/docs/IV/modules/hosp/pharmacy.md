@@ -15,7 +15,7 @@ Pharmacy information includes the dose of the drug, the number of formulary dose
 ## Links to
 
 * *poe* on `poe_id`
-* *prescriptions* on `poe_id`
+* *prescriptions* on `pharmacy_id`
 * *emar* on `pharmacy_id`
 
 ## Table columns
