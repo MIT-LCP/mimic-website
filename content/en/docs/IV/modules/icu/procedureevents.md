@@ -53,6 +53,12 @@ isopenbag |  SMALLINT
 continueinnextdept |  SMALLINT
 cancelreason |  SMALLINT
 statusdescription |  VARCHAR(20)
+comments_date | TIMESTAMP
+<!-- originalamount | Float (53)
+originalrate | Float (53)
+These fields are present in the table and never null, but have no clear meaning.
+In particular, "originalrate" is either 0 or 1 for all records.
+-->
 
 # Detailed Description
 
@@ -74,11 +80,11 @@ Identifier for a single measurement type in the database. Each row associated wi
 
 ## `VALUE`
 
-This is the value that corresponds to the concept referred to by itemid. For example, if querying for itemid: 225755 (“18 Gauge Insertion Date”), then the value column indicates the date the line was inserted.
+This is the value that corresponds to the concept referred to by itemid. For example, if querying for itemid: 225794 (“Non-invasive Ventilation”), then the value column indicates the duration of the procedure.
 
 ## `VALUEUOM`
 
-The unit of measurement for the value. Almost always the text string 'Date'.
+The unit of measurement for the value. Most frequently "None" (no value recorded); otherwise one of "day", "hour", "min". A query for itemiid 225794 ("Non-invasive Ventilation") with a `value` of 461 and `valueuom` of `min` would correspond to non-invasive ventilation provided for 461 minutes (which should match the difference between the `startTime` and `endTime` fields for the record). A procedure with `valueuom` equal to "None" corresponds to a procedure whose duration is not recorded (e.g. imaging procedures) and will show a difference of one second between `startTime` and `endTime` values.
 
 ## `LOCATION` , `LOCATION CATEGORY`
 
@@ -116,7 +122,7 @@ If the order was canceled, this column provides some explanation.
 
 ## `STATUSDESCRIPTION`
 
-```STATUSDESCRIPTION``` states the ultimate status of the item, or more specifically, row. It is used to indicate why the delivery of the compound has ended. There are only six possible statuses:
+`STATUSDESCRIPTION` states the ultimate status of the item, or more specifically, row. It is used to indicate why the delivery of the compound has ended. There are only six possible statuses:
 
 * `Changed` - The current delivery has ended as some aspect of it has changed (most frequently, the rate has been changed).
 * `Paused` - The current delivery has been paused.
@@ -124,7 +130,6 @@ If the order was canceled, this column provides some explanation.
 * `Stopped` - The delivery of the item been terminated by the caregiver.
 * `Rewritten` - Incorrect information was input, and so the information in this row was rewritten (these rows are primarily useful for auditing purposes. The rates/amounts described were *not* delivered and so should not be used if determining what compounds a patient has received).
 * `Flushed` - A line was flushed.
-
 
 <!-- 
 ## `CGID`
