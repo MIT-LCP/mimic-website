@@ -24,9 +24,11 @@ description: >
 # Important considerations
 
 * `stay_id` is a *generated* identifier that is *not* based on any raw data identifier. The hospital and ICU databases are not intrinsically linked and so do not have any concept of an ICU encounter identifier.
-* The ICUSTAYS table is derived from the TRANSFERS table. Specifically, it excludes rows in TRANSFERS where the ward is not an ICU.
-* Multiple consecutive icu stay entries from TRANSFERS are merged into a single entry in ICUSTAYS.
-* Heart rate measurements are used to determine if an icu stay is valid. If the heart rate measurement for an icu stay in TRANSFERS is not available, the icu stay will not be included in ICUSTAYS (~5%).
+* The ICUSTAYS table is derived from the TRANSFERS table. 
+  * Rows from the TRANSFERS table are excluded where the ward is not an ICU.
+  * Rows from the TRANSFERS table are excluded where no heart rate measurements were recorded in the ICU system. Since some records in the TRANSFERS table are for administrative records only.
+  * Consecutive ICU unit stays in the TRANSFERS table are counted as one ICU stay. 
+
 
 # Table columns
 
