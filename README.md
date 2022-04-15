@@ -12,38 +12,38 @@
 
 ## Note on deploying the website
 
-* 1: Add mimic-production to remote
-After the pull request of the new material is merged into the main branch of mimic-website, pull down the latest version of main to your local repo. Run the following command after filling in the IP address for server Heimdallr:
+1. Add mimic-production to remote
+   After the pull request of the new material is merged into the main branch of mimic-website, pull down the latest version of main to your  local repo. Run the following command after filling in the IP address for server Heimdallr:
  
-`git remote add mimic-production webuser@<IP address for Heimdallr>:/home/webuser/mimic-website.git`
+   `git remote add mimic-production webuser@<IP address for Heimdallr>:/home/webuser/mimic-website.git`
  
-* Optional: Check if the command above ran correctly,
-Run command: `git remote -v`
-should return:
-mimic-production webuser@<IP address for Heimdallr>:/home/webuser/mimic-website.git (fetch)
-mimic-production webuser@<IP address for Heimdallr>:/home/webuser/mimic-website.git (push)
-origin   https://www.github.com/MIT-LCP/mimic-website (fetch)
-origin   https://www.github.com/MIT-LCP/mimic-website (push)
+   * Optional: Check if the command above ran correctly,
+   Run command: `git remote -v`
+   should return:
+   mimic-production webuser@<IP address for Heimdallr>:/home/webuser/mimic-website.git (fetch)
+   mimic-production webuser@<IP address for Heimdallr>:/home/webuser/mimic-website.git (push)
+   origin   https://www.github.com/MIT-LCP/mimic-website (fetch)
+   origin   https://www.github.com/MIT-LCP/mimic-website (push)
  
-* 2: Sshuttle into the production server
+2. Sshuttle into the production server
  
-Run the following command after filling in the  LCP username and IP address: `alias sshcsail="sshuttle -r <LCP username>@heimdallr.csail.mit.edu <IP address for Heimdallr>/24"`
+   Run the following command after filling in the  LCP username and IP address: `alias sshcsail="sshuttle -r <LCP    username>@heimdallr.csail.mit.edu <IP address for Heimdallr>/24"`
  
-Run command: `sshcsail`
+   Run command: `sshcsail`
  
-Should return:  “client: Connected” after you enter your password
+   Should return:  “client: Connected” after you enter your password
  
-* 3: Push development
+3. Push development
  
-In another terminal from your mimic-website repo:
+   In another terminal from your mimic-website repo:
  
-Run command: `git push mimic-production`
+   Run command: `git push mimic-production`
 
 
-* Note:
-Your public key (for the machine you're pushing from) must be in the webuser group
+   * Note:
+   Your public key (for the machine you're pushing from) must be in the webuser group
 
-Currently, some minor errors exist related to reading git log. If error messages show up after push to mimic-production, website deployment might still be successful. It is always good practice to check the website after deployment.
+   Currently, some minor errors exist related to reading git log. If error messages show up after push to mimic-production, website deployment might still be successful. It is always good practice to check the website after deployment.
 
 ## Issues with the website or MIMIC
 
