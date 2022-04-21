@@ -60,6 +60,48 @@ Each row of this table contains a unique `hadm_id`, which represents a single pa
 
 Similarly, `discharge_location` is the disposition of the patient after they are discharged from the hospital.
 
+#### Association with UB-04 billing codes
+`admission_location` and `discharge_location` are associated with internal hospital `ibax` codes which aren't provided in MIMIC-IV. These internal codes tend to align with UB-04 billing codes. 
+
+In some cases more than one internal code is associated with a given `admission_location` and `discharge_location`. This can either be do to; 1) multiple codes being used by the hospital for the same `admission_location` or `discharge_location`, or 2) during de-identification multiple internal codes may be combined into a single `admission_location` or `discharge_location`. 
+
+In the tables below, we provide the matching UB-04 code(s) for the most common `ibax` codes for a given `admission_location` and `discharge_location`, when applicable. In cases where more than one code is given, if this combination is due to 1) in the above paragraph, the additional code must have at least 10% of the entires of the most common code. 
+
+Admission UB-04 mappings:
+admission_location | UB-04 code(s)
+-- | --
+PHYSICIAN REFERRAL | 1, 3
+WALK-IN/SELF REFERRAL | 1
+AMBULATORY SURGERY TRANSFER | 1, 2, 6
+INFORMATION NOT AVAILABLE | 1, 9
+CLINIC REFERRAL | 2, 8
+PROCEDURE SITE | 2
+PACU | 2
+TRANSFER FROM HOSPITAL | 4, 6
+TRANSFER FROM SKILLED NURSING FACILITY | 5
+EMERGENCY ROOM | 1, 2, 7
+INTERNAL TRANSFER TO OR FROM PSYCH | none
+
+Discharge UB-04 mappings:
+discharge_location | UB-04 code(s)
+-- | --
+HOME | 01
+ACUTE HOSPITAL | 02, 81, 86
+SKILLED NURSING FACILITY | 03, 64
+ASSISTED LIVING | 04
+HEALTHCARE FACILITY | 05, 43
+HOME HEALTH CARE | 06
+AGAINST ADVICE | 07
+DIED | 20
+OTHER FACILITY | 21, 70
+HOSPICE | 50, 51
+REHAB | 62
+CHRONIC/LONG TERM ACUTE CARE | 63
+PSYCH FACILITY | 65
+OTHER FACILITY | 70
+
+UB-04 documentation online often provides more detail than found in the `admission_location` and `discharge_location` text, particularly for discharges.
+
 ### `insurance`, `language`, `marital_status`, `ethnicity`
 
 The `insurance`, `language`, `marital_status`, and `ethnicity` columns provide information about patient demographics for the given hospitalization.
