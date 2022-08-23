@@ -4,7 +4,7 @@ linktitle: "admissions"
 date: 2020-08-10
 weight: 1
 description: >
-  Admissions table
+  Detailed information about hospital stays.
 ---
 
 The *admissions* table gives information regarding a patient's admission to the hospital. Since each unique hospital visit for a patient is assigned a unique `hadm_id`, the *admissions* table can be considered as a definition table for `hadm_id`. Information available includes timing information for admission and discharge, demographic information, the source of the admission, and so on.

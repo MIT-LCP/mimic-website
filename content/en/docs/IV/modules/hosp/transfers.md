@@ -4,7 +4,7 @@ linktitle: "transfers"
 date: 2020-08-10
 weight: 3
 description: >
-  Transfers table
+  Detailed information about patients' unit transfers. 
 ---
 
 ## *transfers*
