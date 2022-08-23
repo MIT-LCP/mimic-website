@@ -1,5 +1,5 @@
 ---
-title: "Transfers table"
+title: "transfers table"
 linktitle: "transfers"
 date: 2020-08-10
 weight: 3

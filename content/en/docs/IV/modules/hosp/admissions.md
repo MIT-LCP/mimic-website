@@ -1,5 +1,5 @@
 ---
-title: "Admissions table"
+title: "admissions table"
 linktitle: "admissions"
 date: 2020-08-10
 weight: 1
