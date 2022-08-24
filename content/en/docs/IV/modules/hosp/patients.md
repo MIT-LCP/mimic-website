@@ -1,10 +1,10 @@
 ---
-title: "Patients table"
+title: "patients table"
 linktitle: "patients"
 date: 2020-08-10
-weight: 2
+weight: 1
 description: >
-  Patients table
+  Patients' gender, age, and date of death if information exists.
 ---
 
 Information that is consistent for the lifetime of a patient is stored in this table.

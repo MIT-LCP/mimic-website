@@ -15,7 +15,6 @@ MIMIC-IV builds upon the success of [MIMIC-III](/docs/iii), and incorporates num
 
 MIMIC-IV is separated into "modules" to reflect the provenance of the data. There are currently five modules:
 
-- [core](/docs/iv/modules/core) - patient stay information (i.e. admissions and transfers)
 - [hosp](/docs/iv/modules/hosp) - hospital level data for patients: labs, micro, and electronic medication administration
 - [icu](/docs/iv/modules/icu) - ICU level data. These are the event tables, and are identical in structure to MIMIC-III (chartevents, etc)
 - [ed](/docs/iv/modules/ed) - data from the emergency department
