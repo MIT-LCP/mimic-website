@@ -17,6 +17,8 @@ Information includes the associated pharmacy order, the dose due, the dose given
 * *emar* on `emar_id`
 * *pharmacy* on `pharmacy_id`
 
+Note: The eMAR system was implemented during the year 2011-2013. Therefore, patients do not have records in emar_detail table might because the information wasn’t available. 
+
 <!--
 
 # Important considerations
