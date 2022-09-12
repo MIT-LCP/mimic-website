@@ -19,13 +19,10 @@ Records in this table are populated by bedside nursing staff scanning barcodes a
 * *prescriptions* on `pharmacy_id`
 * *poe* on `poe_id`
 
-Note: The eMAR system was implemented during the year 2011-2013. Therefore, patients do not have records in emar table might because the information wasn’t available. 
 
-<!--
+## Important considerations
 
-# Important considerations
-
--->
+* The eMAR system was implemented during between the 2011-2013. As a result, eMAR data is not available for all patients.
 
 ## Table columns
 
