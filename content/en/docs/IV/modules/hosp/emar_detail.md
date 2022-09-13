@@ -22,7 +22,7 @@ Information includes the associated pharmacy order, the dose due, the dose given
 
 ## Important considerations
 
-* The eMAR system was implemented during between the 2011-2013. As a result, eMAR data is not available for all patients.
+* The eMAR system was implemented during 2011-2013. As a result, eMAR data is not available for all patients.
 
 
 
