@@ -14,7 +14,7 @@ description: >
 
 **Table purpose:** Definition table for all items in the ICU databases.
 
-**Number of rows:** 3,816
+**Number of rows:** 4,014
 
 **Links to:**
 
@@ -26,13 +26,12 @@ description: >
 
 # Important considerations
 
-* If the `LINKSTO` column is null, then the data is currently unavailable, but planned for a future release.
+* If the `linksto` column is null, then the data is currently unavailable, but planned for a future release.
 
 # Table columns
 
 Name | Postgres data type
 ---- | ----
-<<<<<<< HEAD
 itemid | INTEGER
 label | VARCHAR(200)
 abbreviation | VARCHAR(100)
