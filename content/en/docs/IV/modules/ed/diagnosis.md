@@ -14,7 +14,7 @@ The *diagnosis* table provides billed diagnoses for patients. Diagnoses are dete
 
 **Table purpose:** Track patient admissions to the emergency department.
 
-**Number of rows:** 949,172
+**Number of rows:** 899,050
 
 **Links to:**
 

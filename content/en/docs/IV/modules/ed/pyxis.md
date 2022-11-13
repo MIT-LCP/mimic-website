@@ -16,7 +16,7 @@ Note that as the same medication may have multiple `gsn` values, each row does *
 
 **Table purpose:** Track medicine administrations.
 
-**Number of rows:** 1,674,652
+**Number of rows:** 1,586,053
 
 **Links to:**
 

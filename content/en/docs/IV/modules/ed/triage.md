@@ -16,9 +16,9 @@ All fields in *triage* were originally free-text. For deidentification purposes,
 
 **Table source:** Emergency department information system.
 
-**Table purpose:** 
+**Table purpose:** Store information collected on triage to the emergency department.
 
-**Number of rows:** 
+**Number of rows:** 425,087
 
 **Links to:**
 

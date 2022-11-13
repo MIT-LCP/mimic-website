@@ -15,7 +15,7 @@ It provides the time the patient entered the emergency department and the time t
 
 **Table purpose:** Track patient admissions to the emergency department.
 
-**Number of rows:** 448,972
+**Number of rows:** 425,087
 
 **Links to:**
 

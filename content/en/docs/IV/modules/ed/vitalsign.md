@@ -14,7 +14,7 @@ Patients admitted to the emergency department have routine vital signs taken eve
 
 **Table purpose:** Provides nurse documented vital signs.
 
-**Number of rows:** 1,651,119.
+**Number of rows:** 1,564,610
 
 **Links to:**
 
