@@ -61,6 +61,7 @@ Each row of this table contains a unique `hadm_id`, which represents a single pa
 Similarly, `discharge_location` is the disposition of the patient after they are discharged from the hospital.
 
 #### Association with UB-04 billing codes
+
 `admission_location` and `discharge_location` are associated with internal hospital `ibax` codes which aren't provided in MIMIC-IV. These internal codes tend to align with UB-04 billing codes. 
 
 In some cases more than one internal code is associated with a given `admission_location` and `discharge_location`. This can either be do to; 1) multiple codes being used by the hospital for the same `admission_location` or `discharge_location`, or 2) during de-identification multiple internal codes may be combined into a single `admission_location` or `discharge_location`. 

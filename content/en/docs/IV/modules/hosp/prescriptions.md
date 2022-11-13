@@ -29,10 +29,13 @@ Name | Postgres data type
 `subject_id` | INTEGER NOT NULL
 `hadm_id` | INTEGER NOT NULL
 `pharmacy_id` | INTEGER
+`poe_id` | VARCHAR(25)
+`poe_seq` | INTEGER
 `starttime` | TIMESTAMP
 `stoptime` | TIMESTAMP
 `drug_type` | VARCHAR(20) NOT NULL
 `drug` | VARCHAR(255) NOT NULL
+`formulary_drug_cd` | VARCHAR(50)
 `gsn` | VARCHAR(10)
 `ndc` | VARCHAR(20)
 `prod_strength` | VARCHAR(255)
@@ -67,6 +70,10 @@ The component of the prescription which the drug occupies. Can be one of 'MAIN',
 ### `drug`
 
 A free-text description of the medication administered.
+
+### `formulary_drug_cd`
+
+A hospital specific ontology used to order drugs from the formulary.
 
 ### `gsn`
 

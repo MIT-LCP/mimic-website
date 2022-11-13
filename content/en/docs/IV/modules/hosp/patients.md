@@ -44,4 +44,8 @@ These columns provide information regarding the actual patient year for the pati
 
 ### `dod`
 
-The de-identified date of death for the patient. Date of death is extracted from the hospital information system only. **Out-of-hospital mortality is currently unavailable as of MIMIC-IV v1.0**.
+The de-identified date of death for the patient. Date of death is extracted from two sources: the hospital information system and the [Massachusetts State Registry of Vital Records and Statistics](https://www.mass.gov/orgs/registry-of-vital-records-and-statistics).
+Individual patient records from MIMIC were matched to the vital records using a custom algorithm based on identifiers including name, social security number, and date of birth.
+
+As a result of the linkage, out of hospital mortality is available for MIMIC-IV patients up to **one year post-hospital discharge**. All patient deaths occurring more than one year after hospital discharge are censored.
+Survival studies should incorporate this into their design.
