@@ -25,11 +25,16 @@ It provides the time the patient entered the emergency department and the time t
 
 Name | Postgres data type
 ---- | ----
-`subject_id` | INTEGER NOT NULL
-`hadm_id`    | INTEGER NOT NULL
-`stay_id`    | INTEGER NOT NULL
-`intime`     | TIMESTAMP(0) NOT NULL
-`outtime`    | TIMESTAMP(0) NOT NULL
+`subject_id`        | INTEGER NOT NULL
+`hadm_id`           | INTEGER NOT NULL
+`stay_id`           | INTEGER NOT NULL
+`intime`            | TIMESTAMP(0) NOT NULL
+`outtime`           | TIMESTAMP(0) NOT NULL
+`gender`            | VARCHAR(1) NOT NULL
+`race`              | VARCHAR(60)
+`arrival_transport` | VARCHAR(50) NOT NULL
+`disposition`       | VARCHAR(255)
+
 
 ## `subject_id`
 
@@ -48,3 +53,39 @@ An identifier which uniquely identifies a single emergency department stay for a
 ## `intime`, `outtime`
 
 The admission datetime (`intime`) and discharge datetime (`outtime`) of the given emergency department stay.
+
+## `gender`
+
+The patient's administrative gender as documented in the hospital system.
+
+## `race`
+
+The patient's self-reported race. Race is aggregated into higher level categories for very small groups.
+As of MIMIC-IV-ED v2.1, there were 33 unique categories for race.
+
+## `arrival_transport`
+
+The method through which the individual arrived at the ed. A count of the possible entries is provided below.
+
+arrival_transport | count
+--- | ---
+WALK IN           | 251849
+AMBULANCE         | 155752
+UNKNOWN           |  15352
+OTHER             |   1266
+HELICOPTER        |    868
+
+## `disposition`
+
+The method through which the individual left the ED. Of the non-null methods, the possibilities include:
+
+disposition | count
+--- | ---
+HOME                         | 241632
+ADMITTED                     | 158010
+TRANSFER                     | 7025
+LEFT WITHOUT BEING SEEN      | 6155
+OTHER                        | 4297
+LEFT AGAINST MEDICAL ADVICE  | 1881
+ELOPED                       | 5710
+EXPIRED                      | 377

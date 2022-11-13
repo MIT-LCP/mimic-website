@@ -33,7 +33,6 @@ Name | Postgres data type
 `charttime` | TIMESTAMP(0)
 `med_rn`    | SMALLINT NOT NULL
 `name`      | VARCHAR(255)
-`ifu`       | VARCHAR(255)
 `gsn_rn`    | SMALLINT NOT NULL
 `gsn`       | VARCHAR(10)
 
