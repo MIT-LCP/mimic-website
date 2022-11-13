@@ -4,9 +4,9 @@ linkTitle: "Note"
 date: 2020-08-10
 weight: 80
 description: >
- (NOT PUBLICLY AVAILABLE): The Note module contains deidentified free-text clinical notes for hospitalized patients.
+ The Note module contains deidentified free-text clinical notes for hospitalized patients.
 ---
 
 {{% pageinfo %}}
-MIMIC-Note is currently not publicly available and the structure is subject to change.
+MIMIC-Note was first made available with MIMIC-IV v2.1. MIMIC-Note is contained in a separate PhysioNet project, and must be acquired separately from the rest of the MIMIC-IV data.
 {{% /pageinfo %}}
