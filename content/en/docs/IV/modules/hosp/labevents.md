@@ -16,10 +16,28 @@ These include hematology measurements, blood gases, chemistry panels, and less c
 
 * *d_labitems* on `itemid`
 
-<!--
+## Important considerations
 
-# Important considerations
+`hadm_id` is assigned to labs close to the hospital stay using the *transfers* table. However this does not always perfectly capture labs proximal to the hospital stay.
+To be specific, as of v2.1, it is possible to assign 59,327,830 observations with an `hadm_id` using a join to *admissions* with`subject_id`,  `admittime`, and `dischtime`. However, only 58,131,956 (98%) of these observations have an `hadm_id` actually stored in the *labevents* table. Users wishing to ensure capture of labs proximal to hospital stays should be aware of this, and use joins with time as necessary.
 
+The following conditions must occur in order for this data to not have an `hadm_id` in the table:
+
+* the lab observation must fall outside of a row in *transfers*
+* the lab observation must not have an associated ED stay identifier
+
+<!-- 
+SQL query for the above.
+
+select 
+  count(adm.hadm_id) as num_obs_in_hosp
+  , count(le.subject_id) as num_obs_with_subject_id
+  , count(le.hadm_id) as num_obs_with_hadm_id
+  , count(le.hadm_id)*100.0/count(le.subject_id) as percent_obs_assigned_hadm_id
+from hosp.admissions adm
+left join hosp.labevents le
+on adm.subject_id = le.subject_id
+and le.charttime between adm.admittime and adm.dischtime;
 -->
 
 ## Table columns
