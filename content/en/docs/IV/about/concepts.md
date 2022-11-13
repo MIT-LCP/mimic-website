@@ -41,6 +41,7 @@ The *transfers* table contains information for each unique `transfer_id`. `trans
 ## `stay_id`
 
 The *transfers* table also contains the `stay_id`. This is an artificially generated identifier which groups reasonably contiguous episodes of care.
+The `stay_id` present in *icustays* is derived from the `stay_id` values in the *transfers* table.
 
 # date and times
 
@@ -83,7 +84,7 @@ For events which occur over a period of time, `starttime` and `endtime` provide 
 
 ### `dod`
 
-`dod` is the patient's date of death sourced from the hospital database.
+`dod` is the patient's date of death sourced from one of two sources: the hospital database or a state death database. See the [*patients*](/docs/iv/modules/hosp/patients) documentation for more detail.
 
 ### `transfertime`
 

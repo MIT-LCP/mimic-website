@@ -7,9 +7,51 @@ description: >
   Changes between releases of MIMIC-IV.
 ---
 
-The latest version of MIMIC-IV is v1.0. 
+The latest version of MIMIC-IV is v2.0. 
 
-This page lists changes implemented in sequential updates to the MIMIC-IV database. Issues are tracked using a unique issue number, usually of the form #100, #101, etc (this issue number relates to a private 'building' repository).
+This page lists changes implemented in sequential updates to the MIMIC-IV database. Issues are tracked using a unique issue number, usually of the form #100, #101, etc. Note that some of these issues are only accessible in a private 'building' repository.
+
+### MIMIC-IV v2.0
+
+MIMIC-IV v2.0 was released on June 12, 2022. It focused on expanding the data elements available for patients within MIMIC-IV v1.0. Additional data available includes out-of-hospital date of death, information from the online medical record system (which includes height and weight), and more detail for continuous infusions in the ICU.
+
+#### Major changes
+
+*   The core module has been removed to simplify the schema. The _admissions_, _patients_, and _transfers_ tables are now in the hosp module.
+*   Neonates have been removed from the dataset. Neonatal data will be released in a separate project with data from the neonatal intensive care unit.
+
+#### icu module
+
+*   _icustays_
+    *   Around 700 stays (~1%) have changed due to the changes in the _patients_ table.
+*   _chartevents, d\_items_
+    *   The problem list from MetaVision has been added. All problems are documented with the same `itemid` now present in _d\_items_: 220001. There are just over 1,000 unique problems. Most documented problems are related to the care plan for the patient and documented during nurse shift changes (either 7am or 7pm). Less frequently, the ongoing issues are documented here.
+*   _ingredientevents_
+    *   This is a new table associated with _inputevents_. Each intravenous administration tracked in _inputevents_ is associated with a set of ingredients. These ingredients include water content, caloric information, and so on. The goal of the _inputevents_ table is to support nutrition research and to provide a mechanism for estimating fluid input via summing all instances of the water ingredient. These ingredients have been separated from the _inputevents_ table to simplify analysis and reduce the size of _inputevents_.
+*   _inputevents_
+    *   Removed a single column which contained only null values: `cancelreason`.
+*   _procedureevents_
+    *   Removed columns which contained only null values: `totalamount`, `totalamountuom`, `cancelreason`, `comments_editedby`, `comments_canceledby`, `comments_date`, `secondaryordercategoryname`.
+
+#### hosp module
+
+*   _admissions_
+    *   Fixed an issue where hospitalizations were missing _edregtime_ and _edouttime_ when the patient was admitted via the ED (reported in [#1247](https://github.com/MIT-LCP/mimic-code/issues/1247), thanks [@MEladawi](https://github.com/MEladawi)).
+*   _patients_
+    *   `dod` is now populated with out-of-hospital mortality from state death records. For patients admitted to the ICU, this change has increased capture of date of death from 8,223 records to 23,844 (i.e. we now have out-of-hospital mortality for an additional 15,621 ICU patients).
+    *   The mechanism for determining patients included in MIMIC was changed. For the most part this has resulted in an improvement, particularly regarding the logic for merging patients who had distinct medical record numbers. As a result of this change, most tables have had a change in the data content. Approximately 1% of stays were affected.
+*   _transfers_
+    *   Fixed a bug where the `outtime` for ED stays with no associated `hadm_id` (i.e. an ED stay where the individual was not admitted to the hospital) was incorrect. This resulted in all _transfers_ rows with a NULL `hadm_id` having an apparent stay of minutes or less. The `outtime` column has now been corrected.
+*   _labevents, d\_labitems_
+    *   The `itemid` for _d\_labitems_ has been changed for 43 items. These are extremely infrequently documented and each `itemid` has fewer than 100 observations in _labevents_. The exact `itemid` are provided in the changelog file CHANGELOG.txt.
+    *   Errors were found in the current values of `loinc_code` (reported in [#938](https://github.com/MIT-LCP/mimic-code/issues/938), thanks [@Mauvila](https://github.com/Mauvila)). In order to enable collaborative improvement, the `loinc_code` column has been removed, and will now be collaboratively developed in the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/). Initial values will be sourced from the hospital system.
+    *   A number of labs which previously had the value in the comments field now have the value in the value field (reported in [#941](https://github.com/MIT-LCP/mimic-code/issues/941), thanks [@Mauvila](https://github.com/Mauvila)). This change makes the _labevents_ table more consistent with MIMIC-III, which had these values in the value field.
+*   _microbiologyevents_
+    *   New organisms, tests, specimens, and antibiotics have been added.
+*   _omr_
+    *   A new table has been added: _omr._ The source of this data is the Online Medical Record, and it contains miscellaneous information useful for understanding an individual's health. As of v2.0, the _omr_ table has the following information: blood pressure, height, weight, body mass index, and Estimated Glomerular Filtration Rate (eGFR). These values are available from both inpatient and outpatient visits, and in many cases a "baseline" value from before a patient's hospitalization is available.
+*   _prescriptions_
+    *   The `formulary_drug_cd` table has been added back (was previously in MIMIC-III). This column has the same set of values as the `product_code` column of emar\_detail.
 
 ### MIMIC-IV v1.0
 
