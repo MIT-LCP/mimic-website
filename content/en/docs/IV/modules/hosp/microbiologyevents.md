@@ -20,12 +20,27 @@ Bacteria will be cultured on the blood sample, and the remaining columns depend 
 * If bacteria is found, then each organism of bacteria will be present in `org_name`, resulting in multiple rows for the single specimen (i.e. multiple rows for the given `spec_type_desc`).
 * If antibiotics are tested on a given bacterial organism, then each antibiotic tested will be present in the `ab_name` column (i.e. multiple rows for the given `org_name` associated with the given `spec_type_desc`). Antibiotic parameters and sensitivities are present in the remaining columns (`dilution_text`, `dilution_comparison`, `dilution_value`, `interpretation`).
 
+## Important considerations
+
+Typically, negative values are indicated by a NULL value. However, `itemid` 90856 has a value of "NEGATIVE", and should be included in queries which seek to segregate microbiology data based on positive/negative findings.
+
+`hadm_id` is assigned to observations using the administrative transfer table. However this does not always perfectly capture labs around the hospital stay.
+To be specific, as of v2.1, it is possible to assign 1,449,547 observations with an `hadm_id` using a join to *admissions* with `subject_id`,  `admittime`, and `dischtime`. However, only 1,396,224 (96%) of these observations have an `hadm_id` actually stored in the *microbiologyevents* table. Users wishing to ensure capture of labs proximal to hospital stays should be aware of this, and use joins with time as necessary.
+
 <!--
 
-# Important considerations
+select 
+  count(adm.hadm_id) as num_obs_in_hosp
+  , count(me.subject_id) as num_obs_with_subject_id
+  , count(me.hadm_id) as num_obs_with_hadm_id
+  , count(me.hadm_id)*100.0/count(me.subject_id) as percent_obs_assigned_hadm_id
+from hosp.admissions adm
+left join hosp.microbiologyevents me
+on adm.subject_id = me.subject_id
+and me.charttime between adm.admittime and adm.dischtime
+WHERE me.subject_id IS NOT NULL;
 
 -->
-
 ## Table columns
 
 Name | Postgres data type | Example value

@@ -16,7 +16,7 @@ Note that as the same medication may have multiple `gsn` values, each row does *
 
 **Table purpose:** Track medicine administrations.
 
-**Number of rows:** 1,674,652
+**Number of rows:** 1,586,053
 
 **Links to:**
 
@@ -33,7 +33,6 @@ Name | Postgres data type
 `charttime` | TIMESTAMP(0)
 `med_rn`    | SMALLINT NOT NULL
 `name`      | VARCHAR(255)
-`ifu`       | VARCHAR(255)
 `gsn_rn`    | SMALLINT NOT NULL
 `gsn`       | VARCHAR(10)
 

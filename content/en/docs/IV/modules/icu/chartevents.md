@@ -15,7 +15,7 @@ description: >
 
 **Table purpose:** Contains all charted data for all patients.
 
-**Number of rows:** 264,885,089
+**Number of rows:** 313,645,063
 
 **Links to:**
 
@@ -34,18 +34,18 @@ description: >
 
 # Table columns
 
-Name | Data type
+Name | Postgres Data type
 ---- | --------
-subject\_id | Integer
-hadm\_id | Integer
-stay\_id | Integer
-charttime | Date with times
-storetime | Date with times
-itemid | Integer
-value | Text
-valuenum | Decimal number
-valueuom | Text
-warning | Binary (0 or 1)
+subject\_id | INTEGER
+hadm\_id | INTEGER
+stay\_id | INTEGER
+charttime | TIMESTAMP(0)
+storetime | TIMESTAMP(0)
+itemid | INTEGER
+value | VARCHAR(200)
+valuenum | DOUBLE PRECISION
+valueuom | VARCHAR(20)
+warning | SMALLINT
 
 ## `subject_id`, `hadm_id`, `stay_id`
 

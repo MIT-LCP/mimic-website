@@ -14,7 +14,7 @@ The *diagnosis* table provides billed diagnoses for patients. Diagnoses are dete
 
 **Table purpose:** Track patient admissions to the emergency department.
 
-**Number of rows:** 949,172
+**Number of rows:** 899,050
 
 **Links to:**
 
@@ -29,7 +29,7 @@ Name | Postgres data type
 `seq_num`       | INTEGER NOT NULL
 `icd_code`      | VARCHAR(10) NOT NULL
 `icd_version`   | INTEGER NOT NULL
-`icd_title`     | VARCHAR(255) NOT NULL
+`icd_title`     | TEXT NOT NULL
 
 ## `subject_id`
 

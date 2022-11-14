@@ -14,7 +14,7 @@ description: >
 
 **Table purpose:** Defines each ICU stay in the database using STAY\_ID.
 
-**Number of rows:** 76,540
+**Number of rows:** 73,181
 
 **Links to:**
 

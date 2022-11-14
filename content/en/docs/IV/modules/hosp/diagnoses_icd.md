@@ -13,6 +13,10 @@ During routine hospital care, patients are billed by the *hospital* for diagnose
 This table contains a record of all diagnoses a patient was billed for during their hospital stay using the ICD-9 and ICD-10 ontologies.
 Diagnoses are billed on hospital discharge, and are determined by trained persons who read signed clinical notes.
 
+### Links to
+
+* *d_icd_diagnoses* ON `icd_code` and `icd_version`
+
 ## Table columns
 
 Name | Postgres data type
@@ -20,7 +24,7 @@ Name | Postgres data type
 `subject_id` | INTEGER
 `hadm_id` | INTEGER
 `seq_num` | INTEGER
-`icd_code` | CHAR(7)
+`icd_code` | VARCHAR(7)
 `icd_version` | INTEGER
 
 ## Detailed Description

@@ -14,7 +14,7 @@ On admission to the emergency departments, staff will ask the patient what curre
 
 **Table purpose:** Document medications a patient is currently taking.
 
-**Number of rows:** 3,147,294
+**Number of rows:** 2,987,342
 
 **Links to:**
 

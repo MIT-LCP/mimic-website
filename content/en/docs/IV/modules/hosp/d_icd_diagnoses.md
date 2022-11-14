@@ -14,7 +14,7 @@ This table defines International Classification of Diseases (ICD) Version 9 and 
 
 ### Links to
 
-* *diagnoses_icd* ON `icd_code`
+* *diagnoses_icd* ON `icd_code` and `icd_version`
 
 <!-- # Important considerations -->
 

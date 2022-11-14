@@ -12,6 +12,10 @@ description: >
 During routine hospital care, patients are billed by the *hospital* for procedures they undergo.
 This table contains a record of all procedures a patient was billed for during their hospital stay using the ICD-9 and ICD-10 ontologies.
 
+### Links to
+
+* *d_icd_procedures* on `icd_code` and `icd_version`
+
 ## Important considerations
 
 - Procedures during the hospital stay can be billed (1) by the hospital or (2) by the provider. This table contains only procedures billed by the hospital.
@@ -24,7 +28,7 @@ Name | Postgres data type
 `hadm_id` | INTEGER NOT NULL
 `seq_num` | INTEGER NOT NULL
 `chartdate` | DATE NOT NULL
-`icd_code` | CHAR(7)
+`icd_code` | VARCHAR(7)
 `icd_version` | INTEGER
 
 ### `subject_id`
@@ -37,11 +41,11 @@ Name | Postgres data type
 
 ## `seq_num`
 
-The order in which the procedures occurred within the hospital stay.
+An assigned priority for procedures which occurred within the hospital stay.
 
 ## `chartdate`
 
-The date of the associated procedures.
+The date of the associated procedures. Date does *not* strictly correlate with `seq_num`.
 
 ### `icd_code`, `icd_version`
 

@@ -25,6 +25,6 @@ MIMIC-IV is separated into "modules" to reflect the provenance of the data. Ther
 MIMIC-Note is currently not publicly available and the structure is subject to change.
 {{% /pageinfo %}}
 
-All patients across all datasets are in `mimic_core`. However, not all ICU patients have ED data, not all ICU patients have CXRs, not all ED patients have hospital data, and so on. Within an individual dataset, there are also incomplete tables as certain electronic systems did not exist in the past. For example, eMAR data is only available from 2015 onward.
+All patients across all datasets are in the [hosp](/docs/iv/modules/hosp) module. However, not all ICU patients have ED data, not all ICU patients have CXRs, not all ED patients have hospital data, and so on. Within an individual dataset, there are also incomplete tables as certain electronic systems did not exist in the past, particularly the eMAR system.
 
 Tables for each module are detailed in the respective sections.

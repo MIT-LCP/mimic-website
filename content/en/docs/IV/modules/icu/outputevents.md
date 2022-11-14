@@ -14,7 +14,7 @@ description: >
 
 **Table purpose:** Output data for patients.
 
-**Number of rows:** 3,703,137
+**Number of rows:** 4,234,967
 
 **Links to:**
 
@@ -29,18 +29,18 @@ description: >
 
 Name | Data type
 ---- | --------
-subject\_id | Integer
-hadm\_id | Integer
-stay\_id | Integer
-charttime | Date with times
-storetime | Date with times
-itemid | Integer
-value | Floating point number
-valueuom | Text
+subject\_id | INTEGER
+hadm\_id | INTEGER
+stay\_id | INTEGER
+charttime | TIMESTAMP(3)
+storetime | TIMESTAMP(3)
+itemid | INTEGER
+value | DOUBLE PRECISION
+valueuom | VARCHAR(20)
 
 # Detailed Description
 
-## subject_id, hadm_id, stay_id
+## `subject_id`, `hadm_id`, `stay_id`
 
 Identifiers which specify the patient: `subject_id` is unique to a patient, `hadm_id` is unique to a patient hospital stay and `stay_id` is unique to a patient ICU stay.
 
@@ -51,18 +51,18 @@ Identifiers which specify the patient: `subject_id` is unique to a patient, `had
 
 -->
 
-## CHARTTIME
+## `charttime`
 
-`CHARTTIME` is the time of an output event.
+`charttime` is the time of an output event.
 
-## STORETIME
+## `storetime`
 
-`STORETIME` records the time at which an observation was manually input or manually validated by a member of the clinical staff.
+`storetime` records the time at which an observation was manually input or manually validated by a member of the clinical staff.
 
-## ITEMID
+## `itemid`
 
-Identifier for a single measurement type in the database. Each row associated with one `ITEMID` (e.g. 212) corresponds to an instantiation of the same measurement (e.g. heart rate).
+Identifier for a single measurement type in the database. Each row associated with one `itemid` (e.g. 212) corresponds to an instantiation of the same measurement (e.g. heart rate).
 
-## VALUE, VALUEUOM
+## `value`, `valueuom`
 
-`VALUE` and `VALUEUOM` list the amount of a substance at the `CHARTTIME` (when the exact start time is unknown, but usually up to an hour before).
+`value` and `valueuom` list the amount of a substance at the `charttime` (when the exact start time is unknown, but usually up to an hour before).
