@@ -65,7 +65,7 @@ As of MIMIC-IV-ED v2.1, there were 33 unique categories for race.
 
 ## `arrival_transport`
 
-The method through which the individual arrived at the ed. A count of the possible entries is provided below.
+The method through which the individual arrived at the ED. A count of the possible entries is provided below.
 
 arrival_transport | count
 --- | ---

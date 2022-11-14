@@ -14,5 +14,5 @@ Data within the modules are available on PhysioNet:
 * note: [MIMIC-IV-Note](https://physionet.org/content/mimic-iv-note/)
 * cxr: [MIMIC-CXR](https://physionet.org/content/mimic-cxr/)
 
-The below sections describe data within each module.
+The sections below describe data within each module.
 <!-- Subfolder content is automatically placed here. -->
