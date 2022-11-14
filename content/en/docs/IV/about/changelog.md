@@ -7,9 +7,17 @@ description: >
   Changes between releases of MIMIC-IV.
 ---
 
-The latest version of MIMIC-IV is v2.0. 
+The latest version of MIMIC-IV is v2.1. 
 
 This page lists changes implemented in sequential updates to the MIMIC-IV database. Issues are tracked using a unique issue number, usually of the form #100, #101, etc. Note that some of these issues are only accessible in a private 'building' repository.
+
+### MIMIC-IV v2.1
+
+MIMIC-IV v2.1 was released on November 14, 2022. It removed a subset of subject_id which will be retained internally as a test set. Future data releases will exclude these patients.
+
+#### Major changes
+
+* A subset of patients were removed from the dataset. 15,748 subject_id were removed from the patients table. 23,093 hadm_id were removed from the admissions table. 3,762 stay_id were removed from the icustays table.
 
 ### MIMIC-IV v2.0
 
