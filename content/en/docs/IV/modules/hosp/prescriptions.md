@@ -60,6 +60,10 @@ Name | Postgres data type
 
 An identifier which links administrations in *emar* to pharmacy information in the *pharmacy* table.
 
+### `poe_id`, `poe_seq`
+
+These columns allow linking prescriptions to associated orders in the *poe* table.
+
 ### `starttime`, `stoptime`
 
 The prescribed start and stop time for the medication.
