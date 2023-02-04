@@ -99,6 +99,11 @@ The action which the provider performed when performing this order. One of the f
 If this order discontinues a previous order, then `discontinue_of_poe_id` will link to the previous order which was discontinued.
 Conversely, if this order was later discontinued by a distinct order, then `discontinued_by_poe_id` will link to that future order.
 
+### `order_provider_id`
+
+`order_provider_id` provides an anonymous identifier for the provider who made the order.
+{{% include "/static/include/provider_id.md" %}}
+
 ### `order_status`
 
 Whether the order is still active ('Active') or whether it has been inactivated ('Inactive').

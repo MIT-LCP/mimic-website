@@ -82,6 +82,11 @@ Often multiple measurements are made on the same sample. The `specimen_id` will 
 
 An identifier which uniquely denotes laboratory concepts.
 
+### `order_provider_id`
+
+`order_provider_id` provides an anonymous identifier for the provider who ordered the laboratory measurement.
+{{% include "/static/include/provider_id.md" %}}
+
 ### `charttime`
 
 The time at which the laboratory measurement was charted. This is usually the time at which the specimen was acquired, and is usually significantly **earlier** than the time at which the measurement is available.

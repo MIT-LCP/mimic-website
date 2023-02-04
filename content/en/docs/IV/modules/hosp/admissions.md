@@ -55,6 +55,11 @@ Each row of this table contains a unique `hadm_id`, which represents a single pa
 
 `admission_type` is useful for classifying the urgency of the admission. There are 9 possibilities: 'AMBULATORY OBSERVATION', 'DIRECT EMER.', 'DIRECT OBSERVATION', 'ELECTIVE', 'EU OBSERVATION', 'EW EMER.', 'OBSERVATION ADMIT', 'SURGICAL SAME DAY ADMISSION', 'URGENT'.
 
+### `admit_provider_id`
+
+`admit_provider_id` provides an anonymous identifier for the provider who admitted the patient.
+{{% include "/static/include/provider_id.md" %}}
+
 ### `admission_location`, `discharge_location`
 
 `admission_location` provides information about the location of the patient prior to arriving at the hospital. Note that as the emergency room is technically a clinic, patients who are admitted via the emergency room usually have it as their admission location.

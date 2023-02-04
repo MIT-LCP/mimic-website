@@ -83,6 +83,17 @@ A unique integer denoting the row.
 
 {{% include "/static/include/hadm_id.md" %}}
 
+
+### `micro_specimen_id`
+
+Uniquely denoted the specimen from which the microbiology measurement was made. Most microbiology measurements are made on patient derived samples (specimens) such as blood, urine, and so on.
+Often multiple measurements are made on the same sample. The `micro_specimen_id` will group measurements made on the same sample, e.g. organisms which grew from the same blood sample.
+
+### `order_provider_id`
+
+`order_provider_id` provides an anonymous identifier for the provider who ordered the microbiology test.
+{{% include "/static/include/provider_id.md" %}}
+
 ## `chartdate`, `charttime`
 
 `charttime` records the time at which an observation was charted, and is usually the closest proxy to the time the data was actually measured.

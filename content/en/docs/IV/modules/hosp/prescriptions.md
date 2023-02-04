@@ -64,6 +64,11 @@ An identifier which links administrations in *emar* to pharmacy information in t
 
 These columns allow linking prescriptions to associated orders in the *poe* table.
 
+### `order_provider_id`
+
+`order_provider_id` provides an anonymous identifier for the provider who initiated the order.
+{{% include "/static/include/provider_id.md" %}}
+
 ### `starttime`, `stoptime`
 
 The prescribed start and stop time for the medication.

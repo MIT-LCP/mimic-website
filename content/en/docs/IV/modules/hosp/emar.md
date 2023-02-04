@@ -61,6 +61,11 @@ An identifier which links administrations in *emar* to orders in *poe* and *pres
 
 An identifier which links administrations in *emar* to pharmacy information in the *pharmacy* table.
 
+### `enter_provider_id`
+
+`enter_provider_id` provides an anonymous identifier for the provider who entered the information into the eMAR system.
+{{% include "/static/include/provider_id.md" %}}
+
 ### `charttime`
 
 The time at which the medication was administered.
