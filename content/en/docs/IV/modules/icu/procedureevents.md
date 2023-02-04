@@ -35,6 +35,7 @@ Name | Data type
 subject\_id | INTEGER
 hadm\_id | INTEGER
 stay\_id | INTEGER
+caregiver_id | INTEGER
 starttime | TIMESTAMP
 endtime | TIMESTAMP
 storetime | TIMESTAMP
@@ -59,6 +60,10 @@ originalrate | DOUBLE PRECISION
 ## `subject_id`, `hadm_id`, `stay_id`
 
 Identifiers which specify the patient: `subject_id` is unique to a patient, `hadm_id` is unique to a patient hospital stay and `stay_id` is unique to a patient ICU stay.
+
+### `caregiver_id`
+
+{{% include "/static/include/caregiver_id.md" %}}
 
 ## `starttime`, `endtime`
 
@@ -120,12 +125,3 @@ Nearly all procedures recorded in *procedureevents* have a status of `FinishedRu
 
 These fields are present in the table and never null, but have no clear meaning.
 In particular, "originalrate" is either 0 or 1 for all records.
-
-<!-- 
-## `CGID`
-
-`CGID` is the identifier for the caregiver who validated the given measurement.
-
-These fields are present in the table and never null, but have no clear meaning.
-In particular, "originalrate" is either 0 or 1 for all records.
--->

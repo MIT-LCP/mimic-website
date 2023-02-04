@@ -34,6 +34,7 @@ Name | Postgres data type
 subject\_id | INTEGER
 hadm\_id | INTEGER
 stay\_id | INTEGER
+caregiver_id | INTEGER
 starttime | TIMESTAMP(0)
 endtime | TIMESTAMP(0)
 storetime | TIMESTAMP(0)
@@ -54,13 +55,9 @@ originalrate | DOUBLE PRECISION
 
 Identifiers which specify the patient: `subject_id` is unique to a patient, `hadm_id` is unique to a patient hospital stay and `stay_id` is unique to a patient ICU stay.
 
-<!--
+### `caregiver_id`
 
-## CGID
-
-`CGID` is the identifier for the caregiver who validated the given measurement.
-
--->
+{{% include "/static/include/caregiver_id.md" %}}
 
 ## `starttime`, `endtime`
 
