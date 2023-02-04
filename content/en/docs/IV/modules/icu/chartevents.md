@@ -62,11 +62,11 @@ Identifiers which specify the patient: `subject_id` is unique to a patient, `had
 
 ## `itemid`
 
-Identifier for a single measurement type in the database. Each row associated with one `ITEMID` (e.g. 212) corresponds to an instantiation of the same measurement (e.g. heart rate).
+Identifier for a single measurement type in the database. Each row associated with one `itemid` (e.g. 220045) corresponds to an instantiation of the same measurement (e.g. heart rate).
 
 ## `value`, `valuenum`
 
-`value` contains the value measured for the concept identified by the `ITEMID`. If this value is numeric, then `valuenum` contains the same data in a numeric format. If this data is not numeric, `valuenum` is null. In some cases (e.g. scores like Glasgow Coma Scale, Richmond Sedation Agitation Scale and Code Status), `valuenum` contains the score and `value` contains the score and text describing the meaning of the score.
+`value` contains the value measured for the concept identified by the `itemid`. If this value is numeric, then `valuenum` contains the same data in a numeric format. If this data is not numeric, `valuenum` is null. In some cases (e.g. scores like Glasgow Coma Scale, Richmond Sedation Agitation Scale and Code Status), `valuenum` contains the score and `value` contains the score and text describing the meaning of the score.
 
 ## `valueuom`
 
