@@ -19,7 +19,7 @@ Laboratory data contains information collected and recorded in the hospital labo
 
 ## Important considerations
 
-This table used to contain a column called `loinc_code`, which store standardized identifiers for laboratory measurements. To support ongoing improvement of these labels, the assignment of LOINC codes is now done in the [MIMIC Code Repository](https://www.github.com/MIT-LCP/mimic-code).
+This table used to contain a column called `loinc_code`, which stored standardized identifiers for laboratory measurements. To support ongoing improvement of these labels, the assignment of LOINC codes is now done in the [MIMIC Code Repository](https://www.github.com/MIT-LCP/mimic-code).
 
 ## Table columns
 

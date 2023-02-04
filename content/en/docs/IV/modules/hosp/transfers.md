@@ -24,9 +24,9 @@ Physical locations for patients throughout their hospital stay.
 
 Name | Postgres data type
 ---- | ----
-`subject_id` | INTEGER
+`subject_id` | INTEGER NOT NULL
 `hadm_id` | INTEGER
-`transfer_id` | INTEGER
+`transfer_id` | INTEGER NOT NULL
 `eventtype` | VARCHAR(10)
 `careunit` | VARCHAR(255)
 `intime` | TIMESTAMP(0)

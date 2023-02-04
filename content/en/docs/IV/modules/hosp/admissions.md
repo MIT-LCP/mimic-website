@@ -22,20 +22,21 @@ The *admissions* table gives information regarding a patient's admission to the 
 
 Name | Postgres data type
 ---- | ----
-`subject_id` | INTEGER
-`hadm_id` | INTEGER
-`admittime` | TIMESTAMP(0)
-`dischtime` | TIMESTAMP(0)
-`deathtime` | TIMESTAMP(0)
-`admission_type` | VARCHAR(40)
+`subject_id` | INTEGER NOT NULL
+`hadm_id` | INTEGER NOT NULL
+`admittime` | TIMESTAMP NOT NULL
+`dischtime` | TIMESTAMP
+`deathtime` | TIMESTAMP
+`admission_type` | VARCHAR(40) NOT NULL
+`admit_provider_id` | VARCHAR(10)
 `admission_location` | VARCHAR(60)
 `discharge_location` | VARCHAR(60)
 `insurance` | VARCHAR(255)
 `language` | VARCHAR(10)
-`marital_status` | VARCHAR(80)
-`ethnicity` | VARCHAR(80)
-`edregtime` | TIMESTAMP(0)
-`edouttime` | TIMESTAMP(0)
+`marital_status` | VARCHAR(30)
+`race` | VARCHAR(80)
+`edregtime` | TIMESTAMP
+`edouttime` | TIMESTAMP
 `hospital_expire_flag` | SMALLINT
 
 ## Detailed description

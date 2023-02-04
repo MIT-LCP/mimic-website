@@ -29,13 +29,15 @@ Records in this table are populated by bedside nursing staff scanning barcodes a
 Name | Postgres data type
 ---- | ----
 `subject_id` | INTEGER NOT NULL
-`hadm_id` | INTEGER NOT NULL
-`emar_id` | VARCHAR(100) NOT NULL
+`hadm_id` | INTEGER
+`emar_id` | VARCHAR(25) NOT NULL
 `emar_seq` | INTEGER NOT NULL
 `poe_id` | VARCHAR(25) NOT NULL
+`pharmacy_id` | INTEGER
+`enter_provider_id` | VARCHAR(10)
 `charttime` | TIMESTAMP NOT NULL
 `medication` | TEXT
-`event_txt` | TEXT
+`event_txt` | VARCHAR(100)
 `scheduletime` | TIMESTAMP
 `storetime` | TIMESTAMP NOT NULL
 

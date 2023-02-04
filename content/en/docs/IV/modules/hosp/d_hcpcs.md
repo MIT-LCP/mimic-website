@@ -25,7 +25,7 @@ The *d_hcpcs* table is used to acquire human readable definitions for the codes 
 
 Name | Postgres data type
 ---- | ----
-`code` | CHAR(5)
+`code` | CHAR(5) NOT NULL
 `category` | SMALLINT
 `long_description` | TEXT
 `short_description` | VARCHAR(180)

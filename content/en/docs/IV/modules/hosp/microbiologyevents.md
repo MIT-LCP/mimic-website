@@ -46,9 +46,10 @@ WHERE me.subject_id IS NOT NULL;
 Name | Postgres data type | Example value
 ---- | ---- | ----
 `microevent_id` | INTEGER NOT NULL | 1234567
-`subject_id` | INTEGER | 12078372
+`subject_id` | INTEGER NOT NULL | 12078372
 `hadm_id` | INTEGER | 29450599
 `micro_specimen_id` | INTEGER NOT NULL | 6386644
+`order_provider_id` | VARCHAR(10) | P12ABC
 `chartdate` | TIMESTAMP(0) NOT NULL | 2130-04-01 00:00:00
 `charttime` | TIMESTAMP(0) | 2130-04-01 16:00:00
 `spec_itemid` | INTEGER NOT NULL | 70012

@@ -28,13 +28,14 @@ Name | Postgres data type
 `poe_id` | VARCHAR(25) NOT NULL
 `poe_seq` | INTEGER NOT NULL
 `subject_id` | INTEGER NOT NULL
-`hadm_id` | INTEGER NOT NULL
-`ordertime` | TIMESTAMP NOT NULL
-`order_type` | VARCHAR(25)
+`hadm_id` | INTEGER
+`ordertime` | TIMESTAMP(0) NOT NULL
+`order_type` | VARCHAR(25) NOT NULL
 `order_subtype` | VARCHAR(50)
 `transaction_type` | VARCHAR(15)
 `discontinue_of_poe_id` | VARCHAR(25)
 `discontinued_by_poe_id` | VARCHAR(25)
+`order_provider_id` | VARCHAR(10)
 `order_status` | VARCHAR(15)
 
 ### `poe_id`

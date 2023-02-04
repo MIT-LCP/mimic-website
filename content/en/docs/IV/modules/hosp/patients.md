@@ -13,11 +13,11 @@ Information that is consistent for the lifetime of a patient is stored in this t
 
 Name | Postgres data type
 ---- | ----
-`subject_id` | INTEGER
-`gender` | VARCHAR(1)
-`anchor_age` | INTEGER
-`anchor_year` | INTEGER
-`anchor_year_group` | VARCHAR(255)
+`subject_id` | INTEGER NOT NULL
+`gender` | VARCHAR(1) NOT NULL
+`anchor_age` | INTEGER NOT NULL
+`anchor_year` | INTEGER NOT NULL
+`anchor_year_group` | VARCHAR(255) NOT NULL
 `dod` | TIMESTAMP(0)
 
 ## Detailed Description

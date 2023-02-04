@@ -21,9 +21,9 @@ Diagnoses are billed on hospital discharge, and are determined by trained person
 
 Name | Postgres data type
 ---- | ----
-`subject_id` | INTEGER
-`hadm_id` | INTEGER
-`seq_num` | INTEGER
+`subject_id` | INTEGER NOT NULL
+`hadm_id` | INTEGER NOT NULL
+`seq_num` | INTEGER NOT NULL
 `icd_code` | VARCHAR(7)
 `icd_version` | INTEGER
 
