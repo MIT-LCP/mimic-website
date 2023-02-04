@@ -18,11 +18,11 @@ First, ensure you have been provisioned access to MIMIC III or IV on BigQuery. S
 4. In the pop up window, type `physionet-data`, and click "PIN".
 ![Type physionet-data to pin the MIMIC-III data project](/img/cloud/bq/pin_physionet_data.png)
 5. In the sidebar on the left, you should now see the `physionet-data` project. Click the arrow to the left of `physionet-data` to expand the project.
-6. You should now see a number of projects (MIMIC-III: `eicu_crd_demo`, `mimiciii_clinical`, `mimiciii_demo`, `mimiciii_notes`, `mimiciii_derived`, MIMIC-IV: `mimic_core`, `mimic_icu`, and `mimic_hosp`). You are now ready to query the data! Try a simple query in the main dialogue box, while logged in under your project that pays for queries: /bigquery?project=paying-project-name:
+6. You should now see a number of projects (MIMIC-III: `eicu_crd_demo`, `mimiciii_clinical`, `mimiciii_demo`, `mimiciii_notes`, `mimiciii_derived`, MIMIC-IV: `mimiciv_icu`, and `mimiciv_hosp`). You are now ready to query the data! Try a simple query in the main dialogue box, while logged in under your project that pays for queries: /bigquery?project=paying-project-name:
 
 ```sql
 SELECT *
-FROM `physionet-data.mimic_core.patients`
+FROM `physionet-data.mimiciv_hosp.patients`
 WHERE subject_id < 10000100
 ORDER BY subject_id
 ```
@@ -35,7 +35,7 @@ At this point you are ready to use MIMIC on BigQuery!
 
 A tutorial on using BigQuery to query MIMIC-III is available [here](/docs/iii/tutorials/intro-to-mimic-iii-bq).
 
-Note that we have a number of pre-generated "views" of the data. These are available in the `mimic_derived` dataset which you are free to query. All code used to generate these views has been made openly available on the [MIMIC-IV code repository](https://github.com/MIT-LCP/mimic-iv/).
+Note that we have a number of pre-generated "views" of the data. These are available in the `mimiciv_derived` dataset which you are free to query. All code used to generate these views has been made openly available on the [MIMIC-IV code repository](https://github.com/MIT-LCP/mimic-iv/).
 
 If you are having issues, see the [Troubleshooting section](#troubleshooting).
 
