@@ -22,9 +22,9 @@ This table defines International Classification of Diseases (ICD) Version 9 and 
 
 Name | Postgres data type
 ---- | ----
-`icd_code` | VARCHAR(10)
-`icd_version` | INTEGER
-`long_title`  | VARCHAR(300)
+`icd_code` | CHAR(7) NOT NULL
+`icd_version` | INTEGER NOT NULL
+`long_title`  | VARCHAR(255)
 
 ## Detailed Description
 

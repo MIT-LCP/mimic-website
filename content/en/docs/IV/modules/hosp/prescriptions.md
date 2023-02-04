@@ -28,16 +28,17 @@ Name | Postgres data type
 ---- | ----
 `subject_id` | INTEGER NOT NULL
 `hadm_id` | INTEGER NOT NULL
-`pharmacy_id` | INTEGER
+`pharmacy_id` | INTEGER NOT NULL
 `poe_id` | VARCHAR(25)
 `poe_seq` | INTEGER
-`starttime` | TIMESTAMP
-`stoptime` | TIMESTAMP
+`order_provider_id` | VARCHAR(10)
+`starttime` | TIMESTAMP(3)
+`stoptime` | TIMESTAMP(3)
 `drug_type` | VARCHAR(20) NOT NULL
 `drug` | VARCHAR(255) NOT NULL
 `formulary_drug_cd` | VARCHAR(50)
-`gsn` | VARCHAR(10)
-`ndc` | VARCHAR(20)
+`gsn` | VARCHAR(255)
+`ndc` | VARCHAR(25)
 `prod_strength` | VARCHAR(255)
 `form_rx` | VARCHAR(25)
 `dose_val_rx` | VARCHAR(100)
@@ -58,6 +59,15 @@ Name | Postgres data type
 ### `pharmacy_id`
 
 An identifier which links administrations in *emar* to pharmacy information in the *pharmacy* table.
+
+### `poe_id`, `poe_seq`
+
+These columns allow linking prescriptions to associated orders in the *poe* table.
+
+### `order_provider_id`
+
+`order_provider_id` provides an anonymous identifier for the provider who initiated the order.
+{{% include "/static/include/provider_id.md" %}}
 
 ### `starttime`, `stoptime`
 

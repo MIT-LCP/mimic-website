@@ -13,16 +13,21 @@ First, ensure you have been provisioned access to MIMIC III or IV on BigQuery. S
 
 1. Go to the BigQuery console: http://console.cloud.google.com/bigquery
 2. If you haven’t created a BigQuery project previously you will be asked to do so. You will need to enter information to pay for the cost of queries. For more details see: https://cloud.google.com/resource-manager/docs/creating-managing-projects
-3. On the left sidebar, next to "Resources", click "+ ADD DATA", followed by "Pin a project"
-![Pin data for easy access](/img/cloud/bq/pin_data.png)
-4. In the pop up window, type `physionet-data`, and click "PIN".
-![Type physionet-data to pin the MIMIC-III data project](/img/cloud/bq/pin_physionet_data.png)
+3. On the left sidebar, next to "Explorer", click "+ ADD DATA". Click "Star a project by name".
+4. Type `physionet-data` and enter it in.
 5. In the sidebar on the left, you should now see the `physionet-data` project. Click the arrow to the left of `physionet-data` to expand the project.
-6. You should now see a number of projects (MIMIC-III: `eicu_crd_demo`, `mimiciii_clinical`, `mimiciii_demo`, `mimiciii_notes`, `mimiciii_derived`, MIMIC-IV: `mimic_core`, `mimic_icu`, and `mimic_hosp`). You are now ready to query the data! Try a simple query in the main dialogue box, while logged in under your project that pays for queries: /bigquery?project=paying-project-name:
+6. You should now see a number of datasets. Which datasets you see depends on the access provisioned to you.
+  * At a minimum, you will see the demo projects: `eicu_crd_demo` and `mimiciii_demo`.
+  * If you have successfully requested access to MIMIC-III, you will additionally see `mimiciii_clinical`, `mimiciii_demo`, `mimiciii_notes`, and `mimiciii_derived`.
+  * If you have successfully requested access to MIMIC-IV, you will additionally see `mimiciv_icu` and `mimiciv_hosp`.
+  * If you have successfully requested access to MIMIC-IV-ED, you will additionally see `mimiciv_ed`.
+  * If you have successfully requested access to MIMIC-IV-Note, you will additionally see `mimiciv_note`.
+  
+You are now ready to query the data! Try a simple query in the main dialogue box, while logged in under your project that pays for queries.
 
 ```sql
 SELECT *
-FROM `physionet-data.mimic_core.patients`
+FROM `physionet-data.mimiciv_hosp.patients`
 WHERE subject_id < 10000100
 ORDER BY subject_id
 ```
@@ -35,7 +40,7 @@ At this point you are ready to use MIMIC on BigQuery!
 
 A tutorial on using BigQuery to query MIMIC-III is available [here](/docs/iii/tutorials/intro-to-mimic-iii-bq).
 
-Note that we have a number of pre-generated "views" of the data. These are available in the `mimic_derived` dataset which you are free to query. All code used to generate these views has been made openly available on the [MIMIC-IV code repository](https://github.com/MIT-LCP/mimic-iv/).
+Note that we have a number of pre-generated "views" of the data. These are available in the `mimiciv_derived` dataset which you are free to query. All code used to generate these views has been made openly available on the [MIMIC-IV code repository](https://github.com/MIT-LCP/mimic-iv/).
 
 If you are having issues, see the [Troubleshooting section](#troubleshooting).
 

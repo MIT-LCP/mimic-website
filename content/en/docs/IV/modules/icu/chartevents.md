@@ -39,6 +39,7 @@ Name | Postgres Data type
 subject\_id | INTEGER
 hadm\_id | INTEGER
 stay\_id | INTEGER
+caregiver_id | INTEGER
 charttime | TIMESTAMP(0)
 storetime | TIMESTAMP(0)
 itemid | INTEGER
@@ -51,25 +52,21 @@ warning | SMALLINT
 
 Identifiers which specify the patient: `subject_id` is unique to a patient, `hadm_id` is unique to a patient hospital stay and `stay_id` is unique to a patient ward stay. More information about these identifiers is [available here](/docs/iv/about/concepts/).
 
+### `caregiver_id`
+
+{{% include "/static/include/caregiver_id.md" %}}
+
 ## `charttime`, `storetime`
 
 `charttime` records the time at which an observation was made, and is usually the closest proxy to the time the data was actually measured. `storetime` records the time at which an observation was manually input or manually validated by a member of the clinical staff.
 
-<!-- 
-
-## `CGID`
-
-`CGID` is the identifier for the caregiver who validated the given measurement.
-
--->
-
 ## `itemid`
 
-Identifier for a single measurement type in the database. Each row associated with one `ITEMID` (e.g. 212) corresponds to an instantiation of the same measurement (e.g. heart rate).
+Identifier for a single measurement type in the database. Each row associated with one `itemid` (e.g. 220045) corresponds to an instantiation of the same measurement (e.g. heart rate).
 
 ## `value`, `valuenum`
 
-`value` contains the value measured for the concept identified by the `ITEMID`. If this value is numeric, then `valuenum` contains the same data in a numeric format. If this data is not numeric, `valuenum` is null. In some cases (e.g. scores like Glasgow Coma Scale, Richmond Sedation Agitation Scale and Code Status), `valuenum` contains the score and `value` contains the score and text describing the meaning of the score.
+`value` contains the value measured for the concept identified by the `itemid`. If this value is numeric, then `valuenum` contains the same data in a numeric format. If this data is not numeric, `valuenum` is null. In some cases (e.g. scores like Glasgow Coma Scale, Richmond Sedation Agitation Scale and Code Status), `valuenum` contains the score and `value` contains the score and text describing the meaning of the score.
 
 ## `valueuom`
 

@@ -28,13 +28,13 @@ Name | Postgres data type
 `subject_id` | INTEGER NOT NULL
 `emar_id` | VARCHAR(25) NOT NULL
 `emar_seq` | INTEGER NOT NULL
-`parent_field_ordinal` | NUMERIC(5, 3)
+`parent_field_ordinal` | VARCHAR(10)
 `administration_type` | VARCHAR(50)
 `pharmacy_id` | INTEGER
 `barcode_type` | VARCHAR(4)
 `reason_for_no_barcode` | TEXT
 `complete_dose_not_given` | VARCHAR(5)
-`dose_due` | VARCHAR(50)
+`dose_due` | VARCHAR(100)
 `dose_due_unit` | VARCHAR(50)
 `dose_given` | VARCHAR(255)
 `dose_given_unit` | VARCHAR(50)
@@ -44,17 +44,17 @@ Name | Postgres data type
 `product_code` | VARCHAR(30)
 `product_description` | VARCHAR(255)
 `product_description_other` | VARCHAR(255)
-`prior_infusion_rate` | VARCHAR(20)
-`infusion_rate` | VARCHAR(20)
+`prior_infusion_rate` | VARCHAR(40)
+`infusion_rate` | VARCHAR(40)
 `infusion_rate_adjustment` | VARCHAR(50)
 `infusion_rate_adjustment_amount` | VARCHAR(30)
 `infusion_rate_unit` | VARCHAR(30)
-`route` | VARCHAR(5)
-`infusion_complete` | VARCHAR(255)
-`completion_interval` | VARCHAR(30)
+`route` | VARCHAR(10)
+`infusion_complete` | VARCHAR(1)
+`completion_interval` | VARCHAR(50)
 `new_iv_bag_hung` | VARCHAR(1)
 `continued_infusion_in_other_location` | VARCHAR(1)
-`restart_interval` | VARCHAR(30)
+`restart_interval` | TEXT
 `side` | VARCHAR(10)
 `site` | VARCHAR(255)
 `non_formulary_visual_verification` | VARCHAR(1)

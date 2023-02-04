@@ -33,6 +33,7 @@ Name | Postgres Data type
 subject\_id | INTEGER
 hadm\_id | INTEGER
 stay\_id | INTEGER
+caregiver_id | INTEGER
 charttime | TIMESTAMP(3)
 storetime | TIMESTAMP(3)
 itemid | INTEGER
@@ -48,12 +49,9 @@ warning | SMALLINT
 
 Identifiers which specify the patient: `subject_id` is unique to a patient, `hadm_id` is unique to a patient hospital stay and `stay_id` is unique to a patient ward stay.
 
-<!-- 
-## `CGID`
+### `caregiver_id`
 
-`CGID` is the identifier for the caregiver who validated the given measurement.
-
--->
+{{% include "/static/include/caregiver_id.md" %}}
 
 ## `charttime`, `storetime`
 

@@ -4,7 +4,7 @@ linktitle: "drgcodes"
 weight: 1
 date: 2020-08-10
 description: >
-  Billed DRG codes for hospitalizations.
+  Billed diagnosis related group (DRG) codes for hospitalizations.
 ---
 
 ## *drgcodes*

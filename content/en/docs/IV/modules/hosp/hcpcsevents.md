@@ -23,12 +23,12 @@ description: >
 
 Name | Postgres data type
 ---- | ----
-`subject_id` | INTEGER
-`hadm_id` | INTEGER
+`subject_id` | INTEGER NOT NULL
+`hadm_id` | INTEGER NOT NULL
 `chartdate` | DATE
-`hcpcs_cd` | CHAR(5)
-`seq_num` | INTEGER
-`short_description` | TEXT
+`hcpcs_cd` | CHAR(5) NOT NULL
+`seq_num` | INTEGER NOT NULL
+`short_description` | VARCHAR(180)
 
 ### `subject_id`
 

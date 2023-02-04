@@ -28,13 +28,14 @@ Name | Postgres data type
 `poe_id` | VARCHAR(25) NOT NULL
 `poe_seq` | INTEGER NOT NULL
 `subject_id` | INTEGER NOT NULL
-`hadm_id` | INTEGER NOT NULL
-`ordertime` | TIMESTAMP NOT NULL
-`order_type` | VARCHAR(25)
+`hadm_id` | INTEGER
+`ordertime` | TIMESTAMP(0) NOT NULL
+`order_type` | VARCHAR(25) NOT NULL
 `order_subtype` | VARCHAR(50)
 `transaction_type` | VARCHAR(15)
 `discontinue_of_poe_id` | VARCHAR(25)
 `discontinued_by_poe_id` | VARCHAR(25)
+`order_provider_id` | VARCHAR(10)
 `order_status` | VARCHAR(15)
 
 ### `poe_id`
@@ -97,6 +98,11 @@ The action which the provider performed when performing this order. One of the f
 
 If this order discontinues a previous order, then `discontinue_of_poe_id` will link to the previous order which was discontinued.
 Conversely, if this order was later discontinued by a distinct order, then `discontinued_by_poe_id` will link to that future order.
+
+### `order_provider_id`
+
+`order_provider_id` provides an anonymous identifier for the provider who made the order.
+{{% include "/static/include/provider_id.md" %}}
 
 ### `order_status`
 

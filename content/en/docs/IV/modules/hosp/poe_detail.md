@@ -29,7 +29,7 @@ Name | Postgres data type
 `poe_id` | VARCHAR(25) NOT NULL
 `poe_seq` | INTEGER NOT NULL
 `subject_id` | INTEGER NOT NULL
-`field_name` | VARCHAR(255)
+`field_name` | VARCHAR(255) NOT NULL
 `field_value` | TEXT
 
 ### `poe_id`
@@ -46,19 +46,22 @@ A monotonically increasing integer which chronologically sorts the POE orders. T
 
 ### `field_name`
 
-Each row provides detail regarding a particular aspect of a POE order. `field_name` is the name given to that aspect. It is one of the following values:
+Each row provides detail regarding a particular aspect of a POE order. `field_name` is the name given to that aspect.
+As of MIMIC-IV v2.2, the following table lists the possible values and the most common entry for it in `field_value`.
 
-* Admit category
-* Admit to
-* Code status
-* Consult Status
-* Consult Status Time
-* Discharge Planning
-* Discharge When
-* Indication
-* Level of Urgency
-* Transfer to
-* Tubes & Drains type
+`field_name` | number of rows | most frequent `field_value` observation
+--- | --- | ---
+Admit to | 881522 | Medicine
+Indication | 27190 | Antibiotics
+Code status | 197932 | Resuscitate (Full code)
+Transfer to | 161707 | Medicine
+Admit category | 1093726 | Admit to inpatient
+Consult Status | 36591 | Accepted
+Discharge When | 431642 | Discharge Now
+Level of Urgency | 45617 | Routine (within 24 hours)
+Discharge Planning | 475428 | Finalized
+Consult Status Time | 36591 | 2149-12-03 09:00:01
+Tubes & Drains type | 491472 | Indwelling urinary catheter (IUC) - Foley
 
 ### `field_value`
 

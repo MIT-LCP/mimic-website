@@ -4,7 +4,7 @@ linktitle: "icustays"
 weight: 10
 date: 2020-08-10
 description: >
-  Tracking information for ICU stays including adminission and discharge times.
+  Tracking information for ICU stays including admission and discharge times.
 ---
 
 
