@@ -73,8 +73,9 @@ style = "tango"
 # Everything below this are Site Params
 
 [params]
-copyright = "MIT-LCP"
+copyright = "MIT Laboratory for Computational Physiology."
 privacy_policy = ""
+mit_accessibility_url = "https://accessibility.mit.edu/"
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
