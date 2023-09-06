@@ -2,7 +2,7 @@
 
 ## Instructions for running the website locally
 
-1. Install Go and Hugo. For instructions, see: http://gohugo.io/overview/installing/
+1. Install Hugo. For instructions, see: https://github.com/gohugoio/hugo/releases/tag/v0.74.3
 2. Clone the website repository:
    ```
    git clone --recursive https://github.com/MIT-LCP/mimic-website.git
