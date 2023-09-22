@@ -8,7 +8,7 @@ cascade:
   _target:
     path: "/**"
 ---
-MIMIC-Fed is a large, freely avaliable federated COVID-rich ICU database comprising deidentified health-related data from Beth Israel Deaconess Medical Center (BIDMC) and Northwestern Memorial Health Center (NHMC) from 2020 to 2022. The federated database adopts a similar data structure as MIMIC-IV v2.2.
+MIMIC-Fed is a large, freely available federated COVID-rich ICU database comprising deidentified health-related data from Beth Israel Deaconess Medical Center (BIDMC) and Northwestern Memorial Health Center (NHMC) from 2020 to 2022. The federated database adopts a similar data structure as MIMIC-IV v2.2.
 
 Notably, Northwestern Memorial Health Center (NHMC) uses the Epic electronic medical records (EMR) system. To make the EMR data available for research and quality assurance, the NM EMR systems transfer selected data into a relational Enterprise Data Warehouse (NM EDW). 
 
