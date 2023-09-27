@@ -27,7 +27,7 @@ Name | Postgres data type
 
 ### `gender`
 
-The patient's administrative `gender`, sourced from the NW EDW and stored in the patient table, is represented as follows: F (Female), M (Male). 
+The patient's administrative `gender`, sourced from the NW EDW and stored in the *patient* table, is represented as follows: F (Female), M (Male). 
 
 ### `anchor_age`
 
@@ -35,14 +35,14 @@ The patient's administrative `gender`, sourced from the NW EDW and stored in the
 
 This ensures that the statistical anonymity of a patient is maintained and that the  data shared complies with the [HIPPA](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html) standards, specifically:
 
-"(C) All elements of dates (except year) for dates that are directly related to an individual, including birth date, admission date, discharge date, death date, and all ages over 89 and all elements of dates (including year) indicative of such age, except that such ages and elements may be aggregated into a single category of age 90 or older."
+'(C) All elements of dates (except year) for dates that are directly related to an individual, including birth date, admission date, discharge date, death date, and all ages over 89 and all elements of dates (including year) indicative of such age, except that such ages and elements may be aggregated into a single category of age 90 or older.'
 
 ### `anchor_year`,
 `anchor_year` is the shifted year based on the patient's shifted earliest admission date.
 
 ### `anchor_year_group`
 
-`anchor_year_group` is the sequence of three years including the the year in which a patient was admitted. For example, if a patient was admitted in 2020, 2021, or 2022,  the `anchor_year_group` will be "2020-2022."
+`anchor_year_group` is the sequence of three years including the the year in which a patient was admitted. For example, if a patient was admitted in 2020, 2021, or 2022,  the `anchor_year_group` will be '2020-2022'.
 
 ### `dod`
 

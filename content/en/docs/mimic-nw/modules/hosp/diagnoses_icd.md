@@ -31,7 +31,7 @@ Name | Postgres data type
 
 ### `hadm_id`
 
-Each row of this table contains a unique `hadm_id`, which represents a single patient's admission to the hospital. It is possible for this table to have duplicate `subject_id`, indicating that a single patient had multiple admissions to the hospital. The ADMISSIONS table can be linked to the PATIENTS table using `subject_id`.
+Each row of this table contains a unique `hadm_id`, which represents a single patient's admission to the hospital. It is possible for this table to have duplicate `subject_id`, indicating that a single patient had multiple admissions to the hospital. The ADMISSIONS table can be linked to the *patients* table using `subject_id`.
 
 ### `icd_code` 
 

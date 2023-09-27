@@ -28,9 +28,10 @@ highnormalvalue | FLOAT
 
 # Detailed Description
 
-The D_ITEMS table defines `itemid`, which represents measurements in the database. Measurements of the same type (e.g. heart rate) will have the same `itemid` (e.g. 220045). Values in the `itemid` column are unique to each row. All `itemid`s will have a value > 220000.
+The *d_items* table defines `itemid`, which represents measurements in the database. Measurements of the same type (e.g. heart rate) will have the same `itemid` (e.g. 220045). Values in the `itemid` column are unique to each row. All `itemid`s will have a value > 220000.
 
-To facilitate further federation processes, the chartevents mappings (including vital signs and procedures) to standard terminologies (LOINC) and procedurevents mappints to standard terminologies (SNOMED) will be released.
+To faciliate future federation processes, we will release mappings within charted events (including vital signs) to standard terminologies (LOINC) and mappings for procedure events to standard terminologies (SNOMED).
+
 
 We provide a list of common vital sign labels in the database, as defined by LOINC terminology, below:
 
@@ -58,7 +59,7 @@ The `abbreviation` column, lists a common abbreviation for the label.
 
 ### `linksto`
 
-`linksto` provides the table name which the data links to. For example, a value of 'chartevents' indicates that the `itemid` of the given row is contained in CHARTEVENTS. A single `itemid` is only used in one event table, that is, if an `itemid` is contained in CHARTEVENTS it will *not* be contained in any other event table (e.g. PROCEDUREEVENTS, etc).
+`linksto` provides the table name which the data links to. For example, a value of 'chartevents' indicates that the `itemid` of the given row is contained in CHARTEVENTS. A single `itemid` is only used in one event table, that is, if an `itemid` is contained in CHARTEVENTS it will *not* be contained in any other event table (e.g. *procedureevents*, etc).
 
 ### `category`
 
@@ -66,7 +67,7 @@ The `abbreviation` column, lists a common abbreviation for the label.
 
 ### `unitname`
 
-`unitname` specifies the unit of measurement used for the `itemid`. This column is not always available, and this may be because the unit of measurement varies, a unit of measurement does not make sense for the given data type, or the unit of measurement is simply missing. Note that there is sometimes additional information on the unit of measurement in the associated event table, e.g. the `valueuom` column in CHARTEVENTS.
+`unitname` specifies the unit of measurement used for the `itemid`. This column is not always available, and this may be because the unit of measurement varies, a unit of measurement does not make sense for the given data type, or the unit of measurement is simply missing. Note that there is sometimes additional information on the unit of measurement in the associated event table, e.g. the `valueuom` column in *chartevents*.
 
 ### `param_type`
 

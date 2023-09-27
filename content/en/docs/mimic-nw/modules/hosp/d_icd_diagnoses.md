@@ -42,11 +42,11 @@ ICD-11 became the official [WHO standard](https://www.who.int/standards/classifi
 
 ### `long_title`
 
-The `long_title` provides a description of the ICD code. For example, the ICD-10 code U07.1 has `long_title` "COVID-19 (confirmed by laboratory testing)".
+The `long_title` provides a description of the ICD code. For example, the ICD-10 code U07.1 has a `long_title` of 'COVID-19 (confirmed by laboratory testing)'.
 
 In the tables below, we provide ICD-10 codes related to covid or long covid.
 
-ICD-10 COVID markers terminologies:
+Terminologies related to COVID markers in the ICD-10:
 
 | icd_code | long_title                                                |
 | -------- | -------------------------------------------------------- |
@@ -56,13 +56,13 @@ ICD-10 COVID markers terminologies:
 | J12.81   | Pneumonia due to SARS-associated coronavirus           |
 
 
-ICD-10 Long COVID markers terminologies:
+Terminologies for Long COVID markers in ICD-10:
 
 | icd_code | long_title                                      |
 | -------- | ---------------------------------------------- |
 | U09.9    | Post COVID-19 condition, unspecified            |
 
-ICD-10 Other COVID related terminologies:
+Terminologies related to other COVID aspects in ICD-10:
 
 | icd_code | long_title                                                                                               |
 |----------|-----------------------------------------------------------------------------------------------------------|

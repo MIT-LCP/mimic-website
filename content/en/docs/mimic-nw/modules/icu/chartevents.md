@@ -53,7 +53,7 @@ Date and time when the vital sign was measured, deidentified.
 
 ### `itemid`
 
-Identifier for a single measurement type in the database. Each row associated with one `itemid` (e.g. 220045) corresponds to an instantiation of the same measurement (e.g. Heart Rate) for Routine Vital Signs `category`, and 'bpm' `unit_name`.
+Identifier for a single measurement type in the database. Each row associated with one `itemid` (e.g. 220045) corresponds to an instantiation of the same measurement (e.g. Heart Rate) within the `category` of 'Routine Vital Signs', and `unit_name` of 'bpm'.
 
 ### `value`, `valuenum`
 
@@ -63,7 +63,7 @@ Identifier for a single measurement type in the database. Each row associated wi
 
 ### `valueuom`
 
-`valueuom` is the unit of measurement for the `value`, if appropriate. Either missing or “%”.
+`valueuom` is the unit of measurement for the `value`, if appropriate. Either missing or '%'.
 
 ### `warning`
 

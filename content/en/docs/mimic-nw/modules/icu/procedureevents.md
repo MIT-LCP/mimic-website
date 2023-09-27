@@ -16,7 +16,7 @@ description: >
 
 # Important considerations
 
-* In the context of COVID-19, it's important to note that there haven't been any new findings or observations, except for instances where the use of a certain procedured e.g. ventilation has increased.
+* In the context of COVID-19, we have observed a higher frequency of certain procedures, such as invasive ventilation. 
 
 # Table columns
 
@@ -70,20 +70,20 @@ Date and time when the procedure ended.
 
 ### `itemid`
 
-Identifier for a single event type in the procedurevents table. Each row associated with one `itemid` (e.g. 225792) corresponds to a type of measurement (e.g. Invasive Ventilation) within '2-Ventilation' `category`. The *d_items* table may be joined on this field. For any itemid appearing in the *procedureevents* table, *d_items* `linksto` column will have the value 'procedureevents'.
-Note, in the context of COVID-19, 
+Identifier for a single event type in the *procedurevents* table. Each row associated with one `itemid` (e.g. 225792) corresponds to a type of measurement (e.g. Invasive Ventilation) and `category` (e.g. 2-Ventilation). The *d_items* table may be joined on this field. For any itemid appearing in the *procedureevents* table, *d_items* `linksto` column will have the value 'procedureevents'.
+
 
 ## `value`
 
-In the `procedureevents` table, this identifies the duration of the procedure (if applicable). For example, if querying for itemid 225794 (“Non-invasive Ventilation”), then the value column indicates the duration of ventilation therapy. 
+In the *procedureevents* table, this identifies the duration of the procedure (if applicable). For example, if querying for `itemid` 225794 (Non-invasive Ventilation), then the value column indicates the duration of ventilation therapy. 
 
 ### `valueuom`
 
-The unit of measurement for the value. Most frequently "None" (no value recorded); otherwise one of "day", "hour", or "min". A query for itemiid 225794 ("Non-invasive Ventilation") returning a `value` of 461 and `valueuom` of 'min' would correspond to non-invasive ventilation provided for 461 minutes; this value is expected to match the difference between the `starttime` and `endtime` fields for the record. A procedure with `valueuom` equal to "None" corresponds to a procedure which is instantaneous (e.g. intubation, patient transfer) or whose duration is not relevant (e.g. imaging procedures). For these records, there will be a difference of one second between `starttime` and `endtime` values.
+The unit of measurement for the value. Most frequently 'None' (no value recorded); otherwise one of 'day', 'hour', or 'min'. A query for itemiid 225794 (Non-invasive Ventilation) returning a `value` of 461 and `valueuom` of 'min' would correspond to non-invasive ventilation provided for 461 minutes; this value is expected to match the difference between the `starttime` and `endtime` fields for the record. A procedure with `valueuom` equal to 'None' corresponds to a procedure which is instantaneous (e.g. intubation, patient transfer) or whose duration is not relevant (e.g. imaging procedures). For these records, there will be a difference of one second between `starttime` and `endtime` values.
 
 ### `statusdescription`
 
-`statusdescription` states the ultimate status of the procedure referred to in the row. The statuses appearing on the `procedureevents` table are:
+`statusdescription` states the ultimate status of the procedure referred to in the row. The statuses appearing on the *procedureevents* table are:
 
 * `Paused` - The current delivery has been paused.
 * `FinishedRunning` - The delivery of the item has finished (most frequently, the bag containing the compound is empty).

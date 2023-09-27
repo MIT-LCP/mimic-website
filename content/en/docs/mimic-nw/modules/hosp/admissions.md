@@ -44,7 +44,7 @@ The *admissions* table defines all hospitalizations in the database. Hospitaliza
 
 ### `hadm_id`
 
-Each row of this table contains a unique `hadm_id`, which represents a single patient's admission to the hospital. It is possible for this table to have duplicate `subject_id`, indicating that a single patient had multiple admissions to the hospital. The ADMISSIONS table can be linked to the PATIENTS table using `subject_id`.
+Each row of this table contains a unique `hadm_id`, which represents a single patient's admission to the hospital. It is possible for this table to have duplicate `subject_id`, indicating that a single patient had multiple admissions to the hospital. The ADMISSIONS table can be linked to the *patients* table using `subject_id`.
 
 ### `admittime`
 
@@ -142,4 +142,4 @@ The date and time at which the patient was discharged from the emergency departm
 
 ### `hospital_expire_flag`
 
-This is a binary flag which indicates whether the patient died within the given hospitalization. `1` indicates death in the hospital as noted in the `dod` column as part of the patient table, and `0` indicates survival to hospital discharge. 
+This is a binary flag which indicates whether the patient died within the given hospitalization. `1` indicates death in the hospital as noted in the `dod` column as part of the *patient* table, and `0` indicates survival to hospital discharge. 
