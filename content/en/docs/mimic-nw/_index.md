@@ -21,4 +21,8 @@ MIMIC-Fed is currently organized into two distinct modules to highlight the sour
 - [HOSP](/docs/mimic-nw/modules/hosp/) - Federated hospital level data including patients, admissions, labs, ICD diagnoses for billing purposes, prescriptions, and electronic medication administration records.
 - [ICU](/docs/mimic-nw/modules/icu/) - Federated ICU level data including icu stays, procedure events, chartevents (vital signs). 
 
+{{% pageinfo %}}
+MIMIC-Fed is not yet released and its structure is subject to change.
+{{% /pageinfo %}}
+
 The tables structures adopted to align with MIMIC's data structure for each module are detailed in the respective sections. Additionally, we have incorporated COVID-related concepts and standard terminologies (LOINC, RxNorm, SNOMED, ICD-9/10) and derived mappings (for drug administration) into the dataset. This integration not only facilitates current federation efforts, but also facilities interoperability, allowing for seamless data exchange and collaboration across healthcare systems.
