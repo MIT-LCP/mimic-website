@@ -71,7 +71,7 @@ Each row of this table contains a unique `hadm_id`, which represents a single pa
 
 Similarly, `discharge_location` is the disposition of the patient after they are discharged from the hospital. There are 33 discharge locations from NW EDW. Some of the 33 discharge locations are suppressed under 'Other Facility' for privacy.
 
-NHMC discharge locations:
+NMHC discharge locations:
 
 | Discharge Location                                      | Full Abbreviation (for clarity)     |
 | ------------------------------------------------------- | --------------------------------- |
@@ -111,9 +111,9 @@ NHMC discharge locations:
 
 ### `insurance`, `language`, `marital_status`, `race`, `ethnicity`
 
-The `insurance`, `language`, `marital_status`, and `race` and `ethnicity` columns provide information about patient demographics for the given hospitalization. Note, in BIDMC there is only one column for `race`, however we have added `ethnicity` column to federate NHMC's data.
+The `insurance`, `language`, `marital_status`, and `race` and `ethnicity` columns provide information about patient demographics for the given hospitalization. Note, in BIDMC there is only one column for `race`, however we have added `ethnicity` column to federate NMHC's data.
 
-The race column in NHMC includes:
+The race column in NMHC includes:
 
 - American Indian or Alaska Native
 - Other
@@ -126,7 +126,7 @@ The race column in NHMC includes:
 - Declined
 - Black or African American
 
-The ethnicity column in NHMC includes:
+The ethnicity column in NMHC includes:
 
 - Not Hispanic or Latino
 - Hispanic or Latino

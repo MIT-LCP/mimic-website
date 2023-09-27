@@ -109,7 +109,7 @@ The unit of measurement used for the formulary dosage. Examples include 'mg', 'U
 
 ### `doses_per_24_hrs`
 
-The number of doses per 24 hours for which the medication is to be given. A daily dose would result in `doses_per_24_hrs`: 1, bidaily (BID) or twice a day would be 2, and so on. Within NHMC, if the medication order couldn’t be converted to `doses_per_24_hrs` (such as 'Once', 'PRN', 'Continuous', 'Weekly', or 'Q 90 days') the value would be missing.
+The number of doses per 24 hours for which the medication is to be given. A daily dose would result in `doses_per_24_hrs`: 1, bidaily (BID) or twice a day would be 2, and so on. Within NMHC, if the medication order couldn’t be converted to `doses_per_24_hrs` (such as 'Once', 'PRN', 'Continuous', 'Weekly', or 'Q 90 days') the value would be missing.
 
 ### `route`
 

@@ -41,7 +41,7 @@ Identifiers which specify the patient: `subject_id` is unique to a patient, `had
 
 `first_careunit` and `last_careunit` contain, respectively, the first and last ICU type in which the patient was cared for. 
 
-NHMC definitions for `first_careunit` and `last_careunit`:
+NMHC definitions for `first_careunit` and `last_careunit`:
 
 | first_careunit/last_careunit        | Full abbreviation (Epic)         |
 |------------------------------------|----------------------------------|
@@ -64,7 +64,7 @@ NHMC definitions for `first_careunit` and `last_careunit`:
 | CTU                                | CARDIAC TELEMETRY UNIT, General Medicine service |
 | RADIOLOGY                          |                                  |
 
-Note, the addition of ICU overflow in both BIDMC and NHMC as a `first_careunit` and/or `last_careunit`. In the context of COVID-19, an 'ICU overflow' typically refers to a situation in which intensive care units (ICUs) in a hospital or healthcare facility have reached or exceeded their capacity due to a surge in COVID-19 patients requiring critical care. This overflow occurs when the number of patients needing intensive care for COVID-19 exceeds the available ICU beds.
+Note, the addition of ICU overflow in both BIDMC and NMHC as a `first_careunit` and/or `last_careunit`. In the context of COVID-19, an 'ICU overflow' typically refers to a situation in which intensive care units (ICUs) in a hospital or healthcare facility have reached or exceeded their capacity due to a surge in COVID-19 patients requiring critical care. This overflow occurs when the number of patients needing intensive care for COVID-19 exceeds the available ICU beds.
 
 ### `intime`, `outtime`
 
