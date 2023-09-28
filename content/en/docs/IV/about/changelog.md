@@ -7,9 +7,36 @@ description: >
   Changes between releases of MIMIC-IV.
 ---
 
-The latest version of MIMIC-IV is v2.1. 
+The latest version of MIMIC-IV is v2.2.
 
 This page lists changes implemented in sequential updates to the MIMIC-IV database. Issues are tracked using a unique issue number, usually of the form #100, #101, etc. Note that some of these issues are only accessible in a private 'building' repository.
+
+### MIMIC-IV v2.2
+
+MIMIC-IV v2.2 was released on January 6, 2023. It added provider identifiers, imputed `hadm_id` for a number of rows in _emar_, and changed the subset of `subject_id` which are held out. Final row counts are available in the validation scripts published with the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/). For clarity, after removal of the test set, the row counts are as follows:
+
+*   _patients_: 299,712 (was 315,460 in v2.0)
+*   _admissions_: 431,231 (was 454,324 in v2.0)
+*   _icustays_: 73,181 (was 76,943 in v2.0)
+
+#### icu module
+
+*   _caregiver_
+    *   New table in v2.2. Contains one column: `caregiver_id`, a deidentified integer which uniquely represents a single caregiver or provider. These identifiers are sourced from the MetaVision ICU system. When present in a table, it indicates the user who documented the data into MetaVision. For example, the `caregiver_id` associated with a row indicating mechanical ventilation in the procedureevents table represents the user who documented the event, and not the provider who performed the procedure.
+*   _chartevents_, _datetimeevents_, _ingredientevents_, _inputevents_, _outputevents_, _procedureevents_
+    * Added the `caregiver_id` column. This column is a deidentified integer representing the care provider who documented the data for the given row.
+
+#### hosp module
+
+*   _provider_
+    *   New table in v2.2. Contains one column: `provider_id`, a deidentified string which uniquely represents a single caregiver or provider. These identifiers are sourced from the hospital wide EHR system, and used in a variety of contexts across tables in the module.
+*   _admissions_
+    *   New column: `admit_provider_id`, a deidentified string representing the provider who admitted the patient.
+*   _emar_
+    *   New column: `enter_provider_id`, a deidentified string representing the provider who entered the medication administration information into the database.
+    *   Fixed a bug where a subset of _emar_ rows (713,117, ~2.5%) did not have an `hadm_id` even though they were associated with a given hospitalization. These rows occur outside of the administratively documented admission and discharge times for a hospitalization, but are still considered as administered during that hospitalization in the raw data.
+*   _labevents_, _microbiologyevents_, _poe_, _prescriptions_
+    *   New column: `order_provider_id`, a deidentified string representing the provider who ordered the corresponding event (e.g. the lab test in the case of _labevents_, or the medication in the case of _prescriptions_).
 
 ### MIMIC-IV v2.1
 
