@@ -1,17 +1,17 @@
 ---
-title: "MIMIC-Northwestern: A Harmonized Multi-center COVID-rich ICU Database documentation"
+title: "MIMIC-Northwestern documentation"
 linktitle: Multi-center
-weight: 40
+weight: 45
 
 cascade:
 - type: "docs"
   _target:
     path: "/**"
 
-# description: >
-#   We introduce a large harmonized multi-center COVID-rich ICU database comprising deidentified health-related data from Beth Israel Deaconess Medical Center (BIDMC) and Northwestern Memorial HealthCare (NMHC) from 2020 to 2022.
+description: >
+  MIMIC-Northwestern: A Harmonized Multi-center COVID-rich ICU Database
 ---
-We introduce MIMIC-Northwestern, a large harmonized multi-center COVID-rich ICU database comprising deidentified health-related data from Beth Israel Deaconess Medical Center (BIDMC) and Northwestern Memorial HealthCare (NMHC) from 2020 to 2022, capturing the evolving distribution shifts in data over this critical time period. The database adopts a similar data structure as MIMIC-IV v2.2.
+We introduce MIMIC-Northwestern, a large harmonized multi-center COVID-rich ICU database. It  comprises deidentified health-related data from Beth Israel Deaconess Medical Center (BIDMC) and Northwestern Memorial HealthCare (NMHC) spanning 2020 to 2022, capturing the data distribution shifts during this critical period. The database adopts a similar data structure as MIMIC-IV v2.2.
 
 Notably, Northwestern Memorial HealthCare (NMHC) uses the Epic electronic medical records (EMR) system. To make the EMR data available for research and quality assurance, the NM EMR systems transfer selected data into a relational Enterprise Data Warehouse (NM EDW). 
 
