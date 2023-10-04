@@ -9,7 +9,7 @@ description: >
 
 The *prescriptions* table provides information about prescribed medications. Information includes the name of the drug, coded identifiers including the Generic Sequence Number (GSN) and National Drug Code (NDC), the product strength, the formulary dose, and the route of administration.
 
-To facilitate further federation processes, the drug mappings to standard terminologies (RxNorm) will be released.
+To facilitate further multi-center initiatives, the drug mappings to standard terminologies (RxNorm) will be released.
 
 We provide a list of some common COVID-19 drugs in the database, as defined by RxNorm terminology, below:
 

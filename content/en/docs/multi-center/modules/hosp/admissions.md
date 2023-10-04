@@ -111,7 +111,7 @@ NMHC discharge locations:
 
 ### `insurance`, `language`, `marital_status`, `race`, `ethnicity`
 
-The `insurance`, `language`, `marital_status`, and `race` and `ethnicity` columns provide information about patient demographics for the given hospitalization. Note, in BIDMC there is only one column for `race`, however we have added `ethnicity` column to federate NMHC's data.
+The `insurance`, `language`, `marital_status`, and `race` and `ethnicity` columns provide information about patient demographics for the given hospitalization. Note, in BIDMC there is only one column for `race`, however we have added `ethnicity` column to incorporate NMHC's data.
 
 The race column in NMHC includes:
 

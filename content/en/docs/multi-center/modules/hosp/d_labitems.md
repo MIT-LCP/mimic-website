@@ -15,7 +15,7 @@ Laboratory data contains information collected and recorded in the hospital labo
 
 For the data sourced from NMHC, Illinois law defines certain categories of information as Sensitive Protected Health Information (SPHI) which require special treatment. SPHI includes genetic counseling but does not include genetic testing.
 
-To facilitate further federation processes, the lab mappings to standard terminologies (LOINC)  will be released.
+To facilitate further multi-center initiatives, the lab mappings to standard terminologies (LOINC)  will be released.
 
 ### Links to
 
