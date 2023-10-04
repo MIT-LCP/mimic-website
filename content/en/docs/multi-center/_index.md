@@ -19,13 +19,13 @@ The NM EDW tables are categorized into two primary categories, Fact and Dimensio
 
 The NM EDW also includes auxiliary tables not directly related to patient care, such as a list of International Classification of Disease codes (ICD-9 and ICD-10). In response to the COVID-19/SARS-COV-2 pandemic, a COVID-19 data mart was created within the EDW to provide convenient access to information on COVID-19 patients, lab results, medications and treatments.
 
-The multi-center database is currently organized into two distinct modules to highlight the source of the data:
+The MIMIC-Northwestern database is currently organized into two distinct modules to highlight the source of the data:
 
-- [Hosp](/docs/federated/modules/hosp/) - Hospital level data including patients, admissions, labs, ICD diagnoses for billing purposes, prescriptions, and electronic medication administration records.
-- [ICU](/docs/federated/modules/icu/) - ICU level data including icu stays, procedure events, chartevents (vital signs). 
+- [Hosp](/docs/multi-center/modules/hosp/) - Hospital level data including patients, admissions, labs, ICD diagnoses for billing purposes, prescriptions, and electronic medication administration records.
+- [ICU](/docs/multi-center/modules/icu/) - ICU level data including icu stays, procedure events, chartevents (vital signs). 
 
 {{% pageinfo %}}
-The multi-center database is not yet released and its structure is subject to change.
+The MIMIC-Northwestern database is not yet released and its structure is subject to change.
 {{% /pageinfo %}}
 
 The tables structures adopted to align with MIMIC's data structure for each module are detailed in the respective sections. Additionally, we have incorporated COVID-related concepts and standard terminologies (LOINC, RxNorm, SNOMED, ICD-9/10) and derived mappings (for drug administration) into the dataset. This integration not only facilitates current multi-center initiatives, but also facilities interoperability, allowing for seamless data exchange and collaboration across healthcare systems.

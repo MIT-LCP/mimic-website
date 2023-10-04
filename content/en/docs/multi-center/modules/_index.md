@@ -4,7 +4,7 @@ linkTitle: "Modules"
 weight: 3
 date: 2023-09-18
 description: >
-  Description of the data contained in each of the multi-center modules.
+  Description of the data contained in each of the MIMIC-Northwestern modules.
 ---
 
 Data within the modules will be made available on PhysioNet.
