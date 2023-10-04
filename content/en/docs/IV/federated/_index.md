@@ -9,11 +9,11 @@ cascade:
     path: "/**"
 
 description: >
-  MIMIC-Fed is a large federated COVID-rich ICU database comprising deidentified health-related data from Beth Israel Deaconess Medical Center (BIDMC) and Northwestern Memorial Health Center (NMHC) from 2020 to 2022.
+  MIMIC-Fed is a large federated COVID-rich ICU database comprising deidentified health-related data from Beth Israel Deaconess Medical Center (BIDMC) and Northwestern Memorial HealthCare (NMHC) from 2020 to 2022.
 ---
-MIMIC-Fed is a large federated COVID-rich ICU database comprising deidentified health-related data from Beth Israel Deaconess Medical Center (BIDMC) and Northwestern Memorial Health Center (NMHC) from 2020 to 2022, capturing the evolving distribution shifts in data over this critical time period. The federated database adopts a similar data structure as MIMIC-IV v2.2.
+MIMIC-Fed is a large federated COVID-rich ICU database comprising deidentified health-related data from Beth Israel Deaconess Medical Center (BIDMC) and Northwestern Memorial HealthCare (NMHC) from 2020 to 2022, capturing the evolving distribution shifts in data over this critical time period. The federated database adopts a similar data structure as MIMIC-IV v2.2.
 
-Notably, Northwestern Memorial Health Center (NMHC) uses the Epic electronic medical records (EMR) system. To make the EMR data available for research and quality assurance, the NM EMR systems transfer selected data into a relational Enterprise Data Warehouse (NM EDW). 
+Notably, Northwestern Memorial HealthCare (NMHC) uses the Epic electronic medical records (EMR) system. To make the EMR data available for research and quality assurance, the NM EMR systems transfer selected data into a relational Enterprise Data Warehouse (NM EDW). 
 
 The NM EDW tables are categorized into two primary categories, Fact and Dimension, following data warehousing conventions. As implemented in the NM EDW, Fact tables primarily contain events (such as encounters, admissions, diagnosis events, procedure orders, and medication orders), while Dimension tables describe persistent attributes of entities (patients, procedure names, the medication formulary). 
 
