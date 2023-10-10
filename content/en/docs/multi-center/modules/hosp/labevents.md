@@ -23,7 +23,6 @@ Name | Postgres data type
 `hadm_id` | INTEGER
 `specimen_id` | INTEGER NOT NULL
 `itemid` | INTEGER NOT NULL
-`order_provider_id` | VARCHAR(10)
 `charttime` | TIMESTAMP(0)
 `storetime` | TIMESTAMP(0)
 `value` | VARCHAR(200)
@@ -55,11 +54,6 @@ Often multiple measurements are made on the same sample. The `specimen_id` will 
 ### `itemid`
 
 An identifier which uniquely denotes laboratory concepts.
-
-### `order_provider_id`
-
-`order_provider_id` provides an anonymous identifier for the provider who ordered the laboratory measurement.
-{{% include "/static/include/provider_id.md" %}}
 
 ### `charttime`
 
