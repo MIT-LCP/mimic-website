@@ -30,7 +30,7 @@ highnormalvalue | FLOAT
 
 The *d_items* table defines `itemid`, which represents measurements in the database. Measurements of the same type (e.g. heart rate) will have the same `itemid` (e.g. 220045). Values in the `itemid` column are unique to each row. All `itemid`s will have a value > 220000.
 
-To faciliate future multi-center initiatives, we will release mappings within charted events (including vital signs) to standard terminologies (LOINC) and mappings for procedure events to standard terminologies (SNOMED).
+To faciliate future multi-center initiatives, the mappings within charted events (including vital signs) to standard terminologies (LOINC) and mappings for procedure events to standard terminologies (SNOMED) is in the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iv/concepts/concept_map).
 
 
 We provide a list of common vital sign labels in the database, as defined by LOINC terminology, below:
