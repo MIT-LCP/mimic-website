@@ -21,8 +21,8 @@ The NM EDW also includes auxiliary tables not directly related to patient care, 
 
 The MIMIC-Northwestern database is currently organized into two distinct modules to highlight the source of the data:
 
-- [Hosp](/docs/multi-center/modules/hosp/) - Hospital level data including patients, admissions, labs, ICD diagnoses for billing purposes, prescriptions, and electronic medication administration records.
-- [ICU](/docs/multi-center/modules/icu/) - ICU level data including icu stays, procedure events, chartevents (vital signs). 
+- [Hosp](/docs/mimic-northwestern/modules/hosp/) - Hospital level data including patients, admissions, labs, ICD diagnoses for billing purposes, prescriptions, and electronic medication administration records.
+- [ICU](/docs/mimic-northwestern/modules/icu/) - ICU level data including icu stays, procedure events, chartevents (vital signs). 
 
 {{% pageinfo %}}
 The MIMIC-Northwestern database is not yet released and its structure is subject to change.
