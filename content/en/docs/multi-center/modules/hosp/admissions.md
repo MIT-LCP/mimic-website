@@ -137,7 +137,7 @@ The ethnicity column in NMHC includes:
 
 The date and time at which arrival of the patient in the emergency department was registered.
 
-### `edouttime`
+### `edregtime`
 The date and time at which the patient was discharged from the emergency department, either discharged from the hospital or transferred.
 
 ### `hospital_expire_flag`
