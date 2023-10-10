@@ -142,4 +142,4 @@ The date and time at which the patient was discharged from the emergency departm
 
 ### `hospital_expire_flag`
 
-This is a binary flag which indicates whether the patient died within the given hospitalization. `1` indicates death in the hospital as noted in the `dod` column as part of the *patient* table, and `0` indicates survival to hospital discharge. 
+This is a binary flag which indicates whether the patient died within the associated hospital admission. `1` indicates death in the hospital as noted in the `dod` column as part of the *patient* table, and `0` indicates survival to hospital discharge. This binary flag therefore specifically indicates death in the hospital as opposed to death at any time.
