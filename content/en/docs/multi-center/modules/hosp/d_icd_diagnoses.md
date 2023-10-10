@@ -9,6 +9,11 @@ description: >
 
 The *d_icd_diagnoses* table defines International Classification of Diseases (ICD) Version 9 and 10 codes for **diagnoses**. These codes are assigned at the end of the patient's stay and are used by the hospital to bill for care provided.
 
+## Important considerations
+The ICD-9 code is included in the documentation for informational purposes only.
+The database include ICD-10 codes as the transition to ICD-10 is a mandate that was effective October 1,2015 according to the [CMS](https://www.cms.gov/medicare/coding-billing/icd-10-codes#:~:text=ICD%2D10%20Implementation%20Date%3A%20October%201%2C%202015&text=The%20ICD%2D10%20transition%20is,who%20bill%20Medicare%20or%20Medicaid.).
+
+
 ### Links to
 
 * *diagnoses_icd* ON `icd_code` and `icd_version`
