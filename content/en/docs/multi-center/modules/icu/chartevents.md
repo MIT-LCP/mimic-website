@@ -22,7 +22,6 @@ Name | Postgres Data type
 subject\_id | INTEGER
 hadm\_id | INTEGER
 stay\_id | INTEGER
-caregiver_id | INTEGER
 charttime | TIMESTAMP(0)
 storetime | TIMESTAMP(0)
 itemid | INTEGER
@@ -38,10 +37,6 @@ Identifiers which specify the patient: `subject_id` is unique to a patient, `had
 ### `stay_id`
 
 `stay_id` is an integer identifier which uniquely identifies each ICU admission within a hospital admission. Each hospital admission `hadm_id` must have at least one ICU admission `stay_id` but may include more than one. A `stay_id` groups all ICU admissions within 24 hours of each other.
-
-### `caregiver_id`
-
-`caregiver_id` uniquely identifies a single caregiver who measured the vital sign. 
 
 ### `charttime`
 
