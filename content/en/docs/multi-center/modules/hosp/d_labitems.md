@@ -40,13 +40,12 @@ A unique identifier for a laboratory concept. `itemid` is unique to each row, an
 
 The `label` column describes the concept which is represented by the `itemid`.
 
-We provide a list of common COVID-19 tests and measurements in the database, as defined by LOINC terminology, below:
+We provide a list of some common COVID-19 tests and measurements in the database, as defined by LOINC terminology:
 
-- SARS-CoV-2 (COVID-19) [Presence] in Specimen by Organism specific culture
-- SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay
-- SARS-CoV-2 (COVID-19) N gene [Cycle Threshold #] in Specimen by NAA with probe detection
-- SARS-CoV-2 (COVID-19) E gene [Cycle Threshold #] in Respiratory specimen by NAA with probe detection
-
+| itemid | loinc   | loinc_label                                                                                           |
+|--------|---------|-------------------------------------------------------------------------------------------------------|
+| 51853  | 94763-0 | SARS-CoV-2 (COVID-19) [Presence] in Specimen by Organism specific culture                             |
+| 51890  | 94558-4 | SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay                     |
 
 ### `fluid`
 

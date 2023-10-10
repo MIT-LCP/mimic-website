@@ -46,9 +46,6 @@ Name | Postgres data type
 `doses_per_24_hrs` | REAL
 `route` | VARCHAR(50)
 
-<!-- `poe_id` | VARCHAR(25) -->
-<!-- `poe_seq` | INTEGER --> 
-<!-- `formulary_drug_cd` | VARCHAR(50) -->
 
 ### `subject_id`
 
@@ -64,7 +61,7 @@ An identifier which links administrations in *emar* to prescription information 
 
 ### `starttime`, `stoptime`
 
-The prescribed start and stop time for the medication. `stop_time` could refer to an order to stop a prescription, but in this case, it means the end date for the prescription. For example, in a prescription for one dose per day for 14 days, the `stop_time` would be 14 days after the `start_time`.
+The prescribed start and stop time for the medication. `stoptime` could refer to an order to stop a prescription, but in this case, it means the end date for the prescription. For example, in a prescription for one dose per day for 14 days, the `stop_time` would be 14 days after the `starttime`.
 
 ### `drug_type`
 
