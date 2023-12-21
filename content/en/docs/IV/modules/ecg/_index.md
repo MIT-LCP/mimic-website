@@ -17,7 +17,7 @@ There are three lookup tables in this module:
 Additional details for each lookup table are provided in the pages below.
 
 {{% pageinfo %}}
-Please note that the free-text cardiologist notes for the ECG module will be publicly released in the MIMIC-IV-Note module at a later date. An initial set of these notes are available to our consortium members only, at this time.
+Please note that the free-text cardiologist notes for the ECG module will be publicly released in the MIMIC-IV-Note module at a later date.
 {{% /pageinfo %}}
 
 **For additional information about this project please see the MIMIC-IV-ECG project on physionet.org.**

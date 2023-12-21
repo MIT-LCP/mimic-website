@@ -8,7 +8,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-Please note that the free-text cardiologist notes for the ECG module will be publicly released in the MIMIC-IV-Note module at a later date. An initial set of these notes are available to our consortium members only, at this time.
+Please note that the free-text cardiologist notes for the ECG module will be publicly released in the MIMIC-IV-Note module at a later date.
 {{% /pageinfo %}}
 
 This table provides links to the cardiologist's note, when available, for a given diagnostic ECG waveform.
