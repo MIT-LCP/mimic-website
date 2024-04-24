@@ -10,6 +10,39 @@ description: >
 Many users will be familiar with [MIMIC-III](/docs/iii), the predecessor of MIMIC-IV.
 A number of improvements have been made, including simplifying the structure, adding new data elements, and improving the usability of previous data elements.
 
+
+## Table-wise changes are summarized below.
+
+MIMIC-III table | MIMIC-IV module | Removed columns | Additional columns | Notes
+--- | --- | --- | --- | ---
+patients            | hosp | row_id, dob, dod_ssn, dod_hosp, expire_flag | anchor_age, anchor_year, anchor_year_group | DOD no longer available outside of the hospital.
+admissions          | hosp | row_id, religion, has_chartevents_data | | Values changed for many columns (e.g. language, ethnicity).
+transfers           | hosp | row_id, icustay_id, dbsource, prev_careunit, curr_careunit, prev_wardid, curr_wardid, los | transfer_id, careunit | Schema is simplified in MIMIC-IV.
+d_hcpcs             | hosp | N/A, was d_cpt | | New table.
+d_icd_diagnoses     | hosp | row_id, icd9_code, short_title | icd_code, icd_version | Now contains ICD-9 and ICD-10 codes.
+d_icd_procedures    | hosp | row_id, icd9_code, short_title | icd_code, icd_version | Now contains ICD-9 and ICD-10 codes.
+d_labitems          | hosp | row_id | | Many additional itemid added.
+diagnoses_icd       | hosp | row_id, icd9_code | icd_code, icd_version | Now contains ICD-9 and ICD-10 codes.
+drgcodes            | hosp | row_id | | 
+emar                | hosp | N/A, new table. | |
+emar_detail         | hosp | N/A, new table. | |
+hcpcsevents         | hosp | N/A, was cptevents. | |
+labevents           | hosp | row_id | labevent_id, specimen_id, storetime, ref_range_lower, ref_range_upper, priority, comments
+microbiologyevents  | hosp | row_id | microevent_id, micro_specimen_id, test_seq, storedate, storetime, test_itemid, test_name, quantity, comments
+pharmacy            | hosp | N/A, new table. | |
+poe                 | hosp | N/A, new table. | |
+poe_detail          | hosp | N/A, new table. | |
+prescriptions       | hosp | row_id, startdate, enddate, drug_name_poe, drug_name_generic, formulary_drug_cd | starttime, stoptime, form_rx, doses_per_24_hrs |
+procedures_icd      | hosp | row_id, icd9_code | icd_code, icd_version | Now contains ICD-9 and ICD-10 codes.
+services            | hosp | row_id | |
+d_items             | icu  | row_id, dbsource, conceptid | lownormalvalue, highnormalvalue
+chartevents         | icu  | row_id, icustay_id, cgid, error, resultstatus, stopped | stay_id
+datetimeevents      | icu  | row_id, icustay_id, cgid, error, resultstatus, stopped | stay_id
+icustays            | icu  | row_id, icustay_id | stay_id
+inputevents         | icu  | row_id, icustay_id, cgid, error | stay_id | Was inputevents_mv in MIMIC-III.
+outputevents        | icu  | row_id, icustay_id, cgid, error | stay_id |
+procedureevents     | icu  | row_id, icustay_id, cgid, comments_editedby, comments_canceledby | stay_id, patientweight, totalamount, totalamountuom, originalamount, originalrate | Removed columns had no data in MIMIC-III
+
 ## Structure
 
 The structure of MIMIC-IV is necessarily different than MIMIC-III.

@@ -29,7 +29,7 @@ NMED | Neurologic Medical - non-surgical, relating to the brain
 NSURG | Neurologic Surgical - surgical, relating to the brain
 OBS | Obstetrics - conerned with childbirth and the care of women giving birth
 ORTHO | Orthopaedic - surgical, relating to the musculoskeletal system
-OMED | Orthopaedic medicine - non-surgical, relating to musculoskeletal system
+OMED | Oncologic Medical - non-surgical, relating to cancer
 PSURG | Plastic - restortation/reconstruction of the human body (including cosmetic or aesthetic)
 PSYCH | Psychiatric - mental disorders relating to mood, behaviour, cognition, or perceptions
 SURG | Surgical - general surgical service not classified elsewhere
