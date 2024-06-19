@@ -1,5 +1,4 @@
 ---
-date: "2022-06-12T00:00:00-04:00"
 title: "Ingredientevents"
 linktitle: "Ingredientevents"
 weight: 10
