@@ -8,7 +8,7 @@ description: >
 ---
 
 
-# The *outputevents* table
+## The *outputevents* table
 
 **Table source:** MetaVision ICU database.
 
@@ -25,7 +25,7 @@ description: >
 
 <!-- # Important considerations -->
 
-# Table columns
+## Table columns
 
 Name | Data type
 ---- | --------
@@ -39,9 +39,9 @@ itemid | INTEGER
 value | DOUBLE PRECISION
 valueuom | VARCHAR(20)
 
-# Detailed Description
+## Detailed Description
 
-## `subject_id`, `hadm_id`, `stay_id`
+### `subject_id`, `hadm_id`, `stay_id`
 
 Identifiers which specify the patient: `subject_id` is unique to a patient, `hadm_id` is unique to a patient hospital stay and `stay_id` is unique to a patient ICU stay.
 
@@ -49,18 +49,18 @@ Identifiers which specify the patient: `subject_id` is unique to a patient, `had
 
 {{% include "/static/include/caregiver_id.md" %}}
 
-## `charttime`
+### `charttime`
 
 `charttime` is the time of an output event.
 
-## `storetime`
+### `storetime`
 
 `storetime` records the time at which an observation was manually input or manually validated by a member of the clinical staff.
 
-## `itemid`
+### `itemid`
 
 Identifier for a single measurement type in the database. Each row associated with one `itemid` (e.g. 212) corresponds to an instantiation of the same measurement (e.g. heart rate).
 
-## `value`, `valueuom`
+### `value`, `valueuom`
 
 `value` and `valueuom` list the amount of a substance at the `charttime` (when the exact start time is unknown, but usually up to an hour before).

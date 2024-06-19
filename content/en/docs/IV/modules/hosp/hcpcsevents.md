@@ -30,6 +30,8 @@ Name | Postgres data type
 `seq_num` | INTEGER NOT NULL
 `short_description` | VARCHAR(180)
 
+## Detailed Description
+
 ### `subject_id`
 
 {{% include "/static/include/subject_id.md" %}}

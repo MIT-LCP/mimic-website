@@ -31,6 +31,8 @@ Name | Postgres data type
 `icd_code` | VARCHAR(7)
 `icd_version` | INTEGER
 
+## Detailed Description
+
 ### `subject_id`
 
 {{% include "/static/include/subject_id.md" %}}
@@ -39,11 +41,11 @@ Name | Postgres data type
 
 {{% include "/static/include/hadm_id.md" %}}
 
-## `seq_num`
+### `seq_num`
 
 An assigned priority for procedures which occurred within the hospital stay.
 
-## `chartdate`
+### `chartdate`
 
 The date of the associated procedures. Date does *not* strictly correlate with `seq_num`.
 

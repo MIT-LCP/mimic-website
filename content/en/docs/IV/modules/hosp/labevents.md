@@ -61,6 +61,8 @@ Name | Postgres data type
 `priority` | VARCHAR(7)
 `comments` | TEXT
 
+## Detailed Description
+
 ### `labevent_id`
 
 An integer which is unique for every row in the table.

@@ -59,6 +59,8 @@ Name | Postgres data type
 `site` | VARCHAR(255)
 `non_formulary_visual_verification` | VARCHAR(1)
 
+## Detailed Description
+
 ### `subject_id`
 
 {{% include "/static/include/subject_id.md" %}}

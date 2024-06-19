@@ -71,6 +71,8 @@ Name | Postgres data type | Example value
 `interpretation` | VARCHAR(5) | S
 `comments` | TEXT | ___
 
+## Detailed Description
+
 ### `microevent_id`
 
 A unique integer denoting the row.
@@ -94,7 +96,7 @@ Often multiple measurements are made on the same sample. The `micro_specimen_id`
 `order_provider_id` provides an anonymous identifier for the provider who ordered the microbiology test.
 {{% include "/static/include/provider_id.md" %}}
 
-## `chartdate`, `charttime`
+### `chartdate`, `charttime`
 
 `charttime` records the time at which an observation was charted, and is usually the closest proxy to the time the data was actually measured.
 `chartdate` is the same as `charttime`, except there is no time available.
@@ -103,40 +105,40 @@ Often multiple measurements are made on the same sample. The `micro_specimen_id`
 
 In the cases where both `charttime` and `chartdate` exists, `chartdate` is equal to a truncated version of `charttime` (i.e. `charttime` without the timing information). Not all observations have a `charttime`, but all observations have a `chartdate`.
 
-## `spec_itemid`, `spec_type_desc`
+### `spec_itemid`, `spec_type_desc`
 
 The specimen which is tested for bacterial growth.
 The specimen is a sample derived from a patient; e.g. blood, urine, sputum, etc.
 
-## `test_seq`
+### `test_seq`
 
 If multiple samples are drawn, the `test_seq` will delineate them. For example, if an aerobic and anerobic culture bottle are used for the same specimen, they will have distinct `test_seq` values (likely 1 and 2).
 
-## `storedate`, `storetime`
+### `storedate`, `storetime`
 
 The date (`storedate`) or date and time (`storetime`) of when the microbiology result was available. While many interim results are made available during the process of assessing a microbiology culture, the times here are the time of the *last* known update.
 
-## `test_itemid`, `test_name`
+### `test_itemid`, `test_name`
 
 The test performed on the given specimen.
 
-## `org_itemid`, `org_name`
+### `org_itemid`, `org_name`
 
 The organism, if any, which grew when tested. If NULL, no organism grew (i.e. a negative culture).
 
-## `isolate_num`
+### `isolate_num`
 
 For testing antibiotics, the isolated colony (integer; starts at 1).
 
-## `ab_itemid`, `ab_name`
+### `ab_itemid`, `ab_name`
 
 If an antibiotic was tested against the given organism for sensitivity, the antibiotic is listed here.
 
-## `dilution_text`, `dilution_comparison`, `dilution_value`
+### `dilution_text`, `dilution_comparison`, `dilution_value`
 
 Dilution values when testing antibiotic sensitivity.
 
-## `interpretation`
+### `interpretation`
 
 `interpretation` of the antibiotic sensitivity, and indicates the results of the test. "S" is sensitive, "R" is resistant, "I" is intermediate, and "P" is pending.
 

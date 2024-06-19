@@ -38,6 +38,8 @@ Name | Postgres data type
 `order_provider_id` | VARCHAR(10)
 `order_status` | VARCHAR(15)
 
+## Detailed Description
+
 ### `poe_id`
 
 A unique identifier for the given order. `poe_id` is composed of `subject_id` and a monotonically increasing integer, `poe_seq`, in the following format: `subject_id`-`poe_seq`.

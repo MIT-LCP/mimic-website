@@ -6,7 +6,7 @@ description: >
   pyxis table
 ---
 
-# The *pyxis* table
+## The *pyxis* table
 
 The *pyxis* table provides information for medicine dispensations made via the Pyxis system.
 
@@ -18,13 +18,13 @@ Note that as the same medication may have multiple `gsn` values, each row does *
 
 **Number of rows:** 1,586,053
 
-**Links to:**
+## Links to
 
 * *edstays* on `stay_id`
 
 <!-- # Important considerations -->
 
-# Table columns
+## Table columns
 
 Name | Postgres data type
 ---- | ----
@@ -36,30 +36,32 @@ Name | Postgres data type
 `gsn_rn`    | SMALLINT NOT NULL
 `gsn`       | VARCHAR(10)
 
-## `subject_id`
+## Detailed Description
+
+### `subject_id`
 
 `subject_id` is a unique identifier which specifies an individual patient. Any rows associated with a single `subject_id` pertain to the same individual.
 
-## `stay_id`
+### `stay_id`
 
 An identifier which uniquely identifies a single emergency department stay for a single patient.
 
-## `charttime`
+### `charttime`
 
 The time at which the medication was charted, which is the closest approximation to the time the medication was administered.
 
-## `med_rn`
+### `med_rn`
 
 A row number for the medicine used to group single dispensations.
 
-## `name`
+### `name`
 
 The name of the medicine.
 
-## `gsn`
+### `gsn`
 
 The Generic Sequence Number (GSN), an ontology which provides a code for each medicine.
 
-## `gsn_rn`
+### `gsn_rn`
 
 As a medicine may be a member of multiple groups in the GSN ontology, this row number differentiates them. The order of `gsn_rn` has no meaning.

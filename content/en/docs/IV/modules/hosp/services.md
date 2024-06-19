@@ -54,6 +54,8 @@ Name | Postgres data type
 `prev_service` | VARCHAR(20)
 `curr_service` | VARCHAR(20)
 
+## Detailed Description
+
 ### `subject_id`
 
 {{% include "/static/include/subject_id.md" %}}
@@ -62,10 +64,10 @@ Name | Postgres data type
 
 {{% include "/static/include/hadm_id.md" %}}
 
-## `transfertime`
+### `transfertime`
 
 `transfertime` is the time at which the patient moved from the `prev_service` (if present) to the `curr_service`.
 
-## `prev_service`, `curr_service`
+### `prev_service`, `curr_service`
 
 `prev_service` and `curr_service` are the previous and current service that the patient resides under.

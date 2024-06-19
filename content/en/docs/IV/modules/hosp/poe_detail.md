@@ -32,6 +32,8 @@ Name | Postgres data type
 `field_name` | VARCHAR(255) NOT NULL
 `field_value` | TEXT
 
+## Detailed Description
+
 ### `poe_id`
 
 A unique identifier for the given order. `poe_id` is composed of `subject_id` and a monotonically increasing integer, `poe_seq`, in the following format: `subject_id`-`poe_seq`.

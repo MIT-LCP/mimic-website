@@ -6,7 +6,7 @@ description: >
   vitalsign table
 ---
 
-# The *vitalsign* table
+## The *vitalsign* table
 
 Patients admitted to the emergency department have routine vital signs taken ever 1-4 hours. These vital signs are stored in the *vitalsign* table.
 
@@ -16,7 +16,7 @@ Patients admitted to the emergency department have routine vital signs taken eve
 
 **Number of rows:** 1,564,610
 
-**Links to:**
+## Links to
 
 * *edstays* on `stay_id`
 
@@ -79,44 +79,46 @@ Name | Postgres data type
 `rhythm`      | TEXT
 `pain`        | TEXT
 
-## `subject_id`
+## Detailed Description
+
+### `subject_id`
 
 `subject_id` is a unique identifier which specifies an individual patient. Any rows associated with a single `subject_id` pertain to the same individual.
 
-## `stay_id`
+### `stay_id`
 
 An identifier which uniquely identifies a single emergency department stay for a single patient.
 
-## `charttime`
+### `charttime`
 
 The time at which the vital signs were charted.
 
-## `temperature`
+### `temperature`
 
 The patient's temperature in degrees Farenheit. Some temperatures may be incorrectly documented as Celsius.
 
-## `heartrate`
+### `heartrate`
 
 The patient's heart rate in beats per minute.
 
-## `resprate`
+### `resprate`
 
 The patient's respiratory rate in breaths per minute.
 
-## `o2sat`
+### `o2sat`
 
 The patient's oxygen saturation measured as a percentage.
 
-## `sbp`, `dbp`
+### `sbp`, `dbp`
 
 The patient's systolic (sbp) and diastolic (dbp) blood pressure measured in millimetres of mercury (mmHg).
 
 <!-- o2flow -->
 
-## `rhythm`
+### `rhythm`
 
 The patient's heart rhythm.
 
-## `pain`
+### `pain`
 
 The patient's self-reported level of pain on a scale from 0-10. The pain is documented as free-text and may contain non-numeric entries.

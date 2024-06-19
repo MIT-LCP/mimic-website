@@ -28,16 +28,16 @@ Name | Postgres data type
 
 {{% include "/static/include/subject_id.md" %}}
 
-## `chartdate`
+### `chartdate`
 
 The date on which the observation was recorded.
 
-## `seq_num`
+### `seq_num`
 
 An monotonically increasing integer which uniquely distinguishes results of the same type recorded on the same day.
 For example, if two blood pressure measurements occur on the same day, `seq_num` orders them chronologically.
 
-## `result_name`
+### `result_name`
 
 Each row provides detail regarding a single observation in the EHR.  `result_name` provides a human interpretable description of the observation. As of MIMIC-IV v2.2, the following table lists the number of observations and the most common value.
 
@@ -60,4 +60,3 @@ Height | 39 | 64.50
 ### `result_value`
 
 `result_value` is the value associated with the given OMR observation. For example, for the `result_name` of 'Blood Pressure', the `field_value` column contains the recorded blood pressure (120/80, 130/70, and so on).
-

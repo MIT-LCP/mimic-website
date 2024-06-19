@@ -19,7 +19,6 @@ Records in this table are populated by bedside nursing staff scanning barcodes a
 * *prescriptions* on `pharmacy_id`
 * *poe* on `poe_id`
 
-
 ## Important considerations
 
 * The eMAR system was implemented during 2011-2013. As a result, eMAR data is not available for all patients.
@@ -40,6 +39,8 @@ Name | Postgres data type
 `event_txt` | VARCHAR(100)
 `scheduletime` | TIMESTAMP
 `storetime` | TIMESTAMP NOT NULL
+
+## Detailed Description
 
 ### `subject_id`
 
