@@ -111,9 +111,9 @@ OTHER FACILITY | 70
 
 UB-04 documentation online often provides more detail than found in the `admission_location` and `discharge_location` text, particularly for discharges.
 
-### `insurance`, `language`, `marital_status`, `ethnicity`
+### `insurance`, `language`, `marital_status`
 
-The `insurance`, `language`, `marital_status`, and `ethnicity` columns provide information about patient demographics for the given hospitalization.
+The `insurance`, `language`, and `marital_status` columns provide information about patient demographics for the given hospitalization.
 Note that as this data is documented for each hospital admission, they may change from stay to stay.
 
 ### `edregtime`, `edouttime`
