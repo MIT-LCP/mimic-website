@@ -75,6 +75,7 @@ In some cases more than one internal code is associated with a given `admission_
 In the tables below, we provide the matching UB-04 code(s) for the most common `ibax` codes for a given `admission_location` and `discharge_location`, when applicable. In cases where more than one code is given, if this combination is due to 1) in the above paragraph, the additional code must have at least 10% of the entires of the most common code. 
 
 Admission UB-04 mappings:
+
 admission_location | UB-04 code(s)
 -- | --
 PHYSICIAN REFERRAL | 1, 3
@@ -90,6 +91,7 @@ EMERGENCY ROOM | 1, 2, 7
 INTERNAL TRANSFER TO OR FROM PSYCH | none
 
 Discharge UB-04 mappings:
+
 discharge_location | UB-04 code(s)
 -- | --
 HOME | 01
