@@ -85,7 +85,7 @@ In the `procedureevents` table, this identifies the duration of the procedure (i
 
 The unit of measurement for the value. Most frequently "None" (no value recorded); otherwise one of "day", "hour", or "min". A query for itemiid 225794 ("Non-invasive Ventilation") returning a `value` of 461 and `valueuom` of 'min' would correspond to non-invasive ventilation provided for 461 minutes; this value is expected to match the difference between the `starttime` and `endtime` fields for the record. A procedure with `valueuom` equal to "None" corresponds to a procedure which is instantaneous (e.g. intubation, patient transfer) or whose duration is not relevant (e.g. imaging procedures). For these records, there will be a difference of one second between `starttime` and `endtime` values.
 
-### `location` , `locationcategory`
+### `location`, `locationcategory`
 
 `location` and `locationcategory` provide information about where on the patient's body the procedure is taking place. For example, the `location` might be 'Left Upper Arm' and the `locationcategory` might be 'Invasive Venous'.
 
