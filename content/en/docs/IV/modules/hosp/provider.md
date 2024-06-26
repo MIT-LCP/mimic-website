@@ -24,6 +24,8 @@ Name | Postgres data type
 ---- | ----
 provider_id | VARCHAR(10) NOT NULL
 
+## Detailed Description
+
 ### `provider_id`
 
 `provider_id` lists all possible identifiers for providers used throughout the database.

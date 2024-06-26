@@ -20,6 +20,8 @@ Name | Postgres data type
 ---- | ----
 caregiver_id | VARCHAR(10) NOT NULL
 
+## Detailed Description
+
 ### `caregiver_id`
 
 `caregiver_id` lists all possible identifiers for caregivers used in the ICU module.

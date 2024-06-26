@@ -8,7 +8,7 @@ description: >
 ---
 
 
-# The icustays table
+## The icustays table
 
 **Table source:** Hospital database.
 
@@ -21,14 +21,14 @@ description: >
 * patients on `subject_id`
 * admissions on `hadm_id`
 
-# Important considerations
+## Important considerations
 
 * `stay_id` is a *generated* identifier that is *not* based on any raw data identifier. The hospital and ICU databases are not intrinsically linked and so do not have any concept of an ICU encounter identifier.
 * The `icustays` table is derived from the `transfers` table. Specifically, it excludes rows in `transfers` where the ward is not an ICU.
 * Multiple consecutive icu stay entries from `transfers` are merged into a single entry in `transfers`.
 * Heart rate measurements are used to determine if an icu stay is valid. If the heart rate measurement for an icu stay in `transfers` is not available, the icu stay will not be included in `icustays` (~5%).
 
-# Table columns
+## Table columns
 
 Name | Postgres data type
 ---- | ----
@@ -41,22 +41,22 @@ intime | TIMESTAMP(0)
 outtime | TIMESTAMP(0)
 los | DOUBLE PRECISION
 
-# Detailed Description
+## Detailed Description
 
-## `subject_id`, `hadm_id`, `stay_id`
+### `subject_id`, `hadm_id`, `stay_id`
 
 Identifiers which specify the patient: `subject_id` is unique to a patient, `hadm_id` is unique to a patient hospital stay and `stay_id` is unique to a patient ward stay.
 
-## `FIRST_CAREUNIT`, `LAST_CAREUNIT`
+### `first_careunit`, `last_careunit`
 
-`FIRST_CAREUNIT` and `LAST_CAREUNIT` contain, respectively, the first and last ICU type in which the patient was cared for. As an `stay_id` groups all ICU admissions within 24 hours of each other, it is possible for a patient to be transferred from one type of ICU to another and have the same `stay_id`.
+`first_careunit` and `last_careunit` contain, respectively, the first and last ICU type in which the patient was cared for. As an `stay_id` groups all ICU admissions within 24 hours of each other, it is possible for a patient to be transferred from one type of ICU to another and have the same `stay_id`.
 
 Care units are derived from the TRANSFERS table, and definition for the abbreviations can be found in the documentation for TRANSFERS.
 
-## `INTIME`, `OUTTIME`
+### `intime`, `outtime`
 
-`INTIME` provides the date and time the patient was transferred into the ICU. `OUTTIME` provides the date and time the patient was transferred out of the ICU.
+`intime` provides the date and time the patient was transferred into the ICU. `outtime` provides the date and time the patient was transferred out of the ICU.
 
-## `LOS`
+### `los`
 
-`LOS` is the length of stay for the patient for the given ICU stay, which may include one or more ICU units. The length of stay is measured in fractional days.
+`los` is the length of stay for the patient for the given ICU stay, which may include one or more ICU units. The length of stay is measured in fractional days.

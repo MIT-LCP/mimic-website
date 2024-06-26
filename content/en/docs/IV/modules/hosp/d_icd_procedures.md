@@ -15,7 +15,7 @@ This table defines International Classification of Diseases (ICD) codes for **pr
 
 * *procedures_icd* on `icd_code` and `icd_version`
 
-## Brief summary
+<!-- ## Brief summary -->
 
 <!-- # Important considerations -->
 

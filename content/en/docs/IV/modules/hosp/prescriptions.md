@@ -48,6 +48,8 @@ Name | Postgres data type
 `doses_per_24_hrs` | REAL
 `route` | VARCHAR(50)
 
+## Detailed Description
+
 ### `subject_id`
 
 {{% include "/static/include/subject_id.md" %}}

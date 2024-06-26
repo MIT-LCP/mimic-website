@@ -50,6 +50,8 @@ Name | Postgres data type
 `dispensation` | VARCHAR(50)
 `fill_quantity` | VARCHAR(50)
 
+## Detailed Description
+
 ### `subject_id`
 
 {{% include "/static/include/subject_id.md" %}}

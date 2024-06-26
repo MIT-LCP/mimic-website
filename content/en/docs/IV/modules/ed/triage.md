@@ -6,7 +6,7 @@ description: >
   triage table
 ---
 
-# The *triage* table
+## The *triage* table
 
 The *triage* table contains information about the patient when they were first triaged in the emergency department.
 Patients are assessed at triage by a single care provider and asked a series of questions to assess their current health status.
@@ -20,11 +20,11 @@ All fields in *triage* were originally free-text. For deidentification purposes,
 
 **Number of rows:** 425,087
 
-**Links to:**
+## Links to
 
 * *edstays* on `stay_id`
 
-## Important considerations
+### Important considerations
 
 There is no time associated with triage observations. The closest approximation to triage time is the `intime` of the patient from the *edstays* table.
 
@@ -71,7 +71,8 @@ from ed_phi.triage tr
 ;
 
 -->
-# Table columns
+
+## Table columns
 
 Name | Postgres data type
 ---- | ----
@@ -87,39 +88,41 @@ Name | Postgres data type
 `acuity`          | NUMERIC(10, 4)
 `chiefcomplaint`  | VARCHAR(255)
 
-## `subject_id`
+## Detailed Description
+
+### `subject_id`
 
 `subject_id` is a unique identifier which specifies an individual patient. Any rows associated with a single `subject_id` pertain to the same individual.
 
-## `stay_id`
+### `stay_id`
 
 An identifier which uniquely identifies a single emergency department stay for a single patient.
 
-## `temperature`
+### `temperature`
 
 The patient's temperature in degrees Farenheit. Some temperatures may be incorrectly documented as Celsius.
 
-## `heartrate`
+### `heartrate`
 
 The patient's heart rate in beats per minute.
 
-## `resprate`
+### `resprate`
 
 The patient's respiratory rate in breaths per minute.
 
-## `o2sat`
+### `o2sat`
 
 The patient's peripheral oxygen saturation as a percentage.
 
-## `sbp`, `dbp`
+### `sbp`, `dbp`
 
 The patient's systolic and diastolic blood pressure, respectively, measured in millimitres of mercury (mmHg).
 
-## `pain`
+### `pain`
 
 The level of pain self-reported by the patient, on a scale of 0-10.
 
-## `acuity`
+### `acuity`
 
 An order of priority based upon acuity utilizing the Emergency Severity Index (ESI) Five Level triage system. This priority is assigned by a registered nurse. Level 1 is the highest priority, while level 5 is the lowest priority. The levels are:
 
@@ -136,6 +139,6 @@ An order of priority based upon acuity utilizing the Emergency Severity Index (E
 * 5
   * Patients not requiring any resources
 
-# `chiefcomplaint`
+## `chiefcomplaint`
 
 A deidentified free-text description of the patient's chief complaint.

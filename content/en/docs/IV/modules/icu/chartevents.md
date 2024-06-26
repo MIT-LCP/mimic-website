@@ -48,7 +48,9 @@ valuenum | DOUBLE PRECISION
 valueuom | VARCHAR(20)
 warning | SMALLINT
 
-## `subject_id`, `hadm_id`, `stay_id`
+## Detailed Description
+
+### `subject_id`, `hadm_id`, `stay_id`
 
 Identifiers which specify the patient: `subject_id` is unique to a patient, `hadm_id` is unique to a patient hospital stay and `stay_id` is unique to a patient ward stay. More information about these identifiers is [available here](/docs/iv/about/concepts/).
 
@@ -56,23 +58,22 @@ Identifiers which specify the patient: `subject_id` is unique to a patient, `had
 
 {{% include "/static/include/caregiver_id.md" %}}
 
-## `charttime`, `storetime`
+### `charttime`, `storetime`
 
 `charttime` records the time at which an observation was made, and is usually the closest proxy to the time the data was actually measured. `storetime` records the time at which an observation was manually input or manually validated by a member of the clinical staff.
 
-## `itemid`
+### `itemid`
 
 Identifier for a single measurement type in the database. Each row associated with one `itemid` (e.g. 220045) corresponds to an instantiation of the same measurement (e.g. heart rate).
 
-## `value`, `valuenum`
+### `value`, `valuenum`
 
 `value` contains the value measured for the concept identified by the `itemid`. If this value is numeric, then `valuenum` contains the same data in a numeric format. If this data is not numeric, `valuenum` is null. In some cases (e.g. scores like Glasgow Coma Scale, Richmond Sedation Agitation Scale and Code Status), `valuenum` contains the score and `value` contains the score and text describing the meaning of the score.
 
-## `valueuom`
+### `valueuom`
 
 `valueuom` is the unit of measurement for the `value`, if appropriate.
 
-## `warning`
+### `warning`
 
 `warning` specifies if a warning for this observation was manually documented by the care provider.
-
