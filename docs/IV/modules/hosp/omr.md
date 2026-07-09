@@ -61,4 +61,4 @@ Height | 39 | 64.50
 
 ### `result_value`
 
-`result_value` is the value associated with the given OMR observation. For example, for the `result_name` of 'Blood Pressure', the `field_value` column contains the recorded blood pressure (120/80, 130/70, and so on).
+`result_value` is the value associated with the given OMR observation. For example, for the `result_name` of 'Blood Pressure', the `result_value` column contains the recorded blood pressure (120/80, 130/70, and so on).
