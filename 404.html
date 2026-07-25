@@ -15,34 +15,18 @@ moved. Try the <a href="{{ '/' | relative_url }}">home page</a> or the search
 box above.</p>
 
 <script>
-  // URLs on GitHub Pages are case-sensitive, but many links to this site use
-  // different casing (e.g. /docs/iv/ vs /docs/IV/). This map is generated at
-  // build time from every real page on the site, keyed by its lower-cased URL,
-  // so we can redirect a mis-cased request to the correct page.
-  var PAGES = {
-    {% for page in site.html_pages -%}
-      {%- assign real = page.url | relative_url -%}
-      "{{ real | downcase }}": "{{ real }}"{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  };
-
+  // Every canonical URL on this site is lower-case, but URLs on GitHub Pages are
+  // case-sensitive. So a mis-cased request (e.g. /docs/IV/modules/cxr/) 404s even
+  // though /docs/iv/modules/cxr/ exists. This 404 page lower-cases the requested
+  // path and redirects there, so links work regardless of casing.
   (function () {
-    function normalize(path) {
-      // Drop query/hash, ensure a single trailing slash for directory-style URLs.
-      path = path.replace(/[?#].*$/, "");
-      if (path.length > 1 && !/\.[a-z0-9]+$/i.test(path) && !path.endsWith("/")) {
-        path += "/";
-      }
-      return path;
-    }
+    var path = window.location.pathname;
+    var lower = path.toLowerCase();
 
-    var requested = normalize(window.location.pathname);
-    var target = PAGES[requested.toLowerCase()];
-
-    if (target && target !== requested) {
+    if (lower !== path) {
       document.getElementById("redirect-status").textContent =
         "Redirecting to the correct page…";
-      window.location.replace(target + window.location.search + window.location.hash);
+      window.location.replace(lower + window.location.search + window.location.hash);
     } else {
       document.getElementById("redirect-status").textContent =
         "Sorry, we couldn't find that page.";
