@@ -1,0 +1,35 @@
+---
+layout: default
+title: Page not found
+nav_exclude: true
+search_exclude: true
+permalink: /404.html
+---
+
+<h1>Page not found</h1>
+
+<p id="redirect-status">Checking for a matching page&hellip;</p>
+
+<p>If you are not redirected automatically, the page you requested may have
+moved. Try the <a href="{{ '/' | relative_url }}">home page</a> or the search
+box above.</p>
+
+<script>
+  // Every canonical URL on this site is lower-case, but URLs on GitHub Pages are
+  // case-sensitive. So a mis-cased request (e.g. /docs/IV/modules/cxr/) 404s even
+  // though /docs/iv/modules/cxr/ exists. This 404 page lower-cases the requested
+  // path and redirects there, so links work regardless of casing.
+  (function () {
+    var path = window.location.pathname;
+    var lower = path.toLowerCase();
+
+    if (lower !== path) {
+      document.getElementById("redirect-status").textContent =
+        "Redirecting to the correct page…";
+      window.location.replace(lower + window.location.search + window.location.hash);
+    } else {
+      document.getElementById("redirect-status").textContent =
+        "Sorry, we couldn't find that page.";
+    }
+  })();
+</script>
