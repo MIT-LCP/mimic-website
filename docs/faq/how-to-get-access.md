@@ -79,7 +79,7 @@ Yes, you need to sign separate DUAs for MIMIC-III, MIMIC-IV, MIMIC-CXR, MIMIC-IV
 Once you have access:
 
 1. **Start with the [Getting Started guide](/docs/gettingstarted/)** to set up your access method
-2. **Understand the data** - Read the [Core concepts](/docs/IV/about/concepts/) page
+2. **Understand the data** - Read the [Core concepts](/docs/iv/about/concepts/) page
 3. **Join the community** - Follow the [Community guidelines](/docs/community/)
 
 ---
